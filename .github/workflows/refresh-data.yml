@@ -1,0 +1,48 @@
+name: Refresh AI-spending dataset
+
+on:
+  schedule:
+    # Weekly, Monday 09:00 UTC. FEC bulk files update on their own cadence;
+    # weekly is frequent enough to catch new filings without hammering fec.gov.
+    - cron: "0 9 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pipeline dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Fetch FEC bulk data
+        run: python pipeline/fetch_fec_bulk.py --cycles 2020 2022 2024 2026
+
+      - name: Fetch congress-legislators data
+        run: python pipeline/fetch_legislators.py
+
+      - name: Parse disbursements for AI-vendor matches
+        run: python pipeline/parse_disbursements.py --cycles 2020 2022 2024 2026
+
+      - name: Build dashboard dataset
+        run: python pipeline/build_dataset.py --cycles 2020 2022 2024 2026
+
+      - name: Commit updated dataset
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data/dashboard.json data/processed/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Refresh AI-spending dataset"
+            git push
+          fi

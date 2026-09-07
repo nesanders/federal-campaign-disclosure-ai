@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Use in Federal Campaign Disclosures</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <h1>AI Use in Federal Campaign Disclosures</h1>
+    <p class="subtitle">A read of federal campaign-finance disclosures for U.S. House and Senate candidates, looking for payments to AI vendors and how that spending breaks down by vendor, stated purpose, party, incumbency, candidate age, and chamber &mdash; and how each of those has changed across recent election cycles.</p>
+    <p class="subtitle">This extends the Washington Post's September 2026 reporting on OpenAI/ChatGPT spending in campaign filings to a broader set of AI vendors and a fuller set of cross-cuts, using the same public FEC disclosure data.</p>
+    <nav class="toc">
+      <a href="#overview">Overview</a>
+      <a href="#vendors">Vendors</a>
+      <a href="#usecases">Stated use</a>
+      <a href="#breakdowns">Party / incumbency / age / chamber</a>
+      <a href="#trends">Change over time</a>
+      <a href="#methodology">Methodology &amp; data</a>
+    </nav>
+    <div class="meta-line" id="meta-line">Loading dataset&hellip;</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="overview" class="block">
+    <h2>Overview</h2>
+    <div class="stat-row" id="stat-row"></div>
+    <div class="callout" id="coverage-callout"></div>
+  </section>
+
+  <section id="vendors" class="block">
+    <h2>1. Which AI vendors are campaigns paying?</h2>
+    <p class="lede">The Post's analysis looked only at OpenAI. Here every disbursement's payee name, stated purpose, category description, and memo text is matched against a taxonomy of both general-purpose AI vendors (OpenAI, Anthropic, Google, Microsoft, xAI, Perplexity, and AI-native creative tools) and vendors marketed specifically to campaigns (e.g. Quiller, BattlegroundAI, Chorus AI, DonorAtlas, RivalMind, Aaru). See <a href="#methodology">methodology</a> for the full list and its confidence tiers.</p>
+    <div class="card-grid single">
+      <div class="card">
+        <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="vendors">View as table</button></div>
+        <h3>AI-related disbursements by vendor, all committees, 2020&ndash;2026 cycles</h3>
+        <p class="note">High-confidence name matches only. Bars colored by whether the vendor is general-purpose or built specifically for political campaigns.</p>
+        <div class="chart-holder tall" data-panel="vendors"><canvas id="chart-vendors"></canvas></div>
+        <div class="table-holder" data-panel="vendors" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="usecases" class="block">
+    <h2>2. What are candidates reporting they use AI for?</h2>
+    <p class="lede">Disbursement purpose/category/memo text for House and Senate candidate committees, clustered into use-case categories by keyword. A single disbursement can land in more than one category (e.g. a memo mentioning both an email platform and ad creative), so these are not mutually exclusive shares of one total.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="usecases">View as table</button></div>
+        <h3>Spending by stated use case</h3>
+        <p class="note">Candidate committees only, high-confidence vendor matches.</p>
+        <div class="chart-holder" data-panel="usecases"><canvas id="chart-usecases"></canvas></div>
+        <div class="table-holder" data-panel="usecases" hidden></div>
+      </div>
+      <div class="card">
+        <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="usecases-group">View as table</button></div>
+        <h3>Use case, by vendor type</h3>
+        <p class="note">Same disbursements, split by general-purpose vs. campaign-specific vendor.</p>
+        <div class="chart-holder" data-panel="usecases-group"><canvas id="chart-usecases-group"></canvas></div>
+        <div class="table-holder" data-panel="usecases-group" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="breakdowns" class="block">
+    <h2>3. How does AI use differ across candidates?</h2>
+    <p class="lede">2026-cycle House and Senate candidate committees with a high-confidence AI vendor match, split by party, incumbency status, candidate age, and chamber. Amounts are totals; candidate counts are shown alongside since a handful of high-spending campaigns can otherwise dominate a total.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="party">View as table</button></div>
+        <h3>By party</h3>
+        <p class="note">2026 cycle.</p>
+        <div class="chart-holder" data-panel="party"><canvas id="chart-party"></canvas></div>
+        <div class="table-holder" data-panel="party" hidden></div>
+      </div>
+      <div class="card">
+        <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="incumbency">View as table</button></div>
+        <h3>By incumbency status</h3>
+        <p class="note">2026 cycle.</p>
+        <div class="chart-holder" data-panel="incumbency"><canvas id="chart-incumbency"></canvas></div>
+        <div class="table-holder" data-panel="incumbency" hidden></div>
+      </div>
+      <div class="card">
+        <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="chamber">View as table</button></div>
+        <h3>By chamber</h3>
+        <p class="note">2026 cycle.</p>
+        <div class="chart-holder" data-panel="chamber"><canvas id="chart-chamber"></canvas></div>
+        <div class="table-holder" data-panel="chamber" hidden></div>
+      </div>
+      <div class="card">
+        <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="age">View as table</button></div>
+        <h3>By candidate age</h3>
+        <p class="note">2026 cycle. Age is known mainly for incumbents/former members (see methodology) &mdash; "Unknown" is shown rather than guessed.</p>
+        <div class="chart-holder" data-panel="age"><canvas id="chart-age"></canvas></div>
+        <div class="table-holder" data-panel="age" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trends" class="block">
+    <h2>4. What's changed across cycles?</h2>
+    <p class="lede">The same candidate-committee, high-confidence disbursements, tracked across the 2020, 2022, 2024, and 2026 two-year cycles. Note that mainstream generative-AI tools (ChatGPT and peers) were not publicly available for most of the 2020 and 2022 cycles, so growth here partly reflects the technology's availability, not only its political adoption.</p>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="trend-overall">View as table</button></div>
+        <h3>Total AI-related spending by cycle</h3>
+        <p class="note">General-purpose vs. campaign-specific vendors.</p>
+        <div class="chart-holder" data-panel="trend-overall"><canvas id="chart-trend-overall"></canvas></div>
+        <div class="table-holder" data-panel="trend-overall" hidden></div>
+      </div>
+      <div class="card">
+        <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="trend-party">View as table</button></div>
+        <h3>By party, over time</h3>
+        <div class="chart-holder" data-panel="trend-party"><canvas id="chart-trend-party"></canvas></div>
+        <div class="table-holder" data-panel="trend-party" hidden></div>
+      </div>
+      <div class="card">
+        <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="trend-incumbency">View as table</button></div>
+        <h3>By incumbency, over time</h3>
+        <div class="chart-holder" data-panel="trend-incumbency"><canvas id="chart-trend-incumbency"></canvas></div>
+        <div class="table-holder" data-panel="trend-incumbency" hidden></div>
+      </div>
+      <div class="card">
+        <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="trend-chamber">View as table</button></div>
+        <h3>By chamber, over time</h3>
+        <div class="chart-holder" data-panel="trend-chamber"><canvas id="chart-trend-chamber"></canvas></div>
+        <div class="table-holder" data-panel="trend-chamber" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="top-committees" class="block">
+    <h2>Top committees by AI-related spending</h2>
+    <p class="lede">Includes party and leadership committees and PACs (not only candidate committees) &mdash; e.g. the Post noted the RNC as OpenAI's largest political spender.</p>
+    <div class="card-grid single">
+      <div class="card">
+        <div id="table-top-committees"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="methodology" class="block">
+    <h2>Methodology &amp; data provenance</h2>
+    <p class="lede">This site is generated entirely from public federal disclosure data by an automated pipeline; there is no manual curation of the numbers themselves beyond the vendor/category taxonomy below.</p>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Data sources</h3>
+        <ul class="notes" id="sources-list"></ul>
+      </div>
+      <div class="card">
+        <h3>Notes &amp; limitations</h3>
+        <ul class="notes" id="notes-list"></ul>
+      </div>
+    </div>
+    <p class="lede">Full pipeline code, the vendor/category taxonomy (<code>pipeline/config/vendors.yaml</code>), and this site's source are in the <a href="https://github.com/nesanders/federal-campaign-disclosure-ai" target="_blank" rel="noopener">GitHub repository</a>.</p>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p id="footer-generated"></p>
+    <p>Source data: Federal Election Commission bulk downloads (fec.gov) and the unitedstates/congress-legislators project. This is an independent analysis and is not affiliated with the FEC, the Washington Post, or any campaign or vendor named here.</p>
+  </div>
+</footer>
+
+<script src="js/chart.umd.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

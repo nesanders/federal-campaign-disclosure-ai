@@ -1,0 +1,244 @@
+# AI vendor taxonomy used to classify FEC Schedule B (itemized disbursement)
+# records as "AI-related" spending.
+#
+# Sourcing: seeded from the Washington Post's Sept 2026 reporting on OpenAI/
+# ChatGPT usage in campaign filings, plus a round of research into other
+# vendors reportedly selling into the 2026 cycle (American Prospect, CNBC,
+# Axios, Habtoor Research Centre coverage of "AI's quiet takeover of the
+# midterms", and general-purpose frontier AI labs). This list is a curated,
+# necessarily incomplete starting point, not an exhaustive registry -- FEC
+# purpose-of-disbursement text is often generic ("software subscription",
+# "consulting"), so real AI usage is understated here just as it was in the
+# Post's OpenAI-only analysis. Extend this file as new vendors surface.
+#
+# Matching runs against the concatenation of the disbursement's payee NAME,
+# PURPOSE, and CATEGORY_DESC/MEMO_TEXT fields, case-insensitive, on the
+# `patterns` (regex, word-boundary wrapped by the pipeline unless the pattern
+# already contains \b). `confidence: high` patterns are unambiguous vendor/
+# product names; `confidence: medium` patterns are words that also have
+# common non-AI meanings (e.g. "Gemini", "Copilot", "Grok") and are reported
+# separately on the dashboard as lower-confidence signal rather than folded
+# into headline counts.
+
+general_purpose:
+  - id: openai
+    name: OpenAI (ChatGPT)
+    homepage: https://openai.com
+    patterns:
+      - {pattern: "openai", confidence: high}
+      - {pattern: "chat ?gpt", confidence: high}
+  - id: anthropic
+    name: Anthropic (Claude)
+    homepage: https://anthropic.com
+    patterns:
+      - {pattern: "anthropic", confidence: high}
+      - {pattern: "claude ai", confidence: high}
+      - {pattern: "claude\\.ai", confidence: high}
+      - {pattern: "claude", confidence: medium}
+  - id: google_ai
+    name: Google (Gemini / Vertex AI)
+    homepage: https://ai.google
+    patterns:
+      - {pattern: "google gemini", confidence: high}
+      - {pattern: "gemini for google workspace", confidence: high}
+      - {pattern: "vertex ai", confidence: high}
+      - {pattern: "notebooklm", confidence: high}
+      - {pattern: "google ai\\b", confidence: high}
+      - {pattern: "gemini", confidence: medium}
+  - id: microsoft_copilot
+    name: Microsoft Copilot
+    homepage: https://copilot.microsoft.com
+    patterns:
+      - {pattern: "microsoft copilot", confidence: high}
+      - {pattern: "copilot for microsoft ?365", confidence: high}
+      - {pattern: "copilot pro", confidence: high}
+      - {pattern: "copilot", confidence: medium}
+  - id: xai_grok
+    name: xAI (Grok)
+    homepage: https://x.ai
+    patterns:
+      - {pattern: "xai\\b", confidence: high}
+      - {pattern: "x\\.ai", confidence: high}
+      - {pattern: "grok", confidence: medium}
+  - id: perplexity
+    name: Perplexity AI
+    homepage: https://perplexity.ai
+    patterns:
+      - {pattern: "perplexity", confidence: high}
+  - id: meta_ai
+    name: Meta AI
+    homepage: https://ai.meta.com
+    patterns:
+      - {pattern: "meta ai", confidence: high}
+      - {pattern: "meta llama", confidence: high}
+  - id: midjourney
+    name: Midjourney
+    homepage: https://midjourney.com
+    patterns:
+      - {pattern: "midjourney", confidence: high}
+  - id: synthesia
+    name: Synthesia
+    homepage: https://synthesia.io
+    patterns:
+      - {pattern: "synthesia", confidence: high}
+  - id: elevenlabs
+    name: ElevenLabs
+    homepage: https://elevenlabs.io
+    patterns:
+      - {pattern: "eleven ?labs", confidence: high}
+  - id: heygen
+    name: HeyGen
+    homepage: https://heygen.com
+    patterns:
+      - {pattern: "heygen", confidence: high}
+  - id: runwayml
+    name: Runway
+    homepage: https://runwayml.com
+    patterns:
+      - {pattern: "runwayml", confidence: high}
+      - {pattern: "runway ai", confidence: high}
+      - {pattern: "runway ml", confidence: high}
+  - id: descript
+    name: Descript
+    homepage: https://descript.com
+    patterns:
+      - {pattern: "descript", confidence: high}
+  - id: jasper_ai
+    name: Jasper AI
+    homepage: https://jasper.ai
+    patterns:
+      - {pattern: "jasper\\.ai", confidence: high}
+      - {pattern: "jasper ai", confidence: high}
+  - id: adobe_firefly
+    name: Adobe Firefly
+    homepage: https://firefly.adobe.com
+    patterns:
+      - {pattern: "adobe firefly", confidence: high}
+  - id: character_ai
+    name: Character.AI
+    homepage: https://character.ai
+    patterns:
+      - {pattern: "character\\.ai", confidence: high}
+
+political_specific:
+  - id: quiller
+    name: Quiller
+    homepage: https://quiller.ai
+    lean_context: progressive-aligned (per public reporting)
+    patterns:
+      - {pattern: "quiller", confidence: high}
+  - id: battleground_ai
+    name: BattlegroundAI
+    homepage: https://battlegroundai.org
+    lean_context: progressive-aligned (per public reporting)
+    patterns:
+      - {pattern: "battleground ?ai", confidence: high}
+  - id: chorus_ai
+    name: Chorus AI
+    homepage: https://chorus.ai
+    lean_context: progressive-aligned (per public reporting)
+    patterns:
+      - {pattern: "chorus ai", confidence: high}
+      - {pattern: "chorus\\.ai", confidence: high}
+  - id: donoratlas
+    name: DonorAtlas
+    homepage: https://donoratlas.com
+    lean_context: progressive-aligned (per public reporting)
+    patterns:
+      - {pattern: "donor ?atlas", confidence: high}
+  - id: rivalmind
+    name: RivalMind
+    homepage: https://rivalmind.ai
+    lean_context: progressive-aligned (per public reporting)
+    patterns:
+      - {pattern: "rivalmind", confidence: high}
+      - {pattern: "rival mind ai", confidence: high}
+  - id: aaru
+    name: Aaru
+    homepage: https://aaru.com
+    lean_context: reported GOP-aligned use of voter-simulation tools
+    patterns:
+      - {pattern: "\\baaru\\b", confidence: medium}
+  - id: mirofish
+    name: MiroFish
+    homepage: null
+    lean_context: reported GOP-aligned use of voter-simulation tools
+    patterns:
+      - {pattern: "mirofish", confidence: high}
+  - id: eyesover
+    name: EyesOver
+    homepage: null
+    lean_context: reported GOP-aligned social-listening tool
+    patterns:
+      - {pattern: "eyesover", confidence: high}
+
+# Use-case categories for classifying disbursement PURPOSE / MEMO_TEXT text.
+# A single disbursement may match multiple categories; "unspecified" is used
+# when purpose text is too generic (e.g. "software subscription") to say
+# more than "this money went to an AI vendor."
+use_case_categories:
+  - id: advertising_creative
+    label: Advertising / creative content
+    patterns:
+      - "\\bad(s|vertis\\w*)?\\b"
+      - "\\bcreative\\b"
+      - "\\bvideo\\b"
+      - "\\bimage\\b"
+      - "\\bgraphic"
+      - "\\bsocial media content\\b"
+  - id: communications_copy
+    label: Communications copywriting (email/text/scripts)
+    patterns:
+      - "\\bemail\\b"
+      - "\\btext message"
+      - "\\bsms\\b"
+      - "\\bscript"
+      - "\\bnewsletter\\b"
+      - "\\bcopy ?writ"
+      - "\\bmessag\\w* (draft|writ)"
+  - id: synthetic_media
+    label: Synthetic media / deepfake-adjacent
+    patterns:
+      - "\\bsynthetic media\\b"
+      - "\\bdeepfake"
+      - "\\bavatar\\b"
+      - "\\bvoice clone"
+      - "\\bai[- ]generated\\b"
+  - id: research_strategy
+    label: Research, polling & strategy
+    patterns:
+      - "\\bresearch\\b"
+      - "\\bpolling\\b"
+      - "\\banaly(sis|tics)\\b"
+      - "\\bbriefing\\b"
+      - "\\bopposition research\\b"
+      - "\\bdossier\\b"
+      - "\\bstrateg"
+  - id: fundraising
+    label: Fundraising
+    patterns:
+      - "\\bfundrais"
+      - "\\bdonor\\b"
+      - "\\bsolicitation\\b"
+  - id: data_targeting
+    label: Voter data & targeting
+    patterns:
+      - "\\bvoter file\\b"
+      - "\\btargeting\\b"
+      - "\\bmicrotargeting\\b"
+      - "\\bdata analytics\\b"
+      - "\\bgotv\\b"
+  - id: administrative_productivity
+    label: Administrative / general productivity
+    patterns:
+      - "\\bsoftware\\b"
+      - "\\bsubscription\\b"
+      - "\\blicens"
+      - "\\bproductivity\\b"
+      - "\\badmin"
+      - "\\bbudget"
+      - "\\bschedul"
+      - "\\bplanning\\b"
+  - id: unspecified
+    label: Unspecified / generic
+    patterns: []

@@ -1,0 +1,862 @@
+{
+  "meta": {
+    "generated_at": "2026-09-07T00:00:00Z",
+    "cycles": [
+      2020,
+      2022,
+      2024,
+      2026
+    ],
+    "sources": [
+      "FEC bulk data: itemized operating expenditures (Schedule B / oppexp)",
+      "FEC bulk data: candidate master (cn)",
+      "FEC bulk data: candidate-committee linkage (ccl)",
+      "FEC bulk data: committee master (cm)",
+      "unitedstates/congress-legislators (birthdates, for age analysis)"
+    ],
+    "matched_row_counts_by_cycle": {
+      "2020": 120,
+      "2022": 410,
+      "2024": 3900,
+      "2026": 9800
+    },
+    "openai_high_confidence_house_senate_candidates_2026": 41,
+    "methodology_notes": [
+      "SAMPLE DATA for local UI development only -- not derived from real FEC records.",
+      "Vendor matches are text matches against payee name, disbursement purpose, category description, and memo text -- not a review of underlying documents.",
+      "'High confidence' matches use unambiguous vendor/product names. 'Medium confidence' matches use ambiguous words that also have common non-AI meanings; shown only in the vendor landscape view.",
+      "Party, chamber, and incumbency breakdowns are limited to House and Senate candidate committees, high-confidence matches only.",
+      "Candidate age is drawn from the unitedstates/congress-legislators project; non-incumbent challengers are often 'Unknown'.",
+      "Disclosed AI spending understates actual usage.",
+      "A single disbursement can match more than one vendor or category; totals are not mutually exclusive."
+    ]
+  },
+  "vendors_overall": [
+    {
+      "id": "openai",
+      "name": "OpenAI (ChatGPT)",
+      "group": "general_purpose",
+      "amount_high": 210000,
+      "count_high": 340,
+      "distinct_committees_high": 170,
+      "amount_medium": 31500,
+      "count_medium": 68
+    },
+    {
+      "id": "quiller",
+      "name": "Quiller",
+      "group": "political_specific",
+      "amount_high": 61000,
+      "count_high": 48,
+      "distinct_committees_high": 24,
+      "amount_medium": 9150,
+      "count_medium": 9
+    },
+    {
+      "id": "battleground_ai",
+      "name": "BattlegroundAI",
+      "group": "political_specific",
+      "amount_high": 45000,
+      "count_high": 31,
+      "distinct_committees_high": 15,
+      "amount_medium": 6750,
+      "count_medium": 6
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic (Claude)",
+      "group": "general_purpose",
+      "amount_high": 38000,
+      "count_high": 55,
+      "distinct_committees_high": 27,
+      "amount_medium": 5700,
+      "count_medium": 11
+    },
+    {
+      "id": "google_ai",
+      "name": "Google (Gemini / Vertex AI)",
+      "group": "general_purpose",
+      "amount_high": 29000,
+      "count_high": 40,
+      "distinct_committees_high": 20,
+      "amount_medium": 4350,
+      "count_medium": 8
+    },
+    {
+      "id": "chorus_ai",
+      "name": "Chorus AI",
+      "group": "political_specific",
+      "amount_high": 27000,
+      "count_high": 19,
+      "distinct_committees_high": 9,
+      "amount_medium": 4050,
+      "count_medium": 3
+    },
+    {
+      "id": "microsoft_copilot",
+      "name": "Microsoft Copilot",
+      "group": "general_purpose",
+      "amount_high": 22000,
+      "count_high": 33,
+      "distinct_committees_high": 16,
+      "amount_medium": 3300,
+      "count_medium": 6
+    },
+    {
+      "id": "rivalmind",
+      "name": "RivalMind",
+      "group": "political_specific",
+      "amount_high": 15000,
+      "count_high": 11,
+      "distinct_committees_high": 5,
+      "amount_medium": 2250,
+      "count_medium": 2
+    },
+    {
+      "id": "donoratlas",
+      "name": "DonorAtlas",
+      "group": "political_specific",
+      "amount_high": 12000,
+      "count_high": 9,
+      "distinct_committees_high": 4,
+      "amount_medium": 1800,
+      "count_medium": 1
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity AI",
+      "group": "general_purpose",
+      "amount_high": 9000,
+      "count_high": 14,
+      "distinct_committees_high": 7,
+      "amount_medium": 1350,
+      "count_medium": 2
+    },
+    {
+      "id": "mirofish",
+      "name": "MiroFish",
+      "group": "political_specific",
+      "amount_high": 5000,
+      "count_high": 4,
+      "distinct_committees_high": 2,
+      "amount_medium": 750,
+      "count_medium": 1
+    },
+    {
+      "id": "xai_grok",
+      "name": "xAI (Grok)",
+      "group": "general_purpose",
+      "amount_high": 4000,
+      "count_high": 6,
+      "distinct_committees_high": 3,
+      "amount_medium": 600,
+      "count_medium": 1
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "group": "general_purpose",
+      "amount_high": 3200,
+      "count_high": 9,
+      "distinct_committees_high": 4,
+      "amount_medium": 480,
+      "count_medium": 1
+    },
+    {
+      "id": "eyesover",
+      "name": "EyesOver",
+      "group": "political_specific",
+      "amount_high": 3000,
+      "count_high": 3,
+      "distinct_committees_high": 1,
+      "amount_medium": 450,
+      "count_medium": 1
+    },
+    {
+      "id": "synthesia",
+      "name": "Synthesia",
+      "group": "general_purpose",
+      "amount_high": 2600,
+      "count_high": 5,
+      "distinct_committees_high": 2,
+      "amount_medium": 390,
+      "count_medium": 1
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "group": "general_purpose",
+      "amount_high": 1800,
+      "count_high": 4,
+      "distinct_committees_high": 2,
+      "amount_medium": 270,
+      "count_medium": 1
+    },
+    {
+      "id": "heygen",
+      "name": "HeyGen",
+      "group": "general_purpose",
+      "amount_high": 1200,
+      "count_high": 3,
+      "distinct_committees_high": 1,
+      "amount_medium": 180,
+      "count_medium": 1
+    }
+  ],
+  "vendor_group_totals": [
+    {
+      "vendor_group": "general_purpose",
+      "amount": 320800,
+      "count": 509
+    },
+    {
+      "vendor_group": "political_specific",
+      "amount": 168000,
+      "count": 125
+    }
+  ],
+  "use_categories": [
+    {
+      "id": "administrative_productivity",
+      "amount": 140000,
+      "count": 260,
+      "distinct_candidates": 150
+    },
+    {
+      "id": "communications_copy",
+      "amount": 95000,
+      "count": 190,
+      "distinct_candidates": 110
+    },
+    {
+      "id": "advertising_creative",
+      "amount": 61000,
+      "count": 90,
+      "distinct_candidates": 55
+    },
+    {
+      "id": "research_strategy",
+      "amount": 48000,
+      "count": 70,
+      "distinct_candidates": 44
+    },
+    {
+      "id": "fundraising",
+      "amount": 39000,
+      "count": 60,
+      "distinct_candidates": 38
+    },
+    {
+      "id": "data_targeting",
+      "amount": 21000,
+      "count": 30,
+      "distinct_candidates": 20
+    },
+    {
+      "id": "synthetic_media",
+      "amount": 6000,
+      "count": 8,
+      "distinct_candidates": 6
+    },
+    {
+      "id": "unspecified",
+      "amount": 52000,
+      "count": 140,
+      "distinct_candidates": 90
+    }
+  ],
+  "use_category_by_vendor_group": [
+    {
+      "category": "administrative_productivity",
+      "group": "general_purpose",
+      "amount": 103856,
+      "count": 182
+    },
+    {
+      "category": "administrative_productivity",
+      "group": "political_specific",
+      "amount": 36144,
+      "count": 78
+    },
+    {
+      "category": "communications_copy",
+      "group": "general_purpose",
+      "amount": 52963,
+      "count": 133
+    },
+    {
+      "category": "communications_copy",
+      "group": "political_specific",
+      "amount": 42037,
+      "count": 57
+    },
+    {
+      "category": "advertising_creative",
+      "group": "general_purpose",
+      "amount": 38583,
+      "count": 63
+    },
+    {
+      "category": "advertising_creative",
+      "group": "political_specific",
+      "amount": 22417,
+      "count": 27
+    },
+    {
+      "category": "research_strategy",
+      "group": "general_purpose",
+      "amount": 29614,
+      "count": 49
+    },
+    {
+      "category": "research_strategy",
+      "group": "political_specific",
+      "amount": 18386,
+      "count": 21
+    },
+    {
+      "category": "fundraising",
+      "group": "general_purpose",
+      "amount": 30067,
+      "count": 42
+    },
+    {
+      "category": "fundraising",
+      "group": "political_specific",
+      "amount": 8933,
+      "count": 18
+    },
+    {
+      "category": "data_targeting",
+      "group": "general_purpose",
+      "amount": 15813,
+      "count": 21
+    },
+    {
+      "category": "data_targeting",
+      "group": "political_specific",
+      "amount": 5187,
+      "count": 9
+    },
+    {
+      "category": "synthetic_media",
+      "group": "general_purpose",
+      "amount": 4906,
+      "count": 6
+    },
+    {
+      "category": "synthetic_media",
+      "group": "political_specific",
+      "amount": 1094,
+      "count": 2
+    },
+    {
+      "category": "unspecified",
+      "group": "general_purpose",
+      "amount": 29956,
+      "count": 98
+    },
+    {
+      "category": "unspecified",
+      "group": "political_specific",
+      "amount": 22044,
+      "count": 42
+    }
+  ],
+  "by_party": [
+    {
+      "amount": 95000,
+      "count": 237,
+      "distinct_candidates": 90,
+      "vendor_group": "general_purpose",
+      "cand_party": "Democratic"
+    },
+    {
+      "amount": 70000,
+      "count": 116,
+      "distinct_candidates": 60,
+      "vendor_group": "political_specific",
+      "cand_party": "Democratic"
+    },
+    {
+      "amount": 150000,
+      "count": 375,
+      "distinct_candidates": 130,
+      "vendor_group": "general_purpose",
+      "cand_party": "Republican"
+    },
+    {
+      "amount": 45000,
+      "count": 75,
+      "distinct_candidates": 35,
+      "vendor_group": "political_specific",
+      "cand_party": "Republican"
+    },
+    {
+      "amount": 3000,
+      "count": 7,
+      "distinct_candidates": 3,
+      "vendor_group": "general_purpose",
+      "cand_party": "Other"
+    },
+    {
+      "amount": 1000,
+      "count": 1,
+      "distinct_candidates": 2,
+      "vendor_group": "political_specific",
+      "cand_party": "Other"
+    }
+  ],
+  "by_incumbency": [
+    {
+      "amount": 140000,
+      "count": 350,
+      "distinct_candidates": 120,
+      "vendor_group": "general_purpose",
+      "ici": "Incumbent"
+    },
+    {
+      "amount": 60000,
+      "count": 100,
+      "distinct_candidates": 55,
+      "vendor_group": "political_specific",
+      "ici": "Incumbent"
+    },
+    {
+      "amount": 90000,
+      "count": 225,
+      "distinct_candidates": 85,
+      "vendor_group": "general_purpose",
+      "ici": "Challenger"
+    },
+    {
+      "amount": 45000,
+      "count": 75,
+      "distinct_candidates": 35,
+      "vendor_group": "political_specific",
+      "ici": "Challenger"
+    },
+    {
+      "amount": 18000,
+      "count": 45,
+      "distinct_candidates": 18,
+      "vendor_group": "general_purpose",
+      "ici": "Open seat"
+    },
+    {
+      "amount": 11000,
+      "count": 18,
+      "distinct_candidates": 7,
+      "vendor_group": "political_specific",
+      "ici": "Open seat"
+    }
+  ],
+  "by_chamber": [
+    {
+      "amount": 190000,
+      "count": 475,
+      "distinct_candidates": 175,
+      "vendor_group": "general_purpose",
+      "office": "House"
+    },
+    {
+      "amount": 95000,
+      "count": 158,
+      "distinct_candidates": 80,
+      "vendor_group": "political_specific",
+      "office": "House"
+    },
+    {
+      "amount": 58000,
+      "count": 145,
+      "distinct_candidates": 48,
+      "vendor_group": "general_purpose",
+      "office": "Senate"
+    },
+    {
+      "amount": 21000,
+      "count": 35,
+      "distinct_candidates": 17,
+      "vendor_group": "political_specific",
+      "office": "Senate"
+    }
+  ],
+  "by_age_bucket": [
+    {
+      "amount": 22000,
+      "count": 55,
+      "distinct_candidates": 20,
+      "vendor_group": "general_purpose",
+      "age_bucket": "Under 40"
+    },
+    {
+      "amount": 18000,
+      "count": 30,
+      "distinct_candidates": 15,
+      "vendor_group": "political_specific",
+      "age_bucket": "Under 40"
+    },
+    {
+      "amount": 48000,
+      "count": 120,
+      "distinct_candidates": 42,
+      "vendor_group": "general_purpose",
+      "age_bucket": "40-49"
+    },
+    {
+      "amount": 30000,
+      "count": 50,
+      "distinct_candidates": 25,
+      "vendor_group": "political_specific",
+      "age_bucket": "40-49"
+    },
+    {
+      "amount": 61000,
+      "count": 152,
+      "distinct_candidates": 55,
+      "vendor_group": "general_purpose",
+      "age_bucket": "50-59"
+    },
+    {
+      "amount": 28000,
+      "count": 46,
+      "distinct_candidates": 22,
+      "vendor_group": "political_specific",
+      "age_bucket": "50-59"
+    },
+    {
+      "amount": 55000,
+      "count": 137,
+      "distinct_candidates": 48,
+      "vendor_group": "general_purpose",
+      "age_bucket": "60-69"
+    },
+    {
+      "amount": 22000,
+      "count": 36,
+      "distinct_candidates": 18,
+      "vendor_group": "political_specific",
+      "age_bucket": "60-69"
+    },
+    {
+      "amount": 30000,
+      "count": 75,
+      "distinct_candidates": 26,
+      "vendor_group": "general_purpose",
+      "age_bucket": "70+"
+    },
+    {
+      "amount": 10000,
+      "count": 16,
+      "distinct_candidates": 8,
+      "vendor_group": "political_specific",
+      "age_bucket": "70+"
+    },
+    {
+      "amount": 32000,
+      "count": 80,
+      "distinct_candidates": 44,
+      "vendor_group": "general_purpose",
+      "age_bucket": "Unknown"
+    },
+    {
+      "amount": 8000,
+      "count": 13,
+      "distinct_candidates": 12,
+      "vendor_group": "political_specific",
+      "age_bucket": "Unknown"
+    }
+  ],
+  "time_series": [
+    {
+      "cycle": 2020,
+      "vendor_group": "general_purpose",
+      "amount": 500,
+      "count": 2,
+      "distinct_candidates": 1
+    },
+    {
+      "cycle": 2020,
+      "vendor_group": "political_specific",
+      "amount": 200,
+      "count": 1,
+      "distinct_candidates": 1
+    },
+    {
+      "cycle": 2022,
+      "vendor_group": "general_purpose",
+      "amount": 2200,
+      "count": 5,
+      "distinct_candidates": 2
+    },
+    {
+      "cycle": 2022,
+      "vendor_group": "political_specific",
+      "amount": 3200,
+      "count": 7,
+      "distinct_candidates": 3
+    },
+    {
+      "cycle": 2024,
+      "vendor_group": "general_purpose",
+      "amount": 60000,
+      "count": 121,
+      "distinct_candidates": 31
+    },
+    {
+      "cycle": 2024,
+      "vendor_group": "political_specific",
+      "amount": 41000,
+      "count": 83,
+      "distinct_candidates": 21
+    },
+    {
+      "cycle": 2026,
+      "vendor_group": "general_purpose",
+      "amount": 248000,
+      "count": 497,
+      "distinct_candidates": 125
+    },
+    {
+      "cycle": 2026,
+      "vendor_group": "political_specific",
+      "amount": 116000,
+      "count": 233,
+      "distinct_candidates": 59
+    }
+  ],
+  "time_series_by_party": [
+    {
+      "cycle": 2020,
+      "cand_party": "Democratic",
+      "amount": 300,
+      "count": 2
+    },
+    {
+      "cycle": 2020,
+      "cand_party": "Republican",
+      "amount": 350,
+      "count": 2
+    },
+    {
+      "cycle": 2020,
+      "cand_party": "Other",
+      "amount": 10,
+      "count": 1
+    },
+    {
+      "cycle": 2022,
+      "cand_party": "Democratic",
+      "amount": 1800,
+      "count": 5
+    },
+    {
+      "cycle": 2022,
+      "cand_party": "Republican",
+      "amount": 3200,
+      "count": 7
+    },
+    {
+      "cycle": 2022,
+      "cand_party": "Other",
+      "amount": 40,
+      "count": 1
+    },
+    {
+      "cycle": 2024,
+      "cand_party": "Democratic",
+      "amount": 42000,
+      "count": 85
+    },
+    {
+      "cycle": 2024,
+      "cand_party": "Republican",
+      "amount": 55000,
+      "count": 111
+    },
+    {
+      "cycle": 2024,
+      "cand_party": "Other",
+      "amount": 900,
+      "count": 3
+    },
+    {
+      "cycle": 2026,
+      "cand_party": "Democratic",
+      "amount": 165000,
+      "count": 331
+    },
+    {
+      "cycle": 2026,
+      "cand_party": "Republican",
+      "amount": 190000,
+      "count": 381
+    },
+    {
+      "cycle": 2026,
+      "cand_party": "Other",
+      "amount": 4000,
+      "count": 9
+    }
+  ],
+  "time_series_by_incumbency": [
+    {
+      "cycle": 2020,
+      "ici": "Incumbent",
+      "amount": 400,
+      "count": 2
+    },
+    {
+      "cycle": 2020,
+      "ici": "Challenger",
+      "amount": 250,
+      "count": 1
+    },
+    {
+      "cycle": 2020,
+      "ici": "Open seat",
+      "amount": 50,
+      "count": 1
+    },
+    {
+      "cycle": 2022,
+      "ici": "Incumbent",
+      "amount": 2600,
+      "count": 6
+    },
+    {
+      "cycle": 2022,
+      "ici": "Challenger",
+      "amount": 2400,
+      "count": 6
+    },
+    {
+      "cycle": 2022,
+      "ici": "Open seat",
+      "amount": 400,
+      "count": 2
+    },
+    {
+      "cycle": 2024,
+      "ici": "Incumbent",
+      "amount": 60000,
+      "count": 121
+    },
+    {
+      "cycle": 2024,
+      "ici": "Challenger",
+      "amount": 35000,
+      "count": 71
+    },
+    {
+      "cycle": 2024,
+      "ici": "Open seat",
+      "amount": 6000,
+      "count": 13
+    },
+    {
+      "cycle": 2026,
+      "ici": "Incumbent",
+      "amount": 200000,
+      "count": 401
+    },
+    {
+      "cycle": 2026,
+      "ici": "Challenger",
+      "amount": 145000,
+      "count": 291
+    },
+    {
+      "cycle": 2026,
+      "ici": "Open seat",
+      "amount": 19000,
+      "count": 39
+    }
+  ],
+  "time_series_by_chamber": [
+    {
+      "cycle": 2020,
+      "office": "House",
+      "amount": 500,
+      "count": 2
+    },
+    {
+      "cycle": 2020,
+      "office": "Senate",
+      "amount": 200,
+      "count": 1
+    },
+    {
+      "cycle": 2022,
+      "office": "House",
+      "amount": 3800,
+      "count": 9
+    },
+    {
+      "cycle": 2022,
+      "office": "Senate",
+      "amount": 1600,
+      "count": 4
+    },
+    {
+      "cycle": 2024,
+      "office": "House",
+      "amount": 78000,
+      "count": 157
+    },
+    {
+      "cycle": 2024,
+      "office": "Senate",
+      "amount": 23000,
+      "count": 47
+    },
+    {
+      "cycle": 2026,
+      "office": "House",
+      "amount": 285000,
+      "count": 571
+    },
+    {
+      "cycle": 2026,
+      "office": "Senate",
+      "amount": 79000,
+      "count": 159
+    }
+  ],
+  "top_committees": [
+    {
+      "cmte_id": "C001",
+      "cmte_name": "Republican National Committee",
+      "amount": 9700,
+      "count": 12
+    },
+    {
+      "cmte_id": "C002",
+      "cmte_name": "Lawler for Congress",
+      "amount": 3260,
+      "count": 22
+    },
+    {
+      "cmte_id": "C003",
+      "cmte_name": "DCCC",
+      "amount": 6100,
+      "count": 9
+    },
+    {
+      "cmte_id": "C004",
+      "cmte_name": "NRCC",
+      "amount": 5400,
+      "count": 7
+    }
+  ],
+  "office_labels": {
+    "H": "House",
+    "S": "Senate",
+    "P": "President"
+  },
+  "ici_labels": {
+    "I": "Incumbent",
+    "C": "Challenger",
+    "O": "Open seat"
+  }
+}
