@@ -47,6 +47,7 @@ def parse_cycle(cycle: int, session: requests.Session, birthdates: dict[str, str
         raise FileNotFoundError(f"missing {path} -- run parse_disbursements.py first")
     df = pd.read_csv(path, dtype=str, keep_default_na=False)
     df["transaction_amt"] = pd.to_numeric(df["transaction_amt"], errors="coerce").fillna(0.0)
+    df["cycle"] = pd.to_numeric(df["cycle"], errors="coerce").astype("Int64")
 
     cand_master = load_candidate_master(cycle, session)
     linkage = load_committee_candidate_linkage(cycle, session)

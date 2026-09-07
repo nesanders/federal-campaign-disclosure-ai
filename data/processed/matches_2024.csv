@@ -1,0 +1,402 @@
+cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_desc,memo_text,rpt_yr,sub_id,vendor_ids,vendor_names,vendor_groups,confidences,use_categories
+2024,C00810416,DONOR ATLAS,NEW YORK,NY,11/18/2024,300,DATA ACQUISITION,,,2024,4012320251134715942,donoratlas,DonorAtlas,political_specific,high,unspecified
+2024,C00832253,"HARRIS, CLAUDE",FOREST,VA,02/02/2024,500,SALARY,,,2024,4101020242069435093,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00832253,"HARRIS, CLAUDE",FOREST,VA,03/01/2024,500,SALARY,,,2024,4101020242069435094,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00832253,"HARRIS, CLAUDE",FOREST,VA,03/01/2024,904.64,REIMBURSEMENT FOR LODGING,,,2024,4101020242069435095,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00832253,"HARRIS, CLAUDE",FOREST,VA,03/29/2024,1000,REIMBURSEMENT FOR LODGING,,,2024,4101020242069435096,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00832253,"HARRIS, CLAUDE",FOREST,VA,05/06/2024,1000,SALARY,,,2024,4101020242069435185,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00832253,"HARRIS, CLAUDE",FOREST,VA,05/29/2024,500,SALARY,,,2024,4101020242069435186,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,01/08/2024,87.9,SOFTWARE,,,2024,4022220241826267087,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00787648,DONOR ATLAS,CAMBRIDGE,MA,07/26/2024,300,SOFTWARE RENTAL,,,2024,4111920241071179119,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
+2024,C00787648,DONOR ATLAS,CAMBRIDGE,MA,08/26/2024,300,SOFTWARE RENTAL,,,2024,4111920241071179120,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
+2024,C00787648,DONOR ATLAS,CAMBRIDGE,MA,09/26/2024,300,SOFTWARE RENTAL,,,2024,4111920241071179121,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
+2024,C00167015,QUILLER.AI,CHICAGO,IL,04/04/2024,185,FUNDRAISING SOFTWARE,,*,2024,4052220241950370866,quiller,Quiller,political_specific,high,fundraising;administrative_productivity
+2024,C00805275,GEMINI BEER COMPANY,GRAND JUNCTION,CO,11/04/2024,217.76,MEALS,Travel Expenses,*,2024,4012120251133121751,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2024,C00167015,QUILLER.AI,CHICAGO,IL,02/01/2024,185,SOFTWARE,,*,2024,4032620241887779538,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00846642,GEMINI SCREENPRINT,KEENE,NH,07/24/2024,255.88,POLO SHIRTS,,,2024,4100820242069283777,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,09/21/2023,14,SUBSCRIPTION,,*,2023,4101320231804489345,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,08/22/2023,14,SUBSCRIPTION,,*,2023,4101320231804489182,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,07/24/2023,14,SUBSCRIPTION,,*,2023,4101320231804489020,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00003418,OPENAI,SAN FRANCISCO,CA,06/09/2023,21.2,DUES AND SUBSCRIPTIONS,,,2023,4072420231756840308,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00027466,RUNWAY AI,NEWARK,DE,04/07/2023,336,SUBSCRIPTION,,,2023,4110120231808937256,runwayml,Runway,general_purpose,high,administrative_productivity
+2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,09/08/2023,21.2,OFFICE SUPPLIES,,,2023,4102320231806964814,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00792283,JASPER AI,AUSTIN,TX,04/18/2023,99,SOFTWARE,,,2023,4072620231757544703,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
+2024,C00792283,JASPER AI,AUSTIN,TX,06/20/2023,99,SOFTWARE,,,2023,4072620231757544662,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
+2024,C00792283,JASPER AI,AUSTIN,TX,05/18/2023,99,SOFTWARE,,,2023,4072620231757544657,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/19/2023,102.5,PAYROLL,,,2023,4021520241825181530,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/21/2023,103,PAYROLL,,,2023,4021520241825181531,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/27/2023,103,PAYROLL,,,2023,4021520241825181532,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/31/2023,102.5,PAYROLL,,,2023,4021520241825181533,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/31/2023,103.5,PAYROLL,,,2023,4021520241825181534,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/02/2023,203.5,PAYROLL,,,2023,4021520241825181535,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/07/2023,103,PAYROLL,,,2023,4021520241825181536,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/14/2023,102.5,PAYROLL,,,2023,4021520241825181537,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/14/2023,123.5,PAYROLL,,,2023,4021520241825181538,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/16/2023,83,PAYROLL,,,2023,4021520241825181539,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/18/2023,2000,PAYROLL,,,2023,4021520241825181540,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/21/2023,123.5,PAYROLL,,,2023,4021520241825181541,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/24/2023,80,PAYROLL,,,2023,4021520241825181542,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/25/2023,500,PAYROLL,,,2023,4021520241825181543,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/31/2023,500,PAYROLL,,,2023,4021520241825181544,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/12/2023,2000,PAYROLL,,,2023,4021520241825181545,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/29/2023,250,PAYROLL,,,2023,4021520241825181546,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/10/2023,200,PAYROLL,,,2023,4021520241825181547,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/12/2023,103,PAYROLL,,,2023,4021520241825181548,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/17/2023,1800,PAYROLL,,,2023,4021520241825181549,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/09/2023,103.5,PAYROLL,,,2023,4021520241825181550,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/20/2023,1200,PAYROLL,,,2023,4021520241825181551,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/01/2023,63.5,PAYROLL,,,2023,4021520241825181552,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/07/2023,63,PAYROLL,,,2023,4021520241825181553,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/07/2023,1600,PAYROLL,,,2023,4021520241825181554,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/12/2023,63.5,PAYROLL,,,2023,4021520241825181555,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/13/2023,600,PAYROLL,,,2023,4021520241825181556,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/21/2023,83.5,PAYROLL,,,2023,4021520241825181557,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/05/2023,1700,PAYROLL,,,2023,4021520241825181525,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/10/2023,83,PAYROLL,,,2023,4021520241825181526,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/10/2023,103,PAYROLL,,,2023,4021520241825181527,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/14/2023,103,PAYROLL,,,2023,4021520241825181528,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/17/2023,83.5,PAYROLL,,,2023,4021520241825181529,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00792283,JASPER AI,AUSTIN,TX,01/18/2023,99,SOFTWARE,,,2023,4042520231744065408,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
+2024,C00792283,JASPER AI,AUSTIN,TX,03/20/2023,99,SOFTWARE,,,2023,4042520231744065395,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
+2024,C00792283,JASPER AI,AUSTIN,TX,02/21/2023,99,SOFTWARE,,,2023,4042520231744065401,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
+2024,C00660795,DESCRIPT,SAN FRANCISCO,CA,02/23/2024,144,SOFTWARE,Administrative/Salary/Overhead Expenses ,,2024,4050920241922721126,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00660795,DESCRIPT,SAN FRANCISCO,CA,03/08/2024,138.49,SOFTWARE,Administrative/Salary/Overhead Expenses ,,2024,4050920241922721127,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,01/23/2023,14,SUBSCRIPTION,,*,2023,4041420231742380516,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,02/22/2023,14,SUBSCRIPTION,,*,2023,4041420231742380578,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,03/21/2023,14,SUBSCRIPTION,,*,2023,4041420231742380624,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00774109,CHAT GPT OPEN AI,SAN FRANCISCO,CA,06/25/2023,20,CANDIDATE IN KIND MEMO - SUBSCRIPTION,,,2023,4071820231753951806,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00792283,JASPER AI,AUSTIN,TX,07/18/2023,99,SUBSCRIPTIONS,,,2023,4102020231806624481,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00792283,JASPER AI,AUSTIN,TX,08/18/2023,99,SUBSCRIPTIONS,,,2023,4102020231806624496,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00792283,JASPER AI,AUSTIN,TX,09/18/2023,99,SUBSCRIPTIONS,,,2023,4102020231806624511,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00805275,OPENAI,SAN FRANCISCO,CA,07/19/2023,1.31,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,2023,4102420231807122960,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00805275,OPENAI,SAN FRANCISCO,CA,08/21/2023,6.98,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,2023,4102420231807123017,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00805275,OPENAI,SAN FRANCISCO,CA,09/13/2023,10.1,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,2023,4102420231807123059,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,05/17/2023,396,TRANSCRIPTION SERVICES,,,2023,4071820231753951209,xai_grok,xAI (Grok),general_purpose,high,unspecified
+2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,06/21/2023,512,TRANSCRIPTION SERVICES,,,2023,4071820231753951104,xai_grok,xAI (Grok),general_purpose,high,unspecified
+2024,C00754242,"OPENAI, L.L.C.",SAN FRANCISCO,CA,12/24/2024,40,MARKETING / GRAPHIC DESIGN $20 + 10/24 $20 NOT REPORTED,,,2024,4020320251140941387,openai,OpenAI (ChatGPT),general_purpose,high,advertising_creative
+2024,C00370056,"STRAMONINE, CLAUDE",ONTARIO,NY,03/01/2023,-12.5,VOID OF UNCASHED REFUND CHECK OF CONTRIBUTION RECEIVED AFTER RETIREMENT,,,2023,4071020231753100306,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00003418,OPENAI,SAN FRANCISCO,CA,04/10/2023,21.2,DUES AND SUBSCRIPTIONS,,,2023,4052220231748076778,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00395848,COMMITTEE TO ELECT CLAUDE CUMMINGS,HOUSTON,TX,07/12/2023,10000,CONTRIBUTION.,,,2023,4110120231808897661,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,04/21/2023,14,SUBSCRIPTION,,*,2023,4071320231753226577,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,06/22/2023,14,SUBSCRIPTION,,*,2023,4071320231753226944,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,05/22/2023,14,SUBSCRIPTION,,*,2023,4071320231753226678,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,04/10/2024,15,IT SUPPORT/MAINTENANCE,,,2024,4052920241951267362,descript,Descript,general_purpose,high,unspecified
+2024,C00003418,OPENAI,SAN FRANCISCO,CA,05/10/2023,21.2,DUES AND SUBSCRIPTIONS,,,2023,4062220231752287225,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00792283,JASPER AI,AUSTIN,TX,10/18/2023,99,SUBSCRIPTIONS,,,2023,4022120241825730419,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00792283,JASPER AI,AUSTIN,TX,11/20/2023,99,SUBSCRIPTIONS,,,2023,4022120241825730428,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00792283,JASPER AI,AUSTIN,TX,12/18/2023,99,SUBSCRIPTIONS,,,2023,4022120241825730438,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00848903,CHATGPT,SAN FRANCISCO,CA,10/02/2023,20,SOFTWARE SUBSCRIPTION,,,2023,4020120241818834709,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00848903,CHATGPT,SAN FRANCISCO,CA,11/02/2023,20,SOFTWARE SUBSCRIPTION,,,2023,4020120241818834710,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00848903,CHATGPT,SAN FRANCISCO,CA,12/02/2023,20,SOFTWARE SUBSCRIPTION,,,2023,4020120241818834711,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00019331,QUILLER.AI,CHICAGO,IL,12/07/2023,900,SOFTWARE,,,2023,4052920241951274738,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00019331,QUILLER.AI,CHICAGO,IL,12/07/2023,900,SOFTWARE,,,2023,4052920241951274737,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,11/09/2023,21.2,OFFICE SUPPLIES,,,2023,4011920241815860328,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,10/10/2023,21.2,OFFICE SUPPLIES,,,2023,4112420231811694045,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00695346,CHAT GPT,,,03/23/2023,7.82,DUES/SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,2023,4112720231811758151,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,03/29/2023,.43,DUES/SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,2023,4112720231811758190,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,03/16/2023,.7,DUES/SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,2023,4112720231811758114,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,12/05/2023,76.94,SOFTWARE,,,2023,4013120241818184902,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,10/16/2023,75.7,SUBSCRIPTION,,,2023,4013120241818183391,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,10/25/2024,90,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4121320241076580187,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,11/20/2024,3.87,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4121320241076580188,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,11/25/2024,120,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4121320241076580189,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00558486,OPENAI,SAN FRANCSISCO,CA,07/12/2023,15,SOFTWARE SUBSCRIPTIONS,,,2023,4011720241815704854,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,05/05/2023,7.94,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4011120241815338011,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,06/08/2023,5.45,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4011120241815338197,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,04/07/2023,3.2,DUES/SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,2023,4011120241815337842,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,05/17/2023,1.05,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4011120241815338063,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,05/03/2023,5.32,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4011120241815337984,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,06/26/2023,3.52,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4011120241815338230,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,06/26/2023,.47,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4011120241815338257,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,04/15/2023,3.89,DUES/SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,2023,4011120241815337917,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,05/09/2023,1.98,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4011120241815338038,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,06/06/2023,1.8,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4011120241815338171,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,05/19/2023,5.45,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4011120241815338115,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,06/02/2023,5.77,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4011120241815338143,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,04/29/2023,4.5,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4011120241815337953,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,04/09/2023,1.54,DUES/SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,2023,4011120241815337880,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,05/17/2023,.26,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4011120241815338090,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,04/05/2023,2.42,DUES/SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,2023,4011120241815337804,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00692319,QUILLER.AI,CHICAGO,IL,09/05/2023,185,SOFTWARE RENTAL,,,2023,4020820241823857099,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00692319,QUILLER.AI,CHICAGO,IL,10/02/2023,185,SOFTWARE RENTAL,,,2023,4020820241823857100,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00692319,QUILLER.AI,CHICAGO,IL,11/02/2023,185,SOFTWARE RENTAL,,,2023,4020820241823857101,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00692319,QUILLER.AI,CHICAGO,IL,08/02/2023,192.5,SOFTWARE RENTAL,,,2023,4020820241823857098,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00588657,DESCRIPT,SAN FRANCISCO,CA,10/01/2023,288,DIGITAL SERVICES,,,2023,4021620241825294386,descript,Descript,general_purpose,high,unspecified
+2024,C00857714,MIDJOURNEY,,,12/18/2023,10,IN-KIND FROM CANDIDATE - TECHNICAL/COMPUTER SUPPORT,,*,2023,4021820241825371710,midjourney,Midjourney,general_purpose,high,unspecified
+2024,C00835041,QUILLER,CHICAGO,IL,07/12/2023,100,SOFTWARE,Administrative/Salary/Overhead Expenses ,,2023,4020220241819190737,quiller,Quiller,political_specific,medium,administrative_productivity
+2024,C00835041,QUILLER,CHICAGO,IL,08/14/2023,370,SOFTWARE,Administrative/Salary/Overhead Expenses ,,2023,4020120241818855226,quiller,Quiller,political_specific,medium,administrative_productivity
+2024,C00835041,QUILLER,CHICAGO,IL,09/11/2023,370,SOFTWARE,Administrative/Salary/Overhead Expenses ,,2023,4020220241819190608,quiller,Quiller,political_specific,medium,administrative_productivity
+2024,C00835041,QUILLER,CHICAGO,IL,10/12/2023,370,SOFTWARE,Administrative/Salary/Overhead Expenses ,,2023,4020220241819190319,quiller,Quiller,political_specific,medium,administrative_productivity
+2024,C00835041,QUILLER,CHICAGO,IL,11/13/2023,370,SOFTWARE,Administrative/Salary/Overhead Expenses ,,2023,4020120241818855338,quiller,Quiller,political_specific,medium,administrative_productivity
+2024,C00853572,TEXAS FOR JARED LOVELACE,LA GRANGE,TX,12/02/2023,30,DESCRIPT CREATOR DECEMBER EXPENSE,Administrative/Salary/Overhead Expenses ,,2023,4013020241817742127,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00810416,DONOR ATLAS,NEW YORK,NY,09/17/2024,300,DATA ACQUISITION,,,2024,4111420241068899583,donoratlas,DonorAtlas,political_specific,high,unspecified
+2024,C00695346,CHAT GPT,,,08/09/2023,6.13,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4021220241824591184,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,07/05/2023,4.82,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4021220241824591039,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,07/13/2023,11.55,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4021220241824591072,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,07/24/2023,.11,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4021220241824591137,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,07/24/2023,5.42,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4021220241824591109,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00695346,CHAT GPT,,,08/17/2023,8.45,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,2023,4021220241824591220,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00812966,"TER MAAT, MICHAEL",KINSALE,VA,08/14/2023,116.99,IN-KIND - OPENAI,,,2023,4011120241815338668,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00010603,DESCRIPT INC.,SAN FRANCISCO,CA,11/19/2023,288,SOFTWARE,,*,2023,4020520241819536650,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,10/24/2023,14,SUBSCRIPTION,,*,2023,4012620241817139710,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00864124,QUILLER.AI,CHICAGO,IL,02/23/2024,142.5,SOFTWARE,,,2024,4051320241923194753,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00864124,QUILLER.AI,CHICAGO,IL,03/25/2024,185,SOFTWARE,,,2024,4051320241923194754,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00836916,SONIX.AI,EL SEGUNDO,CA,06/05/2024,181.23,SOFTWARE,,,2024,4072320241978625593,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00836916,SONIX.AI,EL SEGUNDO,CA,06/05/2024,792,SOFTWARE,,,2024,4072320241978625707,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00631549,CHORUS AI,BROOKLYN,NY,08/30/2024,350,COMPUTER SOFTWARE,,*,2024,4111320241068406353,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
+2024,C00631549,CHORUS AI,BROOKLYN,NY,07/30/2024,350,COMPUTER SOFTWARE,,*,2024,4111320241068406287,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
+2024,C00864579,DONOR ATLAS,,,10/21/2024,300,FUNDRAISING SERVICE,,,2024,4121120241075776742,donoratlas,DonorAtlas,political_specific,high,fundraising
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/07/2023,500,PAYROLL,,,2023,4080420231763305446,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/13/2023,83,PAYROLL,,,2023,4080420231763305447,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/17/2023,83.5,PAYROLL,,,2023,4080420231763305448,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/21/2023,103.5,PAYROLL,,,2023,4080420231763305449,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/21/2023,83,PAYROLL,,,2023,4080420231763305450,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/01/2023,43,PAYROLL,,,2023,4080420231763305451,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/03/2023,203.5,PAYROLL,,,2023,4080420231763305452,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/13/2023,1100,PAYROLL,,,2023,4080420231763305453,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/20/2023,63,PAYROLL,,,2023,4080420231763305454,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/24/2023,43.5,PAYROLL,,,2023,4080420231763305455,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/27/2023,43,PAYROLL,,,2023,4080420231763305456,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/03/2023,103.5,PAYROLL,,,2023,4080420231763305442,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/09/2023,1800,PAYROLL,,,2023,4080420231763305443,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/03/2023,103,PAYROLL,,,2023,4080420231763305444,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/07/2023,500,PAYROLL,,,2023,4080420231763305445,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/12/2023,103.5,PAYROLL,,,2023,4080420231763305462,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/13/2023,1000,PAYROLL,,,2023,4080420231763305463,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/17/2023,500,PAYROLL,,,2023,4080420231763305464,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/28/2023,203.5,PAYROLL,,,2023,4080420231763305465,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/05/2023,2000,PAYROLL,,,2023,4080420231763305466,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/09/2023,103.5,PAYROLL,,,2023,4080420231763305467,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/15/2023,103.5,PAYROLL,,,2023,4080420231763305468,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/17/2023,102.5,PAYROLL,,,2023,4080420231763305469,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/19/2023,103.5,PAYROLL,,,2023,4080420231763305470,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/26/2023,63,PAYROLL,,,2023,4080420231763305471,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/05/2023,60,PAYROLL,,,2023,4080420231763305472,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/05/2023,63,PAYROLL,,,2023,4080420231763305473,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/12/2023,143,PAYROLL,,,2023,4080420231763305474,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/12/2023,2000,PAYROLL,,,2023,4080420231763305475,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/12/2023,143.5,PAYROLL,,,2023,4080420231763305476,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/28/2023,202.5,PAYROLL,,,2023,4080420231763305477,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/30/2023,103,PAYROLL,,,2023,4080420231763305478,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/03/2023,83,PAYROLL,,,2023,4080420231763305457,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/03/2023,63,PAYROLL,,,2023,4080420231763305458,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/06/2023,2000,PAYROLL,,,2023,4080420231763305459,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/10/2023,103,PAYROLL,,,2023,4080420231763305460,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/10/2023,43.5,PAYROLL,,,2023,4080420231763305461,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00744946,GEMINI AUDIO VISUAL INC.,STONEHAM,MA,09/20/2024,4894.63,FUNDRAISING EVENT AUDIO VISUAL SERVICES,,*,2024,4051020251190801702,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,fundraising
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/03/2024,500,PAYROLL,,,2024,4120620241075121266,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/04/2024,500,PAYROLL,,,2024,4120620241075121267,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/04/2024,203.5,PAYROLL,,,2024,4120620241075121268,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/07/2024,5000,PAYROLL,,,2024,4120620241075121269,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00792283,JASPER AI,AUSTIN,TX,02/20/2024,99,SUBSCRIPTION,,,2024,4050220241921400969,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
+2024,C00792283,JASPER AI,AUSTIN,TX,03/18/2024,99,SUBSCRIPTION,,,2024,4050220241921400973,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
+2024,C00792283,JASPER AI,AUSTIN,TX,01/18/2024,99,SUBSCRIPTION,,,2024,4050220241921400903,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
+2024,C00825851,CHATGPT,SAN FRANCISCO,CA,05/10/2024,20,CREDIT CARD PMT [SB21B.7463]: SOFTWARE SUBSCRIPTION,,,2024,4081220242011770931,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,07/10/2023,21.2,OFFICE SUPPLIES,,,2023,4091320231802215538,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00825851,OPENAI,SAN FRANCISCO,CA,05/13/2024,100,CREDIT CARD PMT [SB21B.7463]: SOFTWARE SUBSCRIPTION,,,2024,4081220242011770946,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,08/10/2023,21.2,OFFICE SUPPLIES,,,2023,4092520231803048986,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,03/04/2024,30,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4041120241895628365,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,03/25/2024,90,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4041120241895628366,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00866244,GEMINI DIGITAL,SAN FRANCISCO,CA,02/29/2024,1000,WEBSITE/DIGITAL,,,2024,4042220241897463662,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2024,C00866244,GEMINI DIGITAL,SAN FRANCISCO,CA,03/04/2024,250,WEBSITE/DIGITAL,,,2024,4042220241897463663,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2024,C00836916,SONIX.AI,EL SEGUNDO,CA,03/03/2024,100.52,SOFTWARE,,,2024,4051720241949620635,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00836916,SONIX.AI,EL SEGUNDO,CA,04/02/2024,145.22,SOFTWARE,,,2024,4052120241950064168,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00836916,SONIX.AI,EL SEGUNDO,CA,04/22/2024,210.06,SOFTWARE,,,2024,4052120241950065170,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00836916,SONIX.AI,EL SEGUNDO,CA,04/22/2024,21.19,SOFTWARE,,,2024,4052120241950065270,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00556506,OPENAI CHATGPT,SAN FRANCISCO,CA,07/03/2024,20,SOFTWARE,,*,2024,4011520251130998799,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00556506,OPENAI CHATGPT,SAN FRANCISCO,CA,10/04/2024,20,SOFTWARE,,*,2024,4010620251127049581,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00844225,CHAT GPT,SAN FRANCISCO,CA,11/14/2024,320,SUBSCRIPTION,,,2024,4123020241125009253,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,03/08/2024,21.2,OFFICE SUPPLIES,,,2024,4051420241923573781,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00843110,OPENAI,SAN FRANCISCO,CA,03/28/2024,160,SUBSCRIPTION REIMBURSEMENT,,*,2024,4050320241921550222,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00167015,QUILLER.AI,CHICAGO,IL,03/07/2024,185,SOFTWARE,,*,2024,4051320241923187909,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00703975,CHORUS AI,BROOKLYN,NY,06/21/2024,2500,SOFTWARE,,,2024,4072520241979615302,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
+2024,C00792283,JASPER AI,AUSTIN,TX,04/18/2024,99,SUBSCRIPTIONS,,,2024,4050320241921559551,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00851733,CHATGPT,SAN FRANCISCO,CA,09/16/2024,90,CAMPAIGN SOFTWARE,,,2024,4111420241068899002,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/07/2024,2000,PAYROLL,,,2024,4121620241077048935,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/11/2024,250,PAYROLL,,,2024,4121620241077048936,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/12/2024,100,PAYROLL,,,2024,4121620241077048937,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/15/2024,1800,PAYROLL,,,2024,4121620241077048938,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/25/2024,7500,PAYROLL,,,2024,4121620241077049084,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/23/2024,500,PAYROLL,,,2024,4121620241077049078,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/30/2024,203,PAYROLL,,,2024,4121620241077049079,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/30/2024,103,PAYROLL,,,2024,4121620241077049080,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/03/2024,500,PAYROLL,,,2024,4121620241077049081,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/04/2024,9500,PAYROLL,,,2024,4121620241077049082,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/06/2024,5000,PAYROLL,,,2024,4121620241077049083,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/01/2024,500,PAYROLL,,,2024,4121620241077049073,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/08/2024,1650,PAYROLL,,,2024,4121620241077049074,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/06/2024,2000,PAYROLL,,,2024,4121620241077049075,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/14/2024,500,PAYROLL,,,2024,4121620241077049076,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/15/2024,2750,PAYROLL,,,2024,4121620241077049077,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/20/2024,500,PAYROLL,,,2024,4121620241077048808,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/12/2024,6000,PAYROLL,,,2024,4121620241077048806,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/19/2024,5000,PAYROLL,,,2024,4121620241077048807,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/23/2024,15000,PAYROLL,,,2024,4121620241077048809,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/23/2024,5000,PAYROLL,,,2024,4121620241077048810,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/30/2024,500,PAYROLL,,,2024,4121620241077048811,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/24/2024,500,PAYROLL,,,2024,4121620241077048793,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/10/2024,6000,PAYROLL,,,2024,4121620241077048792,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/25/2024,7000,PAYROLL,,,2024,4121620241077048794,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/30/2024,1000,PAYROLL,,,2024,4121620241077048795,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/31/2024,1000,PAYROLL,,,2024,4121620241077048796,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/02/2024,500,PAYROLL,,,2024,4121620241077048797,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/07/2024,7500,PAYROLL,,,2024,4121620241077048798,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/14/2024,8500,PAYROLL,,,2024,4121620241077048799,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/19/2024,500,PAYROLL,,,2024,4121620241077048800,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/20/2024,8000,PAYROLL,,,2024,4121620241077048801,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/23/2024,500,PAYROLL,,,2024,4121620241077048802,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/28/2024,500,PAYROLL,,,2024,4121620241077048803,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/03/2024,7500,PAYROLL,,,2024,4121620241077048804,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/10/2024,500,PAYROLL,,,2024,4121620241077048805,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00457556,CHATGPT,SAN FRANCISCO,CA,10/21/2024,21.8,SUBSCRIPTIONS,,,2024,4012220251133586074,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00836916,SONIX.AI,EL SEGUNDO,CA,07/01/2024,206.65,SOFTWARE,,,2024,4082020242014436531,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00836916,SONIX.AI,EL SEGUNDO,CA,07/01/2024,1.48,SOFTWARE,,,2024,4082020242014436230,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00631549,CHORUS AI,BROOKLYN,NY,09/29/2024,350,COMPUTER SOFTWARE,,*,2024,4031820251180312445,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
+2024,C00631549,CHORUS AI,BROOKLYN,NY,10/30/2024,350,COMPUTER SOFTWARE,,*,2024,4031820251180312503,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
+2024,C00754242,"OPENAI, L.L.C.",SAN FRANCISCO,CA,08/29/2024,20,AI FOR GRAPHIC DESIGN,Administrative/Salary/Overhead Expenses ,,2024,4112620241073702729,openai,OpenAI (ChatGPT),general_purpose,high,advertising_creative;administrative_productivity
+2024,C00864124,QUILLER.AI,CHICAGO,IL,07/24/2024,185,SOFTWARE,,,2024,4111320241068394643,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,07/03/2024,15.9,OFFICE SUPPLIES,,,2024,4082720242015985747,descript,Descript,general_purpose,high,unspecified
+2024,C00764233,OPENAI,SAN FRANCISCO,CA,11/09/2024,63.6,SOFTWARE,,*,2024,4121820241107569229,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,12/26/2024,120,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4012920251138487409,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00792283,JASPER AI,AUSTIN,TX,09/18/2024,99,SUBSCRIPTIONS,,,2024,4111520241069663544,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00792283,JASPER AI,AUSTIN,TX,07/18/2024,99,SUBSCRIPTIONS,,,2024,4111520241069663542,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00792283,JASPER AI,AUSTIN,TX,08/19/2024,99,SUBSCRIPTIONS,,,2024,4111520241069663537,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,01/10/2024,21.2,OFFICE SUPPLIES,,,2024,4022820241858477442,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,02/02/2024,76.85,SOFTWARE,,,2024,4032120241885460542,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00866244,GEMINI DIGITAL,SAN FRANCISCO,CA,02/12/2024,1200,DIGITAL/MEDIA CONSULTING,,,2024,4022620241826703301,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2024,C00774109,CHAT GPT OPEN AI,SAN FRANCISCO,CA,02/25/2024,20,CANDIDATE IN-KIND MEMO ENTRY - SUBSCRIPTION,,,2024,4032120241885457200,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00792283,JASPER AI,AUSTIN,TX,12/18/2024,104.94,SUBSCRIPTIONS,,,2024,4021220251172451138,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00141812,"JARBOE, AARON CLAUDE",WASHINGTON,DC,12/13/2024,2854.86,PAYROLL,,,2024,4050620251188972162,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00141812,"JARBOE, AARON CLAUDE",WASHINGTON,DC,12/30/2024,3470.13,PAYROLL,,,2024,4050620251188972163,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00141812,"JARBOE, AARON CLAUDE",WASHINGTON,DC,11/29/2024,2854.86,PAYROLL,,,2024,4050620251188972161,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00810416,DONOR ATLAS,NEW YORK,NY,12/17/2024,300,DATA ACQUISITION,,,2024,4012320251134731095,donoratlas,DonorAtlas,political_specific,high,unspecified
+2024,C00703975,CHORUS AI,BROOKLYN,NY,08/22/2024,2500,SOFTWARE,,,2024,4100120242068333790,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
+2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,10/10/2024,15.9,IT SUPPORT/MAINTENANCE,,,2024,4103120241016263145,descript,Descript,general_purpose,high,unspecified
+2024,C00851733,CHATGPT,SAN FRANCISCO,CA,10/15/2024,125.69,CAMPAIGN SOFTWARE,,,2024,4011520251131012494,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00851733,CHATGPT,SAN FRANCISCO,CA,11/15/2024,120,CAMPAIGN SOFTWARE,,,2024,4011520251131012495,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,09/25/2024,90,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4101520242069867025,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,07/25/2024,120,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4101520242069867023,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,08/26/2024,120,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4101520242069867024,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00836916,SONIX.AI,EL SEGUNDO,CA,09/03/2024,22.24,SOFTWARE,,,2024,4102320242077134237,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00836916,SONIX.AI,EL SEGUNDO,CA,09/03/2024,200.92,SOFTWARE,,,2024,4102320242077134640,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00815415,"DORCELLY, JEAN CLAUDE",SPRING VALLEY,NY,06/18/2024,400,EVENT FEE,Administrative/Salary/Overhead Expenses ,,2024,4121020241075532372,anthropic,Anthropic (Claude),general_purpose,medium,administrative_productivity
+2024,C00825851,OPENAI,SAN FRANCISCO,CA,08/10/2024,20,CREDIT CARD PMT [SB21B.8223]: SOFTWARE SUBSCRIPTION,,,2024,4112020241071618610,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00588657,DESCRIPT,SAN FRANCISCO,CA,10/01/2024,288,DIGITAL SERVICES,,,2024,4112120241072141040,descript,Descript,general_purpose,high,unspecified
+2024,C00703975,CHORUS AI,BROOKLYN,NY,10/22/2024,2500,SOFTWARE,,,2024,4051420251197559388,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
+2024,C00872739,DONOR ATLAS,MIDDLETOWN,DE,09/26/2024,300,DONOR DATABASE ACCOUNT,,,2024,4121120241075767227,donoratlas,DonorAtlas,political_specific,high,fundraising
+2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,11/04/2024,.6,SOFTWARE,,,2024,4031720251180271346,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00864124,QUILLER.AI,CHICAGO,IL,04/26/2024,185,SOFTWARE,,,2024,4053020241951660972,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00792283,JASPER AI,AUSTIN,TX,10/18/2024,104.94,SUBSCRIPTIONS,,,2024,4013120251140135465,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00876383,QUILLER AI,CHICAGO,IL,08/20/2024,185,SOFTWARE,Administrative/Salary/Overhead Expenses ,,2024,4011520251131008245,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00876383,QUILLER AI,CHICAGO,IL,07/21/2024,185,SOFTWARE,Administrative/Salary/Overhead Expenses ,,2024,4011520251131008175,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00810416,DONOR ATLAS,NEW YORK,NY,10/16/2024,300,DATA ACQUISITION,,,2024,4121020241075533111,donoratlas,DonorAtlas,political_specific,high,unspecified
+2024,C00764233,OPENAI,SAN FRANCISCO,CA,10/11/2024,63.6,SOFTWARE,,*,2024,4112020241071651560,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00042366,JEAN CLAUDE RESTAURANT,NEW YORK,NY,09/15/2024,420,CATERING/FACILITIES/ EVENT COSTS,,MEMO ENTRY,2024,4121620241077030467,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00547240,DONOR ATLAS,ARLINGTON,VA,10/01/2024,300,SOFTWARE SUBSCRIPTION,,,2024,4120620241075131684,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
+2024,C00836916,SONIX.AI,EL SEGUNDO,CA,10/08/2024,39.96,SOFTWARE,,,2024,4102520242082521402,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00764233,OPENAI,SAN FRANCISCO,CA,12/09/2024,63.6,SOFTWARE,,*,2024,4040420251183243212,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00845461,"GREEN, CLAUDE",SYRACUSE,NY,10/28/2024,500,CANVASSING,,,2024,4021320251173501906,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00856153,QUILLER,CHICAGO,IL,05/30/2024,285,DIGITAL SERVICES,Administrative/Salary/Overhead Expenses ,,2024,4080520242000475971,quiller,Quiller,political_specific,medium,administrative_productivity
+2024,C00811711,GEMINI,NEW YORK,NY,07/10/2024,229,COVERING EXPENSES,Administrative/Salary/Overhead Expenses ,,2024,4071020241972738389,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,04/04/2024,30,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4071020241972737340,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,04/25/2024,90,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4071020241972737341,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,04/29/2024,28,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4071020241972737342,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,05/06/2024,30,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4071020241972737343,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,05/28/2024,120,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4071020241972737344,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,06/25/2024,120,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,2024,4071020241972737345,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,01/31/2024,2291.67,PAYROLL,,,2024,4053020241951645049,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,CHATGPT,SAN FRANCISCO,CA,03/04/2024,20,SUBSCRIPTION,,SB.47,2024,4053020241951645518,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,01/12/2024,2291.67,PAYROLL,,,2024,4053020241951644876,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,02/15/2024,2291.67,PAYROLL,,,2024,4053020241951645438,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00167015,QUILLER.AI,CHICAGO,IL,05/02/2024,185,FUNDRAISING SOFTWARE,,*,2024,4062520241962767372,quiller,Quiller,political_specific,high,fundraising;administrative_productivity
+2024,C00851733,CHATGPT,SAN FRANCISCO,CA,12/16/2024,120,CAMPAIGN SOFTWARE,,,2024,4012720251135368647,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00872739,DONOR ATLAS,MIDDLETOWN,DE,10/28/2024,300,DONOR DATABASE ACCOUNT,,,2024,4121220241076076311,donoratlas,DonorAtlas,political_specific,high,fundraising
+2024,C00697334,DESCRIPT,SAN FRANCISCO,CA,06/20/2024,60,DESCRIPT - MEDIA EDITING SOFTWARE,Administrative/Salary/Overhead Expenses ,*,2024,4021320251173482017,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00697334,OPENAI LP,SAN FRANCISCO,CA,03/13/2024,65.4,SOFTWARE AI ASSISTANT.,Administrative/Salary/Overhead Expenses ,*,2024,4021320251173465574,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00697334,OPENAI,SAN FRANCISCO,CA,05/15/2024,65.4,SOFTWARE,Advertising Expenses ,*,2024,4021320251173469114,openai,OpenAI (ChatGPT),general_purpose,high,advertising_creative;administrative_productivity
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/27/2024,500,PAYROLL,,,2024,4021220251172451355,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/01/2024,3000,PAYROLL,,,2024,4021220251172451356,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/10/2024,500,PAYROLL,,,2024,4021220251172451357,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/12/2024,500,PAYROLL,,,2024,4021220251172451358,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/17/2024,500,PAYROLL,,,2024,4021220251172451359,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/19/2024,500,PAYROLL,,,2024,4021220251172451360,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00697334,DESCRIPT,SAN FRANCISCO,CA,03/20/2024,60,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,2024,4021320251173465663,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00697334,OPENAI,SAN FRANCISCO,CA,06/13/2024,65.4,AI ASSISTANT.,Administrative/Salary/Overhead Expenses ,*,2024,4021320251173482096,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00697334,DESCRIPT,SAN FRANCISCO,CA,04/20/2024,60,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,2024,4021320251173467941,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00697334,OPENAI LP,SAN FRANCISCO,CA,04/13/2024,65.4,SOFTWARE,Advertising Expenses ,*,2024,4021320251173467918,openai,OpenAI (ChatGPT),general_purpose,high,advertising_creative;administrative_productivity
+2024,C00697334,OPENAI,SAN FRANCISCO,CA,05/11/2024,15,SOFTWARE,Advertising Expenses ,*,2024,4021320251173469067,openai,OpenAI (ChatGPT),general_purpose,high,advertising_creative;administrative_productivity
+2024,C00697334,DESCRIPT,SAN FRANCISCO,CA,05/20/2024,60,VIDEO EDITOR,Advertising Expenses ,*,2024,4021320251173469090,descript,Descript,general_purpose,high,advertising_creative
+2024,C00697334,DESCRIPT,SAN FRANCISCO,CA,02/20/2024,60,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,2024,4021320251173465452,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00697334,OPENAI LP,SAN FRANCISCO,CA,02/13/2024,65.4,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,2024,4021320251173465473,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00805275,OPENAI,SAN FRANCISCO,CA,11/22/2023,.55,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,2023,4020920241824381472,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00805275,OPENAI,SAN FRANCISCO,CA,12/31/2023,10,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,2023,4020920241824381537,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00805275,OPENAI,SAN FRANCISCO,CA,12/31/2023,20,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,2023,4020920241824381538,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00805275,OPENAI,SAN FRANCISCO,CA,12/31/2023,.85,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,2023,4020920241824381536,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00805275,OPENAI,SAN FRANCISCO,CA,10/23/2023,5.43,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,2023,4020920241824381441,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,09/20/2023,111.05,SUBSCRIPTION,,,2023,4020220241819199842,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,08/21/2023,132.23,SUBSCRIPTION,,,2023,4020220241819199982,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,07/19/2023,218.53,SUBSCRIPTION,,,2023,4020220241819199759,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,12/08/2023,21.2,OFFICE SUPPLIES,,,2023,4020820241823881698,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00800003,CLAUDE'S PRIME SEAFOOD,PERRYSBURG,OH,06/21/2023,2415.95,FUNDRAISING EVENT FOOD AND BEVERAGE,,,2023,4022020241825471127,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2024,C00287904,CLAUDE CUMMINGS FOR CWA PRESIDENT,WASHINGTON,DC,04/28/2023,10000,DONATION,Donations,,2023,4112020241071642094,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,12/15/2023,2291.67,PAYROLL,,,2023,4052920241951281770,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,11/30/2023,2291.67,PAYROLL,,,2023,4052920241951281382,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,07/31/2023,2291.67,PAYROLL,,,2023,4052920241951278960,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,07/14/2023,1874.97,PAYROLL,,,2023,4052920241951278853,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,07/14/2023,2291.67,PAYROLL,,,2023,4052920241951278854,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,12/29/2023,2291.67,PAYROLL,,,2023,4052920241951281946,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,10/13/2023,2291.67,PAYROLL,,,2023,4052920241951280617,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,08/15/2023,2291.67,PAYROLL,,,2023,4052920241951279418,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,10/31/2023,2291.67,PAYROLL,,,2023,4052920241951280775,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,09/15/2023,2291.67,PAYROLL,,,2023,4052920241951280081,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,11/15/2023,2291.67,PAYROLL,,,2023,4052920241951281168,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,09/29/2023,2291.67,PAYROLL,,,2023,4052920241951280234,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00834077,"WHEELER, CLAUDE",MARIETTA,GA,08/31/2023,2291.67,PAYROLL,,,2023,4052920241951279554,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00667741,"CLAUDE, RONALD",HYDE PARK,MA,04/04/2023,250,TRANSLATION SERVICES,,,2023,4050420241921580021,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00744946,GEMINI G.E.L. LLC,WEST HOLLYWOOD,CA,10/18/2024,182000,ARTWORK,,* IN-KIND RECEIVED,2024,4051320251194679176,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2024,C00703975,CHORUS AI,BROOKLYN,NY,07/23/2024,2500,SOFTWARE,,,2024,4102320242077115244,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
+2024,C00795211,"AARU, INC",WINNETKA,IL,07/18/2024,2400,RESEARCH,,,2024,4101620242069923435,aaru,Aaru,political_specific,medium,research_strategy
+2024,C00795211,"AARU, INC",WINNETKA,IL,09/03/2024,4000,RESEARCH,,,2024,4101620242069923436,aaru,Aaru,political_specific,medium,research_strategy
+2024,C00556506,OPENAI CHATGPT,SAN FRANCISCO,CA,11/05/2024,20,SOFTWARE,,*,2024,4041420251184147769,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/25/2024,7500,PAYROLL,,,2024,4011520251131000765,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/31/2024,4000,PAYROLL,,,2024,4011520251131000766,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/04/2024,8000,PAYROLL,,,2024,4011520251131000767,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/22/2024,500,PAYROLL,,,2024,4011520251131000768,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00703975,CHORUS AI,BROOKLYN,NY,10/02/2024,2500,SOFTWARE,,,2024,4051420251197655167,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
+2024,C00754242,"OPENAI, L.L.C.",SAN FRANCISCO,CA,11/25/2024,20,MARKETING / GRAPHIC DESIGN,,,2024,4010820251127677499,openai,OpenAI (ChatGPT),general_purpose,high,advertising_creative
+2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,09/06/2024,15.9,IT SUPPORT/MAINTENANCE,,,2024,4102820242086006957,descript,Descript,general_purpose,high,unspecified
+2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,12/10/2024,15.9,IT SUPPORT/MAINTENANCE,,,2024,4051320251194668487,descript,Descript,general_purpose,high,unspecified
+2024,C00003418,ANTHROPIC,SAN FRANCISCO,CA,12/10/2024,21.2,TRAVEL EXPENSES,,,2024,4051320251194668445,anthropic,Anthropic (Claude),general_purpose,high,unspecified
+2024,C00801431,CHATGPT,SAN FRANCISCO,CA,09/09/2024,20,WEBSITE,Administrative/Salary/Overhead Expenses ,,2024,4111320241068416690,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00003418,ANTHROPIC,SAN FRANCISCO,CA,11/08/2024,21.2,TRAVEL EXPENSES,,,2024,4040220251183148831,anthropic,Anthropic (Claude),general_purpose,high,unspecified
+2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,11/08/2024,15.9,IT SUPPORT/MAINTENANCE,,,2024,4040220251183148863,descript,Descript,general_purpose,high,unspecified
+2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,07/29/2024,60,DIGITAL SERVICES,,,2024,4112120241072152464,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,08/28/2024,60,DIGITAL SERVICES,,,2024,4112120241072152465,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,09/30/2024,60,DIGITAL SERVICES,,,2024,4112120241072152466,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00854588,DONORATLAS,WASHINGTON,DC,07/03/2024,300,LIST ACQUISITION,,,2024,4021320251173482936,donoratlas,DonorAtlas,political_specific,high,unspecified
+2024,C00854588,DONORATLAS,WASHINGTON,DC,08/02/2024,300,LIST ACQUISITION,,,2024,4021320251173470394,donoratlas,DonorAtlas,political_specific,high,unspecified
+2024,C00854588,DONORATLAS,WASHINGTON,DC,09/03/2024,300,LIST ACQUISITION,,,2024,4021320251173470395,donoratlas,DonorAtlas,political_specific,high,unspecified
+2024,C00854588,DONORATLAS,WASHINGTON,DC,10/03/2024,300,LIST ACQUISITION,,,2024,4021320251173480533,donoratlas,DonorAtlas,political_specific,high,unspecified
+2024,C00854588,DONORATLAS,WASHINGTON,DC,11/03/2024,300,LIST ACQUISITION,,,2024,4021320251173482726,donoratlas,DonorAtlas,political_specific,high,unspecified
+2024,C00787648,DONOR ATLAS,CAMBRIDGE,MA,10/28/2024,300,SOFTWARE RENTAL,,,2024,4041120251183919478,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
+2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,06/13/2024,15.9,IT SUPPORT/MAINTENANCE,,,2024,4072920241980430588,descript,Descript,general_purpose,high,unspecified
+2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,05/10/2024,15.9,IT SUPPORT/MAINTENANCE,,,2024,4062520241962753173,descript,Descript,general_purpose,high,unspecified
+2024,C00864124,QUILLER.AI,CHICAGO,IL,05/24/2024,185,SOFTWARE,,,2024,4080920242011578818,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00864124,QUILLER.AI,CHICAGO,IL,06/24/2024,185,SOFTWARE,,,2024,4080920242011578819,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00836916,SONIX.AI,EL SEGUNDO,CA,08/02/2024,175.55,SOFTWARE,,,2024,4092720242042709294,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00774109,CHAT GPT OPEN AI,SAN FRANCISCO,CA,04/25/2024,20,CANDIDATE IN-KIND MEMO ENTRY - SUBSCRIPTION,,,2024,4052120241950060937,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00792283,JASPER AI,AUSTIN,TX,05/20/2024,99,SUBSCRIPTIONS,,,2024,4072420241978951059,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00792283,JASPER AI,AUSTIN,TX,06/18/2024,99,SUBSCRIPTIONS,,,2024,4072420241978951060,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00876383,QUILLER AI,CHICAGO,IL,06/20/2024,235,SOFTWARE,,,2024,4073020241981093982,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,02/09/2024,21.2,DUES AND SUBSCRIPTIONS,,,2024,4052920241951276641,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,04/29/2024,60,DIGITAL SERVICES,,,2024,4072420241978942848,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,05/28/2024,60,DIGITAL SERVICES,,,2024,4072420241978942849,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,06/28/2024,60,DIGITAL SERVICES,,,2024,4072420241978942850,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,08/09/2024,15.9,IT SUPPORT/MAINTENANCE,,,2024,4093020242043376378,descript,Descript,general_purpose,high,unspecified
+2024,C00547240,DONOR ATLAS,ARLINGTON,VA,08/01/2024,300,SOFTWARE SUBSCRIPTION,,,2024,4082920242017112269,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
+2024,C00556506,CHATGPT,SAN FRANCISCO,CA,06/02/2024,200,SUBSCRIPTION,,*,2024,4101620242069922295,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00556506,CHATGPT,SAN FRANCISCO,CA,04/23/2024,20,SUBSCRIPTION,,*,2024,4101620242069922223,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00864579,DONOR ATLAS,,,09/19/2024,300,FUNDRAISING SERVICES,,,2024,4112120241072151229,donoratlas,DonorAtlas,political_specific,high,fundraising
+2024,C00457556,CHATGPT,SAN FRANCISCO,CA,07/22/2024,21.8,SUBSCRIPTIONS,,,2024,4111520241069656112,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00457556,CHATGPT,SAN FRANCISCO,CA,08/20/2024,21.8,SUBSCRIPTIONS,,,2024,4111520241069656113,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00457556,CHATGPT,SAN FRANCISCO,CA,09/20/2024,21.8,SUBSCRIPTIONS,,,2024,4111520241069656114,openai,OpenAI (ChatGPT),general_purpose,high,unspecified

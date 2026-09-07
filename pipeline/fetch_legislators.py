@@ -22,7 +22,7 @@ from pathlib import Path
 
 import requests
 
-BASE = "https://raw.githubusercontent.com/unitedstates/congress-legislators/main"
+BASE = "https://raw.githubusercontent.com/unitedstates/congress-legislators/gh-pages"
 FILES = ["legislators-current.json", "legislators-historical.json"]
 RAW_DIR = Path(__file__).resolve().parent.parent / "data" / "raw" / "legislators"
 

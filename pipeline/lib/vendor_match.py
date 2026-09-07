@@ -23,6 +23,7 @@ class Vendor:
     group: str  # "general_purpose" | "political_specific"
     patterns: list[CompiledPattern]
     lean_context: str | None = None
+    exclude: list[re.Pattern] = ()
 
 
 @dataclass(frozen=True)
@@ -55,6 +56,7 @@ class Taxonomy:
                         group=group,
                         patterns=compiled,
                         lean_context=v.get("lean_context"),
+                        exclude=[_wrap(p) for p in v.get("exclude", [])],
                     )
                 )
 
@@ -69,6 +71,8 @@ class Taxonomy:
             return []
         hits = []
         for vendor in self.vendors:
+            if any(ex.search(text) for ex in vendor.exclude):
+                continue
             best = None
             for cp in vendor.patterns:
                 if cp.regex.search(text):

@@ -18,7 +18,9 @@
 # product names; `confidence: medium` patterns are words that also have
 # common non-AI meanings (e.g. "Gemini", "Copilot", "Grok") and are reported
 # separately on the dashboard as lower-confidence signal rather than folded
-# into headline counts.
+# into headline counts. An optional `exclude` list of regexes on a vendor
+# suppresses a match entirely when present in the same text (e.g. "Gemini
+# Trust Company", the crypto exchange, unrelated to Google's Gemini models).
 
 general_purpose:
   - id: openai
@@ -31,10 +33,10 @@ general_purpose:
     name: Anthropic (Claude)
     homepage: https://anthropic.com
     patterns:
-      - {pattern: "anthropic", confidence: high}
+      - {pattern: "\\banthropic\\b", confidence: high}
       - {pattern: "claude ai", confidence: high}
       - {pattern: "claude\\.ai", confidence: high}
-      - {pattern: "claude", confidence: medium}
+      - {pattern: "\\bclaude\\b", confidence: medium}
   - id: google_ai
     name: Google (Gemini / Vertex AI)
     homepage: https://ai.google
@@ -43,8 +45,18 @@ general_purpose:
       - {pattern: "gemini for google workspace", confidence: high}
       - {pattern: "vertex ai", confidence: high}
       - {pattern: "notebooklm", confidence: high}
-      - {pattern: "google ai\\b", confidence: high}
+      - {pattern: "\\bgoogle ai\\b", confidence: high}
       - {pattern: "gemini", confidence: medium}
+    # "Gemini" collides with Gemini Trust Company, a crypto exchange that
+    # shows up often in FEC data unrelated to Google's Gemini AI models.
+    exclude:
+      - "gemini trust"
+      - "gemini space station"
+      - "gemini earn"
+      - "exchange fee"
+      - "merchant fee"
+      - "credit card processing"
+      - "bitcoin"
   - id: microsoft_copilot
     name: Microsoft Copilot
     homepage: https://copilot.microsoft.com
@@ -52,14 +64,14 @@ general_purpose:
       - {pattern: "microsoft copilot", confidence: high}
       - {pattern: "copilot for microsoft ?365", confidence: high}
       - {pattern: "copilot pro", confidence: high}
-      - {pattern: "copilot", confidence: medium}
+      - {pattern: "\\bcopilot\\b", confidence: medium}
   - id: xai_grok
     name: xAI (Grok)
     homepage: https://x.ai
     patterns:
-      - {pattern: "xai\\b", confidence: high}
+      - {pattern: "\\bxai\\b", confidence: high}
       - {pattern: "x\\.ai", confidence: high}
-      - {pattern: "grok", confidence: medium}
+      - {pattern: "\\bgrok\\b", confidence: medium}
   - id: perplexity
     name: Perplexity AI
     homepage: https://perplexity.ai
@@ -102,7 +114,7 @@ general_purpose:
     name: Descript
     homepage: https://descript.com
     patterns:
-      - {pattern: "descript", confidence: high}
+      - {pattern: "\\bdescript\\b", confidence: high}
   - id: jasper_ai
     name: Jasper AI
     homepage: https://jasper.ai
@@ -126,7 +138,11 @@ political_specific:
     homepage: https://quiller.ai
     lean_context: progressive-aligned (per public reporting)
     patterns:
-      - {pattern: "quiller", confidence: high}
+      # Bare "Quiller" is also an ordinary English word (a component in
+      # textile/spinning machinery) and shows up as an unrelated payee name;
+      # only count it high-confidence when qualified with "AI".
+      - {pattern: "quiller[ .]ai", confidence: high}
+      - {pattern: "\\bquiller\\b", confidence: medium}
   - id: battleground_ai
     name: BattlegroundAI
     homepage: https://battlegroundai.org

@@ -1,0 +1,187 @@
+cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_desc,memo_text,rpt_yr,sub_id,vendor_ids,vendor_names,vendor_groups,confidences,use_categories
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,07/21/2021,14,SUBSCRIPTION,,*,2021,4012520221389627755,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,08/21/2021,14,SUBSCRIPTION,,*,2021,4012520221389627822,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,09/21/2021,14,SUBSCRIPTION,,*,2021,4012520221389627918,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00410639,CLAUDE CROWN SEDAN,TEMPLE HILLS,MD,06/03/2022,156,TRANSPORTATION FROM AIRPORT TO DC HOME,Administrative/Salary/Overhead Expenses ,*,2022,4061420221501207932,anthropic,Anthropic (Claude),general_purpose,medium,administrative_productivity
+2022,C00401190,CLAUDE BROWN,WILSON,NC,10/28/2021,735,OFFICE ASSISTANCE LABOR,,,2021,4011920221388773788,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00401190,CLAUDE BROWN,WILSON,NC,12/12/2021,510,OFFICE ASSISTANCE LABOR,,,2021,4011920221388773789,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00401190,CLAUDE BROWN,WILSON,NC,12/21/2021,250,OFFICE ASSISTANCE LABOR,,,2021,4011920221388773790,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/07/2021,1500,PAYROLL,,,2021,4021520221407908057,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/12/2021,500,PAYROLL,,,2021,4021520221407908058,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/21/2021,42.4,REIMBURSEMENT (VENDORS THAT AGGREGATE OVER $200 LISTED BELOW),,,2021,4021520221407908059,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/27/2021,500,PAYROLL,,,2021,4021520221407908060,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/02/2021,1500,PAYROLL,,,2021,4021520221407908061,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/09/2021,500,PAYROLL,,,2021,4021520221407908062,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/17/2021,500,PAYROLL,,,2021,4021520221407908063,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/31/2021,500,PAYROLL,,,2021,4021520221407908064,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/07/2021,500,PAYROLL,,,2021,4021520221407908065,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/07/2021,1650,PAYROLL,,,2021,4021520221407908066,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/13/2021,500,PAYROLL,,,2021,4021520221407908067,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/06/2021,1500,PAYROLL,,,2021,4021520221407908068,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/25/2021,500,PAYROLL,,,2021,4021520221407908069,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/04/2021,2000,PAYROLL,,,2021,4021520221407908070,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/09/2021,500,PAYROLL,,,2021,4021520221407908071,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/23/2021,500,PAYROLL,,,2021,4021520221407908072,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/06/2021,2000,PAYROLL,,,2021,4021520221407908073,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/16/2021,1200,PAYROLL,,,2021,4021520221407908074,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,10/21/2021,14,SUBSCRIPTION,,*,2021,4021720221409046673,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,11/23/2021,14,SUBSCRIPTION,,*,2021,4021720221409046758,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,12/21/2021,14,SUBSCRIPTION,,*,2021,4021720221409046837,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00401190,CLAUDE BROWN,WILSON,NC,07/28/2021,0,OFFICE ASSISTANCE LABOR,,,2021,4101320211373656333,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00401190,CLAUDE BROWN,WILSON,NC,07/28/2021,363.6,OFFICE ASSISTANCE LABOR,,,2021,4101320211373656334,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00401190,CLAUDE BROWN,WILSON,NC,08/25/2021,424.2,OFFICE ASSISTANCE LABOR,,,2021,4101320211373656335,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00401190,CLAUDE BROWN,WILSON,NC,09/29/2021,454.5,OFFICE ASSISTANCE LABOR,,,2021,4101320211373656336,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,10/14/2021,336.12,WAGES,,,2021,4121220221634064245,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,10/15/2021,639,WAGES,,,2021,4121220221634064246,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,10/29/2021,1089,WAGES,,,2021,4121220221634064247,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,11/12/2021,1270,WAGES,,,2021,4121220221634064248,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,11/19/2021,106,WAGES,,,2021,4121220221634064249,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,12/06/2021,85,WAGES,,,2021,4121220221634064250,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,12/18/2021,510,WAGES,,,2021,4121220221634064251,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,12/21/2021,120,WAGES,,,2021,4121220221634064252,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00800912,"WHEELER, CLAUDE",SUMTER,SC,12/19/2022,300,POLITICAL DIRECTOR,,,2022,4100620231803955893,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00800912,"WHEELER, CLAUDE",SUMTER,SC,06/01/2022,1000,POLITICAL DIRECTOR REIMBURSEMENT,,,2022,4100620231803956607,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00800912,"WHEELER, CLAUDE",SUMTER,SC,01/31/2022,300,POLITICAL DIRECTOR,,,2022,4100620231803956566,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00800912,"WHEELER, CLAUDE",SUMTER,SC,02/16/2022,300,POLITICAL DIRECTOR STAFF REIMBURSEMENT,,,2022,4100620231803956567,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00800912,"WHEELER, CLAUDE",SUMTER,SC,03/18/2022,600,POLITICAL DIRECTOR,,,2022,4100620231803956568,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00800912,"WHEELER, CLAUDE",SUMTER,SC,04/18/2022,600,POLITICAL DIRECTOR,,,2022,4100620231803956587,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00800912,"WHEELER, CLAUDE",SUMTER,SC,07/25/2022,500,POLITICAL DIRECTOR,,,2022,4100620231803956722,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00027466,RUNWAY AI,NEWARK,DE,04/18/2022,336,WEB SERVICE,,,2022,4052620221493812072,runwayml,Runway,general_purpose,high,unspecified
+2022,C00492140,DESCRIPT,SAN FRANCISCO,CA,09/30/2021,30,SOFTWARE,,*,2021,4021520221407911123,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00492140,DESCRIPT,SAN FRANCISCO,CA,07/01/2021,30,SOFTWARE,,*,2021,4021520221407910474,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00492140,DESCRIPT,SAN FRANCISCO,CA,08/31/2021,30,SOFTWARE,,*,2021,4021520221407910898,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00492140,DESCRIPT,SAN FRANCISCO,CA,07/31/2021,30,SOFTWARE,,*,2021,4021520221407910689,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00492140,DESCRIPT,SAN FRANCISCO,CA,12/17/2021,30,SOFTWARE,,*,2021,4021520221407911581,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00492140,DESCRIPT,SAN FRANCISCO,CA,11/26/2021,30,SOFTWARE,,*,2021,4021520221407911357,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00639591,DESCRIPT.COM,SAN FRANCISCO,CA,06/23/2022,432,SOFTWARE SUBSCRIPTION,,*,2022,4090520231801777955,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00802496,GEMINI IMPRINTS,ARVADA,CO,04/08/2022,367.06,PRINTING,,,2022,4062120221530574285,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2022,C00379735,GEMINI PROPERTIES,TULSA,OK,05/20/2022,812.58,FOOD SERVICE,Campaign Event Expenses,FOOD SERVICE,2022,4062320221531149005,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2022,C00754754,GROK MEDIA LLC,PETALUMA,CA,11/17/2022,4465,SOCIAL MEDIA PROMOTION,,,2022,4022820231732856745,xai_grok,xAI (Grok),general_purpose,medium,unspecified
+2022,C00401190,CLAUDE BROWN,WILSON,NC,02/02/2021,343.4,OFFICE ASSISTANCE LABOR,,,2021,4041420211277167303,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00401190,CLAUDE BROWN,WILSON,NC,02/26/2021,363.6,OFFICE ASSISTANCE LABOR,,,2021,4041420211277167304,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00401190,CLAUDE BROWN,WILSON,NC,03/31/2021,323.2,OFFICE ASSISTANCE LABOR,,,2021,4041420211277167305,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,10/21/2022,14,SUBSCRIPTION,,*,2022,4020120231721951653,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,12/16/2022,14,SUBSCRIPTION,,*,2022,4020120231721952005,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,11/21/2022,14,SUBSCRIPTION,,*,2022,4020120231721951784,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00010603,DESCRIPT INC,SAN FRANCISCO,CA,11/19/2021,288,SOFTWARE,,*,2021,4031920221461864345,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/06/2021,500,PAYROLL,,,2021,4072920211323323819,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/08/2021,1001.75,PAYROLL,,,2021,4072920211323323820,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/15/2021,1001.75,PAYROLL,,,2021,4072920211323323821,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/19/2021,2553,REIMBURSEMENT (VENDORS THAT AGGREGATE OVER $200 LISTED BELOW),,,2021,4072920211323323822,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/22/2021,1001.75,PAYROLL,,,2021,4072920211323323824,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/29/2021,1003.74,PAYROLL,,,2021,4072920211323323825,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/05/2021,1001.75,PAYROLL,,,2021,4072920211323323826,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/11/2021,1001.75,PAYROLL,,,2021,4072920211323323827,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/19/2021,1001.75,PAYROLL,,,2021,4072920211323323828,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/26/2021,1001.75,PAYROLL,,,2021,4072920211323323829,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/05/2021,1001.75,PAYROLL,,,2021,4072920211323323830,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/17/2021,500,PAYROLL,,,2021,4072920211323323831,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/23/2021,500,PAYROLL,,,2021,4072920211323323832,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/29/2021,500,PAYROLL,,,2021,4072920211323323833,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/26/2021,375,PAYROLL,,,2021,4072920211323323834,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/26/2021,125,PAYROLL,,,2021,4072920211323323835,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/04/2021,1000,PAYROLL,,,2021,4072920211323323836,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/17/2021,250,PAYROLL,,,2021,4072920211323323837,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/24/2021,500,PAYROLL,,,2021,4072920211323323838,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/01/2021,2000,PAYROLL,,,2021,4072920211323323839,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/07/2021,500,PAYROLL,,,2021,4072920211323323840,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/15/2021,500,PAYROLL,,,2021,4072920211323323841,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/22/2021,500,PAYROLL,,,2021,4072920211323323842,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/28/2021,500,PAYROLL,,,2021,4072920211323323843,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00492140,DESCRIPT,SAN FRANCISCO,CA,03/23/2021,45,SOFTWARE,,*,2021,4081320211326584052,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00492140,DESCRIPT,SAN FRANCISCO,CA,03/23/2021,45,SOFTWARE,,*,2021,4081320211326584053,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00492140,DESCRIPT,SAN FRANCISCO,CA,05/18/2021,45,SOFTWARE,,*,2021,4081320211326584340,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00492140,DESCRIPT,SAN FRANCISCO,CA,06/16/2021,30,SOFTWARE,,*,2021,4081320211326584492,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00539825,GEMINI PROPERTIES,TULSA,OK,10/17/2022,263.59,EVENT CATERING,,,2022,4020620231723348294,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2022,C00789552,GEMINI HOLDINGS LLC,LAS VEGAS,NV,01/12/2022,5000,PAC STRATEGY CONSULTING,Administrative/Salary/Overhead Expenses ,,2022,4040620221465388513,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,research_strategy;administrative_productivity
+2022,C00401190,CLAUDE BROWN,WILSON,NC,01/13/2022,465,OFFICE ASSISTANCE LABOR,,,2022,4040720221465426023,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/10/2022,2000,PAYROLL,,,2022,4042620221472777216,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/12/2022,250,PAYROLL,,,2022,4042620221472777217,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/24/2022,500,PAYROLL,,,2022,4042620221472777218,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/01/2022,300,PAYROLL,,,2022,4042620221472777219,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/07/2022,2000,PAYROLL,,,2022,4042620221472777220,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/08/2022,1000,PAYROLL,,,2022,4042620221472777221,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/16/2022,500,PAYROLL,,,2022,4042620221472777222,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00802496,GEMINI IMPRINTS,ARVADA,CO,03/16/2022,225,PRINTING,,,2022,4050520221474894297,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,12/31/2021,1035,WAGES,,,2022,4012520231720525427,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"DUFRENNE, HENRY CLAUDE",MIRAMAR,FL,01/26/2022,1000,WAGES,,,2022,4012520231720525448,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,01/13/2022,945,WAGES,,,2022,4012520231720525428,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,01/31/2022,330,WAGES,,,2022,4012520231720525429,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,03/21/2022,14,SUBSCRIPTION,,*,2022,4042920221473623958,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,01/21/2022,14,SUBSCRIPTION,,*,2022,4042920221473623782,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,02/22/2022,14,SUBSCRIPTION,,*,2022,4042920221473623885,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00667741,"CLAUDE, RONALD",DEDHAM,MA,08/23/2022,150,TRANSLATION SERVICES,,,2022,4110420221605705746,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00802496,GEMINI IMPRINTS,ARVADA,CO,07/08/2022,91.77,PRINTING,,,2022,4102620221592321839,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,02/28/2022,360,WAGES,,,2022,4012420231720403164,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,03/14/2022,380,WAGES,,,2022,4012420231720403165,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,03/14/2022,80,WAGES,,,2022,4012420231720403166,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,03/21/2022,390,WAGES,,,2022,4012420231720403167,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,07/25/2022,240,WAGES,,,2022,4012420231720403405,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,07/25/2022,300,WAGES,,,2022,4012420231720403404,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"DUFRENE, HENRY CLAUDE",MIRAMAR,FL,08/29/2022,870,WAGES,,,2022,4012420231720403677,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"DUFRENE, HENRY CLAUDE",MIRAMAR,FL,08/29/2022,500,WAGES,,,2022,4012420231720403676,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,08/09/2022,240,WAGES,,,2022,4012420231720403641,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,08/12/2022,300,WAGES,,,2022,4012420231720403642,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,09/01/2022,360,WAGES,,,2022,4012420231720403643,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,09/01/2022,600,WAGES,,,2022,4012420231720403644,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,07/26/2021,217.5,WAGES,,,2021,4091620221575941560,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,08/09/2021,337.5,WAGES,,,2021,4091620221575941561,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,08/20/2021,481.61,WAGES,,,2021,4091620221575941562,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,09/07/2021,574.56,WAGES,,,2021,4091620221575941563,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,09/17/2021,594,WAGES,,,2021,4091620221575941564,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00781443,"BRYAN, CLAUDE",JASPER,AL,07/06/2022,3899.05,GRASSROOTS CONSULTING/MILEAGE REIMBURSEMENT/PRINTING/PRODUCTION,,,2022,4101720221588488874,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,09/21/2022,14,SUBSCRIPTION,,*,2022,4110420221605702019,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,07/21/2022,14,SUBSCRIPTION,,*,2022,4110420221605701855,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,08/21/2022,14,SUBSCRIPTION,,*,2022,4110420221605701940,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00401190,CLAUDE BROWN,WILSON,NC,04/28/2021,333.3,OFFICE ASSISTANCE LABOR,,,2021,4070920211320395328,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00401190,CLAUDE BROWN,WILSON,NC,05/25/2021,444.4,OFFICE ASSISTANCE LABOR,,,2021,4070920211320395329,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00401190,CLAUDE BROWN,WILSON,NC,06/30/2021,313.1,OFFICE ASSISTANCE LABOR,,,2021,4070920211320395330,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00027466,RUNWAY AI,NEWARK,DE,04/15/2021,336,WEB SERVICE,,,2021,4052720211297511957,runwayml,Runway,general_purpose,high,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/12/2022,120,PAYROLL,,,2022,4020620231723349676,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/22/2022,100,PAYROLL,,,2022,4020620231723349677,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/30/2022,103.5,PAYROLL,,,2022,4020620231723349671,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/02/2022,203,PAYROLL,,,2022,4020620231723349672,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/06/2022,200,PAYROLL,,,2022,4020620231723349673,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/07/2022,2000,PAYROLL,,,2022,4020620231723349674,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/09/2022,100,PAYROLL,,,2022,4020620231723349675,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/07/2022,2500,PAYROLL,,,2022,4102520221591712898,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/23/2022,103.5,PAYROLL,,,2022,4102520221591712899,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/26/2022,275,PAYROLL,,,2022,4102520221591712900,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/29/2022,143,PAYROLL,,,2022,4102520221591712901,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/01/2022,500,PAYROLL,,,2022,4102520221591712895,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/09/2022,2000,PAYROLL,,,2022,4102520221591712896,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/06/2022,500,PAYROLL,,,2022,4102520221591712897,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00010603,DESCRIPT INC.,SAN FRANCISCO,CA,11/19/2022,288,SOFTWARE,,*,2022,4021020231725299973,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00769232,EYESOVER TECHNOLOGIES INC,FREDERICTON NB E3B 4Y2,ZZ,11/16/2022,1000,MEDIA RESEARCH SERVICES,,,2022,4010920231666594462,eyesover,EyesOver,political_specific,high,research_strategy
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/02/2022,100,PAYROLL,,,2022,4011120231682696512,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/04/2022,200,PAYROLL,,,2022,4011120231682696513,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/08/2022,1850,PAYROLL,,,2022,4011120231682696514,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/28/2022,103,PAYROLL,,,2022,4011120231682696515,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/28/2022,100,PAYROLL,,,2022,4011120231682696511,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00811711,GEMINI,NEW YORK,NY,05/24/2022,1299.77,BANK FEES,,,2022,4020920231724150704,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2022,C00811711,GEMINI,NEW YORK,NY,05/24/2022,1299.77,BANK FEES,,,2022,4020920231724146367,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2022,C00695940,OPENAIR,GAITHERSBURG,MD,05/27/2022,10830,AIRFARE,,,2022,4072520221544613510,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/06/2022,500,PAYROLL,,,2022,4072620221552357020,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/07/2022,2000,PAYROLL,,,2022,4072620221552357021,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/20/2022,500,PAYROLL,,,2022,4072620221552357022,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/29/2022,2000,PAYROLL,,,2022,4072620221552357023,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/09/2022,1000,PAYROLL,,,2022,4072620221552357024,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/20/2022,300,PAYROLL,,,2022,4072620221552357025,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/24/2022,500,PAYROLL,,,2022,4072620221552357026,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/26/2022,500,PAYROLL,,,2022,4072620221552357027,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/01/2022,2000,PAYROLL,,,2022,4072620221552357028,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/06/2022,250,PAYROLL,,,2022,4072620221552357029,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/07/2022,203,REIMBURSEMENT (VENDORS THAT AGGREGATE OVER $200 LISTED BELOW),,,2022,4072620221552357030,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/14/2022,1000,PAYROLL,,,2022,4072620221552357031,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,06/21/2022,14,SUBSCRIPTION,,*,2022,4072620221552394073,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,04/21/2022,14,SUBSCRIPTION,,*,2022,4072620221552393893,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,05/23/2022,14,SUBSCRIPTION,,*,2022,4072620221552393986,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00728832,CLAUDE'S RESTAURANT,SOUTHAMPTON,NY,05/27/2022,500.9,CATERING,,,2022,4080920221563750270,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00802496,GEMINI IMPRINTS,ARVADA,CO,06/27/2022,410,PRINTING,,,2022,4072220221543454835,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2022,C00384529,GEMINI PROPERTIES,TULSA,OK,06/17/2022,1286.85,CATERING EXPENSE,Administrative/Salary/Overhead Expenses ,,2022,4071520221540749352,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,administrative_productivity
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/06/2022,1850,PAYROLL,,,2022,4112820221631233924,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/07/2022,103,PAYROLL,,,2022,4112820221631233925,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/11/2022,250,PAYROLL,,,2022,4112820221631233926,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/12/2022,250,PAYROLL,,,2022,4112820221631233927,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,06/30/2022,240,WAGES,,,2022,4121220221634064852,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00677492,"CLAUDE, CHEYENNE",MIRAMAR,FL,06/30/2022,255,WAGES,,,2022,4121220221634064853,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
