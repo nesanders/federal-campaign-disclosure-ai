@@ -39,6 +39,7 @@ from lib.reference_data import (  # noqa: E402
     load_committee_master,
     load_legislator_birthdates,
 )
+from lib.vendor_match import Taxonomy  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PROCESSED_DIR = ROOT / "data" / "processed"
@@ -276,6 +277,7 @@ def main() -> None:
     universe_2026 = universe_by_cand[universe_by_cand["cycle"] == CURRENT_CYCLE]
 
     # --- vendor landscape (all confidence tiers, all committees) ---
+    homepage_by_id = {v.id: v.homepage for v in Taxonomy().vendors}
     vendor_rows = []
     for (vid, vname, vgroup), sub in exploded.groupby(["vendor_id", "vendor_name", "vendor_group"]):
         hi = sub[sub["confidence"] == "high"]
@@ -285,6 +287,7 @@ def main() -> None:
                 "id": vid,
                 "name": vname,
                 "group": vgroup,
+                "homepage": homepage_by_id.get(vid),
                 "amount_high": round(float(hi["transaction_amt"].sum()), 2),
                 "count_high": int(hi["sub_id"].nunique()),
                 "distinct_committees_high": int(hi["cmte_id"].nunique()),
@@ -477,6 +480,7 @@ def main() -> None:
             "id": vid,
             "name": vname,
             "group": vgroup,
+            "homepage": homepage_by_id.get(vid),
             "amount_high": round(float(vhi["transaction_amt"].sum()), 2),
             "count_high": int(vhi["sub_id"].nunique()),
             "time_series": ts,

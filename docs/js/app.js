@@ -12,6 +12,11 @@
     return 4;
   }
 
+  // FEC.gov serves stable, guessable profile URLs straight from the same
+  // committee/candidate IDs already in this dataset -- no lookup needed.
+  const fecCommitteeUrl = (cmteId) => "https://www.fec.gov/data/committee/" + encodeURIComponent(cmteId) + "/";
+  const fecCandidateUrl = (candId) => "https://www.fec.gov/data/candidate/" + encodeURIComponent(candId) + "/";
+
   function cssVar(name) {
     return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   }
@@ -70,6 +75,22 @@
 
   let DATA = null;
   let vendorNameById = {};
+  let vendorHomepageById = {};
+
+  function vendorLinksCell(vendorIds) {
+    const frag = document.createDocumentFragment();
+    vendorIds.forEach((vid, i) => {
+      if (i > 0) frag.appendChild(document.createTextNode(", "));
+      const name = vendorNameById[vid] || vid;
+      const homepage = vendorHomepageById[vid];
+      if (homepage) {
+        frag.appendChild(el("a", { className: "entity-link", href: homepage, text: name, attrs: { target: "_blank", rel: "noopener" } }));
+      } else {
+        frag.appendChild(el("a", { className: "entity-link", href: "#/vendor/" + vid, text: name }));
+      }
+    });
+    return frag;
+  }
   const chartInstances = {};
   const viewModes = { breakdowns: "dollar", trends: "dollar" };
   const sortState = {
@@ -164,8 +185,19 @@
       headers.forEach((h) => {
         const td = el("td");
         if (h.num) td.classList.add("num");
-        if (h.link) {
-          const a = el("a", { className: "entity-link", href: h.link(r), text: h.render ? h.render(r) : r[h.key] });
+        if (h.cell) {
+          const node = h.cell(r);
+          if (node) td.appendChild(node);
+          tr.appendChild(td);
+          return;
+        }
+        const linkHref = h.link && h.link(r);
+        if (linkHref) {
+          const a = el("a", { className: "entity-link", href: linkHref, text: h.render ? h.render(r) : r[h.key] });
+          if (h.external) {
+            a.target = "_blank";
+            a.rel = "noopener";
+          }
           td.appendChild(a);
         } else {
           td.textContent = h.render ? h.render(r) : r[h.key];
@@ -297,6 +329,7 @@
         { key: "amount_high", label: "High-confidence $", num: true },
         { key: "count_high", label: "Records", num: true },
         { key: "amount_medium", label: "Lower-confidence $", num: true },
+        { key: "website", label: "Website", link: (r) => r.website || null, external: true, render: (r) => (r.website ? "Visit ↗" : "—") },
       ],
       DATA.vendors_overall.map((r) => ({
         id: r.id,
@@ -305,6 +338,7 @@
         amount_high: fmtUSD0.format(r.amount_high),
         count_high: fmtInt.format(r.count_high),
         amount_medium: fmtUSD0.format(r.amount_medium),
+        website: r.homepage || "",
       }))
     );
 
@@ -559,6 +593,7 @@
           { key: "cmte_name", label: "Committee", render: (r) => r.cmte_name || r.cmte_id },
           { key: "amount", label: "AI-related spending", num: true, render: (r) => fmtUSD0.format(r.amount) },
           { key: "count", label: "Records", num: true, render: (r) => fmtInt.format(r.count) },
+          { label: "FEC record", link: (r) => fecCommitteeUrl(r.cmte_id), external: true, render: () => "View ↗" },
         ],
         rows
       )
@@ -617,7 +652,14 @@
       { label: "Total spend", sortKey: "total_expenditure", onSort, num: true, render: (r) => (r.total_expenditure ? fmtUSD0.format(r.total_expenditure) : "—") },
       { label: "% AI", sortKey: "pct_ai", onSort, num: true, render: (r) => fmtPct(r.pct_ai, 2) },
       { label: "Functional area", sortKey: null, render: (r) => r.use_categories.map(catLabel).join(", ") },
-      { label: "Vendors", sortKey: null, render: (r) => r.vendor_ids.map((v) => vendorNameById[v] || v).join(", ") },
+      { label: "Vendors", sortKey: null, cell: (r) => vendorLinksCell(r.vendor_ids) },
+      {
+        label: "FEC record",
+        sortKey: null,
+        link: (r) => (r.entity_type === "candidate" ? fecCandidateUrl(r.entity_id) : fecCommitteeUrl(r.entity_id)),
+        external: true,
+        render: () => "View ↗",
+      },
     ];
   }
 
@@ -684,6 +726,9 @@
     const h2 = el("h2", { text: v.name });
     h2.appendChild(el("span", { className: "pill", text: VENDOR_GROUP_LABEL[v.group] }));
     header.appendChild(h2);
+    if (v.homepage) {
+      header.appendChild(el("a", { className: "entity-link", href: v.homepage, text: "Vendor website ↗", attrs: { target: "_blank", rel: "noopener" } }));
+    }
     view.appendChild(header);
     view.appendChild(el("p", { className: "lede", text: "All figures are high-confidence text matches to this vendor's name/product across FEC disbursement records. See methodology for what \"high confidence\" means and its limits." }));
 
@@ -713,6 +758,7 @@
           { label: "Committee", render: (r) => r.cmte_name || r.cmte_id },
           { label: "Amount", num: true, render: (r) => fmtUSD0.format(r.amount) },
           { label: "Records", num: true, render: (r) => fmtInt.format(r.count) },
+          { label: "FEC record", link: (r) => fecCommitteeUrl(r.cmte_id), external: true, render: () => "View ↗" },
         ],
         v.top_committees
       )
@@ -819,6 +865,7 @@
     h2.appendChild(el("span", { className: "pill", text: cd.party }));
     h2.appendChild(el("span", { className: "pill", text: cd.office }));
     header.appendChild(h2);
+    header.appendChild(el("a", { className: "entity-link", href: fecCandidateUrl(cd.id), text: "FEC record ↗", attrs: { target: "_blank", rel: "noopener" } }));
     view.appendChild(header);
     const raceLink = el("a", { href: "#/race/" + cd.race_id, className: "entity-link", text: cd.office + " — " + cd.state + (cd.district ? "-" + cd.district : "") + " (see race)" });
     view.appendChild(el("p", { className: "lede", children: [raceLink] }));
@@ -924,6 +971,7 @@
           { label: "Cycles", render: (r) => r.cycles.join(", ") },
           { label: "AI spend", num: true, render: (r) => fmtUSD0.format(r.amount_high) },
           { label: "% of total spend", num: true, render: (r) => fmtPct(r.pct_ai, 3) },
+          { label: "FEC record", link: (r) => fecCandidateUrl(r.cand_id), external: true, render: () => "View ↗" },
         ],
         race.candidates
       )
@@ -975,7 +1023,11 @@
     .then((json) => {
       DATA = json;
       vendorNameById = {};
-      DATA.vendors_overall.forEach((v) => (vendorNameById[v.id] = v.name));
+      vendorHomepageById = {};
+      DATA.vendors_overall.forEach((v) => {
+        vendorNameById[v.id] = v.name;
+        if (v.homepage) vendorHomepageById[v.id] = v.homepage;
+      });
       wireToggles();
       wireViewModeToggles();
       populateLeaderboardFilters();

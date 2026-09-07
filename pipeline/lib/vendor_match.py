@@ -23,6 +23,7 @@ class Vendor:
     group: str  # "general_purpose" | "political_specific"
     patterns: list[CompiledPattern]
     lean_context: str | None = None
+    homepage: str | None = None
     exclude: list[re.Pattern] = ()
 
 
@@ -56,6 +57,7 @@ class Taxonomy:
                         group=group,
                         patterns=compiled,
                         lean_context=v.get("lean_context"),
+                        homepage=v.get("homepage") or None,
                         exclude=[_wrap(p) for p in v.get("exclude", [])],
                     )
                 )
