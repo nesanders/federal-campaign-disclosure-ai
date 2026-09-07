@@ -89,11 +89,17 @@ header.site p.subtitle { color: var(--text-secondary); max-width: 74ch; margin: 
 header.site .meta-line { color: var(--text-muted); font-size: 0.85rem; margin-top: 12px; }
 
 nav.toc {
-  display: flex; flex-wrap: wrap; gap: 6px 18px;
-  margin-top: 18px; font-size: 0.9rem;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 20px; padding: 6px; font-size: 0.86rem;
+  background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
 }
-nav.toc a { color: var(--text-secondary); text-decoration: none; border-bottom: 1px solid transparent; }
-nav.toc a:hover { color: var(--text-primary); border-bottom-color: var(--baseline); }
+nav.toc a {
+  color: var(--text-secondary); text-decoration: none; font-weight: 500;
+  padding: 7px 14px; border-radius: 7px; border: 1px solid transparent;
+  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+nav.toc a:hover { color: var(--text-primary); background: var(--page-plane); border-color: var(--border); }
+nav.toc a:active { background: var(--series-1); color: #fff; }
 
 section.block { margin-bottom: 56px; }
 section.block > h2 { font-size: 1.3rem; margin: 0 0 6px; }
