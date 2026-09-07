@@ -281,6 +281,13 @@
     const data = rows.map((r) => r.amount_high);
     const bg = rows.map((r) => (r.group === "general_purpose" ? c.general_purpose : c.political_specific));
 
+    // Chart.js silently auto-skips y-axis category labels (and the bars
+    // that go with them) when the container is too short for all of them --
+    // with up to 20 vendors that quietly dropped half the chart. Size the
+    // container to the data instead of trusting a fixed CSS height.
+    const vendorsHolder = document.querySelector('.chart-holder[data-panel="vendors"]');
+    if (vendorsHolder) vendorsHolder.style.height = Math.max(380, rows.length * 26) + "px";
+
     makeChart("chart-vendors", {
       type: "bar",
       data: { labels, datasets: [{ label: "High-confidence spending", data, backgroundColor: bg, borderRadius: 4, barThickness: 16 }] },
@@ -316,7 +323,7 @@
         },
         scales: {
           x: { grid: { color: c.grid }, ticks: { color: c.text, callback: (v) => fmtUSD0.format(v) }, border: { display: false } },
-          y: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+          y: { grid: { display: false }, ticks: { color: c.text, autoSkip: false }, border: { display: false } },
         },
       },
     });
@@ -380,7 +387,7 @@
         },
         scales: {
           x: { grid: { color: c.grid }, ticks: { color: c.text, callback: (v) => fmtUSD0.format(v) }, border: { display: false } },
-          y: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+          y: { grid: { display: false }, ticks: { color: c.text, autoSkip: false }, border: { display: false } },
         },
       },
     });
@@ -809,7 +816,7 @@
         plugins: { legend: { display: false }, tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => fmtUSD0.format(ctx.parsed.x) } }) },
         scales: {
           x: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
-          y: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+          y: { grid: { display: false }, ticks: { color: c.text, autoSkip: false }, border: { display: false } },
         },
       },
     });
@@ -942,7 +949,7 @@
         plugins: { legend: { display: false }, tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => fmtUSD0.format(ctx.parsed.x) } }) },
         scales: {
           x: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
-          y: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+          y: { grid: { display: false }, ticks: { color: c.text, autoSkip: false }, border: { display: false } },
         },
       },
     });

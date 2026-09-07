@@ -36,6 +36,23 @@
 # level of detail or aren't using those services in a way that shows up in
 # a purpose/memo field. That absence is itself a finding, not a gap to
 # paper over -- it's surfaced on the dashboard rather than hidden.
+#
+# Second pass (empirical corpus mining): rather than relying only on
+# vendors known from press coverage, we scanned all four cycles' oppexp
+# files for generic AI-indicative language (bare "AI", "chatbot", "bot",
+# "prompt", etc.) in rows that didn't already match a known vendor, then
+# looked at which *payee names* kept surfacing. That's how calltime_ai,
+# amplify_ai, prompt_io, numero_ai, otter_ai, daisychain, sosha,
+# change_agent_ai, campaign_brain, and several smaller tools below were
+# found -- amplify_ai and prompt_io alone represent several million
+# dollars that the original vendor list, built from press coverage rather
+# than the disclosures themselves, was completely missing. This also
+# surfaced a real trap worth documenting: several teleprompter-equipment
+# vendors ("Capitol Prompting Service", "VIP Prompting Corporation") have
+# "prompting" in their name for the unrelated, decades-old sense of the
+# word. A bare "\bprompt\b" pattern would have swept those in as false
+# positives, which is why prompt_io below is matched only as "prompt.io",
+# never bare "prompt".
 
 general_purpose:
   - id: openai
@@ -173,6 +190,61 @@ general_purpose:
     homepage: https://character.ai
     patterns:
       - {pattern: "character\\.ai", confidence: high}
+  - id: otter_ai
+    name: Otter.ai
+    homepage: https://otter.ai
+    patterns:
+      - {pattern: "otter\\.ai", confidence: high}
+      - {pattern: "\\botter ai\\b", confidence: high}
+  - id: fal_ai
+    name: fal.ai
+    homepage: https://fal.ai
+    patterns:
+      - {pattern: "fal\\.ai", confidence: high}
+  - id: chatfuel
+    name: Chatfuel
+    homepage: https://chatfuel.com
+    patterns:
+      - {pattern: "\\bchatfuel\\b", confidence: high}
+  - id: sitespeakai
+    name: SiteSpeakAI
+    homepage: https://sitespeak.ai
+    patterns:
+      - {pattern: "sitespeak ?ai", confidence: high}
+  - id: smartlead_ai
+    name: Smartlead.ai
+    homepage: https://smartlead.ai
+    patterns:
+      - {pattern: "smartlead\\.ai", confidence: high}
+      - {pattern: "\\bsmartlead ai\\b", confidence: high}
+  - id: instantly_ai
+    name: Instantly.ai
+    homepage: https://instantly.ai
+    patterns:
+      - {pattern: "instantly\\.ai", confidence: high}
+  - id: air_ai
+    name: Air AI
+    homepage: https://air.ai
+    patterns:
+      - {pattern: "\\bair ai\\b", confidence: high}
+      - {pattern: "\\bair\\.ai\\b", confidence: high}
+  - id: grammarly
+    name: Grammarly
+    homepage: https://grammarly.com
+    patterns:
+      - {pattern: "\\bgrammarly\\b", confidence: high}
+  - id: kling_ai
+    name: Kling AI
+    homepage: https://klingai.com
+    patterns:
+      # Bare "Kling" is also a common surname (payroll/staff entries for a
+      # "Kling, Shannon" showed up in testing); require the "AI" qualifier.
+      - {pattern: "\\bkling ai\\b", confidence: high}
+  - id: luma_labs
+    name: Luma Labs (Luma AI)
+    homepage: https://lumalabs.ai
+    patterns:
+      - {pattern: "luma labs", confidence: high}
 
 political_specific:
   - id: quiller
@@ -225,10 +297,68 @@ political_specific:
       - {pattern: "mirofish", confidence: high}
   - id: eyesover
     name: EyesOver
-    homepage: null
-    lean_context: reported GOP-aligned social-listening tool
+    homepage: https://www.eyesover.us
+    lean_context: reported GOP-aligned social-listening tool; associated with Brad Parscale's Parscale Strategy
     patterns:
       - {pattern: "eyesover", confidence: high}
+  - id: calltime_ai
+    name: CallTime.AI
+    homepage: https://www.calltime.ai
+    lean_context: progressive-aligned (per public reporting)
+    patterns:
+      # Payee field spells this every possible way: "CALLTIME.AI",
+      # "CALL TIME AI", "CALLTIME AI", "CALL TIME.AI".
+      - {pattern: "call ?time[ .]?ai", confidence: high}
+  - id: amplify_ai
+    name: Amplify.ai (TruVerse)
+    homepage: https://truverse.net
+    lean_context: reported use by Democratic campaigns and committees (e.g. House Majority PAC)
+    patterns:
+      - {pattern: "amplify[ .]ai", confidence: high}
+      - {pattern: "\\btruverse\\b", confidence: high}
+  - id: prompt_io
+    name: Prompt.io
+    homepage: https://prompt.io
+    patterns:
+      # Deliberately NOT matching bare "prompt": teleprompter-equipment
+      # vendors ("Capitol Prompting Service", "VIP Prompting Corporation")
+      # use that word in the unrelated, decades-old sense and would
+      # otherwise flood in as false positives.
+      - {pattern: "prompt\\.io", confidence: high}
+  - id: numero_ai
+    name: Numero (donor database / call time)
+    homepage: https://www.numero.ai
+    patterns:
+      # Bare "Numero" is an ordinary Spanish/Italian word for "number";
+      # only count it when qualified with "AI" the way the company brands
+      # itself ("Numero.AI").
+      - {pattern: "numero[ .]ai", confidence: high}
+  - id: daisychain
+    name: Daisychain
+    homepage: https://www.daisychain.app
+    lean_context: progressive-aligned (per public reporting)
+    patterns:
+      # One word in FEC filings ("DAISYCHAIN INC."); kept distinct from the
+      # unrelated two-word phrase "daisy chain" (a common wiring/electrical
+      # term) by requiring no space.
+      - {pattern: "\\bdaisychain\\b", confidence: high}
+  - id: sosha
+    name: SoSha (Speechifai)
+    homepage: https://www.sosha.ai
+    patterns:
+      - {pattern: "\\bsosha\\b", confidence: high}
+      - {pattern: "speechifai", confidence: high}
+  - id: change_agent_ai
+    name: Change Agent AI
+    homepage: https://thechange.ai
+    lean_context: built for nonprofits, unions & progressive campaigns (per public reporting)
+    patterns:
+      - {pattern: "change agent ai", confidence: high}
+  - id: campaign_brain
+    name: Campaign Brain
+    homepage: https://www.campaign-brain.com
+    patterns:
+      - {pattern: "campaign brain", confidence: high}
 
 # Use-case categories for classifying disbursement PURPOSE / MEMO_TEXT text.
 # A single disbursement may match multiple categories; "unspecified" is used

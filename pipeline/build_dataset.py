@@ -491,9 +491,13 @@ def main() -> None:
             "by_chamber": agg_amount_count(v_office, ["office"]),
         }
 
-    # --- candidate detail pages (House/Senate, high confidence, any cycle) ---
+    # --- candidate detail pages (any office, high confidence, any cycle) ---
+    # Not restricted to House/Senate: the vendor pages' "top candidates" charts
+    # and the leaderboard both surface any candidate with a match (e.g. a
+    # presidential candidate), so their detail pages need to exist too, even
+    # though the House/Senate-scoped breakdown charts elsewhere don't cover them.
     candidates_detail = {}
-    for cid, csub in candidate_office[candidate_office["cand_id"] != ""].groupby("cand_id"):
+    for cid, csub in high[high["cand_id"] != ""].groupby("cand_id"):
         name = csub["cand_name"].iloc[0]
         party = csub["cand_party"].iloc[0]
         office = csub["office"].iloc[0]
@@ -600,6 +604,8 @@ def main() -> None:
             "General-purpose cloud hosting (AWS, Azure, Google Cloud) is not counted as AI spend merely because the provider also sells AI products -- only a disbursement naming a specific AI service (e.g. 'AWS Bedrock', 'Azure OpenAI') counts. Scanning all four cycles found zero such specific mentions; generic cloud/hosting spend for these providers is common but not itemized down to the AI-specific service used, so it isn't attributable one way or the other.",
             "Google's Gemini is frequently bundled into a Google Workspace subscription a campaign already pays for email and documents, so it often has no separate line item the way a standalone ChatGPT or Claude subscription does. This likely understates Google's real usage more than it does OpenAI's or Anthropic's -- a limitation of disbursement-based analysis, not evidence Google is less used.",
             "'% of total spend' denominators are each committee's total reported operating expenditure (Schedule B), excluding FEC memo entries to avoid double-counting a lump-sum payment and its own itemized breakdown. For party/incumbency/chamber/age/time-series charts, the denominator is the combined total spend of the House/Senate candidates in that slice who have at least one AI-vendor disbursement -- not of every House/Senate candidate that cycle -- so these percentages answer 'how big is AI spend relative to everything else these AI-using campaigns spend,' not 'what share of all campaign spending nationally goes to AI.'",
+            "The vendor list was expanded past what press coverage had named by scanning all four cycles for generic AI-indicative language (bare 'AI', 'chatbot', 'bot', 'prompt', etc.) in disbursements that didn't already match a known vendor, then researching which payee names kept recurring. That pass is what surfaced Amplify.ai, Prompt.io, CallTime.AI, Numero, Daisychain, SoSha, and several smaller tools -- collectively a much larger share of disclosed AI spending than the general-purpose chatbot subscriptions most coverage of this topic focuses on. It also surfaced a false-positive trap worth naming: several teleprompter-equipment vendors have 'prompting' in their name in the unrelated, decades-old sense, which is why 'Prompt.io' is matched only as that exact product name, never bare 'prompt'. The same scan turned up plausible-sounding candidates we deliberately left out because the disbursement text never actually said 'AI' -- Civis Analytics, Grow Progress, and Movement Labs are real political-data vendors whose own marketing mentions AI/machine learning, but nothing in how campaigns paid them here does, so we didn't want to launder marketing copy into a disclosure-based finding.",
+            "A payee name match attributes the full disbursement amount to that vendor even when the memo describes a bundled payment (e.g. 'reimbursement for SendGrid, SpeechifAI, and Twilio' for one lump sum) -- there is no way to apportion a bundled reimbursement from the text alone, so a vendor's total can be modestly overstated in these cases. They appear to be a small share of matched dollars, not the norm.",
         ],
     }
 
