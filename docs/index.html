@@ -19,6 +19,7 @@
       <a href="#usecases">Stated use</a>
       <a href="#breakdowns">Party / incumbency / age / chamber</a>
       <a href="#trends">Change over time</a>
+      <a href="#leaderboards">Leaderboards</a>
       <a href="#methodology">Methodology &amp; data</a>
     </nav>
     <div class="meta-line" id="meta-line">Loading dataset&hellip;</div>
@@ -26,6 +27,10 @@
 </header>
 
 <main class="wrap">
+
+  <div id="detail-view" hidden></div>
+
+  <div id="main-view">
 
   <section id="overview" class="block">
     <h2>Overview</h2>
@@ -71,6 +76,10 @@
   <section id="breakdowns" class="block">
     <h2>3. How does AI use differ across candidates?</h2>
     <p class="lede">2026-cycle House and Senate candidate committees with a high-confidence AI vendor match, split by party, incumbency status, candidate age, and chamber. Amounts are totals; candidate counts are shown alongside since a handful of high-spending campaigns can otherwise dominate a total.</p>
+    <div class="view-toggle" data-toggle-group="breakdowns">
+      <button class="btn-view-mode is-active" data-mode="dollar">$ amount</button>
+      <button class="btn-view-mode" data-mode="pct">% of total spend</button>
+    </div>
     <div class="card-grid">
       <div class="card">
         <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="party">View as table</button></div>
@@ -106,6 +115,10 @@
   <section id="trends" class="block">
     <h2>4. What's changed across cycles?</h2>
     <p class="lede">The same candidate-committee, high-confidence disbursements, tracked across the 2020, 2022, 2024, and 2026 two-year cycles. Note that mainstream generative-AI tools (ChatGPT and peers) were not publicly available for most of the 2020 and 2022 cycles, so growth here partly reflects the technology's availability, not only its political adoption.</p>
+    <div class="view-toggle" data-toggle-group="trends">
+      <button class="btn-view-mode is-active" data-mode="dollar">$ amount</button>
+      <button class="btn-view-mode" data-mode="pct">% of total spend</button>
+    </div>
     <div class="card-grid">
       <div class="card">
         <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="trend-overall">View as table</button></div>
@@ -145,6 +158,33 @@
     </div>
   </section>
 
+  <section id="leaderboards" class="block">
+    <h2>5. Who's spending the most &mdash; in dollars, and as a share of their budget?</h2>
+    <p class="lede">Every candidate committee or PAC/party committee with at least one high-confidence AI-vendor disbursement, across all cycles. "% of total spend" divides AI spend by that committee's total reported operating expenditure that cycle (memo entries excluded to avoid double-counting &mdash; see <a href="#methodology">methodology</a>); the share-of-budget table is limited to committees spending at least $5,000 in total that cycle, so a $50 total-spend committee with one $40 AI purchase doesn't read as an 80% AI budget. Click a candidate's name to open their page.</p>
+    <div class="filter-row" id="leaderboard-filters">
+      <label>Cycle
+        <select id="filter-cycle"><option value="all">All cycles</option></select>
+      </label>
+      <label>Functional area
+        <select id="filter-category"><option value="all">All areas</option></select>
+      </label>
+    </div>
+    <div class="card-grid single">
+      <div class="card">
+        <h3>Top by AI spend ($)</h3>
+        <p class="note">Click a column header to sort.</p>
+        <div id="table-leaderboard-dollar"></div>
+      </div>
+    </div>
+    <div class="card-grid single">
+      <div class="card">
+        <h3>Top by AI spend as a share of total budget</h3>
+        <p class="note">Minimum $5,000 total reported expenditure that cycle. Click a column header to sort.</p>
+        <div id="table-leaderboard-pct"></div>
+      </div>
+    </div>
+  </section>
+
   <section id="methodology" class="block">
     <h2>Methodology &amp; data provenance</h2>
     <p class="lede">This site is generated entirely from public federal disclosure data by an automated pipeline; there is no manual curation of the numbers themselves beyond the vendor/category taxonomy below.</p>
@@ -160,6 +200,8 @@
     </div>
     <p class="lede">Full pipeline code, the vendor/category taxonomy (<code>pipeline/config/vendors.yaml</code>), and this site's source are in the <a href="https://github.com/nesanders/federal-campaign-disclosure-ai" target="_blank" rel="noopener">GitHub repository</a>.</p>
   </section>
+
+  </div><!-- #main-view -->
 
 </main>
 

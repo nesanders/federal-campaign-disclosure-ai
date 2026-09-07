@@ -2,7 +2,15 @@
   "use strict";
 
   const fmtUSD0 = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  const fmtUSD2 = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
   const fmtInt = new Intl.NumberFormat("en-US");
+  const fmtPct = (v, digits) => (v === null || v === undefined ? "—" : v.toFixed(digits === undefined ? 2 : digits) + "%");
+  function pctDecimalsFor(maxVal) {
+    if (maxVal >= 10) return 1;
+    if (maxVal >= 1) return 2;
+    if (maxVal >= 0.1) return 3;
+    return 4;
+  }
 
   function cssVar(name) {
     return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -19,6 +27,7 @@
         Democratic: cssVar("--series-1"),
         Republican: cssVar("--series-8"),
         Other: cssVar("--series-7"),
+        Independent: cssVar("--series-7"),
         Unknown: cssVar("--text-muted"),
       },
       incumbency: {
@@ -45,21 +54,42 @@
   const VENDOR_GROUP_LABEL = { general_purpose: "General-purpose AI", political_specific: "Campaign-specific AI" };
   const AGE_ORDER = ["Under 40", "40-49", "50-59", "60-69", "70+", "Unknown"];
   const INCUMBENCY_ORDER = ["Incumbent", "Challenger", "Open seat", "Unknown"];
-  const PARTY_ORDER = ["Democratic", "Republican", "Other", "Unknown"];
+  const PARTY_ORDER = ["Democratic", "Republican", "Other", "Independent", "Unknown"];
   const CHAMBER_ORDER = ["House", "Senate"];
+  const CATEGORY_LABELS = {
+    advertising_creative: "Advertising / creative content",
+    communications_copy: "Communications copy (email/text/scripts)",
+    synthetic_media: "Synthetic media / deepfake-adjacent",
+    research_strategy: "Research, polling & strategy",
+    fundraising: "Fundraising",
+    data_targeting: "Voter data & targeting",
+    administrative_productivity: "Administrative / general productivity",
+    unspecified: "Unspecified / generic",
+  };
+  const MIN_TOTAL_FOR_PCT_TABLE = 5000;
 
   let DATA = null;
+  let vendorNameById = {};
   const chartInstances = {};
+  const viewModes = { breakdowns: "dollar", trends: "dollar" };
+  const sortState = {
+    dollar: { key: "ai_amount_high", dir: "desc" },
+    pct: { key: "pct_ai", dir: "desc" },
+  };
+  const filterState = { cycle: "all", category: "all" };
 
-  function destroyCharts() {
-    Object.values(chartInstances).forEach((c) => c && c.destroy());
+  function catLabel(id) {
+    return CATEGORY_LABELS[id] || id;
   }
 
-  function baseGridOptions(c) {
-    return {
-      x: { grid: { display: false }, ticks: { color: c.text } },
-      y: { grid: { color: c.grid, drawTicks: false }, ticks: { color: c.text }, border: { display: false } },
-    };
+  function makeChart(canvasId, config) {
+    const el = document.getElementById(canvasId);
+    if (!el) return null;
+    if (chartInstances[canvasId]) {
+      chartInstances[canvasId].destroy();
+    }
+    chartInstances[canvasId] = new Chart(el.getContext("2d"), config);
+    return chartInstances[canvasId];
   }
 
   function tooltipBase() {
@@ -80,42 +110,79 @@
     return { labels: { color: cssVar("--text-secondary"), usePointStyle: true, pointStyle: "line", boxWidth: 24 } };
   }
 
-  function makeChart(canvasId, config) {
-    const el = document.getElementById(canvasId);
-    if (!el) return null;
-    chartInstances[canvasId] = new Chart(el.getContext("2d"), config);
-    return chartInstances[canvasId];
+  // ---- small DOM helpers (never innerHTML with data-derived text) ----
+  function el(tag, opts) {
+    opts = opts || {};
+    const node = document.createElement(tag);
+    if (opts.className) node.className = opts.className;
+    if (opts.text !== undefined) node.textContent = opts.text;
+    if (opts.href !== undefined) node.href = opts.href;
+    if (opts.id !== undefined) node.id = opts.id;
+    if (opts.attrs) Object.keys(opts.attrs).forEach((k) => node.setAttribute(k, opts.attrs[k]));
+    (opts.children || []).forEach((c) => c && node.appendChild(c));
+    return node;
+  }
+
+  function backLink() {
+    return el("a", { tag: "a", href: "#/", className: "back-link", text: "← Back to dashboard" });
+  }
+
+  function statTile(label, value, sub) {
+    return el("div", {
+      className: "stat-tile",
+      children: [
+        el("div", { className: "label", text: label }),
+        el("div", { className: "value", text: value }),
+        sub ? el("div", { className: "sub", text: sub }) : null,
+      ],
+    });
+  }
+
+  // ---- generic sortable/plain table builder ----
+  function buildTable(headers, rows, opts) {
+    opts = opts || {};
+    const table = el("table", { className: "data-table scroll-wrap" });
+    const thead = el("thead");
+    const trh = el("tr");
+    headers.forEach((h) => {
+      const th = el("th", { text: h.label });
+      if (h.num) th.classList.add("num");
+      if (h.sortKey) {
+        th.classList.add("sortable");
+        if (opts.sort && opts.sort.key === h.sortKey) {
+          th.appendChild(el("span", { className: "sort-arrow", text: opts.sort.dir === "asc" ? "↑" : "↓" }));
+        }
+        th.addEventListener("click", () => opts.onSort && opts.onSort(h.sortKey));
+      }
+      trh.appendChild(th);
+    });
+    thead.appendChild(trh);
+    table.appendChild(thead);
+    const tbody = el("tbody");
+    rows.forEach((r) => {
+      const tr = el("tr");
+      headers.forEach((h) => {
+        const td = el("td");
+        if (h.num) td.classList.add("num");
+        if (h.link) {
+          const a = el("a", { className: "entity-link", href: h.link(r), text: h.render ? h.render(r) : r[h.key] });
+          td.appendChild(a);
+        } else {
+          td.textContent = h.render ? h.render(r) : r[h.key];
+        }
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    return table;
   }
 
   function setPanelTable(panel, headers, rows) {
     const holder = document.querySelector('.table-holder[data-panel="' + panel + '"]');
     if (!holder) return;
     holder.innerHTML = "";
-    const table = document.createElement("table");
-    table.className = "data-table";
-    const thead = document.createElement("thead");
-    const trh = document.createElement("tr");
-    headers.forEach((h) => {
-      const th = document.createElement("th");
-      th.textContent = h.label;
-      if (h.num) th.className = "num";
-      trh.appendChild(th);
-    });
-    thead.appendChild(trh);
-    table.appendChild(thead);
-    const tbody = document.createElement("tbody");
-    rows.forEach((r) => {
-      const tr = document.createElement("tr");
-      headers.forEach((h) => {
-        const td = document.createElement("td");
-        td.textContent = r[h.key];
-        if (h.num) td.className = "num";
-        tr.appendChild(td);
-      });
-      tbody.appendChild(tr);
-    });
-    table.appendChild(tbody);
-    holder.appendChild(table);
+    holder.appendChild(buildTable(headers, rows));
   }
 
   function wireToggles() {
@@ -133,8 +200,21 @@
     });
   }
 
+  function wireViewModeToggles() {
+    document.querySelectorAll(".view-toggle").forEach((group) => {
+      const key = group.getAttribute("data-toggle-group");
+      group.querySelectorAll(".btn-view-mode").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          viewModes[key] = btn.getAttribute("data-mode");
+          group.querySelectorAll(".btn-view-mode").forEach((b) => b.classList.toggle("is-active", b === btn));
+          if (key === "breakdowns") renderBreakdowns();
+          if (key === "trends") renderTrends();
+        });
+      });
+    });
+  }
+
   function renderStats() {
-    const c = colors();
     const meta = DATA.meta;
     const totalMatchedRows = Object.values(meta.matched_row_counts_by_cycle || {}).reduce((a, b) => a + b, 0);
     const totalHighAmount = DATA.vendors_overall.reduce((a, v) => a + v.amount_high, 0);
@@ -142,47 +222,15 @@
     const nPolitical = DATA.vendors_overall.filter((v) => v.group === "political_specific").length;
 
     const tiles = [
-      {
-        label: "AI vendors identified in disclosures",
-        value: fmtInt.format(DATA.vendors_overall.length),
-        sub: nGeneral + " general-purpose · " + nPolitical + " campaign-specific",
-      },
-      {
-        label: "AI-related disbursement records found",
-        value: fmtInt.format(totalMatchedRows),
-        sub: "across " + meta.cycles.join(", ") + " cycles, all confidence tiers",
-      },
-      {
-        label: "Total high-confidence AI spending",
-        value: fmtUSD0.format(totalHighAmount),
-        sub: "all committees, all cycles",
-      },
-      {
-        label: "2026 House/Senate candidates paying OpenAI",
-        value: fmtInt.format(meta.openai_high_confidence_house_senate_candidates_2026),
-        sub: "WaPo (Sept 2026) found 39 candidates paying for an OpenAI subscription; methodology differs, see notes",
-      },
+      { label: "AI vendors identified in disclosures", value: fmtInt.format(DATA.vendors_overall.length), sub: nGeneral + " general-purpose · " + nPolitical + " campaign-specific" },
+      { label: "AI-related disbursement records found", value: fmtInt.format(totalMatchedRows), sub: "across " + meta.cycles.join(", ") + " cycles, all confidence tiers" },
+      { label: "Total high-confidence AI spending", value: fmtUSD0.format(totalHighAmount), sub: "all committees, all cycles" },
+      { label: "2026 House/Senate candidates paying OpenAI", value: fmtInt.format(meta.openai_high_confidence_house_senate_candidates_2026), sub: "WaPo (Sept 2026) found 39 candidates paying for an OpenAI subscription; methodology differs, see notes" },
     ];
 
     const row = document.getElementById("stat-row");
     row.innerHTML = "";
-    tiles.forEach((t) => {
-      const div = document.createElement("div");
-      div.className = "stat-tile";
-      const l = document.createElement("div");
-      l.className = "label";
-      l.textContent = t.label;
-      const v = document.createElement("div");
-      v.className = "value";
-      v.textContent = t.value;
-      const s = document.createElement("div");
-      s.className = "sub";
-      s.textContent = t.sub;
-      div.appendChild(l);
-      div.appendChild(v);
-      div.appendChild(s);
-      row.appendChild(div);
-    });
+    tiles.forEach((t) => row.appendChild(statTile(t.label, t.value, t.sub)));
 
     document.getElementById("coverage-callout").innerHTML =
       "<strong>Coverage:</strong> this pipeline scans itemized operating-expenditure (Schedule B) records from FEC bulk data for the " +
@@ -208,6 +256,13 @@
         indexAxis: "y",
         responsive: true,
         maintainAspectRatio: false,
+        onClick: (evt, elements, chart) => {
+          const pts = chart.getElementsAtEventForMode(evt, "nearest", { intersect: true }, false);
+          if (pts.length) location.hash = "#/vendor/" + rows[pts[0].index].id;
+        },
+        onHover: (evt, elements) => {
+          evt.native.target.style.cursor = elements.length ? "pointer" : "default";
+        },
         plugins: {
           legend: { display: false },
           tooltip: Object.assign(tooltipBase(), {
@@ -217,6 +272,7 @@
                 return [
                   fmtUSD0.format(r.amount_high) + " · " + fmtInt.format(r.count_high) + " records · " + fmtInt.format(r.distinct_committees_high) + " committees",
                   r.amount_medium > 0 ? "+" + fmtUSD0.format(r.amount_medium) + " lower-confidence signal" : "",
+                  "Click to see vendor detail",
                 ].filter(Boolean);
               },
               title: function (ctx) {
@@ -233,17 +289,17 @@
       },
     });
 
-    document.querySelector('.card-toolbar').parentElement; // no-op, keep legend markup simple
     setPanelTable(
       "vendors",
       [
-        { key: "name", label: "Vendor" },
+        { key: "name", label: "Vendor", link: (r) => "#/vendor/" + r.id },
         { key: "group", label: "Type" },
         { key: "amount_high", label: "High-confidence $", num: true },
         { key: "count_high", label: "Records", num: true },
         { key: "amount_medium", label: "Lower-confidence $", num: true },
       ],
       DATA.vendors_overall.map((r) => ({
+        id: r.id,
         name: r.name,
         group: VENDOR_GROUP_LABEL[r.group] || r.group,
         amount_high: fmtUSD0.format(r.amount_high),
@@ -252,7 +308,6 @@
       }))
     );
 
-    // Inline legend under the vendors chart heading.
     const legendHtml =
       '<span class="key"><span class="swatch" style="background:' + c.general_purpose + '"></span>General-purpose AI</span>' +
       '<span class="key"><span class="swatch" style="background:' + c.political_specific + '"></span>Campaign-specific AI</span>';
@@ -268,8 +323,7 @@
   function renderUseCases() {
     const c = colors();
     const rows = DATA.use_categories.slice().sort((a, b) => b.amount - a.amount);
-    const labelFor = (id) => (DATA._categoryLabels && DATA._categoryLabels[id]) || id;
-    const labels = rows.map((r) => labelFor(r.id));
+    const labels = rows.map((r) => catLabel(r.id));
     const data = rows.map((r) => r.amount);
 
     makeChart("chart-usecases", {
@@ -305,10 +359,9 @@
         { key: "count", label: "Records", num: true },
         { key: "candidates", label: "Candidates", num: true },
       ],
-      rows.map((r) => ({ label: labelFor(r.id), amount: fmtUSD0.format(r.amount), count: fmtInt.format(r.count), candidates: fmtInt.format(r.distinct_candidates) }))
+      rows.map((r) => ({ label: catLabel(r.id), amount: fmtUSD0.format(r.amount), count: fmtInt.format(r.count), candidates: fmtInt.format(r.distinct_candidates) }))
     );
 
-    // stacked by vendor group
     const cross = DATA.use_category_by_vendor_group;
     const catIds = rows.map((r) => r.id);
     const gp = catIds.map((id) => (cross.find((x) => x.category === id && x.group === "general_purpose") || {}).amount || 0);
@@ -317,7 +370,7 @@
     makeChart("chart-usecases-group", {
       type: "bar",
       data: {
-        labels: catIds.map(labelFor),
+        labels: catIds.map(catLabel),
         datasets: [
           { label: VENDOR_GROUP_LABEL.general_purpose, data: gp, backgroundColor: c.general_purpose, borderRadius: 4, barThickness: 14 },
           { label: VENDOR_GROUP_LABEL.political_specific, data: ps, backgroundColor: c.political_specific, borderRadius: 4, barThickness: 14 },
@@ -342,17 +395,27 @@
         { key: "gp", label: "General-purpose $", num: true },
         { key: "ps", label: "Campaign-specific $", num: true },
       ],
-      catIds.map((id, i) => ({ label: labelFor(id), gp: fmtUSD0.format(gp[i]), ps: fmtUSD0.format(ps[i]) }))
+      catIds.map((id, i) => ({ label: catLabel(id), gp: fmtUSD0.format(gp[i]), ps: fmtUSD0.format(ps[i]) }))
     );
   }
 
   function stackedByGroupChart(canvasId, panel, rows, orderKey, order) {
     const c = colors();
+    const mode = viewModes.breakdowns;
     const cats = order.filter((k) => rows.some((r) => String(r[orderKey]) === k));
-    const gp = cats.map((k) => rows.filter((r) => String(r[orderKey]) === k && r.vendor_group === "general_purpose").reduce((a, r) => a + r.amount, 0));
-    const ps = cats.map((k) => rows.filter((r) => String(r[orderKey]) === k && r.vendor_group === "political_specific").reduce((a, r) => a + r.amount, 0));
+    const totals = cats.map((k) => {
+      const r = rows.find((rr) => String(rr[orderKey]) === k);
+      return r ? r.total_expenditure || 0 : 0;
+    });
+    const rawGp = cats.map((k) => rows.filter((r) => String(r[orderKey]) === k && r.vendor_group === "general_purpose").reduce((a, r) => a + r.amount, 0));
+    const rawPs = cats.map((k) => rows.filter((r) => String(r[orderKey]) === k && r.vendor_group === "political_specific").reduce((a, r) => a + r.amount, 0));
     const counts = cats.map((k) => rows.filter((r) => String(r[orderKey]) === k).reduce((a, r) => a + r.distinct_candidates, 0));
+    const gp = mode === "pct" ? rawGp.map((v, i) => (totals[i] ? (v / totals[i]) * 100 : 0)) : rawGp;
+    const ps = mode === "pct" ? rawPs.map((v, i) => (totals[i] ? (v / totals[i]) * 100 : 0)) : rawPs;
     const displayLabels = cats.slice();
+    const pctDigits = pctDecimalsFor(Math.max(0, ...gp.map((v, i) => v + ps[i])));
+    const fmtAxis = mode === "pct" ? (v) => v.toFixed(pctDigits) + "%" : fmtUSD0.format;
+    const fmtVal = mode === "pct" ? (v) => fmtPct(v, pctDigits) : fmtUSD0.format;
 
     makeChart(canvasId, {
       type: "bar",
@@ -370,16 +433,19 @@
           legend: Object.assign({ position: "top" }, legendBase()),
           tooltip: Object.assign(tooltipBase(), {
             callbacks: {
+              label: (ctx) => ctx.dataset.label + ": " + fmtVal(ctx.parsed.y),
               footer: function (items) {
                 const i = items[0].dataIndex;
-                return fmtInt.format(counts[i]) + " distinct candidates";
+                const lines = [fmtInt.format(counts[i]) + " distinct candidates"];
+                if (mode === "pct") lines.push("of " + fmtUSD0.format(totals[i]) + " total spend");
+                return lines;
               },
             },
           }),
         },
         scales: {
           x: { stacked: true, grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
-          y: { stacked: true, grid: { color: c.grid }, ticks: { color: c.text, callback: (v) => fmtUSD0.format(v) }, border: { display: false } },
+          y: { stacked: true, grid: { color: c.grid }, ticks: { color: c.text, callback: fmtAxis }, border: { display: false } },
         },
       },
     });
@@ -388,11 +454,11 @@
       panel,
       [
         { key: "label", label: "Category" },
-        { key: "gp", label: "General-purpose $", num: true },
-        { key: "ps", label: "Campaign-specific $", num: true },
+        { key: "gp", label: mode === "pct" ? "General-purpose %" : "General-purpose $", num: true },
+        { key: "ps", label: mode === "pct" ? "Campaign-specific %" : "Campaign-specific $", num: true },
         { key: "candidates", label: "Distinct candidates", num: true },
       ],
-      displayLabels.map((label, i) => ({ label, gp: fmtUSD0.format(gp[i]), ps: fmtUSD0.format(ps[i]), candidates: fmtInt.format(counts[i]) }))
+      displayLabels.map((label, i) => ({ label, gp: fmtVal(gp[i]), ps: fmtVal(ps[i]), candidates: fmtInt.format(counts[i]) }))
     );
   }
 
@@ -403,14 +469,17 @@
     stackedByGroupChart("chart-age", "age", DATA.by_age_bucket, "age_bucket", AGE_ORDER);
   }
 
-  function lineChart(canvasId, panel, cycles, series, colorMap, valueKey) {
+  function lineChart(canvasId, panel, cycles, series, colorMap) {
     const c = colors();
+    const mode = viewModes.trends;
+    const valueFor = (row) => {
+      if (!row) return 0;
+      if (mode === "pct") return row.total_expenditure ? (row.amount / row.total_expenditure) * 100 : 0;
+      return row.amount;
+    };
     const datasets = Object.keys(series).map((name) => ({
       label: name,
-      data: cycles.map((cy) => {
-        const row = series[name].find((r) => Number(r.cycle) === cy);
-        return row ? row[valueKey] : 0;
-      }),
+      data: cycles.map((cy) => valueFor(series[name].find((r) => Number(r.cycle) === cy), cy)),
       borderColor: colorMap[name] || c.muted,
       backgroundColor: colorMap[name] || c.muted,
       borderWidth: 2,
@@ -420,6 +489,9 @@
       tension: 0.15,
       fill: false,
     }));
+    const pctDigits = pctDecimalsFor(Math.max(0, ...datasets.flatMap((d) => d.data)));
+    const fmtAxis = mode === "pct" ? (v) => v.toFixed(pctDigits) + "%" : fmtUSD0.format;
+    const fmtVal = mode === "pct" ? (v) => fmtPct(v, pctDigits) : fmtUSD0.format;
 
     makeChart(canvasId, {
       type: "line",
@@ -427,10 +499,10 @@
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: { legend: Object.assign({ position: "top" }, legendBase()), tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => ctx.dataset.label + ": " + fmtUSD0.format(ctx.parsed.y) } }) },
+        plugins: { legend: Object.assign({ position: "top" }, legendBase()), tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => ctx.dataset.label + ": " + fmtVal(ctx.parsed.y) } }) },
         scales: {
           x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
-          y: { grid: { color: c.grid }, ticks: { color: c.text, callback: (v) => fmtUSD0.format(v) }, border: { display: false } },
+          y: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtAxis }, border: { display: false } },
         },
       },
     });
@@ -439,8 +511,7 @@
     const rows = cycles.map((cy) => {
       const row = { cycle: cy };
       Object.keys(series).forEach((name) => {
-        const r = series[name].find((rr) => Number(rr.cycle) === cy);
-        row[name] = fmtUSD0.format(r ? r[valueKey] : 0);
+        row[name] = fmtVal(valueFor(series[name].find((rr) => Number(rr.cycle) === cy), cy));
       });
       return row;
     });
@@ -459,86 +530,441 @@
         [VENDOR_GROUP_LABEL.general_purpose]: DATA.time_series.filter((r) => r.vendor_group === "general_purpose"),
         [VENDOR_GROUP_LABEL.political_specific]: DATA.time_series.filter((r) => r.vendor_group === "political_specific"),
       },
-      { [VENDOR_GROUP_LABEL.general_purpose]: c.general_purpose, [VENDOR_GROUP_LABEL.political_specific]: c.political_specific },
-      "amount"
+      { [VENDOR_GROUP_LABEL.general_purpose]: c.general_purpose, [VENDOR_GROUP_LABEL.political_specific]: c.political_specific }
     );
 
     const byParty = {};
-    PARTY_ORDER.filter((p) => p !== "").forEach((p) => (byParty[p] = DATA.time_series_by_party.filter((r) => r.cand_party === p)));
-    lineChart("chart-trend-party", "trend-party", cycles, byParty, c.party, "amount");
+    PARTY_ORDER.forEach((p) => {
+      const rows = DATA.time_series_by_party.filter((r) => r.cand_party === p);
+      if (rows.length) byParty[p] = rows;
+    });
+    lineChart("chart-trend-party", "trend-party", cycles, byParty, c.party);
 
     const byInc = {};
     ["Incumbent", "Challenger", "Open seat"].forEach((k) => (byInc[k] = DATA.time_series_by_incumbency.filter((r) => r.ici === k)));
-    lineChart("chart-trend-incumbency", "trend-incumbency", cycles, byInc, c.incumbency, "amount");
+    lineChart("chart-trend-incumbency", "trend-incumbency", cycles, byInc, c.incumbency);
 
     const byChamber = {};
     CHAMBER_ORDER.forEach((k) => (byChamber[k] = DATA.time_series_by_chamber.filter((r) => r.office === k)));
-    lineChart("chart-trend-chamber", "trend-chamber", cycles, byChamber, c.chamber, "amount");
+    lineChart("chart-trend-chamber", "trend-chamber", cycles, byChamber, c.chamber);
   }
 
   function renderTopCommittees() {
     const rows = DATA.top_committees.slice(0, 25);
     const container = document.getElementById("table-top-committees");
     container.innerHTML = "";
-    const table = document.createElement("table");
-    table.className = "data-table";
-    const thead = document.createElement("thead");
-    thead.innerHTML = "";
-    const trh = document.createElement("tr");
-    ["Committee", "AI-related spending", "Records"].forEach((h, i) => {
-      const th = document.createElement("th");
-      th.textContent = h;
-      if (i > 0) th.className = "num";
-      trh.appendChild(th);
-    });
-    thead.appendChild(trh);
-    table.appendChild(thead);
-    const tbody = document.createElement("tbody");
-    rows.forEach((r) => {
-      const tr = document.createElement("tr");
-      const tdName = document.createElement("td");
-      tdName.textContent = r.cmte_name || r.cmte_id;
-      const tdAmt = document.createElement("td");
-      tdAmt.className = "num";
-      tdAmt.textContent = fmtUSD0.format(r.amount);
-      const tdCount = document.createElement("td");
-      tdCount.className = "num";
-      tdCount.textContent = fmtInt.format(r.count);
-      tr.appendChild(tdName);
-      tr.appendChild(tdAmt);
-      tr.appendChild(tdCount);
-      tbody.appendChild(tr);
-    });
-    table.appendChild(tbody);
-    container.appendChild(table);
+    container.appendChild(
+      buildTable(
+        [
+          { key: "cmte_name", label: "Committee", render: (r) => r.cmte_name || r.cmte_id },
+          { key: "amount", label: "AI-related spending", num: true, render: (r) => fmtUSD0.format(r.amount) },
+          { key: "count", label: "Records", num: true, render: (r) => fmtInt.format(r.count) },
+        ],
+        rows
+      )
+    );
   }
 
   function renderMethodology() {
     const sources = document.getElementById("sources-list");
     sources.innerHTML = "";
-    DATA.meta.sources.forEach((s) => {
-      const li = document.createElement("li");
-      li.textContent = s;
-      sources.appendChild(li);
-    });
+    DATA.meta.sources.forEach((s) => sources.appendChild(el("li", { text: s })));
     const notes = document.getElementById("notes-list");
     notes.innerHTML = "";
-    DATA.meta.methodology_notes.forEach((s) => {
-      const li = document.createElement("li");
-      li.textContent = s;
-      notes.appendChild(li);
+    DATA.meta.methodology_notes.forEach((s) => notes.appendChild(el("li", { text: s })));
+  }
+
+  // ---- Leaderboards (section 5) ----
+  function populateLeaderboardFilters() {
+    const cycleSel = document.getElementById("filter-cycle");
+    DATA.meta.cycles.forEach((cy) => cycleSel.appendChild(el("option", { text: String(cy), attrs: { value: String(cy) } })));
+    const catSel = document.getElementById("filter-category");
+    Object.keys(CATEGORY_LABELS).forEach((id) => catSel.appendChild(el("option", { text: catLabel(id), attrs: { value: id } })));
+    cycleSel.addEventListener("change", () => {
+      filterState.cycle = cycleSel.value;
+      renderLeaderboards();
+    });
+    catSel.addEventListener("change", () => {
+      filterState.category = catSel.value;
+      renderLeaderboards();
     });
   }
 
+  function filteredEntities() {
+    return DATA.entities.filter((e) => {
+      if (filterState.cycle !== "all" && String(e.cycle) !== filterState.cycle) return false;
+      if (filterState.category !== "all" && e.use_categories.indexOf(filterState.category) === -1) return false;
+      return true;
+    });
+  }
+
+  function entityLeaderboardHeaders(kind) {
+    const sort = sortState[kind];
+    const onSort = (key) => {
+      if (sort.key === key) sort.dir = sort.dir === "asc" ? "desc" : "asc";
+      else {
+        sort.key = key;
+        sort.dir = "desc";
+      }
+      renderLeaderboards();
+    };
+    return [
+      { label: "Name", sortKey: "entity_name", onSort, link: (r) => (r._isCandidate ? "#/candidate/" + r.entity_id : null), render: (r) => r.entity_name },
+      { label: "Type", sortKey: "entity_type", onSort, render: (r) => (r.entity_type === "candidate" ? "Candidate" : "Committee/PAC") },
+      { label: "Party", sortKey: "cand_party", onSort, render: (r) => r.cand_party },
+      { label: "Cycle", sortKey: "cycle", onSort, num: true, render: (r) => r.cycle },
+      { label: "AI spend", sortKey: "ai_amount_high", onSort, num: true, render: (r) => fmtUSD0.format(r.ai_amount_high) },
+      { label: "Total spend", sortKey: "total_expenditure", onSort, num: true, render: (r) => (r.total_expenditure ? fmtUSD0.format(r.total_expenditure) : "—") },
+      { label: "% AI", sortKey: "pct_ai", onSort, num: true, render: (r) => fmtPct(r.pct_ai, 2) },
+      { label: "Functional area", sortKey: null, render: (r) => r.use_categories.map(catLabel).join(", ") },
+      { label: "Vendors", sortKey: null, render: (r) => r.vendor_ids.map((v) => vendorNameById[v] || v).join(", ") },
+    ];
+  }
+
+  function sortRows(rows, kind) {
+    const { key, dir } = sortState[kind];
+    const mult = dir === "asc" ? 1 : -1;
+    return rows.slice().sort((a, b) => {
+      let av = a[key], bv = b[key];
+      if (av === null || av === undefined) av = -Infinity;
+      if (bv === null || bv === undefined) bv = -Infinity;
+      if (typeof av === "string") return av.localeCompare(bv) * mult;
+      return (av - bv) * mult;
+    });
+  }
+
+  function renderLeaderboards() {
+    const rows = filteredEntities().map((e) => Object.assign({ _isCandidate: e.entity_type === "candidate" }, e));
+
+    const dollarRows = sortRows(rows, "dollar").slice(0, 40);
+    const dollarContainer = document.getElementById("table-leaderboard-dollar");
+    dollarContainer.innerHTML = "";
+    dollarContainer.appendChild(buildTable(entityLeaderboardHeaders("dollar"), dollarRows, { sort: sortState.dollar }));
+
+    const pctEligible = rows.filter((r) => r.total_expenditure >= MIN_TOTAL_FOR_PCT_TABLE && r.pct_ai !== null);
+    const pctRows = sortRows(pctEligible, "pct").slice(0, 40);
+    const pctContainer = document.getElementById("table-leaderboard-pct");
+    pctContainer.innerHTML = "";
+    pctContainer.appendChild(buildTable(entityLeaderboardHeaders("pct"), pctRows, { sort: sortState.pct }));
+  }
+
+  // ---- Detail views (hash-routed) ----
+  function showMainView() {
+    document.getElementById("main-view").hidden = false;
+    document.getElementById("detail-view").hidden = true;
+  }
+
+  function showDetailView() {
+    document.getElementById("main-view").hidden = true;
+    document.getElementById("detail-view").hidden = false;
+    window.scrollTo(0, 0);
+  }
+
+  function detailCard(titleText, canvasId, noteText) {
+    const card = el("div", { className: "card" });
+    card.appendChild(el("h3", { text: titleText }));
+    if (noteText) card.appendChild(el("p", { className: "note", text: noteText }));
+    card.appendChild(el("div", { className: "chart-holder", children: [el("canvas", { id: canvasId })] }));
+    return card;
+  }
+
+  function renderVendorDetail(id) {
+    const view = document.getElementById("detail-view");
+    view.innerHTML = "";
+    const v = DATA.vendors_detail[id];
+    const overall = DATA.vendors_overall.find((x) => x.id === id);
+    view.appendChild(backLink());
+    if (!v) {
+      view.appendChild(el("p", { text: "Vendor not found." }));
+      return;
+    }
+    const c = colors();
+
+    const header = el("div", { className: "detail-header" });
+    const h2 = el("h2", { text: v.name });
+    h2.appendChild(el("span", { className: "pill", text: VENDOR_GROUP_LABEL[v.group] }));
+    header.appendChild(h2);
+    view.appendChild(header);
+    view.appendChild(el("p", { className: "lede", text: "All figures are high-confidence text matches to this vendor's name/product across FEC disbursement records. See methodology for what \"high confidence\" means and its limits." }));
+
+    const stats = el("div", { className: "detail-stat-row" });
+    stats.appendChild(statTile("Total high-confidence spending", fmtUSD0.format(v.amount_high), fmtInt.format(v.count_high) + " disbursement records"));
+    if (overall) stats.appendChild(statTile("Committees paying this vendor", fmtInt.format(overall.distinct_committees_high)));
+    if (overall && overall.amount_medium > 0) {
+      stats.appendChild(statTile("Lower-confidence signal (excluded above)", fmtUSD0.format(overall.amount_medium), "ambiguous word matches -- see methodology"));
+    }
+    view.appendChild(stats);
+
+    const grid = el("div", { className: "card-grid" });
+    grid.appendChild(detailCard("Spending over time", "detail-chart-ts"));
+    grid.appendChild(detailCard("Top candidates using " + v.name, "detail-chart-cand", "Click a bar to open that candidate's page."));
+    view.appendChild(grid);
+
+    const grid2 = el("div", { className: "card-grid" });
+    grid2.appendChild(detailCard("By party (House/Senate candidates)", "detail-chart-party"));
+    grid2.appendChild(detailCard("By incumbency status", "detail-chart-ici"));
+    view.appendChild(grid2);
+
+    const cmteCard = el("div", { className: "card" });
+    cmteCard.appendChild(el("h3", { text: "Top committees paying " + v.name }));
+    cmteCard.appendChild(
+      buildTable(
+        [
+          { label: "Committee", render: (r) => r.cmte_name || r.cmte_id },
+          { label: "Amount", num: true, render: (r) => fmtUSD0.format(r.amount) },
+          { label: "Records", num: true, render: (r) => fmtInt.format(r.count) },
+        ],
+        v.top_committees
+      )
+    );
+    view.appendChild(el("div", { className: "card-grid single", children: [cmteCard] }));
+
+    // charts
+    const cycles = v.time_series.map((r) => r.cycle).sort((a, b) => a - b);
+    makeChart("detail-chart-ts", {
+      type: "line",
+      data: {
+        labels: cycles.map(String),
+        datasets: [
+          {
+            label: v.name,
+            data: cycles.map((cy) => (v.time_series.find((r) => r.cycle === cy) || {}).amount || 0),
+            borderColor: c.general_purpose,
+            backgroundColor: c.general_purpose,
+            borderWidth: 2,
+            pointRadius: 4,
+            tension: 0.15,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => fmtUSD0.format(ctx.parsed.y) } }) },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+          y: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
+        },
+      },
+    });
+
+    const byCand = v.by_candidate.slice(0, 15);
+    makeChart("detail-chart-cand", {
+      type: "bar",
+      data: { labels: byCand.map((r) => r.cand_name), datasets: [{ data: byCand.map((r) => r.amount), backgroundColor: c.general_purpose, borderRadius: 4, barThickness: 14 }] },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        onClick: (evt, elements, chart) => {
+          const pts = chart.getElementsAtEventForMode(evt, "nearest", { intersect: true }, false);
+          if (pts.length) location.hash = "#/candidate/" + byCand[pts[0].index].cand_id;
+        },
+        plugins: { legend: { display: false }, tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => fmtUSD0.format(ctx.parsed.x) } }) },
+        scales: {
+          x: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
+          y: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+        },
+      },
+    });
+
+    makeChart("detail-chart-party", {
+      type: "bar",
+      data: {
+        labels: v.by_party.map((r) => r.cand_party),
+        datasets: [{ data: v.by_party.map((r) => r.amount), backgroundColor: v.by_party.map((r) => c.party[r.cand_party] || c.muted), borderRadius: 4, barThickness: 24 }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => fmtUSD0.format(ctx.parsed.y) } }) },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+          y: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
+        },
+      },
+    });
+
+    makeChart("detail-chart-ici", {
+      type: "bar",
+      data: {
+        labels: v.by_incumbency.map((r) => r.ici),
+        datasets: [{ data: v.by_incumbency.map((r) => r.amount), backgroundColor: v.by_incumbency.map((r) => c.incumbency[r.ici] || c.muted), borderRadius: 4, barThickness: 24 }],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => fmtUSD0.format(ctx.parsed.y) } }) },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+          y: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
+        },
+      },
+    });
+  }
+
+  function renderCandidateDetail(id) {
+    const view = document.getElementById("detail-view");
+    view.innerHTML = "";
+    const cd = DATA.candidates_detail[id];
+    view.appendChild(backLink());
+    if (!cd) {
+      view.appendChild(el("p", { text: "Candidate not found in the AI-spend dataset." }));
+      return;
+    }
+    const c = colors();
+
+    const header = el("div", { className: "detail-header" });
+    const h2 = el("h2", { text: cd.name });
+    h2.appendChild(el("span", { className: "pill", text: cd.party }));
+    h2.appendChild(el("span", { className: "pill", text: cd.office }));
+    header.appendChild(h2);
+    view.appendChild(header);
+    const raceLink = el("a", { href: "#/race/" + cd.race_id, className: "entity-link", text: cd.office + " — " + cd.state + (cd.district ? "-" + cd.district : "") + " (see race)" });
+    view.appendChild(el("p", { className: "lede", children: [raceLink] }));
+
+    const stats = el("div", { className: "detail-stat-row" });
+    stats.appendChild(statTile("Total AI spend (high confidence)", fmtUSD0.format(cd.amount_high), fmtInt.format(cd.count_high) + " records, all cycles"));
+    stats.appendChild(statTile("Total reported expenditure", cd.total_expenditure ? fmtUSD0.format(cd.total_expenditure) : "—"));
+    stats.appendChild(statTile("AI as % of total spend", fmtPct(cd.pct_ai, 3)));
+    view.appendChild(stats);
+
+    const grid = el("div", { className: "card-grid" });
+    grid.appendChild(detailCard("Spending over time", "detail-chart-cycle"));
+    grid.appendChild(detailCard("By vendor", "detail-chart-vendor"));
+    view.appendChild(grid);
+
+    const catCard = el("div", { className: "card" });
+    catCard.appendChild(el("h3", { text: "By stated use / functional area" }));
+    catCard.appendChild(
+      buildTable(
+        [
+          { label: "Area", render: (r) => catLabel(r.id) },
+          { label: "Amount", num: true, render: (r) => fmtUSD0.format(r.amount) },
+          { label: "Records", num: true, render: (r) => fmtInt.format(r.count) },
+        ],
+        cd.by_category
+      )
+    );
+    view.appendChild(el("div", { className: "card-grid single", children: [catCard] }));
+
+    makeChart("detail-chart-cycle", {
+      type: "line",
+      data: {
+        labels: cd.by_cycle.map((r) => String(r.cycle)),
+        datasets: [
+          { label: "AI spend", data: cd.by_cycle.map((r) => r.amount), borderColor: c.general_purpose, backgroundColor: c.general_purpose, borderWidth: 2, pointRadius: 4, tension: 0.15 },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: Object.assign(tooltipBase(), {
+            callbacks: {
+              label: (ctx) => fmtUSD0.format(ctx.parsed.y),
+              footer: (items) => {
+                const r = cd.by_cycle[items[0].dataIndex];
+                return r.pct_ai !== null ? fmtPct(r.pct_ai, 3) + " of that cycle's spend" : "";
+              },
+            },
+          }),
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+          y: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
+        },
+      },
+    });
+
+    makeChart("detail-chart-vendor", {
+      type: "bar",
+      data: {
+        labels: cd.by_vendor.map((r) => r.vendor_name),
+        datasets: [{ data: cd.by_vendor.map((r) => r.amount), backgroundColor: c.general_purpose, borderRadius: 4, barThickness: 16 }],
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        onClick: (evt, elements, chart) => {
+          const pts = chart.getElementsAtEventForMode(evt, "nearest", { intersect: true }, false);
+          if (pts.length) location.hash = "#/vendor/" + cd.by_vendor[pts[0].index].vendor_id;
+        },
+        plugins: { legend: { display: false }, tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => fmtUSD0.format(ctx.parsed.x) } }) },
+        scales: {
+          x: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
+          y: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+        },
+      },
+    });
+  }
+
+  function renderRaceDetail(id) {
+    const view = document.getElementById("detail-view");
+    view.innerHTML = "";
+    const race = DATA.races[id];
+    view.appendChild(backLink());
+    if (!race) {
+      view.appendChild(el("p", { text: "Race not found in the AI-spend dataset." }));
+      return;
+    }
+    const header = el("div", { className: "detail-header" });
+    header.appendChild(el("h2", { text: race.office + " — " + race.state + (race.district ? "-" + race.district : "") }));
+    view.appendChild(header);
+    view.appendChild(el("p", { className: "lede", text: "Candidates in this seat with at least one high-confidence AI-vendor disbursement, any cycle. This is not every candidate who ran — only those showing AI spend in this dataset." }));
+
+    const card = el("div", { className: "card" });
+    card.appendChild(
+      buildTable(
+        [
+          { label: "Candidate", link: (r) => "#/candidate/" + r.cand_id, render: (r) => r.name },
+          { label: "Party", render: (r) => r.party },
+          { label: "Cycles", render: (r) => r.cycles.join(", ") },
+          { label: "AI spend", num: true, render: (r) => fmtUSD0.format(r.amount_high) },
+          { label: "% of total spend", num: true, render: (r) => fmtPct(r.pct_ai, 3) },
+        ],
+        race.candidates
+      )
+    );
+    view.appendChild(el("div", { className: "card-grid single", children: [card] }));
+  }
+
+  function parseHash() {
+    const h = location.hash.replace(/^#\/?/, "");
+    if (!h) return null;
+    const parts = h.split("/");
+    if (parts.length < 2) return null;
+    return { type: parts[0], id: decodeURIComponent(parts.slice(1).join("/")) };
+  }
+
+  function router() {
+    const parsed = parseHash();
+    if (!parsed) {
+      showMainView();
+      return;
+    }
+    showDetailView();
+    if (parsed.type === "vendor") renderVendorDetail(parsed.id);
+    else if (parsed.type === "candidate") renderCandidateDetail(parsed.id);
+    else if (parsed.type === "race") renderRaceDetail(parsed.id);
+    else {
+      document.getElementById("detail-view").innerHTML = "";
+      document.getElementById("detail-view").appendChild(backLink());
+    }
+  }
+
   function renderAll() {
-    destroyCharts();
     renderStats();
     renderVendors();
     renderUseCases();
     renderBreakdowns();
     renderTrends();
     renderTopCommittees();
+    renderLeaderboards();
     renderMethodology();
+    router();
   }
 
   fetch("data/dashboard.json")
@@ -548,18 +974,13 @@
     })
     .then((json) => {
       DATA = json;
-      DATA._categoryLabels = {
-        advertising_creative: "Advertising / creative content",
-        communications_copy: "Communications copy (email/text/scripts)",
-        synthetic_media: "Synthetic media / deepfake-adjacent",
-        research_strategy: "Research, polling & strategy",
-        fundraising: "Fundraising",
-        data_targeting: "Voter data & targeting",
-        administrative_productivity: "Administrative / general productivity",
-        unspecified: "Unspecified / generic",
-      };
+      vendorNameById = {};
+      DATA.vendors_overall.forEach((v) => (vendorNameById[v.id] = v.name));
       wireToggles();
+      wireViewModeToggles();
+      populateLeaderboardFilters();
       renderAll();
+      window.addEventListener("hashchange", router);
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll);
     })
     .catch((err) => {

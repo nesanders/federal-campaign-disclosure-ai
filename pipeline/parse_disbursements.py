@@ -1,10 +1,26 @@
 #!/usr/bin/env python3
-"""Scan itemized Schedule B disbursements (oppexp) for AI-vendor payments.
+"""Scan itemized Schedule B disbursements (oppexp) for AI-vendor payments,
+and separately total each committee's overall reported spending.
 
-For each cycle, streams the (large, headerless) oppexp text file, matches
-each row's payee name + purpose + memo text against the vendor taxonomy in
-config/vendors.yaml, and writes only the matching rows -- a small fraction
-of the total -- to data/processed/matches_{cycle}.csv for downstream joins.
+For each cycle, streams the (large, headerless) oppexp text file once and:
+  1. Matches each row's payee name + purpose + memo text against the vendor
+     taxonomy in config/vendors.yaml, writing matching rows -- a small
+     fraction of the total -- to data/processed/matches_{cycle}.csv.
+  2. Accumulates each committee's total reported operating expenditure into
+     data/processed/totals_{cycle}.csv, as the denominator for "AI spend as
+     a share of total spend" elsewhere in the pipeline.
+
+A note on FEC's MEMO_CD convention: many disbursements are reported as a
+single lump payment (e.g. to a credit-card processor) with the individual
+line items broken out afterward as separate "memo entries" (MEMO_CD='X')
+that re-describe part of that same lump sum for transparency -- they are
+not additional spending. This is exactly how a specific AI vendor name
+often surfaces (e.g. "AMERICAN EXPRESS" as the actual payee, with a memo
+entry itemizing "OPENAI" as one of the card's line items), so memo entries
+are KEPT when matching AI vendors -- excluding them would hide exactly the
+detail we're looking for. But they are EXCLUDED from the committee-total
+denominator, since that dollar amount is already counted once in the
+non-memo lump-sum transaction; including both would double-count it.
 
 FEC bulk text is pipe-delimited, unquoted, and not strictly UTF-8, so rows
 are parsed defensively: malformed lines (wrong field count) are counted and
@@ -15,6 +31,7 @@ from __future__ import annotations
 import argparse
 import csv
 import sys
+from collections import defaultdict
 from pathlib import Path
 
 import requests
@@ -39,6 +56,7 @@ OUT_FIELDS = [
     "purpose",
     "category_desc",
     "memo_text",
+    "memo_cd",
     "rpt_yr",
     "sub_id",
     "vendor_ids",
@@ -47,6 +65,7 @@ OUT_FIELDS = [
     "confidences",
     "use_categories",
 ]
+TOTALS_FIELDS = ["cmte_id", "total_amount", "total_count"]
 
 
 def find_oppexp_file(cycle_dir: Path) -> Path:
@@ -65,10 +84,12 @@ def process_cycle(cycle: int, taxonomy: Taxonomy, session: requests.Session) -> 
     src = find_oppexp_file(cycle_dir)
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     out_path = PROCESSED_DIR / f"matches_{cycle}.csv"
+    totals_path = PROCESSED_DIR / f"totals_{cycle}.csv"
 
     total = 0
     matched = 0
     malformed = 0
+    cmte_totals: dict[str, list] = defaultdict(lambda: [0.0, 0])
 
     with open(src, encoding="latin-1", errors="replace", newline="") as f_in, open(
         out_path, "w", newline="", encoding="utf-8"
@@ -84,6 +105,19 @@ def process_cycle(cycle: int, taxonomy: Taxonomy, session: requests.Session) -> 
                 continue
             row = row[:n_fields]
 
+            cmte_id = row[idx.get("CMTE_ID", -1)] if "CMTE_ID" in idx else ""
+            memo_cd = row[idx.get("MEMO_CD", -1)] if "MEMO_CD" in idx else ""
+            try:
+                amt = float(row[idx.get("TRANSACTION_AMT", -1)]) if "TRANSACTION_AMT" in idx else 0.0
+            except ValueError:
+                amt = 0.0
+            if cmte_id and memo_cd != "X":
+                # Exclude memo entries from the committee total: they re-describe
+                # part of a lump-sum payment already counted elsewhere on the
+                # same report, so including them would double-count spending.
+                cmte_totals[cmte_id][0] += amt
+                cmte_totals[cmte_id][1] += 1
+
             text = " ".join(row[idx[f]] for f in TEXT_FIELDS if f in idx and row[idx[f]])
             vendor_hits = taxonomy.match_vendors(text)
             if not vendor_hits:
@@ -97,7 +131,7 @@ def process_cycle(cycle: int, taxonomy: Taxonomy, session: requests.Session) -> 
             writer.writerow(
                 {
                     "cycle": cycle,
-                    "cmte_id": row[idx.get("CMTE_ID", -1)] if "CMTE_ID" in idx else "",
+                    "cmte_id": cmte_id,
                     "name": row[idx.get("NAME", -1)] if "NAME" in idx else "",
                     "city": row[idx.get("CITY", -1)] if "CITY" in idx else "",
                     "state": row[idx.get("STATE", -1)] if "STATE" in idx else "",
@@ -106,6 +140,7 @@ def process_cycle(cycle: int, taxonomy: Taxonomy, session: requests.Session) -> 
                     "purpose": row[idx.get("PURPOSE", -1)] if "PURPOSE" in idx else "",
                     "category_desc": row[idx.get("CATEGORY_DESC", -1)] if "CATEGORY_DESC" in idx else "",
                     "memo_text": row[idx.get("MEMO_TEXT", -1)] if "MEMO_TEXT" in idx else "",
+                    "memo_cd": memo_cd,
                     "rpt_yr": row[idx.get("RPT_YR", -1)] if "RPT_YR" in idx else "",
                     "sub_id": row[idx.get("SUB_ID", -1)] if "SUB_ID" in idx else "",
                     "vendor_ids": ";".join(v.id for v, _ in vendor_hits),
@@ -117,7 +152,16 @@ def process_cycle(cycle: int, taxonomy: Taxonomy, session: requests.Session) -> 
             )
             matched += 1
 
-    print(f"cycle {cycle}: {total:,} rows scanned, {matched:,} matched, {malformed:,} malformed skipped -> {out_path}")
+    with open(totals_path, "w", newline="", encoding="utf-8") as f_totals:
+        writer = csv.DictWriter(f_totals, fieldnames=TOTALS_FIELDS)
+        writer.writeheader()
+        for cmte_id, (amount, count) in sorted(cmte_totals.items()):
+            writer.writerow({"cmte_id": cmte_id, "total_amount": round(amount, 2), "total_count": count})
+
+    print(
+        f"cycle {cycle}: {total:,} rows scanned, {matched:,} matched, {malformed:,} malformed skipped "
+        f"-> {out_path} ; {len(cmte_totals):,} committees totaled -> {totals_path}"
+    )
     return matched
 
 

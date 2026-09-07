@@ -21,6 +21,21 @@
 # into headline counts. An optional `exclude` list of regexes on a vendor
 # suppresses a match entirely when present in the same text (e.g. "Gemini
 # Trust Company", the crypto exchange, unrelated to Google's Gemini models).
+#
+# A deliberate scope limit: general-purpose cloud hosting (AWS, Microsoft
+# Azure, Google Cloud) is NOT treated as "AI spend" just because the
+# provider also sells AI products. Campaigns pay Amazon Web Services and
+# Google Cloud for ordinary website hosting and data services constantly
+# (234 AWS and 45 "Google Cloud" hits in the 2026 oppexp file alone, almost
+# all tagged "WEBSITE HOSTING" / "WIRE SERVICES" / "DATA SERVICE"), and
+# counting that as "AI" would be indefensible. Only specific, named
+# AI products/services on these platforms count (e.g. "AWS Bedrock",
+# "Azure OpenAI Service") -- see the aws_ai / azure_ai entries below. In
+# practice, scanning all four cycles found zero disbursements naming a
+# specific hyperscaler AI product; campaigns either aren't itemizing that
+# level of detail or aren't using those services in a way that shows up in
+# a purpose/memo field. That absence is itself a finding, not a gap to
+# paper over -- it's surfaced on the dashboard rather than hidden.
 
 general_purpose:
   - id: openai
@@ -48,7 +63,15 @@ general_purpose:
       - {pattern: "\\bgoogle ai\\b", confidence: high}
       - {pattern: "gemini", confidence: medium}
     # "Gemini" collides with Gemini Trust Company, a crypto exchange that
-    # shows up often in FEC data unrelated to Google's Gemini AI models.
+    # shows up often in FEC data unrelated to Google's Gemini AI models --
+    # also with Gemini Imprints, Gemini Properties, Gemini Sign & Design,
+    # and other ordinary small businesses (the word is a zodiac sign and a
+    # common business name). Real high-confidence Google-AI hits are rare
+    # in this dataset: unlike a standalone ChatGPT or Claude subscription,
+    # Gemini is often bundled into a Google Workspace subscription the
+    # campaign already pays for email/docs, so there's no separate line
+    # item to catch. This likely understates Google's real usage more than
+    # it does OpenAI's or Anthropic's.
     exclude:
       - "gemini trust"
       - "gemini space station"
@@ -57,6 +80,25 @@ general_purpose:
       - "merchant fee"
       - "credit card processing"
       - "bitcoin"
+  - id: aws_ai
+    name: AWS AI services (Bedrock, SageMaker, Q)
+    homepage: https://aws.amazon.com/ai/
+    patterns:
+      - {pattern: "aws bedrock", confidence: high}
+      - {pattern: "amazon bedrock", confidence: high}
+      - {pattern: "amazon sagemaker", confidence: high}
+      - {pattern: "\\bamazon q\\b", confidence: high}
+      - {pattern: "amazon rekognition", confidence: high}
+      - {pattern: "amazon comprehend", confidence: high}
+      - {pattern: "amazon textract", confidence: high}
+  - id: azure_ai
+    name: Microsoft Azure AI
+    homepage: https://azure.microsoft.com/en-us/solutions/ai
+    patterns:
+      - {pattern: "azure openai", confidence: high}
+      - {pattern: "azure ai\\b", confidence: high}
+      - {pattern: "azure cognitive services", confidence: high}
+      - {pattern: "azure machine learning", confidence: high}
   - id: microsoft_copilot
     name: Microsoft Copilot
     homepage: https://copilot.microsoft.com
