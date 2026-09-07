@@ -74,6 +74,10 @@ def high_ids(vendor_ids: str, confidences: str) -> list[str]:
     return [v for v, c in zip(vendor_ids.split(";"), confidences.split(";")) if c == "high"]
 
 
+def high_ids_ex_legacy(high_vendor_ids: list[str], era_by_id: dict) -> list[str]:
+    return [v for v in high_vendor_ids if era_by_id.get(v, "generative") != "legacy"]
+
+
 def parse_cycle(cycle: int, session: requests.Session, birthdates: dict[str, str]) -> pd.DataFrame:
     path = PROCESSED_DIR / f"matches_{cycle}.csv"
     if not path.exists():
@@ -168,7 +172,7 @@ def load_universe_totals(cycle: int, session: requests.Session, birthdates: dict
     return pd.DataFrame(rows)
 
 
-def explode_vendors(df: pd.DataFrame) -> pd.DataFrame:
+def explode_vendors(df: pd.DataFrame, era_by_id: dict) -> pd.DataFrame:
     """One row per (disbursement, vendor) pair."""
     rows = []
     for rec in df.itertuples(index=False):
@@ -196,6 +200,7 @@ def explode_vendors(df: pd.DataFrame) -> pd.DataFrame:
                     "vendor_id": vid,
                     "vendor_name": vname,
                     "vendor_group": vgroup,
+                    "vendor_era": era_by_id.get(vid, "generative"),
                     "confidence": conf,
                 }
             )
@@ -210,6 +215,12 @@ def agg_amount_count(df: pd.DataFrame, by: list[str]) -> list[dict]:
     g["distinct_candidates"] = df[df["cand_id"] != ""].groupby(by, dropna=False)["cand_id"].nunique()
     g["distinct_candidates"] = g["distinct_candidates"].fillna(0).astype(int)
     return g.reset_index().to_dict(orient="records")
+
+
+def rename_key(rows: list[dict], old: str, new: str) -> list[dict]:
+    for row in rows:
+        row[new] = row.pop(old)
+    return rows
 
 
 def attach_totals(rows: list[dict], key_fields: list[str], totals: dict, out_field: str = "total_expenditure") -> None:
@@ -263,9 +274,21 @@ def main() -> None:
          "total_expenditure": "sum", "cycle": "first"}
     )
 
-    exploded = explode_vendors(df)
+    # `era` tags each vendor as "generative" (built on modern LLM/diffusion/
+    # voice-clone AI) or "legacy" (an "AI"-branded company that predates the
+    # generative-AI wave, e.g. Amplify.ai/TruVerse, Prompt.io, CallTime.AI --
+    # see config/vendors.yaml). Charts/tables default to excluding legacy
+    # vendors; the dashboard has a toggle to include them back in.
+    taxonomy_vendors = Taxonomy().vendors
+    homepage_by_id = {v.id: v.homepage for v in taxonomy_vendors}
+    era_by_id = {v.id: v.era for v in taxonomy_vendors}
+    df["high_vendor_ids_ex_legacy"] = df["high_vendor_ids"].apply(lambda ids: high_ids_ex_legacy(ids, era_by_id))
+    df["is_high_ex_legacy"] = df["high_vendor_ids_ex_legacy"].apply(bool)
+
+    exploded = explode_vendors(df, era_by_id)
     high = exploded[exploded["confidence"] == "high"].copy()
     high["age_bucket"] = high["age"].apply(age_bucket)
+    high_ex_legacy = high[high["vendor_era"] != "legacy"].copy()
     candidate_office = high[high["office"].isin(["House", "Senate"])].copy()
     cc_table = build_committee_cycle_table(df)
     cc_office = cc_table[cc_table["office"].isin(["House", "Senate"])].copy()
@@ -277,7 +300,6 @@ def main() -> None:
     universe_2026 = universe_by_cand[universe_by_cand["cycle"] == CURRENT_CYCLE]
 
     # --- vendor landscape (all confidence tiers, all committees) ---
-    homepage_by_id = {v.id: v.homepage for v in Taxonomy().vendors}
     vendor_rows = []
     for (vid, vname, vgroup), sub in exploded.groupby(["vendor_id", "vendor_name", "vendor_group"]):
         hi = sub[sub["confidence"] == "high"]
@@ -287,6 +309,7 @@ def main() -> None:
                 "id": vid,
                 "name": vname,
                 "group": vgroup,
+                "era": era_by_id.get(vid, "generative"),
                 "homepage": homepage_by_id.get(vid),
                 "amount_high": round(float(hi["transaction_amt"].sum()), 2),
                 "count_high": int(hi["sub_id"].nunique()),
@@ -298,25 +321,35 @@ def main() -> None:
     vendor_rows.sort(key=lambda r: r["amount_high"], reverse=True)
 
     vendor_group_totals = (
-        high.groupby("vendor_group")
+        high.groupby(["vendor_group", "vendor_era"])
         .agg(amount=("transaction_amt", "sum"), count=("sub_id", "nunique"))
         .reset_index()
+        .rename(columns={"vendor_era": "era"})
         .to_dict(orient="records")
     )
 
     # --- use-case categories (candidate committees, high confidence, all cycles) ---
+    # Keyed by (category, era) so the dashboard can sum only non-legacy rows
+    # by default and include legacy-era vendors when the toggle is on.
     cat_rows = []
     cat_counter = defaultdict(lambda: {"amount": 0.0, "count": 0, "cand_ids": set()})
     for rec in candidate_office.itertuples(index=False):
         cats = rec.use_categories.split(";") if rec.use_categories else ["unspecified"]
         for cat in cats:
-            cat_counter[cat]["amount"] += rec.transaction_amt
-            cat_counter[cat]["count"] += 1
+            key = (cat, rec.vendor_era)
+            cat_counter[key]["amount"] += rec.transaction_amt
+            cat_counter[key]["count"] += 1
             if rec.cand_id:
-                cat_counter[cat]["cand_ids"].add(rec.cand_id)
-    for cat, v in cat_counter.items():
+                cat_counter[key]["cand_ids"].add(rec.cand_id)
+    for (cat, era), v in cat_counter.items():
         cat_rows.append(
-            {"id": cat, "amount": round(v["amount"], 2), "count": v["count"], "distinct_candidates": len(v["cand_ids"])}
+            {
+                "id": cat,
+                "era": era,
+                "amount": round(v["amount"], 2),
+                "count": v["count"],
+                "distinct_candidates": len(v["cand_ids"]),
+            }
         )
     cat_rows.sort(key=lambda r: r["amount"], reverse=True)
 
@@ -324,19 +357,19 @@ def main() -> None:
     for rec in candidate_office.itertuples(index=False):
         cats = rec.use_categories.split(";") if rec.use_categories else ["unspecified"]
         for cat in cats:
-            key = (cat, rec.vendor_group)
+            key = (cat, rec.vendor_group, rec.vendor_era)
             cat_by_group[key]["amount"] += rec.transaction_amt
             cat_by_group[key]["count"] += 1
     use_category_by_vendor_group = [
-        {"category": cat, "group": group, "amount": round(v["amount"], 2), "count": v["count"]}
-        for (cat, group), v in cat_by_group.items()
+        {"category": cat, "group": group, "era": era, "amount": round(v["amount"], 2), "count": v["count"]}
+        for (cat, group, era), v in cat_by_group.items()
     ]
 
     # --- breakdowns (2026 cycle only) with pct-of-total denominators ---
-    by_party = agg_amount_count(candidate_2026, ["cand_party", "vendor_group"])
-    by_incumbency = agg_amount_count(candidate_2026, ["ici", "vendor_group"])
-    by_chamber = agg_amount_count(candidate_2026, ["office", "vendor_group"])
-    by_age = agg_amount_count(candidate_2026, ["age_bucket", "vendor_group"])
+    by_party = rename_key(agg_amount_count(candidate_2026, ["cand_party", "vendor_group", "vendor_era"]), "vendor_era", "era")
+    by_incumbency = rename_key(agg_amount_count(candidate_2026, ["ici", "vendor_group", "vendor_era"]), "vendor_era", "era")
+    by_chamber = rename_key(agg_amount_count(candidate_2026, ["office", "vendor_group", "vendor_era"]), "vendor_era", "era")
+    by_age = rename_key(agg_amount_count(candidate_2026, ["age_bucket", "vendor_group", "vendor_era"]), "vendor_era", "era")
 
     attach_totals(by_party, ["cand_party"], universe_2026.groupby("cand_party")["total_expenditure"].sum().to_dict())
     attach_totals(by_incumbency, ["ici"], universe_2026.groupby("ici")["total_expenditure"].sum().to_dict())
@@ -344,10 +377,10 @@ def main() -> None:
     attach_totals(by_age, ["age_bucket"], universe_2026.groupby("age_bucket")["total_expenditure"].sum().to_dict())
 
     # --- time series (all cycles) with pct-of-total denominators ---
-    time_series = agg_amount_count(candidate_office, ["cycle", "vendor_group"])
-    time_series_by_party = agg_amount_count(candidate_office, ["cycle", "cand_party"])
-    time_series_by_incumbency = agg_amount_count(candidate_office, ["cycle", "ici"])
-    time_series_by_chamber = agg_amount_count(candidate_office, ["cycle", "office"])
+    time_series = rename_key(agg_amount_count(candidate_office, ["cycle", "vendor_group", "vendor_era"]), "vendor_era", "era")
+    time_series_by_party = rename_key(agg_amount_count(candidate_office, ["cycle", "cand_party", "vendor_era"]), "vendor_era", "era")
+    time_series_by_incumbency = rename_key(agg_amount_count(candidate_office, ["cycle", "ici", "vendor_era"]), "vendor_era", "era")
+    time_series_by_chamber = rename_key(agg_amount_count(candidate_office, ["cycle", "office", "vendor_era"]), "vendor_era", "era")
 
     univ_cycle = universe_by_cand.groupby("cycle")["total_expenditure"].sum().to_dict()
     univ_cycle_party = universe_by_cand.groupby(["cycle", "cand_party"])["total_expenditure"].sum().to_dict()
@@ -358,15 +391,21 @@ def main() -> None:
     attach_totals(time_series_by_incumbency, ["cycle", "ici"], univ_cycle_ici)
     attach_totals(time_series_by_chamber, ["cycle", "office"], univ_cycle_office)
 
-    top_committees = (
-        exploded[exploded["confidence"] == "high"]
-        .groupby(["cmte_id", "cmte_name"])
-        .agg(amount=("transaction_amt", "sum"), count=("sub_id", "nunique"))
-        .reset_index()
-        .sort_values("amount", ascending=False)
-        .head(25)
-        .to_dict(orient="records")
-    )
+    def top_committees_table(source: pd.DataFrame) -> list[dict]:
+        return (
+            source.groupby(["cmte_id", "cmte_name"])
+            .agg(amount=("transaction_amt", "sum"), count=("sub_id", "nunique"))
+            .reset_index()
+            .sort_values("amount", ascending=False)
+            .head(25)
+            .to_dict(orient="records")
+        )
+
+    # Default (legacy vendors excluded) and "all eras" (toggle-on) variants,
+    # each independently ranked/truncated to the top 25 -- which committees
+    # place in the top 25 can differ between the two, not just their amounts.
+    top_committees = top_committees_table(high_ex_legacy)
+    top_committees_all_eras = top_committees_table(high)
 
     openai_2026_candidates = candidate_2026[candidate_2026["vendor_id"] == "openai"]["cand_id"].nunique()
 
@@ -386,27 +425,38 @@ def main() -> None:
     high_df = df[df["is_high"]]
     high_sum = high_df.groupby(["cycle", "cmte_id"])["transaction_amt"].sum()
     high_count = high_df.groupby(["cycle", "cmte_id"]).size()
+    high_ex_legacy_df = df[df["is_high_ex_legacy"]]
+    high_ex_legacy_sum = high_ex_legacy_df.groupby(["cycle", "cmte_id"])["transaction_amt"].sum()
+    high_ex_legacy_count = high_ex_legacy_df.groupby(["cycle", "cmte_id"]).size()
     attrs = df.drop_duplicates(subset=["cycle", "cmte_id"]).set_index(["cycle", "cmte_id"])[
         ["entity_id", "entity_type", "entity_name", "cand_party", "office", "ici", "cand_state", "cand_district", "cmte_total_expenditure"]
     ]
     per_cmte = attrs.copy()
     per_cmte["ai_amount_high"] = high_sum.reindex(per_cmte.index).fillna(0.0)
     per_cmte["ai_count_high"] = high_count.reindex(per_cmte.index).fillna(0).astype(int)
+    per_cmte["ai_amount_high_ex_legacy"] = high_ex_legacy_sum.reindex(per_cmte.index).fillna(0.0)
+    per_cmte["ai_count_high_ex_legacy"] = high_ex_legacy_count.reindex(per_cmte.index).fillna(0).astype(int)
     per_cmte["cmte_total_expenditure"] = pd.to_numeric(per_cmte["cmte_total_expenditure"], errors="coerce").fillna(0.0)
     per_cmte = per_cmte.reset_index()
 
     high_cats_by_cmte = defaultdict(set)
     high_vendors_by_cmte = defaultdict(set)
+    high_cats_by_cmte_ex_legacy = defaultdict(set)
+    high_vendors_by_cmte_ex_legacy = defaultdict(set)
     for rec in df.itertuples(index=False):
         if not rec.is_high:
             continue
         key = (rec.cycle, rec.cmte_id)
-        for cat in (rec.use_categories.split(";") if rec.use_categories else []):
-            high_cats_by_cmte[key].add(cat)
-        for vid in rec.high_vendor_ids:
-            high_vendors_by_cmte[key].add(vid)
+        cats = rec.use_categories.split(";") if rec.use_categories else []
+        high_cats_by_cmte[key].update(cats)
+        high_vendors_by_cmte[key].update(rec.high_vendor_ids)
+        if rec.is_high_ex_legacy:
+            high_cats_by_cmte_ex_legacy[key].update(cats)
+            high_vendors_by_cmte_ex_legacy[key].update(rec.high_vendor_ids_ex_legacy)
 
-    ent_sums = per_cmte.groupby(["cycle", "entity_id"])[["ai_amount_high", "ai_count_high", "cmte_total_expenditure"]].sum()
+    ent_sums = per_cmte.groupby(["cycle", "entity_id"])[
+        ["ai_amount_high", "ai_count_high", "ai_amount_high_ex_legacy", "ai_count_high_ex_legacy", "cmte_total_expenditure"]
+    ].sum()
     ent_attrs = (
         per_cmte.drop_duplicates(subset=["cycle", "entity_id"])
         .set_index(["cycle", "entity_id"])[["entity_type", "entity_name", "cand_party", "office", "ici", "cand_state", "cand_district"]]
@@ -416,10 +466,16 @@ def main() -> None:
     cmte_keys = {(r.cycle, r.cmte_id): (r.cycle, r.entity_id) for r in per_cmte.itertuples(index=False)}
     ent_cats: dict[tuple, set] = defaultdict(set)
     ent_vendors: dict[tuple, set] = defaultdict(set)
+    ent_cats_ex_legacy: dict[tuple, set] = defaultdict(set)
+    ent_vendors_ex_legacy: dict[tuple, set] = defaultdict(set)
     for (cycle, cmte_id), cats in high_cats_by_cmte.items():
         ent_cats[cmte_keys[(cycle, cmte_id)]] |= cats
     for (cycle, cmte_id), vids in high_vendors_by_cmte.items():
         ent_vendors[cmte_keys[(cycle, cmte_id)]] |= vids
+    for (cycle, cmte_id), cats in high_cats_by_cmte_ex_legacy.items():
+        ent_cats_ex_legacy[cmte_keys[(cycle, cmte_id)]] |= cats
+    for (cycle, cmte_id), vids in high_vendors_by_cmte_ex_legacy.items():
+        ent_vendors_ex_legacy[cmte_keys[(cycle, cmte_id)]] |= vids
 
     entity_rows = []
     for rec in entities.itertuples(index=False):
@@ -427,6 +483,9 @@ def main() -> None:
             continue
         key = (rec.cycle, rec.entity_id)
         pct = (rec.ai_amount_high / rec.total_expenditure * 100) if rec.total_expenditure > 0 else None
+        pct_ex_legacy = (
+            (rec.ai_amount_high_ex_legacy / rec.total_expenditure * 100) if rec.total_expenditure > 0 else None
+        )
         entity_rows.append(
             {
                 "cycle": int(rec.cycle),
@@ -440,10 +499,15 @@ def main() -> None:
                 "cand_district": rec.cand_district,
                 "ai_amount_high": round(float(rec.ai_amount_high), 2),
                 "ai_count_high": int(rec.ai_count_high),
+                "ai_amount_high_ex_legacy": round(float(rec.ai_amount_high_ex_legacy), 2),
+                "ai_count_high_ex_legacy": int(rec.ai_count_high_ex_legacy),
                 "total_expenditure": round(float(rec.total_expenditure), 2),
                 "pct_ai": round(pct, 3) if pct is not None else None,
+                "pct_ai_ex_legacy": round(pct_ex_legacy, 3) if pct_ex_legacy is not None else None,
                 "use_categories": sorted(ent_cats.get(key, set())),
                 "vendor_ids": sorted(ent_vendors.get(key, set())),
+                "use_categories_ex_legacy": sorted(ent_cats_ex_legacy.get(key, set())),
+                "vendor_ids_ex_legacy": sorted(ent_vendors_ex_legacy.get(key, set())),
             }
         )
 
@@ -480,6 +544,7 @@ def main() -> None:
             "id": vid,
             "name": vname,
             "group": vgroup,
+            "era": era_by_id.get(vid, "generative"),
             "homepage": homepage_by_id.get(vid),
             "amount_high": round(float(vhi["transaction_amt"].sum()), 2),
             "count_high": int(vhi["sub_id"].nunique()),
@@ -510,6 +575,8 @@ def main() -> None:
             .sort_values("amount", ascending=False)
             .to_dict(orient="records")
         )
+        for row in by_vendor:
+            row["era"] = era_by_id.get(row["vendor_id"], "generative")
         cats = defaultdict(lambda: {"amount": 0.0, "count": 0})
         for rec in csub.itertuples(index=False):
             for cat in (rec.use_categories.split(";") if rec.use_categories else ["unspecified"]):
@@ -606,6 +673,7 @@ def main() -> None:
             "'% of total spend' denominators are each committee's total reported operating expenditure (Schedule B), excluding FEC memo entries to avoid double-counting a lump-sum payment and its own itemized breakdown. For party/incumbency/chamber/age/time-series charts, the denominator is the combined total spend of the House/Senate candidates in that slice who have at least one AI-vendor disbursement -- not of every House/Senate candidate that cycle -- so these percentages answer 'how big is AI spend relative to everything else these AI-using campaigns spend,' not 'what share of all campaign spending nationally goes to AI.'",
             "The vendor list was expanded past what press coverage had named by scanning all four cycles for generic AI-indicative language (bare 'AI', 'chatbot', 'bot', 'prompt', etc.) in disbursements that didn't already match a known vendor, then researching which payee names kept recurring. That pass is what surfaced Amplify.ai, Prompt.io, CallTime.AI, Numero, Daisychain, SoSha, and several smaller tools -- collectively a much larger share of disclosed AI spending than the general-purpose chatbot subscriptions most coverage of this topic focuses on. It also surfaced a false-positive trap worth naming: several teleprompter-equipment vendors have 'prompting' in their name in the unrelated, decades-old sense, which is why 'Prompt.io' is matched only as that exact product name, never bare 'prompt'. The same scan turned up plausible-sounding candidates we deliberately left out because the disbursement text never actually said 'AI' -- Civis Analytics, Grow Progress, and Movement Labs are real political-data vendors whose own marketing mentions AI/machine learning, but nothing in how campaigns paid them here does, so we didn't want to launder marketing copy into a disclosure-based finding.",
             "A payee name match attributes the full disbursement amount to that vendor even when the memo describes a bundled payment (e.g. 'reimbursement for SendGrid, SpeechifAI, and Twilio' for one lump sum) -- there is no way to apportion a bundled reimbursement from the text alone, so a vendor's total can be modestly overstated in these cases. They appear to be a small share of matched dollars, not the norm.",
+            "Every vendor is tagged with an 'era': 'generative' (built on modern large-language-model, diffusion, or voice-clone AI) or 'legacy' (a company that predates the generative-AI wave and either still runs on older, non-generative technology or added a generative feature onto a much older product -- see config/vendors.yaml for the founding-year research behind each call). Amplify.ai/TruVerse, Prompt.io, CallTime.AI, Numero, EyesOver, Otter.ai, Chatfuel, Grammarly, and Descript are tagged legacy. Charts and tables default to excluding legacy-era vendors, since lumping a 2014-era chatbot or grammar checker in with a campaign's ChatGPT or Claude subscription overstates how much reported spending reflects current frontier-AI adoption; a toggle (top of the page) adds legacy vendors back into every chart and table. Vendor and candidate detail pages always show full history regardless of the toggle, with each vendor's era labeled.",
         ],
     }
 
@@ -624,6 +692,7 @@ def main() -> None:
         "time_series_by_incumbency": time_series_by_incumbency,
         "time_series_by_chamber": time_series_by_chamber,
         "top_committees": top_committees,
+        "top_committees_all_eras": top_committees_all_eras,
         "entities": entity_rows,
         "vendors_detail": vendors_detail,
         "candidates_detail": candidates_detail,

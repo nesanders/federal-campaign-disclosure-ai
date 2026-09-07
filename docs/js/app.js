@@ -76,6 +76,12 @@
   let DATA = null;
   let vendorNameById = {};
   let vendorHomepageById = {};
+  let vendorEraById = {};
+  let includeLegacy = false;
+
+  function eraFilterList() {
+    return includeLegacy ? ["generative", "legacy"] : ["generative"];
+  }
 
   function vendorLinksCell(vendorIds) {
     const frag = document.createDocumentFragment();
@@ -87,6 +93,9 @@
         frag.appendChild(el("a", { className: "entity-link", href: homepage, text: name, attrs: { target: "_blank", rel: "noopener" } }));
       } else {
         frag.appendChild(el("a", { className: "entity-link", href: "#/vendor/" + vid, text: name }));
+      }
+      if (vendorEraById[vid] === "legacy") {
+        frag.appendChild(el("span", { className: "pill pill-legacy", text: "legacy" }));
       }
     });
     return frag;
@@ -232,6 +241,16 @@
     });
   }
 
+  function wireLegacyToggle() {
+    const input = document.getElementById("legacy-toggle-input");
+    if (!input) return;
+    input.checked = includeLegacy;
+    input.addEventListener("change", () => {
+      includeLegacy = input.checked;
+      renderAll();
+    });
+  }
+
   function wireViewModeToggles() {
     document.querySelectorAll(".view-toggle").forEach((group) => {
       const key = group.getAttribute("data-toggle-group");
@@ -249,14 +268,17 @@
   function renderStats() {
     const meta = DATA.meta;
     const totalMatchedRows = Object.values(meta.matched_row_counts_by_cycle || {}).reduce((a, b) => a + b, 0);
-    const totalHighAmount = DATA.vendors_overall.reduce((a, v) => a + v.amount_high, 0);
-    const nGeneral = DATA.vendors_overall.filter((v) => v.group === "general_purpose").length;
-    const nPolitical = DATA.vendors_overall.filter((v) => v.group === "political_specific").length;
+    const eraFilter = eraFilterList();
+    const shownVendors = DATA.vendors_overall.filter((v) => eraFilter.includes(v.era));
+    const totalHighAmount = shownVendors.reduce((a, v) => a + v.amount_high, 0);
+    const nGeneral = shownVendors.filter((v) => v.group === "general_purpose").length;
+    const nPolitical = shownVendors.filter((v) => v.group === "political_specific").length;
+    const nLegacyHidden = DATA.vendors_overall.filter((v) => v.era === "legacy" && v.amount_high > 0).length;
 
     const tiles = [
-      { label: "AI vendors identified in disclosures", value: fmtInt.format(DATA.vendors_overall.length), sub: nGeneral + " general-purpose · " + nPolitical + " campaign-specific" },
-      { label: "AI-related disbursement records found", value: fmtInt.format(totalMatchedRows), sub: "across " + meta.cycles.join(", ") + " cycles, all confidence tiers" },
-      { label: "Total high-confidence AI spending", value: fmtUSD0.format(totalHighAmount), sub: "all committees, all cycles" },
+      { label: "AI vendors identified in disclosures", value: fmtInt.format(shownVendors.length), sub: nGeneral + " general-purpose · " + nPolitical + " campaign-specific" + (includeLegacy ? "" : " · " + nLegacyHidden + " legacy vendors hidden") },
+      { label: "AI-related disbursement records found", value: fmtInt.format(totalMatchedRows), sub: "across " + meta.cycles.join(", ") + " cycles, all confidence tiers, all eras" },
+      { label: "Total high-confidence AI spending", value: fmtUSD0.format(totalHighAmount), sub: (includeLegacy ? "all vendors" : "generative-era vendors only") + ", all committees, all cycles" },
       { label: "2026 House/Senate candidates paying OpenAI", value: fmtInt.format(meta.openai_high_confidence_house_senate_candidates_2026), sub: "high-confidence text match to OpenAI/ChatGPT in payee name, purpose, or memo" },
     ];
 
@@ -267,7 +289,10 @@
     document.getElementById("coverage-callout").innerHTML =
       "<strong>Coverage:</strong> this pipeline scans itemized operating-expenditure (Schedule B) records from FEC bulk data for the " +
       meta.cycles.join(", ") +
-      " two-year cycles, matches payee/purpose/memo text against a curated AI-vendor taxonomy, and joins matches to candidate party, chamber, incumbency status, and (where available) age. Disclosed spending likely understates actual AI use, since campaigns can pay through corporate cards, staff, or consultants without the vendor name ever appearing in a filing.";
+      " two-year cycles, matches payee/purpose/memo text against a curated AI-vendor taxonomy, and joins matches to candidate party, chamber, incumbency status, and (where available) age. Disclosed spending likely understates actual AI use, since campaigns can pay through corporate cards, staff, or consultants without the vendor name ever appearing in a filing." +
+      (includeLegacy
+        ? " Legacy-era vendors (pre-generative-AI companies branded “AI”) are currently included, via the toggle above."
+        : " " + nLegacyHidden + " legacy-era vendor" + (nLegacyHidden === 1 ? "" : "s") + " with disclosed spending are hidden by default (toggle above to include them) &mdash; see methodology.");
 
     document.getElementById("meta-line").textContent =
       "Data generated " + new Date(meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC · cycles: " + meta.cycles.join(", ");
@@ -276,8 +301,9 @@
 
   function renderVendors() {
     const c = colors();
-    const rows = DATA.vendors_overall.slice(0, 20);
-    const labels = rows.map((r) => r.name);
+    const eraFilter = eraFilterList();
+    const rows = DATA.vendors_overall.filter((v) => eraFilter.includes(v.era)).slice(0, 20);
+    const labels = rows.map((r) => r.name + (r.era === "legacy" ? " (legacy)" : ""));
     const data = rows.map((r) => r.amount_high);
     const bg = rows.map((r) => (r.group === "general_purpose" ? c.general_purpose : c.political_specific));
 
@@ -333,20 +359,24 @@
       [
         { key: "name", label: "Vendor", link: (r) => "#/vendor/" + r.id },
         { key: "group", label: "Type" },
+        { key: "era", label: "Era" },
         { key: "amount_high", label: "High-confidence $", num: true },
         { key: "count_high", label: "Records", num: true },
         { key: "amount_medium", label: "Lower-confidence $", num: true },
         { key: "website", label: "Website", link: (r) => r.website || null, external: true, render: (r) => (r.website ? "Visit ↗" : "—") },
       ],
-      DATA.vendors_overall.map((r) => ({
-        id: r.id,
-        name: r.name,
-        group: VENDOR_GROUP_LABEL[r.group] || r.group,
-        amount_high: fmtUSD0.format(r.amount_high),
-        count_high: fmtInt.format(r.count_high),
-        amount_medium: fmtUSD0.format(r.amount_medium),
-        website: r.homepage || "",
-      }))
+      DATA.vendors_overall
+        .filter((v) => eraFilter.includes(v.era))
+        .map((r) => ({
+          id: r.id,
+          name: r.name,
+          group: VENDOR_GROUP_LABEL[r.group] || r.group,
+          era: r.era === "legacy" ? "Legacy (pre-generative AI)" : "Generative",
+          amount_high: fmtUSD0.format(r.amount_high),
+          count_high: fmtInt.format(r.count_high),
+          amount_medium: fmtUSD0.format(r.amount_medium),
+          website: r.homepage || "",
+        }))
     );
 
     const legendHtml =
@@ -361,9 +391,29 @@
     }
   }
 
+  // Sums the per-(id, era) rows the pipeline emits into one row per id,
+  // for whichever era(s) are currently included. distinct_candidates uses
+  // the max across included eras rather than a sum, since summing could
+  // double-count a candidate who has both generative- and legacy-era spend
+  // in the same category once the toggle includes both.
+  function aggregateByEra(rows, idKey, eraFilter) {
+    const included = rows.filter((r) => eraFilter.includes(r.era));
+    const byId = new Map();
+    included.forEach((r) => {
+      const id = r[idKey];
+      const cur = byId.get(id) || { amount: 0, count: 0, distinct_candidates: 0 };
+      cur.amount += r.amount;
+      cur.count += r.count;
+      cur.distinct_candidates = Math.max(cur.distinct_candidates, r.distinct_candidates || 0);
+      byId.set(id, Object.assign({ [idKey]: id }, cur));
+    });
+    return Array.from(byId.values());
+  }
+
   function renderUseCases() {
     const c = colors();
-    const rows = DATA.use_categories.slice().sort((a, b) => b.amount - a.amount);
+    const eraFilter = eraFilterList();
+    const rows = aggregateByEra(DATA.use_categories, "id", eraFilter).sort((a, b) => b.amount - a.amount);
     const labels = rows.map((r) => catLabel(r.id));
     const data = rows.map((r) => r.amount);
 
@@ -403,10 +453,11 @@
       rows.map((r) => ({ label: catLabel(r.id), amount: fmtUSD0.format(r.amount), count: fmtInt.format(r.count), candidates: fmtInt.format(r.distinct_candidates) }))
     );
 
-    const cross = DATA.use_category_by_vendor_group;
+    const cross = DATA.use_category_by_vendor_group.filter((x) => eraFilter.includes(x.era));
     const catIds = rows.map((r) => r.id);
-    const gp = catIds.map((id) => (cross.find((x) => x.category === id && x.group === "general_purpose") || {}).amount || 0);
-    const ps = catIds.map((id) => (cross.find((x) => x.category === id && x.group === "political_specific") || {}).amount || 0);
+    const sumCross = (id, group) => cross.filter((x) => x.category === id && x.group === group).reduce((a, x) => a + x.amount, 0);
+    const gp = catIds.map((id) => sumCross(id, "general_purpose"));
+    const ps = catIds.map((id) => sumCross(id, "political_specific"));
 
     makeChart("chart-usecases-group", {
       type: "bar",
@@ -443,14 +494,24 @@
   function stackedByGroupChart(canvasId, panel, rows, orderKey, order) {
     const c = colors();
     const mode = viewModes.breakdowns;
+    const eraFilter = eraFilterList();
+    const shown = rows.filter((r) => eraFilter.includes(r.era));
+    // Category axis is kept stable across all rows (not just shown eras) so
+    // toggling legacy vendors in/out doesn't make a bar disappear entirely --
+    // it can still legitimately go to zero if all its spend was legacy-era.
     const cats = order.filter((k) => rows.some((r) => String(r[orderKey]) === k));
     const totals = cats.map((k) => {
       const r = rows.find((rr) => String(rr[orderKey]) === k);
       return r ? r.total_expenditure || 0 : 0;
     });
-    const rawGp = cats.map((k) => rows.filter((r) => String(r[orderKey]) === k && r.vendor_group === "general_purpose").reduce((a, r) => a + r.amount, 0));
-    const rawPs = cats.map((k) => rows.filter((r) => String(r[orderKey]) === k && r.vendor_group === "political_specific").reduce((a, r) => a + r.amount, 0));
-    const counts = cats.map((k) => rows.filter((r) => String(r[orderKey]) === k).reduce((a, r) => a + r.distinct_candidates, 0));
+    const rawGp = cats.map((k) => shown.filter((r) => String(r[orderKey]) === k && r.vendor_group === "general_purpose").reduce((a, r) => a + r.amount, 0));
+    const rawPs = cats.map((k) => shown.filter((r) => String(r[orderKey]) === k && r.vendor_group === "political_specific").reduce((a, r) => a + r.amount, 0));
+    // Sum across the two vendor-group series (as before the era split), but
+    // take the max across any duplicate era rows within one group so
+    // toggling legacy vendors in doesn't double-count a candidate counted
+    // under both a generative-era and legacy-era row for the same group.
+    const countsForGroup = (k, group) => shown.filter((r) => String(r[orderKey]) === k && r.vendor_group === group).reduce((m, r) => Math.max(m, r.distinct_candidates), 0);
+    const counts = cats.map((k) => countsForGroup(k, "general_purpose") + countsForGroup(k, "political_specific"));
     const gp = mode === "pct" ? rawGp.map((v, i) => (totals[i] ? (v / totals[i]) * 100 : 0)) : rawGp;
     const ps = mode === "pct" ? rawPs.map((v, i) => (totals[i] ? (v / totals[i]) * 100 : 0)) : rawPs;
     const displayLabels = cats.slice();
@@ -513,14 +574,22 @@
   function lineChart(canvasId, panel, cycles, series, colorMap) {
     const c = colors();
     const mode = viewModes.trends;
-    const valueFor = (row) => {
-      if (!row) return 0;
-      if (mode === "pct") return row.total_expenditure ? (row.amount / row.total_expenditure) * 100 : 0;
-      return row.amount;
+    // `matches` can hold more than one row for the same cycle once the
+    // legacy toggle is on (a generative-era row and a legacy-era row for
+    // that cycle) -- amounts sum across them, but total_expenditure is the
+    // same denominator repeated on each and must not be summed.
+    const valueFor = (matches) => {
+      if (!matches.length) return 0;
+      const amount = matches.reduce((a, r) => a + r.amount, 0);
+      if (mode === "pct") {
+        const total = matches[0].total_expenditure;
+        return total ? (amount / total) * 100 : 0;
+      }
+      return amount;
     };
     const datasets = Object.keys(series).map((name) => ({
       label: name,
-      data: cycles.map((cy) => valueFor(series[name].find((r) => Number(r.cycle) === cy), cy)),
+      data: cycles.map((cy) => valueFor(series[name].filter((r) => Number(r.cycle) === cy))),
       borderColor: colorMap[name] || c.muted,
       backgroundColor: colorMap[name] || c.muted,
       borderWidth: 2,
@@ -552,7 +621,7 @@
     const rows = cycles.map((cy) => {
       const row = { cycle: cy };
       Object.keys(series).forEach((name) => {
-        row[name] = fmtVal(valueFor(series[name].find((rr) => Number(rr.cycle) === cy), cy));
+        row[name] = fmtVal(valueFor(series[name].filter((rr) => Number(rr.cycle) === cy)));
       });
       return row;
     });
@@ -562,36 +631,38 @@
   function renderTrends() {
     const c = colors();
     const cycles = DATA.meta.cycles.slice().sort((a, b) => a - b);
+    const eraFilter = eraFilterList();
 
     lineChart(
       "chart-trend-overall",
       "trend-overall",
       cycles,
       {
-        [VENDOR_GROUP_LABEL.general_purpose]: DATA.time_series.filter((r) => r.vendor_group === "general_purpose"),
-        [VENDOR_GROUP_LABEL.political_specific]: DATA.time_series.filter((r) => r.vendor_group === "political_specific"),
+        [VENDOR_GROUP_LABEL.general_purpose]: DATA.time_series.filter((r) => r.vendor_group === "general_purpose" && eraFilter.includes(r.era)),
+        [VENDOR_GROUP_LABEL.political_specific]: DATA.time_series.filter((r) => r.vendor_group === "political_specific" && eraFilter.includes(r.era)),
       },
       { [VENDOR_GROUP_LABEL.general_purpose]: c.general_purpose, [VENDOR_GROUP_LABEL.political_specific]: c.political_specific }
     );
 
     const byParty = {};
     PARTY_ORDER.forEach((p) => {
-      const rows = DATA.time_series_by_party.filter((r) => r.cand_party === p);
+      const rows = DATA.time_series_by_party.filter((r) => r.cand_party === p && eraFilter.includes(r.era));
       if (rows.length) byParty[p] = rows;
     });
     lineChart("chart-trend-party", "trend-party", cycles, byParty, c.party);
 
     const byInc = {};
-    ["Incumbent", "Challenger", "Open seat"].forEach((k) => (byInc[k] = DATA.time_series_by_incumbency.filter((r) => r.ici === k)));
+    ["Incumbent", "Challenger", "Open seat"].forEach((k) => (byInc[k] = DATA.time_series_by_incumbency.filter((r) => r.ici === k && eraFilter.includes(r.era))));
     lineChart("chart-trend-incumbency", "trend-incumbency", cycles, byInc, c.incumbency);
 
     const byChamber = {};
-    CHAMBER_ORDER.forEach((k) => (byChamber[k] = DATA.time_series_by_chamber.filter((r) => r.office === k)));
+    CHAMBER_ORDER.forEach((k) => (byChamber[k] = DATA.time_series_by_chamber.filter((r) => r.office === k && eraFilter.includes(r.era))));
     lineChart("chart-trend-chamber", "trend-chamber", cycles, byChamber, c.chamber);
   }
 
   function renderTopCommittees() {
-    const rows = DATA.top_committees.slice(0, 25);
+    const source = includeLegacy ? DATA.top_committees_all_eras : DATA.top_committees;
+    const rows = source.slice(0, 25);
     const container = document.getElementById("table-top-committees");
     container.innerHTML = "";
     container.appendChild(
@@ -632,12 +703,32 @@
     });
   }
 
-  function filteredEntities() {
-    return DATA.entities.filter((e) => {
-      if (filterState.cycle !== "all" && String(e.cycle) !== filterState.cycle) return false;
-      if (filterState.category !== "all" && e.use_categories.indexOf(filterState.category) === -1) return false;
-      return true;
+  // Resolves each entity to the amount/count/pct/category/vendor fields for
+  // the current legacy-vendor toggle state: the "_ex_legacy" variants by
+  // default, or the all-eras fields when the toggle includes legacy vendors.
+  function resolveEntityEra(e) {
+    if (includeLegacy) {
+      return Object.assign({ _isCandidate: e.entity_type === "candidate" }, e);
+    }
+    return Object.assign({}, e, {
+      _isCandidate: e.entity_type === "candidate",
+      ai_amount_high: e.ai_amount_high_ex_legacy,
+      ai_count_high: e.ai_count_high_ex_legacy,
+      pct_ai: e.pct_ai_ex_legacy,
+      use_categories: e.use_categories_ex_legacy,
+      vendor_ids: e.vendor_ids_ex_legacy,
     });
+  }
+
+  function filteredEntities() {
+    return DATA.entities
+      .map(resolveEntityEra)
+      .filter((e) => {
+        if (e.ai_amount_high <= 0) return false;
+        if (filterState.cycle !== "all" && String(e.cycle) !== filterState.cycle) return false;
+        if (filterState.category !== "all" && e.use_categories.indexOf(filterState.category) === -1) return false;
+        return true;
+      });
   }
 
   function entityLeaderboardHeaders(kind) {
@@ -683,7 +774,7 @@
   }
 
   function renderLeaderboards() {
-    const rows = filteredEntities().map((e) => Object.assign({ _isCandidate: e.entity_type === "candidate" }, e));
+    const rows = filteredEntities();
 
     const dollarRows = sortRows(rows, "dollar").slice(0, 40);
     const dollarContainer = document.getElementById("table-leaderboard-dollar");
@@ -732,12 +823,21 @@
     const header = el("div", { className: "detail-header" });
     const h2 = el("h2", { text: v.name });
     h2.appendChild(el("span", { className: "pill", text: VENDOR_GROUP_LABEL[v.group] }));
+    if (v.era === "legacy") h2.appendChild(el("span", { className: "pill pill-legacy", text: "Legacy (pre-generative AI)" }));
     header.appendChild(h2);
     if (v.homepage) {
       header.appendChild(el("a", { className: "entity-link", href: v.homepage, text: "Vendor website ↗", attrs: { target: "_blank", rel: "noopener" } }));
     }
     view.appendChild(header);
     view.appendChild(el("p", { className: "lede", text: "All figures are high-confidence text matches to this vendor's name/product across FEC disbursement records. See methodology for what \"high confidence\" means and its limits." }));
+    if (v.era === "legacy") {
+      view.appendChild(
+        el("p", {
+          className: "callout",
+          text: "This vendor predates the generative-AI wave (see methodology). It's excluded from the site's charts and tables by default -- this page always shows its full history regardless of that toggle.",
+        })
+      );
+    }
 
     const stats = el("div", { className: "detail-stat-row" });
     stats.appendChild(statTile("Total high-confidence spending", fmtUSD0.format(v.amount_high), fmtInt.format(v.count_high) + " disbursement records"));
@@ -935,7 +1035,7 @@
     makeChart("detail-chart-vendor", {
       type: "bar",
       data: {
-        labels: cd.by_vendor.map((r) => r.vendor_name),
+        labels: cd.by_vendor.map((r) => r.vendor_name + (r.era === "legacy" ? " (legacy)" : "")),
         datasets: [{ data: cd.by_vendor.map((r) => r.amount), backgroundColor: c.general_purpose, borderRadius: 4, barThickness: 16 }],
       },
       options: {
@@ -1031,11 +1131,14 @@
       DATA = json;
       vendorNameById = {};
       vendorHomepageById = {};
+      vendorEraById = {};
       DATA.vendors_overall.forEach((v) => {
         vendorNameById[v.id] = v.name;
+        vendorEraById[v.id] = v.era;
         if (v.homepage) vendorHomepageById[v.id] = v.homepage;
       });
       wireToggles();
+      wireLegacyToggle();
       wireViewModeToggles();
       populateLeaderboardFilters();
       renderAll();

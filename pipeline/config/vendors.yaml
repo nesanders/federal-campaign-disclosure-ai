@@ -23,6 +23,26 @@
 # suppresses a match entirely when present in the same text (e.g. "Gemini
 # Trust Company", the crypto exchange, unrelated to Google's Gemini models).
 #
+# `era` classifies each vendor as `generative` (its product is built on
+# modern generative AI -- large language models, diffusion/generative image
+# or video, voice cloning, etc.) or `legacy` (a company that predates the
+# generative-AI wave and either still runs on older, non-generative
+# technology -- rule-based chatbots, statistical NLP, traditional analytics
+# -- or bolted a generative feature onto a much older non-AI product). This
+# distinction matters because several vendors surfaced by the empirical
+# mining pass below (Amplify.ai/TruVerse, Prompt.io, CallTime.AI, Numero,
+# EyesOver) were founded years before ChatGPT existed and market themselves
+# as "AI" the way that word was used circa 2015 -- lumping their spend in
+# with a campaign's ChatGPT or Claude subscription overstates how much
+# reported spending reflects the frontier generative-AI adoption this
+# dashboard is actually about. The dashboard's charts and tables exclude
+# `legacy`-era vendors by default (with a toggle to include them); vendor
+# detail pages always show a vendor's full history regardless, tagged with
+# its era. Era is assigned from each company's founding year and the
+# generation of technology its core product launched on, researched
+# per-vendor; see notes on individual entries below where the call isn't
+# obvious from the company being a 2020s-founded AI-native startup.
+#
 # A deliberate scope limit: general-purpose cloud hosting (AWS, Microsoft
 # Azure, Google Cloud) is NOT treated as "AI spend" just because the
 # provider also sells AI products. Campaigns pay Amazon Web Services and
@@ -53,18 +73,21 @@
 # "prompting" in their name for the unrelated, decades-old sense of the
 # word. A bare "\bprompt\b" pattern would have swept those in as false
 # positives, which is why prompt_io below is matched only as "prompt.io",
-# never bare "prompt".
+# never bare "prompt". That same pass is also what surfaced how old some of
+# these "AI" vendors actually are, which is why the `era` field exists.
 
 general_purpose:
   - id: openai
     name: OpenAI (ChatGPT)
     homepage: https://openai.com
+    era: generative
     patterns:
       - {pattern: "openai", confidence: high}
       - {pattern: "chat ?gpt", confidence: high}
   - id: anthropic
     name: Anthropic (Claude)
     homepage: https://anthropic.com
+    era: generative
     patterns:
       - {pattern: "\\banthropic\\b", confidence: high}
       - {pattern: "claude ai", confidence: high}
@@ -73,6 +96,7 @@ general_purpose:
   - id: google_ai
     name: Google (Gemini / Vertex AI)
     homepage: https://ai.google
+    era: generative
     patterns:
       - {pattern: "google gemini", confidence: high}
       - {pattern: "gemini for google workspace", confidence: high}
@@ -101,6 +125,7 @@ general_purpose:
   - id: aws_ai
     name: AWS AI services (Bedrock, SageMaker, Q)
     homepage: https://aws.amazon.com/ai/
+    era: generative
     patterns:
       - {pattern: "aws bedrock", confidence: high}
       - {pattern: "amazon bedrock", confidence: high}
@@ -112,6 +137,7 @@ general_purpose:
   - id: azure_ai
     name: Microsoft Azure AI
     homepage: https://azure.microsoft.com/en-us/solutions/ai
+    era: generative
     patterns:
       - {pattern: "azure openai", confidence: high}
       - {pattern: "azure ai\\b", confidence: high}
@@ -120,6 +146,7 @@ general_purpose:
   - id: microsoft_copilot
     name: Microsoft Copilot
     homepage: https://copilot.microsoft.com
+    era: generative
     patterns:
       - {pattern: "microsoft copilot", confidence: high}
       - {pattern: "copilot for microsoft ?365", confidence: high}
@@ -128,6 +155,7 @@ general_purpose:
   - id: xai_grok
     name: xAI (Grok)
     homepage: https://x.ai
+    era: generative
     patterns:
       - {pattern: "\\bxai\\b", confidence: high}
       - {pattern: "x\\.ai", confidence: high}
@@ -135,37 +163,46 @@ general_purpose:
   - id: perplexity
     name: Perplexity AI
     homepage: https://perplexity.ai
+    era: generative
     patterns:
       - {pattern: "perplexity", confidence: high}
   - id: meta_ai
     name: Meta AI
     homepage: https://ai.meta.com
+    era: generative
     patterns:
       - {pattern: "meta ai", confidence: high}
       - {pattern: "meta llama", confidence: high}
   - id: midjourney
     name: Midjourney
     homepage: https://midjourney.com
+    era: generative
     patterns:
       - {pattern: "midjourney", confidence: high}
   - id: synthesia
     name: Synthesia
     homepage: https://synthesia.io
+    era: generative
+    # Founded 2017 (pre-ChatGPT), but the product has been AI video
+    # synthesis from day one, not a legacy tool with AI bolted on later.
     patterns:
       - {pattern: "synthesia", confidence: high}
   - id: elevenlabs
     name: ElevenLabs
     homepage: https://elevenlabs.io
+    era: generative
     patterns:
       - {pattern: "eleven ?labs", confidence: high}
   - id: heygen
     name: HeyGen
     homepage: https://heygen.com
+    era: generative
     patterns:
       - {pattern: "heygen", confidence: high}
   - id: runwayml
     name: Runway
     homepage: https://runwayml.com
+    era: generative
     patterns:
       - {pattern: "runwayml", confidence: high}
       - {pattern: "runway ai", confidence: high}
@@ -173,70 +210,92 @@ general_purpose:
   - id: descript
     name: Descript
     homepage: https://descript.com
+    era: legacy
+    # Founded 2017 as a transcript-based audio/video editor; added
+    # generative features (Overdub voice cloning) starting 2019 but the
+    # core product predates the generative-AI wave.
     patterns:
       - {pattern: "\\bdescript\\b", confidence: high}
   - id: jasper_ai
     name: Jasper AI
     homepage: https://jasper.ai
+    era: generative
     patterns:
       - {pattern: "jasper\\.ai", confidence: high}
       - {pattern: "jasper ai", confidence: high}
   - id: adobe_firefly
     name: Adobe Firefly
     homepage: https://firefly.adobe.com
+    era: generative
     patterns:
       - {pattern: "adobe firefly", confidence: high}
   - id: character_ai
     name: Character.AI
     homepage: https://character.ai
+    era: generative
     patterns:
       - {pattern: "character\\.ai", confidence: high}
   - id: otter_ai
     name: Otter.ai
     homepage: https://otter.ai
+    era: legacy
+    # Founded 2016 as a speech-to-text transcription tool; added
+    # generative "AI Chat" summarization in 2023, well after founding.
     patterns:
       - {pattern: "otter\\.ai", confidence: high}
       - {pattern: "\\botter ai\\b", confidence: high}
   - id: fal_ai
     name: fal.ai
     homepage: https://fal.ai
+    era: generative
     patterns:
       - {pattern: "fal\\.ai", confidence: high}
   - id: chatfuel
     name: Chatfuel
     homepage: https://chatfuel.com
+    era: legacy
+    # Founded 2015 as a rule-based Facebook Messenger chatbot builder,
+    # predating generative/LLM-based conversational AI entirely.
     patterns:
       - {pattern: "\\bchatfuel\\b", confidence: high}
   - id: sitespeakai
     name: SiteSpeakAI
     homepage: https://sitespeak.ai
+    era: generative
     patterns:
       - {pattern: "sitespeak ?ai", confidence: high}
   - id: smartlead_ai
     name: Smartlead.ai
     homepage: https://smartlead.ai
+    era: generative
     patterns:
       - {pattern: "smartlead\\.ai", confidence: high}
       - {pattern: "\\bsmartlead ai\\b", confidence: high}
   - id: instantly_ai
     name: Instantly.ai
     homepage: https://instantly.ai
+    era: generative
     patterns:
       - {pattern: "instantly\\.ai", confidence: high}
   - id: air_ai
     name: Air AI
     homepage: https://air.ai
+    era: generative
     patterns:
       - {pattern: "\\bair ai\\b", confidence: high}
       - {pattern: "\\bair\\.ai\\b", confidence: high}
   - id: grammarly
     name: Grammarly
     homepage: https://grammarly.com
+    era: legacy
+    # Founded 2009 on rule-based/statistical grammar checking; added
+    # generative rewriting ("GrammarlyGO") only in 2023.
     patterns:
       - {pattern: "\\bgrammarly\\b", confidence: high}
   - id: kling_ai
     name: Kling AI
     homepage: https://klingai.com
+    era: generative
     patterns:
       # Bare "Kling" is also a common surname (payroll/staff entries for a
       # "Kling, Shannon" showed up in testing); require the "AI" qualifier.
@@ -244,6 +303,7 @@ general_purpose:
   - id: luma_labs
     name: Luma Labs (Luma AI)
     homepage: https://lumalabs.ai
+    era: generative
     patterns:
       - {pattern: "luma labs", confidence: high}
 
@@ -251,6 +311,7 @@ political_specific:
   - id: quiller
     name: Quiller
     homepage: https://quiller.ai
+    era: generative
     lean_context: progressive-aligned (per public reporting)
     patterns:
       # Bare "Quiller" is also an ordinary English word (a component in
@@ -261,12 +322,14 @@ political_specific:
   - id: battleground_ai
     name: BattlegroundAI
     homepage: https://battlegroundai.org
+    era: generative
     lean_context: progressive-aligned (per public reporting)
     patterns:
       - {pattern: "battleground ?ai", confidence: high}
   - id: chorus_ai
     name: Chorus AI
     homepage: https://chorus.ai
+    era: generative
     lean_context: progressive-aligned (per public reporting)
     patterns:
       - {pattern: "chorus ai", confidence: high}
@@ -274,12 +337,14 @@ political_specific:
   - id: donoratlas
     name: DonorAtlas
     homepage: https://donoratlas.com
+    era: generative
     lean_context: progressive-aligned (per public reporting)
     patterns:
       - {pattern: "donor ?atlas", confidence: high}
   - id: rivalmind
     name: RivalMind
     homepage: https://rivalmind.ai
+    era: generative
     lean_context: progressive-aligned (per public reporting)
     patterns:
       - {pattern: "rivalmind", confidence: high}
@@ -287,24 +352,33 @@ political_specific:
   - id: aaru
     name: Aaru
     homepage: https://aaru.com
+    era: generative
     lean_context: reported GOP-aligned use of voter-simulation tools
     patterns:
       - {pattern: "\\baaru\\b", confidence: medium}
   - id: mirofish
     name: MiroFish
     homepage: null
+    era: generative
     lean_context: reported GOP-aligned use of voter-simulation tools
     patterns:
       - {pattern: "mirofish", confidence: high}
   - id: eyesover
     name: EyesOver
     homepage: https://www.eyesover.us
+    era: legacy
+    # Founded 2015 as a social-listening/monitoring tool, predating
+    # generative-AI-based analysis; brands itself "AI" in the older,
+    # analytics-dashboard sense of the word.
     lean_context: reported GOP-aligned social-listening tool; associated with Brad Parscale's Parscale Strategy
     patterns:
       - {pattern: "eyesover", confidence: high}
   - id: calltime_ai
     name: CallTime.AI
     homepage: https://www.calltime.ai
+    era: legacy
+    # Founded 2017, before the generative-AI wave; a donor call-time
+    # scheduling/CRM tool rather than an LLM-based product.
     lean_context: progressive-aligned (per public reporting)
     patterns:
       # Payee field spells this every possible way: "CALLTIME.AI",
@@ -313,6 +387,11 @@ political_specific:
   - id: amplify_ai
     name: Amplify.ai (TruVerse)
     homepage: https://truverse.net
+    era: legacy
+    # Founded 2016 (as TruVerse) as a rule-based political chatbot/voter
+    # outreach platform, years before ChatGPT-era generative AI; despite
+    # the "AI" name, most of its reported spend predates any generative
+    # capability the company may have since added.
     lean_context: reported use by Democratic campaigns and committees (e.g. House Majority PAC)
     patterns:
       - {pattern: "amplify[ .]ai", confidence: high}
@@ -320,6 +399,10 @@ political_specific:
   - id: prompt_io
     name: Prompt.io
     homepage: https://prompt.io
+    era: legacy
+    # Founded 2014 as a political texting/peer-to-peer messaging platform,
+    # a decade before "prompt" became generative-AI shorthand; the "AI" in
+    # its branding predates the current meaning of the term.
     patterns:
       # Deliberately NOT matching bare "prompt": teleprompter-equipment
       # vendors ("Capitol Prompting Service", "VIP Prompting Corporation")
@@ -329,6 +412,9 @@ political_specific:
   - id: numero_ai
     name: Numero (donor database / call time)
     homepage: https://www.numero.ai
+    era: legacy
+    # Founded 2018-2019 as a donor-database/call-time tool, before the
+    # generative-AI wave reshaped what "AI" campaign tools typically mean.
     patterns:
       # Bare "Numero" is an ordinary Spanish/Italian word for "number";
       # only count it when qualified with "AI" the way the company brands
@@ -337,6 +423,7 @@ political_specific:
   - id: daisychain
     name: Daisychain
     homepage: https://www.daisychain.app
+    era: generative
     lean_context: progressive-aligned (per public reporting)
     patterns:
       # One word in FEC filings ("DAISYCHAIN INC."); kept distinct from the
@@ -346,18 +433,21 @@ political_specific:
   - id: sosha
     name: SoSha (Speechifai)
     homepage: https://www.sosha.ai
+    era: generative
     patterns:
       - {pattern: "\\bsosha\\b", confidence: high}
       - {pattern: "speechifai", confidence: high}
   - id: change_agent_ai
     name: Change Agent AI
     homepage: https://thechange.ai
+    era: generative
     lean_context: built for nonprofits, unions & progressive campaigns (per public reporting)
     patterns:
       - {pattern: "change agent ai", confidence: high}
   - id: campaign_brain
     name: Campaign Brain
     homepage: https://www.campaign-brain.com
+    era: generative
     patterns:
       - {pattern: "campaign brain", confidence: high}
 

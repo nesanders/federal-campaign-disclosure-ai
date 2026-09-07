@@ -17,6 +17,18 @@ dollar figure. Section 5 ("Leaderboards") is sortable/filterable (by cycle
 and functional area) tables of the biggest AI spenders in dollar terms and
 as a share of their budget.
 
+Every vendor is also tagged with an **era**: `generative` (built on modern
+LLM/diffusion/voice-clone AI) or `legacy` (a company that predates the
+generative-AI wave and either still runs on older, non-generative technology
+or bolted a generative feature onto a much older product -- e.g. Amplify.ai,
+Prompt.io, CallTime.AI, Numero, EyesOver, Otter.ai, Chatfuel, Grammarly, and
+Descript). Legacy-era vendors are **excluded from every chart and table by
+default**, since lumping a 2014-era chatbot or a 2009 grammar checker in with
+a campaign's ChatGPT or Claude subscription overstates how much reported
+spending reflects current frontier-AI adoption. A toggle at the top of the
+page adds them back into every chart and table; a vendor's own detail page
+always shows its full history regardless, labeled with its era.
+
 The vendor taxonomy (see `pipeline/config/vendors.yaml` for sourcing) started
 from vendors named in press coverage of AI usage in campaign filings, then was
 substantially expanded by empirically mining the disclosures themselves for
@@ -83,6 +95,12 @@ python pipeline/build_dataset.py
   "Claude"). Only high-confidence matches feed the party/incumbency/chamber/
   age/use-case/time-series breakdowns; medium-confidence matches are shown
   separately in the vendor landscape table only.
+- Every vendor also has an `era`: `generative` or `legacy` -- see
+  `pipeline/config/vendors.yaml` for the founding-year research behind each
+  call. Legacy-era vendors are excluded from every chart, table, and
+  headline stat by default; a toggle at the top of the dashboard includes
+  them, and a vendor's own detail page always shows its full history either
+  way.
 - Party, chamber, and incumbency breakdowns cover House and Senate candidate
   committees only (linked via the FEC's own candidate-committee linkage
   file), so they exclude PAC- and party-committee spending (which is still

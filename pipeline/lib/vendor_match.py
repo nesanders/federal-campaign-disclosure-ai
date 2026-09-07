@@ -22,6 +22,7 @@ class Vendor:
     name: str
     group: str  # "general_purpose" | "political_specific"
     patterns: list[CompiledPattern]
+    era: str = "generative"  # "generative" | "legacy" -- see config/vendors.yaml
     lean_context: str | None = None
     homepage: str | None = None
     exclude: list[re.Pattern] = ()
@@ -56,6 +57,7 @@ class Taxonomy:
                         name=v["name"],
                         group=group,
                         patterns=compiled,
+                        era=v.get("era", "generative"),
                         lean_context=v.get("lean_context"),
                         homepage=v.get("homepage") or None,
                         exclude=[_wrap(p) for p in v.get("exclude", [])],

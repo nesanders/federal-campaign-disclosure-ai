@@ -23,6 +23,16 @@
       <a href="#methodology">Methodology &amp; data</a>
     </nav>
     <div class="meta-line" id="meta-line">Loading dataset&hellip;</div>
+    <div class="legacy-toggle-bar" id="legacy-toggle-bar">
+      <label class="toggle-switch">
+        <input type="checkbox" id="legacy-toggle-input">
+        <span class="toggle-slider" aria-hidden="true"></span>
+      </label>
+      <label for="legacy-toggle-input" class="legacy-toggle-label">
+        Include legacy AI vendors
+        <span class="legacy-toggle-sub">Off by default: companies founded before generative AI existed but still branded &ldquo;AI&rdquo; (e.g. Amplify.ai, Grammarly, Otter.ai) are excluded from every chart and table below. Their own vendor pages are always visible &mdash; see <a href="#methodology">methodology</a>.</span>
+      </label>
+    </div>
   </div>
 </header>
 
@@ -40,7 +50,7 @@
 
   <section id="vendors" class="block">
     <h2>1. Which AI vendors are campaigns paying?</h2>
-    <p class="lede">Every disbursement's payee name, stated purpose, category description, and memo text is matched against a taxonomy of both general-purpose AI vendors (OpenAI, Anthropic, Google, Microsoft, xAI, Perplexity, and AI-native creative tools) and vendors built specifically for campaigns. The taxonomy started from vendors named in press coverage (Quiller, BattlegroundAI, Chorus AI, DonorAtlas, RivalMind, Aaru), then was expanded by scanning the disclosures themselves for AI-indicative language and researching the payee names that kept turning up. That second pass is what found the biggest vendors on this page by dollar volume &mdash; AI-driven texting and call-time platforms like Amplify.ai, CallTime.AI, Prompt.io, and Numero &mdash; which is why the ranking below looks different from what most coverage of "AI in campaigns" would lead you to expect. See <a href="#methodology">methodology</a> for the full list, its confidence tiers, and the vendors we considered and rejected.</p>
+    <p class="lede">Every disbursement's payee name, stated purpose, category description, and memo text is matched against a taxonomy of both general-purpose AI vendors (OpenAI, Anthropic, Google, Microsoft, xAI, Perplexity, and AI-native creative tools) and vendors built specifically for campaigns. The taxonomy started from vendors named in press coverage (Quiller, BattlegroundAI, Chorus AI, DonorAtlas, RivalMind, Aaru), then was expanded by scanning the disclosures themselves for AI-indicative language and researching the payee names that kept turning up. That second pass is what found the biggest vendors on this page by dollar volume &mdash; AI-driven texting and call-time platforms like Amplify.ai, CallTime.AI, Prompt.io, and Numero &mdash; which is why the ranking below looks different from what most coverage of "AI in campaigns" would lead you to expect. See <a href="#methodology">methodology</a> for the full list, its confidence tiers, and the vendors we considered and rejected. Several of the biggest names by dollar volume &mdash; Amplify.ai, Prompt.io, CallTime.AI &mdash; are companies founded years before ChatGPT existed and market themselves as &ldquo;AI&rdquo; the way that word was used before the current generative-AI wave; they're tagged as legacy vendors and hidden from every chart and table below by default (toggle at the top of the page to include them).</p>
     <div class="card-grid single">
       <div class="card">
         <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="vendors">View as table</button></div>
