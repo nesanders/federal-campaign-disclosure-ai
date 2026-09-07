@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-07T18:18:39.542549Z",
+    "generated_at": "2026-09-07T18:32:18.432606Z",
     "cycles": [
       2020,
       2022,
@@ -27,7 +27,7 @@
       "'High confidence' matches use unambiguous vendor/product names (e.g. 'OpenAI', 'ChatGPT', 'Quiller'). 'Medium confidence' matches use ambiguous words (e.g. 'Gemini', 'Copilot', 'Grok', 'Claude') that also have common non-AI meanings; these are shown only in the vendor landscape view and excluded from the party/incumbency/chamber/age/use-case/time-series breakdowns.",
       "Party, chamber, and incumbency breakdowns (section 3) are the 2026 cycle only, House and Senate candidate committees, high-confidence matches. The time-series charts (section 4) cover all cycles.",
       "Candidate age is drawn from the unitedstates/congress-legislators project, which covers people who have served in Congress. Non-incumbent challengers who have never held office are not in that dataset and are bucketed as 'Unknown' rather than estimated.",
-      "As in the Washington Post's original analysis, disclosed AI spending understates actual usage: campaigns can pay for AI tools through corporate cards, staff reimbursements, or consultants without the underlying vendor ever appearing in disbursement text.",
+      "Disclosed AI spending likely understates actual usage: campaigns can pay for AI tools through corporate cards, staff reimbursements, or consultants without the underlying vendor ever appearing in disbursement text.",
       "A single disbursement can match more than one vendor or more than one use-case category (e.g. a payment memo mentioning both 'ChatGPT' and 'email drafting'); category and vendor totals are not mutually exclusive and will not sum to a single grand total.",
       "General-purpose cloud hosting (AWS, Azure, Google Cloud) is not counted as AI spend merely because the provider also sells AI products -- only a disbursement naming a specific AI service (e.g. 'AWS Bedrock', 'Azure OpenAI') counts. Scanning all four cycles found zero such specific mentions; generic cloud/hosting spend for these providers is common but not itemized down to the AI-specific service used, so it isn't attributable one way or the other.",
       "Google's Gemini is frequently bundled into a Google Workspace subscription a campaign already pays for email and documents, so it often has no separate line item the way a standalone ChatGPT or Claude subscription does. This likely understates Google's real usage more than it does OpenAI's or Anthropic's -- a limitation of disbursement-based analysis, not evidence Google is less used.",

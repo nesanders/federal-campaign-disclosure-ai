@@ -257,7 +257,7 @@
       { label: "AI vendors identified in disclosures", value: fmtInt.format(DATA.vendors_overall.length), sub: nGeneral + " general-purpose · " + nPolitical + " campaign-specific" },
       { label: "AI-related disbursement records found", value: fmtInt.format(totalMatchedRows), sub: "across " + meta.cycles.join(", ") + " cycles, all confidence tiers" },
       { label: "Total high-confidence AI spending", value: fmtUSD0.format(totalHighAmount), sub: "all committees, all cycles" },
-      { label: "2026 House/Senate candidates paying OpenAI", value: fmtInt.format(meta.openai_high_confidence_house_senate_candidates_2026), sub: "WaPo (Sept 2026) found 39 candidates paying for an OpenAI subscription; methodology differs, see notes" },
+      { label: "2026 House/Senate candidates paying OpenAI", value: fmtInt.format(meta.openai_high_confidence_house_senate_candidates_2026), sub: "high-confidence text match to OpenAI/ChatGPT in payee name, purpose, or memo" },
     ];
 
     const row = document.getElementById("stat-row");
@@ -267,7 +267,7 @@
     document.getElementById("coverage-callout").innerHTML =
       "<strong>Coverage:</strong> this pipeline scans itemized operating-expenditure (Schedule B) records from FEC bulk data for the " +
       meta.cycles.join(", ") +
-      " two-year cycles, matches payee/purpose/memo text against a curated AI-vendor taxonomy, and joins matches to candidate party, chamber, incumbency status, and (where available) age. As with the Post's original analysis, disclosed spending understates actual AI use, since campaigns can pay through corporate cards, staff, or consultants without the vendor name ever appearing in a filing.";
+      " two-year cycles, matches payee/purpose/memo text against a curated AI-vendor taxonomy, and joins matches to candidate party, chamber, incumbency status, and (where available) age. Disclosed spending likely understates actual AI use, since campaigns can pay through corporate cards, staff, or consultants without the vendor name ever appearing in a filing.";
 
     document.getElementById("meta-line").textContent =
       "Data generated " + new Date(meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC · cycles: " + meta.cycles.join(", ");

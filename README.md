@@ -17,10 +17,10 @@ dollar figure. Section 5 ("Leaderboards") is sortable/filterable (by cycle
 and functional area) tables of the biggest AI spenders in dollar terms and
 as a share of their budget.
 
-This extends the Washington Post's September 2026 reporting on OpenAI/ChatGPT
-spending in campaign filings (see `pipeline/config/vendors.yaml` for sourcing)
-to a broader vendor taxonomy and a fuller set of cross-cuts, using the same
-kind of public disclosure data the Post used.
+The vendor taxonomy (see `pipeline/config/vendors.yaml` for sourcing) started
+from vendors named in press coverage of AI usage in campaign filings, then was
+substantially expanded by empirically mining the disclosures themselves for
+AI-indicative language and researching the payee names that turned up.
 
 **Live site:** enable GitHub Pages for this repo (Settings -> Pages -> Deploy
 from branch -> `main` / `/docs`) and it will serve `docs/index.html`.
@@ -92,9 +92,9 @@ python pipeline/build_dataset.py
   never held office generally are not in that dataset, so the age breakdown
   skews toward incumbents/former members; unknown ages are left unknown
   rather than estimated.
-- As with the Post's original analysis, disclosed AI spending understates
-  actual usage -- campaigns can pay for AI tools via corporate cards, staff
-  reimbursement, or consultants without the vendor ever appearing in
+- Disclosed AI spending likely understates actual usage -- campaigns can pay
+  for AI tools via corporate cards, staff reimbursement, or consultants
+  without the vendor ever appearing in
   itemized disbursement text.
 - The vendor and use-case taxonomies are a curated starting point (see the
   comments in `pipeline/config/vendors.yaml` for sourcing), not an

@@ -1,15 +1,16 @@
 # AI vendor taxonomy used to classify FEC Schedule B (itemized disbursement)
 # records as "AI-related" spending.
 #
-# Sourcing: seeded from the Washington Post's Sept 2026 reporting on OpenAI/
-# ChatGPT usage in campaign filings, plus a round of research into other
+# Sourcing: seeded from press coverage of AI usage in campaign filings and
 # vendors reportedly selling into the 2026 cycle (American Prospect, CNBC,
 # Axios, Habtoor Research Centre coverage of "AI's quiet takeover of the
-# midterms", and general-purpose frontier AI labs). This list is a curated,
-# necessarily incomplete starting point, not an exhaustive registry -- FEC
-# purpose-of-disbursement text is often generic ("software subscription",
-# "consulting"), so real AI usage is understated here just as it was in the
-# Post's OpenAI-only analysis. Extend this file as new vendors surface.
+# midterms", and general-purpose frontier AI labs), then substantially
+# expanded by empirically mining the FEC disclosures themselves (see the
+# "Second pass" note below). This list is a curated, necessarily incomplete
+# starting point, not an exhaustive registry -- FEC purpose-of-disbursement
+# text is often generic ("software subscription", "consulting"), so real AI
+# usage is understated here even after that expansion. Extend this file as
+# new vendors surface.
 #
 # Matching runs against the concatenation of the disbursement's payee NAME,
 # PURPOSE, and CATEGORY_DESC/MEMO_TEXT fields, case-insensitive, on the

@@ -12,7 +12,7 @@
   <div class="wrap">
     <h1>AI Use in Federal Campaign Disclosures</h1>
     <p class="subtitle">A read of federal campaign-finance disclosures for U.S. House and Senate candidates, looking for payments to AI vendors and how that spending breaks down by vendor, stated purpose, party, incumbency, candidate age, and chamber &mdash; and how each of those has changed across recent election cycles.</p>
-    <p class="subtitle">This extends the Washington Post's September 2026 reporting on OpenAI/ChatGPT spending in campaign filings to a broader set of AI vendors and a fuller set of cross-cuts, using the same public FEC disclosure data.</p>
+    <p class="subtitle">Built from the same public FEC disclosure data campaigns themselves file, covering a broad set of AI vendors &mdash; general-purpose chatbots and campaign-specific tools alike &mdash; across the 2020&ndash;2026 election cycles.</p>
     <nav class="toc">
       <a href="#overview">Overview</a>
       <a href="#vendors">Vendors</a>
@@ -40,7 +40,7 @@
 
   <section id="vendors" class="block">
     <h2>1. Which AI vendors are campaigns paying?</h2>
-    <p class="lede">The Post's analysis looked only at OpenAI. Here every disbursement's payee name, stated purpose, category description, and memo text is matched against a taxonomy of both general-purpose AI vendors (OpenAI, Anthropic, Google, Microsoft, xAI, Perplexity, and AI-native creative tools) and vendors built specifically for campaigns. The taxonomy started from vendors named in press coverage (Quiller, BattlegroundAI, Chorus AI, DonorAtlas, RivalMind, Aaru), then was expanded by scanning the disclosures themselves for AI-indicative language and researching the payee names that kept turning up. That second pass is what found the biggest vendors on this page by dollar volume &mdash; AI-driven texting and call-time platforms like Amplify.ai, CallTime.AI, Prompt.io, and Numero &mdash; which is why the ranking below looks different from what most coverage of "AI in campaigns" would lead you to expect. See <a href="#methodology">methodology</a> for the full list, its confidence tiers, and the vendors we considered and rejected.</p>
+    <p class="lede">Every disbursement's payee name, stated purpose, category description, and memo text is matched against a taxonomy of both general-purpose AI vendors (OpenAI, Anthropic, Google, Microsoft, xAI, Perplexity, and AI-native creative tools) and vendors built specifically for campaigns. The taxonomy started from vendors named in press coverage (Quiller, BattlegroundAI, Chorus AI, DonorAtlas, RivalMind, Aaru), then was expanded by scanning the disclosures themselves for AI-indicative language and researching the payee names that kept turning up. That second pass is what found the biggest vendors on this page by dollar volume &mdash; AI-driven texting and call-time platforms like Amplify.ai, CallTime.AI, Prompt.io, and Numero &mdash; which is why the ranking below looks different from what most coverage of "AI in campaigns" would lead you to expect. See <a href="#methodology">methodology</a> for the full list, its confidence tiers, and the vendors we considered and rejected.</p>
     <div class="card-grid single">
       <div class="card">
         <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="vendors">View as table</button></div>
@@ -150,7 +150,7 @@
 
   <section id="top-committees" class="block">
     <h2>Top committees by AI-related spending</h2>
-    <p class="lede">Includes party and leadership committees and PACs (not only candidate committees) &mdash; e.g. the Post noted the RNC as OpenAI's largest political spender.</p>
+    <p class="lede">Includes party and leadership committees and PACs, not only candidate committees &mdash; large national committees like the RNC and DNC show up among the biggest payers to several vendors here.</p>
     <div class="card-grid single">
       <div class="card">
         <div id="table-top-committees"></div>
@@ -208,7 +208,7 @@
 <footer class="site">
   <div class="wrap">
     <p id="footer-generated"></p>
-    <p>Source data: Federal Election Commission bulk downloads (fec.gov) and the unitedstates/congress-legislators project. This is an independent analysis and is not affiliated with the FEC, the Washington Post, or any campaign or vendor named here.</p>
+    <p>Source data: Federal Election Commission bulk downloads (fec.gov) and the unitedstates/congress-legislators project. This is an independent analysis and is not affiliated with the FEC or any campaign or vendor named here.</p>
   </div>
 </footer>
 
