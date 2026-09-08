@@ -105,6 +105,9 @@
   const sortState = {
     dollar: { key: "ai_amount_high", dir: "desc" },
     pct: { key: "pct_ai", dir: "desc" },
+    ieSpenders: { key: "amount", dir: "desc" },
+    ieRecords: { key: "transaction_amt", dir: "desc" },
+    pceRecords: { key: "transaction_amt", dir: "desc" },
   };
   const filterState = { cycle: "all", category: "all" };
 
@@ -678,6 +681,161 @@
     );
   }
 
+  // ---- Outside spending (section 6): independent expenditures (Schedule E)
+  // and coordinated party expenditures (Schedule F) -- AI-vendor money spent
+  // FOR or AGAINST a candidate by a Super PAC or party committee, not the
+  // candidate's own campaign. Kept structurally separate from every other
+  // section: these numbers should never be added to a candidate's own
+  // reported spend above.
+  function renderOutsideStats() {
+    const eraFilter = eraFilterList();
+    const ie = DATA.outside_spending.independent_expenditures || {};
+    const pce = DATA.outside_spending.coordinated_party_expenditures || {};
+    const ieVendors = (ie.vendor_rows || []).filter((v) => eraFilter.includes(v.era));
+    const pceVendors = (pce.vendor_rows || []).filter((v) => eraFilter.includes(v.era));
+    const ieAmount = ieVendors.reduce((a, v) => a + v.amount_high, 0);
+    const pceAmount = pceVendors.reduce((a, v) => a + v.amount_high, 0);
+    const ieCount = ieVendors.reduce((a, v) => a + v.count_high, 0);
+    const pceCount = pceVendors.reduce((a, v) => a + v.count_high, 0);
+    const tiles = [
+      { label: "Independent-expenditure AI spend", value: fmtUSD0.format(ieAmount), sub: fmtInt.format(ieCount) + " matched high-confidence payments, all cycles" },
+      { label: "Coordinated party-expenditure AI spend", value: fmtUSD0.format(pceAmount), sub: fmtInt.format(pceCount) + " matched high-confidence payments, all cycles" },
+    ];
+    const row = document.getElementById("outside-stat-row");
+    row.innerHTML = "";
+    tiles.forEach((t) => row.appendChild(statTile(t.label, t.value, t.sub)));
+  }
+
+  function renderIeVendorsChart() {
+    const c = colors();
+    const eraFilter = eraFilterList();
+    const ie = DATA.outside_spending.independent_expenditures || {};
+    const rows = (ie.vendor_rows || []).filter((v) => eraFilter.includes(v.era));
+    const labels = rows.map((r) => r.name + (r.era === "legacy" ? " (legacy)" : ""));
+    const data = rows.map((r) => r.amount_high);
+    const bg = rows.map((r) => (r.group === "general_purpose" ? c.general_purpose : c.political_specific));
+
+    const holder = document.querySelector('.chart-holder[data-panel="ie-vendors"]');
+    if (holder) holder.style.height = Math.max(220, rows.length * 32) + "px";
+
+    makeChart("chart-ie-vendors", {
+      type: "bar",
+      data: { labels, datasets: [{ label: "AI-related independent expenditures", data, backgroundColor: bg, borderRadius: 4, barThickness: 18 }] },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: Object.assign(tooltipBase(), {
+            callbacks: {
+              label: (ctx) => {
+                const r = rows[ctx.dataIndex];
+                return fmtUSD0.format(r.amount_high) + " · " + fmtInt.format(r.count_high) + " records";
+              },
+            },
+          }),
+        },
+        scales: {
+          x: { grid: { color: c.grid }, ticks: { color: c.text, callback: (v) => fmtUSD0.format(v) }, border: { display: false } },
+          y: { grid: { display: false }, ticks: { color: c.text, autoSkip: false }, border: { display: false } },
+        },
+      },
+    });
+
+    setPanelTable(
+      "ie-vendors",
+      [
+        { key: "name", label: "Vendor", link: (r) => "#/vendor/" + r.id },
+        { key: "group", label: "Type" },
+        { key: "era", label: "Era" },
+        { key: "amount_high", label: "High-confidence $", num: true },
+        { key: "count_high", label: "Records", num: true },
+      ],
+      rows.map((r) => ({
+        id: r.id,
+        name: r.name,
+        group: VENDOR_GROUP_LABEL[r.group] || r.group,
+        era: r.era === "legacy" ? "Legacy (pre-generative AI)" : "Generative",
+        amount_high: fmtUSD0.format(r.amount_high),
+        count_high: fmtInt.format(r.count_high),
+      }))
+    );
+  }
+
+  function renderIeSpenders() {
+    const ie = DATA.outside_spending.independent_expenditures || {};
+    const rows = sortRows(ie.top_spenders || [], sortState.ieSpenders);
+    const headers = withSort(
+      "ieSpenders",
+      [
+        { label: "Spender", sortKey: "spender_name", render: (r) => r.spender_name },
+        { label: "Type", sortKey: "cmte_type", render: (r) => r.cmte_type },
+        { label: "AI-related IE spend", sortKey: "amount", num: true, render: (r) => fmtUSD0.format(r.amount) },
+        { label: "Records", sortKey: "count", num: true, render: (r) => fmtInt.format(r.count) },
+        { label: "Spender's total IE spend", sortKey: "total_ie_spend", num: true, render: (r) => (r.total_ie_spend ? fmtUSD0.format(r.total_ie_spend) : "—") },
+        { label: "% of IE budget", sortKey: "pct_ai", num: true, render: (r) => fmtPct(r.pct_ai, 2) },
+        { label: "FEC record", sortKey: null, link: (r) => fecCommitteeUrl(r.spender_id), external: true, render: () => "View ↗" },
+      ],
+      renderIeSpenders
+    );
+    const container = document.getElementById("table-ie-spenders");
+    container.innerHTML = "";
+    container.appendChild(buildTable(headers, rows, { sort: sortState.ieSpenders }));
+  }
+
+  function renderIeRecords() {
+    const ie = DATA.outside_spending.independent_expenditures || {};
+    const rows = sortRows(ie.records || [], sortState.ieRecords);
+    const headers = withSort(
+      "ieRecords",
+      [
+        { label: "Cycle", sortKey: "cycle", num: true, render: (r) => r.cycle },
+        { label: "Candidate", sortKey: "cand_name", render: (r) => r.cand_name || "—", link: (r) => (r.cand_id ? "#/candidate/" + r.cand_id : null) },
+        { label: "Support/Oppose", sortKey: "support_oppose", render: (r) => r.support_oppose },
+        { label: "Spender", sortKey: "spender_name", render: (r) => r.spender_name },
+        { label: "Vendor", sortKey: "vendor_name", cell: (r) => vendorLinksCell([r.vendor_id]) },
+        { label: "Confidence", sortKey: "confidence", render: (r) => r.confidence },
+        { label: "Amount", sortKey: "transaction_amt", num: true, render: (r) => fmtUSD0.format(r.transaction_amt) },
+        { label: "Purpose", sortKey: null, render: (r) => r.purpose || "—" },
+        { label: "FEC record", sortKey: null, link: (r) => fecCommitteeUrl(r.spender_id), external: true, render: () => "View ↗" },
+      ],
+      renderIeRecords
+    );
+    const container = document.getElementById("table-ie-records");
+    container.innerHTML = "";
+    container.appendChild(buildTable(headers, rows, { sort: sortState.ieRecords }));
+  }
+
+  function renderPceRecords() {
+    const pce = DATA.outside_spending.coordinated_party_expenditures || {};
+    const rows = sortRows(pce.records || [], sortState.pceRecords);
+    const headers = withSort(
+      "pceRecords",
+      [
+        { label: "Cycle", sortKey: "cycle", num: true, render: (r) => r.cycle },
+        { label: "Party committee", sortKey: "cmte_name", render: (r) => r.cmte_name || r.cmte_id },
+        { label: "Candidate benefited", sortKey: "cand_name", render: (r) => r.cand_name || "—", link: (r) => (r.cand_id ? "#/candidate/" + r.cand_id : null) },
+        { label: "Vendor", sortKey: "vendor_name", cell: (r) => vendorLinksCell([r.vendor_id]) },
+        { label: "Confidence", sortKey: "confidence", render: (r) => r.confidence },
+        { label: "Amount", sortKey: "transaction_amt", num: true, render: (r) => fmtUSD0.format(r.transaction_amt) },
+        { label: "FEC record", sortKey: null, link: (r) => fecCommitteeUrl(r.cmte_id), external: true, render: () => "View ↗" },
+      ],
+      renderPceRecords
+    );
+    const container = document.getElementById("table-pce-records");
+    container.innerHTML = "";
+    container.appendChild(buildTable(headers, rows, { sort: sortState.pceRecords }));
+  }
+
+  function renderOutsideSpending() {
+    renderOutsideStats();
+    renderIeVendorsChart();
+    renderIeSpenders();
+    renderIeRecords();
+    renderPceRecords();
+  }
+
   function renderMethodology() {
     const sources = document.getElementById("sources-list");
     sources.innerHTML = "";
@@ -761,8 +919,8 @@
     ];
   }
 
-  function sortRows(rows, kind) {
-    const { key, dir } = sortState[kind];
+  function sortRows(rows, state) {
+    const { key, dir } = state;
     const mult = dir === "asc" ? 1 : -1;
     return rows.slice().sort((a, b) => {
       let av = a[key], bv = b[key];
@@ -773,16 +931,32 @@
     });
   }
 
+  // Wires header.onSort for every header with a sortKey, toggling
+  // direction on repeat clicks and re-running `renderFn` on change --
+  // shared by every sortable table outside the entity leaderboards.
+  function withSort(kind, headers, renderFn) {
+    const sort = sortState[kind];
+    const onSort = (key) => {
+      if (sort.key === key) sort.dir = sort.dir === "asc" ? "desc" : "asc";
+      else {
+        sort.key = key;
+        sort.dir = "desc";
+      }
+      renderFn();
+    };
+    return headers.map((h) => (h.sortKey ? Object.assign({}, h, { onSort }) : h));
+  }
+
   function renderLeaderboards() {
     const rows = filteredEntities();
 
-    const dollarRows = sortRows(rows, "dollar").slice(0, 40);
+    const dollarRows = sortRows(rows, sortState.dollar).slice(0, 40);
     const dollarContainer = document.getElementById("table-leaderboard-dollar");
     dollarContainer.innerHTML = "";
     dollarContainer.appendChild(buildTable(entityLeaderboardHeaders("dollar"), dollarRows, { sort: sortState.dollar }));
 
     const pctEligible = rows.filter((r) => r.total_expenditure >= MIN_TOTAL_FOR_PCT_TABLE && r.pct_ai !== null);
-    const pctRows = sortRows(pctEligible, "pct").slice(0, 40);
+    const pctRows = sortRows(pctEligible, sortState.pct).slice(0, 40);
     const pctContainer = document.getElementById("table-leaderboard-pct");
     pctContainer.innerHTML = "";
     pctContainer.appendChild(buildTable(entityLeaderboardHeaders("pct"), pctRows, { sort: sortState.pct }));
@@ -983,6 +1157,32 @@
     stats.appendChild(statTile("AI as % of total spend", fmtPct(cd.pct_ai, 3)));
     view.appendChild(stats);
 
+    const ieOut = cd.outside_independent_expenditure;
+    const pceOut = cd.outside_coordinated_party_expenditure;
+    if (ieOut || pceOut) {
+      const lines = [];
+      if (ieOut && ieOut.support_amount > 0) lines.push(fmtUSD0.format(ieOut.support_amount) + " in independent expenditures supporting this candidate");
+      if (ieOut && ieOut.oppose_amount > 0) lines.push(fmtUSD0.format(ieOut.oppose_amount) + " in independent expenditures opposing this candidate");
+      if (pceOut && pceOut.amount > 0) lines.push(fmtUSD0.format(pceOut.amount) + " in party-coordinated spending on this candidate's behalf");
+      const outsideVendorIds = Array.from(new Set([...(ieOut ? ieOut.vendor_ids : []), ...(pceOut ? pceOut.vendor_ids : [])]));
+      const callout = el("div", { className: "callout" });
+      const strong = el("strong", { text: "Outside AI-related spending (not this candidate's own committee): " });
+      callout.appendChild(strong);
+      callout.appendChild(document.createTextNode(lines.join("; ") + ". Vendor(s): "));
+      callout.appendChild(vendorLinksCell(outsideVendorIds));
+      callout.appendChild(document.createTextNode(" — see "));
+      const jumpLink = el("a", { href: "#outside-spending", className: "entity-link", text: "outside spending" });
+      jumpLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        history.pushState(null, "", "#outside-spending");
+        showMainView();
+        document.getElementById("outside-spending").scrollIntoView({ behavior: "smooth" });
+      });
+      callout.appendChild(jumpLink);
+      callout.appendChild(document.createTextNode(" section for detail."));
+      view.appendChild(callout);
+    }
+
     const grid = el("div", { className: "card-grid" });
     grid.appendChild(detailCard("Spending over time", "detail-chart-cycle"));
     grid.appendChild(detailCard("By vendor", "detail-chart-vendor"));
@@ -1118,6 +1318,7 @@
     renderTrends();
     renderTopCommittees();
     renderLeaderboards();
+    renderOutsideSpending();
     renderMethodology();
     router();
   }

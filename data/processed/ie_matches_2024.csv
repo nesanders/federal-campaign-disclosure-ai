@@ -1,0 +1,3 @@
+cycle,cand_id,cand_name,office,cand_state,cand_district,cand_party,spender_id,spender_name,support_oppose,transaction_date,transaction_amt,purpose,payee,file_num,tran_id,vendor_ids,vendor_names,vendor_groups,confidences,use_categories
+2024,,"Biden, Joseph",P,,00,,C90022104,NH PEACE ACTION,O,01-FEB-24,375.0,Stipend,"Kwizera, Claude",1754189,F57.000002,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,H6NY03247,"Suozzi, Thomas",H,NY,03,DEMOCRATIC PARTY,C90022120,Stand Up America Inc.,S,09-FEB-24,9000.0,Text messages (estimate),Daisychain,1755068,F57.000001,daisychain,Daisychain,political_specific,high,communications_copy

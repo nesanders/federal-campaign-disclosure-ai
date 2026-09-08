@@ -1,0 +1,2 @@
+cycle,cand_id,cand_name,office,cand_state,cand_district,cand_party,spender_id,spender_name,support_oppose,transaction_date,transaction_amt,purpose,payee,file_num,tran_id,vendor_ids,vendor_names,vendor_groups,confidences,use_categories
+2020,P00009621,"Warren, Elizabeth",P,FL,00,DEMOCRATIC PARTY,C90011438,New Florida Majority,S,08-FEB-20,115.0,Translation Services,"Francis, Claude",1385553,500064019,anthropic,Anthropic (Claude),general_purpose,medium,unspecified

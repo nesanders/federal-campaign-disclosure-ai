@@ -642,11 +642,252 @@ def main() -> None:
     for race in races.values():
         race["candidates"].sort(key=lambda r: -r["amount_high"])
 
+    # --- outside spending: independent expenditures (Schedule E) and
+    # coordinated party expenditures (Schedule F) -- AI-vendor money spent
+    # FOR or AGAINST a candidate by a Super PAC, hybrid PAC, or party
+    # committee, not the candidate's own campaign. Kept in its own section
+    # rather than folded into the vendor/candidate totals above: whether
+    # spending was coordinated with the candidate is a legally and
+    # analytically meaningful line, and mixing the two would blur exactly
+    # the "who is doing this on a candidate's behalf" question this section
+    # exists to answer. See parse_outside_spending.py for sourcing.
+    def load_amount_totals(path: Path, key_field: str) -> dict[str, float]:
+        out: dict[str, float] = {}
+        if not path.exists():
+            return out
+        with open(path, newline="") as f:
+            for row in csv.DictReader(f):
+                try:
+                    out[row[key_field]] = out.get(row[key_field], 0.0) + float(row["total_amount"])
+                except (KeyError, ValueError):
+                    continue
+        return out
+
+    CMTE_TYPE_LABEL = {
+        "O": "Super PAC", "U": "Super PAC (single-candidate)",
+        "Q": "PAC", "N": "PAC", "V": "PAC", "W": "PAC",
+        "Y": "Party committee", "X": "Party committee", "Z": "Party committee",
+        "D": "Delegate committee", "I": "Individual/group filer",
+    }
+
+    def normalize_ie_party(text: str) -> str:
+        t = (text or "").strip().upper()
+        if not t:
+            return "Unknown"
+        if "DEM" in t:
+            return "Democratic"
+        if "REP" in t:
+            return "Republican"
+        if "INDEPENDENT" in t and "NO PARTY" not in t:
+            return "Independent"
+        return "Other"
+
+    def explode_outside(df: pd.DataFrame, carry: list[str]) -> pd.DataFrame:
+        rows = []
+        for rec in df.itertuples(index=False):
+            ids = rec.vendor_ids.split(";") if rec.vendor_ids else []
+            names = rec.vendor_names.split(";") if rec.vendor_names else []
+            groups = rec.vendor_groups.split(";") if rec.vendor_groups else []
+            confs = rec.confidences.split(";") if rec.confidences else []
+            for vid, vname, vgroup, conf in zip(ids, names, groups, confs):
+                row = {f: getattr(rec, f) for f in carry}
+                row.update(
+                    vendor_id=vid, vendor_name=vname, vendor_group=vgroup,
+                    vendor_era=era_by_id.get(vid, "generative"), confidence=conf,
+                )
+                rows.append(row)
+        return pd.DataFrame(rows)
+
+    def outside_vendor_rows(exploded_df: pd.DataFrame) -> list[dict]:
+        rows = []
+        for (vid, vname, vgroup), sub in exploded_df.groupby(["vendor_id", "vendor_name", "vendor_group"]):
+            hi = sub[sub["confidence"] == "high"]
+            med = sub[sub["confidence"] == "medium"]
+            rows.append({
+                "id": vid, "name": vname, "group": vgroup,
+                "era": era_by_id.get(vid, "generative"),
+                "homepage": homepage_by_id.get(vid),
+                "amount_high": round(float(hi["transaction_amt"].sum()), 2),
+                "count_high": int(len(hi)),
+                "amount_medium": round(float(med["transaction_amt"].sum()), 2),
+                "count_medium": int(len(med)),
+            })
+        rows.sort(key=lambda r: r["amount_high"], reverse=True)
+        return rows
+
+    ie_frames, pce_frames = [], []
+    ie_spender_totals: dict[str, float] = {}
+    pce_cmte_totals: dict[str, float] = {}
+    cmte_master_by_cycle: dict[int, dict] = {}
+    for cycle in args.cycles:
+        cmte_master_by_cycle[cycle] = load_committee_master(cycle, session)
+
+        ie_path = PROCESSED_DIR / f"ie_matches_{cycle}.csv"
+        if ie_path.exists():
+            df_ie = pd.read_csv(ie_path, dtype=str, keep_default_na=False)
+            if not df_ie.empty:
+                df_ie["transaction_amt"] = pd.to_numeric(df_ie["transaction_amt"], errors="coerce").fillna(0.0)
+                df_ie["cycle"] = pd.to_numeric(df_ie["cycle"], errors="coerce").astype("Int64")
+                df_ie["office"] = df_ie["office"].map(lambda c: OFFICE_LABEL.get(c, "Other"))
+                df_ie["cand_party"] = df_ie["cand_party"].map(normalize_ie_party)
+                df_ie["support_oppose"] = df_ie["support_oppose"].map({"S": "Support", "O": "Oppose"}).fillna("Unknown")
+                ie_frames.append(df_ie)
+        for spender_id, amt in load_amount_totals(PROCESSED_DIR / f"ie_totals_{cycle}.csv", "spender_id").items():
+            ie_spender_totals[spender_id] = ie_spender_totals.get(spender_id, 0.0) + amt
+
+        pce_path = PROCESSED_DIR / f"pce_matches_{cycle}.csv"
+        if pce_path.exists():
+            df_pce = pd.read_csv(pce_path, dtype=str, keep_default_na=False)
+            if not df_pce.empty:
+                df_pce["transaction_amt"] = pd.to_numeric(df_pce["transaction_amt"], errors="coerce").fillna(0.0)
+                df_pce["cycle"] = pd.to_numeric(df_pce["cycle"], errors="coerce").astype("Int64")
+                cm = cmte_master_by_cycle[cycle]
+                df_pce["cmte_name"] = df_pce["cmte_id"].map(lambda c: cm.get(c, {}).get("name", ""))
+                pce_frames.append(df_pce)
+        for cmte_id, amt in load_amount_totals(PROCESSED_DIR / f"pce_totals_{cycle}.csv", "cmte_id").items():
+            pce_cmte_totals[cmte_id] = pce_cmte_totals.get(cmte_id, 0.0) + amt
+
+    def cmte_type_label(cmte_id: str) -> str:
+        for cm in cmte_master_by_cycle.values():
+            if cmte_id in cm:
+                return CMTE_TYPE_LABEL.get(cm[cmte_id].get("type", ""), "Committee/PAC")
+        return "Committee/PAC"
+
+    outside_spending = {"independent_expenditures": {}, "coordinated_party_expenditures": {}}
+
+    if ie_frames:
+        ie_all = pd.concat(ie_frames, ignore_index=True)
+        ie_exp = explode_outside(
+            ie_all,
+            ["cycle", "cand_id", "cand_name", "office", "cand_state", "cand_district", "cand_party",
+             "spender_id", "spender_name", "support_oppose", "transaction_amt", "transaction_date",
+             "purpose", "payee", "file_num", "tran_id"],
+        )
+        ie_hi = ie_exp[ie_exp["confidence"] == "high"]
+        ie_time_series = rename_key(
+            ie_hi.groupby(["cycle", "vendor_group", "vendor_era"], dropna=False)
+            .agg(amount=("transaction_amt", "sum"), count=("tran_id", "nunique")).reset_index()
+            .to_dict(orient="records"),
+            "vendor_era", "era",
+        )
+        by_support_oppose = rename_key(
+            ie_hi.groupby(["support_oppose", "vendor_group", "vendor_era"], dropna=False)
+            .agg(amount=("transaction_amt", "sum"), count=("tran_id", "nunique")).reset_index()
+            .to_dict(orient="records"),
+            "vendor_era", "era",
+        )
+        # Group by spender_id alone, not (spender_id, spender_name): the same
+        # committee's name is capitalized inconsistently across its own
+        # filings (e.g. "MoveOn.org" vs "MoveOn.Org"), which would otherwise
+        # silently split one spender into two rows.
+        spender_names = ie_hi.groupby("spender_id")["spender_name"].agg(lambda s: s.value_counts().idxmax())
+        top_spenders = (
+            ie_hi.groupby("spender_id", dropna=False)
+            .agg(amount=("transaction_amt", "sum"), count=("tran_id", "nunique"))
+            .reset_index().sort_values("amount", ascending=False).head(25)
+        )
+        top_spenders["spender_name"] = top_spenders["spender_id"].map(spender_names)
+        top_spenders["cmte_type"] = top_spenders["spender_id"].map(cmte_type_label)
+        top_spenders["total_ie_spend"] = top_spenders["spender_id"].map(lambda sid: round(ie_spender_totals.get(sid, 0.0), 2))
+        top_spenders["pct_ai"] = top_spenders.apply(
+            lambda r: round(r["amount"] / r["total_ie_spend"] * 100, 3) if r["total_ie_spend"] > 0 else None, axis=1
+        )
+        ie_records = ie_exp.sort_values("transaction_amt", ascending=False).to_dict(orient="records")
+        for r in ie_records:
+            r["transaction_amt"] = round(float(r["transaction_amt"]), 2)
+            r["cycle"] = int(r["cycle"]) if pd.notna(r["cycle"]) else None
+
+        outside_spending["independent_expenditures"] = {
+            "vendor_rows": outside_vendor_rows(ie_exp),
+            "time_series": ie_time_series,
+            "by_support_oppose": by_support_oppose,
+            "top_spenders": top_spenders.to_dict(orient="records"),
+            "records": ie_records,
+            "amount_high_total": round(float(ie_hi["transaction_amt"].sum()), 2),
+            "count_high_total": int(ie_hi["tran_id"].nunique()),
+        }
+
+        cand_ie = ie_hi[ie_hi["cand_id"] != ""]
+        for cid, sub in cand_ie.groupby("cand_id"):
+            if cid not in candidates_detail:
+                continue
+            candidates_detail[cid]["outside_independent_expenditure"] = {
+                "support_amount": round(float(sub[sub["support_oppose"] == "Support"]["transaction_amt"].sum()), 2),
+                "oppose_amount": round(float(sub[sub["support_oppose"] == "Oppose"]["transaction_amt"].sum()), 2),
+                "count": int(sub["tran_id"].nunique()),
+                "vendor_ids": sorted(set(sub["vendor_id"])),
+            }
+
+    if pce_frames:
+        pce_all = pd.concat(pce_frames, ignore_index=True)
+        # OTHER_ID on a 24C row is usually the FEC candidate ID the spending
+        # benefited; look it up per that row's own cycle (a candidate's ID
+        # is cycle-specific in the FEC's own candidate master).
+        cand_master_by_cycle = {cycle: load_candidate_master(cycle, session) for cycle in args.cycles}
+
+        def pce_cand_name(row) -> str:
+            cm = cand_master_by_cycle.get(int(row["cycle"]), {}) if pd.notna(row["cycle"]) else {}
+            return cm.get(row["cand_id"], {}).get("name", "")
+
+        pce_all["cand_name"] = pce_all.apply(pce_cand_name, axis=1)
+        pce_exp = explode_outside(
+            pce_all,
+            ["cycle", "cmte_id", "cmte_name", "name", "transaction_amt", "transaction_dt", "memo_text",
+             "cand_id", "cand_name", "sub_id"],
+        )
+        pce_hi = pce_exp[pce_exp["confidence"] == "high"]
+        pce_time_series = rename_key(
+            pce_hi.groupby(["cycle", "vendor_group", "vendor_era"], dropna=False)
+            .agg(amount=("transaction_amt", "sum"), count=("sub_id", "nunique")).reset_index()
+            .to_dict(orient="records"),
+            "vendor_era", "era",
+        )
+        top_committees_pce = (
+            pce_hi.groupby(["cmte_id", "cmte_name"], dropna=False)
+            .agg(amount=("transaction_amt", "sum"), count=("sub_id", "nunique"))
+            .reset_index().sort_values("amount", ascending=False).head(25)
+        )
+        top_committees_pce["total_pce_spend"] = top_committees_pce["cmte_id"].map(lambda c: round(pce_cmte_totals.get(c, 0.0), 2))
+        top_committees_pce["pct_ai"] = top_committees_pce.apply(
+            lambda r: round(r["amount"] / r["total_pce_spend"] * 100, 3) if r["total_pce_spend"] > 0 else None, axis=1
+        )
+        pce_records = pce_exp.sort_values("transaction_amt", ascending=False).to_dict(orient="records")
+        for r in pce_records:
+            r["transaction_amt"] = round(float(r["transaction_amt"]), 2)
+            r["cycle"] = int(r["cycle"]) if pd.notna(r["cycle"]) else None
+
+        outside_spending["coordinated_party_expenditures"] = {
+            "vendor_rows": outside_vendor_rows(pce_exp),
+            "time_series": pce_time_series,
+            "top_committees": top_committees_pce.to_dict(orient="records"),
+            "records": pce_records,
+            "amount_high_total": round(float(pce_hi["transaction_amt"].sum()), 2),
+            "count_high_total": int(pce_hi["sub_id"].nunique()),
+        }
+
+        cand_pce = pce_hi[pce_hi["cand_id"] != ""]
+        for cid, sub in cand_pce.groupby("cand_id"):
+            if cid not in candidates_detail:
+                continue
+            candidates_detail[cid]["outside_coordinated_party_expenditure"] = {
+                "amount": round(float(sub["transaction_amt"].sum()), 2),
+                "count": int(sub["sub_id"].nunique()),
+                "vendor_ids": sorted(set(sub["vendor_id"])),
+            }
+
     row_counts = {}
+    ie_row_counts = {}
+    pce_row_counts = {}
     for cycle in args.cycles:
         p = PROCESSED_DIR / f"matches_{cycle}.csv"
         if p.exists():
             row_counts[cycle] = int(sum(1 for _ in open(p, encoding="utf-8")) - 1)
+        p = PROCESSED_DIR / f"ie_matches_{cycle}.csv"
+        if p.exists():
+            ie_row_counts[cycle] = int(sum(1 for _ in open(p, encoding="utf-8")) - 1)
+        p = PROCESSED_DIR / f"pce_matches_{cycle}.csv"
+        if p.exists():
+            pce_row_counts[cycle] = int(sum(1 for _ in open(p, encoding="utf-8")) - 1)
 
     meta = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
@@ -657,9 +898,13 @@ def main() -> None:
             "FEC bulk data: candidate master (cn)",
             "FEC bulk data: candidate-committee linkage (ccl)",
             "FEC bulk data: committee master (cm)",
+            "FEC bulk data: independent expenditures (Schedule E)",
+            "FEC bulk data: any transaction from one committee to another (oth), filtered to coordinated party expenditures (Schedule F, transaction type 24C)",
             "unitedstates/congress-legislators (birthdates, for age analysis)",
         ],
         "matched_row_counts_by_cycle": row_counts,
+        "ie_matched_row_counts_by_cycle": ie_row_counts,
+        "pce_matched_row_counts_by_cycle": pce_row_counts,
         "openai_high_confidence_house_senate_candidates_2026": int(openai_2026_candidates),
         "methodology_notes": [
             "Vendor matches are text matches against payee name, disbursement purpose, category description, and memo text -- not a review of underlying documents. See config/vendors.yaml for the full pattern list and its provenance.",
@@ -674,6 +919,9 @@ def main() -> None:
             "The vendor list was expanded past what press coverage had named by scanning all four cycles for generic AI-indicative language (bare 'AI', 'chatbot', 'bot', 'prompt', etc.) in disbursements that didn't already match a known vendor, then researching which payee names kept recurring. That pass is what surfaced Amplify.ai, Prompt.io, CallTime.AI, Numero, Daisychain, SoSha, and several smaller tools -- collectively a much larger share of disclosed AI spending than the general-purpose chatbot subscriptions most coverage of this topic focuses on. It also surfaced a false-positive trap worth naming: several teleprompter-equipment vendors have 'prompting' in their name in the unrelated, decades-old sense, which is why 'Prompt.io' is matched only as that exact product name, never bare 'prompt'. The same scan turned up plausible-sounding candidates we deliberately left out because the disbursement text never actually said 'AI' -- Civis Analytics, Grow Progress, and Movement Labs are real political-data vendors whose own marketing mentions AI/machine learning, but nothing in how campaigns paid them here does, so we didn't want to launder marketing copy into a disclosure-based finding.",
             "A payee name match attributes the full disbursement amount to that vendor even when the memo describes a bundled payment (e.g. 'reimbursement for SendGrid, SpeechifAI, and Twilio' for one lump sum) -- there is no way to apportion a bundled reimbursement from the text alone, so a vendor's total can be modestly overstated in these cases. They appear to be a small share of matched dollars, not the norm.",
             "Every vendor is tagged with an 'era': 'generative' (built on modern large-language-model, diffusion, or voice-clone AI) or 'legacy' (a company that predates the generative-AI wave and either still runs on older, non-generative technology or added a generative feature onto a much older product -- see config/vendors.yaml for the founding-year research behind each call). Amplify.ai/TruVerse, Prompt.io, CallTime.AI, Numero, EyesOver, Otter.ai, Chatfuel, Grammarly, and Descript are tagged legacy. Charts and tables default to excluding legacy-era vendors, since lumping a 2014-era chatbot or grammar checker in with a campaign's ChatGPT or Claude subscription overstates how much reported spending reflects current frontier-AI adoption; a toggle (top of the page) adds legacy vendors back into every chart and table. Vendor and candidate detail pages always show full history regardless of the toggle, with each vendor's era labeled.",
+            "'Outside spending' (independent expenditures and coordinated party expenditures) tracks AI-vendor money spent FOR or AGAINST a candidate by someone other than that candidate's own campaign -- Super PACs, hybrid PACs, and party committees -- kept separate from every other figure on this site because the campaign never sees or reports this spending itself. Independent expenditures (Schedule E) are legally uncoordinated with the candidate; coordinated party expenditures (Schedule F) are a national or state party committee spending on a candidate's behalf, coordinated, up to a statutory per-candidate cap. Even within outside spending, this only shows what a Super PAC or party committee paid a vendor directly -- if that money instead went to a consulting or media-buying firm that itself used an AI tool, that sub-layer of spending is invisible here the same way it is for candidate committees.",
+            "Schedule E (independent expenditures) comes from the FEC's dedicated independent-expenditure bulk file, which explicitly warns that it contains both original and amended reports without removing the originals. This pipeline drops every filing (by FILE_NUM) that a later amendment superseded, keeping only the final version -- see parse_outside_spending.py.",
+            "Schedule F (coordinated party expenditures) has no dedicated bulk file; these transactions are pulled from the FEC's general committee-to-committee transaction file (transaction type '24C'), which lacks a purpose field, so vendor matches here rely on payee name and a memo field that is often blank -- category/use-case labeling is accordingly thinner for this schedule than elsewhere on the site. Scanning all four cycles found exactly one qualifying high-confidence payment; coordinated party spending is capped by statute and, in what we found, goes overwhelmingly to traditional media buyers rather than named AI vendors -- a real finding, not a parsing gap.",
         ],
     }
 
@@ -694,6 +942,7 @@ def main() -> None:
         "top_committees": top_committees,
         "top_committees_all_eras": top_committees_all_eras,
         "entities": entity_rows,
+        "outside_spending": outside_spending,
         "vendors_detail": vendors_detail,
         "candidates_detail": candidates_detail,
         "races": races,

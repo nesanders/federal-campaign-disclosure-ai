@@ -20,6 +20,7 @@
       <a href="#breakdowns">Party / incumbency / age / chamber</a>
       <a href="#trends">Change over time</a>
       <a href="#leaderboards">Leaderboards</a>
+      <a href="#outside-spending">Outside spending</a>
       <a href="#methodology">Methodology &amp; data</a>
     </nav>
     <div class="meta-line" id="meta-line">Loading dataset&hellip;</div>
@@ -191,6 +192,40 @@
         <h3>Top by AI spend as a share of total budget</h3>
         <p class="note">Minimum $5,000 total reported expenditure that cycle. Click a column header to sort.</p>
         <div id="table-leaderboard-pct"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="outside-spending" class="block">
+    <h2>6. Who's spending on AI on a candidate's behalf?</h2>
+    <p class="lede">Everything above is what a candidate's <em>own</em> committee reported paying. This section is different: money spent by Super PACs, hybrid PACs, and party committees &mdash; not the candidate's own campaign &mdash; to support or oppose a candidate. <strong>Independent expenditures</strong> (Schedule E) are legally uncoordinated with the candidate; <strong>coordinated party expenditures</strong> (Schedule F) are a national or state party committee spending on a candidate's behalf, coordinated, up to a statutory per-candidate cap. Both are itemized the same way and matched against the same vendor taxonomy and confidence tiers as the rest of this site &mdash; see <a href="#methodology">methodology</a> for sourcing and its limits (notably: money a Super PAC pays a consulting or media-buying firm that itself uses an AI tool is just as invisible here as it is for a candidate's own committee).</p>
+    <div class="stat-row" id="outside-stat-row"></div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="ie-vendors">View as table</button></div>
+        <h3>Independent expenditures, by vendor</h3>
+        <p class="note">Super PAC / hybrid PAC spending naming an AI vendor, all cycles.</p>
+        <div class="chart-holder" data-panel="ie-vendors"><canvas id="chart-ie-vendors"></canvas></div>
+        <div class="table-holder" data-panel="ie-vendors" hidden></div>
+      </div>
+      <div class="card">
+        <h3>Top independent spenders</h3>
+        <p class="note">"% of spender's IE budget" divides AI-vendor spend by that committee's total reported independent-expenditure spending that cycle. Click a column header to sort.</p>
+        <div id="table-ie-spenders"></div>
+      </div>
+    </div>
+    <div class="card-grid single">
+      <div class="card">
+        <h3>Every matched independent-expenditure record</h3>
+        <p class="note">All confidence tiers and vendor eras shown, tagged, regardless of the legacy-vendor toggle above &mdash; there are few enough records to list individually rather than only as aggregates. Click a column header to sort.</p>
+        <div id="table-ie-records"></div>
+      </div>
+    </div>
+    <div class="card-grid single">
+      <div class="card">
+        <h3>Coordinated party expenditures</h3>
+        <p class="note">Every matched record, all confidence tiers and vendor eras &mdash; this schedule's own bulk source has no purpose field, so category labeling is thinner than elsewhere on this site (see methodology). Click a column header to sort.</p>
+        <div id="table-pce-records"></div>
       </div>
     </div>
   </section>

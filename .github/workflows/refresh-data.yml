@@ -32,6 +32,9 @@ jobs:
       - name: Parse disbursements for AI-vendor matches
         run: python pipeline/parse_disbursements.py --cycles 2020 2022 2024 2026
 
+      - name: Parse independent + coordinated party expenditures for AI-vendor matches
+        run: python pipeline/parse_outside_spending.py --cycles 2020 2022 2024 2026
+
       - name: Build dashboard dataset
         run: python pipeline/build_dataset.py --cycles 2020 2022 2024 2026
 

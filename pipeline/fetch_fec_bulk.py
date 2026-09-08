@@ -6,10 +6,26 @@ Pulls, per cycle (e.g. 2026 = the 2025-2026 filing period):
   - ccl{yy}.zip  candidate-committee linkage
   - oppexp{yy}.zip  itemized operating expenditures (Schedule B) -- this is
     where campaign payments to AI vendors show up.
+  - oth{yy}.zip  "any transaction from one committee to another" -- a
+    general transaction ledger that, among many other transaction types,
+    includes Schedule F coordinated party expenditures (TRANSACTION_TP
+    '24C'): a national/state party committee paying a vendor for spending
+    coordinated with a specific candidate, up to that cycle's statutory
+    limit. There is no dedicated bulk file for Schedule F alone -- this is
+    the only bulk source for it (confirmed against the FEC's "any
+    transaction..." file description, which lists '24C' among the
+    transaction types included).
+  - independent_expenditure_{cycle}.csv  Schedule E: independent
+    expenditures by Super PACs, hybrid PACs, and other non-candidate
+    spenders "expressly advocating the election or defeat" of a candidate,
+    without coordinating with that candidate. Unlike the other files here,
+    this one already ships as a comma-delimited CSV with its own header
+    row (no separate header-dictionary file), and is keyed by cycle end
+    year rather than a 2-digit suffix.
 
 Source: https://www.fec.gov/data/browse-data/?tab=bulk-data (no API key
-required). Files are large (oppexp can be 500MB+ per cycle uncompressed), so
-raw downloads are cached under data/raw/ and gitignored.
+required). Files are large (oppexp and oth can each be 500MB-2GB+ per cycle
+uncompressed), so raw downloads are cached under data/raw/ and gitignored.
 """
 from __future__ import annotations
 
@@ -29,7 +45,12 @@ DATASETS = {
     "ccl": "ccl{yy}.zip",
     "cm": "cm{yy}.zip",
     "oppexp": "oppexp{yy}.zip",
+    "oth": "oth{yy}.zip",
 }
+
+# Independent-expenditure file: a direct CSV (own header row, no zip, no
+# separate header-dictionary file), named by the full 4-digit cycle year.
+IE_FILENAME = "independent_expenditure_{cycle}.csv"
 
 
 def download(url: str, dest: Path, session: requests.Session, retries: int = 4) -> None:
@@ -95,6 +116,11 @@ def main() -> None:
             download(url, zip_path, session)
             extracted = extract(zip_path, cycle_dir)
             print(f"    -> {extracted.relative_to(RAW_DIR.parent.parent)}")
+
+        ie_filename = IE_FILENAME.format(cycle=cycle)
+        ie_path = cycle_dir / ie_filename
+        download(f"{BULK_BASE}/{cycle}/{ie_filename}", ie_path, session)
+        print(f"    -> {ie_path.relative_to(RAW_DIR.parent.parent)}")
 
     print("Done.")
 

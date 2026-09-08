@@ -1,0 +1,2 @@
+cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,memo_text,memo_cd,cand_id,sub_id,vendor_ids,vendor_names,vendor_groups,confidences,use_categories
+2020,C00031088,PROMPT.IO INC.,SEATTLE,WA,10302020,1294.0,,,H0WA08103,4021320211141098108,prompt_io,Prompt.io,political_specific,high,unspecified

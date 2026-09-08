@@ -23,6 +23,7 @@ HEADER_FILES = {
     "cm": "cm_header_file.csv",
     "oppexp": "oppexp_header_file.csv",
     "weball": "weball_header_file.csv",
+    "oth": "oth_header_file.csv",
 }
 
 

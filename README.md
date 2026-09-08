@@ -29,6 +29,16 @@ spending reflects current frontier-AI adoption. A toggle at the top of the
 page adds them back into every chart and table; a vendor's own detail page
 always shows its full history regardless, labeled with its era.
 
+Section 6 ("Outside spending") covers a fundamentally different kind of
+money: AI-vendor payments by Super PACs, hybrid PACs, and party committees on
+a candidate's behalf, not the candidate's own campaign. Independent
+expenditures (Schedule E) are legally uncoordinated with the candidate;
+coordinated party expenditures (Schedule F) are a national/state party
+committee spending on a candidate's behalf up to a statutory cap. Both use
+the same vendor taxonomy and confidence tiers as the rest of the site, and a
+matching candidate's own detail page calls out any outside AI spend found for
+or against them.
+
 The vendor taxonomy (see `pipeline/config/vendors.yaml` for sourcing) started
 from vendors named in press coverage of AI usage in campaign filings, then was
 substantially expanded by empirically mining the disclosures themselves for
@@ -40,22 +50,28 @@ from branch -> `main` / `/docs`) and it will serve `docs/index.html`.
 ## How it works
 
 ```
-pipeline/fetch_fec_bulk.py       downloads FEC bulk data (candidate master,
-                                  committee master, committee-candidate
-                                  linkage, itemized Schedule B disbursements)
-                                  for each two-year cycle
-pipeline/fetch_legislators.py    downloads unitedstates/congress-legislators
-                                  (birthdates, for the age breakdown)
-pipeline/parse_disbursements.py  scans Schedule B text for AI-vendor matches,
-                                  and separately totals each committee's
-                                  overall reported spending that cycle (the
-                                  denominator for "% of total spend")
-pipeline/build_dataset.py        joins matches to candidate/committee
-                                  reference data, aggregates, builds the
-                                  vendor/candidate/race detail pages' data,
-                                  and writes docs/data/dashboard.json
-docs/                            the static site (GitHub Pages source);
-                                  reads docs/data/dashboard.json client-side
+pipeline/fetch_fec_bulk.py           downloads FEC bulk data (candidate master,
+                                      committee master, committee-candidate
+                                      linkage, itemized Schedule B disbursements,
+                                      the committee-to-committee "oth" file, and
+                                      the independent-expenditure file) for each
+                                      two-year cycle
+pipeline/fetch_legislators.py        downloads unitedstates/congress-legislators
+                                      (birthdates, for the age breakdown)
+pipeline/parse_disbursements.py      scans Schedule B text for AI-vendor matches,
+                                      and separately totals each committee's
+                                      overall reported spending that cycle (the
+                                      denominator for "% of total spend")
+pipeline/parse_outside_spending.py   scans independent expenditures (Schedule E)
+                                      and, within the "oth" file, coordinated
+                                      party expenditures (Schedule F, transaction
+                                      type 24C) for AI-vendor matches
+pipeline/build_dataset.py            joins matches to candidate/committee
+                                      reference data, aggregates, builds the
+                                      vendor/candidate/race detail pages' data,
+                                      and writes docs/data/dashboard.json
+docs/                                the static site (GitHub Pages source);
+                                      reads docs/data/dashboard.json client-side
 ```
 
 Run the whole pipeline locally:
@@ -65,6 +81,7 @@ pip install -r pipeline/requirements.txt
 python pipeline/fetch_fec_bulk.py
 python pipeline/fetch_legislators.py
 python pipeline/parse_disbursements.py
+python pipeline/parse_outside_spending.py
 python pipeline/build_dataset.py
 ```
 
@@ -80,6 +97,11 @@ python pipeline/build_dataset.py
   - `ccl` -- candidate-committee linkage
   - `cm` -- committee master (for PACs/party committees not linked to a
     candidate, e.g. the RNC/DNC)
+  - `independent_expenditure_{cycle}.csv` -- Schedule E, independent
+    expenditures by Super PACs/hybrid PACs for or against a candidate
+  - `oth` -- "any transaction from one committee to another," filtered to
+    transaction type `24C` for Schedule F coordinated party expenditures
+    (there is no dedicated bulk file for Schedule F alone)
 - [unitedstates/congress-legislators](https://github.com/unitedstates/congress-legislators)
   -- birthdates, for the candidate-age breakdown (public domain)
 
@@ -137,6 +159,18 @@ python pipeline/build_dataset.py
   answers "how big is AI spend relative to everything these AI-using
   campaigns spend," not "what share of all campaign spending nationally
   goes to AI."
+- "Outside spending" (independent expenditures and coordinated party
+  expenditures) is spending by someone other than the candidate's own
+  campaign and is kept structurally separate from every other number on the
+  site -- never summed into a candidate's own totals. Schedule E's bulk file
+  explicitly warns it contains both original and amended reports without
+  removing the originals; this pipeline drops every filing a later amendment
+  superseded (tracked via `PREV_FILE_NUM`). Schedule F's source file (`oth`)
+  has no purpose field, so its category/use-case labeling is thinner than
+  elsewhere on the site, and matching found exactly one qualifying
+  high-confidence payment across four cycles -- coordinated party spending
+  is capped by statute and, in what we found, goes overwhelmingly to
+  traditional media buyers rather than named AI vendors.
 
 ## Repo layout
 
@@ -145,8 +179,9 @@ pipeline/                 the data pipeline (Python)
   config/vendors.yaml      AI vendor + use-case taxonomy, with sourcing notes
   lib/                     shared helpers (FEC schema, vendor matching, reference data)
 data/raw/                 downloaded FEC/legislators source files (gitignored, large)
-data/processed/           filtered AI-vendor-match CSVs and per-committee
-                          total-expenditure CSVs, per cycle (committed, small)
+data/processed/           filtered AI-vendor-match CSVs and per-committee/
+                          per-spender total-expenditure CSVs, per cycle
+                          (committed, small)
 docs/                     GitHub Pages site
   index.html, css/, js/    static dashboard (vanilla JS + a vendored Chart.js build)
   data/dashboard.json      aggregated data the site reads

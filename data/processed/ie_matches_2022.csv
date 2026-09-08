@@ -1,0 +1,5 @@
+cycle,cand_id,cand_name,office,cand_state,cand_district,cand_party,spender_id,spender_name,support_oppose,transaction_date,transaction_amt,purpose,payee,file_num,tran_id,vendor_ids,vendor_names,vendor_groups,confidences,use_categories
+2022,H4NC05146,"Foxx, Virginia",H,NC,05,REPUBLICAN PARTY,C90021593,Rebuild USA,O,07-OCT-22,90865.0,Digital Advertising - Anti-Labor,Grok Media LLC,1634851,F57.000001,xai_grok,xAI (Grok),general_purpose,medium,advertising_creative
+2022,S2OH00402,"Ryan, Tim",S,OH,00,DEMOCRATIC PARTY,C90021593,Rebuild USA,S,07-OCT-22,137865.0,Digital Advertising - Tim Ryan,Grok Media LLC,1634851,F57.000002,xai_grok,xAI (Grok),general_purpose,medium,advertising_creative
+2022,S0IA00028,"GRASSLEY, CHARLES E",S,IA,00,REPUBLICAN PARTY,C00754754,Ruralvote.org,O,04-NOV-22,2000.0,Social Media Promotion,Grok Media LLC,1659208,SE.9303,xai_grok,xAI (Grok),general_purpose,medium,unspecified
+2022,S2OH00436,"VANCE, J D",S,OH,00,REPUBLICAN PARTY,C00754754,Ruralvote.org,O,04-NOV-22,1000.0,Social Media Promotion,Grok Media LLC,1659208,SE.9314,xai_grok,xAI (Grok),general_purpose,medium,unspecified
