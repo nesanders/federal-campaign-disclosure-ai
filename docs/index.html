@@ -37,6 +37,22 @@
   </div>
 </header>
 
+<div class="search-bar-wrap" id="search-bar-wrap">
+  <div class="wrap">
+    <div class="search-bar">
+      <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M11.5 11.5L15 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <input type="search" id="global-search-input" class="search-input" placeholder="Search candidates, vendors, races&hellip;" autocomplete="off" aria-label="Search candidates, vendors, and races">
+      <div class="search-filter-chips" id="search-filter-chips" role="group" aria-label="Filter search results by type">
+        <button type="button" class="chip is-active" data-filter="all">All</button>
+        <button type="button" class="chip" data-filter="candidate">Candidates</button>
+        <button type="button" class="chip" data-filter="vendor">Vendors</button>
+        <button type="button" class="chip" data-filter="race">Races</button>
+      </div>
+    </div>
+    <div class="search-results" id="search-results" hidden></div>
+  </div>
+</div>
+
 <main class="wrap">
 
   <div id="detail-view" hidden></div>

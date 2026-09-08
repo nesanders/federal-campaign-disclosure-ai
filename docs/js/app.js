@@ -78,6 +78,8 @@
   let vendorHomepageById = {};
   let vendorEraById = {};
   let includeLegacy = false;
+  let searchIndex = [];
+  let searchFilterType = "all";
 
   function eraFilterList() {
     return includeLegacy ? ["generative", "legacy"] : ["generative"];
@@ -836,6 +838,133 @@
     renderPceRecords();
   }
 
+  // ---- Universal search (candidates / vendors / races) ----
+  const SEARCH_TYPE_LABEL = { candidate: "Candidate", vendor: "Vendor", race: "Race" };
+  const SEARCH_RESULT_LIMIT = 20;
+
+  function buildSearchIndex() {
+    searchIndex = [];
+    Object.values(DATA.candidates_detail || {}).forEach((cd) => {
+      const loc = [cd.state, cd.district].filter(Boolean).join("-");
+      searchIndex.push({
+        type: "candidate",
+        label: cd.name,
+        sub: [cd.party, cd.office, loc].filter(Boolean).join(" · "),
+        searchText: [cd.name, cd.party, cd.office, cd.state, loc].filter(Boolean).join(" ").toLowerCase(),
+        href: "#/candidate/" + cd.id,
+      });
+    });
+    (DATA.vendors_overall || []).forEach((v) => {
+      searchIndex.push({
+        type: "vendor",
+        label: v.name,
+        sub: (VENDOR_GROUP_LABEL[v.group] || v.group) + (v.era === "legacy" ? " · legacy" : ""),
+        searchText: [v.name, v.group, v.era].filter(Boolean).join(" ").toLowerCase(),
+        href: "#/vendor/" + v.id,
+      });
+    });
+    Object.values(DATA.races || {}).forEach((race) => {
+      const loc = race.state + (race.district ? "-" + race.district : "");
+      const nCand = (race.candidates || []).length;
+      searchIndex.push({
+        type: "race",
+        label: (DATA.office_labels[race.office] || race.office) + " — " + loc,
+        sub: nCand + " candidate" + (nCand === 1 ? "" : "s"),
+        searchText: [race.office, race.state, loc, ...(race.candidates || []).map((c) => c.name)].filter(Boolean).join(" ").toLowerCase(),
+        href: "#/race/" + race.id,
+      });
+    });
+  }
+
+  const SEARCH_TYPE_ORDER = ["candidate", "vendor", "race"];
+
+  function runSearch(query) {
+    const results = document.getElementById("search-results");
+    const q = query.trim().toLowerCase();
+    if (!q) {
+      results.hidden = true;
+      results.innerHTML = "";
+      return;
+    }
+    const byType = { candidate: [], vendor: [], race: [] };
+    searchIndex.forEach((item) => {
+      if (searchFilterType !== "all" && item.type !== searchFilterType) return;
+      if (item.searchText.indexOf(q) === -1) return;
+      byType[item.type].push(item);
+    });
+    const sortWithin = (a, b) => {
+      const aStarts = a.label.toLowerCase().startsWith(q) ? 0 : 1;
+      const bStarts = b.label.toLowerCase().startsWith(q) ? 0 : 1;
+      if (aStarts !== bStarts) return aStarts - bStarts;
+      return a.label.localeCompare(b.label);
+    };
+    // Grouped by type (fixed order) so results read as clean sections
+    // rather than interleaving candidates/vendors/races by label text.
+    // Capped tighter per type when showing all three at once.
+    const perTypeLimit = searchFilterType === "all" ? 6 : SEARCH_RESULT_LIMIT;
+
+    results.innerHTML = "";
+    let totalMatches = 0;
+    SEARCH_TYPE_ORDER.forEach((type) => {
+      const list = byType[type].sort(sortWithin);
+      totalMatches += list.length;
+      if (!list.length) return;
+      results.appendChild(el("div", { className: "search-group-label", text: SEARCH_TYPE_LABEL[type] }));
+      list.slice(0, perTypeLimit).forEach((item) => {
+        const row = el("a", {
+          className: "search-result",
+          href: item.href,
+          children: [el("span", { className: "search-result-label", text: item.label }), el("span", { className: "search-result-sub", text: item.sub })],
+        });
+        row.addEventListener("click", closeSearchResults);
+        results.appendChild(row);
+      });
+      if (list.length > perTypeLimit) {
+        const n = list.length - perTypeLimit;
+        results.appendChild(el("div", { className: "search-empty", text: n + " more " + SEARCH_TYPE_LABEL[type].toLowerCase() + " match" + (n === 1 ? "" : "es") + " — refine your search" }));
+      }
+    });
+    if (!totalMatches) {
+      results.appendChild(el("div", { className: "search-empty", text: "No matches." }));
+    }
+    results.hidden = false;
+  }
+
+  function closeSearchResults() {
+    const results = document.getElementById("search-results");
+    results.hidden = true;
+    const input = document.getElementById("global-search-input");
+    input.value = "";
+  }
+
+  function wireSearch() {
+    const input = document.getElementById("global-search-input");
+    const results = document.getElementById("search-results");
+    input.addEventListener("input", () => runSearch(input.value));
+    input.addEventListener("focus", () => {
+      if (input.value.trim()) runSearch(input.value);
+    });
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeSearchResults();
+        input.blur();
+      }
+    });
+    document.querySelectorAll(".search-filter-chips .chip").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        searchFilterType = btn.getAttribute("data-filter");
+        document.querySelectorAll(".search-filter-chips .chip").forEach((b) => b.classList.toggle("is-active", b === btn));
+        runSearch(input.value);
+        input.focus();
+      });
+    });
+    document.addEventListener("click", (e) => {
+      if (!document.getElementById("search-bar-wrap").contains(e.target)) {
+        results.hidden = true;
+      }
+    });
+  }
+
   function renderMethodology() {
     const sources = document.getElementById("sources-list");
     sources.innerHTML = "";
@@ -1342,6 +1471,8 @@
       wireLegacyToggle();
       wireViewModeToggles();
       populateLeaderboardFilters();
+      buildSearchIndex();
+      wireSearch();
       renderAll();
       window.addEventListener("hashchange", router);
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll);
