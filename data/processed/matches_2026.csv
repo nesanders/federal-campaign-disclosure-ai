@@ -121,6 +121,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00905463,DESCRIPT,SAN FRANCISCO,CA,11/20/2025,65,VIDEO SOFTWARE LICENSING,,,,2025,4030920261412583633,descript,Descript,general_purpose,high,advertising_creative;administrative_productivity
 2026,C00905463,DESCRIPT,SAN FRANCISCO,CA,12/22/2025,65,VIDEO SOFTWARE LICENSING,,,,2025,4030920261412583634,descript,Descript,general_purpose,high,advertising_creative;administrative_productivity
 2026,C00887323,INSTANTLY.AI,SALEM,OR,04/16/2025,230,DONOR CONTACT SERVICE,,,,2025,4050220251188571583,instantly_ai,Instantly.ai,general_purpose,high,fundraising
+2026,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,01/02/2025,125,COMPUTER SOFTWARE,,*,X,2025,4041620251184909523,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2026,C00603084,ANTHROPIC,SAN FRANCISCO,CA,07/09/2025,940.4,SOFTWARE,,*,X,2025,4091520251291159599,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
 2026,C00913087,"ANTHROPIC, PBC",SAN FRANCISCO,CA,03/30/2026,163.31,SOFTWARE,,,,2026,4042120261436225912,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
 2026,C00813758,CALL TIME AI,VISALIA,CA,01/16/2025,1410,SOFTWARE RENTAL,,,,2025,4042520251186692125,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -291,6 +292,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00739581,OPENAI,SAN FRANCISCO,CA,12/17/2025,21.31,SOFTWARE,,,,2025,4030320261385986390,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00844159,DESCRIPT,SAN FRANCISCO,CA,04/25/2025,50,SOFTWARE,Administrative/Salary/Overhead Expenses ,MEMO: DEBT SUBVENDOR OF  CHASE INK,X,2025,4011220261301160306,descript,Descript,general_purpose,high,administrative_productivity
 2026,C00844159,DESCRIPT,SAN FRANCISCO,CA,05/25/2025,50,SOFTWARE,Administrative/Salary/Overhead Expenses ,MEMO: DEBT SUBVENDOR OF  CHASE INK,X,2025,4011220261301160319,descript,Descript,general_purpose,high,administrative_productivity
+2026,C00496075,GRAMMARLY INC.,SAN FRANCISCO,CA,03/11/2025,139.95,SOFTWARE,,,X,2025,4041520251184283611,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2026,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,09/04/2025,53,COMPUTER SOFTWARE,,*,X,2025,4121020251298125983,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2026,C00632133,"DAISYCHAIN, INC",KINGSTON,NY,09/04/2025,.98,COMPUTER SOFTWARE,,*,X,2025,4121020251298125941,daisychain,Daisychain,political_specific,high,administrative_productivity
 2026,C00632133,"DAISYCHAIN, INC",KINGSTON,NY,09/04/2025,500.54,COMPUTER SOFTWARE,,*,X,2025,4121020251298125942,daisychain,Daisychain,political_specific,high,administrative_productivity
@@ -407,6 +409,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00904284,OPENAI,SAN FRANCISCO,CA,08/01/2025,20,SOFTWARE,,*,X,2025,4121820251299434225,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00904284,OPENAI,SAN FRANCISCO,CA,08/22/2025,20,SOFTWARE,,*,X,2025,4121820251299434263,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00920223,DESCRIPT-SOFTWARE,,,11/10/2025,288,SOFTWARE,Administrative/Salary/Overhead Expenses ,SOFTWARE,,2025,4031020261420680362,descript,Descript,general_purpose,high,administrative_productivity
+2026,C00405878,"GRAMMARLY, INC.",SAN FRANCISCO,CA,09/29/2025,139.95,SPELLCHECKING SOFTWARD,,,,2025,4030420261387051292,grammarly,Grammarly,general_purpose,high,unspecified
 2026,C00909283,"ANTHROPIC, PBC",SAN FRANCISCO,CA,05/17/2026,100,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4073120261540066315,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
 2026,C00909283,"ANTHROPIC, PBC",SAN FRANCISCO,CA,06/08/2026,25.12,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4073120261540066316,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
 2026,C00909283,"ANTHROPIC, PBC",SAN FRANCISCO,CA,06/08/2026,20,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4073120261540066317,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
@@ -479,6 +482,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00906024,CALLTIME AI,NORWALK,CA,02/03/2026,650,SOFTWARE,,,,2026,4043020261485386248,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2026,C00906024,CALLTIME AI,NORWALK,CA,02/17/2026,100.32,SOFTWARE,,,,2026,4043020261485386249,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2026,C00906024,CALLTIME AI,NORWALK,CA,03/03/2026,850,SOFTWARE,,,,2026,4043020261485386250,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2026,C00658385,GRAMMARLY,SAN FRANCISCO,CA,05/05/2025,158.04,WRITING SERVICE,,,,2025,4080820251215724880,grammarly,Grammarly,general_purpose,high,unspecified
+2026,C00658385,GRAMMARLY,SAN FRANCISCO,CA,04/24/2025,158.04,WRITING SERVICE,,,,2025,4080820251215724863,grammarly,Grammarly,general_purpose,high,unspecified
 2026,C00821348,CALL TIME AI,VISALIA,CA,05/15/2025,435,FUNDRAISING SOFTWARE,,,,2025,4071820251209550024,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2026,C00903039,DONORATLAS,NEW YORK,NY,06/03/2025,600,SOFTWARE,,,,2025,4080420251213242061,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
 2026,C00016899,DONORATLAS,NEW YORK,NY,04/15/2025,300,FUNDRAISING SOFTWARE,,*,X,2025,4080420251213246477,donoratlas,DonorAtlas,political_specific,high,fundraising;administrative_productivity
@@ -931,6 +936,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00341396,OPENAI,SAN FRANCISCO,CA,09/30/2025,605.72,SOFTWARE,,*,X,2025,4032420261425263788,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00341396,CHORUS.AI,SAN FRANCISCO,CA,09/30/2025,235.56,SUBSCRIPTION,,*,X,2025,4032420261425263706,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
 2026,C00341396,OPENAI,SAN FRANCISCO,CA,10/31/2025,13.56,SOFTWARE,,*,X,2025,4032420261425263973,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2026,C00341396,GRAMMARLY,SAN FRANCISCO,CA,10/31/2025,97.67,SOFTWARE,,*,X,2025,4032420261425263947,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2026,C00341396,OPENAI,SAN FRANCISCO,CA,08/31/2025,13.24,SOFTWARE,,*,X,2025,4032420261425263519,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00341396,OPENAI,SAN FRANCISCO,CA,08/31/2025,13.24,SOFTWARE,,*,X,2025,4032420261425263520,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00341396,OPENAI,SAN FRANCISCO,CA,08/31/2025,13.24,SOFTWARE,,*,X,2025,4032420261425263521,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
@@ -1144,6 +1150,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00580068,OPEN AI CHATGPT,SAN FRANCISCO,CA,05/12/2026,250,SOFTWARE,,*,X,2026,4062520261522805319,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00608398,CHATGPT,SAN FRANCISCO,CA,02/11/2026,219,OFFICE EXPENSE: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2026,4041520261435899756,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00608398,CHATGPT,SAN FRANCISCO,CA,01/11/2026,219,OFFICE EXPENSE: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2026,4041520261435899683,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2026,C00901793,"LUMA LABS, INC",PALO ALTO,CA,07/05/2026,69,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2026,4082520261585002458,luma_labs,Luma Labs (Luma AI),general_purpose,high,administrative_productivity
 2026,C00789966,SITESPEAKAI,NEW YORK,NY,06/07/2026,83.74,AI WEBSITE CHATBOT SOFTWARE,,,X,2026,4072920261539571164,sitespeakai,SiteSpeakAI,general_purpose,high,administrative_productivity
 2026,C00631549,CHORUS AI,BROOKLYN,NY,09/20/2025,350,COMPUTER SOFTWARE,,*,X,2025,4042220261482781719,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
 2026,C00631549,CHORUS AI,BROOKLYN,NY,09/29/2025,350,COMPUTER SOFTWARE,,*,X,2025,4042220261482781720,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
@@ -1178,6 +1185,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00806174,OPENAI,SAN FRANCISCO,CA,11/19/2025,10.88,SOFTWARE RENTAL,,*,X,2025,4022720261359966929,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00806174,OPENAI,SAN FRANCISCO,CA,12/04/2025,10.88,SOFTWARE RENTAL,,*,X,2025,4022720261359966935,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00806174,OPENAI,SAN FRANCISCO,CA,12/18/2025,10.88,SOFTWARE RENTAL,,*,X,2025,4022720261359966939,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2026,C00496075,GRAMMARLY INC.,SAN FRANCISCO,CA,03/12/2026,139.95,SOFTWARE,,,X,2026,4041520261435893747,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2026,C00141812,"JARBOE, AARON CLAUDE",WASHINGTON,DC,08/05/2025,3011.2,PAYROLL,,,,2025,4031720261423965550,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2026,C00141812,"JARBOE, AARON CLAUDE",WASHINGTON,DC,08/20/2025,3011.2,PAYROLL,,,,2025,4031720261423965551,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2026,C00141812,"JARBOE, AARON CLAUDE",WASHINGTON,DC,10/03/2025,3011.19,PAYROLL,,,,2025,4031720261423965593,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
@@ -1197,6 +1205,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00851733,CHATGPT,SAN FRANCISCO,CA,02/17/2026,132.4,CAMPAIGN SOFTWARE,,,,2026,4042820261483887359,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00914549,NUMERO AI,COSTA MESA,CA,01/04/2026,18.87,AI DATA ANALYTICS AND HOSTING,Solicitation and Fundraising Expenses ,,,2026,4040120261434894765,numero_ai,Numero (donor database / call time),political_specific,high,research_strategy;fundraising;data_targeting
 2026,C00914549,NUMERO AI,COSTA MESA,CA,01/04/2026,18.87,FUNDRAISING SOFTWARE,Solicitation and Fundraising Expenses ,,,2026,4040120261434894766,numero_ai,Numero (donor database / call time),political_specific,high,fundraising;administrative_productivity
+2026,C00075820,GRAMMARLY,SAN FRANCISCO,CA,01/16/2026,457.92,SUBSCRIPTION,,,X,2026,4032620261434585235,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2026,C00852368,ANTHROPIC,SAN FRANCISCO,CA,04/13/2026,238.5,SOFTWARE,,,,2026,4060420261520283477,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
 2026,C00876383,ANTHROPIC,SAN FRANCISCO,CA,06/30/2026,247.07,SOFTWARE SUBSCRIPTION - CAMPAIGN TECHNICAL INFRASTRUCTURE (CLAUDE API),,,,2026,4081120261580713687,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
 2026,C00876383,DESCRIPT,SAN FRANCISCO,CA,06/08/2026,86.42,SOFTWARE SUBSCRIPTION - AUDIO/VIDEO EDITING,,,,2026,4081120261580713693,descript,Descript,general_purpose,high,advertising_creative;administrative_productivity
@@ -1352,6 +1361,12 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00860254,OPENAI,SAN FRANCISCO,CA,04/15/2026,213.85,CHATGPT SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2026,4072120261535494324,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00860254,OPENAI,SAN FRANCISCO,CA,05/15/2026,213.85,CHATGPT SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2026,4072120261535494325,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00860254,OPENAI,SAN FRANCISCO,CA,06/15/2026,213.85,CHATGPT SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2026,4072120261535494326,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2026,C00933085,KLING AI,SINGAPORE,ZZ,04/29/2026,258.33,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539578065,kling_ai,Kling AI,general_purpose,high,administrative_productivity
+2026,C00933085,KLING AI,SINGAPORE,ZZ,04/29/2026,35.49,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539578066,kling_ai,Kling AI,general_purpose,high,administrative_productivity
+2026,C00933085,KLING AI,SINGAPORE,ZZ,06/01/2026,258.33,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539578067,kling_ai,Kling AI,general_purpose,high,administrative_productivity
+2026,C00933085,KLING AI,SINGAPORE,ZZ,06/01/2026,35.49,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539578068,kling_ai,Kling AI,general_purpose,high,administrative_productivity
+2026,C00933085,KLING AI,SINGAPORE,ZZ,06/30/2026,35.49,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539578069,kling_ai,Kling AI,general_purpose,high,administrative_productivity
+2026,C00933085,KLING AI,SINGAPORE,ZZ,06/30/2026,258.33,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539578070,kling_ai,Kling AI,general_purpose,high,administrative_productivity
 2026,C00933085,MIDJOURNEY,SAN FRANCISCO,CA,04/29/2026,313.92,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539578073,midjourney,Midjourney,general_purpose,high,administrative_productivity
 2026,C00933085,PERPLEXITY.AI,SAN FRANCISCO,CA,05/18/2026,218,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539578078,perplexity,Perplexity AI,general_purpose,high,administrative_productivity
 2026,C00933085,PERPLEXITY.AI,SAN FRANCISCO,CA,05/18/2026,10.9,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539578077,perplexity,Perplexity AI,general_purpose,high,administrative_productivity
@@ -1366,7 +1381,10 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00933085,HEYGEN,LOS ANGELES,CA,05/11/2026,107.91,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539578003,heygen,HeyGen,general_purpose,high,administrative_productivity
 2026,C00933085,HEYGEN,LOS ANGELES,CA,05/27/2026,107.91,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539578004,heygen,HeyGen,general_purpose,high,administrative_productivity
 2026,C00933085,HEYGEN,LOS ANGELES,CA,06/11/2026,107.91,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539578005,heygen,HeyGen,general_purpose,high,administrative_productivity
+2026,C00933085,GRAMMARLY,SAN FRANCISCO,CA,06/16/2026,32.78,SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2026,4072920261539577906,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2026,C00933085,ANTHROPIC,SAN FRANCISCO,CA,06/16/2026,218,SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2026,4072920261539577907,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
+2026,C00933085,GRAMMARLY,SAN FRANCISCO,CA,06/16/2026,32.78,SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2026,4072920261539577908,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2026,C00933085,GRAMMARLY,SAN FRANCISCO,CA,06/16/2026,32.78,SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2026,4072920261539577919,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2026,C00933085,ANTHROPIC,SAN FRANCISCO,CA,04/14/2026,218,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539577922,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
 2026,C00933085,ANTHROPIC,SAN FRANCISCO,CA,04/15/2026,218,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539577923,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
 2026,C00933085,ANTHROPIC,SAN FRANCISCO,CA,04/15/2026,218,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539577924,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
@@ -1398,6 +1416,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00938373,PAUL WILSON FOR CONGRESS,ST. CHARLES,MO,05/08/2026,20,OPENAI SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2026,4071720261534736544,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00010603,SPEECHIFAI INC,NEW YORK,NY,01/29/2026,1100,SOFTWARE,,,,2026,4060920261521032728,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2026,C00010603,SPEECHIFAI INC,NEW YORK,NY,01/29/2026,1100,SOFTWARE,,,,2026,4060920261521032727,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
+2026,C00763649,GRAMMARLY,SAN FRANCISCO,CA,04/27/2026,139.95,SOFTWARE,,*,X,2026,4073120261540060903,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2026,C00763649,GRAMMARLY,SAN FRANCISCO,CA,05/21/2026,139.95,SOFTWARE,,*,X,2026,4073120261540061269,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2026,C00343871,"OPENAI OPCO, LLC",SAN FRANCISCO,CA,06/25/2026,211.47,EVENT SERVICES,,,,2026,4072920261539575970,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2026,C00899336,MARK LEONARD FOR CALIFORNIA,FOUNTAIN VALLEY,CA,06/16/2026,20,OPENAI *CHATGPT SUBSC SAN FRANSCISCO CA 26134,Administrative/Salary/Overhead Expenses ,,,2026,4071620261534565918,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00918698,DESCRIPT,SAN FRANCISCO,CA,06/11/2026,68.9,VIDEO PRODUCTION SOFTWARE,,,,2026,4072920261539586691,descript,Descript,general_purpose,high,advertising_creative;administrative_productivity
@@ -1655,6 +1675,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,02/05/2025,63.6,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2025,4070120261523424292,otter_ai,Otter.ai,general_purpose,high,unspecified
 2026,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,03/05/2025,63.6,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2025,4070120261523427239,otter_ai,Otter.ai,general_purpose,high,unspecified
 2026,C00709691,CHATGPT,BETHESDA,MD,06/15/2026,100,SOFTWARE,,,,2026,4072920261539582622,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2026,C00901793,"LUMA LABS, INC",PALO ALTO,CA,01/05/2026,69,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2026,4051220261510134567,luma_labs,Luma Labs (Luma AI),general_purpose,high,administrative_productivity
+2026,C00901793,"LUMA LABS, INC",PALO ALTO,CA,02/04/2026,69,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2026,4051220261510134568,luma_labs,Luma Labs (Luma AI),general_purpose,high,administrative_productivity
+2026,C00901793,"LUMA LABS, INC",PALO ALTO,CA,03/04/2026,69,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2026,4051220261510134569,luma_labs,Luma Labs (Luma AI),general_purpose,high,administrative_productivity
 2026,C00878454,OTTER.AI,MOUNTAIN VIEW,CA,03/02/2026,159.02,SOFTWARE,,,,2026,4051820261510653410,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2026,C00806174,OPENAI,SAN FRANCISCO,CA,04/03/2026,10.88,SOFTWARE RENTAL,,*,X,2026,4080520261556481904,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00806174,OPENAI,SAN FRANCISCO,CA,04/20/2026,10.88,SOFTWARE RENTAL,,*,X,2026,4080520261556481911,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
@@ -1665,6 +1688,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00580068,OPEN AI CHATGPT,SAN FRANCISCO,CA,04/12/2026,257.22,SOFTWARE,,*,X,2026,4060320261520149664,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00027466,ANTHROPIC,SAN FRANCISCO,CA,12/11/2025,42.4,HQ ACCOUNT - SUBSCRIPTION,,,X,2025,4021020261305788610,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
 2026,C00027466,ANTHROPIC,SAN FRANCISCO,CA,12/31/2025,42.7,HQ ACCOUNT - SUBSCRIPTION,,,X,2025,4021020261305788685,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
+2026,C00027466,GRAMMARLY,SAN FRANCISCO,CA,12/31/2025,152.64,HQ ACCOUNT - SOFTWARE,,,X,2025,4021020261305788708,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2026,C00578302,CALLTIME.AI,LOS ANGELES,CA,01/05/2026,850,CALL TIME FEE FOR FUNDRAISING,Solicitation and Fundraising Expenses ,MEMO: SUBVENDOR OF-CHASE CARDMEMBER SERVICE,X,2026,4072620261538359578,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2026,C00578302,CALLTIME.AI,LOS ANGELES,CA,01/17/2026,850,CALL TIME FEE FOR FUNDRAISING,Solicitation and Fundraising Expenses ,MEMO: SUBVENDOR OF-CHASE CARDMEMBER SERVICE,X,2026,4072620261538359579,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2026,C00578302,CALLTIME.AI,LOS ANGELES,CA,02/17/2026,850,CALL TIME FEE FOR FUNDRAISING,Solicitation and Fundraising Expenses ,MEMO: SUBVENDOR OF-CHASE CARDMEMBER SERVICE,X,2026,4072620261538359580,calltime_ai,CallTime.AI,political_specific,high,fundraising
@@ -1761,6 +1785,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00945980,ANTHROPIC,SAN FRANCISCO,CA,06/22/2026,125,POLLING,Polling Expenses,,,2026,4080620261570461576,anthropic,Anthropic (Claude),general_purpose,high,research_strategy
 2026,C00859108,CALL TIME AI,VISALIA,CA,05/15/2026,1050,COMPUTER SOFTWARE,,,,2026,4080620261570451995,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2026,C00859108,CALL TIME AI,VISALIA,CA,06/15/2026,1050,COMPUTER SOFTWARE,,,,2026,4080620261570451996,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2026,C00901793,"LUMA LABS, INC",PALO ALTO,CA,06/04/2026,69,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539589761,luma_labs,Luma Labs (Luma AI),general_purpose,high,administrative_productivity
+2026,C00901793,"LUMA LABS, INC",PALO ALTO,CA,04/06/2026,69,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539589762,luma_labs,Luma Labs (Luma AI),general_purpose,high,administrative_productivity
+2026,C00901793,"LUMA LABS, INC",PALO ALTO,CA,05/05/2026,69,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2026,4072920261539589763,luma_labs,Luma Labs (Luma AI),general_purpose,high,administrative_productivity
 2026,C00907923,ANTHROPIC,SAN FRANCISCO,CA,05/26/2026,159,SOFTWARE SUBSCRIPTION,,,,2026,4081020261570742202,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
 2026,C00851733,DESCRIPT,SAN FRANSISCO,CA,06/17/2026,16.77,CAMPAIGN SOFTWARE,,,,2026,4071520261534492176,descript,Descript,general_purpose,high,administrative_productivity
 2026,C00851733,DESCRIPT,SAN FRANSISCO,CA,06/25/2026,210.6,CAMPAIGN SOFTWARE,,,,2026,4071520261534492177,descript,Descript,general_purpose,high,administrative_productivity
@@ -1913,6 +1940,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00632133,"DAISYCHAIN, INC",KINGSTON,NY,01/20/2026,501.36,COMPUTER SOFTWARE,,*,X,2026,4031620261423710029,daisychain,Daisychain,political_specific,high,administrative_productivity
 2026,C00632133,ANTHROPIC,SAN FRANCISCO,CA,01/20/2026,46.13,COMPUTER SOFTWARE,,*,X,2026,4031620261423710010,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
 2026,C00632133,ANTHROPIC,SAN FRANCISCO,CA,01/20/2026,46.13,COMPUTER SOFTWARE,,*,X,2026,4031620261423710011,anthropic,Anthropic (Claude),general_purpose,high,administrative_productivity
+2026,C00632133,GRAMMARLY INC.,SAN FRANCISCO,CA,11/17/2025,72,COMPUTER SOFTWARE,,*,X,2025,4012020261302883434,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2026,C00632133,"DAISYCHAIN, INC",KINGSTON,NY,11/17/2025,13.48,COMPUTER SOFTWARE,,*,X,2025,4012020261302883407,daisychain,Daisychain,political_specific,high,administrative_productivity
 2026,C00632133,"DAISYCHAIN, INC",KINGSTON,NY,11/17/2025,504.32,COMPUTER SOFTWARE,,*,X,2025,4012020261302883408,daisychain,Daisychain,political_specific,high,administrative_productivity
 2026,C00608398,CHATGPT,SAN FRANCISCO,CA,09/11/2025,216.1,OFFICE EXPENSE: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2025,4013020261304414166,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity

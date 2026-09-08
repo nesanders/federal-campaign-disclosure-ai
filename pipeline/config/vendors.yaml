@@ -160,6 +160,11 @@ general_purpose:
       - {pattern: "\\bxai\\b", confidence: high}
       - {pattern: "x\\.ai", confidence: high}
       - {pattern: "\\bgrok\\b", confidence: medium}
+    # "Grok Media LLC" is an unrelated political digital-ad/media-buying
+    # vendor (found in both Schedule B and independent-expenditure records),
+    # not xAI's Grok -- confirmed false positive, excluded by name.
+    exclude:
+      - "grok media"
   - id: perplexity
     name: Perplexity AI
     homepage: https://perplexity.ai

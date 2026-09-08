@@ -6,6 +6,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00099267,CHATFUEL,SAN FRANCISCO,CA,07/30/2021,20,CHATBOT SUBSCRIPTION,,,X,2021,4082520211369517762,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
 2022,C00792481,CALLTIME.AI,VISALIA,CA,01/25/2022,319.59,SOFTWARE,,,,2022,4030320221454873502,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00792481,CALLTIME.AI,VISALIA,CA,01/26/2022,334.19,SOFTWARE,,,,2022,4030320221454873506,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00003418,GRAMMARLY,SAN FRANCISCO,CA,07/09/2021,72,OFFICE SUPPLIES,,,X,2021,4082320211343714799,grammarly,Grammarly,general_purpose,high,unspecified
 2022,C00099267,CHATFUEL,SAN FRANCISCO,CA,01/31/2022,20,CHATBOT SUBSCRIPTION,,,X,2022,4022820221453647512,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
 2022,C00746719,NUMERO.AI,IRVINE,CA,02/03/2021,1097,DONOR DATABASE,,,,2021,4071620211320842373,numero_ai,Numero (donor database / call time),political_specific,high,fundraising
 2022,C00746719,NUMERO.AI,IRVINE,CA,03/12/2021,1000,DONOR DATABASE,,,,2021,4071620211320842374,numero_ai,Numero (donor database / call time),political_specific,high,fundraising
@@ -37,6 +38,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00672295,NUMERO.AI,IRVINE,CA,12/13/2021,178.5,MERCHANT FEES,,,,2021,4021820221409137126,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00672295,NUMERO.AI,IRVINE,CA,10/29/2021,8.75,MERCHANT FEES,,,,2021,4021820221409137196,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00672295,NUMERO.AI,IRVINE,CA,12/29/2021,101.5,MERCHANT FEES,,,,2021,4021820221409137228,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,01/27/2022,97.41,AMEX 01/31: TRAINING/PROFESSIONAL DEVELOPMENT,Administrative/Salary/Overhead Expenses ,,X,2022,4030320221454877461,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00767756,CALLTIME AI,VISALIA,CA,11/22/2021,900,SOFTWARE LICENSING,Administrative/Salary/Overhead Expenses ,,,2021,4021520221407913834,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00767756,CALLTIME AI,VISALIA,CA,12/21/2021,900,SOFTWARE LICENSING,Administrative/Salary/Overhead Expenses ,,,2021,4021520221407913835,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00767756,CALLTIME AI,VISALIA,CA,10/21/2021,900,SOFTWARE LICENSING,Administrative/Salary/Overhead Expenses ,,,2021,4021520221407913833,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -65,6 +67,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00777904,"TRUVERSE, INC.",LOS ALTOS,CA,12/10/2021,566.3,SMS SERVICES,,,,2021,4021720221409048216,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
 2022,C00777904,"TRUVERSE, INC.",LOS ALTOS,CA,10/22/2021,910.97,SMS SERVICES,,,,2021,4021720221409048394,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
 2022,C00777904,"TRUVERSE, INC.",LOS ALTOS,CA,10/08/2021,620.05,SMS SERVICES,,,,2021,4021720221409048400,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
+2022,C00406645,GRAMMARLY.COM,SAN FRANCISCO,CA,10/06/2022,30,DOCUMENT DESIGN,Administrative/Salary/Overhead Expenses ,,,2022,4111920221630417882,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00787812,CALLTIME.AI,LOS ANGELES,CA,10/12/2021,.09,FEE,,,,2021,4022720221453547003,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2022,C00787812,CALLTIME.AI,LOS ANGELES,CA,10/05/2021,3138,SOFTWARE SUBSCRIPTION,,,,2021,4022720221453547016,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00792481,CALLTIME.AI,VISALIA,CA,12/17/2021,1410,SOFTWARE,,,,2021,4022820221453657940,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -73,6 +76,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00776252,CALLTIME.AI,LOS ANGELES,CA,12/14/2021,690,CALL LIST MANAGER,Solicitation and Fundraising Expenses ,,,2021,4022320221424417823,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2022,C00795104,CALLTIME.AI,VISALIA,CA,12/21/2021,900,SOFTWARE RENTAL,,,,2021,4022320221424418658,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00696526,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,10/04/2021,95030.94,TEXTING SERVICES,,,,2021,4020720221405730094,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2022,C00709881,GRAMMARLY,SAN FRANCISCO,CA,09/15/2022,139.95,,Administrative/Salary/Overhead Expenses ,,,2022,4051320231747220047,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00696526,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,10/21/2021,126410.49,TEXTING SERVICES,,,,2021,4020720221405730106,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00696526,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,11/23/2021,96777.6,TEXTING SERVICES,,,,2021,4020720221405730136,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/07/2021,1500,PAYROLL,,,,2021,4021520221407908057,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
@@ -98,9 +102,12 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00765164,AMPLIFY.AI,LOS ALTOS,CA,10/18/2021,1600.49,TEXT MESSAGING SERVICE,,,,2021,4021820221409138958,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,01/28/2022,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2022,4030220221453951715,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00573261,CALLTIME AI,VISALIA,CA,01/12/2022,950,SOFTWARE,,*,X,2022,4031120221460608933,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,09/22/2022,4.94,COMPUTER SOFTWARE,,,,2022,4121420221636553924,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00573261,CALLTIME AI,VISALIA,CA,02/08/2022,950,SOFTWARE,,*,X,2022,4031820221460921930,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00771113,PROMPT.IO,SEATTLE,WA,02/07/2022,3333.33,PAC TEXT MARKETING,,,,2022,4031720221460853620,prompt_io,Prompt.io,political_specific,high,unspecified
 2022,C00522425,PROMPT.IO,SEATTLE,WA,02/11/2022,3333.33,PAC TEXT MARKETING,,,X,2022,4031720221460853717,prompt_io,Prompt.io,political_specific,high,unspecified
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,01/18/2022,120,SOFTWARE,,*,X,2022,4033020221464933216,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,01/28/2022,5075,SOFTWARE,,*,X,2022,4033020221464933238,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,02/25/2022,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2022,4033020221464933358,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00777771,CALLTIME.AI,VISALIA,CA,10/11/2021,850,SOFTWARE RENTAL,,,,2021,4021720221409038585,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00777771,CALLTIME.AI,VISALIA,CA,11/12/2021,850,SOFTWARE RENTAL,,,,2021,4021720221409038586,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -152,6 +159,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00650432,SPEECHIFAI.COM,NEW YORK,NY,05/17/2021,923.4,ONLINE VOTER DRIVE,Administrative/Salary/Overhead Expenses ,,,2021,4052720251204225210,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2022,C00650432,SPEECHIFAI.COM,NEW YORK,NY,08/16/2021,923.4,ONLINE VOTER DRIVE,Administrative/Salary/Overhead Expenses ,,,2021,4052720251204226023,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2022,C00650432,SPEECHIFAI.COM,NEW YORK,NY,11/18/2021,874.8,PAID VIA PAY PAL,Administrative/Salary/Overhead Expenses ,,,2021,4052720251204226024,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
+2022,C00730150,GRAMMARLY,SAN FRANCISCO,CA,08/06/2021,29.95,WRITING SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2021,4083120231800968038,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00730150,GRAMMARLY,SAN FRANCISCO,CA,07/06/2021,29.95,WRITING SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2021,4083120231800968005,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00614115,CALLTIME.AI,VISALIA,CA,07/18/2021,1850,SUBSCRIPTION - RESEARCH,Administrative/Salary/Overhead Expenses ,,,2021,4110720231810001355,calltime_ai,CallTime.AI,political_specific,high,research_strategy;administrative_productivity
 2022,C00614115,CALLTIME.AI,VISALIA,CA,08/18/2021,1850,DATABASE,Administrative/Salary/Overhead Expenses ,,,2021,4110720231810001356,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00614115,CALLTIME.AI,VISALIA,CA,09/20/2021,1850,DATABASE,Administrative/Salary/Overhead Expenses ,,,2021,4110720231810001357,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -179,6 +188,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,12/18/2021,510,WAGES,,,,2021,4121220221634064251,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2022,C00677492,"CHEYENNE, CLAUDE",MIRAMAR,FL,12/21/2021,120,WAGES,,,,2021,4121220221634064252,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2022,C00695346,SPEECHIFAI,BROOKLYN,NY,11/23/2021,7192.8,,Advertising Expenses ,,,2021,4060320241952943916,sosha,SoSha (Speechifai),political_specific,high,advertising_creative
+2022,C00730150,GRAMMARLY,SAN FRANCISCO,CA,06/07/2021,29.95,COMPUTER SERVICES,Administrative/Salary/Overhead Expenses ,,,2021,4080220231760313105,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00730150,GRAMMARLY,SAN FRANCISCO,CA,05/06/2021,29.95,COMPUTER SERVICES,Administrative/Salary/Overhead Expenses ,,,2021,4080220231760313084,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00783498,NUMERO.AI,IRVINE,CA,05/09/2022,.88,MERCHANT FEE,,,,2022,4060120221494200670,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00783498,NUMERO.AI,IRVINE,CA,05/16/2022,1.76,MERCHANT FEE,,,,2022,4060120221494200681,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00783498,NUMERO.AI,IRVINE,CA,05/02/2022,2.28,MERCHANT FEE,,,,2022,4060120221494200695,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
@@ -198,6 +209,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,12/31/2021,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2022,4051320221485706373,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,12/30/2021,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2022,4051320221485706593,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,12/06/2021,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2022,4051320221485706594,otter_ai,Otter.ai,general_purpose,high,unspecified
+2022,C00706267,GRAMMARLY,SAN FRANCISCO,CA,04/30/2021,29.95,WEB SERVICE/SUBSCRIPTION,,,,2021,4071620211320846131,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00706267,GRAMMARLY,SAN FRANCISCO,CA,06/01/2021,29.95,WEB SERVICE/SUBSCRIPTION,,,,2021,4071620211320846211,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00777771,CALLTIME.AI,VISALIA,CA,04/12/2022,850,SOFTWARE RENTAL,,,,2022,4051020221476205649,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,06/30/2021,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2021,4082620211369772791,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,06/07/2021,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2021,4082620211369772792,otter_ai,Otter.ai,general_purpose,high,unspecified
@@ -205,6 +218,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00802264,PROMPT.IO INC.,SEATTLE,WA,07/14/2022,2333.33,TEXTING,Administrative/Salary/Overhead Expenses ,,,2022,4120920221633960531,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2022,C00781328,CALLTIME.AI,VISALIA,CA,06/22/2021,1410,POLITICAL FUNDRAISING SOFTWARE,,,,2021,4073120211324264955,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2022,C00785279,CALL TIME.AI,VISALIA,CA,04/25/2022,2214,SOFTWARE SUBSCRIPTION,,*,X,2022,4052720221494006135,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,02/18/2022,120,SOFTWARE,,*,X,2022,4042120221471311703,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00802264,PROMPT.IO INC.,SEATTLE,WA,08/23/2022,1283.33,TEXTING,Administrative/Salary/Overhead Expenses ,,,2022,4120920221633960548,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2022,C00802264,PROMPT.IO INC.,SEATTLE,WA,10/11/2022,1283.34,TEXTING,Administrative/Salary/Overhead Expenses ,,,2022,4120920221633960599,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,03/31/2022,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2022,4042120221471312179,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
@@ -257,6 +271,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00767756,CALLTIME AI,VISALIA,CA,05/27/2021,1575,SOFTWARE LICENSING,,,,2021,4071620211320849609,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00767756,CALLTIME AI,VISALIA,CA,06/28/2021,1575,SOFTWARE LICENSING,Administrative/Salary/Overhead Expenses ,,,2021,4071620211320849610,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00767756,CALLTIME AI,VISALIA,CA,06/29/2021,558.12,PHONE SERVICE,Administrative/Salary/Overhead Expenses ,,,2021,4071620211320849611,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,05/11/2022,1040.8,AMEX 05/31: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2022,4062720221532220958,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,05/31/2021,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2021,4100720211373463060,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,05/31/2021,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2021,4100720211373462880,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00672295,NUMERO.AI,IRVINE,CA,06/08/2021,1000,SOFTWARE,,*,X,2021,4080420211324614757,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
@@ -293,12 +308,15 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00774273,NUMERO.AI,ALISO VIEJO,CA,06/30/2021,12.25,MERCHANT FEE,,,,2021,4073020211324185202,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00774273,NUMERO.AI,ALISO VIEJO,CA,05/25/2021,153.97,MERCHANT FEE,,,,2021,4073020211324185212,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00774273,NUMERO.AI,ALISO VIEJO,CA,05/18/2021,89.25,MERCHANT FEE,,,,2021,4073020211324185213,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
+2022,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,10/05/2022,275,COMPUTER SOFTWARE,,,,2022,4101120231804189774,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00725101,CALL TIME.AI,VISALIA,CA,06/23/2021,3000,SOFTWARE,,,,2021,4073020211324187392,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00725101,CALL TIME.AI,VISALIA,CA,06/24/2021,975,SOFTWARE,,,,2021,4073020211324187401,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00027466,RUNWAY AI,NEWARK,DE,04/18/2022,336,WEB SERVICE,,,X,2022,4052620221493812072,runwayml,Runway,general_purpose,high,unspecified
 2022,C00650432,SPEECHIFAI.COM,NEW YORK,NY,08/08/2022,324,VOTER DRIVE ONLINE,Administrative/Salary/Overhead Expenses ,,,2022,4052720251204225260,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2022,C00650432,SPEECHIFAI.COM,NEW YORK,NY,08/09/2022,324,VOTER DRIVE ONLINE,Administrative/Salary/Overhead Expenses ,,,2022,4052720251204225261,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2022,C00650432,SPEECHIFAI.COM,NEW YORK,NY,09/30/2022,324,VOTER DRIVE ONLINE,Administrative/Salary/Overhead Expenses ,,,2022,4052720251204225262,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,09/22/2022,139.59,AMEX 09/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2022,4110720221607094823,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,09/21/2022,11200,AMEX 09/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2022,4110720221607094798,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00777771,TRUVERSE INC,LOS ALTOS,CA,10/13/2022,98047.5,TEXT MESSAGING SERVICES,,,,2022,4012020231718641161,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00777771,TRUVERSE INC,LOS ALTOS,CA,10/13/2022,1791.55,TEXT MESSAGING SERVICES,,,,2022,4012020231718641162,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00578302,CALLTIME.AI,LOS ANGELES,CA,08/17/2022,650,FEES FOR FUND RAISING CALLS,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2022,4030220231732961108,calltime_ai,CallTime.AI,political_specific,high,fundraising
@@ -313,8 +331,10 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00718866,"TRUVERSE, INC.",LOS ALTOS,CA,06/29/2021,4000,SOFTWARE SUBSCRIPTION,,,,2021,4090120211370175935,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,12/31/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2021,4032920211269650593,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,12/30/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2021,4032920211269650619,otter_ai,Otter.ai,general_purpose,high,unspecified
+2022,C00499988,GRAMMARLY INC.,SAN FRANCISCO,CA,04/14/2021,139.95,SOFTWARE,,,X,2021,4072020211321210840,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00783894,CALLTIME AI,VISALIA,CA,08/02/2021,4275,CALL TIME SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2021,4121620211386076125,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00573261,CALLTIME AI,VISALIA,CA,11/10/2021,950,SOFTWARE,,*,X,2021,4122220211386486161,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00003418,GRAMMARLY,SAN FRANCISCO,CA,02/10/2021,175,DUES AND SUBSCRIPTIONS,,,X,2021,4032320211262033035,grammarly,Grammarly,general_purpose,high,unspecified
 2022,C00764423,TRUVERSE,LOS ALTOS,CA,08/16/2021,3644.41,TEXTING EXPENSE,,,,2021,4121120211385120467,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00764423,TRUVERSE,LOS ALTOS,CA,08/20/2021,4113.84,TEXTING EXPENSE,,,,2021,4121120211385120468,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00764423,TRUVERSE,LOS ALTOS,CA,08/26/2021,1032.12,TEXTING EXPENSE,,,,2021,4121120211385120469,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -322,6 +342,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00619759,SPEECHIFAI,NEW YORK,NY,07/05/2022,4050,SUBSCRIPTION,,,,2022,4101320221588131388,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2022,C00802264,PROMPT.IO INC.,SEATTLE,WA,04/28/2022,2333.33,TEXTING,Administrative/Salary/Overhead Expenses ,,,2022,4121620221637637131,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2022,C00802264,PROMPT.IO INC.,SEATTLE,WA,06/01/2022,2333.33,TEXTING,Administrative/Salary/Overhead Expenses ,,,2022,4121620221637637148,prompt_io,Prompt.io,political_specific,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,08/18/2022,120,SOFTWARE,,*,X,2022,4102720221592626794,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,09/22/2022,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2022,4102720221592626317,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00573261,CALLTIME AI,VISALIA,CA,03/15/2022,950,SOFTWARE,,*,X,2022,4042520221472605552,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00672295,NUMERO.AI,IRVINE,CA,04/21/2022,3.5,MERCHANT FEES,,,,2022,4051320221485729133,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
@@ -349,11 +370,14 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00672295,NUMERO.AI,IRVINE,CA,04/12/2022,113.79,MERCHANT FEES,,,,2022,4051320221485729072,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00672295,NUMERO.AI,IRVINE,CA,04/18/2022,3.5,MERCHANT FEES,,,,2022,4051320221485729122,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,08/18/2022,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2022,4092320221576799586,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,07/18/2022,120,SOFTWARE,,*,X,2022,4092320221576799997,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00777904,"TRUVERSE, INC.",LOS ALTOS,CA,04/07/2022,1928.92,TEXTING SERVICES,,,,2022,4072720231758137843,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00777771,CALLTIME.AI,VISALIA,CA,10/12/2022,1698.96,SOFTWARE RENTAL,,,,2022,4012020231718641024,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00573261,CALLTIME AI,VISALIA,CA,08/12/2021,950,SOFTWARE,,*,X,2021,4092220211371638720,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00718866,"TRUVERSE, INC.",LOS ALTOS,CA,09/30/2021,19331.17,SOFTWARE SUBSCRIPTION,,,,2021,4122520211386691577,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2022,C00718866,"TRUVERSE, INC.",LOS ALTOS,CA,08/31/2021,3000,SOFTWARE SUBSCRIPTION,,,,2021,4122520211386691470,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2022,C00496075,GRAMMARLY INC.,SAN FRANCISCO,CA,03/17/2021,139.95,SOFTWARE,,,X,2021,4010420221387469343,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00003418,GRAMMARLY,SAN FRANCISCO,CA,11/17/2021,148.39,DUES AND SUBSCRIPTIONS,,,X,2021,4123120211387370447,grammarly,Grammarly,general_purpose,high,unspecified
 2022,C00573261,CALLTIME AI,VISALIA,CA,10/12/2021,950,SOFTWARE,,*,X,2021,4112120211379032809,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00783894,CALLTIME AI,VISALIA,CA,11/01/2021,4275,CALL TIME SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2021,4010420221387469842,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00793703,CALL TIME AI,VISALIA,CA,12/06/2021,900,SOFTWARE,,,,2021,4030120221453782733,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -398,10 +422,12 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00802496,GEMINI IMPRINTS,ARVADA,CO,04/08/2022,367.06,PRINTING,,,,2022,4062120221530574285,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
 2022,C00648915,CALLTIME.AI,VISALIA,CA,04/04/2022,2010,TELECOMMUNICATIONS SERVICES,,,,2022,4062320221531148189,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2022,C00099267,CHATFUEL,SAN FRANCISCO,CA,11/30/2021,20,CHATBOT SUBSCRIPTION,,,X,2021,4022620221453517400,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,03/29/2022,72.32,AMEX 03/31: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2022,4051920221487642565,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,02/01/2021,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2021,4081720211327633011,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,02/01/2021,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2021,4081720211327633032,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,10/29/2021,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2021,4031920221461899758,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,10/29/2021,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2021,4031920221461899759,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,09/18/2021,120,SOFTWARE,,*,X,2021,4031920221461876445,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,10/29/2021,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2021,4031920221461876753,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00379735,GEMINI PROPERTIES,TULSA,OK,05/20/2022,812.58,FOOD SERVICE,Campaign Event Expenses,FOOD SERVICE,,2022,4062320221531149005,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,09/30/2021,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2021,4031920221461896284,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
@@ -410,6 +436,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00777904,"TRUVERSE, INC.",LOS ALTOS,CA,07/21/2022,10147.61,TEXTING SERVICES,,,,2022,4072720231758142810,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00777904,"TRUVERSE, INC.",LOS ALTOS,CA,09/30/2022,11405.32,TEXTING SERVICES,,,,2022,4072720231758142475,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00777904,"TRUVERSE, INC.",LOS ALTOS,CA,09/16/2022,18605.18,TEXTING SERVICES,,,,2022,4072720231758142115,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,09/18/2021,120,SOFTWARE,,*,X,2021,4031920221461899142,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,09/18/2021,120,SOFTWARE,,*,X,2021,4031920221461899143,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,10/18/2021,120,SOFTWARE,,*,X,2021,4031920221461904685,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,10/18/2021,120,SOFTWARE,,*,X,2021,4031920221461874848,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,10/18/2021,120,SOFTWARE,,*,X,2021,4031920221461904684,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00747170,PROMPT.IO INC.,SEATTLE,WA,04/07/2022,2500,SMS MESSAGING,Solicitation and Fundraising Expenses ,,,2022,4072420221543676431,prompt_io,Prompt.io,political_specific,high,communications_copy;fundraising
 2022,C00747170,PROMPT.IO INC.,SEATTLE,WA,05/16/2022,2500,SMS MESSAGING,Solicitation and Fundraising Expenses ,,,2022,4072420221543676432,prompt_io,Prompt.io,political_specific,high,communications_copy;fundraising
 2022,C00777904,"TRUVERSE, INC.",LOS ALTOS,CA,11/22/2022,14879.97,TEXTING SERVICES,,,,2022,4072520231757155104,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -419,17 +450,19 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00578302,CALLTIME.AI,LOS ANGELES,CA,01/17/2021,500,CALL TIME FEES,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2021,4041520211277738219,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2022,C00578302,CALLTIME.AI,LOS ANGELES,CA,12/17/2020,500,CALL TIME EXPENSE,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2021,4041520211277738215,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2022,C00578302,CALLTIME.AI,LOS ANGELES,CA,03/03/2021,74.16,SOLICITATION FEE FOR CALLING CONTRIBUTORS,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2021,4041520211277738228,calltime_ai,CallTime.AI,political_specific,high,fundraising
-2022,C00754754,GROK MEDIA LLC,PETALUMA,CA,11/17/2022,4465,SOCIAL MEDIA PROMOTION,,,,2022,4022820231732856745,xai_grok,xAI (Grok),general_purpose,medium,unspecified
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,09/01/2022,61.12,AMEX 09/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2022,4110720221607094506,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00672295,NUMERO.AI,IRVINE,CA,08/15/2022,1250,SOFTWARE,,*,X,2022,4101820221589102753,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2022,C00672295,NUMERO.AI,IRVINE,CA,09/13/2022,1250,SOFTWARE,,*,X,2022,4101820221589102908,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2022,C00672295,NUMERO.AI,IRVINE,CA,07/07/2022,35,MERCHANT FEES,,,,2022,4101820221589102832,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00672295,NUMERO.AI,IRVINE,CA,07/12/2022,1000,SOFTWARE,,*,X,2022,4101820221589102837,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
+2022,C00706267,GRAMMARLY,SAN FRANCISCO,CA,03/01/2021,29.95,WEB SERVICE/SUBSCRIPTION,,,,2021,4043020211284990361,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00795104,CALLTIME.AI,VISALIA,CA,07/21/2022,1100,SOFTWARE RENTAL,,,,2022,4102620221592322344,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00795104,CALLTIME.AI,VISALIA,CA,08/20/2022,1100,SOFTWARE RENTAL,,,,2022,4102620221592322345,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00795104,CALLTIME.AI,VISALIA,CA,09/22/2022,1100,SOFTWARE RENTAL,,,,2022,4102620221592322346,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00522425,PROMPT.IO,SEATTLE,WA,09/09/2022,3333.33,PAC SUBSCRIPTION,,,X,2022,4111820221630368377,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2022,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,11/10/2022,17263.16,TEXT MESSAGING,,,,2022,4013020231721236197,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,11/04/2022,38023.08,TEXT MESSAGING,,,,2022,4013020231721236196,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2022,C00706267,GRAMMARLY,SAN FRANCISCO,CA,02/12/2021,29.95,WEB SERVICE/SUBSCRIPTION,,,,2021,4043020211284990328,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00578302,CALLTIME.AI,LOS ANGELES,CA,07/01/2022,650,FEES FOR FUNDRAISING CALLS,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2022,4012020231718632387,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2022,C00578302,CALLTIME.AI,LOS ANGELES,CA,07/17/2022,650,FEES FOR FUNDRAISING CALL TIME,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2022,4012020231718632400,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2022,C00696526,AMPLIFY.AI,LOS ALTOS,CA,02/19/2021,137291.55,TEXTING SERVICES,,,,2021,4042320211278912849,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -440,7 +473,12 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00648956,CALLTIME.AI,VISALIA,CA,05/10/2021,900,SOFTWARE,,,,2021,4080320211324481368,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00648956,CALLTIME.AI,VISALIA,CA,05/17/2021,900,SOFTWARE,,,,2021,4080320211324481369,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00648956,CALLTIME.AI,VISALIA,CA,06/09/2021,900,SOFTWARE,,,,2021,4080320211324481370,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,07/18/2021,120,SOFTWARE,,*,X,2021,4031920221461891644,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,07/18/2021,120,SOFTWARE,,*,X,2021,4031920221461891645,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,09/30/2021,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2021,4031920221461872254,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,07/18/2021,120,SOFTWARE,,*,X,2021,4031920221461870934,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,08/18/2021,120,SOFTWARE,,*,X,2021,4031920221461894338,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,08/18/2021,120,SOFTWARE,,*,X,2021,4031920221461894339,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00578302,CALLTIME.AI,LOS ANGELES,CA,05/19/2022,650,CALL TIME FEES,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2022,4071820221541671530,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2022,C00578302,CALLTIME.AI,LOS ANGELES,CA,05/19/2022,650,CALL TIME FEES,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2022,4071820221541671515,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2022,C00696526,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,12/08/2022,4235.58,TEXTING SERVICES,,,,2022,4020320231722480553,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -453,21 +491,31 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00798132,CALL TIME AI,VISALIA,CA,09/16/2022,500,POLITICAL FUNDRAISING SOFTWARE,,,,2022,4072020231755781841,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,10/21/2022,14,SUBSCRIPTION,,*,X,2022,4020120231721951653,descript,Descript,general_purpose,high,administrative_productivity
 2022,C00798132,CALL TIME AI,VISALIA,CA,10/17/2022,500,POLITICAL FUNDRAISING SOFTWARE,,,,2022,4071920231754610198,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,05/18/2021,120,SOFTWARE,,*,X,2021,4031920221461865863,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,12/16/2022,14,SUBSCRIPTION,,*,X,2022,4020120231721952005,descript,Descript,general_purpose,high,administrative_productivity
 2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,11/21/2022,14,SUBSCRIPTION,,*,X,2022,4020120231721951784,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,05/18/2021,120,SOFTWARE,,*,X,2021,4031920221461880916,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,05/18/2021,120,SOFTWARE,,*,X,2021,4031920221461880917,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00003418,GRAMMARLY,SAN FRANCISCO,CA,01/08/2021,175,DUES AND SUBSCRIPTIONS,,,X,2021,4030620211226878100,grammarly,Grammarly,general_purpose,high,unspecified
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,06/24/2021,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2021,4031920221461865736,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,12/16/2021,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2021,4031920221461864094,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,12/08/2021,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2021,4031920221461863716,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,06/18/2021,120,SOFTWARE,,*,X,2021,4031920221461884904,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,06/18/2021,120,SOFTWARE,,*,X,2021,4031920221461870151,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,06/18/2021,120,SOFTWARE,,*,X,2021,4031920221461884905,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00764423,TRUVERSE,LOS ALTOS,CA,04/15/2021,1473.94,TEXTING EXPENSE,,,,2021,4072420211322828015,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00764423,TRUVERSE,LOS ALTOS,CA,05/11/2021,5362.29,TEXTING EXPENSE,,,,2021,4072420211322828016,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00764423,TRUVERSE,LOS ALTOS,CA,06/17/2021,4967.48,TEXTING EXPENSE,,,,2021,4072420211322828017,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,12/07/2022,832.55,FUNDRAISING TEXT MESSAGES,,,,2022,4020220231722240576,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2022,C00795104,CALLTIME.AI,VISALIA,CA,05/22/2022,1100,SOFTWARE RENTAL,,,,2022,4101920221589906776,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00795104,CALLTIME.AI,VISALIA,CA,06/21/2022,1100,SOFTWARE RENTAL,,,,2022,4101920221589906777,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00003418,GRAMMARLY,SAN FRANCISCO,CA,03/10/2021,175,DUES AND SUBSCRIPTIONS,,,X,2021,4043020211284978424,grammarly,Grammarly,general_purpose,high,unspecified
 2022,C00718866,"TRUVERSE, INC.",LOS ALTOS,CA,10/17/2022,35070.07,SOFTWARE SUBSCRIPTION,,,,2022,4020220231722246176,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2022,C00718866,"TRUVERSE, INC.",LOS ALTOS,CA,11/23/2022,13144.11,SOFTWARE SUBSCRIPTION,,,,2022,4020220231722246177,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2022,C00783274,OTTER.AI,LOS ALTOS,CA,09/07/2022,178.85,SOFTWARE SUBSCRIPTION,,,,2022,4110420221605699532,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2022,C00010603,DESCRIPT INC,SAN FRANCISCO,CA,11/19/2021,288,SOFTWARE,,*,X,2021,4031920221461864345,descript,Descript,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,11/18/2021,120,SOFTWARE,,*,X,2021,4031920221461864336,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,08/18/2021,120,SOFTWARE,,*,X,2021,4031920221461871781,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00767343,CALLTIME.AI,LOS ANGELES,CA,05/06/2022,4125,SOFTWARE,Solicitation and Fundraising Expenses ,,,2022,4072120221543105096,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/06/2021,500,PAYROLL,,,,2021,4072920211323323819,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/08/2021,1001.75,PAYROLL,,,,2021,4072920211323323820,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
@@ -518,6 +566,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00578302,CALLTIME.AI,LOS ANGELES,CA,08/17/2021,650,CALL TIME FEES FOR FUNDRAISING,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2021,4022420221453289664,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2022,C00578302,CALLTIME.AI,LOS ANGELES,CA,07/17/2021,650,CALL TIME FEES,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2021,4022420221453289674,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2022,C00608398,PROMPT.IO INC.,SEATTLE,WA,10/05/2022,13254,CAMPAIGN SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2022,4120220221633073617,prompt_io,Prompt.io,political_specific,high,administrative_productivity
+2022,C00727164,GRAMMARLY,SAN FRANCISCO,CA,12/16/2022,60,SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2022,4041520231742636087,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00648956,CALLTIME.AI,VISALIA,CA,01/10/2022,900,SOFTWARE,,,,2022,4071620221540802266,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00648956,CALLTIME.AI,VISALIA,CA,02/09/2022,900,SOFTWARE,,,,2022,4071620221540802267,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00648956,CALLTIME.AI,VISALIA,CA,03/09/2022,900,SOFTWARE,,,,2022,4071620221540802268,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -703,6 +752,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00783712,CALL TIME AI,VISALIA,CA,01/08/2022,1974,SOFTWARE,,,,2022,4050420221474451591,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00343871,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,08/08/2022,51205.05,TEXT MESSAGE SERVICES,,,,2022,4012620241817151854,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
 2022,C00343871,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,09/15/2022,50430,TEXT MESSAGE SERVICES,,,,2022,4012620241817151992,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
+2022,C00406645,GRAMMARLY.COM,SAN FRANCISCO,CA,12/05/2022,30,SUBSCRIPTION FEES,Administrative/Salary/Overhead Expenses ,,,2022,4021020231725289326,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00343871,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,12/09/2022,212946.21,TEXT MESSAGE SERVICES,,,,2022,4012620241817145344,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
 2022,C00806174,CALLTIME.AI,VISALIA,CA,12/19/2022,700,SOFTWARE RENTAL,,,,2022,4021020231725296488,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00767798,CALL TIME.AI,LOS ANGELES,CA,02/14/2022,1650,SOFTWARE,,,,2022,4050620221475093487,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -775,8 +825,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00784959,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,02/02/2022,4864.65,TEXTING PLATFORM,,,,2022,4050320221474206920,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00784959,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,01/26/2022,4382.73,TEXTING PLATFORM,,,,2022,4050320221474206652,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00784959,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,02/16/2022,5290.4,TEXTING PLATFORM,,,,2022,4050320221474206631,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2022,C00003418,GRAMMARLY,SAN FRANCISCO,CA,03/09/2022,60,DUES AND SUBSCRIPTIONS,,,X,2022,4093020221587031032,grammarly,Grammarly,general_purpose,high,unspecified
+2022,C00434191,GRAMMARLY,SAN FRANCISCO,CA,08/28/2022,139.95,SOFTWARE,,*,X,2022,4021620231727386895,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00783498,NUMERO.AI,IRVINE,CA,10/19/2022,1.76,MERCHANT FEE,,,,2022,4113020221632248966,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00783498,NUMERO.AI,IRVINE,CA,10/03/2022,1000,SOFTWARE,,,,2022,4113020221632248974,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
+2022,C00003418,GRAMMARLY,SAN FRANCISCO,CA,03/30/2022,144,DUES AND SUBSCRIPTIONS,,,X,2022,4093020221587032390,grammarly,Grammarly,general_purpose,high,unspecified
 2022,C00777771,TRUVERSE INC,LOS ALTOS,CA,08/27/2021,720.35,TEXT MESSAGING SERVICES,,,,2021,4102020211374300807,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00777771,TRUVERSE INC,LOS ALTOS,CA,09/21/2021,9828.43,TEXT MESSAGING SERVICE,,,,2021,4102020211374300808,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00777771,CALLTIME.AI,VISALIA,CA,08/12/2021,850,SOFTWARE RENTAL,,,,2021,4102020211374300539,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -797,6 +850,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00776252,CALLTIME.AI,LOS ANGELES,CA,02/14/2022,690,CALL LIST MANAGER,Solicitation and Fundraising Expenses ,,,2022,4050620221475088346,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2022,C00776252,CALLTIME.AI,LOS ANGELES,CA,03/14/2022,690,CALL LIST MANAGER,Solicitation and Fundraising Expenses ,,,2022,4050620221475088347,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2022,C00722207,PROMPT.IO,SEATTLE,WA,03/31/2022,10800,TEXTING SERVICES,Travel Expenses,,,2022,4050920221476022611,prompt_io,Prompt.io,political_specific,high,unspecified
+2022,C00806430,"SHOEMAKER, JOANIE",LODI,CA,04/29/2022,194,"GRAMMARLY, LEADERSHIP TRAINING",Administrative/Salary/Overhead Expenses ,,,2022,4053120221494133024,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00800573,CALLTIME.AI,VASALIA,CA,01/31/2022,900,CALLTIME SOFTWARE,,,,2022,4051220221477436981,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00800573,CALLTIME.AI,VASALIA,CA,02/28/2022,900,CALLTIME SOFTWARE,,,,2022,4051220221477436982,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00793877,CALL TIME.AI,LOS ANGELES,CA,03/22/2022,900,SOFTWARE,,,,2022,4051020221476202774,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -811,6 +865,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00099267,CHATFUEL,SAN FRANCISCO,CA,03/31/2022,20,CHATBOT SUBSCRIPTION,,,X,2022,4051920221487638997,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
 2022,C00804914,CALLTIME.AI,VISALIA,CA,04/01/2022,5175,FUNDRAISING SOFTWARE,,*,X,2022,4042620231744756032,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2022,C00804914,TRUVERSE INC.,LOS ALTOS,CA,10/13/2022,687.73,TEXTING SERVICES,,,,2022,4041420231742376325,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2022,C00580068,GRAMMARLY,SAN FRANCISCO,CA,08/01/2022,29.95,SOFTWARE,,*,X,2022,4092020221576271692,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00767343,CALLTIME.AI,LOS ANGELES,CA,08/05/2021,2574,SOFTWARE,Solicitation and Fundraising Expenses ,*,X,2021,4062920221539254589,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2022,C00767798,CALL TIME.AI,LOS ANGELES,CA,07/16/2021,900,SOFTWARE,,,,2021,4050620221475085727,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00767798,CALL TIME.AI,LOS ANGELES,CA,09/13/2021,1500,SOFTWARE,,,,2021,4050620221475085914,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -842,6 +897,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00806174,CALLTIME.AI,VISALIA,CA,07/16/2022,700,SOFTWARE RENTAL,,,,2022,4110320221604889072,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00806174,CALLTIME.AI,VISALIA,CA,08/17/2022,700,SOFTWARE RENTAL,,,,2022,4110320221604889073,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00806174,CALLTIME.AI,VISALIA,CA,09/19/2022,700,SOFTWARE RENTAL,,,,2022,4110320221604889074,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00709691,GRAMMARLY,SAN FRANCISCO,CA,02/08/2021,150,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2021,4032320221464063256,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00709691,GRAMMARLY,SAN FRANCISCO,CA,03/08/2021,150,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2021,4032320221464063257,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00709691,GRAMMARLY,SAN FRANCISCO,CA,03/22/2021,29.55,TRAVEL,Administrative/Salary/Overhead Expenses ,,X,2021,4032320221464063165,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00769901,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,10/01/2021,8478,DIGITAL ADVERTISING,,,,2021,4050620221475084806,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative
 2022,C00725101,CALL TIME.AI,VISALIA,CA,10/06/2021,3975,SOFTWARE,,,,2021,4050920221476000855,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00784959,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,10/20/2021,2779.76,TEXTING PLATFORM,,,,2021,4051320221485703876,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -870,6 +928,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00767400,"TRUVERSE, INC.",LOS ALTOS,CA,07/23/2021,2290.71,SOFTWARE SUBSCRIPTION,,TEXTING PLATFORM,,2021,4102820211376086148,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2022,C00722207,PROMPT.IO,SEATTLE,WA,05/16/2022,36000,TEXTING SERVICES,Advertising Expenses ,,,2022,4110120221594572790,prompt_io,Prompt.io,political_specific,high,advertising_creative
 2022,C00722207,PROMPT.IO,SEATTLE,WA,06/01/2022,18000,TEXTING SERVICES,Advertising Expenses ,,,2022,4110120221594572791,prompt_io,Prompt.io,political_specific,high,advertising_creative
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,04/18/2021,120,SOFTWARE,,*,X,2021,4062920211312010865,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,05/20/2021,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2021,4062920211312010766,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00650150,OTTER AI,MOUNTAIN VIEW,CA,08/08/2022,9.99,SOFTWARE,,,,2022,4110620221605850454,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2022,C00650150,OTTER AI,MOUNTAIN VIEW,CA,09/08/2022,9.99,SOFTWARE,,,,2022,4110620221605850455,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
@@ -888,6 +947,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00784785,CALLTIME.AI,VISALIA,CA,09/13/2022,146.27,COMMUNICATION SERVICES,,,,2022,4110820221616650107,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2022,C00784785,CALLTIME.AI,VISALIA,CA,09/06/2022,850,COMMUNICATION SERVICES,,,,2022,4110820221616650048,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,04/22/2021,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2021,4063020211312956200,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,03/18/2021,120,SOFTWARE,,*,X,2021,4063020211312956299,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,09/21/2022,14,SUBSCRIPTION,,*,X,2022,4110420221605702019,descript,Descript,general_purpose,high,administrative_productivity
 2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,07/21/2022,14,SUBSCRIPTION,,*,X,2022,4110420221605701855,descript,Descript,general_purpose,high,administrative_productivity
 2022,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,08/21/2022,14,SUBSCRIPTION,,*,X,2022,4110420221605701940,descript,Descript,general_purpose,high,administrative_productivity
@@ -929,6 +989,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00777904,"TRUVERSE, INC.",LOS ALTOS,CA,07/20/2021,533.75,SMS SERVICES,,,,2021,4110420211377167938,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
 2022,C00783274,OTTER.AI,LOS ALTOS,CA,10/03/2022,487.23,SOFTWARE SUBSCRIPTION,,,,2022,4120120221632542925,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2022,C00810754,PROMPT.IO INC.,SEATTLE,WA,09/19/2022,11250,TEXTING SERVICES,,,,2022,4102020221590095937,prompt_io,Prompt.io,political_specific,high,unspecified
+2022,C00003418,GRAMMARLY,SAN FRANCISCO,CA,04/09/2021,175,DUES AND SUBSCRIPTIONS,,,X,2021,4052720211297515382,grammarly,Grammarly,general_purpose,high,unspecified
 2022,C00099267,CHATFUEL,SAN FRANCISCO,CA,01/29/2021,20,ONLINE BRANDING SUBSCRIPTION,,,X,2021,4110420211377166325,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,07/05/2022,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2022,4032220231736867907,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00769901,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,07/29/2021,9344.53,DIGITAL ADVERTISING,,,,2021,4110320211376973530,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative
@@ -945,7 +1006,10 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00041269,PROMPT.IO INC.,SEATTLE,WA,09/27/2021,10000,SUBSCRIPTION,,,,2021,4110220211376860136,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2022,C00776252,CALLTIME.AI,LOS ANGELES,CA,08/16/2021,690,CALL LIST MANAGER,Solicitation and Fundraising Expenses ,,,2021,4110320211376967426,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2022,C00776252,CALLTIME.AI,LOS ANGELES,CA,09/14/2021,690,CALL LIST MANAGER,Solicitation and Fundraising Expenses ,,,2021,4110320211376967427,calltime_ai,CallTime.AI,political_specific,high,fundraising
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,09/18/2022,120,SOFTWARE,,*,X,2022,4112920221631586892,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,01/18/2021,120,SOFTWARE,,*,X,2021,4052820211298414153,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,03/26/2021,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2021,4052820211298414800,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,02/18/2021,120,DATA ANALYTICS,,*,X,2021,4052820211298414770,grammarly,Grammarly,general_purpose,high,research_strategy;data_targeting
 2022,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,10/11/2022,221.82,TEXT MESSAGING,,,,2022,4042420241911334362,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00779173,CALL TIME AI,RICHMOND,VA,10/21/2021,900,SOFTWARE,,,,2021,4022320221424417369,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00779173,CALL TIME AI,RICHMOND,VA,11/22/2021,900,SOFTWARE,,,,2021,4022320221424417375,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -979,6 +1043,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,10/05/2022,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2022,4032320231737967874,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,09/30/2022,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2022,4032320231737960999,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,09/05/2022,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2022,4032320231737962000,otter_ai,Otter.ai,general_purpose,high,unspecified
+2022,C00042366,GRAMMARLY,SAN FRANCISCO,CA,06/01/2021,139.95,INTERNET AND WEBSITE SERVICES,,MEMO ENTRY,X,2021,4102620211375771187,grammarly,Grammarly,general_purpose,high,unspecified
 2022,C00764423,TRUVERSE,LOS ALTOS,CA,04/27/2022,4872.3,TEXTING EXPENSE,,,,2022,4101620221588362583,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00764423,TRUVERSE,LOS ALTOS,CA,04/27/2022,1899.89,TEXTING EXPENSE,,,,2022,4101620221588362584,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00764423,TRUVERSE,LOS ALTOS,CA,04/27/2022,4938.16,TEXTING EXPENSE,,,,2022,4101620221588362585,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -1017,8 +1082,12 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00779439,CALL TIME.AI,VISALIA,CA,09/08/2022,247.79,SOFTWARE,,,,2022,4110220221604291947,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00779439,CALL TIME.AI,VISALIA,CA,09/30/2022,1450,SOFTWARE,,,,2022,4110220221604291948,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00725101,CALL TIME.AI,VISALIA,CA,07/03/2022,3975,SOFTWARE,,,,2022,4110220221604279187,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00599464,GRAMMARLY,SAN FRANCISCO,CA,08/08/2022,139.95,OFFICE SOFTWARE,,,,2022,4110620221605849212,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00747170,PROMPT.IO INC.,SEATTLE,WA,08/15/2022,1250,SMS MESSAGING,Solicitation and Fundraising Expenses ,,,2022,4111020221625913854,prompt_io,Prompt.io,political_specific,high,communications_copy;fundraising
 2022,C00747170,PROMPT.IO INC.,SEATTLE,WA,09/20/2022,1250,SMS MESSAGING,Solicitation and Fundraising Expenses ,,,2022,4111020221625913855,prompt_io,Prompt.io,political_specific,high,communications_copy;fundraising
+2022,C00405878,"GRAMMARLY, INC.",SAN FRANCISCO,CA,09/27/2022,139.95,GRAMMAR CORRECTION SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2022,4110920221617576393,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00651042,GRAMMARLY,SAN FRANCISCO,CA,09/28/2022,540,SOFTWARE,,,,2022,4101820221589106937,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,11/18/2022,120,SOFTWARE,,*,X,2022,4021020231725299963,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00010603,DESCRIPT INC.,SAN FRANCISCO,CA,11/19/2022,288,SOFTWARE,,*,X,2022,4021020231725299973,descript,Descript,general_purpose,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,12/28/2022,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2022,4021020231725301150,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00608398,PROMPT.IO INC.,SEATTLE,WA,11/07/2022,33135,ELECTRONIC MEDIA EXPENSE,Advertising Expenses ,,,2022,4031820231736002682,prompt_io,Prompt.io,political_specific,high,advertising_creative
@@ -1037,6 +1106,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00765164,AMPLIFY.AI,LOS ALTOS,CA,12/31/2022,-1563.77,CHECK NOT NEGOTIATED - ORIGINAL ISSUE DATE: 10/11/2022. PAID IN PRIOR REPORTING PERIOD.,,,,2022,4041820231743047831,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00769232,EYESOVER TECHNOLOGIES INC,FREDERICTON NB E3B 4Y2,ZZ,11/16/2022,1000,MEDIA RESEARCH SERVICES,,,,2022,4010920231666594462,eyesover,EyesOver,political_specific,high,research_strategy
 2022,C00794354,CALLTIME.AI,VISALIA,CA,10/18/2022,900,FUNDRAISING SOFTWARE,,,,2022,4121620221637636129,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2022,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,10/28/2022,275,COMPUTER SOFTWARE,,,,2022,4121420221636576889,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,11/28/2022,275,COMPUTER SOFTWARE,,,,2022,4121420221636576890,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00667741,"TRUVERSE, INC.",LOS ALTOS,CA,11/14/2022,501.34,SOFTWARE,,,,2022,4010320231645671295,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2022,C00667741,"TRUVERSE, INC.",LOS ALTOS,CA,11/16/2022,1588.16,SOFTWARE,,,,2022,4010320231645671188,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2022,C00696526,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,11/15/2022,14413.6,TEXTING SERVICES,,,,2022,4121320221635211813,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -1048,7 +1119,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00257337,PROMPT.IO INC,SEATTLE,WA,11/07/2022,7800,SOFTWARE SERVICES: VOTER OUTREACH,Solicitation and Fundraising Expenses ,,,2022,4121520221636930225,prompt_io,Prompt.io,political_specific,high,fundraising;administrative_productivity
 2022,C00257337,PROMPT.IO INC,SEATTLE,WA,11/07/2022,3000,SOFTWARE SERVICES: VOTER OUTREACH,Advertising Expenses ,,,2022,4121520221636930226,prompt_io,Prompt.io,political_specific,high,advertising_creative;administrative_productivity
 2022,C00816660,CALLTIME.AI,VISALIA,CA,11/16/2022,980,DIALER SOFTWARE,,,,2022,4011020231667598445,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,04/27/2022,120.88,AMEX 04/30: TRAINING/PROFESSIONAL DEVELOPMENT,Administrative/Salary/Overhead Expenses ,,X,2022,4060620221496566355,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00546499,PROMPT.IO,SEATTLE,WA,10/20/2022,2250,SOFTWARE,,,,2022,4122720221645024515,prompt_io,Prompt.io,political_specific,high,administrative_productivity
+2022,C00406645,GRAMMARLY.COM,SAN FRANCISCO,CA,11/07/2022,30,DOCUMENT DESIGN,Administrative/Salary/Overhead Expenses ,,,2022,4010520231666144827,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,11/07/2022,12632.53,FUNDRAISING TEXT MESSAGES,Advertising Expenses ,,,2022,4121620221637655346,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative;communications_copy;fundraising
 2022,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,11/15/2022,2179.78,FUNDRAISING TEXT MESSAGES,Advertising Expenses ,,,2022,4121620221637655347,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative;communications_copy;fundraising
 2022,C00794354,CALLTIME.AI,VISALIA,CA,11/18/2022,900,FUNDRAISING SOFTWARE,,,,2022,4010320231645676187,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
@@ -1076,8 +1149,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,05/02/2022,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2022,4031820231735996307,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,04/05/2022,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2022,4031820231735996308,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,12/05/2022,3792.8,TEXT MESSAGING,,,,2022,4020320231722479108,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,04/26/2022,60.81,AMEX 04/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2022,4060620221496566348,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,05/19/2022,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2022,4062420221531268740,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,04/18/2022,120,SOFTWARE,,*,X,2022,4062420221531269071,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00578302,CALLTIME.AI,LOS ANGELES,CA,04/01/2022,650,FEES FOR FUNDRAISING CALLS,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2022,4052520221493581194,calltime_ai,CallTime.AI,political_specific,high,fundraising
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,03/18/2022,120,SOFTWARE,,*,X,2022,4052320221492951670,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,04/28/2022,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2022,4052320221492951248,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00725101,CALL TIME.AI,VISALIA,CA,04/03/2022,3975,SOFTWARE,,,,2022,4060120221494206469,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00573261,CALLTIME AI,VISALIA,CA,05/12/2022,162.63,SOFTWARE,,*,X,2022,4071220221540287189,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -1085,12 +1161,15 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00767343,CALLTIME.AI,LOS ANGELES,CA,02/07/2022,3138,SOFTWARE,Solicitation and Fundraising Expenses ,,,2022,4070120221539368370,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2022,C00767343,CALLTIME.AI,LOS ANGELES,CA,02/23/2022,799.73,SOFTWARE,Solicitation and Fundraising Expenses ,,,2022,4070120221539368371,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2022,C00042366,OTTER AI,MT VIEW,CA,02/08/2022,152.52,PUBLICATIONS/ SUBSCRIPTIONS,,MEMO ENTRY,X,2022,4060420221495264389,otter_ai,Otter.ai,general_purpose,high,unspecified
+2022,C00496075,GRAMMARLY INC.,SAN FRANCISCO,CA,03/08/2022,139.95,SOFTWARE,,,X,2022,4060720221500857691,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,08/29/2022,250,SOFTWARE SUBSCRIPTION,,,,2022,4091620221575942838,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00648915,CALLTIME.AI,VISALIA,CA,01/03/2022,2010,TELECOMMUNICATIONS SERVICES,,,,2022,4060720221500858659,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2022,C00695940,OPENAIR,GAITHERSBURG,MD,05/27/2022,10830,AIRFARE,,,,2022,4072520221544613510,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2022,C00779173,CALL TIME AI,RICHMOND,VA,04/14/2022,154.65,SOFTWARE,,,,2022,4072620221552352734,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00779173,CALL TIME AI,RICHMOND,VA,05/09/2022,700,SOFTWARE,,,,2022,4072620221552352740,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00779173,CALL TIME AI,RICHMOND,VA,04/07/2022,500,SOFTWARE,,,,2022,4072620221552352746,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00573261,CALLTIME AI,VISALIA,CA,08/12/2022,1150,SOFTWARE,,*,X,2022,4093020221587033128,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,12/28/2022,139.95,AMEX 12/31: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2022,4021620231730453110,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/06/2022,500,PAYROLL,,,,2022,4072620221552357020,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/07/2022,2000,PAYROLL,,,,2022,4072620221552357021,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/20/2022,500,PAYROLL,,,,2022,4072620221552357022,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
@@ -1103,12 +1182,14 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/06/2022,250,PAYROLL,,,,2022,4072620221552357029,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/07/2022,203,REIMBURSEMENT (VENDORS THAT AGGREGATE OVER $200 LISTED BELOW),,,,2022,4072620221552357030,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/14/2022,1000,PAYROLL,,,,2022,4072620221552357031,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00003418,GRAMMARLY,SAN FRANCISCO,CA,07/08/2022,144,DUES AND SUBSCRIPTIONS,,,X,2022,4082420221566162345,grammarly,Grammarly,general_purpose,high,unspecified
 2022,C00771972,"TRUVERSE, INC.",LOS ALTOS,CA,04/18/2022,2399.45,GOTV TEXTING,,,,2022,4080820221563582287,amplify_ai,Amplify.ai (TruVerse),political_specific,high,data_targeting
 2022,C00771972,"TRUVERSE, INC.",LOS ALTOS,CA,05/06/2022,587.79,GOTV TEXTING,,,,2022,4080820221563582288,amplify_ai,Amplify.ai (TruVerse),political_specific,high,data_targeting
 2022,C00771972,"TRUVERSE, INC.",LOS ALTOS,CA,06/09/2022,2383.07,GOTV TEXTING,,,,2022,4080820221563582289,amplify_ai,Amplify.ai (TruVerse),political_specific,high,data_targeting
 2022,C00771972,"TRUVERSE, INC.",LOS ALTOS,CA,06/21/2022,1398.17,GOTV TEXTING,,,,2022,4080820221563582290,amplify_ai,Amplify.ai (TruVerse),political_specific,high,data_targeting
 2022,C00779439,CALL TIME.AI,VISALIA,CA,06/30/2022,1100,SOFTWARE,,,,2022,4080320221554924917,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00779439,CALL TIME.AI,VISALIA,CA,05/31/2022,1100,SOFTWARE,,,,2022,4080320221554924916,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,06/18/2022,120,SOFTWARE,,*,X,2022,4082220221565838732,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,07/28/2022,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2022,4082220221565838995,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00793760,CALL TIME.AI,VISALIA,CA,03/29/2022,1100,SOFTWARE SUBSCRIPTION,,,,2022,4072820221553295543,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00793760,CALL TIME.AI,VISALIA,CA,03/01/2022,1100,SOFTWARE SUBSCRIPTION,,,,2022,4072820221553295470,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -1134,6 +1215,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00784959,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,05/27/2022,8720.01,TEXTING PLATFORM,,,,2022,4072820221553300583,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00784959,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,06/30/2022,6246.34,TEXTING PLATFORM,,,,2022,4072820221553300319,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00784959,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,04/20/2022,8037.37,TEXTING PLATFORM,,,,2022,4072820221553300448,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2022,C00499988,GRAMMARLY INC.,SAN FRANCISCO,CA,04/14/2022,139.95,SOFTWARE,,,X,2022,4072120221543105338,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00718866,"TRUVERSE, INC.",LOS ALTOS,CA,05/16/2022,37253.96,SOFTWARE SUBSCRIPTION,,,,2022,4072520221551553669,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2022,C00718866,"TRUVERSE, INC.",LOS ALTOS,CA,06/27/2022,5673.58,SOFTWARE SUBSCRIPTION,,,,2022,4072520221551553821,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2022,C00783274,OTTER.AI,LOS ALTOS,CA,06/06/2022,240,SOFTWARE SUBSCRIPTION,,,,2022,4072520221551554500,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
@@ -1187,6 +1269,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,07/15/2022,18367.98,TEXT MESSAGING,,,,2022,4072920221553569895,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00650150,OTTER AI,MOUNTAIN VIEW,CA,07/08/2022,9.99,SOFTWARE,,,,2022,4080920221563735348,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2022,C00573261,CALLTIME AI,VISALIA,CA,06/14/2022,1150,SOFTWARE,,*,X,2022,4072220221543461748,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,05/18/2022,120,SOFTWARE,,*,X,2022,4072720221552949392,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,06/24/2022,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2022,4072720221552948981,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00578302,CALLTIME.AI,LOS ANGELES,CA,02/17/2022,650,,Administrative/Salary/Overhead Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2022,4081620221564943183,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00578302,CALLTIME.AI,LOS ANGELES,CA,01/04/2022,650,FEES FOR FUNDRAISING CALLS,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2022,4081620221564943201,calltime_ai,CallTime.AI,political_specific,high,fundraising
@@ -1211,9 +1294,12 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00793760,CALL TIME.AI,VISALIA,CA,07/29/2022,1100,SOFTWARE SUBSCRIPTION,,,,2022,4081220221564736913,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00522425,PROMPT.IO,SEATTLE,WA,11/16/2022,3333.33,PAC SUBSCRIPTION,,,X,2022,4011020231667599118,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2022,C00522425,PROMPT.IO,SEATTLE,WA,11/02/2022,3333.33,PAC SUBSCRIPTION,,,X,2022,4011020231667599122,prompt_io,Prompt.io,political_specific,high,administrative_productivity
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,06/07/2022,1225.74,AMEX 06/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2022,4080420221556574935,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,06/27/2022,66,AMEX 06/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2022,4080420221556576096,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,08/09/2022,16555.7,TEXT MESSAGING,,,,2022,4121320221635215307,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,09/14/2022,58283.67,TEXT MESSAGING,,,,2022,4121320221635215308,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,10/10/2022,31719.13,TEXT MESSAGING,,,,2022,4120920221633953894,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,06/21/2022,352.6,AMEX 06/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2022,4080420221556576036,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00793760,CALL TIME.AI,VISALIA,CA,06/29/2022,1100,SOFTWARE SUBSCRIPTION,,,,2022,4120920221633955931,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00793760,CALL TIME.AI,VISALIA,CA,05/31/2022,1100,SOFTWARE SUBSCRIPTION,,,,2022,4120920221633955849,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00793760,CALL TIME.AI,VISALIA,CA,04/29/2022,1100,SOFTWARE SUBSCRIPTION,,,,2022,4120920221633955871,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -1227,8 +1313,12 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00777771,TRUVERSE INC,LOS ALTOS,CA,11/10/2022,7311.04,TEXT MESSAGING SERVICES,,,,2022,4121420221636586542,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00777771,TRUVERSE INC,LOS ALTOS,CA,11/10/2022,3231.54,TEXT MESSAGING SERVICES,,,,2022,4121420221636586543,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00777771,CALLTIME.AI,VISALIA,CA,11/14/2022,1700,SOFTWARE RENTAL,,,,2022,4121420221636586285,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,12/28/2021,139.95,AMEX 12/31: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2021,4061520221521015335,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,09/21/2021,600,AMEX 9/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2021,4061520221524210358,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,10/18/2022,120,SOFTWARE,,*,X,2022,4122020221638931665,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,11/18/2022,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2022,4122020221638930995,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,10/31/2022,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2022,4122020221638930274,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,10/20/2022,1417.46,AMEX 10/31: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2022,4010420231646812895,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00783498,NUMERO.AI,IRVINE,CA,10/24/2022,2.63,MERCHANT FEE,,,,2022,4122120221644744129,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00783498,NUMERO.AI,IRVINE,CA,10/31/2022,.7,MERCHANT FEE,,,,2022,4122120221644744134,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00783498,NUMERO.AI,IRVINE,CA,11/02/2022,1.75,MERCHANT FEE,,,,2022,4122120221644744140,numero_ai,Numero (donor database / call time),political_specific,high,unspecified

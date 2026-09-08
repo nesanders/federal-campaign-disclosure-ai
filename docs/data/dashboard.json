@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-08T11:27:54.265067Z",
+    "generated_at": "2026-09-08T18:23:09.919568Z",
     "cycles": [
       2020,
       2022,
@@ -18,14 +18,14 @@
       "unitedstates/congress-legislators (birthdates, for age analysis)"
     ],
     "matched_row_counts_by_cycle": {
-      "2020": 407,
-      "2022": 1238,
-      "2024": 1476,
-      "2026": 1947
+      "2020": 461,
+      "2022": 1328,
+      "2024": 1576,
+      "2026": 1975
     },
     "ie_matched_row_counts_by_cycle": {
       "2020": 1,
-      "2022": 4,
+      "2022": 0,
       "2024": 2,
       "2026": 24
     },
@@ -152,6 +152,18 @@
       "count_medium": 0
     },
     {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://grammarly.com",
+      "amount_high": 72728.2,
+      "count_high": 260,
+      "distinct_committees_high": 47,
+      "amount_medium": 0.0,
+      "count_medium": 0
+    },
+    {
       "id": "openai",
       "name": "OpenAI (ChatGPT)",
       "group": "general_purpose",
@@ -244,8 +256,8 @@
       "amount_high": 5355.23,
       "count_high": 39,
       "distinct_committees_high": 7,
-      "amount_medium": 4465.0,
-      "count_medium": 1
+      "amount_medium": 0.0,
+      "count_medium": 0
     },
     {
       "id": "air_ai",
@@ -344,6 +356,18 @@
       "count_medium": 0
     },
     {
+      "id": "kling_ai",
+      "name": "Kling AI",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://klingai.com",
+      "amount_high": 881.46,
+      "count_high": 6,
+      "distinct_committees_high": 1,
+      "amount_medium": 0.0,
+      "count_medium": 0
+    },
+    {
       "id": "fal_ai",
       "name": "fal.ai",
       "group": "general_purpose",
@@ -375,6 +399,18 @@
       "homepage": "https://www.campaign-brain.com",
       "amount_high": 500.0,
       "count_high": 1,
+      "distinct_committees_high": 1,
+      "amount_medium": 0.0,
+      "count_medium": 0
+    },
+    {
+      "id": "luma_labs",
+      "name": "Luma Labs (Luma AI)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://lumalabs.ai",
+      "amount_high": 483.0,
+      "count_high": 7,
       "distinct_committees_high": 1,
       "amount_medium": 0.0,
       "count_medium": 0
@@ -432,14 +468,14 @@
     {
       "vendor_group": "general_purpose",
       "era": "generative",
-      "amount": 140131.34,
-      "count": 1128
+      "amount": 141495.8,
+      "count": 1141
     },
     {
       "vendor_group": "general_purpose",
       "era": "legacy",
-      "amount": 119151.37,
-      "count": 822
+      "amount": 191879.57,
+      "count": 1082
     },
     {
       "vendor_group": "political_specific",
@@ -458,9 +494,9 @@
     {
       "id": "unspecified",
       "era": "legacy",
-      "amount": 5509647.93,
-      "count": 581,
-      "distinct_candidates": 59
+      "amount": 5511655.93,
+      "count": 595,
+      "distinct_candidates": 62
     },
     {
       "id": "communications_copy",
@@ -472,16 +508,16 @@
     {
       "id": "administrative_productivity",
       "era": "legacy",
-      "amount": 2179463.08,
-      "count": 1428,
-      "distinct_candidates": 200
+      "amount": 2190719.11,
+      "count": 1520,
+      "distinct_candidates": 221
     },
     {
       "id": "advertising_creative",
       "era": "legacy",
-      "amount": 576503.96,
-      "count": 91,
-      "distinct_candidates": 20
+      "amount": 576727.96,
+      "count": 95,
+      "distinct_candidates": 22
     },
     {
       "id": "fundraising",
@@ -500,8 +536,8 @@
     {
       "id": "administrative_productivity",
       "era": "generative",
-      "amount": 82814.54,
-      "count": 577,
+      "amount": 83297.54,
+      "count": 584,
       "distinct_candidates": 94
     },
     {
@@ -556,6 +592,13 @@
       "count": 1069
     },
     {
+      "category": "administrative_productivity",
+      "group": "general_purpose",
+      "era": "legacy",
+      "amount": 59699.0,
+      "count": 451
+    },
+    {
       "category": "fundraising",
       "group": "political_specific",
       "era": "legacy",
@@ -571,24 +614,17 @@
     },
     {
       "category": "unspecified",
+      "group": "general_purpose",
+      "era": "legacy",
+      "amount": 7115.11,
+      "count": 56
+    },
+    {
+      "category": "unspecified",
       "group": "political_specific",
       "era": "legacy",
       "amount": 5504540.82,
       "count": 539
-    },
-    {
-      "category": "unspecified",
-      "group": "general_purpose",
-      "era": "legacy",
-      "amount": 5107.11,
-      "count": 42
-    },
-    {
-      "category": "administrative_productivity",
-      "group": "general_purpose",
-      "era": "legacy",
-      "amount": 48442.97,
-      "count": 359
     },
     {
       "category": "communications_copy",
@@ -633,11 +669,18 @@
       "count": 81
     },
     {
+      "category": "advertising_creative",
+      "group": "general_purpose",
+      "era": "legacy",
+      "amount": 1973.8,
+      "count": 23
+    },
+    {
       "category": "administrative_productivity",
       "group": "general_purpose",
       "era": "generative",
-      "amount": 45925.5,
-      "count": 496
+      "amount": 46408.5,
+      "count": 503
     },
     {
       "category": "fundraising",
@@ -658,13 +701,6 @@
       "group": "general_purpose",
       "era": "generative",
       "amount": 2798.36,
-      "count": 19
-    },
-    {
-      "category": "advertising_creative",
-      "group": "general_purpose",
-      "era": "legacy",
-      "amount": 1749.8,
       "count": 19
     },
     {
@@ -709,9 +745,9 @@
     {
       "cand_party": "Democratic",
       "vendor_group": "general_purpose",
-      "amount": 25193.04,
-      "count": 160,
-      "distinct_candidates": 35,
+      "amount": 25597.94,
+      "count": 163,
+      "distinct_candidates": 37,
       "era": "legacy",
       "total_expenditure": 586256126.18
     },
@@ -781,8 +817,8 @@
     {
       "cand_party": "Republican",
       "vendor_group": "general_purpose",
-      "amount": 21681.18,
-      "count": 198,
+      "amount": 22164.18,
+      "count": 205,
       "distinct_candidates": 32,
       "era": "generative",
       "total_expenditure": 291092672.43
@@ -790,9 +826,9 @@
     {
       "cand_party": "Republican",
       "vendor_group": "general_purpose",
-      "amount": 9922.4,
-      "count": 58,
-      "distinct_candidates": 11,
+      "amount": 10671.02,
+      "count": 63,
+      "distinct_candidates": 14,
       "era": "legacy",
       "total_expenditure": 291092672.43
     },
@@ -810,8 +846,8 @@
     {
       "ici": "Challenger",
       "vendor_group": "general_purpose",
-      "amount": 15325.41,
-      "count": 188,
+      "amount": 15808.41,
+      "count": 195,
       "distinct_candidates": 40,
       "era": "generative",
       "total_expenditure": 468686246.63
@@ -819,9 +855,9 @@
     {
       "ici": "Challenger",
       "vendor_group": "general_purpose",
-      "amount": 5230.78,
-      "count": 45,
-      "distinct_candidates": 15,
+      "amount": 5355.78,
+      "count": 46,
+      "distinct_candidates": 16,
       "era": "legacy",
       "total_expenditure": 468686246.63
     },
@@ -855,9 +891,9 @@
     {
       "ici": "Incumbent",
       "vendor_group": "general_purpose",
-      "amount": 21211.41,
-      "count": 134,
-      "distinct_candidates": 22,
+      "amount": 22239.93,
+      "count": 141,
+      "distinct_candidates": 26,
       "era": "legacy",
       "total_expenditure": 14615142.9
     },
@@ -938,8 +974,8 @@
     {
       "office": "House",
       "vendor_group": "general_purpose",
-      "amount": 31473.52,
-      "count": 380,
+      "amount": 31956.52,
+      "count": 387,
       "distinct_candidates": 68,
       "era": "generative",
       "total_expenditure": 502010280.78
@@ -947,9 +983,9 @@
     {
       "office": "House",
       "vendor_group": "general_purpose",
-      "amount": 15193.98,
-      "count": 104,
-      "distinct_candidates": 23,
+      "amount": 15914.960000000001,
+      "count": 109,
+      "distinct_candidates": 26,
       "era": "legacy",
       "total_expenditure": 502010280.78
     },
@@ -983,9 +1019,9 @@
     {
       "office": "Senate",
       "vendor_group": "general_purpose",
-      "amount": 19921.46,
-      "count": 114,
-      "distinct_candidates": 23,
+      "amount": 20354.0,
+      "count": 117,
+      "distinct_candidates": 25,
       "era": "legacy",
       "total_expenditure": 385216534.12
     },
@@ -1057,9 +1093,9 @@
     {
       "age_bucket": "50-59",
       "vendor_group": "general_purpose",
-      "amount": 3937.97,
-      "count": 31,
-      "distinct_candidates": 9,
+      "amount": 4062.97,
+      "count": 32,
+      "distinct_candidates": 10,
       "era": "legacy",
       "total_expenditure": 68287219.43
     },
@@ -1093,9 +1129,9 @@
     {
       "age_bucket": "60-69",
       "vendor_group": "general_purpose",
-      "amount": 1988.8,
-      "count": 21,
-      "distinct_candidates": 3,
+      "amount": 3017.3199999999997,
+      "count": 28,
+      "distinct_candidates": 7,
       "era": "legacy",
       "total_expenditure": 18568707.98
     },
@@ -1111,8 +1147,8 @@
     {
       "age_bucket": "70+",
       "vendor_group": "general_purpose",
-      "amount": 27501.21,
-      "count": 323,
+      "amount": 27984.21,
+      "count": 330,
       "distinct_candidates": 65,
       "era": "generative",
       "total_expenditure": 6188099.31
@@ -1176,9 +1212,9 @@
     {
       "cycle": 2020,
       "vendor_group": "general_purpose",
-      "amount": 95.0,
-      "count": 4,
-      "distinct_candidates": 1,
+      "amount": 1224.45,
+      "count": 16,
+      "distinct_candidates": 6,
       "era": "legacy",
       "total_expenditure": 8573179371.69
     },
@@ -1203,9 +1239,9 @@
     {
       "cycle": 2022,
       "vendor_group": "general_purpose",
-      "amount": 2159.7,
-      "count": 35,
-      "distinct_candidates": 7,
+      "amount": 5252.89,
+      "count": 58,
+      "distinct_candidates": 18,
       "era": "legacy",
       "total_expenditure": 2010794480.61
     },
@@ -1230,9 +1266,9 @@
     {
       "cycle": 2024,
       "vendor_group": "general_purpose",
-      "amount": 16411.93,
-      "count": 149,
-      "distinct_candidates": 33,
+      "amount": 24523.8,
+      "count": 216,
+      "distinct_candidates": 44,
       "era": "legacy",
       "total_expenditure": 1476179520.34
     },
@@ -1257,8 +1293,8 @@
     {
       "cycle": 2026,
       "vendor_group": "general_purpose",
-      "amount": 47418.409999999996,
-      "count": 514,
+      "amount": 47901.409999999996,
+      "count": 521,
       "distinct_candidates": 85,
       "era": "generative",
       "total_expenditure": 887226814.9
@@ -1266,9 +1302,9 @@
     {
       "cycle": 2026,
       "vendor_group": "general_purpose",
-      "amount": 35115.44,
-      "count": 218,
-      "distinct_candidates": 46,
+      "amount": 36268.96,
+      "count": 226,
+      "distinct_candidates": 51,
       "era": "legacy",
       "total_expenditure": 887226814.9
     },
@@ -1295,36 +1331,36 @@
     {
       "cycle": 2020,
       "cand_party": "Democratic",
-      "amount": 895256.67,
-      "count": 112,
-      "distinct_candidates": 28,
+      "amount": 895616.67,
+      "count": 113,
+      "distinct_candidates": 29,
       "era": "legacy",
       "total_expenditure": 4459840152.29
     },
     {
       "cycle": 2020,
       "cand_party": "Republican",
-      "amount": 6500.0,
-      "count": 2,
-      "distinct_candidates": 2,
+      "amount": 7269.45,
+      "count": 13,
+      "distinct_candidates": 6,
       "era": "legacy",
       "total_expenditure": 4033338261.78
     },
     {
       "cycle": 2022,
       "cand_party": "Democratic",
-      "amount": 4436639.74,
-      "count": 826,
-      "distinct_candidates": 75,
+      "amount": 4438399.63,
+      "count": 833,
+      "distinct_candidates": 78,
       "era": "legacy",
       "total_expenditure": 969583635.63
     },
     {
       "cycle": 2022,
       "cand_party": "Independent",
-      "amount": 654444.57,
-      "count": 19,
-      "distinct_candidates": 1,
+      "amount": 654504.57,
+      "count": 20,
+      "distinct_candidates": 2,
       "era": "legacy",
       "total_expenditure": 3924890.0
     },
@@ -1340,9 +1376,9 @@
     {
       "cycle": 2022,
       "cand_party": "Republican",
-      "amount": 357746.88,
-      "count": 37,
-      "distinct_candidates": 9,
+      "amount": 359020.18,
+      "count": 52,
+      "distinct_candidates": 16,
       "era": "legacy",
       "total_expenditure": 1017797502.04
     },
@@ -1358,9 +1394,9 @@
     {
       "cycle": 2024,
       "cand_party": "Democratic",
-      "amount": 3240825.77,
-      "count": 653,
-      "distinct_candidates": 75,
+      "amount": 3245806.02,
+      "count": 693,
+      "distinct_candidates": 79,
       "era": "legacy",
       "total_expenditure": 916163042.6
     },
@@ -1385,9 +1421,9 @@
     {
       "cycle": 2024,
       "cand_party": "Republican",
-      "amount": 158689.92,
-      "count": 79,
-      "distinct_candidates": 19,
+      "amount": 161821.54,
+      "count": 106,
+      "distinct_candidates": 26,
       "era": "legacy",
       "total_expenditure": 522629201.89
     },
@@ -1403,9 +1439,9 @@
     {
       "cycle": 2026,
       "cand_party": "Democratic",
-      "amount": 727220.54,
-      "count": 396,
-      "distinct_candidates": 69,
+      "amount": 727625.44,
+      "count": 399,
+      "distinct_candidates": 71,
       "era": "legacy",
       "total_expenditure": 586256126.18
     },
@@ -1439,8 +1475,8 @@
     {
       "cycle": 2026,
       "cand_party": "Republican",
-      "amount": 21681.18,
-      "count": 198,
+      "amount": 22164.18,
+      "count": 205,
       "distinct_candidates": 32,
       "era": "generative",
       "total_expenditure": 291092672.43
@@ -1448,9 +1484,9 @@
     {
       "cycle": 2026,
       "cand_party": "Republican",
-      "amount": 274762.83,
-      "count": 89,
-      "distinct_candidates": 21,
+      "amount": 275511.45,
+      "count": 94,
+      "distinct_candidates": 24,
       "era": "legacy",
       "total_expenditure": 291092672.43
     }
@@ -1459,36 +1495,36 @@
     {
       "cycle": 2020,
       "ici": "Challenger",
-      "amount": 174356.45,
-      "count": 83,
-      "distinct_candidates": 21,
+      "amount": 174566.1,
+      "count": 90,
+      "distinct_candidates": 23,
       "era": "legacy",
       "total_expenditure": 2181246979.63
     },
     {
       "cycle": 2020,
       "ici": "Incumbent",
-      "amount": 714363.44,
-      "count": 18,
-      "distinct_candidates": 6,
+      "amount": 714923.24,
+      "count": 22,
+      "distinct_candidates": 8,
       "era": "legacy",
       "total_expenditure": 5249627940.34
     },
     {
       "cycle": 2020,
       "ici": "Open seat",
-      "amount": 13036.779999999999,
-      "count": 13,
-      "distinct_candidates": 3,
+      "amount": 13396.779999999999,
+      "count": 14,
+      "distinct_candidates": 4,
       "era": "legacy",
       "total_expenditure": 515698905.71
     },
     {
       "cycle": 2022,
       "ici": "Challenger",
-      "amount": 573295.0,
-      "count": 402,
-      "distinct_candidates": 41,
+      "amount": 573355.0,
+      "count": 403,
+      "distinct_candidates": 42,
       "era": "legacy",
       "total_expenditure": 1122298349.21
     },
@@ -1504,18 +1540,18 @@
     {
       "cycle": 2022,
       "ici": "Incumbent",
-      "amount": 3843358.6,
-      "count": 297,
-      "distinct_candidates": 18,
+      "amount": 3846057.84,
+      "count": 317,
+      "distinct_candidates": 26,
       "era": "legacy",
       "total_expenditure": 62472550.06
     },
     {
       "cycle": 2022,
       "ici": "Open seat",
-      "amount": 1032177.59,
-      "count": 183,
-      "distinct_candidates": 26,
+      "amount": 1032511.54,
+      "count": 185,
+      "distinct_candidates": 28,
       "era": "legacy",
       "total_expenditure": 819429581.27
     },
@@ -1531,9 +1567,9 @@
     {
       "cycle": 2024,
       "ici": "Challenger",
-      "amount": 261079.29,
-      "count": 228,
-      "distinct_candidates": 35,
+      "amount": 262012.07,
+      "count": 240,
+      "distinct_candidates": 40,
       "era": "legacy",
       "total_expenditure": 667574876.72
     },
@@ -1549,9 +1585,9 @@
     {
       "cycle": 2024,
       "ici": "Incumbent",
-      "amount": 938833.4500000001,
-      "count": 322,
-      "distinct_candidates": 37,
+      "amount": 944489.3,
+      "count": 367,
+      "distinct_candidates": 42,
       "era": "legacy",
       "total_expenditure": 20827165.95
     },
@@ -1567,17 +1603,17 @@
     {
       "cycle": 2024,
       "ici": "Open seat",
-      "amount": 2363869.39,
-      "count": 206,
-      "distinct_candidates": 23,
+      "amount": 2365392.63,
+      "count": 216,
+      "distinct_candidates": 24,
       "era": "legacy",
       "total_expenditure": 767433257.2
     },
     {
       "cycle": 2026,
       "ici": "Challenger",
-      "amount": 28397.38,
-      "count": 205,
+      "amount": 28880.38,
+      "count": 212,
       "distinct_candidates": 47,
       "era": "generative",
       "total_expenditure": 468686246.63
@@ -1585,9 +1621,9 @@
     {
       "cycle": 2026,
       "ici": "Challenger",
-      "amount": 125868.87,
-      "count": 134,
-      "distinct_candidates": 32,
+      "amount": 125993.87,
+      "count": 135,
+      "distinct_candidates": 33,
       "era": "legacy",
       "total_expenditure": 468686246.63
     },
@@ -1603,9 +1639,9 @@
     {
       "cycle": 2026,
       "ici": "Incumbent",
-      "amount": 671924.5,
-      "count": 254,
-      "distinct_candidates": 35,
+      "amount": 672953.02,
+      "count": 261,
+      "distinct_candidates": 39,
       "era": "legacy",
       "total_expenditure": 14615142.9
     },
@@ -1650,27 +1686,27 @@
     {
       "cycle": 2020,
       "office": "House",
-      "amount": 82323.23,
-      "count": 94,
-      "distinct_candidates": 22,
+      "amount": 83172.78,
+      "count": 104,
+      "distinct_candidates": 26,
       "era": "legacy",
       "total_expenditure": 4096741060.91
     },
     {
       "cycle": 2020,
       "office": "Senate",
-      "amount": 819433.44,
-      "count": 20,
-      "distinct_candidates": 8,
+      "amount": 819713.3400000001,
+      "count": 22,
+      "distinct_candidates": 9,
       "era": "legacy",
       "total_expenditure": 4476438310.78
     },
     {
       "cycle": 2022,
       "office": "House",
-      "amount": 882723.74,
-      "count": 572,
-      "distinct_candidates": 58,
+      "amount": 885257.13,
+      "count": 591,
+      "distinct_candidates": 67,
       "era": "legacy",
       "total_expenditure": 1083410960.23
     },
@@ -1686,9 +1722,9 @@
     {
       "cycle": 2022,
       "office": "Senate",
-      "amount": 4566107.45,
-      "count": 310,
-      "distinct_candidates": 27,
+      "amount": 4566667.25,
+      "count": 314,
+      "distinct_candidates": 29,
       "era": "legacy",
       "total_expenditure": 927383520.38
     },
@@ -1704,9 +1740,9 @@
     {
       "cycle": 2024,
       "office": "House",
-      "amount": 630821.04,
-      "count": 421,
-      "distinct_candidates": 63,
+      "amount": 635383.41,
+      "count": 473,
+      "distinct_candidates": 71,
       "era": "legacy",
       "total_expenditure": 697729965.95
     },
@@ -1722,17 +1758,17 @@
     {
       "cycle": 2024,
       "office": "Senate",
-      "amount": 2932961.09,
-      "count": 335,
-      "distinct_candidates": 32,
+      "amount": 2936510.59,
+      "count": 350,
+      "distinct_candidates": 35,
       "era": "legacy",
       "total_expenditure": 778449554.39
     },
     {
       "cycle": 2026,
       "office": "House",
-      "amount": 57193.700000000004,
-      "count": 423,
+      "amount": 57676.700000000004,
+      "count": 430,
       "distinct_candidates": 82,
       "era": "generative",
       "total_expenditure": 502010280.78
@@ -1740,9 +1776,9 @@
     {
       "cycle": 2026,
       "office": "House",
-      "amount": 530572.25,
-      "count": 292,
-      "distinct_candidates": 59,
+      "amount": 531293.23,
+      "count": 297,
+      "distinct_candidates": 62,
       "era": "legacy",
       "total_expenditure": 502010280.78
     },
@@ -1758,9 +1794,9 @@
     {
       "cycle": 2026,
       "office": "Senate",
-      "amount": 535867.9,
-      "count": 201,
-      "distinct_candidates": 32,
+      "amount": 536300.44,
+      "count": 204,
+      "distinct_candidates": 34,
       "era": "legacy",
       "total_expenditure": 385216534.12
     }
@@ -1851,16 +1887,16 @@
       "count": 36
     },
     {
+      "cmte_id": "C00933085",
+      "cmte_name": "A FIGHT WORTH HAVING",
+      "amount": 9617.14,
+      "count": 140
+    },
+    {
       "cmte_id": "C00000935",
       "cmte_name": "DCCC",
       "amount": 9000.0,
       "count": 9
-    },
-    {
-      "cmte_id": "C00933085",
-      "cmte_name": "A FIGHT WORTH HAVING",
-      "amount": 8735.68,
-      "count": 134
     },
     {
       "cmte_id": "C00903039",
@@ -1969,8 +2005,8 @@
     {
       "cmte_id": "C00010603",
       "cmte_name": "DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE",
-      "amount": 266345.67,
-      "count": 78
+      "amount": 290385.67,
+      "count": 146
     },
     {
       "cmte_id": "C00680934",
@@ -2041,8 +2077,8 @@
     {
       "cmte_id": "C00341396",
       "cmte_name": "MOVEON.ORG POLITICAL ACTION",
-      "amount": 111159.17,
-      "count": 42
+      "amount": 111256.84,
+      "count": 43
     },
     {
       "cmte_id": "C00765164",
@@ -2178,6 +2214,32 @@
     },
     {
       "cycle": 2020,
+      "entity_id": "H8KS02173",
+      "entity_type": "candidate",
+      "entity_name": "DAVIS, PAUL T.",
+      "cand_party": "Democratic",
+      "office": "House",
+      "ici": "Open seat",
+      "cand_state": "KS",
+      "cand_district": "2",
+      "ai_amount_high": 360.0,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 30659.9,
+      "pct_ai": 1.174,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2020,
       "entity_id": "H6TX12060",
       "entity_type": "candidate",
       "entity_name": "GRANGER, KAY",
@@ -2252,6 +2314,58 @@
       ],
       "vendor_ids": [
         "eyesover"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2020,
+      "entity_id": "S0KY00156",
+      "entity_type": "candidate",
+      "entity_name": "PAUL, RAND",
+      "cand_party": "Republican",
+      "office": "Senate",
+      "ici": "Incumbent",
+      "cand_state": "KY",
+      "cand_district": "00",
+      "ai_amount_high": 279.9,
+      "ai_count_high": 2,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 1231309.74,
+      "pct_ai": 0.023,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2020,
+      "entity_id": "H4WA05077",
+      "entity_type": "candidate",
+      "entity_name": "MCMORRIS RODGERS, CATHY",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Incumbent",
+      "cand_state": "WA",
+      "cand_district": "5",
+      "ai_amount_high": 279.9,
+      "ai_count_high": 2,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 3393038.67,
+      "pct_ai": 0.008,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "unspecified"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -2358,6 +2472,62 @@
       ],
       "vendor_ids": [
         "amplify_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2020,
+      "entity_id": "C00010603",
+      "entity_type": "committee",
+      "entity_name": "DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE",
+      "cand_party": "Democratic",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 60265.8,
+      "ai_count_high": 27,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 302291848.06,
+      "pct_ai": 0.02,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity",
+        "fundraising",
+        "unspecified"
+      ],
+      "vendor_ids": [
+        "amplify_ai",
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2020,
+      "entity_id": "C00003418",
+      "entity_type": "committee",
+      "entity_name": "REPUBLICAN NATIONAL COMMITTEE",
+      "cand_party": "Republican",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 1014.98,
+      "ai_count_high": 6,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 519853977.26,
+      "pct_ai": 0.0,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity",
+        "unspecified"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -2524,6 +2694,58 @@
     },
     {
       "cycle": 2020,
+      "entity_id": "H0OH11098",
+      "entity_type": "candidate",
+      "entity_name": "GORE, LAVERNE",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Challenger",
+      "cand_state": "OH",
+      "cand_district": "11",
+      "ai_amount_high": 59.9,
+      "ai_count_high": 2,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 151710.22,
+      "pct_ai": 0.039,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2020,
+      "entity_id": "H0IA01174",
+      "entity_type": "candidate",
+      "entity_name": "ARENHOLZ, ASHLEY HINSON",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Challenger",
+      "cand_state": "IA",
+      "cand_district": "1",
+      "ai_amount_high": 149.75,
+      "ai_count_high": 5,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 5010488.97,
+      "pct_ai": 0.003,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2020,
       "entity_id": "H6CA46116",
       "entity_type": "candidate",
       "entity_name": "CORREA, LOU",
@@ -2597,33 +2819,6 @@
       ],
       "vendor_ids": [
         "calltime_ai"
-      ],
-      "use_categories_ex_legacy": [],
-      "vendor_ids_ex_legacy": []
-    },
-    {
-      "cycle": 2020,
-      "entity_id": "C00010603",
-      "entity_type": "committee",
-      "entity_name": "DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE",
-      "cand_party": "Democratic",
-      "office": "Other",
-      "ici": "Unknown",
-      "cand_state": "",
-      "cand_district": "",
-      "ai_amount_high": 58225.8,
-      "ai_count_high": 10,
-      "ai_amount_high_ex_legacy": 0.0,
-      "ai_count_high_ex_legacy": 0,
-      "total_expenditure": 302291848.06,
-      "pct_ai": 0.019,
-      "pct_ai_ex_legacy": 0.0,
-      "use_categories": [
-        "fundraising",
-        "unspecified"
-      ],
-      "vendor_ids": [
-        "amplify_ai"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -2930,18 +3125,19 @@
       "ici": "Unknown",
       "cand_state": "",
       "cand_district": "",
-      "ai_amount_high": 20000.0,
-      "ai_count_high": 2,
+      "ai_amount_high": 20029.95,
+      "ai_count_high": 3,
       "ai_amount_high_ex_legacy": 0.0,
       "ai_count_high_ex_legacy": 0,
       "total_expenditure": 4226349.29,
-      "pct_ai": 0.473,
+      "pct_ai": 0.474,
       "pct_ai_ex_legacy": 0.0,
       "use_categories": [
         "administrative_productivity",
         "fundraising"
       ],
       "vendor_ids": [
+        "grammarly",
         "prompt_io"
       ],
       "use_categories_ex_legacy": [],
@@ -3001,6 +3197,32 @@
     },
     {
       "cycle": 2020,
+      "entity_id": "C00042366",
+      "entity_type": "committee",
+      "entity_name": "DSCC",
+      "cand_party": "Democratic",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 139.95,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 123355049.15,
+      "pct_ai": 0.0,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "unspecified"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2020,
       "entity_id": "C00000935",
       "entity_type": "committee",
       "entity_name": "DCCC",
@@ -3021,6 +3243,32 @@
       ],
       "vendor_ids": [
         "otter_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2020,
+      "entity_id": "C00401224",
+      "entity_type": "committee",
+      "entity_name": "ACTBLUE",
+      "cand_party": "Unknown",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 823.92,
+      "ai_count_high": 3,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 42212541.85,
+      "pct_ai": 0.002,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -3132,6 +3380,32 @@
     },
     {
       "cycle": 2020,
+      "entity_id": "C00370007",
+      "entity_type": "committee",
+      "entity_name": "DEMOCRACY FOR AMERICA",
+      "cand_party": "Unknown",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 83.97,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 893077.75,
+      "pct_ai": 0.009,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "unspecified"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2020,
       "entity_id": "H8LA03060",
       "entity_type": "candidate",
       "entity_name": "ANDERSON, ROBERT JON",
@@ -3152,6 +3426,32 @@
       ],
       "vendor_ids": [
         "calltime_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2020,
+      "entity_id": "C00191247",
+      "entity_type": "committee",
+      "entity_name": "ALASKA DEMOCRATIC PARTY",
+      "cand_party": "Democratic",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 75.0,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 211440.88,
+      "pct_ai": 0.035,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -3257,6 +3557,32 @@
       ],
       "vendor_ids": [
         "calltime_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2020,
+      "entity_id": "C00709691",
+      "entity_type": "committee",
+      "entity_name": "NEW JOURNEY PAC, INC.",
+      "cand_party": "Unknown",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 928.94,
+      "ai_count_high": 12,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 2836502.59,
+      "pct_ai": 0.033,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -3421,6 +3747,32 @@
       ],
       "vendor_ids": [
         "calltime_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
+      "entity_id": "C00003418",
+      "entity_type": "committee",
+      "entity_name": "REPUBLICAN NATIONAL COMMITTEE",
+      "cand_party": "Republican",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 1268.39,
+      "ai_count_high": 9,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 279075911.68,
+      "pct_ai": 0.0,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "unspecified"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -3615,6 +3967,32 @@
     },
     {
       "cycle": 2022,
+      "entity_id": "C00401224",
+      "entity_type": "committee",
+      "entity_name": "ACTBLUE",
+      "cand_party": "Unknown",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 16734.63,
+      "ai_count_high": 15,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 66860022.21,
+      "pct_ai": 0.025,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
       "entity_id": "S2WI00334",
       "entity_type": "candidate",
       "entity_name": "BATTINO, GILLIAN M.D.",
@@ -3715,6 +4093,32 @@
       ],
       "vendor_ids": [
         "amplify_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
+      "entity_id": "C00406645",
+      "entity_type": "committee",
+      "entity_name": "TARRANT COUNTY REPUBLICAN VICTORY FUND",
+      "cand_party": "Republican",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 90.0,
+      "ai_count_high": 3,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 501191.69,
+      "pct_ai": 0.018,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -3828,6 +4232,32 @@
     },
     {
       "cycle": 2022,
+      "entity_id": "H0IN05201",
+      "entity_type": "candidate",
+      "entity_name": "BECKWITH, MICAH",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Open seat",
+      "cand_state": "IN",
+      "cand_district": "5",
+      "ai_amount_high": 139.95,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 6268.27,
+      "pct_ai": 2.233,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
       "entity_id": "S2CA00955",
       "entity_type": "candidate",
       "entity_name": "PADILLA, ALEX",
@@ -3863,20 +4293,23 @@
       "ici": "Unknown",
       "cand_state": "",
       "cand_district": "",
-      "ai_amount_high": 170576.0,
-      "ai_count_high": 36,
+      "ai_amount_high": 179731.0,
+      "ai_count_high": 71,
       "ai_amount_high_ex_legacy": 0.0,
       "ai_count_high_ex_legacy": 0,
       "total_expenditure": 288530957.45,
-      "pct_ai": 0.059,
+      "pct_ai": 0.062,
       "pct_ai_ex_legacy": 0.0,
       "use_categories": [
         "administrative_productivity",
-        "fundraising"
+        "data_targeting",
+        "fundraising",
+        "research_strategy"
       ],
       "vendor_ids": [
         "amplify_ai",
-        "descript"
+        "descript",
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -3903,6 +4336,32 @@
       ],
       "vendor_ids": [
         "calltime_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
+      "entity_id": "H2AK01158",
+      "entity_type": "candidate",
+      "entity_name": "PELTOLA, MARY",
+      "cand_party": "Democratic",
+      "office": "House",
+      "ici": "Incumbent",
+      "cand_state": "AK",
+      "cand_district": "00",
+      "ai_amount_high": 1079.94,
+      "ai_count_high": 5,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 6880443.43,
+      "pct_ai": 0.016,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -4205,6 +4664,32 @@
     },
     {
       "cycle": 2022,
+      "entity_id": "H0TX22302",
+      "entity_type": "candidate",
+      "entity_name": "NEHLS, TROY",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Incumbent",
+      "cand_state": "TX",
+      "cand_district": "22",
+      "ai_amount_high": 119.8,
+      "ai_count_high": 4,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 853611.26,
+      "pct_ai": 0.014,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
       "entity_id": "S0WI00247",
       "entity_type": "candidate",
       "entity_name": "NELSON, TOM",
@@ -4396,6 +4881,32 @@
       ],
       "vendor_ids": [
         "prompt_io"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
+      "entity_id": "H0IA01174",
+      "entity_type": "candidate",
+      "entity_name": "ARENHOLZ, ASHLEY HINSON",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Incumbent",
+      "cand_state": "IA",
+      "cand_district": "2",
+      "ai_amount_high": 119.8,
+      "ai_count_high": 4,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 7124300.84,
+      "pct_ai": 0.002,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -4775,6 +5286,32 @@
     },
     {
       "cycle": 2022,
+      "entity_id": "S4AR00103",
+      "entity_type": "candidate",
+      "entity_name": "COTTON, THOMAS",
+      "cand_party": "Republican",
+      "office": "Senate",
+      "ici": "Incumbent",
+      "cand_state": "AR",
+      "cand_district": "00",
+      "ai_amount_high": 279.9,
+      "ai_count_high": 2,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 3436802.52,
+      "pct_ai": 0.008,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
       "entity_id": "H2TX34162",
       "entity_type": "candidate",
       "entity_name": "GARZA, ROCHELLE",
@@ -4835,8 +5372,8 @@
       "ici": "Unknown",
       "cand_state": "",
       "cand_district": "",
-      "ai_amount_high": 1832.52,
-      "ai_count_high": 3,
+      "ai_amount_high": 1972.47,
+      "ai_count_high": 4,
       "ai_amount_high_ex_legacy": 0.0,
       "ai_count_high_ex_legacy": 0,
       "total_expenditure": 135207786.8,
@@ -4847,7 +5384,34 @@
         "unspecified"
       ],
       "vendor_ids": [
+        "grammarly",
         "otter_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
+      "entity_id": "S0KY00156",
+      "entity_type": "candidate",
+      "entity_name": "PAUL, RAND",
+      "cand_party": "Republican",
+      "office": "Senate",
+      "ici": "Incumbent",
+      "cand_state": "KY",
+      "cand_district": "00",
+      "ai_amount_high": 279.9,
+      "ai_count_high": 2,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 20664808.44,
+      "pct_ai": 0.001,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -5217,6 +5781,32 @@
       ],
       "vendor_ids": [
         "prompt_io"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
+      "entity_id": "H6FL18121",
+      "entity_type": "candidate",
+      "entity_name": "SPALDING, CARLA ARLENE",
+      "cand_party": "Independent",
+      "office": "House",
+      "ici": "Challenger",
+      "cand_state": "FL",
+      "cand_district": "18",
+      "ai_amount_high": 60.0,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 1979342.07,
+      "pct_ai": 0.003,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -5805,6 +6395,32 @@
     },
     {
       "cycle": 2022,
+      "entity_id": "H8CT04172",
+      "entity_type": "candidate",
+      "entity_name": "HIMES, JIM",
+      "cand_party": "Democratic",
+      "office": "House",
+      "ici": "Incumbent",
+      "cand_state": "CT",
+      "cand_district": "4",
+      "ai_amount_high": 139.95,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 1107935.08,
+      "pct_ai": 0.013,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
       "entity_id": "S2OH00287",
       "entity_type": "candidate",
       "entity_name": "PUKITA, MARK MR.",
@@ -5826,6 +6442,32 @@
       ],
       "vendor_ids": [
         "prompt_io"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
+      "entity_id": "H2CA09154",
+      "entity_type": "candidate",
+      "entity_name": "SHOEMAKER, JAMES H",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Open seat",
+      "cand_state": "CA",
+      "cand_district": "9",
+      "ai_amount_high": 194.0,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 17643.34,
+      "pct_ai": 1.1,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -5907,6 +6549,58 @@
       "vendor_ids": [
         "amplify_ai",
         "calltime_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
+      "entity_id": "C00580068",
+      "entity_type": "committee",
+      "entity_name": "PROGRESSIVE TURNOUT PROJECT",
+      "cand_party": "Unknown",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 29.95,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 38526912.41,
+      "pct_ai": 0.0,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
+      "entity_id": "C00709691",
+      "entity_type": "committee",
+      "entity_name": "NEW JOURNEY PAC, INC.",
+      "cand_party": "Unknown",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 329.55,
+      "ai_count_high": 3,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 3182596.73,
+      "pct_ai": 0.01,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -6119,6 +6813,84 @@
       ],
       "vendor_ids": [
         "calltime_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
+      "entity_id": "H6PA16320",
+      "entity_type": "candidate",
+      "entity_name": "SMUCKER, LLOYD K.",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Incumbent",
+      "cand_state": "PA",
+      "cand_district": "11",
+      "ai_amount_high": 139.95,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 822628.4,
+      "pct_ai": 0.017,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
+      "entity_id": "C00405878",
+      "entity_type": "committee",
+      "entity_name": "AMERICANS FOR LEGAL IMMIGRATION PAC",
+      "cand_party": "Unknown",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 139.95,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 162853.29,
+      "pct_ai": 0.086,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2022,
+      "entity_id": "H8AZ01104",
+      "entity_type": "candidate",
+      "entity_name": "KIRKPATRICK, ANN",
+      "cand_party": "Democratic",
+      "office": "House",
+      "ici": "Incumbent",
+      "cand_state": "AZ",
+      "cand_district": "2",
+      "ai_amount_high": 540.0,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 948649.43,
+      "pct_ai": 0.057,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -6606,8 +7378,8 @@
       "ici": "Challenger",
       "cand_state": "US",
       "cand_district": "00",
-      "ai_amount_high": 300.0,
-      "ai_count_high": 10,
+      "ai_amount_high": 606.0,
+      "ai_count_high": 12,
       "ai_amount_high_ex_legacy": 0.0,
       "ai_count_high_ex_legacy": 0,
       "total_expenditure": 462716417.73,
@@ -6618,7 +7390,34 @@
         "unspecified"
       ],
       "vendor_ids": [
+        "grammarly",
         "otter_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
+      "entity_id": "S4SC00240",
+      "entity_type": "candidate",
+      "entity_name": "SCOTT, TIMOTHY E.",
+      "cand_party": "Republican",
+      "office": "Senate",
+      "ici": "Incumbent",
+      "cand_state": "SC",
+      "cand_district": "00",
+      "ai_amount_high": 1733.67,
+      "ai_count_high": 3,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 33484333.42,
+      "pct_ai": 0.005,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -6663,12 +7462,12 @@
       "ici": "Unknown",
       "cand_state": "",
       "cand_district": "",
-      "ai_amount_high": 20181.01,
-      "ai_count_high": 20,
+      "ai_amount_high": 33026.01,
+      "ai_count_high": 36,
       "ai_amount_high_ex_legacy": 7500.0,
       "ai_count_high_ex_legacy": 5,
       "total_expenditure": 420805013.05,
-      "pct_ai": 0.005,
+      "pct_ai": 0.008,
       "pct_ai_ex_legacy": 0.002,
       "use_categories": [
         "administrative_productivity",
@@ -6678,6 +7477,7 @@
       "vendor_ids": [
         "amplify_ai",
         "descript",
+        "grammarly",
         "otter_ai",
         "sosha"
       ],
@@ -7132,6 +7932,33 @@
     },
     {
       "cycle": 2024,
+      "entity_id": "H6FL18121",
+      "entity_type": "candidate",
+      "entity_name": "SPALDING, CARLA ARLENE",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Challenger",
+      "cand_state": "FL",
+      "cand_district": "23",
+      "ai_amount_high": 120.0,
+      "ai_count_high": 2,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 716525.93,
+      "pct_ai": 0.017,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity",
+        "advertising_creative"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
       "entity_id": "S2MA00170",
       "entity_type": "candidate",
       "entity_name": "WARREN, ELIZABETH",
@@ -7166,8 +7993,8 @@
       "ici": "Unknown",
       "cand_state": "",
       "cand_district": "",
-      "ai_amount_high": 729.97,
-      "ai_count_high": 34,
+      "ai_amount_high": 882.61,
+      "ai_count_high": 35,
       "ai_amount_high_ex_legacy": 296.8,
       "ai_count_high_ex_legacy": 14,
       "total_expenditure": 246620959.33,
@@ -7180,6 +8007,7 @@
       "vendor_ids": [
         "anthropic",
         "descript",
+        "grammarly",
         "openai",
         "otter_ai"
       ],
@@ -7242,6 +8070,32 @@
       "vendor_ids": [
         "calltime_ai",
         "otter_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
+      "entity_id": "C00038505",
+      "entity_type": "committee",
+      "entity_name": "NORTH CAROLINA REPUBLICAN PARTY",
+      "cand_party": "Republican",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 144.0,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 4110908.71,
+      "pct_ai": 0.004,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -7331,6 +8185,32 @@
     },
     {
       "cycle": 2024,
+      "entity_id": "H2SC07280",
+      "entity_type": "candidate",
+      "entity_name": "FRY, RUSSELL",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Incumbent",
+      "cand_state": "SC",
+      "cand_district": "7",
+      "ai_amount_high": 450.0,
+      "ai_count_high": 15,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 945647.73,
+      "pct_ai": 0.048,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
       "entity_id": "C00792283",
       "entity_type": "committee",
       "entity_name": "GLENN F. IVEY FOR CONGRESS",
@@ -7360,6 +8240,32 @@
       "vendor_ids_ex_legacy": [
         "jasper_ai"
       ]
+    },
+    {
+      "cycle": 2024,
+      "entity_id": "H2AK01158",
+      "entity_type": "candidate",
+      "entity_name": "PELTOLA, MARY",
+      "cand_party": "Democratic",
+      "office": "House",
+      "ici": "Incumbent",
+      "cand_state": "AK",
+      "cand_district": "00",
+      "ai_amount_high": 2495.59,
+      "ai_count_high": 23,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 12725140.37,
+      "pct_ai": 0.02,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
     },
     {
       "cycle": 2024,
@@ -7580,17 +8486,18 @@
       "ici": "Incumbent",
       "cand_state": "NY",
       "cand_district": "25",
-      "ai_amount_high": 240.0,
-      "ai_count_high": 2,
+      "ai_amount_high": 780.0,
+      "ai_count_high": 3,
       "ai_amount_high_ex_legacy": 0.0,
       "ai_count_high_ex_legacy": 0,
       "total_expenditure": 1753358.48,
-      "pct_ai": 0.014,
+      "pct_ai": 0.044,
       "pct_ai_ex_legacy": 0.0,
       "use_categories": [
         "administrative_productivity"
       ],
       "vendor_ids": [
+        "grammarly",
         "otter_ai"
       ],
       "use_categories_ex_legacy": [],
@@ -7606,18 +8513,19 @@
       "ici": "Challenger",
       "cand_state": "US",
       "cand_district": "00",
-      "ai_amount_high": 20060.0,
-      "ai_count_high": 7,
+      "ai_amount_high": 20204.0,
+      "ai_count_high": 8,
       "ai_amount_high_ex_legacy": 60.0,
       "ai_count_high_ex_legacy": 3,
       "total_expenditure": 916240.22,
-      "pct_ai": 2.189,
+      "pct_ai": 2.205,
       "pct_ai_ex_legacy": 0.007,
       "use_categories": [
         "administrative_productivity",
         "unspecified"
       ],
       "vendor_ids": [
+        "grammarly",
         "openai",
         "prompt_io"
       ],
@@ -7769,18 +8677,19 @@
       "ici": "Unknown",
       "cand_state": "",
       "cand_district": "",
-      "ai_amount_high": 7080.95,
-      "ai_count_high": 25,
+      "ai_amount_high": 7386.23,
+      "ai_count_high": 27,
       "ai_amount_high_ex_legacy": 6520.77,
       "ai_count_high_ex_legacy": 7,
       "total_expenditure": 11819108.66,
-      "pct_ai": 0.06,
+      "pct_ai": 0.062,
       "pct_ai_ex_legacy": 0.055,
       "use_categories": [
         "administrative_productivity"
       ],
       "vendor_ids": [
         "daisychain",
+        "grammarly",
         "otter_ai"
       ],
       "use_categories_ex_legacy": [
@@ -8141,6 +9050,32 @@
     },
     {
       "cycle": 2024,
+      "entity_id": "C00406645",
+      "entity_type": "committee",
+      "entity_name": "TARRANT COUNTY REPUBLICAN VICTORY FUND",
+      "cand_party": "Republican",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 90.0,
+      "ai_count_high": 3,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 287164.74,
+      "pct_ai": 0.031,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
       "entity_id": "S4CA00589",
       "entity_type": "candidate",
       "entity_name": "LEE, BARBARA",
@@ -8175,8 +9110,8 @@
       "ici": "Incumbent",
       "cand_state": "OH",
       "cand_district": "00",
-      "ai_amount_high": 1873.93,
-      "ai_count_high": 6,
+      "ai_amount_high": 2026.57,
+      "ai_count_high": 7,
       "ai_amount_high_ex_legacy": 0.0,
       "ai_count_high_ex_legacy": 0,
       "total_expenditure": 97460584.55,
@@ -8186,6 +9121,7 @@
         "administrative_productivity"
       ],
       "vendor_ids": [
+        "grammarly",
         "otter_ai"
       ],
       "use_categories_ex_legacy": [],
@@ -8227,17 +9163,19 @@
       "ici": "Challenger",
       "cand_state": "US",
       "cand_district": "00",
-      "ai_amount_high": 60.0,
-      "ai_count_high": 3,
+      "ai_amount_high": 204.0,
+      "ai_count_high": 4,
       "ai_amount_high_ex_legacy": 60.0,
       "ai_count_high_ex_legacy": 3,
       "total_expenditure": 113003.47,
-      "pct_ai": 0.053,
+      "pct_ai": 0.181,
       "pct_ai_ex_legacy": 0.053,
       "use_categories": [
-        "administrative_productivity"
+        "administrative_productivity",
+        "unspecified"
       ],
       "vendor_ids": [
+        "grammarly",
         "openai"
       ],
       "use_categories_ex_legacy": [
@@ -8898,6 +9836,32 @@
     },
     {
       "cycle": 2024,
+      "entity_id": "H4PA08124",
+      "entity_type": "candidate",
+      "entity_name": "BRESNAHAN, ROB",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Challenger",
+      "cand_state": "PA",
+      "cand_district": "8",
+      "ai_amount_high": 400.0,
+      "ai_count_high": 4,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 3663612.55,
+      "pct_ai": 0.011,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
       "entity_id": "S4TN00526",
       "entity_type": "candidate",
       "entity_name": "JOHNSON, GLORIA",
@@ -9033,6 +9997,32 @@
     },
     {
       "cycle": 2024,
+      "entity_id": "S0KY00156",
+      "entity_type": "candidate",
+      "entity_name": "PAUL, RAND",
+      "cand_party": "Republican",
+      "office": "Senate",
+      "ici": "Incumbent",
+      "cand_state": "KY",
+      "cand_district": "00",
+      "ai_amount_high": 139.95,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 7075623.81,
+      "pct_ai": 0.002,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
       "entity_id": "P40016131",
       "entity_type": "candidate",
       "entity_name": "PHILLIPS, DEAN",
@@ -9145,6 +10135,32 @@
     },
     {
       "cycle": 2024,
+      "entity_id": "H2CA15094",
+      "entity_type": "candidate",
+      "entity_name": "SWALWELL, ERIC MICHAEL",
+      "cand_party": "Democratic",
+      "office": "House",
+      "ici": "Incumbent",
+      "cand_state": "CA",
+      "cand_district": "14",
+      "ai_amount_high": 144.0,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 4047215.25,
+      "pct_ai": 0.004,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
       "entity_id": "S4MD00319",
       "entity_type": "candidate",
       "entity_name": "TRONE, DAVID",
@@ -9153,17 +10169,18 @@
       "ici": "Open seat",
       "cand_state": "MD",
       "cand_district": "00",
-      "ai_amount_high": 1632.03,
-      "ai_count_high": 18,
+      "ai_amount_high": 3011.27,
+      "ai_count_high": 27,
       "ai_amount_high_ex_legacy": 0.0,
       "ai_count_high_ex_legacy": 0,
       "total_expenditure": 63607526.5,
-      "pct_ai": 0.003,
+      "pct_ai": 0.005,
       "pct_ai_ex_legacy": 0.0,
       "use_categories": [
         "unspecified"
       ],
       "vendor_ids": [
+        "grammarly",
         "otter_ai"
       ],
       "use_categories_ex_legacy": [],
@@ -9250,6 +10267,32 @@
       ],
       "vendor_ids": [
         "calltime_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
+      "entity_id": "C00401224",
+      "entity_type": "committee",
+      "entity_name": "ACTBLUE",
+      "cand_party": "Unknown",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 10839.41,
+      "ai_count_high": 3,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 87074366.99,
+      "pct_ai": 0.012,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -9942,6 +10985,58 @@
     },
     {
       "cycle": 2024,
+      "entity_id": "H6OH16136",
+      "entity_type": "candidate",
+      "entity_name": "MUNDY, KEITH FRANCIS",
+      "cand_party": "Democratic",
+      "office": "House",
+      "ici": "Challenger",
+      "cand_state": "OH",
+      "cand_district": "5",
+      "ai_amount_high": 72.0,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 14708.76,
+      "pct_ai": 0.49,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
+      "entity_id": "H2NV03153",
+      "entity_type": "candidate",
+      "entity_name": "ROBERTSON, MARK",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Challenger",
+      "cand_state": "NV",
+      "cand_district": "1",
+      "ai_amount_high": 144.0,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 394796.26,
+      "pct_ai": 0.036,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
       "entity_id": "H4MA06090",
       "entity_type": "candidate",
       "entity_name": "MOULTON, SETH",
@@ -10076,6 +11171,33 @@
       ],
       "vendor_ids": [
         "otter_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
+      "entity_id": "H4TN03199",
+      "entity_type": "candidate",
+      "entity_name": "ALLEN, JACK BURKS MR JR",
+      "cand_party": "Democratic",
+      "office": "House",
+      "ici": "Challenger",
+      "cand_state": "TN",
+      "cand_district": "3",
+      "ai_amount_high": 196.78,
+      "ai_count_high": 4,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 187328.89,
+      "pct_ai": 0.105,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "advertising_creative",
+        "unspecified"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -10280,6 +11402,32 @@
     },
     {
       "cycle": 2024,
+      "entity_id": "C00041160",
+      "entity_type": "committee",
+      "entity_name": "MICHIGAN REPUBLICAN PARTY",
+      "cand_party": "Republican",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 144.0,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 1612892.08,
+      "pct_ai": 0.009,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
       "entity_id": "C00840165",
       "entity_type": "committee",
       "entity_name": "GILLEN FOR NY",
@@ -10326,6 +11474,32 @@
       ],
       "vendor_ids": [
         "calltime_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
+      "entity_id": "S4NJ00540",
+      "entity_type": "candidate",
+      "entity_name": "BASHAW, CURTIS",
+      "cand_party": "Republican",
+      "office": "Senate",
+      "ici": "Open seat",
+      "cand_state": "NJ",
+      "cand_district": "00",
+      "ai_amount_high": 144.0,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 3960572.06,
+      "pct_ai": 0.004,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -10404,6 +11578,32 @@
       ],
       "vendor_ids": [
         "otter_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2024,
+      "entity_id": "C00405878",
+      "entity_type": "committee",
+      "entity_name": "AMERICANS FOR LEGAL IMMIGRATION PAC",
+      "cand_party": "Unknown",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 235.83,
+      "ai_count_high": 2,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 140014.52,
+      "pct_ai": 0.168,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -10912,8 +12112,8 @@
       "ici": "Unknown",
       "cand_state": "",
       "cand_district": "",
-      "ai_amount_high": 20031.46,
-      "ai_count_high": 67,
+      "ai_amount_high": 20103.46,
+      "ai_count_high": 68,
       "ai_amount_high_ex_legacy": 19737.58,
       "ai_count_high_ex_legacy": 53,
       "total_expenditure": 10678995.09,
@@ -10926,6 +12126,7 @@
       "vendor_ids": [
         "anthropic",
         "daisychain",
+        "grammarly",
         "openai",
         "otter_ai"
       ],
@@ -11973,6 +13174,32 @@
         "instantly_ai",
         "quiller"
       ]
+    },
+    {
+      "cycle": 2026,
+      "entity_id": "H2AK01158",
+      "entity_type": "candidate",
+      "entity_name": "PELTOLA, MARY",
+      "cand_party": "Democratic",
+      "office": "House",
+      "ici": "Challenger",
+      "cand_state": "AK",
+      "cand_district": "00",
+      "ai_amount_high": 125.0,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 191726.79,
+      "pct_ai": 0.065,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
     },
     {
       "cycle": 2026,
@@ -13064,6 +14291,32 @@
     },
     {
       "cycle": 2026,
+      "entity_id": "S0KY00156",
+      "entity_type": "candidate",
+      "entity_name": "PAUL, RAND",
+      "cand_party": "Republican",
+      "office": "Senate",
+      "ici": "Incumbent",
+      "cand_state": "KY",
+      "cand_district": "00",
+      "ai_amount_high": 279.9,
+      "ai_count_high": 2,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 3829964.83,
+      "pct_ai": 0.007,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2026,
       "entity_id": "H6OK01227",
       "entity_type": "candidate",
       "entity_name": "WATKINS, ERICA",
@@ -13247,12 +14500,12 @@
       "ici": "Unknown",
       "cand_state": "",
       "cand_district": "",
-      "ai_amount_high": 109119.17,
-      "ai_count_high": 34,
+      "ai_amount_high": 109216.84,
+      "ai_count_high": 35,
       "ai_amount_high_ex_legacy": 8043.8,
       "ai_count_high_ex_legacy": 28,
       "total_expenditure": 22435102.0,
-      "pct_ai": 0.486,
+      "pct_ai": 0.487,
       "pct_ai_ex_legacy": 0.036,
       "use_categories": [
         "administrative_productivity",
@@ -13261,6 +14514,7 @@
       ],
       "vendor_ids": [
         "chorus_ai",
+        "grammarly",
         "openai",
         "prompt_io",
         "sosha"
@@ -13401,8 +14655,8 @@
       "ici": "Incumbent",
       "cand_state": "AK",
       "cand_district": "00",
-      "ai_amount_high": 1292.12,
-      "ai_count_high": 10,
+      "ai_amount_high": 1444.76,
+      "ai_count_high": 11,
       "ai_amount_high_ex_legacy": 1292.12,
       "ai_count_high_ex_legacy": 10,
       "total_expenditure": 70435887.78,
@@ -13413,6 +14667,7 @@
       ],
       "vendor_ids": [
         "anthropic",
+        "grammarly",
         "runwayml"
       ],
       "use_categories_ex_legacy": [
@@ -13700,6 +14955,32 @@
       ],
       "vendor_ids": [
         "descript"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2026,
+      "entity_id": "C00405878",
+      "entity_type": "committee",
+      "entity_name": "AMERICANS FOR LEGAL IMMIGRATION PAC",
+      "cand_party": "Unknown",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 139.95,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 65241.76,
+      "pct_ai": 0.215,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "unspecified"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -14103,6 +15384,32 @@
       ],
       "vendor_ids": [
         "calltime_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2026,
+      "entity_id": "H8TN07076",
+      "entity_type": "candidate",
+      "entity_name": "GREEN, MARK DR.",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Incumbent",
+      "cand_state": "TN",
+      "cand_district": "7",
+      "ai_amount_high": 316.08,
+      "ai_count_high": 2,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 238727.93,
+      "pct_ai": 0.132,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "unspecified"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -14806,13 +16113,13 @@
       "ici": "Unknown",
       "cand_state": "",
       "cand_district": "",
-      "ai_amount_high": 8735.68,
-      "ai_count_high": 134,
-      "ai_amount_high_ex_legacy": 8735.68,
-      "ai_count_high_ex_legacy": 134,
+      "ai_amount_high": 9715.48,
+      "ai_count_high": 143,
+      "ai_amount_high_ex_legacy": 9617.14,
+      "ai_count_high_ex_legacy": 140,
       "total_expenditure": 229991.89,
-      "pct_ai": 3.798,
-      "pct_ai_ex_legacy": 3.798,
+      "pct_ai": 4.224,
+      "pct_ai_ex_legacy": 4.182,
       "use_categories": [
         "administrative_productivity"
       ],
@@ -14820,7 +16127,9 @@
         "anthropic",
         "elevenlabs",
         "fal_ai",
+        "grammarly",
         "heygen",
+        "kling_ai",
         "midjourney",
         "openai",
         "perplexity"
@@ -14833,6 +16142,7 @@
         "elevenlabs",
         "fal_ai",
         "heygen",
+        "kling_ai",
         "midjourney",
         "openai",
         "perplexity"
@@ -15706,6 +17016,38 @@
     },
     {
       "cycle": 2026,
+      "entity_id": "H6FL25035",
+      "entity_type": "candidate",
+      "entity_name": "CARBONARA, MICHAEL",
+      "cand_party": "Republican",
+      "office": "House",
+      "ici": "Challenger",
+      "cand_state": "FL",
+      "cand_district": "22",
+      "ai_amount_high": 703.0,
+      "ai_count_high": 8,
+      "ai_amount_high_ex_legacy": 703.0,
+      "ai_count_high_ex_legacy": 8,
+      "total_expenditure": 5969948.78,
+      "pct_ai": 0.012,
+      "pct_ai_ex_legacy": 0.012,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "elevenlabs",
+        "luma_labs"
+      ],
+      "use_categories_ex_legacy": [
+        "administrative_productivity"
+      ],
+      "vendor_ids_ex_legacy": [
+        "elevenlabs",
+        "luma_labs"
+      ]
+    },
+    {
+      "cycle": 2026,
       "entity_id": "C00789966",
       "entity_type": "committee",
       "entity_name": "FORWARD PARTY",
@@ -15787,6 +17129,32 @@
       ],
       "vendor_ids": [
         "numero_ai"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2026,
+      "entity_id": "C00075820",
+      "entity_type": "committee",
+      "entity_name": "NRCC",
+      "cand_party": "Republican",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 457.92,
+      "ai_count_high": 1,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 89566412.92,
+      "pct_ai": 0.001,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
       ],
       "use_categories_ex_legacy": [],
       "vendor_ids_ex_legacy": []
@@ -16561,6 +17929,32 @@
     },
     {
       "cycle": 2026,
+      "entity_id": "H2LA02149",
+      "entity_type": "candidate",
+      "entity_name": "CARTER, TROY A. SR.",
+      "cand_party": "Democratic",
+      "office": "House",
+      "ici": "Incumbent",
+      "cand_state": "LA",
+      "cand_district": "2",
+      "ai_amount_high": 279.9,
+      "ai_count_high": 2,
+      "ai_amount_high_ex_legacy": 0.0,
+      "ai_count_high_ex_legacy": 0,
+      "total_expenditure": 1389880.24,
+      "pct_ai": 0.02,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity"
+      ],
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "use_categories_ex_legacy": [],
+      "vendor_ids_ex_legacy": []
+    },
+    {
+      "cycle": 2026,
       "entity_id": "H6CA45159",
       "entity_type": "candidate",
       "entity_name": "LEONARD, MARK ANDREW",
@@ -17244,36 +18638,6 @@
     },
     {
       "cycle": 2026,
-      "entity_id": "H6FL25035",
-      "entity_type": "candidate",
-      "entity_name": "CARBONARA, MICHAEL",
-      "cand_party": "Republican",
-      "office": "House",
-      "ici": "Challenger",
-      "cand_state": "FL",
-      "cand_district": "22",
-      "ai_amount_high": 220.0,
-      "ai_count_high": 1,
-      "ai_amount_high_ex_legacy": 220.0,
-      "ai_count_high_ex_legacy": 1,
-      "total_expenditure": 5969948.78,
-      "pct_ai": 0.004,
-      "pct_ai_ex_legacy": 0.004,
-      "use_categories": [
-        "administrative_productivity"
-      ],
-      "vendor_ids": [
-        "elevenlabs"
-      ],
-      "use_categories_ex_legacy": [
-        "administrative_productivity"
-      ],
-      "vendor_ids_ex_legacy": [
-        "elevenlabs"
-      ]
-    },
-    {
-      "cycle": 2026,
       "entity_id": "C00719971",
       "entity_type": "committee",
       "entity_name": "SENATE EAGLE PAC",
@@ -17933,17 +19297,6 @@
           "count_high": 0,
           "amount_medium": 490.0,
           "count_medium": 2
-        },
-        {
-          "id": "xai_grok",
-          "name": "xAI (Grok)",
-          "group": "general_purpose",
-          "era": "generative",
-          "homepage": "https://x.ai",
-          "amount_high": 0.0,
-          "count_high": 0,
-          "amount_medium": 231730.0,
-          "count_medium": 4
         }
       ],
       "time_series": [
@@ -18026,52 +19379,6 @@
         }
       ],
       "records": [
-        {
-          "cycle": 2022,
-          "cand_id": "S2OH00402",
-          "cand_name": "Ryan, Tim",
-          "office": "Senate",
-          "cand_state": "OH",
-          "cand_district": "00",
-          "cand_party": "Democratic",
-          "spender_id": "C90021593",
-          "spender_name": "Rebuild USA",
-          "support_oppose": "Support",
-          "transaction_amt": 137865.0,
-          "transaction_date": "07-OCT-22",
-          "purpose": "Digital Advertising - Tim Ryan",
-          "payee": "Grok Media LLC",
-          "file_num": "1634851",
-          "tran_id": "F57.000002",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
-          "vendor_group": "general_purpose",
-          "vendor_era": "generative",
-          "confidence": "medium"
-        },
-        {
-          "cycle": 2022,
-          "cand_id": "H4NC05146",
-          "cand_name": "Foxx, Virginia",
-          "office": "House",
-          "cand_state": "NC",
-          "cand_district": "05",
-          "cand_party": "Republican",
-          "spender_id": "C90021593",
-          "spender_name": "Rebuild USA",
-          "support_oppose": "Oppose",
-          "transaction_amt": 90865.0,
-          "transaction_date": "07-OCT-22",
-          "purpose": "Digital Advertising - Anti-Labor",
-          "payee": "Grok Media LLC",
-          "file_num": "1634851",
-          "tran_id": "F57.000001",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
-          "vendor_group": "general_purpose",
-          "vendor_era": "generative",
-          "confidence": "medium"
-        },
         {
           "cycle": 2026,
           "cand_id": "H6KY04171",
@@ -18280,29 +19587,6 @@
           "confidence": "high"
         },
         {
-          "cycle": 2022,
-          "cand_id": "S0IA00028",
-          "cand_name": "GRASSLEY, CHARLES E",
-          "office": "Senate",
-          "cand_state": "IA",
-          "cand_district": "00",
-          "cand_party": "Republican",
-          "spender_id": "C00754754",
-          "spender_name": "Ruralvote.org",
-          "support_oppose": "Oppose",
-          "transaction_amt": 2000.0,
-          "transaction_date": "04-NOV-22",
-          "purpose": "Social Media Promotion",
-          "payee": "Grok Media LLC",
-          "file_num": "1659208",
-          "tran_id": "SE.9303",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
-          "vendor_group": "general_purpose",
-          "vendor_era": "generative",
-          "confidence": "medium"
-        },
-        {
           "cycle": 2026,
           "cand_id": "H6IL04195",
           "cand_name": "GETTY, CHRISTOPHER",
@@ -18393,29 +19677,6 @@
           "vendor_group": "political_specific",
           "vendor_era": "legacy",
           "confidence": "high"
-        },
-        {
-          "cycle": 2022,
-          "cand_id": "S2OH00436",
-          "cand_name": "VANCE, J D",
-          "office": "Senate",
-          "cand_state": "OH",
-          "cand_district": "00",
-          "cand_party": "Republican",
-          "spender_id": "C00754754",
-          "spender_name": "Ruralvote.org",
-          "support_oppose": "Oppose",
-          "transaction_amt": 1000.0,
-          "transaction_date": "04-NOV-22",
-          "purpose": "Social Media Promotion",
-          "payee": "Grok Media LLC",
-          "file_num": "1659208",
-          "tran_id": "SE.9314",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
-          "vendor_group": "general_purpose",
-          "vendor_era": "generative",
-          "confidence": "medium"
         },
         {
           "cycle": 2024,
@@ -21694,6 +22955,455 @@
         }
       ]
     },
+    "grammarly": {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://grammarly.com",
+      "amount_high": 72728.2,
+      "count_high": 260,
+      "time_series": [
+        {
+          "cycle": 2020,
+          "amount": 6266.16,
+          "count": 54
+        },
+        {
+          "cycle": 2022,
+          "amount": 30980.61,
+          "count": 91
+        },
+        {
+          "cycle": 2024,
+          "amount": 33462.03,
+          "count": 100
+        },
+        {
+          "cycle": 2026,
+          "amount": 2019.3999999999999,
+          "count": 15
+        }
+      ],
+      "by_candidate": [
+        {
+          "cand_id": "H2AK01158",
+          "cand_name": "PELTOLA, MARY",
+          "cand_party": "Democratic",
+          "office": "House",
+          "amount": 3700.53,
+          "count": 29
+        },
+        {
+          "cand_id": "S4SC00240",
+          "cand_name": "SCOTT, TIMOTHY E.",
+          "cand_party": "Republican",
+          "office": "Senate",
+          "amount": 1733.67,
+          "count": 3
+        },
+        {
+          "cand_id": "S4MD00319",
+          "cand_name": "TRONE, DAVID",
+          "cand_party": "Democratic",
+          "office": "Senate",
+          "amount": 1379.24,
+          "count": 9
+        },
+        {
+          "cand_id": "S0KY00156",
+          "cand_name": "PAUL, RAND",
+          "cand_party": "Republican",
+          "office": "Senate",
+          "amount": 979.6499999999999,
+          "count": 7
+        },
+        {
+          "cand_id": "H8AZ01104",
+          "cand_name": "KIRKPATRICK, ANN",
+          "cand_party": "Democratic",
+          "office": "House",
+          "amount": 540.0,
+          "count": 1
+        },
+        {
+          "cand_id": "H8NY25105",
+          "cand_name": "MORELLE, JOSEPH D",
+          "cand_party": "Democratic",
+          "office": "House",
+          "amount": 540.0,
+          "count": 1
+        },
+        {
+          "cand_id": "H2SC07280",
+          "cand_name": "FRY, RUSSELL",
+          "cand_party": "Republican",
+          "office": "House",
+          "amount": 450.0,
+          "count": 15
+        },
+        {
+          "cand_id": "H4PA08124",
+          "cand_name": "BRESNAHAN, ROB",
+          "cand_party": "Republican",
+          "office": "House",
+          "amount": 400.0,
+          "count": 4
+        },
+        {
+          "cand_id": "H8KS02173",
+          "cand_name": "DAVIS, PAUL T.",
+          "cand_party": "Democratic",
+          "office": "House",
+          "amount": 360.0,
+          "count": 1
+        },
+        {
+          "cand_id": "H8TN07076",
+          "cand_name": "GREEN, MARK DR.",
+          "cand_party": "Republican",
+          "office": "House",
+          "amount": 316.08,
+          "count": 2
+        },
+        {
+          "cand_id": "P80001571",
+          "cand_name": "TRUMP, DONALD J.",
+          "cand_party": "Republican",
+          "office": "President",
+          "amount": 306.0,
+          "count": 2
+        },
+        {
+          "cand_id": "H2LA02149",
+          "cand_name": "CARTER, TROY A. SR.",
+          "cand_party": "Democratic",
+          "office": "House",
+          "amount": 279.9,
+          "count": 2
+        },
+        {
+          "cand_id": "H4WA05077",
+          "cand_name": "MCMORRIS RODGERS, CATHY",
+          "cand_party": "Republican",
+          "office": "House",
+          "amount": 279.9,
+          "count": 2
+        },
+        {
+          "cand_id": "S4AR00103",
+          "cand_name": "COTTON, THOMAS",
+          "cand_party": "Republican",
+          "office": "Senate",
+          "amount": 279.9,
+          "count": 2
+        },
+        {
+          "cand_id": "H0IA01174",
+          "cand_name": "ARENHOLZ, ASHLEY HINSON",
+          "cand_party": "Republican",
+          "office": "House",
+          "amount": 269.55,
+          "count": 9
+        },
+        {
+          "cand_id": "H4TN03199",
+          "cand_name": "ALLEN, JACK BURKS MR JR",
+          "cand_party": "Democratic",
+          "office": "House",
+          "amount": 196.78,
+          "count": 4
+        },
+        {
+          "cand_id": "H2CA09154",
+          "cand_name": "SHOEMAKER, JAMES H",
+          "cand_party": "Republican",
+          "office": "House",
+          "amount": 194.0,
+          "count": 1
+        },
+        {
+          "cand_id": "S4AK00214",
+          "cand_name": "SULLIVAN, DAN",
+          "cand_party": "Republican",
+          "office": "Senate",
+          "amount": 152.64,
+          "count": 1
+        },
+        {
+          "cand_id": "S6OH00163",
+          "cand_name": "BROWN, SHERROD",
+          "cand_party": "Democratic",
+          "office": "Senate",
+          "amount": 152.64,
+          "count": 1
+        },
+        {
+          "cand_id": "P40005936",
+          "cand_name": "MAPSTEAD, LARS DAMIAN 8319014600",
+          "cand_party": "Libertarian",
+          "office": "President",
+          "amount": 144.0,
+          "count": 1
+        },
+        {
+          "cand_id": "P40015042",
+          "cand_name": "BALLAY, CHARLES DR.",
+          "cand_party": "Libertarian",
+          "office": "President",
+          "amount": 144.0,
+          "count": 1
+        },
+        {
+          "cand_id": "S4NJ00540",
+          "cand_name": "BASHAW, CURTIS",
+          "cand_party": "Republican",
+          "office": "Senate",
+          "amount": 144.0,
+          "count": 1
+        },
+        {
+          "cand_id": "H2CA15094",
+          "cand_name": "SWALWELL, ERIC MICHAEL",
+          "cand_party": "Democratic",
+          "office": "House",
+          "amount": 144.0,
+          "count": 1
+        },
+        {
+          "cand_id": "H2NV03153",
+          "cand_name": "ROBERTSON, MARK",
+          "cand_party": "Republican",
+          "office": "House",
+          "amount": 144.0,
+          "count": 1
+        },
+        {
+          "cand_id": "H6PA16320",
+          "cand_name": "SMUCKER, LLOYD K.",
+          "cand_party": "Republican",
+          "office": "House",
+          "amount": 139.95,
+          "count": 1
+        },
+        {
+          "cand_id": "H0IN05201",
+          "cand_name": "BECKWITH, MICAH",
+          "cand_party": "Republican",
+          "office": "House",
+          "amount": 139.95,
+          "count": 1
+        },
+        {
+          "cand_id": "H8CT04172",
+          "cand_name": "HIMES, JIM",
+          "cand_party": "Democratic",
+          "office": "House",
+          "amount": 139.95,
+          "count": 1
+        },
+        {
+          "cand_id": "H6FL18121",
+          "cand_name": "SPALDING, CARLA ARLENE",
+          "cand_party": "Republican",
+          "office": "House",
+          "amount": 120.0,
+          "count": 2
+        },
+        {
+          "cand_id": "H0TX22302",
+          "cand_name": "NEHLS, TROY",
+          "cand_party": "Republican",
+          "office": "House",
+          "amount": 119.8,
+          "count": 4
+        },
+        {
+          "cand_id": "H6OH16136",
+          "cand_name": "MUNDY, KEITH FRANCIS",
+          "cand_party": "Democratic",
+          "office": "House",
+          "amount": 72.0,
+          "count": 1
+        }
+      ],
+      "top_committees": [
+        {
+          "cmte_id": "C00401224",
+          "cmte_name": "ACTBLUE",
+          "amount": 28397.96,
+          "count": 21
+        },
+        {
+          "cmte_id": "C00010603",
+          "cmte_name": "DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE",
+          "amount": 24040.0,
+          "count": 68
+        },
+        {
+          "cmte_id": "C00812388",
+          "cmte_name": "MARY PELTOLA FOR ALASKA",
+          "amount": 3700.53,
+          "count": 29
+        },
+        {
+          "cmte_id": "C00003418",
+          "cmte_name": "REPUBLICAN NATIONAL COMMITTEE",
+          "amount": 2436.01,
+          "count": 16
+        },
+        {
+          "cmte_id": "C00540302",
+          "cmte_name": "TIM SCOTT FOR AMERICA",
+          "amount": 1733.67,
+          "count": 3
+        },
+        {
+          "cmte_id": "C00653196",
+          "cmte_name": "DAVID TRONE FOR MARYLAND",
+          "amount": 1379.24,
+          "count": 9
+        },
+        {
+          "cmte_id": "C00709691",
+          "cmte_name": "NEW JOURNEY PAC, INC.",
+          "amount": 1258.49,
+          "count": 15
+        },
+        {
+          "cmte_id": "C00496075",
+          "cmte_name": "RAND PAUL FOR US SENATE",
+          "amount": 979.6499999999999,
+          "count": 7
+        },
+        {
+          "cmte_id": "C00651042",
+          "cmte_name": "MOMS FED UP",
+          "amount": 540.0,
+          "count": 1
+        },
+        {
+          "cmte_id": "C00675108",
+          "cmte_name": "JOE MORELLE FOR CONGRESS",
+          "amount": 540.0,
+          "count": 1
+        },
+        {
+          "cmte_id": "C00405878",
+          "cmte_name": "AMERICANS FOR LEGAL IMMIGRATION PAC",
+          "amount": 515.73,
+          "count": 4
+        },
+        {
+          "cmte_id": "C00075820",
+          "cmte_name": "NRCC",
+          "amount": 457.92,
+          "count": 1
+        },
+        {
+          "cmte_id": "C00786657",
+          "cmte_name": "FRY FOR CONGRESS",
+          "amount": 450.0,
+          "count": 15
+        },
+        {
+          "cmte_id": "C00852137",
+          "cmte_name": "ROB FOR PA",
+          "amount": 400.0,
+          "count": 4
+        },
+        {
+          "cmte_id": "C00632133",
+          "cmte_name": "SWING LEFT",
+          "amount": 377.28,
+          "count": 3
+        },
+        {
+          "cmte_id": "C00653121",
+          "cmte_name": "PAUL DAVIS FOR KANSAS",
+          "amount": 360.0,
+          "count": 1
+        },
+        {
+          "cmte_id": "C00658385",
+          "cmte_name": "MARK GREEN FOR CONGRESS",
+          "amount": 316.08,
+          "count": 2
+        },
+        {
+          "cmte_id": "C00828541",
+          "cmte_name": "NEVER SURRENDER, INC.",
+          "amount": 306.0,
+          "count": 2
+        },
+        {
+          "cmte_id": "C00042366",
+          "cmte_name": "DSCC",
+          "amount": 279.9,
+          "count": 2
+        },
+        {
+          "cmte_id": "C00390476",
+          "cmte_name": "CATHY MCMORRIS RODGERS FOR CONGRESS",
+          "amount": 279.9,
+          "count": 2
+        }
+      ],
+      "by_party": [
+        {
+          "cand_party": "Democratic",
+          "amount": 7505.04,
+          "count": 51,
+          "distinct_candidates": 11
+        },
+        {
+          "cand_party": "Independent",
+          "amount": 60.0,
+          "count": 1,
+          "distinct_candidates": 1
+        },
+        {
+          "cand_party": "Republican",
+          "amount": 5922.99,
+          "count": 58,
+          "distinct_candidates": 17
+        }
+      ],
+      "by_incumbency": [
+        {
+          "ici": "Challenger",
+          "amount": 1327.43,
+          "count": 21,
+          "distinct_candidates": 8
+        },
+        {
+          "ici": "Incumbent",
+          "amount": 9943.41,
+          "count": 76,
+          "distinct_candidates": 17
+        },
+        {
+          "ici": "Open seat",
+          "amount": 2217.19,
+          "count": 13,
+          "distinct_candidates": 5
+        }
+      ],
+      "by_chamber": [
+        {
+          "office": "House",
+          "amount": 8666.289999999999,
+          "count": 86,
+          "distinct_candidates": 21
+        },
+        {
+          "office": "Senate",
+          "amount": 4821.74,
+          "count": 24,
+          "distinct_candidates": 7
+        }
+      ]
+    },
     "heygen": {
       "id": "heygen",
       "name": "HeyGen",
@@ -21854,6 +23564,92 @@
       "by_party": [],
       "by_incumbency": [],
       "by_chamber": []
+    },
+    "kling_ai": {
+      "id": "kling_ai",
+      "name": "Kling AI",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://klingai.com",
+      "amount_high": 881.46,
+      "count_high": 6,
+      "time_series": [
+        {
+          "cycle": 2026,
+          "amount": 881.46,
+          "count": 6
+        }
+      ],
+      "by_candidate": [],
+      "top_committees": [
+        {
+          "cmte_id": "C00933085",
+          "cmte_name": "A FIGHT WORTH HAVING",
+          "amount": 881.46,
+          "count": 6
+        }
+      ],
+      "by_party": [],
+      "by_incumbency": [],
+      "by_chamber": []
+    },
+    "luma_labs": {
+      "id": "luma_labs",
+      "name": "Luma Labs (Luma AI)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://lumalabs.ai",
+      "amount_high": 483.0,
+      "count_high": 7,
+      "time_series": [
+        {
+          "cycle": 2026,
+          "amount": 483.0,
+          "count": 7
+        }
+      ],
+      "by_candidate": [
+        {
+          "cand_id": "H6FL25035",
+          "cand_name": "CARBONARA, MICHAEL",
+          "cand_party": "Republican",
+          "office": "House",
+          "amount": 483.0,
+          "count": 7
+        }
+      ],
+      "top_committees": [
+        {
+          "cmte_id": "C00901793",
+          "cmte_name": "CARBONARA FOR CONGRESS",
+          "amount": 483.0,
+          "count": 7
+        }
+      ],
+      "by_party": [
+        {
+          "cand_party": "Republican",
+          "amount": 483.0,
+          "count": 7,
+          "distinct_candidates": 1
+        }
+      ],
+      "by_incumbency": [
+        {
+          "ici": "Challenger",
+          "amount": 483.0,
+          "count": 7,
+          "distinct_candidates": 1
+        }
+      ],
+      "by_chamber": [
+        {
+          "office": "House",
+          "amount": 483.0,
+          "count": 7,
+          "distinct_candidates": 1
+        }
+      ]
     },
     "midjourney": {
       "id": "midjourney",
@@ -24838,6 +26634,53 @@
         }
       ]
     },
+    "H0IA01174": {
+      "id": "H0IA01174",
+      "name": "ARENHOLZ, ASHLEY HINSON",
+      "party": "Republican",
+      "office": "House",
+      "state": "IA",
+      "district": "1",
+      "race_id": "House-IA-1",
+      "amount_high": 269.55,
+      "count_high": 9,
+      "total_expenditure": 12134789.81,
+      "pct_ai": 0.002,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 269.55,
+          "count": 9,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 269.55,
+          "count": 9
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2020,
+          "amount": 149.75,
+          "count": 5,
+          "total_expenditure": 5010488.97,
+          "pct_ai": 0.003,
+          "ici": "Challenger"
+        },
+        {
+          "cycle": 2022,
+          "amount": 119.8,
+          "count": 4,
+          "total_expenditure": 7124300.84,
+          "pct_ai": 0.002,
+          "ici": "Incumbent"
+        }
+      ]
+    },
     "H0IL05096": {
       "id": "H0IL05096",
       "name": "QUIGLEY, MIKE",
@@ -24921,6 +26764,45 @@
           "total_expenditure": 1226183.49,
           "pct_ai": 0.041,
           "ici": "Incumbent"
+        }
+      ]
+    },
+    "H0IN05201": {
+      "id": "H0IN05201",
+      "name": "BECKWITH, MICAH",
+      "party": "Republican",
+      "office": "House",
+      "state": "IN",
+      "district": "5",
+      "race_id": "House-IN-5",
+      "amount_high": 139.95,
+      "count_high": 1,
+      "total_expenditure": 6268.27,
+      "pct_ai": 2.233,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 139.95,
+          "count": 1,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 139.95,
+          "count": 1
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2022,
+          "amount": 139.95,
+          "count": 1,
+          "total_expenditure": 6268.27,
+          "pct_ai": 2.233,
+          "ici": "Open seat"
         }
       ]
     },
@@ -25207,6 +27089,45 @@
         }
       ]
     },
+    "H0OH11098": {
+      "id": "H0OH11098",
+      "name": "GORE, LAVERNE",
+      "party": "Republican",
+      "office": "House",
+      "state": "OH",
+      "district": "11",
+      "race_id": "House-OH-11",
+      "amount_high": 59.9,
+      "count_high": 2,
+      "total_expenditure": 151710.22,
+      "pct_ai": 0.039,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 59.9,
+          "count": 2,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 59.9,
+          "count": 2
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2020,
+          "amount": 59.9,
+          "count": 2,
+          "total_expenditure": 151710.22,
+          "pct_ai": 0.039,
+          "ici": "Challenger"
+        }
+      ]
+    },
     "H0OR01186": {
       "id": "H0OR01186",
       "name": "BRIONES, HEIDI",
@@ -25344,6 +27265,45 @@
         }
       ]
     },
+    "H0TX22302": {
+      "id": "H0TX22302",
+      "name": "NEHLS, TROY",
+      "party": "Republican",
+      "office": "House",
+      "state": "TX",
+      "district": "22",
+      "race_id": "House-TX-22",
+      "amount_high": 119.8,
+      "count_high": 4,
+      "total_expenditure": 853611.26,
+      "pct_ai": 0.014,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 119.8,
+          "count": 4,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 119.8,
+          "count": 4
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2022,
+          "amount": 119.8,
+          "count": 4,
+          "total_expenditure": 853611.26,
+          "pct_ai": 0.014,
+          "ici": "Incumbent"
+        }
+      ]
+    },
     "H0WA10034": {
       "id": "H0WA10034",
       "name": "STRICKLAND, MARILYN",
@@ -25380,6 +27340,61 @@
           "total_expenditure": 1789334.47,
           "pct_ai": 0.051,
           "ici": "Open seat"
+        }
+      ]
+    },
+    "H2AK01158": {
+      "id": "H2AK01158",
+      "name": "PELTOLA, MARY",
+      "party": "Democratic",
+      "office": "House",
+      "state": "AK",
+      "district": "00",
+      "race_id": "House-AK-00",
+      "amount_high": 3700.53,
+      "count_high": 29,
+      "total_expenditure": 19797310.59,
+      "pct_ai": 0.019,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 3700.53,
+          "count": 29,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 3700.53,
+          "count": 29
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2022,
+          "amount": 1079.94,
+          "count": 5,
+          "total_expenditure": 6880443.43,
+          "pct_ai": 0.016,
+          "ici": "Incumbent"
+        },
+        {
+          "cycle": 2024,
+          "amount": 2495.59,
+          "count": 23,
+          "total_expenditure": 12725140.37,
+          "pct_ai": 0.02,
+          "ici": "Incumbent"
+        },
+        {
+          "cycle": 2026,
+          "amount": 125.0,
+          "count": 1,
+          "total_expenditure": 191726.79,
+          "pct_ai": 0.065,
+          "ici": "Challenger"
         }
       ]
     },
@@ -25478,6 +27493,45 @@
         }
       ]
     },
+    "H2CA09154": {
+      "id": "H2CA09154",
+      "name": "SHOEMAKER, JAMES H",
+      "party": "Republican",
+      "office": "House",
+      "state": "CA",
+      "district": "9",
+      "race_id": "House-CA-9",
+      "amount_high": 194.0,
+      "count_high": 1,
+      "total_expenditure": 17643.34,
+      "pct_ai": 1.1,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 194.0,
+          "count": 1,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 194.0,
+          "count": 1
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2022,
+          "amount": 194.0,
+          "count": 1,
+          "total_expenditure": 17643.34,
+          "pct_ai": 1.1,
+          "ici": "Open seat"
+        }
+      ]
+    },
     "H2CA13115": {
       "id": "H2CA13115",
       "name": "GRAY, ADAM C.",
@@ -25553,6 +27607,45 @@
           "total_expenditure": 786686.59,
           "pct_ai": 1.741,
           "ici": "Open seat"
+        }
+      ]
+    },
+    "H2CA15094": {
+      "id": "H2CA15094",
+      "name": "SWALWELL, ERIC MICHAEL",
+      "party": "Democratic",
+      "office": "House",
+      "state": "CA",
+      "district": "14",
+      "race_id": "House-CA-14",
+      "amount_high": 144.0,
+      "count_high": 1,
+      "total_expenditure": 4047215.25,
+      "pct_ai": 0.004,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 144.0,
+          "count": 1,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 144.0,
+          "count": 1
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2024,
+          "amount": 144.0,
+          "count": 1,
+          "total_expenditure": 4047215.25,
+          "pct_ai": 0.004,
+          "ici": "Incumbent"
         }
       ]
     },
@@ -26547,6 +28640,45 @@
         ]
       }
     },
+    "H2LA02149": {
+      "id": "H2LA02149",
+      "name": "CARTER, TROY A. SR.",
+      "party": "Democratic",
+      "office": "House",
+      "state": "LA",
+      "district": "2",
+      "race_id": "House-LA-2",
+      "amount_high": 279.9,
+      "count_high": 2,
+      "total_expenditure": 1389880.24,
+      "pct_ai": 0.02,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 279.9,
+          "count": 2,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 279.9,
+          "count": 2
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2026,
+          "amount": 279.9,
+          "count": 2,
+          "total_expenditure": 1389880.24,
+          "pct_ai": 0.02,
+          "ici": "Incumbent"
+        }
+      ]
+    },
     "H2MI10150": {
       "id": "H2MI10150",
       "name": "JAMES, JOHN",
@@ -27014,6 +29146,45 @@
           "total_expenditure": 6724.08,
           "pct_ai": 26.769,
           "ici": "Open seat"
+        }
+      ]
+    },
+    "H2NV03153": {
+      "id": "H2NV03153",
+      "name": "ROBERTSON, MARK",
+      "party": "Republican",
+      "office": "House",
+      "state": "NV",
+      "district": "1",
+      "race_id": "House-NV-1",
+      "amount_high": 144.0,
+      "count_high": 1,
+      "total_expenditure": 394796.26,
+      "pct_ai": 0.036,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 144.0,
+          "count": 1,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 144.0,
+          "count": 1
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2024,
+          "amount": 144.0,
+          "count": 1,
+          "total_expenditure": 394796.26,
+          "pct_ai": 0.036,
+          "ici": "Challenger"
         }
       ]
     },
@@ -27563,6 +29734,45 @@
           "total_expenditure": 513782.37,
           "pct_ai": 0.51,
           "ici": "Open seat"
+        }
+      ]
+    },
+    "H2SC07280": {
+      "id": "H2SC07280",
+      "name": "FRY, RUSSELL",
+      "party": "Republican",
+      "office": "House",
+      "state": "SC",
+      "district": "7",
+      "race_id": "House-SC-7",
+      "amount_high": 450.0,
+      "count_high": 15,
+      "total_expenditure": 945647.73,
+      "pct_ai": 0.048,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 450.0,
+          "count": 15,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 450.0,
+          "count": 15
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2024,
+          "amount": 450.0,
+          "count": 15,
+          "total_expenditure": 945647.73,
+          "pct_ai": 0.048,
+          "ici": "Incumbent"
         }
       ]
     },
@@ -29914,6 +32124,45 @@
         }
       ]
     },
+    "H4PA08124": {
+      "id": "H4PA08124",
+      "name": "BRESNAHAN, ROB",
+      "party": "Republican",
+      "office": "House",
+      "state": "PA",
+      "district": "8",
+      "race_id": "House-PA-8",
+      "amount_high": 400.0,
+      "count_high": 4,
+      "total_expenditure": 3663612.55,
+      "pct_ai": 0.011,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 400.0,
+          "count": 4,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 400.0,
+          "count": 4
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2024,
+          "amount": 400.0,
+          "count": 4,
+          "total_expenditure": 3663612.55,
+          "pct_ai": 0.011,
+          "ici": "Challenger"
+        }
+      ]
+    },
     "H4PA10104": {
       "id": "H4PA10104",
       "name": "STELSON, JANELLE",
@@ -30118,6 +32367,50 @@
           "count": 9,
           "total_expenditure": 245750.56,
           "pct_ai": 5.589,
+          "ici": "Challenger"
+        }
+      ]
+    },
+    "H4TN03199": {
+      "id": "H4TN03199",
+      "name": "ALLEN, JACK BURKS MR JR",
+      "party": "Democratic",
+      "office": "House",
+      "state": "TN",
+      "district": "3",
+      "race_id": "House-TN-3",
+      "amount_high": 196.78,
+      "count_high": 4,
+      "total_expenditure": 187328.89,
+      "pct_ai": 0.105,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 196.78,
+          "count": 4,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "advertising_creative",
+          "amount": 164.0,
+          "count": 3
+        },
+        {
+          "id": "unspecified",
+          "amount": 32.78,
+          "count": 1
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2024,
+          "amount": 196.78,
+          "count": 4,
+          "total_expenditure": 187328.89,
+          "pct_ai": 0.105,
           "ici": "Challenger"
         }
       ]
@@ -30353,6 +32646,45 @@
           "total_expenditure": 2547277.8,
           "pct_ai": 0.265,
           "ici": "Open seat"
+        }
+      ]
+    },
+    "H4WA05077": {
+      "id": "H4WA05077",
+      "name": "MCMORRIS RODGERS, CATHY",
+      "party": "Republican",
+      "office": "House",
+      "state": "WA",
+      "district": "5",
+      "race_id": "House-WA-5",
+      "amount_high": 279.9,
+      "count_high": 2,
+      "total_expenditure": 3393038.67,
+      "pct_ai": 0.008,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 279.9,
+          "count": 2,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "unspecified",
+          "amount": 279.9,
+          "count": 2
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2020,
+          "amount": 279.9,
+          "count": 2,
+          "total_expenditure": 3393038.67,
+          "pct_ai": 0.008,
+          "ici": "Incumbent"
         }
       ]
     },
@@ -31570,6 +33902,58 @@
         }
       ]
     },
+    "H6FL18121": {
+      "id": "H6FL18121",
+      "name": "SPALDING, CARLA ARLENE",
+      "party": "Independent",
+      "office": "House",
+      "state": "FL",
+      "district": "18",
+      "race_id": "House-FL-18",
+      "amount_high": 180.0,
+      "count_high": 3,
+      "total_expenditure": 2695868.0,
+      "pct_ai": 0.007,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 180.0,
+          "count": 3,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 120.0,
+          "count": 2
+        },
+        {
+          "id": "advertising_creative",
+          "amount": 60.0,
+          "count": 1
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2022,
+          "amount": 60.0,
+          "count": 1,
+          "total_expenditure": 1979342.07,
+          "pct_ai": 0.003,
+          "ici": "Challenger"
+        },
+        {
+          "cycle": 2024,
+          "amount": 120.0,
+          "count": 2,
+          "total_expenditure": 716525.93,
+          "pct_ai": 0.017,
+          "ici": "Challenger"
+        }
+      ]
+    },
     "H6FL19178": {
       "id": "H6FL19178",
       "name": "CAWTHORN, MADISON",
@@ -31695,11 +34079,18 @@
       "state": "FL",
       "district": "22",
       "race_id": "House-FL-22",
-      "amount_high": 220.0,
-      "count_high": 1,
+      "amount_high": 703.0,
+      "count_high": 8,
       "total_expenditure": 5969948.78,
-      "pct_ai": 0.004,
+      "pct_ai": 0.012,
       "by_vendor": [
+        {
+          "vendor_id": "luma_labs",
+          "vendor_name": "Luma Labs (Luma AI)",
+          "amount": 483.0,
+          "count": 7,
+          "era": "generative"
+        },
         {
           "vendor_id": "elevenlabs",
           "vendor_name": "ElevenLabs",
@@ -31711,17 +34102,17 @@
       "by_category": [
         {
           "id": "administrative_productivity",
-          "amount": 220.0,
-          "count": 1
+          "amount": 703.0,
+          "count": 8
         }
       ],
       "by_cycle": [
         {
           "cycle": 2026,
-          "amount": 220.0,
-          "count": 1,
+          "amount": 703.0,
+          "count": 8,
           "total_expenditure": 5969948.78,
-          "pct_ai": 0.004,
+          "pct_ai": 0.012,
           "ici": "Challenger"
         }
       ]
@@ -33275,6 +35666,45 @@
         }
       ]
     },
+    "H6OH16136": {
+      "id": "H6OH16136",
+      "name": "MUNDY, KEITH FRANCIS",
+      "party": "Democratic",
+      "office": "House",
+      "state": "OH",
+      "district": "5",
+      "race_id": "House-OH-5",
+      "amount_high": 72.0,
+      "count_high": 1,
+      "total_expenditure": 14708.76,
+      "pct_ai": 0.49,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 72.0,
+          "count": 1,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 72.0,
+          "count": 1
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2024,
+          "amount": 72.0,
+          "count": 1,
+          "total_expenditure": 14708.76,
+          "pct_ai": 0.49,
+          "ici": "Challenger"
+        }
+      ]
+    },
     "H6OK01227": {
       "id": "H6OK01227",
       "name": "WATKINS, ERICA",
@@ -33446,6 +35876,45 @@
           "total_expenditure": 153573.01,
           "pct_ai": 0.179,
           "ici": "Challenger"
+        }
+      ]
+    },
+    "H6PA16320": {
+      "id": "H6PA16320",
+      "name": "SMUCKER, LLOYD K.",
+      "party": "Republican",
+      "office": "House",
+      "state": "PA",
+      "district": "11",
+      "race_id": "House-PA-11",
+      "amount_high": 139.95,
+      "count_high": 1,
+      "total_expenditure": 822628.4,
+      "pct_ai": 0.017,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 139.95,
+          "count": 1,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 139.95,
+          "count": 1
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2022,
+          "amount": 139.95,
+          "count": 1,
+          "total_expenditure": 822628.4,
+          "pct_ai": 0.017,
+          "ici": "Incumbent"
         }
       ]
     },
@@ -34191,6 +36660,45 @@
         }
       ]
     },
+    "H8AZ01104": {
+      "id": "H8AZ01104",
+      "name": "KIRKPATRICK, ANN",
+      "party": "Democratic",
+      "office": "House",
+      "state": "AZ",
+      "district": "2",
+      "race_id": "House-AZ-2",
+      "amount_high": 540.0,
+      "count_high": 1,
+      "total_expenditure": 948649.43,
+      "pct_ai": 0.057,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 540.0,
+          "count": 1,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 540.0,
+          "count": 1
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2022,
+          "amount": 540.0,
+          "count": 1,
+          "total_expenditure": 948649.43,
+          "pct_ai": 0.057,
+          "ici": "Incumbent"
+        }
+      ]
+    },
     "H8CA10167": {
       "id": "H8CA10167",
       "name": "COX, TERRENCE JOHN (TJ)",
@@ -34308,6 +36816,45 @@
         }
       ]
     },
+    "H8CT04172": {
+      "id": "H8CT04172",
+      "name": "HIMES, JIM",
+      "party": "Democratic",
+      "office": "House",
+      "state": "CT",
+      "district": "4",
+      "race_id": "House-CT-4",
+      "amount_high": 139.95,
+      "count_high": 1,
+      "total_expenditure": 1107935.08,
+      "pct_ai": 0.013,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 139.95,
+          "count": 1,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 139.95,
+          "count": 1
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2022,
+          "amount": 139.95,
+          "count": 1,
+          "total_expenditure": 1107935.08,
+          "pct_ai": 0.013,
+          "ici": "Incumbent"
+        }
+      ]
+    },
     "H8GA06393": {
       "id": "H8GA06393",
       "name": "MCBATH, LUCIA KAY MS.",
@@ -34365,6 +36912,45 @@
           "total_expenditure": 1042786.62,
           "pct_ai": 2.158,
           "ici": "Incumbent"
+        }
+      ]
+    },
+    "H8KS02173": {
+      "id": "H8KS02173",
+      "name": "DAVIS, PAUL T.",
+      "party": "Democratic",
+      "office": "House",
+      "state": "KS",
+      "district": "2",
+      "race_id": "House-KS-2",
+      "amount_high": 360.0,
+      "count_high": 1,
+      "total_expenditure": 30659.9,
+      "pct_ai": 1.174,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 360.0,
+          "count": 1,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 360.0,
+          "count": 1
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2020,
+          "amount": 360.0,
+          "count": 1,
+          "total_expenditure": 30659.9,
+          "pct_ai": 1.174,
+          "ici": "Open seat"
         }
       ]
     },
@@ -34771,11 +37357,18 @@
       "state": "NY",
       "district": "25",
       "race_id": "House-NY-25",
-      "amount_high": 240.0,
-      "count_high": 2,
+      "amount_high": 780.0,
+      "count_high": 3,
       "total_expenditure": 1753358.48,
-      "pct_ai": 0.014,
+      "pct_ai": 0.044,
       "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 540.0,
+          "count": 1,
+          "era": "legacy"
+        },
         {
           "vendor_id": "otter_ai",
           "vendor_name": "Otter.ai",
@@ -34787,17 +37380,17 @@
       "by_category": [
         {
           "id": "administrative_productivity",
-          "amount": 240.0,
-          "count": 2
+          "amount": 780.0,
+          "count": 3
         }
       ],
       "by_cycle": [
         {
           "cycle": 2024,
-          "amount": 240.0,
-          "count": 2,
+          "amount": 780.0,
+          "count": 3,
           "total_expenditure": 1753358.48,
-          "pct_ai": 0.014,
+          "pct_ai": 0.044,
           "ici": "Incumbent"
         }
       ]
@@ -34865,6 +37458,45 @@
           "total_expenditure": 11204.49,
           "pct_ai": 2.852,
           "ici": "Challenger"
+        }
+      ]
+    },
+    "H8TN07076": {
+      "id": "H8TN07076",
+      "name": "GREEN, MARK DR.",
+      "party": "Republican",
+      "office": "House",
+      "state": "TN",
+      "district": "7",
+      "race_id": "House-TN-7",
+      "amount_high": 316.08,
+      "count_high": 2,
+      "total_expenditure": 238727.93,
+      "pct_ai": 0.132,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 316.08,
+          "count": 2,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "unspecified",
+          "amount": 316.08,
+          "count": 2
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2026,
+          "amount": 316.08,
+          "count": 2,
+          "total_expenditure": 238727.93,
+          "pct_ai": 0.132,
+          "ici": "Incumbent"
         }
       ]
     },
@@ -35376,8 +38008,8 @@
       "state": "US",
       "district": "00",
       "race_id": "President-US-00",
-      "amount_high": 20060.0,
-      "count_high": 7,
+      "amount_high": 20204.0,
+      "count_high": 8,
       "total_expenditure": 0.0,
       "pct_ai": null,
       "by_vendor": [
@@ -35386,6 +38018,13 @@
           "vendor_name": "Prompt.io",
           "amount": 20000.0,
           "count": 4,
+          "era": "legacy"
+        },
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 144.0,
+          "count": 1,
           "era": "legacy"
         },
         {
@@ -35399,8 +38038,8 @@
       "by_category": [
         {
           "id": "unspecified",
-          "amount": 15000.0,
-          "count": 3
+          "amount": 15144.0,
+          "count": 4
         },
         {
           "id": "administrative_productivity",
@@ -35411,8 +38050,8 @@
       "by_cycle": [
         {
           "cycle": 2024,
-          "amount": 20060.0,
-          "count": 7,
+          "amount": 20204.0,
+          "count": 8,
           "total_expenditure": 0.0,
           "pct_ai": null,
           "ici": "Challenger"
@@ -35614,11 +38253,18 @@
       "state": "US",
       "district": "00",
       "race_id": "President-US-00",
-      "amount_high": 60.0,
-      "count_high": 3,
+      "amount_high": 204.0,
+      "count_high": 4,
       "total_expenditure": 0.0,
       "pct_ai": null,
       "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 144.0,
+          "count": 1,
+          "era": "legacy"
+        },
         {
           "vendor_id": "openai",
           "vendor_name": "OpenAI (ChatGPT)",
@@ -35629,6 +38275,11 @@
       ],
       "by_category": [
         {
+          "id": "unspecified",
+          "amount": 144.0,
+          "count": 1
+        },
+        {
           "id": "administrative_productivity",
           "amount": 60.0,
           "count": 3
@@ -35637,8 +38288,8 @@
       "by_cycle": [
         {
           "cycle": 2024,
-          "amount": 60.0,
-          "count": 3,
+          "amount": 204.0,
+          "count": 4,
           "total_expenditure": 0.0,
           "pct_ai": null,
           "ici": "Challenger"
@@ -35824,8 +38475,8 @@
       "state": "US",
       "district": "00",
       "race_id": "President-US-00",
-      "amount_high": 395.4,
-      "count_high": 13,
+      "amount_high": 701.4,
+      "count_high": 15,
       "total_expenditure": 0.0,
       "pct_ai": null,
       "by_vendor": [
@@ -35835,13 +38486,20 @@
           "amount": 395.4,
           "count": 13,
           "era": "legacy"
+        },
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 306.0,
+          "count": 2,
+          "era": "legacy"
         }
       ],
       "by_category": [
         {
           "id": "unspecified",
-          "amount": 240.0,
-          "count": 8
+          "amount": 546.0,
+          "count": 10
         },
         {
           "id": "administrative_productivity",
@@ -35852,8 +38510,8 @@
       "by_cycle": [
         {
           "cycle": 2024,
-          "amount": 300.0,
-          "count": 10,
+          "amount": 606.0,
+          "count": 12,
           "total_expenditure": 0.0,
           "pct_ai": null,
           "ici": "Challenger"
@@ -36010,6 +38668,69 @@
           "total_expenditure": 101773.23,
           "pct_ai": 3.685,
           "ici": "Challenger"
+        }
+      ]
+    },
+    "S0KY00156": {
+      "id": "S0KY00156",
+      "name": "PAUL, RAND",
+      "party": "Republican",
+      "office": "Senate",
+      "state": "KY",
+      "district": "00",
+      "race_id": "Senate-KY-00",
+      "amount_high": 979.65,
+      "count_high": 7,
+      "total_expenditure": 32801706.82,
+      "pct_ai": 0.003,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 979.6499999999999,
+          "count": 7,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 979.65,
+          "count": 7
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2020,
+          "amount": 279.9,
+          "count": 2,
+          "total_expenditure": 1231309.74,
+          "pct_ai": 0.023,
+          "ici": "Incumbent"
+        },
+        {
+          "cycle": 2022,
+          "amount": 279.9,
+          "count": 2,
+          "total_expenditure": 20664808.44,
+          "pct_ai": 0.001,
+          "ici": "Incumbent"
+        },
+        {
+          "cycle": 2024,
+          "amount": 139.95,
+          "count": 1,
+          "total_expenditure": 7075623.81,
+          "pct_ai": 0.002,
+          "ici": "Incumbent"
+        },
+        {
+          "cycle": 2026,
+          "amount": 279.9,
+          "count": 2,
+          "total_expenditure": 3829964.83,
+          "pct_ai": 0.007,
+          "ici": "Incumbent"
         }
       ]
     },
@@ -37347,8 +40068,8 @@
       "state": "AK",
       "district": "00",
       "race_id": "Senate-AK-00",
-      "amount_high": 2300.12,
-      "count_high": 13,
+      "amount_high": 2452.76,
+      "count_high": 14,
       "total_expenditure": 512532054.24,
       "pct_ai": 0.0,
       "by_vendor": [
@@ -37365,13 +40086,20 @@
           "amount": 599.96,
           "count": 8,
           "era": "generative"
+        },
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 152.64,
+          "count": 1,
+          "era": "legacy"
         }
       ],
       "by_category": [
         {
           "id": "administrative_productivity",
-          "amount": 1628.12,
-          "count": 11
+          "amount": 1780.76,
+          "count": 12
         },
         {
           "id": "unspecified",
@@ -37398,8 +40126,8 @@
         },
         {
           "cycle": 2026,
-          "amount": 1292.12,
-          "count": 10,
+          "amount": 1444.76,
+          "count": 11,
           "total_expenditure": 70435887.78,
           "pct_ai": 0.002,
           "ici": "Incumbent"
@@ -37414,10 +40142,10 @@
       "state": "AR",
       "district": "00",
       "race_id": "Senate-AR-00",
-      "amount_high": 4745.98,
-      "count_high": 5,
-      "total_expenditure": 6210364.31,
-      "pct_ai": 0.076,
+      "amount_high": 5025.88,
+      "count_high": 7,
+      "total_expenditure": 9647166.83,
+      "pct_ai": 0.052,
       "by_vendor": [
         {
           "vendor_id": "anthropic",
@@ -37425,6 +40153,13 @@
           "amount": 4520.0,
           "count": 3,
           "era": "generative"
+        },
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 279.9,
+          "count": 2,
+          "era": "legacy"
         },
         {
           "vendor_id": "otter_ai",
@@ -37437,11 +40172,19 @@
       "by_category": [
         {
           "id": "administrative_productivity",
-          "amount": 4745.98,
-          "count": 5
+          "amount": 5025.88,
+          "count": 7
         }
       ],
       "by_cycle": [
+        {
+          "cycle": 2022,
+          "amount": 279.9,
+          "count": 2,
+          "total_expenditure": 3436802.52,
+          "pct_ai": 0.008,
+          "ici": "Incumbent"
+        },
         {
           "cycle": 2024,
           "amount": 119.99,
@@ -37945,10 +40688,10 @@
       "state": "MD",
       "district": "00",
       "race_id": "Senate-MD-00",
-      "amount_high": 1632.03,
-      "count_high": 18,
+      "amount_high": 3011.27,
+      "count_high": 27,
       "total_expenditure": 63607526.5,
-      "pct_ai": 0.003,
+      "pct_ai": 0.005,
       "by_vendor": [
         {
           "vendor_id": "otter_ai",
@@ -37956,22 +40699,29 @@
           "amount": 1632.03,
           "count": 18,
           "era": "legacy"
+        },
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 1379.24,
+          "count": 9,
+          "era": "legacy"
         }
       ],
       "by_category": [
         {
           "id": "unspecified",
-          "amount": 1632.03,
-          "count": 18
+          "amount": 3011.27,
+          "count": 27
         }
       ],
       "by_cycle": [
         {
           "cycle": 2024,
-          "amount": 1632.03,
-          "count": 18,
+          "amount": 3011.27,
+          "count": 27,
           "total_expenditure": 63607526.5,
-          "pct_ai": 0.003,
+          "pct_ai": 0.005,
           "ici": "Open seat"
         }
       ]
@@ -38255,6 +41005,84 @@
           "count": 1,
           "total_expenditure": 6727661.99,
           "pct_ai": 0.002,
+          "ici": "Incumbent"
+        }
+      ]
+    },
+    "S4NJ00540": {
+      "id": "S4NJ00540",
+      "name": "BASHAW, CURTIS",
+      "party": "Republican",
+      "office": "Senate",
+      "state": "NJ",
+      "district": "00",
+      "race_id": "Senate-NJ-00",
+      "amount_high": 144.0,
+      "count_high": 1,
+      "total_expenditure": 3960572.06,
+      "pct_ai": 0.004,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 144.0,
+          "count": 1,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 144.0,
+          "count": 1
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2024,
+          "amount": 144.0,
+          "count": 1,
+          "total_expenditure": 3960572.06,
+          "pct_ai": 0.004,
+          "ici": "Open seat"
+        }
+      ]
+    },
+    "S4SC00240": {
+      "id": "S4SC00240",
+      "name": "SCOTT, TIMOTHY E.",
+      "party": "Republican",
+      "office": "Senate",
+      "state": "SC",
+      "district": "00",
+      "race_id": "Senate-SC-00",
+      "amount_high": 1733.67,
+      "count_high": 3,
+      "total_expenditure": 33484333.42,
+      "pct_ai": 0.005,
+      "by_vendor": [
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 1733.67,
+          "count": 3,
+          "era": "legacy"
+        }
+      ],
+      "by_category": [
+        {
+          "id": "administrative_productivity",
+          "amount": 1733.67,
+          "count": 3
+        }
+      ],
+      "by_cycle": [
+        {
+          "cycle": 2024,
+          "amount": 1733.67,
+          "count": 3,
+          "total_expenditure": 33484333.42,
+          "pct_ai": 0.005,
           "ici": "Incumbent"
         }
       ]
@@ -39467,8 +42295,8 @@
       "state": "OH",
       "district": "00",
       "race_id": "Senate-OH-00",
-      "amount_high": 2133.0,
-      "count_high": 7,
+      "amount_high": 2285.64,
+      "count_high": 8,
       "total_expenditure": 119541181.69,
       "pct_ai": 0.002,
       "by_vendor": [
@@ -39478,20 +42306,27 @@
           "amount": 2133.0,
           "count": 7,
           "era": "legacy"
+        },
+        {
+          "vendor_id": "grammarly",
+          "vendor_name": "Grammarly",
+          "amount": 152.64,
+          "count": 1,
+          "era": "legacy"
         }
       ],
       "by_category": [
         {
           "id": "administrative_productivity",
-          "amount": 2133.0,
-          "count": 7
+          "amount": 2285.64,
+          "count": 8
         }
       ],
       "by_cycle": [
         {
           "cycle": 2024,
-          "amount": 1873.93,
-          "count": 6,
+          "amount": 2026.57,
+          "count": 7,
           "total_expenditure": 97460584.55,
           "pct_ai": 0.002,
           "ici": "Incumbent"
@@ -40018,6 +42853,17 @@
           "cycles": [
             2020
           ]
+        },
+        {
+          "cand_id": "H6FL18121",
+          "name": "SPALDING, CARLA ARLENE",
+          "party": "Independent",
+          "amount_high": 180.0,
+          "pct_ai": 0.007,
+          "cycles": [
+            2022,
+            2024
+          ]
         }
       ]
     },
@@ -40106,6 +42952,25 @@
         }
       ]
     },
+    "House-IA-1": {
+      "id": "House-IA-1",
+      "office": "House",
+      "state": "IA",
+      "district": "1",
+      "candidates": [
+        {
+          "cand_id": "H0IA01174",
+          "name": "ARENHOLZ, ASHLEY HINSON",
+          "party": "Republican",
+          "amount_high": 269.55,
+          "pct_ai": 0.002,
+          "cycles": [
+            2020,
+            2022
+          ]
+        }
+      ]
+    },
     "House-IL-5": {
       "id": "House-IL-5",
       "office": "House",
@@ -40137,6 +43002,24 @@
           "party": "Republican",
           "amount_high": 504.89,
           "pct_ai": 0.041,
+          "cycles": [
+            2022
+          ]
+        }
+      ]
+    },
+    "House-IN-5": {
+      "id": "House-IN-5",
+      "office": "House",
+      "state": "IN",
+      "district": "5",
+      "candidates": [
+        {
+          "cand_id": "H0IN05201",
+          "name": "BECKWITH, MICAH",
+          "party": "Republican",
+          "amount_high": 139.95,
+          "pct_ai": 2.233,
           "cycles": [
             2022
           ]
@@ -40279,6 +43162,34 @@
         }
       ]
     },
+    "House-OH-11": {
+      "id": "House-OH-11",
+      "office": "House",
+      "state": "OH",
+      "district": "11",
+      "candidates": [
+        {
+          "cand_id": "H2OH11151",
+          "name": "TURNER, NINA",
+          "party": "Democratic",
+          "amount_high": 42693.13,
+          "pct_ai": 0.576,
+          "cycles": [
+            2022
+          ]
+        },
+        {
+          "cand_id": "H0OH11098",
+          "name": "GORE, LAVERNE",
+          "party": "Republican",
+          "amount_high": 59.9,
+          "pct_ai": 0.039,
+          "cycles": [
+            2020
+          ]
+        }
+      ]
+    },
     "House-OR-1": {
       "id": "House-OR-1",
       "office": "House",
@@ -40344,6 +43255,24 @@
         }
       ]
     },
+    "House-TX-22": {
+      "id": "House-TX-22",
+      "office": "House",
+      "state": "TX",
+      "district": "22",
+      "candidates": [
+        {
+          "cand_id": "H0TX22302",
+          "name": "NEHLS, TROY",
+          "party": "Republican",
+          "amount_high": 119.8,
+          "pct_ai": 0.014,
+          "cycles": [
+            2022
+          ]
+        }
+      ]
+    },
     "House-WA-10": {
       "id": "House-WA-10",
       "office": "House",
@@ -40358,6 +43287,36 @@
           "pct_ai": 0.051,
           "cycles": [
             2020
+          ]
+        }
+      ]
+    },
+    "House-AK-00": {
+      "id": "House-AK-00",
+      "office": "House",
+      "state": "AK",
+      "district": "00",
+      "candidates": [
+        {
+          "cand_id": "H2AK01158",
+          "name": "PELTOLA, MARY",
+          "party": "Democratic",
+          "amount_high": 3700.53,
+          "pct_ai": 0.019,
+          "cycles": [
+            2022,
+            2024,
+            2026
+          ]
+        },
+        {
+          "cand_id": "H6AK01084",
+          "name": "SCHULTZ, MATTHEW DAMIAN",
+          "party": "Democratic",
+          "amount_high": 300.0,
+          "pct_ai": 0.076,
+          "cycles": [
+            2026
           ]
         }
       ]
@@ -40408,6 +43367,24 @@
         }
       ]
     },
+    "House-CA-9": {
+      "id": "House-CA-9",
+      "office": "House",
+      "state": "CA",
+      "district": "9",
+      "candidates": [
+        {
+          "cand_id": "H2CA09154",
+          "name": "SHOEMAKER, JAMES H",
+          "party": "Republican",
+          "amount_high": 194.0,
+          "pct_ai": 1.1,
+          "cycles": [
+            2022
+          ]
+        }
+      ]
+    },
     "House-CA-13": {
       "id": "House-CA-13",
       "office": "House",
@@ -40440,6 +43417,35 @@
           "pct_ai": 1.741,
           "cycles": [
             2022
+          ]
+        }
+      ]
+    },
+    "House-CA-14": {
+      "id": "House-CA-14",
+      "office": "House",
+      "state": "CA",
+      "district": "14",
+      "candidates": [
+        {
+          "cand_id": "H4CA14093",
+          "name": "KRUTTIVENTI, VIN",
+          "party": "Republican",
+          "amount_high": 20160.0,
+          "pct_ai": 0.605,
+          "cycles": [
+            2024,
+            2026
+          ]
+        },
+        {
+          "cand_id": "H2CA15094",
+          "name": "SWALWELL, ERIC MICHAEL",
+          "party": "Democratic",
+          "amount_high": 144.0,
+          "pct_ai": 0.004,
+          "cycles": [
+            2024
           ]
         }
       ]
@@ -40842,6 +43848,16 @@
           "cycles": [
             2022
           ]
+        },
+        {
+          "cand_id": "H8KS02173",
+          "name": "DAVIS, PAUL T.",
+          "party": "Democratic",
+          "amount_high": 360.0,
+          "pct_ai": 1.174,
+          "cycles": [
+            2020
+          ]
         }
       ]
     },
@@ -40857,6 +43873,24 @@
           "party": "Republican",
           "amount_high": 90.0,
           "pct_ai": 0.001,
+          "cycles": [
+            2026
+          ]
+        }
+      ]
+    },
+    "House-LA-2": {
+      "id": "House-LA-2",
+      "office": "House",
+      "state": "LA",
+      "district": "2",
+      "candidates": [
+        {
+          "cand_id": "H2LA02149",
+          "name": "CARTER, TROY A. SR.",
+          "party": "Democratic",
+          "amount_high": 279.9,
+          "pct_ai": 0.02,
           "cycles": [
             2026
           ]
@@ -41097,6 +44131,24 @@
         }
       ]
     },
+    "House-NV-1": {
+      "id": "House-NV-1",
+      "office": "House",
+      "state": "NV",
+      "district": "1",
+      "candidates": [
+        {
+          "cand_id": "H2NV03153",
+          "name": "ROBERTSON, MARK",
+          "party": "Republican",
+          "amount_high": 144.0,
+          "pct_ai": 0.036,
+          "cycles": [
+            2024
+          ]
+        }
+      ]
+    },
     "House-NV-4": {
       "id": "House-NV-4",
       "office": "House",
@@ -41200,24 +44252,6 @@
         }
       ]
     },
-    "House-OH-11": {
-      "id": "House-OH-11",
-      "office": "House",
-      "state": "OH",
-      "district": "11",
-      "candidates": [
-        {
-          "cand_id": "H2OH11151",
-          "name": "TURNER, NINA",
-          "party": "Democratic",
-          "amount_high": 42693.13,
-          "pct_ai": 0.576,
-          "cycles": [
-            2022
-          ]
-        }
-      ]
-    },
     "House-OH-13": {
       "id": "House-OH-13",
       "office": "House",
@@ -41314,6 +44348,24 @@
           "pct_ai": 0.51,
           "cycles": [
             2022
+          ]
+        }
+      ]
+    },
+    "House-SC-7": {
+      "id": "House-SC-7",
+      "office": "House",
+      "state": "SC",
+      "district": "7",
+      "candidates": [
+        {
+          "cand_id": "H2SC07280",
+          "name": "FRY, RUSSELL",
+          "party": "Republican",
+          "amount_high": 450.0,
+          "pct_ai": 0.048,
+          "cycles": [
+            2024
           ]
         }
       ]
@@ -41660,25 +44712,6 @@
           "amount_high": 483.85,
           "pct_ai": 0.103,
           "cycles": [
-            2026
-          ]
-        }
-      ]
-    },
-    "House-CA-14": {
-      "id": "House-CA-14",
-      "office": "House",
-      "state": "CA",
-      "district": "14",
-      "candidates": [
-        {
-          "cand_id": "H4CA14093",
-          "name": "KRUTTIVENTI, VIN",
-          "party": "Republican",
-          "amount_high": 20160.0,
-          "pct_ai": 0.605,
-          "cycles": [
-            2024,
             2026
           ]
         }
@@ -42278,6 +45311,24 @@
         }
       ]
     },
+    "House-PA-8": {
+      "id": "House-PA-8",
+      "office": "House",
+      "state": "PA",
+      "district": "8",
+      "candidates": [
+        {
+          "cand_id": "H4PA08124",
+          "name": "BRESNAHAN, ROB",
+          "party": "Republican",
+          "amount_high": 400.0,
+          "pct_ai": 0.011,
+          "cycles": [
+            2024
+          ]
+        }
+      ]
+    },
     "House-PA-10": {
       "id": "House-PA-10",
       "office": "House",
@@ -42355,6 +45406,24 @@
           "party": "Democratic",
           "amount_high": 13734.05,
           "pct_ai": 5.589,
+          "cycles": [
+            2024
+          ]
+        }
+      ]
+    },
+    "House-TN-3": {
+      "id": "House-TN-3",
+      "office": "House",
+      "state": "TN",
+      "district": "3",
+      "candidates": [
+        {
+          "cand_id": "H4TN03199",
+          "name": "ALLEN, JACK BURKS MR JR",
+          "party": "Democratic",
+          "amount_high": 196.78,
+          "pct_ai": 0.105,
           "cycles": [
             2024
           ]
@@ -42476,6 +45545,16 @@
           "cycles": [
             2024
           ]
+        },
+        {
+          "cand_id": "H4WA05077",
+          "name": "MCMORRIS RODGERS, CATHY",
+          "party": "Republican",
+          "amount_high": 279.9,
+          "pct_ai": 0.008,
+          "cycles": [
+            2020
+          ]
         }
       ]
     },
@@ -42510,24 +45589,6 @@
           "party": "Democratic",
           "amount_high": 21.2,
           "pct_ai": 0.117,
-          "cycles": [
-            2026
-          ]
-        }
-      ]
-    },
-    "House-AK-00": {
-      "id": "House-AK-00",
-      "office": "House",
-      "state": "AK",
-      "district": "00",
-      "candidates": [
-        {
-          "cand_id": "H6AK01084",
-          "name": "SCHULTZ, MATTHEW DAMIAN",
-          "party": "Democratic",
-          "amount_high": 300.0,
-          "pct_ai": 0.076,
           "cycles": [
             2026
           ]
@@ -42827,8 +45888,8 @@
           "cand_id": "H6FL25035",
           "name": "CARBONARA, MICHAEL",
           "party": "Republican",
-          "amount_high": 220.0,
-          "pct_ai": 0.004,
+          "amount_high": 703.0,
+          "pct_ai": 0.012,
           "cycles": [
             2026
           ]
@@ -43307,6 +46368,24 @@
         }
       ]
     },
+    "House-OH-5": {
+      "id": "House-OH-5",
+      "office": "House",
+      "state": "OH",
+      "district": "5",
+      "candidates": [
+        {
+          "cand_id": "H6OH16136",
+          "name": "MUNDY, KEITH FRANCIS",
+          "party": "Democratic",
+          "amount_high": 72.0,
+          "pct_ai": 0.49,
+          "cycles": [
+            2024
+          ]
+        }
+      ]
+    },
     "House-OK-1": {
       "id": "House-OK-1",
       "office": "House",
@@ -43340,6 +46419,24 @@
           "cycles": [
             2024,
             2026
+          ]
+        }
+      ]
+    },
+    "House-PA-11": {
+      "id": "House-PA-11",
+      "office": "House",
+      "state": "PA",
+      "district": "11",
+      "candidates": [
+        {
+          "cand_id": "H6PA16320",
+          "name": "SMUCKER, LLOYD K.",
+          "party": "Republican",
+          "amount_high": 139.95,
+          "pct_ai": 0.017,
+          "cycles": [
+            2022
           ]
         }
       ]
@@ -43630,6 +46727,42 @@
         }
       ]
     },
+    "House-AZ-2": {
+      "id": "House-AZ-2",
+      "office": "House",
+      "state": "AZ",
+      "district": "2",
+      "candidates": [
+        {
+          "cand_id": "H8AZ01104",
+          "name": "KIRKPATRICK, ANN",
+          "party": "Democratic",
+          "amount_high": 540.0,
+          "pct_ai": 0.057,
+          "cycles": [
+            2022
+          ]
+        }
+      ]
+    },
+    "House-CT-4": {
+      "id": "House-CT-4",
+      "office": "House",
+      "state": "CT",
+      "district": "4",
+      "candidates": [
+        {
+          "cand_id": "H8CT04172",
+          "name": "HIMES, JIM",
+          "party": "Democratic",
+          "amount_high": 139.95,
+          "pct_ai": 0.013,
+          "cycles": [
+            2022
+          ]
+        }
+      ]
+    },
     "House-GA-7": {
       "id": "House-GA-7",
       "office": "House",
@@ -43770,8 +46903,8 @@
           "cand_id": "H8NY25105",
           "name": "MORELLE, JOSEPH D",
           "party": "Democratic",
-          "amount_high": 240.0,
-          "pct_ai": 0.014,
+          "amount_high": 780.0,
+          "pct_ai": 0.044,
           "cycles": [
             2024
           ]
@@ -43792,6 +46925,24 @@
           "pct_ai": 4.056,
           "cycles": [
             2020,
+            2026
+          ]
+        }
+      ]
+    },
+    "House-TN-7": {
+      "id": "House-TN-7",
+      "office": "House",
+      "state": "TN",
+      "district": "7",
+      "candidates": [
+        {
+          "cand_id": "H8TN07076",
+          "name": "GREEN, MARK DR.",
+          "party": "Republican",
+          "amount_high": 316.08,
+          "pct_ai": 0.132,
+          "cycles": [
             2026
           ]
         }
@@ -43884,7 +47035,7 @@
           "cand_id": "P40005936",
           "name": "MAPSTEAD, LARS DAMIAN 8319014600",
           "party": "Libertarian",
-          "amount_high": 20060.0,
+          "amount_high": 20204.0,
           "pct_ai": null,
           "cycles": [
             2024
@@ -43951,6 +47102,17 @@
           ]
         },
         {
+          "cand_id": "P80001571",
+          "name": "TRUMP, DONALD J.",
+          "party": "Republican",
+          "amount_high": 701.4,
+          "pct_ai": null,
+          "cycles": [
+            2024,
+            2026
+          ]
+        },
+        {
           "cand_id": "P00009621",
           "name": "WARREN, ELIZABETH",
           "party": "Democratic",
@@ -43961,14 +47123,13 @@
           ]
         },
         {
-          "cand_id": "P80001571",
-          "name": "TRUMP, DONALD J.",
-          "party": "Republican",
-          "amount_high": 395.4,
+          "cand_id": "P40015042",
+          "name": "BALLAY, CHARLES DR.",
+          "party": "Libertarian",
+          "amount_high": 204.0,
           "pct_ai": null,
           "cycles": [
-            2024,
-            2026
+            2024
           ]
         },
         {
@@ -43986,16 +47147,6 @@
           "name": "WILLIAMSON, MARIANNE",
           "party": "Democratic",
           "amount_high": 105.0,
-          "pct_ai": null,
-          "cycles": [
-            2024
-          ]
-        },
-        {
-          "cand_id": "P40015042",
-          "name": "BALLAY, CHARLES DR.",
-          "party": "Libertarian",
-          "amount_high": 60.0,
           "pct_ai": null,
           "cycles": [
             2024
@@ -44117,6 +47268,19 @@
           "pct_ai": 8.259,
           "cycles": [
             2022
+          ]
+        },
+        {
+          "cand_id": "S0KY00156",
+          "name": "PAUL, RAND",
+          "party": "Republican",
+          "amount_high": 979.65,
+          "pct_ai": 0.003,
+          "cycles": [
+            2020,
+            2022,
+            2024,
+            2026
           ]
         }
       ]
@@ -44241,6 +47405,16 @@
           "pct_ai": 0.063,
           "cycles": [
             2026
+          ]
+        },
+        {
+          "cand_id": "S4SC00240",
+          "name": "SCOTT, TIMOTHY E.",
+          "party": "Republican",
+          "amount_high": 1733.67,
+          "pct_ai": 0.005,
+          "cycles": [
+            2024
           ]
         }
       ]
@@ -44641,7 +47815,7 @@
           "cand_id": "S6OH00163",
           "name": "BROWN, SHERROD",
           "party": "Democratic",
-          "amount_high": 2133.0,
+          "amount_high": 2285.64,
           "pct_ai": 0.002,
           "cycles": [
             2024,
@@ -44816,7 +47990,7 @@
           "cand_id": "S4AK00214",
           "name": "SULLIVAN, DAN",
           "party": "Republican",
-          "amount_high": 2300.12,
+          "amount_high": 2452.76,
           "pct_ai": 0.0,
           "cycles": [
             2022,
@@ -44846,9 +48020,10 @@
           "cand_id": "S4AR00103",
           "name": "COTTON, THOMAS",
           "party": "Republican",
-          "amount_high": 4745.98,
-          "pct_ai": 0.076,
+          "amount_high": 5025.88,
+          "pct_ai": 0.052,
           "cycles": [
+            2022,
             2024,
             2026
           ]
@@ -44884,8 +48059,8 @@
           "cand_id": "S4MD00319",
           "name": "TRONE, DAVID",
           "party": "Democratic",
-          "amount_high": 1632.03,
-          "pct_ai": 0.003,
+          "amount_high": 3011.27,
+          "pct_ai": 0.005,
           "cycles": [
             2024
           ]
@@ -45004,6 +48179,16 @@
           "cycles": [
             2024,
             2026
+          ]
+        },
+        {
+          "cand_id": "S4NJ00540",
+          "name": "BASHAW, CURTIS",
+          "party": "Republican",
+          "amount_high": 144.0,
+          "pct_ai": 0.004,
+          "cycles": [
+            2024
           ]
         }
       ]

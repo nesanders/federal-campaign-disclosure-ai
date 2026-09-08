@@ -41,9 +41,12 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00809384,PROMPT.IO INC.,SEATTLE,WA,06/02/2023,2200,TEXTING PLATFORM SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2023,4071920231754615991,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,01/28/2024,30,SOFTWARE,,,X,2024,4032720241888116144,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,12/28/2023,30,SUBSCRIPTIONS,,,X,2024,4022720241857680003,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00540302,GRAMMARLY,SAN FRANCISCO,CA,08/28/2023,139.95,SOFTWARE,,,X,2023,4101820231805749253,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00540302,GRAMMARLY,SAN FRANCISCO,CA,07/25/2023,333.72,SOFTWARE,,,X,2023,4101820231805748339,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00787648,DONOR ATLAS,CAMBRIDGE,MA,07/26/2024,300,SOFTWARE RENTAL,,,,2024,4111920241071179119,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
 2024,C00787648,DONOR ATLAS,CAMBRIDGE,MA,08/26/2024,300,SOFTWARE RENTAL,,,,2024,4111920241071179120,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
 2024,C00787648,DONOR ATLAS,CAMBRIDGE,MA,09/26/2024,300,SOFTWARE RENTAL,,,,2024,4111920241071179121,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
+2024,C00540302,GRAMMARLY,SAN FRANCISCO,CA,06/28/2023,1260,SOFTWARE,,,X,2023,4101820231805748181,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00010603,TRUVERSE INC,LOS ALTOS,CA,01/23/2023,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2023,4032320231737941016,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2024,C00794354,CALLTIME.AI,VISALIA,CA,04/18/2023,900,FUNDRAISING SOFTWARE,,,,2023,4072420231756836219,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00794354,CALLTIME.AI,VISALIA,CA,05/18/2023,900,FUNDRAISING SOFTWARE,,,,2023,4072420231756836220,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
@@ -64,6 +67,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00832675,CALLTIME.AI,VISALIA,CA,04/02/2023,630,SOFTWARE,,,,2023,4080120231759243993,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00832675,CALLTIME.AI,VISALIA,CA,06/04/2023,630,SOFTWARE,,,,2023,4080120231759244068,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,08/24/2023,139.02,SOFTWARE,,*,X,2023,4101720231805401239,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,08/18/2023,120,SOFTWARE,,*,X,2023,4101720231805401124,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,01/25/2023,2435.58,FUNDRAISING TEXT MESSAGES,,,,2023,4042820231745867686,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,02/27/2023,6467.2,FUNDRAISING TEXT MESSAGES,,,,2023,4042820231745867687,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,03/07/2023,3121.97,FUNDRAISING TEXT MESSAGES,,,,2023,4042820231745867688,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
@@ -96,6 +100,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,06/14/2023,3605.41,FUNDRAISING TEXT MESSAGES,,,,2023,4080220231760262554,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00832675,CALLTIME.AI,VISALIA,CA,02/05/2024,810,SOFTWARE,,,,2024,4022820241858465410,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00832675,CALLTIME.AI,VISALIA,CA,01/04/2024,810,SOFTWARE,,,,2024,4022820241858465181,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,02/18/2023,120,SOFTWARE,,*,X,2023,4042820231745869198,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00805275,GEMINI BEER COMPANY,GRAND JUNCTION,CO,11/04/2024,217.76,MEALS,Travel Expenses,*,X,2024,4012120251133121751,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
 2024,C00167015,QUILLER.AI,CHICAGO,IL,02/01/2024,185,SOFTWARE,,*,X,2024,4032620241887779538,quiller,Quiller,political_specific,high,administrative_productivity
 2024,C00846642,GEMINI SCREENPRINT,KEENE,NH,07/24/2024,255.88,POLO SHIRTS,,,X,2024,4100820242069283777,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
@@ -103,6 +108,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00832170,CALL TIME AI,NORWALK,CA,05/31/2023,111.84,TEXT MESSAGING SERVICE,,,,2023,4072120231756508896,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2024,C00832170,CALL TIME AI,NORWALK,CA,06/23/2023,850,TEXT MESSAGING SERVICE,,,,2023,4072120231756508897,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2024,C00731042,"TRUVERSE, INC.",LOS ALTOS,CA,01/24/2024,19904.76,TEXTING SERVICES,,,,2024,4022720241857677996,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2024,C00727164,GRAMMARLY,SAN FRANCISCO,CA,03/16/2023,60,SUBSCRIPTIONS,Advertising Expenses ,,,2023,4042020231743497637,grammarly,Grammarly,general_purpose,high,advertising_creative
 2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,09/21/2023,14,SUBSCRIPTION,,*,X,2023,4101320231804489345,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,08/22/2023,14,SUBSCRIPTION,,*,X,2023,4101320231804489182,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,07/24/2023,14,SUBSCRIPTION,,*,X,2023,4101320231804489020,descript,Descript,general_purpose,high,administrative_productivity
@@ -112,6 +118,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00672295,NUMERO.AI,IRVINE,CA,03/13/2023,1250,SOFTWARE,,*,X,2023,4042020231743507149,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,02/28/2023,1250,SOFTWARE,,*,X,2023,4042020231743507174,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00558627,CALLTIME AI,LOS ANGELES,CA,03/02/2023,1475,SOFTWARE LICENSE FEE,,,,2023,4072020231755781321,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00038505,GRAMMARLY,SAN FRANCISCO,CA,06/23/2023,144,COMPUTER SOFTWARE,,,,2023,4080820231764934047,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00831289,CALLTIME.AI,VISALIA,CA,06/19/2023,900,FUNDRAISING SOLICITING,Solicitation and Fundraising Expenses ,,X,2023,4110120231808942613,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2024,C00831289,CALLTIME.AI,VISALIA,CA,06/19/2023,-450,CREDIT,Administrative/Salary/Overhead Expenses ,,X,2023,4110120231808942614,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00027466,RUNWAY AI,NEWARK,DE,04/07/2023,336,SUBSCRIPTION,,,X,2023,4110120231808937256,runwayml,Runway,general_purpose,high,administrative_productivity
@@ -121,6 +128,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00843003,CALLTIME.AI,VISALIA,CA,04/01/2024,725,SOFTWARE,,,,2024,4080620242011127135,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00843003,CALLTIME.AI,VISALIA,CA,05/01/2024,725,SOFTWARE,,,,2024,4080620242011127136,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00843003,CALLTIME.AI,VISALIA,CA,06/03/2024,725,SOFTWARE,,,,2024,4080620242011127137,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,08/29/2023,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2023,4110120231808916875,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,07/29/2023,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2023,4110120231808916800,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,09/26/2023,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2023,4110120231808916916,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00792283,JASPER AI,AUSTIN,TX,04/18/2023,99,SOFTWARE,,,,2023,4072620231757544703,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
 2024,C00792283,JASPER AI,AUSTIN,TX,06/20/2023,99,SOFTWARE,,,,2023,4072620231757544662,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
 2024,C00792283,JASPER AI,AUSTIN,TX,05/18/2023,99,SOFTWARE,,,,2023,4072620231757544657,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
@@ -157,6 +167,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/10/2023,103,PAYROLL,,,,2023,4021520241825181527,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/14/2023,103,PAYROLL,,,,2023,4021520241825181528,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/17/2023,83.5,PAYROLL,,,,2023,4021520241825181529,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,01/28/2023,5075,SOFTWARE,,*,X,2023,4051220231747205622,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,07/12/2023,125,COMPUTER SOFTWARE,,,,2023,4110320231809517268,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,08/14/2023,125,COMPUTER SOFTWARE,,,,2023,4110320231809517269,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,09/12/2023,125,COMPUTER SOFTWARE,,,,2023,4110320231809517270,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,01/18/2023,120,SOFTWARE,,*,X,2023,4051220231747205469,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00575548,CALLTIME.AI,VISALIA,CA,08/10/2023,500,SOFTWARE,,*,X,2023,4102520231807335532,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00575548,CALLTIME.AI,VISALIA,CA,09/13/2023,500,SOFTWARE,,*,X,2023,4102520231807335350,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00575548,CALLTIME.AI,VISALIA,CA,07/03/2023,500,SOFTWARE,,*,X,2023,4102520231807335402,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -176,6 +191,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00660795,DESCRIPT,SAN FRANCISCO,CA,02/23/2024,144,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2024,4050920241922721126,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00660795,DESCRIPT,SAN FRANCISCO,CA,03/08/2024,138.49,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2024,4050920241922721127,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00856112,PROMPT.IO INC.,SEATTLE,WA,12/21/2023,2000,COMPUTER SOFTWARE,,,,2023,4020420251142258665,prompt_io,Prompt.io,political_specific,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,02/12/2024,125,COMPUTER SOFTWARE,,*,X,2024,4062720241962987941,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,03/25/2024,125,COMPUTER SOFTWARE,,*,X,2024,4062720241962988009,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,01/23/2023,14,SUBSCRIPTION,,*,X,2023,4041420231742380516,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,02/22/2023,14,SUBSCRIPTION,,*,X,2023,4041420231742380578,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,03/21/2023,14,SUBSCRIPTION,,*,X,2023,4041420231742380624,descript,Descript,general_purpose,high,administrative_productivity
@@ -190,7 +207,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,07/07/2023,3617.06,FUNDRAISING TEXT MESSAGES,,,,2023,4110120231808929786,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,09/20/2023,3914.41,FUNDRAISING TEXT MESSAGES,,,,2023,4110120231808929788,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,08/17/2023,6334.79,FUNDRAISING TEXT MESSAGES,,,,2023,4110120231808929787,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
+2024,C00675108,GRAMMARLY,SAN FRANCISCO,CA,01/16/2024,540,SOFTWARE RENTAL,,,,2024,4051420241923565127,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00774109,CHAT GPT OPEN AI,SAN FRANCISCO,CA,06/25/2023,20,CANDIDATE IN KIND MEMO - SUBSCRIPTION,,,X,2023,4071820231753951806,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00774109,GRAMMARLY,SAN FRANCISCO,CA,05/18/2023,144,CANDIDATE IN KIND MEMO - MARKETING COPY,,,X,2023,4071820231753951882,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00841403,CALLTIME.AI,LOS ANGELES,CA,06/02/2023,750,TELECOM SOFTWARE,Solicitation and Fundraising Expenses ,*,X,2023,4071820231753950071,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00371302,CALLTIME AI,VISALIA,CA,08/31/2023,800,PHONE PROGRAM,,,,2023,4110220231809301774,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2024,C00371302,CALLTIME AI,VISALIA,CA,07/31/2023,800,PHONE PROGRAM,,,,2023,4110220231809301790,calltime_ai,CallTime.AI,political_specific,high,unspecified
@@ -199,6 +218,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00792283,JASPER AI,AUSTIN,TX,09/18/2023,99,SUBSCRIPTIONS,,,,2023,4102020231806624511,jasper_ai,Jasper AI,general_purpose,high,unspecified
 2024,C00840520,CALLTIME.AI,VISALIA,CA,08/25/2023,750,SOFTWARE,,,,2023,4110220231809304001,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00840520,CALLTIME.AI,VISALIA,CA,09/25/2023,750,SOFTWARE,,,,2023,4110220231809304007,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00727164,GRAMMARLY,SAN FRANCISCO,CA,06/16/2023,60,SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2023,4072620231757546435,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00832675,CALLTIME.AI,VISALIA,CA,08/08/2023,155.78,SOFTWARE,,,,2023,4110220231809302364,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00813758,CALL TIME AI,VISALIA,CA,04/28/2023,1410,SOFTWARE RENTAL,,,,2023,4072620231757551180,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00832675,CALLTIME.AI,VISALIA,CA,09/05/2023,810,SOFTWARE,,,,2023,4110220231809302558,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -266,8 +286,16 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00840587,CALLTIME.AI,VISALIA,CA,05/19/2023,1190,LIST ACQUISITION,,,,2023,4072620231757541054,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,04/21/2023,14,SUBSCRIPTION,,*,X,2023,4071320231753226577,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,06/22/2023,14,SUBSCRIPTION,,*,X,2023,4071320231753226944,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,01/12/2023,75,COMPUTER SOFTWARE,,,,2023,4102420231807119853,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,02/13/2023,75,COMPUTER SOFTWARE,,,,2023,4102420231807119854,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,02/17/2023,20.53,COMPUTER SOFTWARE,,,,2023,4102420231807119855,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,03/13/2023,100,COMPUTER SOFTWARE,,,,2023,4102420231807119856,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,05/22/2023,14,SUBSCRIPTION,,*,X,2023,4071320231753226678,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00252551,PROMPT.IO,SEATTLE,WA,10/03/2024,1000,TEXTING PLATFORM SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4010720251127485244,prompt_io,Prompt.io,political_specific,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,05/12/2023,125,COMPUTER SOFTWARE,,,,2023,4110120231808927898,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,05/12/2023,.06,COMPUTER SOFTWARE,,,,2023,4110120231808927899,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,06/12/2023,125,COMPUTER SOFTWARE,,,,2023,4110120231808927900,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,04/12/2023,100,COMPUTER SOFTWARE,,,,2023,4110120231808927897,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,07/11/2023,22378.98,TEXT MESSAGING,,,,2023,4102520231807327434,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,08/08/2023,19126.42,TEXT MESSAGING,,,,2023,4102520231807327435,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,09/07/2023,8407.28,TEXT MESSAGING,,,,2023,4102520231807327436,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -291,9 +319,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00771972,CALLTIME.AI,VISALIA,CA,03/13/2023,990,SOFTWARE,,,,2023,4060920231749123440,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00771972,CALLTIME.AI,VISALIA,CA,02/13/2023,990,SOFTWARE,,,,2023,4060920231749123501,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,04/10/2024,15,IT SUPPORT/MAINTENANCE,,,X,2024,4052920241951267362,descript,Descript,general_purpose,high,unspecified
+2024,C00003418,GRAMMARLY,SAN FRANCISCO,CA,04/03/2024,152.64,DUES AND SUBSCRIPTIONS,,,X,2024,4052920241951267250,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00840108,PROMPT.IO INC,SEATTLE,WA,08/16/2023,1200,SOFTWARE SUBSCRIPTION FEE,Advertising Expenses ,,,2023,4102520231807330436,prompt_io,Prompt.io,political_specific,high,advertising_creative;administrative_productivity
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,03/01/2023,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4052020231747963063,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,02/06/2023,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4052020231747963064,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00406645,GRAMMARLY.COM,SAN FRANCISCO,CA,09/04/2023,30,GRAMMAR SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2023,4101920231805952451,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00833608,NUMERO.AI,COSTA MESA,CA,02/09/2024,1600,SOFTWARE,,*,X,2024,4022720241857664733,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,03/30/2023,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4062120231751594701,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,03/06/2023,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4062120231751594702,otter_ai,Otter.ai,general_purpose,high,unspecified
@@ -305,6 +335,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00672295,NUMERO.AI,IRVINE,CA,09/13/2023,1250,SOFTWARE,,*,X,2023,4103120231807842679,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,03/22/2023,480,SOFTWARE,,*,X,2023,4052220231748078396,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,03/23/2023,240,SOFTWARE,,*,X,2023,4052220231748078410,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,03/18/2023,120,SOFTWARE,,*,X,2023,4052220231748078362,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00710103,CHATFUEL,SAN FRANCISCO,CA,05/02/2023,134.94,ONLINE SERVICES,Administrative/Salary/Overhead Expenses ,,X,2023,4080220231760308036,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
 2024,C00003418,OPENAI,SAN FRANCISCO,CA,05/10/2023,21.2,DUES AND SUBSCRIPTIONS,,,X,2023,4062220231752287225,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2024,C00710103,CHATFUEL,SAN FRANCISCO,CA,06/01/2023,1.01,ONLINE SERVICES,Administrative/Salary/Overhead Expenses ,,X,2023,4080220231760308058,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
@@ -332,6 +363,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00792283,JASPER AI,AUSTIN,TX,10/18/2023,99,SUBSCRIPTIONS,,,,2023,4022120241825730419,jasper_ai,Jasper AI,general_purpose,high,unspecified
 2024,C00792283,JASPER AI,AUSTIN,TX,11/20/2023,99,SUBSCRIPTIONS,,,,2023,4022120241825730428,jasper_ai,Jasper AI,general_purpose,high,unspecified
 2024,C00792283,JASPER AI,AUSTIN,TX,12/18/2023,99,SUBSCRIPTIONS,,,,2023,4022120241825730438,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00848903,GRAMMARLY,SAN FRANCISCO,CA,10/20/2023,144,CAMPAIGN OFFICE EXPENSE,,,,2023,4020120241818834764,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00848903,CHATGPT,SAN FRANCISCO,CA,10/02/2023,20,SOFTWARE SUBSCRIPTION,,,,2023,4020120241818834709,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00848903,CHATGPT,SAN FRANCISCO,CA,11/02/2023,20,SOFTWARE SUBSCRIPTION,,,,2023,4020120241818834710,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00848903,CHATGPT,SAN FRANCISCO,CA,12/02/2023,20,SOFTWARE SUBSCRIPTION,,,,2023,4020120241818834711,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
@@ -349,6 +381,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00019331,QUILLER.AI,CHICAGO,IL,12/07/2023,900,SOFTWARE,,,,2023,4052920241951274738,quiller,Quiller,political_specific,high,administrative_productivity
 2024,C00019331,QUILLER.AI,CHICAGO,IL,12/07/2023,900,SOFTWARE,,,,2023,4052920241951274737,quiller,Quiller,political_specific,high,administrative_productivity
 2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,11/09/2023,21.2,OFFICE SUPPLIES,,,X,2023,4011920241815860328,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,10/12/2023,125,COMPUTER SOFTWARE,,,,2023,4020120241818843565,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,11/13/2023,125,COMPUTER SOFTWARE,,,,2023,4020120241818843566,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,12/12/2023,125,COMPUTER SOFTWARE,,,,2023,4020120241818843567,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,10/10/2023,21.2,OFFICE SUPPLIES,,,X,2023,4112420231811694045,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2024,C00718866,"TRUVERSE, INC.",LOS ALTOS,CA,02/10/2023,6264.51,SOFTWARE SUBSCRIPTION,,,,2023,4053020251204351026,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2024,C00718866,"TRUVERSE, INC.",LOS ALTOS,CA,04/19/2023,9914.72,SOFTWARE SUBSCRIPTION,,,,2023,4053020251204351334,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
@@ -395,6 +430,10 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,11/15/2023,8572.16,FUNDRAISING TEXT MESSAGES,,,,2023,4020620241820604474,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,12/13/2023,6288.34,FUNDRAISING TEXT MESSAGES,,,,2023,4020620241820604475,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00019331,OTTER.AI,MOUNTAIN VIEW,CA,10/02/2023,1619.57,SOFTWARE,,,,2023,4121420231812575996,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,09/18/2023,120,SOFTWARE,,*,X,2023,4010220241813757034,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,10/29/2023,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2023,4022020241825476728,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,12/29/2023,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2023,4022020241825476865,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,11/29/2023,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2023,4022020241825476794,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00575548,CALLTIME.AI,VISALIA,CA,11/10/2023,500,SOFTWARE,,*,X,2023,4021520241825168120,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00575548,CALLTIME.AI,VISALIA,CA,10/11/2023,500,SOFTWARE,,*,X,2023,4021520241825168081,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00840520,CALLTIME.AI,VISALIA,CA,12/26/2023,750,SOFTWARE,,,,2023,4022120241825746291,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -499,6 +538,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00853945,NUMERO.AI,IRVINE,CA,11/30/2023,675,SOFTWARE,,,,2023,4020220241819197529,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,11/07/2023,89.83,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2023,4020520241819536441,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,11/02/2023,93.11,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2023,4020520241819536290,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,11/18/2023,120,SOFTWARE,,*,X,2023,4020520241819536647,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00010603,DESCRIPT INC.,SAN FRANCISCO,CA,11/19/2023,288,SOFTWARE,,*,X,2023,4020520241819536650,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00853945,NUMERO.AI,IRVINE,CA,02/07/2024,675,SOFTWARE,,,,2024,4022620241826710357,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00853945,NUMERO.AI,IRVINE,CA,02/08/2024,250,SOFTWARE,,,,2024,4022620241826710358,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
@@ -533,6 +573,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00631549,CHORUS AI,BROOKLYN,NY,08/30/2024,350,COMPUTER SOFTWARE,,*,X,2024,4111320241068406353,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
 2024,C00631549,CHORUS AI,BROOKLYN,NY,07/30/2024,350,COMPUTER SOFTWARE,,*,X,2024,4111320241068406287,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
 2024,C00864579,DONOR ATLAS,,,10/21/2024,300,FUNDRAISING SERVICE,,,,2024,4121120241075776742,donoratlas,DonorAtlas,political_specific,high,fundraising
+2024,C00852137,GRAMMARLY,SAN FRANCISCO,CA,08/08/2024,100,SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4081420251218388825,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00852137,GRAMMARLY,SAN FRANCISCO,CA,07/08/2024,100,SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4081420251218388824,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00852137,GRAMMARLY,SAN FRANCISCO,CA,09/09/2024,100,SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4081420251218388826,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00847400,OTTER.AI,MOUNTAIN VIEW,CA,10/02/2024,60,SOFTWARE,,*,X,2024,4012320251134709893,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00010603,SPEECHIFAI INC,NEW YORK,NY,08/14/2024,1500,DATA SERVICE,,,,2024,4060420251204846855,sosha,SoSha (Speechifai),political_specific,high,unspecified
 2024,C00672295,NUMERO.AI,IRVINE,CA,03/01/2024,1250,SOFTWARE,,*,X,2024,4050820241922357939,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
@@ -545,6 +588,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00845933,CALLTIME.AI,VISALIA,CA,01/30/2024,950,SOFTWARE,,,,2024,4050820241922371331,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00845933,CALLTIME.AI,VISALIA,CA,03/01/2024,950,SOFTWARE,,,,2024,4050820241922371332,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00834077,OTTER.AI,MOUNTAIN VIEW,CA,06/02/2023,99.99,SUBSCRIPTION,,,X,2023,4080120231759239730,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,06/29/2023,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2023,4081020231766005924,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,05/29/2023,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2023,4081020231766005877,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,05/31/2023,717.41,TEXT MESSAGING,,,,2023,4080220231760272036,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,05/04/2023,3641.28,TEXT MESSAGING,,,,2023,4080220231760272005,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,04/11/2023,248.26,TEXT MESSAGING,,,,2023,4080220231760270987,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -581,6 +626,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/19/2023,103.5,PAYROLL,,,,2023,4080420231763305470,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/26/2023,63,PAYROLL,,,,2023,4080420231763305471,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/05/2023,60,PAYROLL,,,,2023,4080420231763305472,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00852137,GRAMMARLY,SAN FRANCISCO,CA,10/08/2024,100,SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4081420251218388577,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/05/2023,63,PAYROLL,,,,2023,4080420231763305473,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/12/2023,143,PAYROLL,,,,2023,4080420231763305474,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/12/2023,2000,PAYROLL,,,,2023,4080420231763305475,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
@@ -596,6 +642,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00558627,OTTER.AI,MOUNTAIN VIEW,CA,04/30/2024,16.99,SOFTWARE SUBSCRIPTION,,*,X,2024,4072420241978947114,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00558627,OTTER.AI,MOUNTAIN VIEW,CA,04/30/2024,16.99,SOFTWARE SUBSCRIPTION,,*,X,2024,4072420241978947113,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00744946,GEMINI AUDIO VISUAL INC.,STONEHAM,MA,09/20/2024,4894.63,FUNDRAISING EVENT AUDIO VISUAL SERVICES,,*,X,2024,4051020251190801702,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,fundraising
+2024,C00496075,GRAMMARLY INC.,SAN FRANCISCO,CA,03/22/2024,139.95,SOFTWARE,,,X,2024,4050620241921771731,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/03/2024,500,PAYROLL,,,,2024,4120620241075121266,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/04/2024,500,PAYROLL,,,,2024,4120620241075121267,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/04/2024,203.5,PAYROLL,,,,2024,4120620241075121268,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
@@ -613,11 +660,17 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00792283,JASPER AI,AUSTIN,TX,02/20/2024,99,SUBSCRIPTION,,,,2024,4050220241921400969,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
 2024,C00792283,JASPER AI,AUSTIN,TX,03/18/2024,99,SUBSCRIPTION,,,,2024,4050220241921400973,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
 2024,C00792283,JASPER AI,AUSTIN,TX,01/18/2024,99,SUBSCRIPTION,,,,2024,4050220241921400903,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,07/18/2023,120,SOFTWARE,,*,X,2023,4092520231803047411,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00825851,CHATGPT,SAN FRANCISCO,CA,05/10/2024,20,CREDIT CARD PMT [SB21B.7463]: SOFTWARE SUBSCRIPTION,,,X,2024,4081220242011770931,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00406645,GRAMMARLY.COM,SAN FRANCISCO,CA,07/04/2023,30,GRAMMAR SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2023,4082220231800208851,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,04/18/2023,120,SOFTWARE,,*,X,2023,4092720231803386327,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,07/10/2023,21.2,OFFICE SUPPLIES,,,X,2023,4091320231802215538,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,05/18/2023,120,SOFTWARE,,*,X,2023,4092720231803392567,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,05/02/2023,213.77,SOFTWARE,,*,X,2023,4092720231803392283,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,05/31/2023,584.26,SOFTWARE,,*,X,2023,4092720231803387552,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,06/17/2023,183.6,SOFTWARE,,*,X,2023,4092720231803387980,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,06/18/2023,120,SOFTWARE,,*,X,2023,4092720231803387989,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00406645,GRAMMARLY.COM,SAN FRANCISCO,CA,08/06/2023,30,GRAMMAR SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2023,4091820231802374509,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00825851,OPENAI,SAN FRANCISCO,CA,05/13/2024,100,CREDIT CARD PMT [SB21B.7463]: SOFTWARE SUBSCRIPTION,,,X,2024,4081220242011770946,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,08/10/2023,21.2,OFFICE SUPPLIES,,,X,2023,4092520231803048986,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,06/30/2023,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4082120231800006699,otter_ai,Otter.ai,general_purpose,high,unspecified
@@ -640,6 +693,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00771972,CALLTIME.AI,VISALIA,CA,01/11/2024,990,SOFTWARE,,,,2024,4050820241922367100,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00771972,CALLTIME.AI,VISALIA,CA,02/12/2024,990,SOFTWARE,,,,2024,4050820241922367118,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00771972,"TRUVERSE, INC.",LOS ALTOS,CA,01/17/2024,2985.09,TEXT MESSAGING,,,,2024,4050820241922367333,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2024,C00502294,GRAMMARLY,SAN FRANCISCO,CA,03/25/2024,144,OFFICE SOFTWARE SUBSCRIPTION,,,,2024,4050620241921772072,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00459255,OTTER.AI,MOUNTAIN VIEW,CA,03/07/2024,30,SOFTWARE,,,X,2024,4051020241922901091,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00459255,OTTER.AI,MOUNTAIN VIEW,CA,01/18/2024,30,SOFTWARE,,,X,2024,4051020241922901058,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00459255,OTTER.AI,MOUNTAIN VIEW,CA,02/20/2024,30,SOFTWARE,,,X,2024,4051020241922901073,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
@@ -655,6 +709,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00831289,CALLTIME.AI,VISALIA,CA,01/18/2024,630,FUNDRAISING SOLICITING,Solicitation and Fundraising Expenses ,,X,2024,4022720241857683092,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2024,C00843003,CALLTIME.AI,VISALIA,CA,01/02/2024,725,SOFTWARE,,,,2024,4022720241857665354,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00843003,CALLTIME.AI,VISALIA,CA,02/01/2024,725,SOFTWARE,,,,2024,4022720241857665355,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00653196,GRAMMARLY,SAN FRANCISCO,CA,03/25/2024,125,DIGITAL SUBSCRIPTIONS,,*,X,2024,4052920241951283986,grammarly,Grammarly,general_purpose,high,unspecified
+2024,C00653196,GRAMMARLY,SAN FRANCISCO,CA,01/15/2024,125,DIGITAL SUBSCRIPTIONS,,*,X,2024,4052920241951283724,grammarly,Grammarly,general_purpose,high,unspecified
+2024,C00653196,GRAMMARLY,SAN FRANCISCO,CA,02/26/2024,125,DIGITAL SUBSCRIPTIONS,,*,X,2024,4052920241951283401,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,03/20/2024,120,SUBSCRIPTIONS,,*,X,2024,4052920241951284090,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00847020,CALLTIME AI,VISALIA,CA,03/12/2024,700,SOFTWARE/SOFTWARE LICENSING,Administrative/Salary/Overhead Expenses ,,,2024,4050220241921396048,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,03/04/2024,30,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,,2024,4041120241895628365,descript,Descript,general_purpose,high,administrative_productivity
@@ -669,6 +726,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00711358,PROMPT.IO INC,SEATTLE,WA,05/20/2024,3125,DIRECT MARKETING,,,,2024,4080820242011463541,prompt_io,Prompt.io,political_specific,high,unspecified
 2024,C00836528,CALLTIME.AI,NORWALK,CA,01/10/2024,1190,INTERNET SERVICE,Solicitation and Fundraising Expenses ,,,2024,4041520241895786992,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2024,C00836528,CALLTIME.AI,NORWALK,CA,02/12/2024,1190,INTERNET SERVICE,Administrative/Salary/Overhead Expenses ,,,2024,4041520241895786993,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00401224,GRAMMARLY,SAN FRANCISCO,CA,09/21/2023,10220,AMEX 09/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2023,4022720241853537654,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,01/18/2024,13021.98,TEXT MESSAGING,,,,2024,4042520241912457341,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,02/08/2024,3785.85,TEXT MESSAGING,,,,2024,4042520241912457342,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,03/06/2024,769.01,TEXT MESSAGING,,,,2024,4042520241912457343,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -823,6 +881,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00792283,JASPER AI,AUSTIN,TX,09/18/2024,99,SUBSCRIPTIONS,,,,2024,4111520241069663544,jasper_ai,Jasper AI,general_purpose,high,unspecified
 2024,C00792283,JASPER AI,AUSTIN,TX,07/18/2024,99,SUBSCRIPTIONS,,,,2024,4111520241069663542,jasper_ai,Jasper AI,general_purpose,high,unspecified
 2024,C00792283,JASPER AI,AUSTIN,TX,08/19/2024,99,SUBSCRIPTIONS,,,,2024,4111520241069663537,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00653196,GRAMMARLY,SAN FRANCISCO,CA,04/19/2024,225,DIGITAL SUBSCRIPTIONS,,*,X,2024,4051620241949515307,grammarly,Grammarly,general_purpose,high,unspecified
+2024,C00653196,GRAMMARLY,SAN FRANCISCO,CA,04/15/2024,51.6,DIGITAL SUBSCRIPTIONS,,*,X,2024,4051620241949514966,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,04/15/2024,120,DIGITAL SUBSCRIPTIONS,,*,X,2024,4051620241949514972,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00264697,OTTER.AI INC,MOUNTAIN VIEW,CA,05/01/2024,960,SOFTWARE,,*,X,2024,4103120241016256486,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00834218,TRUVERSE INC,LOS ALTOS,CA,07/08/2024,5184.21,TEXT MESSAGING SERVICES,,,,2024,4111620241069780304,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -848,6 +908,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,02/23/2024,60,COMPUTER SOFTWARE REIMBURSEMENT,,*,X,2024,4032120241885454157,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,03/13/2024,16.99,COMPUTER SOFTWARE,,*,X,2024,4041720241896093366,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,03/13/2024,16.99,COMPUTER SOFTWARE,,*,X,2024,4041720241896093312,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,01/28/2024,6090,SOFTWARE,,*,X,2024,4032720241888119341,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,01/18/2024,120,SOFTWARE,,*,X,2024,4032720241888119027,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00854778,"PROMPT.IO, INC",SEATTLE,WA,02/02/2024,10000,MOBILE PHONE SERVICE,,,,2024,4032120241885457941,prompt_io,Prompt.io,political_specific,high,unspecified
 2024,C00774109,CHAT GPT OPEN AI,SAN FRANCISCO,CA,02/25/2024,20,CANDIDATE IN-KIND MEMO ENTRY - SUBSCRIPTION,,,X,2024,4032120241885457200,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,12/02/2023,220.33,SOFTWARE,,*,X,2024,4032920241888392422,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
@@ -939,10 +1001,13 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00855916,DAISYCHAIN,KINGSTON,NY,10/02/2024,1273.34,TEXT MESSAGING SERVICES,,,,2024,4120620241075132606,daisychain,Daisychain,political_specific,high,unspecified
 2024,C00703975,SPEECHIFAI INC.,NEW YORK,NY,10/28/2024,1500,TRANSLATION SERVICES,,,,2024,4051420251197569496,sosha,SoSha (Speechifai),political_specific,high,unspecified
 2024,C00703975,AMPLIFY.AI,LOS ALTOS,CA,10/30/2024,25000,MEDIA PRODUCTION,,,,2024,4051420251197569944,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,04/29/2024,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2024,4080620242011123322,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00703975,CHORUS AI,BROOKLYN,NY,10/22/2024,2500,SOFTWARE,,,,2024,4051420251197559388,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
 2024,C00703975,AMPLIFY.AI,LOS ALTOS,CA,10/22/2024,25000,MEDIA PRODUCTION,,,,2024,4051420251197559329,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2024,C00632133,GRAMMARLY INC.,SAN FRANCISCO,CA,12/16/2024,152.64,COMPUTER SOFTWARE,,*,X,2024,4013020251139308354,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,12/16/2024,8.5,COMPUTER SOFTWARE,,*,X,2024,4013020251139308378,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,02/08/2024,480,SOFTWARE,,*,X,2024,4061120241960590171,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,02/18/2024,120,SOFTWARE,,*,X,2024,4061120241960590532,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00872739,DONOR ATLAS,MIDDLETOWN,DE,09/26/2024,300,DONOR DATABASE ACCOUNT,,,,2024,4121120241075767227,donoratlas,DonorAtlas,political_specific,high,fundraising
 2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,11/04/2024,.6,SOFTWARE,,,X,2024,4031720251180271346,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
 2024,C00813758,CALL TIME AI,VISALIA,CA,04/16/2024,1410,SOFTWARE RENTAL,,,,2024,4080820242011463573,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -974,6 +1039,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00764233,OPENAI,SAN FRANCISCO,CA,10/11/2024,63.6,SOFTWARE,,*,X,2024,4112020241071651560,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00821348,CALL TIME AI,VISALIA,CA,05/16/2024,260.11,FUNDRAISING SOFTWARE,,,,2024,4062720241962998739,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00821348,CALL TIME AI,VISALIA,CA,05/16/2024,175,FUNDRAISING SOFTWARE,,,,2024,4062720241962998740,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,04/09/2024,125,COMPUTER SOFTWARE,,*,X,2024,4071720241977055122,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,05/13/2024,125,COMPUTER SOFTWARE,,*,X,2024,4071720241977055215,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,06/10/2024,125,COMPUTER SOFTWARE,,*,X,2024,4071720241977055458,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00798132,CALL TIME AI,VISALIA,CA,10/24/2024,1050,POLITICAL FUNDRAISING SOFTWARE,,,,2024,4012220251133596898,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00798132,CALL TIME AI,VISALIA,CA,11/25/2024,1050,POLITICAL FUNDRAISING SOFTWARE,,,,2024,4012220251133596899,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00703975,OTTER.AI,MOUNTAIN VIEW,CA,09/05/2024,284.5,SOFTWARE,,*,X,2024,4102320242077169675,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
@@ -981,14 +1049,20 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00703975,OTTER.AI,MOUNTAIN VIEW,CA,09/25/2024,10,SOFTWARE,,*,X,2024,4102320242077177088,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00856112,PROMPT.IO INC.,SEATTLE,WA,07/10/2024,4000,TEXTING SERVICE,Administrative/Salary/Overhead Expenses ,,,2024,4041620251184899447,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2024,C00771972,CALLTIME.AI,VISALIA,CA,11/12/2024,1305,SOFTWARE,,,,2024,4012720251135363640,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00401224,GRAMMARLY,SAN FRANCISCO,CA,09/05/2024,91.65,AMEX 09/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2024,4103120241016276493,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00865675,KEITH MUNDY FOR CONGRESS,PARMA,OH,12/03/2024,72,GRAMMARLY,Administrative/Salary/Overhead Expenses ,,,2024,4021220251172446634,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00765891,GRAMMARLY,SAN FRANCISCO,CA,08/19/2024,144,SOFTWARE,,,,2024,4111520241069664710,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00401224,GRAMMARLY,SAN FRANCISCO,CA,05/29/2024,527.76,AMEX 05/31: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2024,4070220241963969948,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00856963,CALLTIME AI,VISALIA,CA,07/08/2024,1150,SUBSCRIPTIONS,,,,2024,4111820241070292145,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2024,C00495028,"TRUVERSE, INC.",LOS ALTOS,CA,06/20/2024,25.61,SUBSCRIPTION,,,,2024,4080120241999454470,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2024,C00710103,CHATFUEL,SAN FRANCISCO,CA,10/02/2024,153.76,ONLINE SERVICES,Administrative/Salary/Overhead Expenses ,,X,2024,4120920241075321981,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,07/03/2024,390,DIGITAL SUBSCRIPTIONS,,*,X,2024,4111820241070282397,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00653196,GRAMMARLY,SAN FRANCISCO,CA,07/26/2024,225,DIGITAL SUBSCRIPTIONS,,*,X,2024,4111820241070282565,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,08/05/2024,-390,DIGITAL SUBSCRIPTIONS,,*,X,2024,4111820241070282464,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,08/05/2024,390,DIGITAL SUBSCRIPTIONS,,*,X,2024,4111820241070282465,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00042366,JEAN CLAUDE RESTAURANT,NEW YORK,NY,09/15/2024,420,CATERING/FACILITIES/ EVENT COSTS,,MEMO ENTRY,X,2024,4121620241077030467,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00839597,OTTER.AI,MOUNTAIN VIEW,CA,08/06/2024,67.96,SUBSCRIPTION,,*,X,2024,4043020251188445342,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,10/01/2024,125,COMPUTER SOFTWARE,,*,X,2024,4103020241012498830,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00839597,OTTER.AI,MOUNTAIN VIEW,CA,07/03/2024,67.96,SUBSCRIPTION,,*,X,2024,4043020251188445481,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00839597,OTTER.AI,MOUNTAIN VIEW,CA,09/18/2024,101.94,SUBSCRIPTION,,*,X,2024,4043020251188444538,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00839597,CALLTIME.AI,VISALIA,CA,08/06/2024,2988,SOFTWARE SUBSCRIPTION,,*,X,2024,4043020251188445322,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -1019,6 +1093,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,07/05/2024,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4120520241074900360,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,03/22/2024,4320,SOFTWARE,,*,X,2024,4052820241951060028,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,03/27/2024,236.96,SOFTWARE,,*,X,2024,4052820241951060394,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,03/18/2024,120,SOFTWARE,,*,X,2024,4052820241951059675,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00495028,"TRUVERSE, INC.",LOS ALTOS,CA,01/11/2024,5548.87,SUBSCRIPTION,,,,2024,4062720241962988696,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2024,C00710103,CHATFUEL,SAN FRANCISCO,CA,10/31/2024,124.23,ONLINE SERVICES,Administrative/Salary/Overhead Expenses ,,X,2024,4012720251135361229,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
 2024,C00811711,GEMINI,NEW YORK,NY,07/10/2024,229,COVERING EXPENSES,Administrative/Salary/Overhead Expenses ,,,2024,4071020241972738389,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,administrative_productivity
@@ -1069,6 +1144,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00836627,NUMERO.AI,COSTA MESA,CA,07/08/2024,1250,SOFTWARE,,*,X,2024,4121220241076081665,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00859108,CALL TIME AI,VISALIA,CA,04/03/2024,75.69,COMPUTER SOFTWARE,,,,2024,4051620241949516762,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00859108,CALL TIME AI,VISALIA,CA,04/15/2024,1050,COMPUTER SOFTWARE,,,,2024,4051620241949516763,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00264697,GRAMMARLY,SAN FRANCISCO,CA,10/01/2024,152.64,SOFTWARE,,*,X,2024,4112220241072882233,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00851733,CHATGPT,SAN FRANCISCO,CA,12/16/2024,120,CAMPAIGN SOFTWARE,,,,2024,4012720251135368647,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00695346,SPEECHIFAI,NEW YORK,NY,05/19/2024,12388.8,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2024,4041820251185456596,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2024,C00872739,DONOR ATLAS,MIDDLETOWN,DE,10/28/2024,300,DONOR DATABASE ACCOUNT,,,,2024,4121220241076076311,donoratlas,DonorAtlas,political_specific,high,fundraising
@@ -1086,6 +1162,10 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00798132,CALL TIME AI,VISALIA,CA,07/24/2024,1050,POLITICAL FUNDRAISING SOFTWARE,,,,2024,4111520241069649663,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00798132,CALL TIME AI,VISALIA,CA,08/26/2024,1050,POLITICAL FUNDRAISING SOFTWARE,,,,2024,4111520241069649664,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00798132,CALL TIME AI,VISALIA,CA,09/24/2024,1050,POLITICAL FUNDRAISING SOFTWARE,,,,2024,4111520241069649665,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2024,C00856971,GRAMMARLY,SAN FRANCISCO,CA,08/05/2024,65.66,COMMUNICATION SERVICE FEE,Advertising Expenses ,,,2024,4041120251183912052,grammarly,Grammarly,general_purpose,high,advertising_creative
+2024,C00856971,GRAMMARLY,SAN FRANCISCO,CA,09/03/2024,65.56,COMMUNICATION SERVICE FEE,Advertising Expenses ,,,2024,4041120251183912053,grammarly,Grammarly,general_purpose,high,advertising_creative
+2024,C00856971,GRAMMARLY,SAN FRANCISCO,CA,10/03/2024,32.78,,,,,2024,4041120251183912099,grammarly,Grammarly,general_purpose,high,unspecified
+2024,C00856971,GRAMMARLY,SAN FRANCISCO,CA,11/04/2024,32.78,COMMUNICATION SERVICE FEE,Advertising Expenses ,,,2024,4041120251183912135,grammarly,Grammarly,general_purpose,high,advertising_creative
 2024,C00341396,SPEECHIFAI (SOSHA),NEW YORK,NY,08/12/2024,255,SOFTWARE,,*,X,2024,4112020241071643074,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2024,C00341396,SPEECHIFAI (SOSHA),NEW YORK,NY,07/22/2024,255,SOFTWARE,,*,X,2024,4112020241071642615,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2024,C00341396,SPEECHIFAI (SOSHA),NEW YORK,NY,07/22/2024,255,SOFTWARE,,*,X,2024,4112020241071642616,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
@@ -1118,7 +1198,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,10/04/2024,4.25,COMPUTER SOFTWARE,,*,X,2024,4030520251179557024,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,10/04/2024,8.49,COMPUTER SOFTWARE,,*,X,2024,4030520251179557025,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00578302,CALLTIME.AI,LOS ANGELES,CA,12/03/2024,850,FEES FOR FUNDRAISING CALLS,Solicitation and Fundraising Expenses ,MEMO: SUBVENDOR OF-CHASE CARDMEMBER SERVICE,X,2024,4041720251185313086,calltime_ai,CallTime.AI,political_specific,high,fundraising
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,08/22/2024,125,COMPUTER SOFTWARE,,*,X,2024,4012320251134742466,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00578302,CALLTIME.AI,LOS ANGELES,CA,11/29/2024,850,CALL TIME FOR SOLICITATIONS,Solicitation and Fundraising Expenses ,MEMO: SUBVENDOR OF-CHASE CARDMEMBER SERVICE,X,2024,4041720251185313095,calltime_ai,CallTime.AI,political_specific,high,fundraising
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,09/29/2024,125,COMPUTER SOFTWARE,,*,X,2024,4012320251134742647,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,11/01/2024,1250,SOFTWARE,,,,2024,4032420251181223465,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,12/02/2024,1250,SOFTWARE,,,,2024,4031920251180383123,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00697334,OPENAI,SAN FRANCISCO,CA,06/13/2024,65.4,AI ASSISTANT.,Administrative/Salary/Overhead Expenses ,*,X,2024,4021320251173482096,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
@@ -1139,12 +1221,14 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00805275,OPENAI,SAN FRANCISCO,CA,12/31/2023,20,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,X,2023,4020920241824381538,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00805275,OPENAI,SAN FRANCISCO,CA,12/31/2023,.85,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,X,2023,4020920241824381536,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00805275,OPENAI,SAN FRANCISCO,CA,10/23/2023,5.43,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,X,2023,4020920241824381441,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
+2024,C00632133,GRAMMARLY INC.,SAN FRANCISCO,CA,12/13/2023,152.64,COMPUTER SOFTWARE,,*,X,2023,4013120241818176212,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,12/13/2023,16.99,COMPUTER SOFTWARE,,*,X,2023,4013120241818176221,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00632133,DAISYCHAIN INC.,KINGSTON,NY,12/18/2023,4200,COMPUTER SOFTWARE,,,,2023,4013120241818176261,daisychain,Daisychain,political_specific,high,administrative_productivity
 2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,09/20/2023,111.05,SUBSCRIPTION,,,X,2023,4020220241819199842,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
 2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,08/21/2023,132.23,SUBSCRIPTION,,,X,2023,4020220241819199982,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
 2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,07/19/2023,218.53,SUBSCRIPTION,,,X,2023,4020220241819199759,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
 2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,12/08/2023,21.2,OFFICE SUPPLIES,,,X,2023,4020820241823881698,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,10/18/2023,120,SOFTWARE,,*,X,2023,4020620241820630712,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,10/04/2023,112.13,SOFTWARE,,*,X,2023,4020620241820630389,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00725101,CALL TIME.AI,VISALIA,CA,07/03/2023,3975,PAC SOFTWARE,,,,2023,4022120241825739098,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,11/01/2023,13338.6,TEXT MESSAGING,,,,2023,4021220241824585474,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -1155,6 +1239,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,07/12/2023,724.71,TEXT MESSAGING,,,,2023,4021220241824585450,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,10/28/2023,30,SUBSCRIPTIONS,,,X,2023,4032520241886454425,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,09/28/2023,30,SUBSCRIPTIONS,,,X,2023,4032520241886452868,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00828541,GRAMMARLY INC,SAN FRANCISCO,CA,08/29/2023,153,SUBSCRIPTIONS,,,X,2023,4032520241886452720,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,11/28/2023,30,SUBSCRIPTIONS,,,X,2023,4032520241886456158,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00839944,"PROMPT.IO, INC.",SEATTLE,WA,09/28/2023,5000,TEXT PLATFORM - INITIAL SUBSCRIPTION FEE,Administrative/Salary/Overhead Expenses ,,,2023,4042220241897460554,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2024,C00836502,CALLTIME.AI,LOS ANGELES,CA,07/24/2023,1100,SOFTWARE,,,,2023,4071820241978073162,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -1179,6 +1264,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,11/24/2023,90,SUBSCRIPTIONS,,*,X,2023,4052920241951285110,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,12/21/2023,29.03,SUBSCRIPTIONS,,*,X,2023,4052920241951285284,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,12/21/2023,90,SUBSCRIPTIONS,,*,X,2023,4052920241951285290,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00653196,GRAMMARLY,SAN FRANCISCO,CA,10/30/2023,152.64,SUBSCRIPTIONS,,,,2023,4052920241951285386,grammarly,Grammarly,general_purpose,high,unspecified
+2024,C00653196,GRAMMARLY,SAN FRANCISCO,CA,12/27/2023,125,DIGITAL SUBSCRIPTIONS,,*,X,2023,4052920241951285011,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,10/30/2023,30,SUBSCRIPTIONS,,*,X,2023,4052920241951285925,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,12/21/2023,90,SUBSCRIPTIONS,,*,X,2023,4052920241951285297,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,10/30/2023,30,SUBSCRIPTIONS,,*,X,2023,4052920241951285902,otter_ai,Otter.ai,general_purpose,high,unspecified
@@ -1236,6 +1323,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00833608,NUMERO.AI,COSTA MESA,CA,10/24/2023,1600,SOFTWARE,,*,X,2023,4022820241858495527,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00833608,NUMERO.AI,COSTA MESA,CA,12/06/2023,1600,SOFTWARE,,*,X,2023,4022820241858495725,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00833608,NUMERO.AI,COSTA MESA,CA,12/06/2023,1600,SOFTWARE,,*,X,2023,4022820241858495627,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
+2024,C00041160,GRAMMARLY,SAN FRANCISCO,CA,12/05/2023,144,SOFTWARE,,,,2023,4012920251138498296,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00573261,CALLTIME AI,VISALIA,CA,03/14/2023,1200,SOFTWARE,,*,X,2023,4120620241075123977,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00839597,CALLTIME.AI,VISALIA,CA,10/06/2023,2988,SOFTWARE SUBSCRIPTION,,,,2023,4013120251140135838,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00578302,CALLTIME.AI,LOS ANGELES,CA,06/17/2023,650,FEES FOR CALL TIME,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2023,4102420242081487819,calltime_ai,CallTime.AI,political_specific,high,fundraising
@@ -1291,7 +1379,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00556506,OPENAI CHATGPT,SAN FRANCISCO,CA,11/05/2024,20,SOFTWARE,,*,X,2024,4041420251184147769,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00836890,CALLTIME.AI,VISALIA,CA,08/26/2024,1050,SOFTWARE,,,,2024,4021020251166957244,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00836890,CALLTIME.AI,VISALIA,CA,07/24/2024,1050,SOFTWARE,,,,2024,4021020251166957213,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00866152,GRAMMARLY,SAN FRANCISCO,CA,07/02/2024,144,[MEMO] SUBCRIPTION,Administrative/Salary/Overhead Expenses ,,X,2024,4020620251144470824,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00798132,CALL TIME AI,VISALIA,CA,12/24/2024,1050,POLITICAL FUNDRAISING SOFTWARE,,,,2024,4042220251186056320,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,07/08/2024,125,COMPUTER SOFTWARE,,*,X,2024,4121220241076082003,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/25/2024,7500,PAYROLL,,,,2024,4011520251131000765,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/31/2024,4000,PAYROLL,,,,2024,4011520251131000766,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/04/2024,8000,PAYROLL,,,,2024,4011520251131000767,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
@@ -1339,6 +1429,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00754242,"OPENAI, L.L.C.",SAN FRANCISCO,CA,11/25/2024,20,MARKETING / GRAPHIC DESIGN,,,,2024,4010820251127677499,openai,OpenAI (ChatGPT),general_purpose,high,advertising_creative
 2024,C00343871,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,11/14/2024,103823.38,TEXT MESSAGE SERVICES,,,,2024,4091120251291058809,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
 2024,C00343871,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,10/21/2024,90340.39,TEXT MESSAGE SERVICES,,,,2024,4091120251291058688,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
+2024,C00828541,GRAMMARLY INC,SAN FRANCISCO,CA,08/29/2024,153,SUBSCRIPTIONS,,,X,2024,4110420241050634142,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,08/28/2024,30,SUBSCRIPTIONS,,,X,2024,4110420241050634319,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00003418,OTTER AI,MOUNTAIN VIEW,CA,09/06/2024,30,SOFTWARE / LICENSING,,CONVENTIONS ACCOUNT,X,2024,4102820242086008119,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,09/06/2024,15.9,IT SUPPORT/MAINTENANCE,,,X,2024,4102820242086006957,descript,Descript,general_purpose,high,unspecified
@@ -1350,6 +1441,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00606939,"OTTER.AI, INC.",MOUNTAIN VIEW,CA,09/13/2024,30,SOFTWARE SUBSCRIPTION,,*,X,2024,4111820241070280046,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00606939,"OTTER.AI, INC.",MOUNTAIN VIEW,CA,08/20/2024,30,SOFTWARE SUBSCRIPTION,,*,X,2024,4111820241070279229,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00540500,OTTER.AI,LOS ALTOS,CA,07/10/2024,119.99,SOFTWARE,,*,X,2024,4110620241051707428,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,07/29/2024,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2024,4111820241070285070,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00405878,"GRAMMARLY, INC.",SAN FRANCISCO,CA,07/16/2024,95.88,SPELLCHECK AND GRAMMER CHECK SOFTWARE,,,,2024,4121220241076078737,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00405878,"GRAMMARLY, INC.",SAN FRANCISCO,CA,09/27/2024,139.95,SPELLING AND GRAMMER CHECKING SOFTWARE,,,,2024,4121220241076078738,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,05/28/2024,30,SOFTWARE,,,X,2024,4081620242014060738,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00801431,CHATGPT,SAN FRANCISCO,CA,09/09/2024,20,WEBSITE,Administrative/Salary/Overhead Expenses ,,X,2024,4111320241068416690,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00856112,PROMPT.IO INC.,SEATTLE,WA,11/05/2024,2000,CAMPAIGN TEXTING TO SUPPORTERS,,,,2024,4041720251185311411,prompt_io,Prompt.io,political_specific,high,unspecified
@@ -1384,6 +1478,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00841072,CALLTIME.AI,VISALIA,CA,02/05/2024,7.61,SOFTWARE,,,,2024,4022720241857677777,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00841072,CALLTIME.AI,VISALIA,CA,02/12/2024,42.37,SOFTWARE,,,,2024,4022720241857677778,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00841072,CALLTIME.AI,VISALIA,CA,01/19/2024,800.6,SOFTWARE,,,,2024,4022720241857677784,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,03/29/2024,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2024,4051020241922919017,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,01/29/2024,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2024,4051020241922918867,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,02/29/2024,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2024,4051020241922918956,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00840520,CALLTIME.AI,VISALIA,CA,02/26/2024,750,SOFTWARE,,,,2024,4051020241922914900,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00495358,OTTER.AI,MOUNTAIN VIEW,CA,09/05/2024,60,SOFTWARE,,*,X,2024,4041420251184149037,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00495358,OTTER.AI,MOUNTAIN VIEW,CA,10/31/2024,60,SOFTWARE,,*,X,2024,4041820251185457134,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
@@ -1457,6 +1554,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,04/29/2024,60,DIGITAL SERVICES,,,,2024,4072420241978942848,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,05/28/2024,60,DIGITAL SERVICES,,,,2024,4072420241978942849,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,06/28/2024,60,DIGITAL SERVICES,,,,2024,4072420241978942850,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00653196,GRAMMARLY,SAN FRANCISCO,CA,04/25/2024,225,DIGITAL SUBSCRIPTIONS,,*,X,2024,4080820242011466562,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,05/03/2024,120,DIGITAL SUBSCRIPTIONS,,*,X,2024,4080820242011466806,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,05/14/2024,390,DIGITAL SUBSCRIPTIONS,,*,X,2024,4080820242011466430,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00711358,INSTANTLY.AI,SHERIDAN,WY,10/03/2024,105,EMAIL SERVICES,,,,2024,4030320251179419318,instantly_ai,Instantly.ai,general_purpose,high,communications_copy
@@ -1467,6 +1565,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00412304,OTTER AI,MOUNTAIN VIEW,CA,04/08/2024,720,TRANSCRIPTION SERVICES,,,,2024,4052620241950884400,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00003418,OTTER AI,MOUNTAIN VIEW,CA,08/09/2024,30,SOFTWARE / LICENSING,,CONVENTIONS ACCOUNT,X,2024,4093020242043376558,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,08/09/2024,15.9,IT SUPPORT/MAINTENANCE,,,X,2024,4093020242043376378,descript,Descript,general_purpose,high,unspecified
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,06/29/2024,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2024,4080720242011278577,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,05/29/2024,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2024,4080720242011278508,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00547240,DONOR ATLAS,ARLINGTON,VA,08/01/2024,300,SOFTWARE SUBSCRIPTION,,,,2024,4082920242017112269,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
 2024,C00834424,OTTER.AI,MOUNTAIN VIEW,CA,07/01/2024,35,SOFTWARE SERVICES,,,,2024,4082120242014607660,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00556506,CHATGPT,SAN FRANCISCO,CA,06/02/2024,200,SUBSCRIPTION,,*,X,2024,4101620242069922295,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity

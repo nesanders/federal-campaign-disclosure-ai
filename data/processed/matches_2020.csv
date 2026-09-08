@@ -12,6 +12,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,11/04/2019,1500,SOFTWARE,,*,X,2019,4051920201762107871,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,10/07/2019,750,SOFTWARE,,*,X,2019,4051920201762107861,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2020,C00711804,AMPLIFY.AI,LOS ALTOS,CA,01/30/2020,3750,SOFTWARE LICENSING FEE,,,,2020,4050620201741958877,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00653121,GRAMMARLY,SAN FRANCISCO,CA,01/28/2019,360,SUBSCRIPTION,,,,2019,4041820191646725115,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,10/15/2019,350,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2019,4021820201692732960,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,11/14/2019,350,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2019,4021820201692732961,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,11/22/2019,350,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2019,4021820201692732962,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
@@ -23,7 +24,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00075820,EYESOVER TECHNOLOGIES INC,FREDERICTON,NE,09/09/2019,2000,RESEARCH MATERIAL,,,,2019,4103120191676277048,eyesover,EyesOver,political_specific,high,research_strategy
 2020,C00401190,CLAUDE BROWN,WILSON,NC,05/01/2019,565.6,OFFICE ASSISTANCE LABOR,,,,2019,4071120191659327127,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2020,C00401190,CLAUDE BROWN,WILSON,NC,06/03/2019,545.4,OFFICE ASSISTANCE LABOR,,,,2019,4071120191659327129,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00496075,GRAMMARLY INC.,SAN FRANCISCO,CA,04/01/2019,139.95,SOFTWARE,,,X,2019,4071220191659352284,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00027466,"HOWLETT, CLAUDE A. MR.",SCOTTSDALE,AZ,05/10/2019,607.06,IN-KIND CONTRIBUTION,,IN KIND: CATERING,,2019,4062120191658484270,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00390476,GRAMMARLY,SAN FRANCISCO,CA,06/10/2019,139.95,OFFICE EXPENSE,,,X,2019,4011620201684852990,grammarly,Grammarly,general_purpose,high,unspecified
 2020,C00401190,CLAUDE BROWN,WILSON,NC,10/03/2019,434.3,OFFICE ASSISTANCE LABOR,,,,2019,4012120201685395215,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2020,C00401190,CLAUDE BROWN,WILSON,NC,10/31/2019,464.6,OFFICE ASSISTANCE LABOR,,,,2019,4012120201685395216,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2020,C00401190,CLAUDE BROWN,WILSON,NC,11/25/2019,750,OFFICE ASSISTANCE LABOR,,,,2019,4012120201685395217,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
@@ -41,6 +44,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00703975,AMPLIFY.AI,LOS ALTOS,CA,11/13/2020,25000,DIGITAL ADVERTISING,,,,2020,4121120201969265102,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative
 2020,C00703975,AMPLIFY.AI,LOS ALTOS,CA,11/13/2020,21882.29,PHOTO LICENSES,,,,2020,4121120201969265103,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2020,C00703975,AMPLIFY.AI,LOS ALTOS,CA,10/29/2020,100000,PHOTO/MUSIC LICENSES,,,,2020,4121120201969258145,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,11/18/2019,120,SOFTWARE,,*,X,2020,4030420201700705994,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,10/08/2020,175,DUES AND SUBSCRIPTIONS,,,X,2020,4111920201958248875,grammarly,Grammarly,general_purpose,high,unspecified
 2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,04/15/2020,55.27,SOFTWARE,,*,X,2020,4052620201763261723,descript,Descript,general_purpose,high,administrative_productivity
 2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,04/15/2020,55.4,SOFTWARE,,*,X,2020,4052620201763261767,descript,Descript,general_purpose,high,administrative_productivity
 2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,04/15/2020,54,SOFTWARE,,*,X,2020,4052620201763261884,descript,Descript,general_purpose,high,administrative_productivity
@@ -53,6 +58,13 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00696054,GEMINI AUDIO VIDEO,FAIRFIELD,IA,12/30/2019,240,AUDIO VISUAL SERVICES,Campaign Event Expenses,,,2019,4072020201791748569,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
 2020,C00314575,GEMINI PROPERTIES,TULSA,OK,10/31/2019,2438,CATERING FOR EVENT,,,,2019,4040320201734767267,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
 2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,12/16/2019,262.75,MEDIA PRODUCTION,,*,X,2019,4041420201736280177,descript,Descript,general_purpose,high,unspecified
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,07/18/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,4032520201715240257,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,09/04/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,4032520201715240258,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,07/18/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,4032520201715243269,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,08/18/2019,120,SOFTWARE,,*,X,2019,4032520201715243270,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,09/04/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,4032520201715243271,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,10/18/2019,120,SOFTWARE,,*,X,2019,4040320201734783308,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,09/18/2019,120,SOFTWARE,,*,X,2019,4040320201734782413,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00675884,"BANKS, CLAUDE",CANTON,MS,11/29/2019,337.5,PAYROLL,,,,2019,4030420201700704167,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2020,C00700534,CALLTIME.AI,VISALIA,CA,05/12/2019,250,FUNDRAISING SOFTWARE,,,,2019,4081220201828109879,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2020,C00700534,CALLTIME.AI,VISALIA,CA,06/10/2019,500,FUNDRAISING SOFTWARE,,,,2019,4081220201828109880,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
@@ -67,6 +79,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,03/12/2019,55,SOFTWARE,,,,2019,4031920201703916967,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
 2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,04/12/2019,55,SOFTWARE,,,,2019,4031920201703916968,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
 2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,05/13/2019,55,SOFTWARE,,,,2019,4031920201703916969,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,06/05/2019,120,SOFTWARE,,*,X,2019,4020820201687851177,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,06/28/2019,120,SOFTWARE,,*,X,2019,4020820201687852067,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,08/08/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,4021020201688377641,grammarly,Grammarly,general_purpose,high,unspecified
 2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/01/2019,303.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189418,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
 2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/01/2019,500,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189419,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
 2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/01/2019,203,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189420,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
@@ -168,10 +183,16 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/01/2019,1500,PAYROLL,,,,2019,4030220211191190073,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/11/2019,500,PAYROLL,,,,2019,4030220211191190074,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/15/2019,1000,PAYROLL,,,,2019,4030220211191190075,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,07/29/2020,139.99,SOFTWARE / LICENSING,,,X,2020,4092520201850030447,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00697441,"TRUVERSE, INC.",LOS ALTOS,CA,01/14/2020,15000,LIST ACQUISION,,,,2020,4030420201700713749,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,06/11/2020,54,SOFTWARE,,*,X,2020,4101120201857439394,descript,Descript,general_purpose,high,administrative_productivity
 2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,05/16/2020,54,SOFTWARE,,*,X,2020,4101120201857439299,descript,Descript,general_purpose,high,administrative_productivity
 2020,C00697441,"TRUVERSE, INC.",LOS ALTOS,CA,03/20/2020,3620.69,DIGITAL LIST BUILDING,,,,2020,4060820201774522279,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00724609,PAYPAL,SAN JOSE,CA,08/17/2020,29.95,GRAMMARLY SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2020,4111020201893430712,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00724609,PAYPAL,SAN JOSE,CA,09/17/2020,29.95,GRAMMARLY SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2020,4111020201893430716,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,07/22/2020,29.95,SUBSCRIPTION,,,,2020,4111220201900314152,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,09/23/2020,29.95,SUBSCRIPTION,,,,2020,4111220201900314364,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,08/21/2020,29.95,SUBSCRIPTION,,,,2020,4111220201900314253,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00578302,CALLTIME.AI,LOS ANGELES,CA,09/17/2020,450,FUNDRAISING SOFTWARE,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2020,4120320201963404184,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2020,C00701284,CALLTIME AI,LOS ANGELES,CA,12/02/2020,1475,SOFTWARE SUBSCRIPTION,,,,2020,4021720211142199913,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,07/01/2020,-1500,CREDIT,,*,X,2020,4111920201958191683,calltime_ai,CallTime.AI,political_specific,high,unspecified
@@ -183,6 +204,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00717827,"SHELBY, CLAUDE",CHAMPAIGN,IL,09/10/2020,300,FIELD,Administrative/Salary/Overhead Expenses ,,,2020,4111220201900304234,anthropic,Anthropic (Claude),general_purpose,medium,administrative_productivity
 2020,C00721928,CALLTIME.AI,LOS ANGELES,CA,01/27/2020,780,DATABASE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2020,4030620201702628820,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2020,C00721928,CALLTIME.AI,LOS ANGELES,CA,02/25/2020,780,DATABASE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2020,4030620201702628821,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00390476,GRAMMARLY,SAN FRANCISCO,CA,06/09/2020,139.95,OFFICE EXPENSE,,,X,2020,4112620201961680912,grammarly,Grammarly,general_purpose,high,unspecified
 2020,C00703975,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,06/03/2020,300000,DIGITAL ADVERTISING,,,,2020,4072120201792853822,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative
 2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,08/14/2020,8119.44,TEXTING SERVICES,,,,2020,4112520201960743233,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,07/24/2020,15000,TEXTING SERVICES,,,,2020,4112520201960742898,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -193,11 +215,13 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00721183,CALLTIME.AI,VISALIA,CA,08/02/2020,780,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,4111220201900308133,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2020,C00721183,CALLTIME.AI,VISALIA,CA,08/04/2020,139.5,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,4111220201900308134,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2020,C00721183,CALLTIME.AI,VISALIA,CA,09/02/2020,930,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,4111220201900308135,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,08/18/2020,120,SOFTWARE,,*,X,2020,4022620211189810974,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,09/17/2020,5000,ONLINE FUNDRAISING,,,,2020,4022620211189810773,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2020,C00023838,PROMPT.IO INC.,SEATTLE,WA,10/22/2020,58.56,PRESIDENT BUSH DINNER TEXT INVITE,Administrative/Salary/Overhead Expenses ,,,2020,4120920201967676233,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2020,C00023838,PROMPT.IO INC.,SEATTLE,WA,10/22/2020,52.36,PRESIDENT BUSH DINNER TEXT INVITE,Administrative/Salary/Overhead Expenses ,,,2020,4120920201967676234,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2020,C00023838,PROMPT.IO INC.,SEATTLE,WA,10/23/2020,-58.56,VOID FOR ERRONEOUSLY DUPLICATED PAYMENT MADE ON 10/15/2020 FOR $58.56,Administrative/Salary/Overhead Expenses ,,,2020,4120920201967676235,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2020,C00023838,PROMPT.IO INC.,SEATTLE,WA,10/15/2020,58.56,PRESIDENT BUSH DINNER TEXT INVITE,Administrative/Salary/Overhead Expenses ,,,2020,4120920201967676230,prompt_io,Prompt.io,political_specific,high,administrative_productivity
+2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,05/18/2020,120,SOFTWARE,,*,X,2020,4073020201809400532,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,06/25/2020,5000,DIGITAL-ACQUISITION,,,,2020,4073020201809400461,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2020,C00721183,CALLTIME.AI,VISALIA,CA,11/03/2020,930,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,4121120201969305408,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,06/09/2020,14,SOFTWARE,,*,X,2020,4072120201792838128,descript,Descript,general_purpose,high,administrative_productivity
@@ -260,6 +284,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,11/16/2020,45,SOFTWARE,,*,X,2020,4010620212033561129,descript,Descript,general_purpose,high,administrative_productivity
 2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,10/20/2020,45,SOFTWARE,,*,X,2020,4010620212033560970,descript,Descript,general_purpose,high,administrative_productivity
 2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,08/20/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,4121820201977477686,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,07/18/2020,120,SOFTWARE,,*,X,2020,4121820201977477800,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,06/18/2020,120,SOFTWARE,,*,X,2020,4121820201977476125,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,09/10/2020,175,DUES AND SUBSCRIPTIONS,,,X,2020,4111920201958200916,grammarly,Grammarly,general_purpose,high,unspecified
 2020,C00038505,PROMPT.IO,SEATTLE,WA,09/14/2020,10000,SUBSCRIPTION FEE FOR FUNDRAISING/VOLUNTEER RECRUITMENT TEXTS,,,,2020,4091820211371090287,prompt_io,Prompt.io,political_specific,high,fundraising;administrative_productivity
 2020,C00667279,CALL TIME    CALLTIME.AI CA,,,08/04/2020,740,CALL TIME    CALLTIME.AI CA,Solicitation and Fundraising Expenses ,CALL TIME    CALLTIME.AI CA,,2020,4111020201893430523,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2020,C00667279,CALL TIME    CALLTIME.AI CA,,,07/06/2020,740,CALL TIME    CALLTIME.AI CA,Solicitation and Fundraising Expenses ,CALL TIME    CALLTIME.AI CA,,2020,4111020201893430509,calltime_ai,CallTime.AI,political_specific,high,fundraising
@@ -268,6 +295,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,07/21/2020,54,SOFTWARE,,*,X,2020,4111020201893429635,descript,Descript,general_purpose,high,administrative_productivity
 2020,C00721183,CALLTIME.AI,VISALIA,CA,10/02/2020,930,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,4110720201892250449,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2020,C00693234,DESCRIPT INC.,SAN FRANCISCO,CA,03/30/2020,216,SOFTWARE,,*,X,2020,4102920201889416512,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00042366,GRAMMARLY,SAN FRANCISCO,CA,06/01/2020,139.95,PRINTING,,MEMO ENTRY,X,2020,4102620201887060695,grammarly,Grammarly,general_purpose,high,unspecified
 2020,C00739045,CALL TIME AI,,CA,03/13/2020,725,PHONE BANKING,,,,2020,4041020201735498112,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2020,C00000935,OTTER.AI,PALO ALTO,CA,06/01/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271368588,otter_ai,Otter.ai,general_purpose,high,unspecified
 2020,C00000935,OTTER.AI,LOS ALTOS,CA,06/01/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271368554,otter_ai,Otter.ai,general_purpose,high,unspecified
@@ -284,12 +312,15 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00000935,OTTER.AI,PALO ALTO,CA,10/30/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271386982,otter_ai,Otter.ai,general_purpose,high,unspecified
 2020,C00000935,OTTER.AI,PALO ALTO,CA,11/30/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271395441,otter_ai,Otter.ai,general_purpose,high,unspecified
 2020,C00000935,OTTER.AI,LOS ALTOS,CA,12/01/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271395417,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,10/18/2020,120,SOFTWARE,,*,X,2020,4040620211275779194,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,09/18/2020,120,SOFTWARE,,*,X,2020,4040620211275778728,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,10/22/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,4040620211275782679,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,11/02/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,4040620211275782680,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,11/19/2020,15000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,4040620211275782681,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2020,C00000935,OTTER.AI,LOS ALTOS,CA,05/01/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4032620211268917286,otter_ai,Otter.ai,general_purpose,high,unspecified
 2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,10/16/2020,59064,TEXTING SERVICES,,,,2020,4042820211280322241,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,11/02/2020,246000,TEXTING SERVICES,,,,2020,4042820211280322352,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00401224,GRAMMARLY,SAN FRANCISCO,CA,01/17/2020,83.97,PENALOZA 01/31: TRAINING COURSE FEE,Administrative/Salary/Overhead Expenses ,,X,2020,4032420201705120646,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,05/29/2020,5000,DIGITAL-ACQUISITION,,,,2020,4062420201777310827,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2020,C00741611,TRUVERSE INC,LOS ALTOS,CA,08/17/2020,15000,CAMPAIGN SOFTWARE,,,,2020,4061120211307170693,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2020,C00099267,CHATFUEL,SAN FRANCISCO,CA,06/09/2020,15,ONLINE BOT SUBSCRIPTION,,,X,2020,4040720211276557646,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
@@ -320,6 +351,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00728832,CALLTIME.AI,LOS ANGELES,CA,06/19/2020,65.78,SOFTWARE,,*,X,2020,4080620201813189596,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2020,C00711549,"TRUVERSE, INC.",LOS ALTOS,CA,11/17/2020,5000,SUBSCRIPTION,,,,2020,4091720211371025897,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2020,C00694455,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,05/13/2020,10086,INFORMATION TECHNOLOGY & INTERNET SERVICES,,,,2020,4072920211323314780,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00038505,GRAMMARLY,SAN FRANCISCO,CA,12/10/2020,29.95,COMPUTER SOFTWARE,,,,2020,4091920211371112200,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00370007,GRAMMARLY,SAN FRANCISCO,CA,01/30/2020,83.97,INTERNET SERVICE/USAGE,,*,X,2020,4042020201737508980,grammarly,Grammarly,general_purpose,high,unspecified
 2020,C00038505,PROMPT.IO,SEATTLE,WA,07/07/2020,10000,SUBSCRIPTION FEE FOR FUNDRAISING/STATE CONVENTION TEXTS,,,,2020,4092520211372029439,prompt_io,Prompt.io,political_specific,high,fundraising;administrative_productivity
 2020,C00696153,AMPLIFY.AI,LOS ALTOS,CA,10/14/2020,28500,DIGITAL MARKETING SERVICES,,,,2020,4050820211288126972,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2020,C00731380,CALLTIME.AI,VISAILA,CA,02/06/2020,375,CALLTIME SERVICE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2020,4091220201835376072,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -327,8 +360,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,07/27/2020,14,SOFTWARE,,*,X,2020,4082220201829666299,descript,Descript,general_purpose,high,administrative_productivity
 2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,07/06/2020,14,SUBSCRIPTION,,*,X,2020,4082220201829666230,descript,Descript,general_purpose,high,administrative_productivity
 2020,C00711549,"TRUVERSE, INC.",LOS ALTOS,CA,09/22/2020,12500,SUBSCRIPTION,,,,2020,4070720211320301042,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00191247,GRAMMARLY,SAN FRANCISCO,CA,03/30/2020,75,SUBSCRIPTION,,,X,2020,4090320201834516216,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,07/23/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,4090220201834357459,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,12/30/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,4020320212018082033,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,12/03/2020,175,DUES AND SUBSCRIPTIONS,,,X,2020,4063020211312977908,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,08/10/2020,174.99,DUES AND SUBSCRIPTIONS,,,X,2020,4101620201858324569,grammarly,Grammarly,general_purpose,high,unspecified
 2020,C00744946,GEMINI G.E.L. LLC,LOS ANGELES,CA,10/01/2020,50000,ARTWORK,,* IN-KIND RECEIVED,,2020,4030920211239283801,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
 2020,C00744946,GEMINI G.E.L. LLC,LOS ANGELES,CA,10/01/2020,18000,ARTWORK,,* IN-KIND RECEIVED,,2020,4030920211239283736,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
 2020,C00744946,GEMINI G.E.L. LLC,LOS ANGELES,CA,10/01/2020,7500,ARTWORK,,* IN-KIND RECEIVED,,2020,4030920211239283774,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
@@ -357,8 +393,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00721019,CALLTIME AI,LOS ANGELES,CA,01/09/2020,1400,SOFTWARE SUBSCRIPTION,,,,2020,4050520201741828000,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2020,C00721019,CALLTIME AI,LOS ANGELES,CA,03/09/2020,1400,SOFTWARE SUBSCRIPTION,,,,2020,4050520201741828008,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2020,C00721019,CALLTIME AI,LOS ANGELES,CA,02/10/2020,1400,SOFTWARE SUBSCRIPTION,,,,2020,4050520201741827987,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00496075,GRAMMARLY INC.,SAN FRANCISCO,CA,03/09/2020,139.95,SOFTWARE,,,X,2020,4050720201742098617,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00099267,CHATFUEL,SAN FRANCISCO,CA,11/23/2020,20,CHATBOT PLATFORM SUBSCRIPTION,,,X,2020,4052720211297508381,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
+2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,11/10/2020,175,DUES AND SUBSCRIPTIONS,,,X,2020,4063020211312960394,grammarly,Grammarly,general_purpose,high,unspecified
 2020,C00711549,"TRUVERSE, INC.",LOS ALTOS,CA,06/30/2020,15000,SUBSCRIPTION,,,,2020,4010920212066319948,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00401224,GRAMMARLY,SAN FRANCISCO,CA,09/21/2020,600,AMEX 09/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2020,4012120212115705273,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00491357,EYESOVER TECHNOLOGIES,NEW BRUNSWICK,,05/30/2020,5000,SUBSCRIPTION,,,,2020,4120920221633949493,eyesover,EyesOver,political_specific,high,administrative_productivity
 2020,C00718270,CALLTIME AI,VISALIA,CA,02/27/2020,1250,FUNDRAISING,,,,2020,4121820211386186185,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2020,C00718270,CALLTIME AI,VISALIA,CA,03/27/2020,1250,FUNDRAISING,,,,2020,4121820211386186186,calltime_ai,CallTime.AI,political_specific,high,fundraising
@@ -368,6 +407,18 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00718270,CALLTIME AI,VISALIA,CA,08/27/2020,1250,CAMPAIGN CALL PROGRAM,,,,2020,4121820211386186054,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2020,C00718270,CALLTIME AI,VISALIA,CA,09/16/2020,173.68,CAMPAIGN CALL PROGRAM,,,,2020,4121820211386186055,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2020,C00718270,CALLTIME AI,VISALIA,CA,09/28/2020,1725,CAMPAIGN CALL PROGRAM,,,,2020,4121820211386186056,calltime_ai,CallTime.AI,political_specific,high,unspecified
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,03/11/2020,75,OFFICE SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407903017,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,12/07/2020,125,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021820221409131520,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,07/07/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407903205,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,04/07/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021820221409131228,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,05/07/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021820221409131278,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,06/08/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407903116,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,09/02/2020,3.9,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407903678,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,09/08/2020,100,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407903679,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,08/07/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407903414,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,10/07/2020,.04,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021820221409131381,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,10/07/2020,125,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021820221409131382,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,11/09/2020,125,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407904024,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00668137,"BROWN, CLAUDE",HIGHLAND PARK,MI,08/03/2020,50,CANVASSING,,,,2020,4092320221576788601,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2020,C00668137,"BROWN, CLAUDE",HIGHLAND PARK,MI,08/01/2020,50,CANVASSING,,,,2020,4092320221576788630,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2020,C00668137,"BROWN, CLAUDE",HIGHLAND PARK,MI,08/04/2020,120,CANVASSING,,,,2020,4092320221576788570,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
@@ -387,8 +438,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2020,C00401190,CLAUDE BROWN,WILSON,NC,12/14/2020,1000,OFFICE ASSISTANCE LABOR,,,,2020,4011920212093821792,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2020,C00401190,CLAUDE BROWN,WILSON,NC,12/01/2020,272.7,OFFICE ASSISTANCE LABOR,,,,2020,4011920212093821790,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2020,C00603084,OTTER.AI,LOS ALTOS,CA,12/08/2020,240,SOFTWARE,,*,X,2020,4020220212140270621,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,12/02/2020,29.95,WEB SERVICE/SUBSCRIPTION,,,,2020,4020220212140269147,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,12/31/2020,29.95,WEB SERVICE/SUBSCRIPTION,,,,2020,4020220212140269181,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,12/17/2020,195800,TEXTING SERVICES,,,,2020,4020920211122803986,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2020,C00031088,PROMPT.IO INC.,SEATTLE,WA,10/30/2020,12000,PAYMENT FOR FUTURE TEXT MESSAGES: SEE MEMO TEXT,,,,2020,4021320211141100923,prompt_io,Prompt.io,political_specific,high,communications_copy
+2020,C00401224,GRAMMARLY,SAN FRANCISCO,CA,12/28/2020,139.95,AMEX 12/31: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2020,4031120211242897306,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/02/2020,1001.75,PAYROLL,,,,2020,4031820211261735713,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/13/2020,1001.75,PAYROLL,,,,2020,4031820211261735714,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/16/2020,1001.75,PAYROLL,,,,2020,4031820211261735975,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
