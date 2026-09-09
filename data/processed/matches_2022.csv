@@ -209,6 +209,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,12/31/2021,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2022,4051320221485706373,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,12/30/2021,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2022,4051320221485706593,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,12/06/2021,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2022,4051320221485706594,otter_ai,Otter.ai,general_purpose,high,unspecified
+2022,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,11/14/2022,11972.39,LIST RENTAL,,,,2022,4051620231747724809,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2022,C00706267,GRAMMARLY,SAN FRANCISCO,CA,04/30/2021,29.95,WEB SERVICE/SUBSCRIPTION,,,,2021,4071620211320846131,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00706267,GRAMMARLY,SAN FRANCISCO,CA,06/01/2021,29.95,WEB SERVICE/SUBSCRIPTION,,,,2021,4071620211320846211,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00777771,CALLTIME.AI,VISALIA,CA,04/12/2022,850,SOFTWARE RENTAL,,,,2022,4051020221476205649,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -271,6 +272,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00767756,CALLTIME AI,VISALIA,CA,05/27/2021,1575,SOFTWARE LICENSING,,,,2021,4071620211320849609,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00767756,CALLTIME AI,VISALIA,CA,06/28/2021,1575,SOFTWARE LICENSING,Administrative/Salary/Overhead Expenses ,,,2021,4071620211320849610,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00767756,CALLTIME AI,VISALIA,CA,06/29/2021,558.12,PHONE SERVICE,Administrative/Salary/Overhead Expenses ,,,2021,4071620211320849611,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,12/09/2022,6286.87,LIST RENTAL,,,,2022,4051620231747728801,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2022,C00401224,GRAMMARLY,SAN FRANCISCO,CA,05/11/2022,1040.8,AMEX 05/31: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2022,4062720221532220958,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,05/31/2021,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2021,4100720211373463060,otter_ai,Otter.ai,general_purpose,high,unspecified
 2022,C00000935,OTTER.AI,LOS ALTOS,CA,05/31/2021,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2021,4100720211373462880,otter_ai,Otter.ai,general_purpose,high,unspecified
@@ -369,6 +371,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00672295,NUMERO.AI,IRVINE,CA,04/25/2022,87.5,MERCHANT FEES,,,,2022,4051320221485729064,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00672295,NUMERO.AI,IRVINE,CA,04/12/2022,113.79,MERCHANT FEES,,,,2022,4051320221485729072,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
 2022,C00672295,NUMERO.AI,IRVINE,CA,04/18/2022,3.5,MERCHANT FEES,,,,2022,4051320221485729122,numero_ai,Numero (donor database / call time),political_specific,high,unspecified
+2022,C00814509,CAMPAIGN NUCLEUS LLC,MEDINA,OH,12/02/2022,2500,DIGITAL CONSULTING,,,,2022,4012720231720808357,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,08/18/2022,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2022,4092320221576799586,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
 2022,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,07/18/2022,120,SOFTWARE,,*,X,2022,4092320221576799997,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2022,C00777904,"TRUVERSE, INC.",LOS ALTOS,CA,04/07/2022,1928.92,TEXTING SERVICES,,,,2022,4072720231758137843,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -552,9 +555,12 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00770388,CALLTIME.AI,VISALIA,CA,03/25/2021,1050,FUNDRAISING SOFTWARE,,,,2021,4050520211285338845,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2022,C00770388,CALLTIME.AI,VISALIA,CA,03/05/2021,10.84,FUNDRAISING SOFTWARE,,,,2021,4050520211285338868,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2022,C00767798,CALLTIME.AI,LOS ANGELES,CA,02/12/2021,500,SOFTWARE,,,,2021,4043020211284988128,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00814509,CAMPAIGN NUCLEUS LLC,MEDINA,OH,08/02/2022,2500,DIGITAL CONSULTING,,,,2022,4111620221629807273,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2022,C00814509,CAMPAIGN NUCLEUS LLC,MEDINA,OH,09/06/2022,5000,DIGITAL CONSULTING,,,,2022,4111620221629807274,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2022,C00573261,CALLTIME AI,VISALIA,CA,12/09/2022,1200,SOFTWARE,,*,X,2022,4013120231721625699,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00767798,CALLTIME.AI,LOS ANGELES,CA,03/12/2021,500,SOFTWARE,,,,2021,4043020211284988144,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00521948,PROMPT.IO INC,SEATTLE,WA,10/20/2022,25000,OFFICE SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,,2022,4011620241815650192,prompt_io,Prompt.io,political_specific,high,administrative_productivity
+2022,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,12/07/2022,30000,DIGITAL CONSULTING,,,,2022,4020620231723350027,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2022,C00539825,GEMINI PROPERTIES,TULSA,OK,10/17/2022,263.59,EVENT CATERING,,,,2022,4020620231723348294,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
 2022,C00099267,CHATFUEL,SAN FRANCISCO,CA,06/30/2021,20,CHATBOT SUBSCRIPTION,,,X,2021,4082620211369768212,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
 2022,C00010603,TRUVERSE INC,LOS ALTOS,CA,08/26/2021,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2021,4031920221461867955,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
@@ -674,6 +680,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,09/14/2021,35175.81,TEXT MESSAGING,,,,2021,4102020211374292593,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00801274,CALLTIME.AI,VISALIA,CA,10/03/2022,300,SOFTWARE RENTAL,,,,2022,4120720221633568949,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00802496,GEMINI IMPRINTS,ARVADA,CO,03/16/2022,225,PRINTING,,,,2022,4050520221474894297,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2022,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,12/16/2022,5000,DIGITAL CONSULTING:  WEB HOSTING AND EMAIL MARKETING,,,,2022,4080120231759235145,campaign_nucleus,Campaign Nucleus,political_specific,high,communications_copy
 2022,C00784959,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,07/28/2022,8222.72,TEXTING PLATFORM,,,,2022,4020820231723618947,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00784959,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,08/25/2022,15552.56,TEXTING PLATFORM,,,,2022,4020820231723618486,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00614115,CALLTIME.AI,VISALIA,CA,01/19/2022,1850,CALLTIME. AI DIALER,,,,2022,4110720231810001814,calltime_ai,CallTime.AI,political_specific,high,unspecified
@@ -941,6 +948,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00803254,CALLTIME.AI,VISALIA,CA,10/11/2022,1140,CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2022,4112320221630719079,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2022,C00696526,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,08/16/2021,99036.45,TEXTING SERVICES,,,,2021,4102920211376559515,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2022,C00696526,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,07/23/2021,120769.77,TEXTING SERVICES,,,,2021,4102920211376559476,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2022,C00814509,CAMPAIGN NUCLEUS LLC,MEDINA,OH,10/05/2022,2500,DIGITAL ADVERTISING,,,,2022,4111620221629816134,campaign_nucleus,Campaign Nucleus,political_specific,high,advertising_creative
 2022,C00522425,PROMPT.IO,SEATTLE,WA,08/02/2022,3333.33,PAC SUBSCRIPTION,,,X,2022,4091620221575977628,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2022,C00784785,CALLTIME.AI,VISALIA,CA,08/05/2022,850,COMMUNICATION SERVICES,,,,2022,4110820221616650079,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2022,C00784785,CALLTIME.AI,VISALIA,CA,07/05/2022,850,COMMUNICATION SERVICES,,,,2022,4110820221616650250,calltime_ai,CallTime.AI,political_specific,high,unspecified
@@ -1056,6 +1064,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,01/03/2022,7077.46,DIGITAL ADVERTISING,Advertising Expenses ,,,2022,4091620221575947719,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative
 2022,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,01/18/2022,6217.54,DIGITAL ADVERTISING,Advertising Expenses ,,,2022,4091620221575947720,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative
 2022,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,03/16/2022,6609.14,DIGITAL ADVERTISING,Advertising Expenses ,,,2022,4091620221575947721,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative
+2022,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,10/18/2022,5155.66,LIST RENTAL,,,,2022,4041320231739916219,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/12/2022,120,PAYROLL,,,,2022,4020620231723349676,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/22/2022,100,PAYROLL,,,,2022,4020620231723349677,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/30/2022,103.5,PAYROLL,,,,2022,4020620231723349671,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
@@ -1182,6 +1191,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/06/2022,250,PAYROLL,,,,2022,4072620221552357029,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/07/2022,203,REIMBURSEMENT (VENDORS THAT AGGREGATE OVER $200 LISTED BELOW),,,,2022,4072620221552357030,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2022,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/14/2022,1000,PAYROLL,,,,2022,4072620221552357031,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2022,C00811323,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,06/21/2022,970,LIST RENTAL & DIGITAL EXPENSES,,,,2022,4072420221543672468,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2022,C00003418,GRAMMARLY,SAN FRANCISCO,CA,07/08/2022,144,DUES AND SUBSCRIPTIONS,,,X,2022,4082420221566162345,grammarly,Grammarly,general_purpose,high,unspecified
 2022,C00771972,"TRUVERSE, INC.",LOS ALTOS,CA,04/18/2022,2399.45,GOTV TEXTING,,,,2022,4080820221563582287,amplify_ai,Amplify.ai (TruVerse),political_specific,high,data_targeting
 2022,C00771972,"TRUVERSE, INC.",LOS ALTOS,CA,05/06/2022,587.79,GOTV TEXTING,,,,2022,4080820221563582288,amplify_ai,Amplify.ai (TruVerse),political_specific,high,data_targeting
@@ -1197,6 +1207,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2022,C00776740,NUMERO.AI,IRVINE,CA,05/04/2022,2000,SOFTWARE,,*,X,2022,4080320221554942535,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2022,C00776740,NUMERO.AI,IRVINE,CA,06/07/2022,1667,SOFTWARE,,*,X,2022,4080320221554942554,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2022,C00785279,CALL TIME.AI,VISALIA,CA,08/31/2022,2214,SOFTWARE SUBSCRIPTION,,*,X,2022,4071520231753492208,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2022,C00804286,"CAMPAIGN NUCLEUS, LLC",MEDINA,OH,06/10/2022,1555.23,,Solicitation and Fundraising Expenses ,,,2022,4080220221553885841,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising
+2022,C00804286,"CAMPAIGN NUCLEUS, LLC",MEDINA,OH,06/16/2022,1463.7,,Solicitation and Fundraising Expenses ,,,2022,4080220221553885842,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising
 2022,C00648956,CALLTIME.AI,VISALIA,CA,04/11/2022,900,SOFTWARE,,,,2022,4072620221552359530,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00648956,CALLTIME.AI,VISALIA,CA,05/09/2022,900,SOFTWARE,,,,2022,4072620221552359531,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2022,C00648956,CALLTIME.AI,VISALIA,CA,06/09/2022,900,SOFTWARE,,,,2022,4072620221552359532,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity

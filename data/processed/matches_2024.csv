@@ -2,7 +2,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00784785,CALLTIME.AI,VISALIA,CA,01/05/2023,1050,COMMUNICATION SERVICES,,,,2023,4021320231725844757,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,12/30/2022,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4022220231732582716,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,12/05/2022,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4022220231732582717,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,01/06/2023,1201.56,LIST RENTAL,,,,2023,4022120231732524100,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00573261,CALLTIME AI,VISALIA,CA,01/12/2023,1200,SOFTWARE,,*,X,2023,4022120231732518503,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00721548,CAMPAIGN NUCLEUS,FORT LAUDERDALE,FL,08/31/2023,150.19,DATABASE SERVICES,Administrative/Salary/Overhead Expenses ,,,2023,4100620231803954651,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00803502,OTTER.AI,MOUNTAIN VIEW,CA,12/07/2022,90,SOFTWARE SUBSCRIPTION,,,X,2023,4100620231803955151,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00803502,OTTER.AI,MOUNTAIN VIEW,CA,02/07/2023,90,SOFTWARE SUBSCRIPTION,,,X,2023,4100620231803955250,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00803502,OTTER.AI,MOUNTAIN VIEW,CA,01/07/2023,90,SOFTWARE SUBSCRIPTION,,,X,2023,4100620231803955199,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
@@ -21,6 +23,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00843029,SPEECHIFAI,NEW YORK,NY,01/03/2024,255,SOFTWARE SUBSCRIPTION,,*,X,2024,4032020241885369635,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2024,C00843029,SPEECHIFAI,NEW YORK,NY,01/03/2024,99,SOFTWARE SUBSCRIPTION,,*,X,2024,4032020241885369636,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2024,C00836916,PROMPT.IO INC.,SEATTLE,WA,01/05/2024,940,SOFTWARE,,,,2024,4022220241826266152,prompt_io,Prompt.io,political_specific,high,administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,02/27/2024,20000,FUNDRAISING SOFTWARE,,,,2024,4032720241888116816,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,01/08/2024,87.9,SOFTWARE,,,X,2024,4022220241826267087,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
 2024,C00857342,CALLTIME.AI,LOS ANGELES,CA,07/19/2024,162.42,SOFTWARE AND OFFICE SUPPLIES,,,,2024,4100920242069338955,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00857342,CALLTIME.AI,LOS ANGELES,CA,08/13/2024,700,SOFTWARE AND OFFICE SUPPLIES,,,,2024,4100920242069338956,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -40,9 +43,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00809384,PROMPT.IO INC.,SEATTLE,WA,05/09/2023,2200,TEXTING PLATFORM SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2023,4071920231754615990,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2024,C00809384,PROMPT.IO INC.,SEATTLE,WA,06/02/2023,2200,TEXTING PLATFORM SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2023,4071920231754615991,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,01/28/2024,30,SOFTWARE,,,X,2024,4032720241888116144,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,02/08/2023,1942.91,LIST RENTAL,,,,2023,4032120231736813431,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,12/28/2023,30,SUBSCRIPTIONS,,,X,2024,4022720241857680003,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00540302,GRAMMARLY,SAN FRANCISCO,CA,08/28/2023,139.95,SOFTWARE,,,X,2023,4101820231805749253,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00540302,GRAMMARLY,SAN FRANCISCO,CA,07/25/2023,333.72,SOFTWARE,,,X,2023,4101820231805748339,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,01/05/2024,20000,FUNDRAISING SOFTWARE,,,,2024,4022720241857680119,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00787648,DONOR ATLAS,CAMBRIDGE,MA,07/26/2024,300,SOFTWARE RENTAL,,,,2024,4111920241071179119,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
 2024,C00787648,DONOR ATLAS,CAMBRIDGE,MA,08/26/2024,300,SOFTWARE RENTAL,,,,2024,4111920241071179120,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
 2024,C00787648,DONOR ATLAS,CAMBRIDGE,MA,09/26/2024,300,SOFTWARE RENTAL,,,,2024,4111920241071179121,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
@@ -94,6 +99,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00696526,OTTER.AI,LOS ALTOS,CA,05/16/2023,9.68,SOFTWARE,,*,X,2023,4072120231756518029,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00696526,OTTER.AI,LOS ALTOS,CA,05/16/2023,90,SOFTWARE,,*,X,2023,4072120231756518038,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00696526,OTTER.AI,LOS ALTOS,CA,06/13/2023,90,SOFTWARE,,*,X,2023,4072120231756518137,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,06/14/2023,18930.78,LIST RENTAL,,,,2023,4072420231756838599,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00019331,SPEECHIFAI,NEW YORK,NY,03/17/2023,3304.8,SOFTWARE,,,,2023,4050220231746760919,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,04/26/2023,4701.43,FUNDRAISING TEXT MESSAGES,,,,2023,4080220231760262552,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,05/25/2023,6377.41,FUNDRAISING TEXT MESSAGES,,,,2023,4080220231760262553,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
@@ -119,8 +125,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00672295,NUMERO.AI,IRVINE,CA,02/28/2023,1250,SOFTWARE,,*,X,2023,4042020231743507174,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00558627,CALLTIME AI,LOS ANGELES,CA,03/02/2023,1475,SOFTWARE LICENSE FEE,,,,2023,4072020231755781321,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00038505,GRAMMARLY,SAN FRANCISCO,CA,06/23/2023,144,COMPUTER SOFTWARE,,,,2023,4080820231764934047,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,11/08/2024,3666.67,DIGITAL MARKETING,,,,2024,4011420251130180895,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,10/29/2024,5000,DIGITAL MARKETING,,,,2024,4011420251130180894,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00831289,CALLTIME.AI,VISALIA,CA,06/19/2023,900,FUNDRAISING SOLICITING,Solicitation and Fundraising Expenses ,,X,2023,4110120231808942613,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2024,C00831289,CALLTIME.AI,VISALIA,CA,06/19/2023,-450,CREDIT,Administrative/Salary/Overhead Expenses ,,X,2023,4110120231808942614,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,04/12/2023,4374.85,LIST RENTAL,,,,2023,4110120231808937287,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00027466,RUNWAY AI,NEWARK,DE,04/07/2023,336,SUBSCRIPTION,,,X,2023,4110120231808937256,runwayml,Runway,general_purpose,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,05/03/2023,1250,SOFTWARE,,*,X,2023,4071920231754624711,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,05/03/2023,1250,SOFTWARE,,*,X,2023,4071920231754624721,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
@@ -185,6 +194,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00765164,AMPLIFY.AI,LOS ALTOS,CA,03/06/2024,188.66,TEXT MESSAGING SERVICES,,,,2024,4050720241922007215,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,05/01/2023,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4110120231808934450,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,04/05/2023,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4110120231808934451,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,04/05/2023,20000,FUNDRAISING SOFTWARE,,,,2023,4072020231755760397,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,05/03/2023,20000,FUNDRAISING SOFTWARE,,,,2023,4072020231755760398,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,06/06/2023,20000,FUNDRAISING SOFTWARE,,,,2023,4072020231755760399,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00792283,JASPER AI,AUSTIN,TX,01/18/2023,99,SOFTWARE,,,,2023,4042520231744065408,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
 2024,C00792283,JASPER AI,AUSTIN,TX,03/20/2023,99,SOFTWARE,,,,2023,4042520231744065395,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
 2024,C00792283,JASPER AI,AUSTIN,TX,02/21/2023,99,SOFTWARE,,,,2023,4042520231744065401,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
@@ -193,6 +205,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00856112,PROMPT.IO INC.,SEATTLE,WA,12/21/2023,2000,COMPUTER SOFTWARE,,,,2023,4020420251142258665,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,02/12/2024,125,COMPUTER SOFTWARE,,*,X,2024,4062720241962987941,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,03/25/2024,125,COMPUTER SOFTWARE,,*,X,2024,4062720241962988009,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,01/11/2023,20000,FUNDRAISING SOFTWARE,,,,2023,4041920231743309864,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,02/01/2023,20000,FUNDRAISING SOFTWARE,,,,2023,4041920231743309865,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,03/10/2023,20000,FUNDRAISING SOFTWARE,,,,2023,4041920231743309866,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,01/23/2023,14,SUBSCRIPTION,,*,X,2023,4041420231742380516,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,02/22/2023,14,SUBSCRIPTION,,*,X,2023,4041420231742380578,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00500843,DESCRIPT INC.,SAN FRANCISCO,CA,03/21/2023,14,SUBSCRIPTION,,*,X,2023,4041420231742380624,descript,Descript,general_purpose,high,administrative_productivity
@@ -267,6 +282,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00841643,CALLTIME.AI,VISALIA,CA,07/17/2023,1190,FUNDRAISING SOFTWARE,,,,2023,4110620231809826435,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00841643,CALLTIME.AI,VISALIA,CA,09/15/2023,1190,FUNDRAISING SOFTWARE,,,,2023,4110620231809826454,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00710103,CHATFUEL,SAN FRANCISCO,CA,03/02/2023,620.76,ONLINE SERVICES,Administrative/Salary/Overhead Expenses ,,X,2023,4042820231745866633,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,09/19/2023,4257.23,LIST RENTAL,,,,2023,4102320231806969225,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00840959,CALLTIME.AI,VISALIA,CA,06/23/2023,525,SUBSCRIPTION,,,,2023,4072720231758139924,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00754242,"OPENAI, L.L.C.",SAN FRANCISCO,CA,12/24/2024,40,MARKETING / GRAPHIC DESIGN $20 + 10/24 $20 NOT REPORTED,,,,2024,4020320251140941387,openai,OpenAI (ChatGPT),general_purpose,high,advertising_creative
 2024,C00370056,"STRAMONINE, CLAUDE",ONTARIO,NY,03/01/2023,-12.5,VOID OF UNCASHED REFUND CHECK OF CONTRIBUTION RECEIVED AFTER RETIREMENT,,,,2023,4071020231753100306,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
@@ -296,6 +312,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,05/12/2023,.06,COMPUTER SOFTWARE,,,,2023,4110120231808927899,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,06/12/2023,125,COMPUTER SOFTWARE,,,,2023,4110120231808927900,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,04/12/2023,100,COMPUTER SOFTWARE,,,,2023,4110120231808927897,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00867937,CAMPAIGN NUCLEUS LLC,MEDINA,OH,11/04/2024,15000,FUNDRAISING SOFTWARE,,,,2024,4021320251173457569,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,07/11/2023,22378.98,TEXT MESSAGING,,,,2023,4102520231807327434,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,08/08/2023,19126.42,TEXT MESSAGING,,,,2023,4102520231807327435,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,09/07/2023,8407.28,TEXT MESSAGING,,,,2023,4102520231807327436,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -321,10 +338,12 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,04/10/2024,15,IT SUPPORT/MAINTENANCE,,,X,2024,4052920241951267362,descript,Descript,general_purpose,high,unspecified
 2024,C00003418,GRAMMARLY,SAN FRANCISCO,CA,04/03/2024,152.64,DUES AND SUBSCRIPTIONS,,,X,2024,4052920241951267250,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00840108,PROMPT.IO INC,SEATTLE,WA,08/16/2023,1200,SOFTWARE SUBSCRIPTION FEE,Advertising Expenses ,,,2023,4102520231807330436,prompt_io,Prompt.io,political_specific,high,advertising_creative;administrative_productivity
+2024,C00003418,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,04/10/2024,21001.98,WEB HOSTING,,,,2024,4052920241951267523,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,03/01/2023,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4052020231747963063,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,02/06/2023,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4052020231747963064,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00406645,GRAMMARLY.COM,SAN FRANCISCO,CA,09/04/2023,30,GRAMMAR SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2023,4101920231805952451,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00833608,NUMERO.AI,COSTA MESA,CA,02/09/2024,1600,SOFTWARE,,*,X,2024,4022720241857664733,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,11/04/2024,5000,FUNDRAISING SOFTWARE,,,,2024,4051420251197634755,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,03/30/2023,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4062120231751594701,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,03/06/2023,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4062120231751594702,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00836494,CALLTIME.AI,VISALIA,CA,05/19/2023,850,SOFTWARE,,,,2023,4110120231808927624,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -356,7 +375,10 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00831289,CALLTIME.AI,VISALIA,CA,08/21/2023,-225,REFUND,Administrative/Salary/Overhead Expenses ,,X,2023,4122120231813184264,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00831289,CALLTIME.AI,VISALIA,CA,07/20/2023,450,FUNDRAISING SOLICITING,Solicitation and Fundraising Expenses ,,X,2023,4122120231813184257,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2024,C00831289,CALLTIME.AI,VISALIA,CA,09/22/2023,675,FUNDRAISING SOLICITING,Solicitation and Fundraising Expenses ,,X,2023,4122120231813184270,calltime_ai,CallTime.AI,political_specific,high,fundraising
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,03/08/2023,1301.01,LIST RENTAL,,,,2023,4052320241950662820,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00042366,OTTER AI,MT VIEW,CA,10/02/2023,1200,COMPUTER SOFTWARE,,MEMO ENTRY,X,2023,4010220241813753089,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,11/08/2023,4163.55,EMAIL MESSAGING,,,,2023,4122220231813300250,campaign_nucleus,Campaign Nucleus,political_specific,high,communications_copy
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,11/14/2023,1418.43,EMAIL MESSAGING,,,,2023,4122220231813300251,campaign_nucleus,Campaign Nucleus,political_specific,high,communications_copy
 2024,C00831289,CALLTIME.AI,VISALIA,CA,11/28/2023,630,FUNDRAISING SOLICITING,Solicitation and Fundraising Expenses ,,X,2023,4020920241824372644,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2024,C00831289,CALLTIME.AI,VISALIA,CA,10/18/2023,525,FUNDRAISING SOLICITING,Solicitation and Fundraising Expenses ,,X,2023,4020920241824372640,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2024,C00831289,CALLTIME.AI,VISALIA,CA,12/20/2023,630,FUNDRAISING SOLICITING,Solicitation and Fundraising Expenses ,,X,2023,4020920241824372652,calltime_ai,CallTime.AI,political_specific,high,fundraising
@@ -378,9 +400,16 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00844985,NUMERO.AI,COSTA MESA,CA,10/02/2023,2350,REPORTING SOFTWARE,,,,2023,4022020241825475220,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00844985,NUMERO.AI,COSTA MESA,CA,11/02/2023,2350,REPORTING SOFTWARE,,,,2023,4022020241825475221,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00844985,NUMERO.AI,COSTA MESA,CA,12/01/2023,2350,REPORTING SOFTWARE,,,,2023,4022020241825475222,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,05/17/2023,5053.32,EMAIL MESSAGING,,,,2023,4052320241950664856,campaign_nucleus,Campaign Nucleus,political_specific,high,communications_copy
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,05/03/2023,1374.13,LIST RENTAL,,,,2023,4052320241950664857,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,01/04/2023,5000,WEB HOSTING AND EMAIL MARKETING,,,,2023,4120820231812161558,campaign_nucleus,Campaign Nucleus,political_specific,high,communications_copy
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,03/02/2023,5000,WEB HOSTING AND EMAIL MARKETING,,,,2023,4120820231812161559,campaign_nucleus,Campaign Nucleus,political_specific,high,communications_copy
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,04/01/2023,5000,WEB HOSTING AND EMAIL MARKETING,,,,2023,4120820231812161560,campaign_nucleus,Campaign Nucleus,political_specific,high,communications_copy
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,05/12/2023,10000,WEB HOSTING AND EMAIL MARKETING,,,,2023,4120820231812161561,campaign_nucleus,Campaign Nucleus,political_specific,high,communications_copy
 2024,C00019331,QUILLER.AI,CHICAGO,IL,12/07/2023,900,SOFTWARE,,,,2023,4052920241951274738,quiller,Quiller,political_specific,high,administrative_productivity
 2024,C00019331,QUILLER.AI,CHICAGO,IL,12/07/2023,900,SOFTWARE,,,,2023,4052920241951274737,quiller,Quiller,political_specific,high,administrative_productivity
 2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,11/09/2023,21.2,OFFICE SUPPLIES,,,X,2023,4011920241815860328,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,07/14/2023,15204.5,LIST RENTAL,,,,2023,4052320241950666741,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,10/12/2023,125,COMPUTER SOFTWARE,,,,2023,4020120241818843565,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,11/13/2023,125,COMPUTER SOFTWARE,,,,2023,4020120241818843566,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,12/12/2023,125,COMPUTER SOFTWARE,,,,2023,4020120241818843567,grammarly,Grammarly,general_purpose,high,administrative_productivity
@@ -403,6 +432,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00431056,OTTER.AI,MOUNTAIN VIEW,CA,06/13/2023,240,SOFTWARE SUBSCRIPTION,,*,X,2023,4110720231809997308,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00558627,CALLTIME AI,LOS ANGELES,CA,07/03/2023,4200,FUNDRAISING SOFTWARE LICENSE FEE,,,,2023,4020120241818857887,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00836478,"DEFORD, WILLIAM MCADOO JR",MOUNT PLEASANT,SC,10/05/2023,550,IN-KIND: CALLTIME.AI SOFTWARE,,* IN-KIND RECEIVED,,2023,4021420241824897499,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,10/20/2023,450,LIST RENTAL,,,,2023,4112020231811312920,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,10/11/2023,3853.36,LIST RENTAL,,,,2023,4112020231811312921,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00725101,CALL TIME.AI,VISALIA,CA,04/03/2023,3975,SOFTWARE,,,,2023,4111620231810782000,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00695346,CHAT GPT,,,03/23/2023,7.82,DUES/SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,X,2023,4112720231811758151,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00695346,SPEECHIFAI,BROOKLYN,NY,01/05/2023,3.41,DIGITAL FIELD,Administrative/Salary/Overhead Expenses ,,X,2023,4112720231811757624,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
@@ -425,6 +456,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00844985,NUMERO.AI,COSTA MESA,CA,09/05/2023,470,REPORTING SOFTWARE,,,,2023,4122120231813192390,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00806174,CALLTIME.AI,VISALIA,CA,07/17/2023,1050,SOFTWARE RENTAL,,,,2023,4122120231813192500,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00731042,"TRUVERSE, INC.",LOS ALTOS,CA,11/27/2023,3000,TEXTING SERVICES,,,,2023,4022220241826253389,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,09/28/2023,20000,FUNDRAISING SOFTWARE,,,,2023,4010520241814714317,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/07/2023,20000,FUNDRAISING SOFTWARE,,,,2023,4010520241814714318,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,08/02/2023,20000,FUNDRAISING SOFTWARE,,,,2023,4010520241814714319,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00856963,CALLTIME AI,VISALIA,CA,12/01/2023,500,SUBSCRIPTIONS,,,,2023,4021320241824727893,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2024,C00856963,CALLTIME AI,VISALIA,CA,12/07/2023,500,SUBSCRIPTIONS,,,,2023,4021320241824727894,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,11/15/2023,8572.16,FUNDRAISING TEXT MESSAGES,,,,2023,4020620241820604474,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
@@ -444,9 +478,13 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00672295,NUMERO.AI,IRVINE,CA,10/27/2023,1250,SOFTWARE,,*,X,2023,4020120241818836998,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,11/08/2023,1250,SOFTWARE,,*,X,2023,4020120241818837180,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,10/12/2023,1250,SOFTWARE,,*,X,2023,4020120241818837144,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,12/11/2023,8514.26,LIST RENTAL,,,,2023,4022220241826257592,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00731042,"TRUVERSE, INC.",LOS ALTOS,CA,04/04/2024,11549.51,TEXTING SERVICES,,,,2024,4052220241950370082,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,12/05/2023,76.94,SOFTWARE,,,X,2023,4013120241818184902,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
 2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,10/16/2023,75.7,SUBSCRIPTION,,,X,2023,4013120241818183391,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
+2024,C00721548,CAMPAIGN NUCLEUS,FORT LAUDERDALE,FL,10/01/2023,500,DATABASE SERVICES,Administrative/Salary/Overhead Expenses ,,,2023,4012820241817212628,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00721548,CAMPAIGN NUCLEUS,FORT LAUDERDALE,FL,10/31/2023,150,DATABASE SERVICES,Administrative/Salary/Overhead Expenses ,,,2023,4012820241817212629,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00721548,CAMPAIGN NUCLEUS,FORT LAUDERDALE,FL,12/01/2023,150,DATABASE SERVICES,Administrative/Salary/Overhead Expenses ,,,2023,4012820241817212630,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,10/25/2024,90,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,,2024,4121320241076580187,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,11/20/2024,3.87,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,,2024,4121320241076580188,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,11/25/2024,120,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,,2024,4121320241076580189,descript,Descript,general_purpose,high,administrative_productivity
@@ -563,15 +601,24 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00864124,NUMERO AI,COSTA MESA,CA,02/29/2024,1125,SOFTWARE,,,,2024,4051320241923194748,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00864124,QUILLER.AI,CHICAGO,IL,02/23/2024,142.5,SOFTWARE,,,,2024,4051320241923194753,quiller,Quiller,political_specific,high,administrative_productivity
 2024,C00864124,QUILLER.AI,CHICAGO,IL,03/25/2024,185,SOFTWARE,,,,2024,4051320241923194754,quiller,Quiller,political_specific,high,administrative_productivity
+2024,C00685776,CAMPAIGN NUCLEUS,MEDINA,OH,12/30/2024,50,OFFICE SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,,2024,4012820251136221303,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00685776,CAMPAIGN NUCLEUS,MEDINA,OH,12/01/2024,50,OFFICE SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,,2024,4012820251136221302,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00834424,OTTER.AI,MOUNTAIN VIEW,CA,06/03/2024,35,SOFTWARE SERVICES,,,,2024,4072320241978622240,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00873893,CAMPAIGN NUCLEUS LLC,MEDINA,OH,11/04/2024,27000,FUNDRAISING SOFTWARE,,,,2024,4011320251129204768,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00873893,CAMPAIGN NUCLEUS LLC,MEDINA,OH,11/04/2024,366.74,FUNDRAISING SOFTWARE,,,,2024,4011320251129204769,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00836916,SONIX.AI,EL SEGUNDO,CA,06/05/2024,181.23,SOFTWARE,,,X,2024,4072320241978625593,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
 2024,C00836916,AIR AI,SCOTTSDALE,AZ,06/05/2024,297,SOFTWARE,,,X,2024,4072320241978625643,air_ai,Air AI,general_purpose,high,administrative_productivity
 2024,C00836916,SONIX.AI,EL SEGUNDO,CA,06/05/2024,792,SOFTWARE,,,X,2024,4072320241978625707,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
 2024,C00836346,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,04/09/2024,3922.09,TEXT MESSAGES,Solicitation and Fundraising Expenses ,,,2024,4073120241982079971,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00836346,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,05/06/2024,4838.43,TEXT MESSAGES,Solicitation and Fundraising Expenses ,,,2024,4073120241982079972,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00836346,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,06/05/2024,7122.87,TEXT MESSAGES,Solicitation and Fundraising Expenses ,,,2024,4073120241982079973,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,03/07/2024,4602.36,LIST RENTAL,,,,2024,4051420241923576081,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,04/04/2024,3648.37,LIST RENTAL,,,,2024,4052820241951065324,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00631549,CHORUS AI,BROOKLYN,NY,08/30/2024,350,COMPUTER SOFTWARE,,*,X,2024,4111320241068406353,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
 2024,C00631549,CHORUS AI,BROOKLYN,NY,07/30/2024,350,COMPUTER SOFTWARE,,*,X,2024,4111320241068406287,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
+2024,C00608695,CAMPAIGN NUCLEUS LLC,MEDINA,OH,06/02/2024,3000,CAMPAIGN RESEARCH,,,,2024,4070820241972347088,campaign_nucleus,Campaign Nucleus,political_specific,high,research_strategy
+2024,C00608695,CAMPAIGN NUCLEUS LLC,MEDINA,OH,06/05/2024,3000,CAMPAIGN RESEARCH,,,,2024,4070820241972347093,campaign_nucleus,Campaign Nucleus,political_specific,high,research_strategy
+2024,C00608695,CAMPAIGN NUCLEUS LLC,MEDINA,OH,04/29/2024,6000,CAMPAIGN RESEARCH,,,,2024,4070820241972347040,campaign_nucleus,Campaign Nucleus,political_specific,high,research_strategy
 2024,C00864579,DONOR ATLAS,,,10/21/2024,300,FUNDRAISING SERVICE,,,,2024,4121120241075776742,donoratlas,DonorAtlas,political_specific,high,fundraising
 2024,C00852137,GRAMMARLY,SAN FRANCISCO,CA,08/08/2024,100,SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4081420251218388825,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00852137,GRAMMARLY,SAN FRANCISCO,CA,07/08/2024,100,SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4081420251218388824,grammarly,Grammarly,general_purpose,high,administrative_productivity
@@ -587,6 +634,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00845933,CALLTIME.AI,VISALIA,CA,01/02/2024,950,SOFTWARE,,,,2024,4050820241922371330,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00845933,CALLTIME.AI,VISALIA,CA,01/30/2024,950,SOFTWARE,,,,2024,4050820241922371331,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00845933,CALLTIME.AI,VISALIA,CA,03/01/2024,950,SOFTWARE,,,,2024,4050820241922371332,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00172510,CAMPAIGN NUCLEUS,LEWES,DE,12/02/2024,500,VOTER DATA,Administrative/Salary/Overhead Expenses ,,,2024,4060420251204856105,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00172510,CAMPAIGN NUCLEUS,LEWES,DE,12/31/2024,500,VOTER DATA,Administrative/Salary/Overhead Expenses ,,,2024,4060420251204856106,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00834077,OTTER.AI,MOUNTAIN VIEW,CA,06/02/2023,99.99,SUBSCRIPTION,,,X,2023,4080120231759239730,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,06/29/2023,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2023,4081020231766005924,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,05/29/2023,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2023,4081020231766005877,grammarly,Grammarly,general_purpose,high,administrative_productivity
@@ -595,6 +644,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,04/11/2023,248.26,TEXT MESSAGING,,,,2023,4080220231760270987,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,04/05/2023,645.49,TEXT MESSAGING,,,,2023,4080220231760270931,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,02/01/2023,3017.88,TEXT MESSAGING,,,,2023,4080220231760270873,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,05/04/2023,30000,FUNDRAISING SOFTWARE,,,,2023,4080120231759242998,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,04/05/2023,30000,FUNDRAISING SOFTWARE,,,,2023,4080120231759242999,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,03/14/2023,30000,FUNDRAISING SOFTWARE,,,,2023,4080120231759243000,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,02/10/2023,60000,FUNDRAISING SOFTWARE,,,,2023,4080120231759243001,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,06/08/2023,30000,FUNDRAISING SOFTWARE,,,,2023,4080120231759243002,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00847400,OTTER.AI,MOUNTAIN VIEW,CA,11/02/2024,60,SOFTWARE,,*,X,2024,4012320251134709947,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00558627,CALLTIME AI,LOS ANGELES,CA,04/03/2023,4200,FUNDRAISING SOFTWARE LICENSE FEE,,,,2023,4090120231801373478,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00859108,CALL TIME AI,VISALIA,CA,02/01/2024,650,COMPUTER SOFTWARE,,,,2024,4050720241921994042,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -660,7 +714,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00792283,JASPER AI,AUSTIN,TX,02/20/2024,99,SUBSCRIPTION,,,,2024,4050220241921400969,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
 2024,C00792283,JASPER AI,AUSTIN,TX,03/18/2024,99,SUBSCRIPTION,,,,2024,4050220241921400973,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
 2024,C00792283,JASPER AI,AUSTIN,TX,01/18/2024,99,SUBSCRIPTION,,,,2024,4050220241921400903,jasper_ai,Jasper AI,general_purpose,high,administrative_productivity
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,08/08/2023,13098.56,LIST RENTAL,,,,2023,4092520231803044566,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,07/18/2023,120,SOFTWARE,,*,X,2023,4092520231803047411,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,06/28/2024,5000,DIGITAL MARKETING,,,,2024,4081220242011770916,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00825851,CHATGPT,SAN FRANCISCO,CA,05/10/2024,20,CREDIT CARD PMT [SB21B.7463]: SOFTWARE SUBSCRIPTION,,,X,2024,4081220242011770931,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00406645,GRAMMARLY.COM,SAN FRANCISCO,CA,07/04/2023,30,GRAMMAR SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2023,4082220231800208851,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,04/18/2023,120,SOFTWARE,,*,X,2023,4092720231803386327,grammarly,Grammarly,general_purpose,high,administrative_productivity
@@ -675,6 +731,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,08/10/2023,21.2,OFFICE SUPPLIES,,,X,2023,4092520231803048986,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,06/30/2023,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4082120231800006699,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,LOS ALTOS,CA,06/05/2023,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2023,4082120231800006700,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00853200,CAMPAIGN NUCLEUS,MEDINA,OH,01/02/2024,50,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4053120241951804037,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00853200,CAMPAIGN NUCLEUS,MEDINA,OH,01/31/2024,50,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4053120241951804038,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00853200,CAMPAIGN NUCLEUS,MEDINA,OH,03/04/2024,50,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4053120241951804039,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00680934,"TRUVERSE, INC.",LOS ALTOS,CA,02/12/2024,5083.69,TEXTING SERVICES,,,,2024,4051020241922911205,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00680934,"TRUVERSE, INC.",LOS ALTOS,CA,02/15/2024,2557.07,TEXTING SERVICES,,,,2024,4051020241922911206,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00680934,"TRUVERSE, INC.",LOS ALTOS,CA,02/15/2024,2644.24,TEXTING SERVICES,,,,2024,4051020241922911207,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -732,6 +791,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,03/06/2024,769.01,TEXT MESSAGING,,,,2024,4042520241912457343,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,05/10/2024,16.99,COMPUTER SOFTWARE,,*,X,2024,4062420241962099395,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00343871,OTTER AI,MOUNTAIN VIEW,CA,02/02/2024,480,SOFTWARE SUBSCRIPTION,,*,X,2024,4091120251291053955,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,05/13/2024,2653.91,LIST RENTAL,,,,2024,4062520241962762903,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00343871,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,02/14/2024,133646.43,TEXT MESSAGE SERVICES,,,,2024,4091120251291053773,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
 2024,C00343871,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,01/12/2024,149440.38,TEXT MESSAGE SERVICES,,,,2024,4091120251291053605,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,07/31/2024,7340.93,FUNDRAISING TEXT MESSAGES,,,,2024,4111420241068893663,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
@@ -740,6 +800,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00558627,OTTER.AI,MOUNTAIN VIEW,CA,10/22/2024,16.99,SOFTWARE SUBSCRIPTION,,*,X,2024,4020620251144528063,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00558627,OTTER.AI,MOUNTAIN VIEW,CA,10/22/2024,16.99,SOFTWARE SUBSCRIPTION,,*,X,2024,4020620251144528064,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00558627,OTTER.AI,MOUNTAIN VIEW,CA,10/22/2024,16.99,SOFTWARE SUBSCRIPTION,,*,X,2024,4020620251144528065,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00608695,CAMPAIGN NUCLEUS LLC,MEDINA,OH,11/15/2024,3000,CAMPAIGN RESEARCH,,,,2024,4120320251296856741,campaign_nucleus,Campaign Nucleus,political_specific,high,research_strategy
+2024,C00852186,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/01/2024,50,SUBSCRIPTION,,,,2024,4111320241068401790,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00852186,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/01/2024,50,SUBSCRIPTION,,,,2024,4111320241068401791,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00836916,SONIX.AI,EL SEGUNDO,CA,03/03/2024,100.52,SOFTWARE,,,X,2024,4051720241949620635,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
 2024,C00257337,PROMPT.IO INC,SEATTLE,WA,09/06/2024,20000,SOFTWARE SERVICES: VOTER OUTREACH,Advertising Expenses ,,,2024,4111220241068085289,prompt_io,Prompt.io,political_specific,high,advertising_creative;administrative_productivity
 2024,C00558627,OTTER.AI,MOUNTAIN VIEW,CA,10/22/2024,16.99,SOFTWARE SUBSCRIPTION,,*,X,2024,4020620251144528066,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
@@ -754,6 +817,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00834218,TRUVERSE INC,LOS ALTOS,CA,10/21/2024,7088.99,TEXT MESSAGING SERVICES,,,,2024,4011620251132184337,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00834218,TRUVERSE INC,LOS ALTOS,CA,11/09/2024,20787.49,TEXT MESSAGING SERVICES,,,,2024,4011620251132184338,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,03/08/2024,21.2,OFFICE SUPPLIES,,,X,2024,4051420241923573781,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
+2024,C00003418,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,03/15/2024,21000,WEB HOSTING,,,,2024,4051420241923574252,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00843110,OPENAI,SAN FRANCISCO,CA,03/28/2024,160,SUBSCRIPTION REIMBURSEMENT,,*,X,2024,4050320241921550222,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00843110,OTTER.AI,MOUNTAIN VIEW,CA,03/28/2024,84.95,SUBSCRIPTION REIMBURSEMENT,,*,X,2024,4050320241921550223,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00843110,OTTER.AI,MOUNTAIN VIEW,CA,03/28/2024,16.99,SUBSCRIPTION REIMBURSEMENT,,*,X,2024,4050320241921550224,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
@@ -766,6 +830,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00844985,NUMERO.AI,COSTA MESA,CA,01/02/2024,2350,SOFTWARE,,,,2024,4091720242040911058,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00167015,QUILLER.AI,CHICAGO,IL,03/07/2024,185,SOFTWARE,,*,X,2024,4051320241923187909,quiller,Quiller,political_specific,high,administrative_productivity
 2024,C00703975,CHORUS AI,BROOKLYN,NY,06/21/2024,2500,SOFTWARE,,,,2024,4072520241979615302,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,05/09/2024,5000,FUNDRAISING SOFTWARE,,,,2024,4071720241977045992,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00771972,CALLTIME.AI,VISALIA,CA,06/11/2024,1305,SOFTWARE,,,,2024,4090320242017289054,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00771972,CALLTIME.AI,VISALIA,CA,04/11/2024,990,SOFTWARE,,,,2024,4090320242017289052,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00771972,CALLTIME.AI,VISALIA,CA,05/13/2024,1305,SOFTWARE,,,,2024,4090320242017289053,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -782,6 +847,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,04/01/2024,2014.24,TEXT MESSAGING,,,,2024,4071720241977027404,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,05/03/2024,4076.6,TEXT MESSAGING,,,,2024,4071720241977027405,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,05/08/2024,3716.58,TEXT MESSAGING,,,,2024,4071720241977027406,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2024,C00706614,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,10/31/2024,50,WEB SVC/SUBSCRIPTION,,,,2024,4011620251132169890,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00857342,CALLTIME.AI,LOS ANGELES,CA,11/14/2024,700,OFFICE SUPPLIES &SOFTWARE,,,,2024,4121120241075758145,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00800144,PROMPT.IO,SEATTLE,WA,09/17/2024,4000,TEXTING PLATFORM SUBSCRIPTION,Advertising Expenses ,,,2024,4110420241050642046,prompt_io,Prompt.io,political_specific,high,advertising_creative;administrative_productivity
 2024,C00800144,PROMPT.IO,SEATTLE,WA,07/26/2024,2000,TEXTING PLATFORM SUBSCRIPTION,Advertising Expenses ,,,2024,4110420241050641951,prompt_io,Prompt.io,political_specific,high,advertising_creative;administrative_productivity
@@ -857,9 +923,13 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00836916,AIR AI,SCOTTSDALE,AZ,07/23/2024,282.3,SOFTWARE,,,X,2024,4082020242014436717,air_ai,Air AI,general_purpose,high,administrative_productivity
 2024,C00836916,AIR AI,SCOTTSDALE,AZ,07/23/2024,356,SOFTWARE,,,X,2024,4082020242014436777,air_ai,Air AI,general_purpose,high,administrative_productivity
 2024,C00836916,AIR AI,SCOTTSDALE,AZ,07/23/2024,574.49,SOFTWARE,,,X,2024,4082020242014436778,air_ai,Air AI,general_purpose,high,administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,03/18/2024,30000,FUNDRAISING SOFTWARE,,,,2024,4041820241896924543,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,01/10/2024,30000,FUNDRAISING SOFTWARE,,,,2024,4041820241896924541,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,02/08/2024,30000,FUNDRAISING SOFTWARE,,,,2024,4041820241896924542,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00631549,CHORUS AI,BROOKLYN,NY,09/29/2024,350,COMPUTER SOFTWARE,,*,X,2024,4031820251180312445,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
 2024,C00631549,CHORUS AI,BROOKLYN,NY,10/30/2024,350,COMPUTER SOFTWARE,,*,X,2024,4031820251180312503,chorus_ai,Chorus AI,political_specific,high,administrative_productivity
 2024,C00845933,CALLTIME.AI,VISALIA,CA,07/01/2024,1150,SOFTWARE,,,,2024,4072520241979623092,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,08/14/2024,2959.43,LIST RENTAL,,,,2024,4100120242044365996,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,08/08/2024,3798.36,TEXT MESSAGING,,,,2024,4102120242075738559,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,09/09/2024,772.01,TEXT MESSAGING,,,,2024,4102120242075738560,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00754242,"OPENAI, L.L.C.",SAN FRANCISCO,CA,08/29/2024,20,AI FOR GRAPHIC DESIGN,Administrative/Salary/Overhead Expenses ,,,2024,4112620241073702729,openai,OpenAI (ChatGPT),general_purpose,high,advertising_creative;administrative_productivity
@@ -870,20 +940,30 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00864124,QUILLER.AI,CHICAGO,IL,07/24/2024,185,SOFTWARE,,,,2024,4111320241068394643,quiller,Quiller,political_specific,high,administrative_productivity
 2024,C00495028,"TRUVERSE, INC.",LOS ALTOS,CA,08/08/2024,94.08,SUBSCRIPTION,,,,2024,4121720241078261737,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2024,C00806893,"SPEECHIFAI, INC.",NEW YORK,NY,12/20/2024,3960,SOFTWARE,,,,2024,4013020251139311751,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
+2024,C00608695,CAMPAIGN NUCLEUS LLC,MEDINA,OH,09/05/2024,3000,CAMPAIGN RESEARCH,,,,2024,4111920241071193575,campaign_nucleus,Campaign Nucleus,political_specific,high,research_strategy
+2024,C00608695,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/08/2024,3000,CAMPAIGN RESEARCH,,,,2024,4111920241071193484,campaign_nucleus,Campaign Nucleus,political_specific,high,research_strategy
+2024,C00608695,CAMPAIGN NUCLEUS LLC,MEDINA,OH,08/22/2024,3000,CAMPAIGN RESEARCH,,,,2024,4111920241071193540,campaign_nucleus,Campaign Nucleus,political_specific,high,research_strategy
 2024,C00843003,CALLTIME.AI,VISALIA,CA,08/01/2024,725,SOFTWARE,,,,2024,4111520241069660943,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00843003,CALLTIME.AI,VISALIA,CA,07/01/2024,725,SOFTWARE,,,,2024,4111520241069660942,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00003418,OTTER AI,MOUNTAIN VIEW,CA,07/03/2024,30,DUES AND SUBSCRIPTIONS,,CONVENTIONS ACCOUNT,X,2024,4082720242015985935,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,07/03/2024,15.9,OFFICE SUPPLIES,,,X,2024,4082720242015985747,descript,Descript,general_purpose,high,unspecified
+2024,C00003418,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,07/24/2024,21073.44,WEB HOSTING,,,,2024,4082720242015986847,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00764233,OPENAI,SAN FRANCISCO,CA,11/09/2024,63.6,SOFTWARE,,*,X,2024,4121820241107569229,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,12/26/2024,120,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,,2024,4012920251138487409,descript,Descript,general_purpose,high,administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,06/12/2024,5000,FUNDRAISING SOFTWARE,,,,2024,4071620241974579862,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,05/13/2024,5000,FUNDRAISING SOFTWARE,,,,2024,4071620241974579863,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,04/15/2024,30000,FUNDRAISING SOFTWARE,,,,2024,4071620241974579864,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,11/05/2024,3791.16,TEXT MESSAGING,,,,2024,4121920241110109744,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00605592,CALLTIME.AI,LOS ANGELES,CA,07/03/2024,765,SOFTWARE,,*,X,2024,4081520242013387454,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00792283,JASPER AI,AUSTIN,TX,09/18/2024,99,SUBSCRIPTIONS,,,,2024,4111520241069663544,jasper_ai,Jasper AI,general_purpose,high,unspecified
 2024,C00792283,JASPER AI,AUSTIN,TX,07/18/2024,99,SUBSCRIPTIONS,,,,2024,4111520241069663542,jasper_ai,Jasper AI,general_purpose,high,unspecified
 2024,C00792283,JASPER AI,AUSTIN,TX,08/19/2024,99,SUBSCRIPTIONS,,,,2024,4111520241069663537,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,12/13/2024,4441.87,LIST RENTAL,,,,2024,4020420251142294194,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00653196,GRAMMARLY,SAN FRANCISCO,CA,04/19/2024,225,DIGITAL SUBSCRIPTIONS,,*,X,2024,4051620241949515307,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00653196,GRAMMARLY,SAN FRANCISCO,CA,04/15/2024,51.6,DIGITAL SUBSCRIPTIONS,,*,X,2024,4051620241949514966,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,04/15/2024,120,DIGITAL SUBSCRIPTIONS,,*,X,2024,4051620241949514972,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00873893,CAMPAIGN NUCLEUS LLC,MEDINA,OH,06/14/2024,25000,FUNDRAISING SOFTWARE,,,,2024,4071620241974582442,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00873893,CAMPAIGN NUCLEUS LLC,MEDINA,OH,05/08/2024,25000,FUNDRAISING SOFTWARE,,,,2024,4071620241974582443,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00264697,OTTER.AI INC,MOUNTAIN VIEW,CA,05/01/2024,960,SOFTWARE,,*,X,2024,4103120241016256486,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00834218,TRUVERSE INC,LOS ALTOS,CA,07/08/2024,5184.21,TEXT MESSAGING SERVICES,,,,2024,4111620241069780304,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00834218,TRUVERSE INC,LOS ALTOS,CA,07/08/2024,3189.19,TEXT MESSAGING SERVICES,,,,2024,4111620241069780305,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -893,15 +973,18 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,11/26/2024,17543.2,FUNDRAISING TEXT MESSAGES,,,,2024,4020420251142306720,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,10/31/2024,5340.43,FUNDRAISING TEXT MESSAGES,,,,2024,4020420251142306719,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,12/30/2024,1511.8,FUNDRAISING TEXT MESSAGES,,,,2024,4020420251142306721,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,02/15/2024,4821.25,EMAIL MESSAGING,,,,2024,4032620241887772557,campaign_nucleus,Campaign Nucleus,political_specific,high,communications_copy
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,01/17/2024,16.99,COMPUTER SOFTWARE,,*,X,2024,4022820241858474375,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,01/12/2024,60,COMPUTER SOFTWARE,,*,X,2024,4022820241858474461,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,01/12/2024,60,COMPUTER SOFTWARE,,*,X,2024,4022820241858474462,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,01/12/2024,60,COMPUTER SOFTWARE,,*,X,2024,4022820241858474463,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00608695,CAMPAIGN NUCLEUS LLC,MEDINA,OH,10/10/2024,3000,CAMPAIGN RESEARCH,,,,2024,4112220241072868535,campaign_nucleus,Campaign Nucleus,political_specific,high,research_strategy
 2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,01/10/2024,21.2,OFFICE SUPPLIES,,,X,2024,4022820241858477442,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2024,C00841130,OTTER.AI,MOUNTAIN VIEW,CA,02/01/2024,120,SOFTWARE,,,X,2024,4041620241895892820,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00841130,OTTER.AI,MOUNTAIN VIEW,CA,03/11/2024,120,SOFTWARE,,,X,2024,4041620241895892958,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00731042,"TRUVERSE, INC.",LOS ALTOS,CA,02/07/2024,12787.58,TEXTING SERVICES,,,,2024,4032020241885368535,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00573261,CALLTIME AI,VISALIA,CA,01/11/2024,1200,SOFTWARE,,*,X,2024,4022020241825481216,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,01/01/2024,5000,DIGITAL MARKETING,,,,2024,4030120241877890214,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00836916,SONIX.AI,SAN FRANCISCO,CA,02/02/2024,76.85,SOFTWARE,,,X,2024,4032120241885460542,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
 2024,C00866244,GEMINI DIGITAL,SAN FRANCISCO,CA,02/12/2024,1200,DIGITAL/MEDIA CONSULTING,,,,2024,4022620241826703301,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,02/15/2024,16.99,COMPUTER SOFTWARE,,*,X,2024,4032120241885454060,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
@@ -910,10 +993,12 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00632133,OTTER.AI,MOUNTAIN VIEW,CA,03/13/2024,16.99,COMPUTER SOFTWARE,,*,X,2024,4041720241896093312,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,01/28/2024,6090,SOFTWARE,,*,X,2024,4032720241888119341,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,01/18/2024,120,SOFTWARE,,*,X,2024,4032720241888119027,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00721548,CAMPAIGN NUCLEUS,FORT LAUDERDALE,FL,01/02/2024,150,DATABASE SERVICES,Administrative/Salary/Overhead Expenses ,,,2024,4032220241885610015,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00854778,"PROMPT.IO, INC",SEATTLE,WA,02/02/2024,10000,MOBILE PHONE SERVICE,,,,2024,4032120241885457941,prompt_io,Prompt.io,political_specific,high,unspecified
 2024,C00774109,CHAT GPT OPEN AI,SAN FRANCISCO,CA,02/25/2024,20,CANDIDATE IN-KIND MEMO ENTRY - SUBSCRIPTION,,,X,2024,4032120241885457200,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,12/02/2023,220.33,SOFTWARE,,*,X,2024,4032920241888392422,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00792283,JASPER AI,AUSTIN,TX,12/18/2024,104.94,SUBSCRIPTIONS,,,,2024,4021220251172451138,jasper_ai,Jasper AI,general_purpose,high,unspecified
+2024,C00005926,CAMPAIGN NUCLEUS,BOSTON,MA,05/08/2024,.7,OFFICE SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,,2024,4012920251138510412,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00141812,"JARBOE, AARON CLAUDE",WASHINGTON,DC,12/13/2024,2854.86,PAYROLL,,,,2024,4050620251188972162,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00141812,"JARBOE, AARON CLAUDE",WASHINGTON,DC,12/30/2024,3470.13,PAYROLL,,,,2024,4050620251188972163,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00141812,"JARBOE, AARON CLAUDE",WASHINGTON,DC,11/29/2024,2854.86,PAYROLL,,,,2024,4050620251188972161,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
@@ -923,6 +1008,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00834218,TRUVERSE INC,LOS ALTOS,CA,12/09/2024,7281.03,TEXT MESSAGING SERVICES,,,,2024,4021220251172449218,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,05/30/2024,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4081420242012869826,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,05/06/2024,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4081420242012869827,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,05/20/2024,5000,DIGITAL MARKETING,,,,2024,4062520241962762570,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00810416,DONOR ATLAS,NEW YORK,NY,12/17/2024,300,DATA ACQUISITION,,,,2024,4012320251134731095,donoratlas,DonorAtlas,political_specific,high,unspecified
 2024,C00859439,PROMPT.IO INC.,SEATTLE,WA,02/22/2024,8800,TEXT MESSAGING,,,,2024,4010620251127049459,prompt_io,Prompt.io,political_specific,high,unspecified
 2024,C00859439,PROMPT.IO INC.,SEATTLE,WA,03/06/2024,5000,TEXT MESSAGING,,,,2024,4010620251127049460,prompt_io,Prompt.io,political_specific,high,unspecified
@@ -938,12 +1024,18 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00703975,OTTER.AI,MOUNTAIN VIEW,CA,08/05/2024,270,SOFTWARE,,*,X,2024,4100120242068330733,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,07/01/2024,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4082820242017029728,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,06/05/2024,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4082820242017029729,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00706614,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,09/04/2024,50,WEB SVC/SUBSCRIPTION,,,,2024,4111920241071168514,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00706614,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,08/08/2024,50,WEB SVC/SUBSCRIPTION,,,,2024,4111920241071168456,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00706614,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,08/01/2024,50,WEB SVC/SUBSCRIPTION,,,,2024,4111920241071168449,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00706614,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,07/02/2024,50,WEB SVC/SUBSCRIPTION,,,,2024,4111920241071168358,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,08/05/2024,1250,SOFTWARE,,,,2024,4111420241068882712,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,09/03/2024,1250,SOFTWARE,,,,2024,4111420241068882680,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,07/12/2024,1250,SOFTWARE,,*,X,2024,4111420241068882860,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,07/01/2024,1250,SOFTWARE,,,,2024,4111420241068882650,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00605592,CALLTIME.AI,LOS ANGELES,CA,08/07/2024,765,SOFTWARE,,*,X,2024,4110720241067646287,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00605592,CALLTIME.AI,LOS ANGELES,CA,09/09/2024,765,SOFTWARE SERVICES,,*,X,2024,4110720241067646329,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00769232,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,08/02/2024,50000,MANAGEMENT CONSULTING,,,,2024,4111920241071170431,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2024,C00769232,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,09/05/2024,50000,MANAGEMENT CONSULTING,,,,2024,4111920241071170453,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00857342,CALLTIME.AI,LOS ANGELES,CA,04/15/2024,500,,,,,2024,4070920241972650073,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2024,C00857342,CALLTIME.AI,LOS ANGELES,CA,05/13/2024,500,OFFICE SUPPLIES & SOFTWARD,,,,2024,4070920241972650074,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2024,C00857342,CALLTIME.AI,LOS ANGELES,CA,06/13/2024,500,SOFTWARE,,,,2024,4070920241972650075,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
@@ -958,17 +1050,21 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00857342,CALLTIME.AI,LOS ANGELES,CA,03/13/2024,500,,,,,2024,4041620241895896438,calltime_ai,CallTime.AI,political_specific,high,unspecified
 2024,C00838144,CALLTIME.AI,VISALIA,CA,02/16/2024,1050,SOFTWARE RENTAL,,,,2024,4041920241897327750,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00838144,CALLTIME.AI,VISALIA,CA,01/16/2024,1050,SOFTWARE RENTAL,,,,2024,4041920241897327790,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00852343,CAMPAIGN NUCLEUS LLC,MEDINA,OH,10/01/2024,1043.7,FUNDRAISING SOFTWARE,,,X,2024,4013120251140139955,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00852343,CAMPAIGN NUCLEUS LLC,MEDINA,OH,10/31/2024,1064.6,FUNDRAISING SOFTWARE,,,X,2024,4013120251140140052,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,09/25/2024,90,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,,2024,4101520242069867025,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,07/25/2024,120,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,,2024,4101520242069867023,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,08/26/2024,120,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,,2024,4101520242069867024,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00833608,NUMERO.AI,COSTA MESA,CA,03/01/2024,1600,SOFTWARE,,*,X,2024,4071820241978055170,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,02/12/2024,1926.61,TEXT MESSAGING,,,,2024,4043020241921044215,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00731042,"TRUVERSE, INC.",LOS ALTOS,CA,03/07/2024,12874.61,TEXTING SERVICES,,,,2024,4050920241922719193,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,03/27/2024,5000,DIGITAL MARKETING,,,,2024,4043020241921047773,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00794354,CALLTIME.AI,VISALIA,CA,01/18/2024,900,FUNDRAISING SOFTWARE,,,,2024,4050720241922003489,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00794354,CALLTIME.AI,VISALIA,CA,02/20/2024,900,FUNDRAISING SOFTWARE,,,,2024,4050720241922003490,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00794354,CALLTIME.AI,VISALIA,CA,03/18/2024,900,FUNDRAISING SOFTWARE,,,,2024,4050720241922003491,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00257337,PROMPT.IO INC,SEATTLE,WA,11/05/2024,20000,VOTER MESSAGING SOFTWARE,Advertising Expenses ,,X,2024,4011520251130998662,prompt_io,Prompt.io,political_specific,high,advertising_creative;administrative_productivity
 2024,C00257337,PROMPT.IO INC,SEATTLE,WA,10/21/2024,20000,VOTER MESSAGING,Advertising Expenses ,,X,2024,4011520251130998562,prompt_io,Prompt.io,political_specific,high,advertising_creative
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,02/01/2024,5000,DIGITAL MARKETING,,,,2024,4020420251142311416,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00605592,CALLTIME.AI,LOS ANGELES,CA,11/05/2024,765,SOFTWARE,,*,X,2024,4121920241124492105,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00836916,SONIX.AI,EL SEGUNDO,CA,09/03/2024,22.24,SOFTWARE,,,X,2024,4102320242077134237,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
 2024,C00836916,SONIX.AI,EL SEGUNDO,CA,09/03/2024,200.92,SOFTWARE,,,X,2024,4102320242077134640,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
@@ -976,6 +1072,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00827022,OTTER.AI,MOUNTAIN VIEW,CA,07/02/2024,244.62,SOFTWARE,,*,X,2024,4082720242015979718,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00827022,OTTER.AI,MOUNTAIN VIEW,CA,06/02/2024,91.4,SOFTWARE,,*,X,2024,4082720242015979102,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00815415,"DORCELLY, JEAN CLAUDE",SPRING VALLEY,NY,06/18/2024,400,EVENT FEE,Administrative/Salary/Overhead Expenses ,,,2024,4121020241075532372,anthropic,Anthropic (Claude),general_purpose,medium,administrative_productivity
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,09/24/2024,5000,DIGITAL MARKETING,,,,2024,4112020241071618572,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00825851,OPENAI,SAN FRANCISCO,CA,08/10/2024,20,CREDIT CARD PMT [SB21B.8223]: SOFTWARE SUBSCRIPTION,,,X,2024,4112020241071618610,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,01/16/2024,6738.79,FUNDRAISING TEXT MESSAGES,,,,2024,4042620241920846741,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,01/30/2024,4774.51,FUNDRAISING TEXT MESSAGES,,,,2024,4042620241920846742,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
@@ -997,6 +1094,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00710103,CHATFUEL,SAN FRANCISCO,CA,05/06/2024,151.61,ONLINE SERVICES,Administrative/Salary/Overhead Expenses ,,X,2024,4071520241973467869,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
 2024,C00431056,OTTER.AI,MOUNTAIN VIEW,CA,06/12/2024,720,SOFTWARE SUBSCRIPTION,,*,X,2024,4103120241016273974,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00431056,OTTER.AI,MOUNTAIN VIEW,CA,05/13/2024,31.02,SOFTWARE SUBSCRIPTION,,*,X,2024,4103120241016273702,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,07/11/2024,3452.48,LIST RENTAL,,,,2024,4082820242017009197,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00588657,DESCRIPT,SAN FRANCISCO,CA,10/01/2024,288,DIGITAL SERVICES,,,X,2024,4112120241072141040,descript,Descript,general_purpose,high,unspecified
 2024,C00855916,DAISYCHAIN,KINGSTON,NY,10/02/2024,1273.34,TEXT MESSAGING SERVICES,,,,2024,4120620241075132606,daisychain,Daisychain,political_specific,high,unspecified
 2024,C00703975,SPEECHIFAI INC.,NEW YORK,NY,10/28/2024,1500,TRANSLATION SERVICES,,,,2024,4051420251197569496,sosha,SoSha (Speechifai),political_specific,high,unspecified
@@ -1016,6 +1114,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00855916,DAISYCHAIN,KINGSTON,NY,08/16/2024,3202.34,TEXT MESSAGING SERVICES,,,,2024,4111820241070288962,daisychain,Daisychain,political_specific,high,unspecified
 2024,C00855916,DAISYCHAIN,KINGSTON,NY,08/02/2024,200,SUBSCRIPTIONS,,,,2024,4111820241070288964,daisychain,Daisychain,political_specific,high,unspecified
 2024,C00495028,"TRUVERSE, INC.",LOS ALTOS,CA,04/05/2024,6808.36,SUBSCRIPTION,,,,2024,4062520241962772612,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2024,C00852343,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/31/2024,1096,FUNDRAISING SOFTWARE,,,X,2024,4022720251179222769,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00852343,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/29/2024,3214.45,FUNDRAISING SOFTWARE,,,X,2024,4022720251179222687,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00852343,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/01/2024,3448,FUNDRAISING SOFTWARE,,,X,2024,4022720251179222508,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00495028,"TRUVERSE, INC.",LOS ALTOS,CA,03/12/2024,6643.82,SUBSCRIPTION,,,,2024,4062520241962762376,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2024,C00864124,NUMERO AI,COSTA MESA,CA,04/01/2024,1125,SOFTWARE,,,,2024,4053020241951660962,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00864124,NUMERO AI,COSTA MESA,CA,05/01/2024,1125,SOFTWARE,,,,2024,4053020241951660963,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
@@ -1028,6 +1129,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00836346,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,09/17/2024,7407.47,TEXT MESSAGES,Solicitation and Fundraising Expenses ,,,2024,4110420241050645500,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
 2024,C00876383,QUILLER AI,CHICAGO,IL,08/20/2024,185,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2024,4011520251131008245,quiller,Quiller,political_specific,high,administrative_productivity
 2024,C00680934,"TRUVERSE, INC.",LOS ALTOS,CA,11/11/2024,3085.23,TEXTING SERVICES,,,,2024,4012320251134710205,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,10/02/2024,5000,FUNDRAISING SOFTWARE,,,,2024,4011320251129214633,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00876383,QUILLER AI,CHICAGO,IL,07/21/2024,185,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2024,4011520251131008175,quiller,Quiller,political_specific,high,administrative_productivity
 2024,C00810416,DONOR ATLAS,NEW YORK,NY,10/16/2024,300,DATA ACQUISITION,,,,2024,4121020241075533111,donoratlas,DonorAtlas,political_specific,high,unspecified
 2024,C00836346,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,11/13/2024,44.95,TEXT MESSAGES,Solicitation and Fundraising Expenses ,,,2024,4011020251127966508,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
@@ -1046,9 +1148,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00798132,CALL TIME AI,VISALIA,CA,11/25/2024,1050,POLITICAL FUNDRAISING SOFTWARE,,,,2024,4012220251133596899,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00703975,OTTER.AI,MOUNTAIN VIEW,CA,09/05/2024,284.5,SOFTWARE,,*,X,2024,4102320242077169675,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00703975,SPEECHIFAI INC.,NEW YORK,NY,09/27/2024,1500,TRANSLATION SERVICES,,,,2024,4102320242077175424,sosha,SoSha (Speechifai),political_specific,high,unspecified
+2024,C00853200,CAMPAIGN NUCLEUS,MEDINA,OH,05/31/2024,55,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4071820241978073035,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00703975,OTTER.AI,MOUNTAIN VIEW,CA,09/25/2024,10,SOFTWARE,,*,X,2024,4102320242077177088,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00856112,PROMPT.IO INC.,SEATTLE,WA,07/10/2024,4000,TEXTING SERVICE,Administrative/Salary/Overhead Expenses ,,,2024,4041620251184899447,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2024,C00771972,CALLTIME.AI,VISALIA,CA,11/12/2024,1305,SOFTWARE,,,,2024,4012720251135363640,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00852343,CAMPAIGN NUCLEUS LLC,MEDINA,OH,08/31/2024,2302.04,FUNDRAISING SOFTWARE,,,X,2024,4022820251179278226,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00401224,GRAMMARLY,SAN FRANCISCO,CA,09/05/2024,91.65,AMEX 09/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2024,4103120241016276493,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00865675,KEITH MUNDY FOR CONGRESS,PARMA,OH,12/03/2024,72,GRAMMARLY,Administrative/Salary/Overhead Expenses ,,,2024,4021220251172446634,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00765891,GRAMMARLY,SAN FRANCISCO,CA,08/19/2024,144,SOFTWARE,,,,2024,4111520241069664710,grammarly,Grammarly,general_purpose,high,administrative_productivity
@@ -1076,9 +1180,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00605592,CALLTIME.AI,LOS ANGELES,CA,10/03/2024,765,SOFTWARE SERVICES,,*,X,2024,4121020241075528520,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00836916,SONIX.AI,EL SEGUNDO,CA,10/08/2024,39.96,SOFTWARE,,,X,2024,4102520242082521402,xai_grok,xAI (Grok),general_purpose,high,administrative_productivity
 2024,C00813758,CALL TIME AI,VISALIA,CA,10/16/2024,1410,SOFTWARE RENTAL,,,,2024,4120620241075133041,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,04/25/2024,10000,DIGITAL MARKETING,,,,2024,4052820241951062959,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00821348,CALL TIME AI,VISALIA,CA,11/18/2024,435,FUNDRAISING SOFTWARE,,,,2024,4011620251132167198,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00764233,OPENAI,SAN FRANCISCO,CA,12/09/2024,63.6,SOFTWARE,,*,X,2024,4040420251183243212,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00845461,"GREEN, CLAUDE",SYRACUSE,NY,10/28/2024,500,CANVASSING,,,,2024,4021320251173501906,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,08/28/2024,5000,DIGITAL MARKETING,,,,2024,4092320242041430630,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,08/30/2024,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4103120241016245420,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,08/05/2024,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4103120241016245421,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00798132,CALL TIME AI,VISALIA,CA,04/24/2024,1050,POLITICAL FUNDRAISING SOFTWARE,,,,2024,4111320241068402099,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
@@ -1087,6 +1193,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00832675,CALLTIME.AI,VISALIA,CA,03/04/2024,810,SOFTWARE,,,,2024,4051620241949516022,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,06/11/2024,1250,SOFTWARE,,*,X,2024,4080620242011126713,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00856153,QUILLER,CHICAGO,IL,05/30/2024,285,DIGITAL SERVICES,Administrative/Salary/Overhead Expenses ,,,2024,4080520242000475971,quiller,Quiller,political_specific,medium,administrative_productivity
+2024,C00873893,CAMPAIGN NUCLEUS LLC,MEDINA,OH,10/04/2024,27000,FUNDRAISING SOFTWARE,,,,2024,4103020241012570807,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00827022,OTTER.AI,MOUNTAIN VIEW,CA,05/02/2024,101.6,SOFTWARE,,*,X,2024,4062520241962767018,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00864124,NUMERO AI,COSTA MESA,CA,11/01/2024,1125,SOFTWARE,,,,2024,4021220251172445690,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,07/30/2024,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4120520241074900359,otter_ai,Otter.ai,general_purpose,high,unspecified
@@ -1103,9 +1210,12 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,12/05/2023,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4062720241962991014,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,01/02/2024,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4062720241962991015,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00857342,CALLTIME.AI,LOS ANGELES,CA,10/15/2024,700,OFFICE SUPPLIES & SOFTWARE,,,,2024,4110420241050644697,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00853200,CAMPAIGN NUCLEUS,MEDINA,OH,05/02/2024,50,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4091120242040530834,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00853200,CAMPAIGN NUCLEUS,MEDINA,OH,04/01/2024,55,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4091120242040530833,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,03/01/2024,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4070120241963153977,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,02/05/2024,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4070120241963153976,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00341396,SPEECHIFAI (SOSHA),NEW YORK,NY,06/24/2024,255,MEALS,,*,X,2024,4072620241979914102,sosha,SoSha (Speechifai),political_specific,high,unspecified
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/29/2024,5000,DIGITAL MARKETING,,,,2024,4082320242014940401,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00495028,"TRUVERSE, INC.",LOS ALTOS,CA,07/11/2024,27.25,SUBSCRIPTION,,,,2024,4082120242014613318,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,04/01/2024,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4062820241963056932,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,03/05/2024,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4062820241963056933,otter_ai,Otter.ai,general_purpose,high,unspecified
@@ -1113,6 +1223,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,01/05/2024,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4062720241962993797,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,01/12/2024,-60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4062720241962993803,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00855916,DAISYCHAIN,KINGSTON,NY,07/01/2024,3581.16,TEXT MESSAGING SERVICES,,,,2024,4080820242011459110,daisychain,Daisychain,political_specific,high,unspecified
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,03/06/2024,20000,FUNDRAISING SOFTWARE,,,,2024,4061820241961592739,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,02/28/2024,30,SUBSCRIPTIONS,,,X,2024,4061820241961592213,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00499988,OTTER.AI,MOUNTAIN VIEW,CA,04/13/2024,119.99,SOFTWARE,,,X,2024,4071520241973470203,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00309567,DESCRIPT,SAN FRANCISCO,CA,04/04/2024,30,WEB CONTENT,Administrative/Salary/Overhead Expenses ,,,2024,4071020241972737340,descript,Descript,general_purpose,high,administrative_productivity
@@ -1147,6 +1258,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00264697,GRAMMARLY,SAN FRANCISCO,CA,10/01/2024,152.64,SOFTWARE,,*,X,2024,4112220241072882233,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00851733,CHATGPT,SAN FRANCISCO,CA,12/16/2024,120,CAMPAIGN SOFTWARE,,,,2024,4012720251135368647,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00695346,SPEECHIFAI,NEW YORK,NY,05/19/2024,12388.8,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2024,4041820251185456596,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
+2024,C00706614,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,04/01/2024,50,WEB SVC/SUBSCRIPTION,,,,2024,4051720241949615887,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00706614,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,04/09/2024,50,WEB SVC/SUBSCRIPTION,,,,2024,4051720241949615902,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00706614,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,05/01/2024,50,WEB SVC/SUBSCRIPTION,,,,2024,4051720241949616013,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00872739,DONOR ATLAS,MIDDLETOWN,DE,10/28/2024,300,DONOR DATABASE ACCOUNT,,,,2024,4121220241076076311,donoratlas,DonorAtlas,political_specific,high,fundraising
 2024,C00606939,"OTTER.AI, INC.",MOUNTAIN VIEW,CA,10/13/2024,30,SOFTWARE SUBSCRIPTION,,*,X,2024,4112220241072878577,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,08/01/2024,3570.85,TEXT MESSAGING,,,,2024,4103020241012496525,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -1162,6 +1276,11 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00798132,CALL TIME AI,VISALIA,CA,07/24/2024,1050,POLITICAL FUNDRAISING SOFTWARE,,,,2024,4111520241069649663,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00798132,CALL TIME AI,VISALIA,CA,08/26/2024,1050,POLITICAL FUNDRAISING SOFTWARE,,,,2024,4111520241069649664,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00798132,CALL TIME AI,VISALIA,CA,09/24/2024,1050,POLITICAL FUNDRAISING SOFTWARE,,,,2024,4111520241069649665,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2024,C00873893,CAMPAIGN NUCLEUS LLC,MEDINA,OH,09/16/2024,391.38,FUNDRAISING SOFTWARE,,,,2024,4101820242071431298,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00873893,CAMPAIGN NUCLEUS LLC,MEDINA,OH,09/18/2024,27000,FUNDRAISING SOFTWARE,,,,2024,4101820242071431299,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00873893,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/08/2024,25000,FUNDRAISING SOFTWARE,,,,2024,4101820242071431300,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00873893,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/11/2024,10896.8,FUNDRAISING SOFTWARE,,,,2024,4101820242071431301,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,10/09/2024,5000,FUNDRAISING SOFTWARE,,,,2024,4110420241050644143,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00856971,GRAMMARLY,SAN FRANCISCO,CA,08/05/2024,65.66,COMMUNICATION SERVICE FEE,Advertising Expenses ,,,2024,4041120251183912052,grammarly,Grammarly,general_purpose,high,advertising_creative
 2024,C00856971,GRAMMARLY,SAN FRANCISCO,CA,09/03/2024,65.56,COMMUNICATION SERVICE FEE,Advertising Expenses ,,,2024,4041120251183912053,grammarly,Grammarly,general_purpose,high,advertising_creative
 2024,C00856971,GRAMMARLY,SAN FRANCISCO,CA,10/03/2024,32.78,,,,,2024,4041120251183912099,grammarly,Grammarly,general_purpose,high,unspecified
@@ -1169,7 +1288,10 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00341396,SPEECHIFAI (SOSHA),NEW YORK,NY,08/12/2024,255,SOFTWARE,,*,X,2024,4112020241071643074,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2024,C00341396,SPEECHIFAI (SOSHA),NEW YORK,NY,07/22/2024,255,SOFTWARE,,*,X,2024,4112020241071642615,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
 2024,C00341396,SPEECHIFAI (SOSHA),NEW YORK,NY,07/22/2024,255,SOFTWARE,,*,X,2024,4112020241071642616,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
+2024,C00867937,CAMPAIGN NUCLEUS LLC,MEDINA,OH,05/08/2024,15000,FUNDRAISING SOFTWARE,,,,2024,4050720251189087573,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00867937,CAMPAIGN NUCLEUS LLC,MEDINA,OH,06/14/2024,15000,FUNDRAISING SOFTWARE,,,,2024,4050720251189087574,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00776062,CAMPAIGN BRAIN,WINTER GARDEN,FL,08/08/2024,500,CAMPAIGN TOOL,,,,2024,4121820241107494306,campaign_brain,Campaign Brain,political_specific,high,unspecified
+2024,C00852186,CAMPAIGN NUCLEUS LLC,MEDINA,OH,03/07/2024,50,SUBSCRIPTIONS,,,,2024,4120420241074521086,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00884239,"PROMPT.IO, INC",SEATTLE,WA,07/26/2024,1000,TEXTING PLATFORM,,,,2024,4041520251184279772,prompt_io,Prompt.io,political_specific,high,unspecified
 2024,C00856112,PROMPT.IO INC.,SEATTLE,WA,09/27/2024,4000,TELEPHONE SERVICES,Administrative/Salary/Overhead Expenses ,,,2024,4041620251184909219,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2024,C00856112,PROMPT.IO INC.,SEATTLE,WA,09/09/2024,2000,TELEPHONE SERVICES,Administrative/Salary/Overhead Expenses ,,,2024,4041620251184909036,prompt_io,Prompt.io,political_specific,high,administrative_productivity
@@ -1183,6 +1305,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00578302,CALLTIME.AI,LOS ANGELES,CA,08/17/2024,850,FUNDRAISING EXPENSE,Solicitation and Fundraising Expenses ,MEMO: SUBVENDOR OF-CHASE CARDMEMBER SERVICE,X,2024,4041520251184283803,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2024,C00697334,DAISYCHAIN,SAN FRANCISCO,CA,02/06/2024,200,SOFTWARE,Solicitation and Fundraising Expenses ,,,2024,4021320251173465245,daisychain,Daisychain,political_specific,high,fundraising;administrative_productivity
 2024,C00697334,DAISYCHAIN,SAN FRANCISCO,CA,03/06/2024,261.46,SOFTWARE - DONOR OUTREACH,Solicitation and Fundraising Expenses ,,,2024,4021320251173465246,daisychain,Daisychain,political_specific,high,fundraising;administrative_productivity
+2024,C00685776,CAMPAIGN NUCLEUS,MEDINA,OH,07/31/2024,500,OFFICE SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,,2024,4011520251131003885,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00685776,CAMPAIGN NUCLEUS,MEDINA,OH,09/03/2024,50,OFFICE SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,,2024,4011520251131003886,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00685776,CAMPAIGN NUCLEUS,MEDINA,OH,10/30/2024,50,OFFICE SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,,2024,4011520251131004115,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00697334,OPENAI,SAN FRANCISCO,CA,05/15/2024,65.4,SOFTWARE,Advertising Expenses ,*,X,2024,4021320251173469114,openai,OpenAI (ChatGPT),general_purpose,high,advertising_creative;administrative_productivity
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/27/2024,500,PAYROLL,,,,2024,4021220251172451355,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/01/2024,3000,PAYROLL,,,,2024,4021220251172451356,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
@@ -1203,6 +1328,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,09/29/2024,125,COMPUTER SOFTWARE,,*,X,2024,4012320251134742647,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,11/01/2024,1250,SOFTWARE,,,,2024,4032420251181223465,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00672295,NUMERO.AI,IRVINE,CA,12/02/2024,1250,SOFTWARE,,,,2024,4031920251180383123,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
+2024,C00873893,CAMPAIGN NUCLEUS LLC,MEDINA,OH,12/04/2024,27000,FUNDRAISING SOFTWARE,,,,2024,4020320251140942541,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00697334,OPENAI,SAN FRANCISCO,CA,06/13/2024,65.4,AI ASSISTANT.,Administrative/Salary/Overhead Expenses ,*,X,2024,4021320251173482096,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00697334,DESCRIPT,SAN FRANCISCO,CA,04/20/2024,60,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,X,2024,4021320251173467941,descript,Descript,general_purpose,high,administrative_productivity
 2024,C00697334,OPENAI LP,SAN FRANCISCO,CA,04/13/2024,65.4,SOFTWARE,Advertising Expenses ,*,X,2024,4021320251173467918,openai,OpenAI (ChatGPT),general_purpose,high,advertising_creative;administrative_productivity
@@ -1214,6 +1340,12 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00859108,CALL TIME AI,VISALIA,CA,07/15/2024,1050,COMPUTER SOFTWARE,,,,2024,4111920241071176430,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00859108,CALL TIME AI,VISALIA,CA,08/14/2024,1050,COMPUTER SOFTWARE,,,,2024,4111920241071176431,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00859108,CALL TIME AI,VISALIA,CA,09/16/2024,1050,COMPUTER SOFTWARE,,,,2024,4111920241071176432,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/24/2023,30000,FUNDRAISING SOFTWARE,,,,2023,4060320241952947620,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,08/02/2023,30000,FUNDRAISING SOFTWARE,,,,2023,4060320241952947621,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,09/07/2023,30000,FUNDRAISING SOFTWARE,,,,2023,4060320241952947622,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,10/10/2023,30000,FUNDRAISING SOFTWARE,,,,2023,4060320241952947623,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,11/10/2023,30000,FUNDRAISING SOFTWARE,,,,2023,4060320241952947624,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,12/06/2023,30000,FUNDRAISING SOFTWARE,,,,2023,4060320241952947625,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00680934,"TRUVERSE, INC.",LOS ALTOS,CA,10/19/2023,2744.82,TEXTING SERVICES,,,,2023,4020820241823877245,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00680934,"TRUVERSE, INC.",LOS ALTOS,CA,11/08/2023,2327.54,TEXTING SERVICES,,,,2023,4020820241823877246,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00805275,OPENAI,SAN FRANCISCO,CA,11/22/2023,.55,SOFTWARE,Administrative/Salary/Overhead Expenses ,*,X,2023,4020920241824381472,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
@@ -1231,6 +1363,13 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00010603,GRAMMARLY.COM,SAN FRANCISCO,CA,10/18/2023,120,SOFTWARE,,*,X,2023,4020620241820630712,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00010603,OTTER.AI,MOUNTAIN VIEW,CA,10/04/2023,112.13,SOFTWARE,,*,X,2023,4020620241820630389,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00725101,CALL TIME.AI,VISALIA,CA,07/03/2023,3975,PAC SOFTWARE,,,,2023,4022120241825739098,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/05/2023,5000,DIGITAL MARKETING,,,,2023,4021620241825286900,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/31/2023,5000,DIGITAL MARKETING,,,,2023,4021620241825286901,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,09/01/2023,5000,DIGITAL MARKETING,,,,2023,4021620241825286902,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,09/28/2023,5000,DIGITAL MARKETING,,,,2023,4021620241825286903,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,10/30/2023,5000,DIGITAL MARKETING,,,,2023,4021620241825286904,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,11/29/2023,5000,DIGITAL MARKETING,,,,2023,4021620241825286905,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2024,C00769232,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,08/24/2023,4500,DATABASE MANAGEMENT,,,,2023,4013120241818193492,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,11/01/2023,13338.6,TEXT MESSAGING,,,,2023,4021220241824585474,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,08/08/2023,4056.42,TEXT MESSAGING,,,,2023,4021220241824585275,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,12/06/2023,2967.07,TEXT MESSAGING,,,,2023,4021220241824585067,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -1239,6 +1378,9 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,07/12/2023,724.71,TEXT MESSAGING,,,,2023,4021220241824585450,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,10/28/2023,30,SUBSCRIPTIONS,,,X,2023,4032520241886454425,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,09/28/2023,30,SUBSCRIPTIONS,,,X,2023,4032520241886452868,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,10/10/2023,20000,FUNDRAISING SOFTWARE,,,,2023,4032520241886457062,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,11/10/2023,20000,FUNDRAISING SOFTWARE,,,,2023,4032520241886457063,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,12/20/2023,20000,FUNDRAISING SOFTWARE,,,,2023,4032520241886457064,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00828541,GRAMMARLY INC,SAN FRANCISCO,CA,08/29/2023,153,SUBSCRIPTIONS,,,X,2023,4032520241886452720,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,11/28/2023,30,SUBSCRIPTIONS,,,X,2023,4032520241886456158,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00839944,"PROMPT.IO, INC.",SEATTLE,WA,09/28/2023,5000,TEXT PLATFORM - INITIAL SUBSCRIPTION FEE,Administrative/Salary/Overhead Expenses ,,,2023,4042220241897460554,prompt_io,Prompt.io,political_specific,high,administrative_productivity
@@ -1284,6 +1426,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00841130,OTTER.AI,MOUNTAIN VIEW,CA,12/05/2023,120,SOFTWARE,,,X,2023,4022820241858492157,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00841130,OTTER.AI,MOUNTAIN VIEW,CA,10/02/2023,120,SOFTWARE,,,X,2023,4022820241858490899,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00841403,CALLTIME.AI,LOS ANGELES,CA,07/23/2023,750,SOFTWARE,,*,X,2023,4060320241952926719,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00706614,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,11/28/2023,50,WEB SVC/SUBSCRIPTION,,,,2023,4061120241960587361,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00540500,OTTER.AI,LOS ALTOS,CA,07/07/2023,99.99,SOFTWARE,,*,X,2023,4030620241884471521,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00798132,CALL TIME AI,VISALIA,CA,07/24/2023,650,POLITICAL FUNDRAISING SOFTWARE,,,,2023,4041120241889962386,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00798132,CALL TIME AI,VISALIA,CA,08/24/2023,650,POLITICAL FUNDRAISING SOFTWARE,,,,2023,4041120241889962387,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
@@ -1352,6 +1495,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00667741,"TRUVERSE, INC.",LOS ALTOS,CA,06/08/2023,962.38,SOFTWARE,,,,2023,4050420241921580015,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2024,C00667741,"TRUVERSE, INC.",LOS ALTOS,CA,05/15/2023,1076.48,SOFTWARE,,,,2023,4050420241921580208,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2024,C00667741,"CLAUDE, RONALD",HYDE PARK,MA,04/04/2023,250,TRANSLATION SERVICES,,,,2023,4050420241921580021,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2024,C00867937,CAMPAIGN NUCLEUS LLC,MEDINA,OH,12/04/2024,15000,FUNDRAISING SOFTWARE,,,,2024,4021120251167888170,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00343871,OTTER AI,MOUNTAIN VIEW,CA,06/23/2023,234.76,SOFTWARE SUBSCRIPTION,,*,X,2023,4091120251291050438,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00343871,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,06/16/2023,78082,TEXT MESSAGE SERVICES,,,,2023,4091120251291050103,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
 2024,C00343871,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,05/11/2023,51067.56,TEXT MESSAGE SERVICES,,,,2023,4091120251291050104,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
@@ -1367,6 +1511,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00841643,CALLTIME.AI,VISALIA,CA,10/16/2023,1190,FUNDRAISING SOFTWARE,,,,2023,4052420241950773073,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00841643,CALLTIME.AI,VISALIA,CA,11/15/2023,1190,FUNDRAISING SOFTWARE,,,,2023,4052420241950773076,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,12/20/2024,784.43,TEXT MESSAGING,,,,2024,4020620251144520428,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,01/19/2024,4441.98,LIST RENTAL,,,,2024,4050820251189310120,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00744946,GEMINI G.E.L. LLC,WEST HOLLYWOOD,CA,10/18/2024,182000,ARTWORK,,* IN-KIND RECEIVED,,2024,4051320251194679176,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,10/30/2024,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4010720251127482308,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,10/07/2024,60,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2024,4010720251127482309,otter_ai,Otter.ai,general_purpose,high,unspecified
@@ -1379,6 +1524,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00556506,OPENAI CHATGPT,SAN FRANCISCO,CA,11/05/2024,20,SOFTWARE,,*,X,2024,4041420251184147769,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00836890,CALLTIME.AI,VISALIA,CA,08/26/2024,1050,SOFTWARE,,,,2024,4021020251166957244,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00836890,CALLTIME.AI,VISALIA,CA,07/24/2024,1050,SOFTWARE,,,,2024,4021020251166957213,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,09/05/2024,5259.16,LIST RENTAL,,,,2024,4050620251188965498,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00866152,GRAMMARLY,SAN FRANCISCO,CA,07/02/2024,144,[MEMO] SUBCRIPTION,Administrative/Salary/Overhead Expenses ,,X,2024,4020620251144470824,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00798132,CALL TIME AI,VISALIA,CA,12/24/2024,1050,POLITICAL FUNDRAISING SOFTWARE,,,,2024,4042220251186056320,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
 2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,07/08/2024,125,COMPUTER SOFTWARE,,*,X,2024,4121220241076082003,grammarly,Grammarly,general_purpose,high,administrative_productivity
@@ -1406,6 +1552,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00831107,OTTER.AI,MOUNTAIN VIEW,CA,02/07/2024,173.69,TRANSCRIPTION SERVICES,,*,X,2024,4050920251189758844,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00695346,DAISYCHAIN,KINGSTON,NY,09/05/2024,14777.12,TEXT BANK CREDITS,Campaign Materials,,,2024,4081920251218795685,daisychain,Daisychain,political_specific,high,unspecified
 2024,C00695346,DAISYCHAIN,KINGSTON,NY,08/05/2024,15346.29,TEXT BANK CREDITS,Campaign Materials,,,2024,4081920251218795684,daisychain,Daisychain,political_specific,high,unspecified
+2024,C00608695,CAMPAIGN NUCLEUS LLC,MEDINA,OH,12/09/2024,3000,CAMPAIGN RESEARCH,,,,2024,4052020251203295342,campaign_nucleus,Campaign Nucleus,political_specific,high,research_strategy
 2024,C00708289,OTTER AI,MOUNTAIN VIEW,CA,12/02/2023,119.99,SOFTWARE SUBSCRIPTION,,,X,2024,4041820241896929912,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00708289,OTTER AI,MOUNTAIN VIEW,CA,02/24/2024,150.01,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,X,2024,4041820241896930056,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00680934,"TRUVERSE, INC.",LOS ALTOS,CA,08/06/2024,23533.46,TEXTING SERVICES,,,,2024,4103020241012502363,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
@@ -1429,14 +1576,21 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00754242,"OPENAI, L.L.C.",SAN FRANCISCO,CA,11/25/2024,20,MARKETING / GRAPHIC DESIGN,,,,2024,4010820251127677499,openai,OpenAI (ChatGPT),general_purpose,high,advertising_creative
 2024,C00343871,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,11/14/2024,103823.38,TEXT MESSAGE SERVICES,,,,2024,4091120251291058809,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
 2024,C00343871,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,10/21/2024,90340.39,TEXT MESSAGE SERVICES,,,,2024,4091120251291058688,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy
+2024,C00852186,CAMPAIGN NUCLEUS LLC,MEDINA,OH,05/01/2024,50,SUBSCRIPTION,,,,2024,4120420241074521150,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00852186,CAMPAIGN NUCLEUS LLC,MEDINA,OH,04/01/2024,50,SUBSCRIPTION,,,,2024,4120420241074521151,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00852186,CAMPAIGN NUCLEUS LLC,MEDINA,OH,05/31/2024,50,SUBSCRIPTION,,,,2024,4120420241074521199,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00828541,GRAMMARLY INC,SAN FRANCISCO,CA,08/29/2024,153,SUBSCRIPTIONS,,,X,2024,4110420241050634142,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,08/28/2024,30,SUBSCRIPTIONS,,,X,2024,4110420241050634319,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,09/19/2024,5000,FUNDRAISING SOFTWARE,,,,2024,4110420241050636061,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00003418,OTTER AI,MOUNTAIN VIEW,CA,09/06/2024,30,SOFTWARE / LICENSING,,CONVENTIONS ACCOUNT,X,2024,4102820242086008119,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00003418,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,09/11/2024,24526.64,WEB HOSTING,,,,2024,4102820242086008174,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,09/06/2024,15.9,IT SUPPORT/MAINTENANCE,,,X,2024,4102820242086006957,descript,Descript,general_purpose,high,unspecified
+2024,C00003418,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,12/18/2024,21568.4,WEB HOSTING,,,,2024,4051320251194668872,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,12/10/2024,15.9,IT SUPPORT/MAINTENANCE,,,X,2024,4051320251194668487,descript,Descript,general_purpose,high,unspecified
 2024,C00003418,OTTER AI,MOUNTAIN VIEW,CA,12/10/2024,30,SOFTWARE / LICENSING,,,X,2024,4051320251194668554,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00003418,OTTER AI,MOUNTAIN VIEW,CA,12/04/2024,16.99,SOFTWARE / LICENSING,,,X,2024,4051320251194668354,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00003418,ANTHROPIC,SAN FRANCISCO,CA,12/10/2024,21.2,TRAVEL EXPENSES,,,X,2024,4051320251194668445,anthropic,Anthropic (Claude),general_purpose,high,unspecified
+2024,C00608695,CAMPAIGN NUCLEUS LLC,MEDINA,OH,03/12/2024,3000,STRATEGIC CONSULTING,,,,2024,4042520241912443900,campaign_nucleus,Campaign Nucleus,political_specific,high,research_strategy
 2024,C00606939,"OTTER.AI, INC.",MOUNTAIN VIEW,CA,07/16/2024,30,SOFTWARE SUBSCRIPTION,,*,X,2024,4111820241070279336,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00606939,"OTTER.AI, INC.",MOUNTAIN VIEW,CA,09/13/2024,30,SOFTWARE SUBSCRIPTION,,*,X,2024,4111820241070280046,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00606939,"OTTER.AI, INC.",MOUNTAIN VIEW,CA,08/20/2024,30,SOFTWARE SUBSCRIPTION,,*,X,2024,4111820241070279229,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
@@ -1444,23 +1598,33 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,07/29/2024,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2024,4111820241070285070,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00405878,"GRAMMARLY, INC.",SAN FRANCISCO,CA,07/16/2024,95.88,SPELLCHECK AND GRAMMER CHECK SOFTWARE,,,,2024,4121220241076078737,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00405878,"GRAMMARLY, INC.",SAN FRANCISCO,CA,09/27/2024,139.95,SPELLING AND GRAMMER CHECKING SOFTWARE,,,,2024,4121220241076078738,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2024,C00867937,CAMPAIGN NUCLEUS LLC,MEDINA,OH,10/03/2024,15000,FUNDRAISING SOFTWARE,,,,2024,4010420251125930565,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/03/2024,5000,FUNDRAISING SOFTWARE,,,,2024,4110120241042978808,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,08/14/2024,5000,FUNDRAISING SOFTWARE,,,,2024,4110120241042978809,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00770941,CAMPAIGN NUCLEUS LLC,MEDINA,OH,09/06/2024,5000,FUNDRAISING SOFTWARE,,,,2024,4110120241042978810,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,05/28/2024,30,SOFTWARE,,,X,2024,4081620242014060738,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,06/19/2024,5000,FUNDRAISING SOFTWARE,,,,2024,4081620242014061323,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00801431,CHATGPT,SAN FRANCISCO,CA,09/09/2024,20,WEBSITE,Administrative/Salary/Overhead Expenses ,,X,2024,4111320241068416690,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00856112,PROMPT.IO INC.,SEATTLE,WA,11/05/2024,2000,CAMPAIGN TEXTING TO SUPPORTERS,,,,2024,4041720251185311411,prompt_io,Prompt.io,political_specific,high,unspecified
 2024,C00856112,PROMPT.IO INC.,SEATTLE,WA,11/04/2024,2000,CAMPAIGN TEXTING TO SUPPORTERS,,,,2024,4041720251185311401,prompt_io,Prompt.io,political_specific,high,unspecified
 2024,C00856112,PROMPT.IO INC.,SEATTLE,WA,10/21/2024,2000,CAMPAIGN TEXTING TO SUPPORTERS,,,,2024,4041720251185311224,prompt_io,Prompt.io,political_specific,high,unspecified
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,11/18/2024,4102.56,LIST RENTAL,,,,2024,4010620251127055676,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2024,C00027466,CAMPAIGN NUCLEUS,MEDINA,OH,10/31/2024,7814.3,LIST RENTAL,,,,2024,4010620251127055677,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00578302,CALLTIME.AI,LOS ANGELES,CA,01/17/2024,850,CALL TIME FEES,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2024,4101620242069921905,calltime_ai,CallTime.AI,political_specific,high,fundraising
 2024,C00606939,"OTTER.AI, INC.",MOUNTAIN VIEW,CA,06/13/2024,30,SOFTWARE SUBSCRIPTION,,*,X,2024,4102420242081487180,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00606939,"OTTER.AI, INC.",MOUNTAIN VIEW,CA,05/21/2024,30,SOFTWARE SUBSCRIPTION,,*,X,2024,4102420242081485398,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00003418,ANTHROPIC,SAN FRANCISCO,CA,11/08/2024,21.2,TRAVEL EXPENSES,,,X,2024,4040220251183148831,anthropic,Anthropic (Claude),general_purpose,high,unspecified
 2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,11/08/2024,15.9,IT SUPPORT/MAINTENANCE,,,X,2024,4040220251183148863,descript,Descript,general_purpose,high,unspecified
 2024,C00003418,OTTER AI,MOUNTAIN VIEW,CA,10/23/2024,16.99,SOFTWARE / LICENSING,,,X,2024,4040220251183147669,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00003418,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,10/18/2024,21590.18,WEB HOSTING,,,,2024,4040220251183147507,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00003418,OTTER AI,MOUNTAIN VIEW,CA,11/08/2024,30,SOFTWARE / LICENSING,,,X,2024,4040220251183148939,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00003418,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,11/15/2024,21686.84,WEB HOSTING,,,,2024,4040220251183149470,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00003418,OTTER AI,MOUNTAIN VIEW,CA,10/30/2024,16.99,SOFTWARE / LICENSING,,,X,2024,4040220251183148046,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,07/29/2024,60,DIGITAL SERVICES,,,,2024,4112120241072152464,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,08/28/2024,60,DIGITAL SERVICES,,,,2024,4112120241072152465,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,09/30/2024,60,DIGITAL SERVICES,,,,2024,4112120241072152466,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2024,C00606939,"OTTER.AI, INC.",MOUNTAIN VIEW,CA,04/19/2024,30,SOFTWARE SUBSCRIPTION,,*,X,2024,4102420242081485056,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00853200,CAMPAIGN NUCLEUS,MEDINA,OH,07/01/2024,75,SOFTWARE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2024,4102320242077135024,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00765164,AMPLIFY.AI,LOS ALTOS,CA,07/31/2024,3000.41,TEXT MESSAGING SERVICES,,,,2024,4110420241050644375,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00774109,PROMPT.IO INC,SEATTLE,WA,05/01/2024,5000,TEXT MESSAGING SERVICE,,,,2024,4120320241074378607,prompt_io,Prompt.io,political_specific,high,unspecified
 2024,C00774109,PROMPT.IO INC,SEATTLE,WA,06/03/2024,5000,TEXT BANKING SOFTWARE,,,,2024,4120220241074204544,prompt_io,Prompt.io,political_specific,high,administrative_productivity
@@ -1486,6 +1650,8 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00495358,OTTER.AI,MOUNTAIN VIEW,CA,10/31/2024,60,SOFTWARE,,*,X,2024,4041820251185457134,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00495358,OTTER.AI,MOUNTAIN VIEW,CA,10/09/2024,60,SOFTWARE,,*,X,2024,4041720251185308938,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00484642,"TRUVERSE, INC.",LOS ALTOS,CA,12/06/2024,14877.27,TEXT MESSAGING SERVICES,,,,2024,4020420251142291628,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2024,C00706614,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,12/02/2024,50,WEB SVC/SUBSCRIPTION,,,,2024,4012920251138493020,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
+2024,C00706614,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,12/31/2024,50,WEB SVC/SUBSCRIPTION,,,,2024,4012920251138493058,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00864090,OTTER.AI,MOUNTAIN VIEW,CA,10/21/2024,60,SOFTWARE,,,,2024,4012320251134734959,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00854588,DONORATLAS,WASHINGTON,DC,07/03/2024,300,LIST ACQUISITION,,,,2024,4021320251173482936,donoratlas,DonorAtlas,political_specific,high,unspecified
 2024,C00854588,DONORATLAS,WASHINGTON,DC,08/02/2024,300,LIST ACQUISITION,,,,2024,4021320251173470394,donoratlas,DonorAtlas,political_specific,high,unspecified
@@ -1495,24 +1661,35 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00605592,CALLTIME.AI,LOS ANGELES,CA,12/10/2024,765,SOFTWARE SERVICES,,*,X,2024,4040120251182550648,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00495028,"TRUVERSE, INC.",LOS ALTOS,CA,11/12/2024,251.17,SUBSCRIPTION,,,,2024,4012920251138508129,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
 2024,C00495028,"TRUVERSE, INC.",LOS ALTOS,CA,11/12/2024,387.6,SUBSCRIPTION,,,,2024,4012920251138508100,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/03/2024,5000,FUNDRAISING SOFTWARE,,,,2024,4042920251187927590,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00578302,CALLTIME.AI,LOS ANGELES,CA,10/17/2024,850,FUNDRAISING CALL FEE,Solicitation and Fundraising Expenses ,MEMO: SUBVENDOR OF-CHASE CARDMEMBER SERVICE,X,2024,4041620251184922947,calltime_ai,CallTime.AI,political_specific,high,fundraising
+2024,C00856120,CAMPAIGN NUCLEUS LLC,MEDINA,OH,01/02/2024,1104.95,FUNDRAISING SOFTWARE,,,X,2024,4041520251184284441,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00856120,CAMPAIGN NUCLEUS LLC,MEDINA,OH,01/31/2024,1112,FUNDRAISING SOFTWARE,,,X,2024,4041520251184284442,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00856120,CAMPAIGN NUCLEUS LLC,MEDINA,OH,03/31/2024,1216,FUNDRAISING SOFTWARE,,,X,2024,4041520251184284443,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00856120,CAMPAIGN NUCLEUS LLC,MEDINA,OH,04/18/2024,1280,FUNDRAISING SOFTWARE,,,X,2024,4041520251184284444,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00856120,CAMPAIGN NUCLEUS LLC,MEDINA,OH,05/01/2024,3936,FUNDRAISING SOFTWARE,,,X,2024,4041520251184284445,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00856120,CAMPAIGN NUCLEUS LLC,MEDINA,OH,12/31/2024,1096,FUNDRAISING SOFTWARE,,,X,2024,4041520251184284446,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00459255,OTTER.AI,MOUNTAIN VIEW,CA,12/12/2024,30,SOFTWARE,,,X,2024,4013020251139311432,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00459255,OTTER.AI,MOUNTAIN VIEW,CA,10/08/2024,30,SOFTWARE,,,X,2024,4013020251139311394,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00459255,OTTER.AI,MOUNTAIN VIEW,CA,11/08/2024,30,SOFTWARE,,,X,2024,4013020251139311411,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00003418,OTTER AI,MOUNTAIN VIEW,CA,06/13/2024,30,SOFTWARE / LICENSING,,CONVENTIONS ACCOUNT,X,2024,4072920241980430702,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00003418,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,06/12/2024,24142.38,WEB HOSTING,,,,2024,4072920241980430393,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00787648,DONOR ATLAS,CAMBRIDGE,MA,10/28/2024,300,SOFTWARE RENTAL,,,,2024,4041120251183919478,donoratlas,DonorAtlas,political_specific,high,administrative_productivity
 2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,06/13/2024,15.9,IT SUPPORT/MAINTENANCE,,,X,2024,4072920241980430588,descript,Descript,general_purpose,high,unspecified
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,04/12/2024,20000,FUNDRAISING SOFTWARE,,,,2024,4061820241961591347,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00841130,OTTER.AI,MOUNTAIN VIEW,CA,04/12/2024,120,SOFTWARE,,,X,2024,4080520242000474900,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00411330,"TRUVERSE, INC",LOS ALTOS,CA,07/08/2024,8517.4,TEXT MESSAGING,,,,2024,4081420242012912740,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
 2024,C00839944,"PROMPT.IO, INC.",SEATTLE,WA,02/12/2024,5000,TEXT PLATFORM,Administrative/Salary/Overhead Expenses ,,,2024,4070520241972027220,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2024,C00839944,"PROMPT.IO, INC.",SEATTLE,WA,01/09/2024,5000,TEXT PLATFORM,Administrative/Salary/Overhead Expenses ,,,2024,4070520241972027204,prompt_io,Prompt.io,political_specific,high,administrative_productivity
 2024,C00839944,"PROMPT.IO, INC.",SEATTLE,WA,03/12/2024,5000,TEXT PLATFORM,,,,2024,4070520241972027145,prompt_io,Prompt.io,political_specific,high,unspecified
+2024,C00003418,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,05/15/2024,21010.08,WEB HOSTING,,,,2024,4062520241962753606,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,05/10/2024,15.9,IT SUPPORT/MAINTENANCE,,,X,2024,4062520241962753173,descript,Descript,general_purpose,high,unspecified
 2024,C00003418,OTTER AI,MOUNTAIN VIEW,CA,05/10/2024,30,SOFTWARE / LICENSING,,CONVENTIONS ACCOUNT,X,2024,4062520241962753316,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00836627,NUMERO.AI,COSTA MESA,CA,04/18/2024,363,SOFTWARE,,*,X,2024,4080720242011280078,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00836627,NUMERO.AI,COSTA MESA,CA,05/22/2024,1250,SOFTWARE,,*,X,2024,4080720242011280085,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00836627,NUMERO.AI,COSTA MESA,CA,06/27/2024,1250,SOFTWARE,,*,X,2024,4080720242011280091,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
 2024,C00573261,CALLTIME AI,VISALIA,CA,02/01/2024,1200,SOFTWARE,,*,X,2024,4060320241952927130,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2024,C00706614,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,05/31/2024,50,WEB SVC/SUBSCRIPTION,,,,2024,4072520241979608543,campaign_nucleus,Campaign Nucleus,political_specific,high,administrative_productivity
 2024,C00864124,QUILLER.AI,CHICAGO,IL,05/24/2024,185,SOFTWARE,,,,2024,4080920242011578818,quiller,Quiller,political_specific,high,administrative_productivity
 2024,C00864124,QUILLER.AI,CHICAGO,IL,06/24/2024,185,SOFTWARE,,,,2024,4080920242011578819,quiller,Quiller,political_specific,high,administrative_productivity
 2024,C00864124,NUMERO AI,COSTA MESA,CA,06/03/2024,1125,SOFTWARE,,,,2024,4080920242011578810,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
@@ -1545,11 +1722,16 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00711358,INSTANTLY.AI,SHERIDAN,WY,07/08/2024,53.85,EMAIL SERVICES,,,,2024,4092320242041424570,instantly_ai,Instantly.ai,general_purpose,high,communications_copy
 2024,C00711358,INSTANTLY.AI,SHERIDAN,WY,07/23/2024,97,EMAIL SERVICES,,,,2024,4092320242041424571,instantly_ai,Instantly.ai,general_purpose,high,communications_copy
 2024,C00711358,PROMPT.IO INC,SEATTLE,WA,07/31/2024,1250,DIRECT MARKETING,,,,2024,4092320242041424574,prompt_io,Prompt.io,political_specific,high,unspecified
+2024,C00828541,CAMPAIGN NUCLEUS LLC,MEDINA,OH,08/07/2024,5000,FUNDRAISING SOFTWARE,,,,2024,4051320251194671748,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,06/28/2024,30,SUBSCRIPTIONS,,,X,2024,4051320251194671512,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00828541,OTTER.AI,MOUNTAIN VIEW,CA,07/28/2024,30,SUBSCRIPTIONS,,,X,2024,4051320251194669670,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00459255,OTTER.AI,MOUNTAIN VIEW,CA,05/14/2024,30,SOFTWARE,,,X,2024,4080820242011456853,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00459255,OTTER.AI,MOUNTAIN VIEW,CA,06/13/2024,30,SOFTWARE,,,X,2024,4080820242011456870,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00459255,OTTER.AI,MOUNTAIN VIEW,CA,04/05/2024,30,SOFTWARE,,,X,2024,4080820242011456840,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2024,C00003418,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,02/28/2024,12600,WEB HOSTING,,,,2024,4052920241951277259,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
+2024,C00867937,CAMPAIGN NUCLEUS LLC,MEDINA,OH,09/06/2024,15000,FUNDRAISING SOFTWARE,,,,2024,4051220251193627308,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00867937,CAMPAIGN NUCLEUS LLC,MEDINA,OH,08/07/2024,15000,FUNDRAISING SOFTWARE,,,,2024,4051220251193627309,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
+2024,C00867937,CAMPAIGN NUCLEUS LLC,MEDINA,OH,07/03/2024,15000,FUNDRAISING SOFTWARE,,,,2024,4051220251193627310,campaign_nucleus,Campaign Nucleus,political_specific,high,fundraising;administrative_productivity
 2024,C00003418,OPENAI LLC,SAN FRANCISCO,CA,02/09/2024,21.2,DUES AND SUBSCRIPTIONS,,,X,2024,4052920241951276641,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,04/29/2024,60,DIGITAL SERVICES,,,,2024,4072420241978942848,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
 2024,C00784983,"OPENAI, INC.",SAN FRANCISCO,CA,05/28/2024,60,DIGITAL SERVICES,,,,2024,4072420241978942849,openai,OpenAI (ChatGPT),general_purpose,high,unspecified
@@ -1563,6 +1745,7 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00836890,CALLTIME.AI,VISALIA,CA,04/24/2024,850,SOFTWARE,,,,2024,4072620241979918466,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00836890,CALLTIME.AI,VISALIA,CA,05/24/2024,1050,SOFTWARE,,,,2024,4072620241979918469,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
 2024,C00412304,OTTER AI,MOUNTAIN VIEW,CA,04/08/2024,720,TRANSCRIPTION SERVICES,,,,2024,4052620241950884400,otter_ai,Otter.ai,general_purpose,high,unspecified
+2024,C00003418,CAMPAIGN NUCLEUS LLC,FORT LAUDERDALE,FL,08/09/2024,21040.14,WEB HOSTING,,,,2024,4093020242043376599,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00003418,OTTER AI,MOUNTAIN VIEW,CA,08/09/2024,30,SOFTWARE / LICENSING,,CONVENTIONS ACCOUNT,X,2024,4093020242043376558,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00003418,DESCRIPT INC,SAN FRANCISCO,CA,08/09/2024,15.9,IT SUPPORT/MAINTENANCE,,,X,2024,4093020242043376378,descript,Descript,general_purpose,high,unspecified
 2024,C00786657,GRAMMARLY,SAN FRANCISCO,CA,06/29/2024,30,SOFTWARE EXPENSE,Administrative/Salary/Overhead Expenses ,,,2024,4080720242011278577,grammarly,Grammarly,general_purpose,high,administrative_productivity

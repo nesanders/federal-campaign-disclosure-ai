@@ -75,6 +75,30 @@
 # positives, which is why prompt_io below is matched only as "prompt.io",
 # never bare "prompt". That same pass is also what surfaced how old some of
 # these "AI" vendors actually are, which is why the `era` field exists.
+#
+# Third pass (partisan-balance check): the site's own analysis noted that
+# disclosed generative-era AI spend skews heavily toward Democratic-aligned
+# campaigns and committees, and flagged a real risk that this reflects this
+# taxonomy's own discovery process (built from press coverage and corpus
+# mining that happened to surface more progressive-aligned tools) rather
+# than actual campaign behavior -- AAPC survey data reported in Axios
+# (April 2026) has Republican consultants self-reporting *more* daily AI
+# use than Democratic consultants (64% vs. 49%), which would be hard to
+# square with a large real adoption gap in the other direction. This pass
+# specifically researched reported GOP-aligned AI campaign tools and added
+# campaign_nucleus (Brad Parscale's platform) and convos (bipartisan
+# AI-texting platform, formerly PubSent) below, both confirmed as real FEC
+# payees before being added. It also considered and rejected Push Digital
+# Group / "Push AI" (a Republican digital ad agency that added AI tooling
+# internally in 2025): "PUSH DIGITAL" appears as a payee going back to
+# 2020, well before its AI pivot, and nothing in how campaigns pay them
+# says AI -- the same reasoning that excluded Civis Analytics, Grow
+# Progress, and Movement Labs previously. Investigated and found no safe
+# pattern for OpenAI's Sora or Google's Veo (both named in 2026 reporting
+# on AI-generated political video) either: "sora" collides with a common
+# given name and "veo" with an unrelated Spanish-language business name
+# ("Veo Veo Estudio"), and neither appeared in the data in a qualified,
+# unambiguous form.
 
 general_purpose:
   - id: openai
@@ -455,6 +479,44 @@ political_specific:
     era: generative
     patterns:
       - {pattern: "campaign brain", confidence: high}
+  - id: campaign_nucleus
+    name: Campaign Nucleus
+    homepage: https://campaignnucleus.com
+    era: legacy
+    # Brad Parscale's ("Parscale Strategy") campaign CRM/command-center
+    # platform, in market since ~2020-2021 (confirmed as a real FEC payee
+    # -- "CAMPAIGN NUCLEUS" / "CAMPAIGN NUCLEUS LLC" / "WWW.CAMPAIGNNUCLEUS.COM"
+    # -- across the 2022, 2024, and 2026 cycles) with data-parsing/sentiment/
+    # targeting "AI" positioning that predates generative-AI-era marketing;
+    # press reporting on its more recent generative features (AI-drafted
+    # emails) dates to 2024. Reported GOP-aligned: Trump campaign, RNC, and
+    # affiliated committees have reportedly paid Parscale-linked entities
+    # over $2.2M.
+    lean_context: reported GOP-aligned; developed by Brad Parscale (Trump 2016/2020 digital director)
+    patterns:
+      - {pattern: "campaign nucleus", confidence: high}
+  - id: convos
+    name: Convos (PubSent)
+    homepage: https://convos.ai
+    era: generative
+    # AI-agent political texting platform, rebranded from PubSent in 2025.
+    # Both names are real FEC payees in the 2026 cycle ("CONVOS" and
+    # "PUBSENT", both based in Caldwell, NJ). "Convos" alone is an ordinary
+    # word (informal for "conversations"), so it's kept medium-confidence;
+    # "PubSent" is distinctive enough for high confidence.
+    patterns:
+      - {pattern: "pubsent", confidence: high}
+      - {pattern: "\\bconvos\\b", confidence: medium}
+  - id: votersai
+    name: VotersAI
+    homepage: https://votersai.com
+    era: generative
+    # AI campaign-management platform (voter data, outreach, field ops)
+    # that publicly launched March 2026 -- too new to have surfaced in this
+    # dataset yet (zero matches as of this writing), added proactively
+    # since this taxonomy is meant to be extended as new vendors surface.
+    patterns:
+      - {pattern: "voters ?ai", confidence: high}
 
 # Use-case categories for classifying disbursement PURPOSE / MEMO_TEXT text.
 # A single disbursement may match multiple categories; "unspecified" is used
