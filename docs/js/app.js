@@ -1103,6 +1103,71 @@
     window.scrollTo(0, 0);
   }
 
+  // ---- dataset tabs: Federal (FEC) and Massachusetts (OCPF) are two
+  // separate datasets, never merged. Exactly one is visible at a time;
+  // every card in each carries its own context pill (see tagCardsWithPill)
+  // so which dataset a given chart belongs to is never ambiguous. ----
+  const FEDERAL_TITLE = "AI Use in Federal Campaign Disclosures";
+  const FEDERAL_SUBTITLE_1 =
+    "A read of federal campaign-finance disclosures for U.S. House and Senate candidates, looking for payments to AI vendors and how that spending breaks down by vendor, stated purpose, party, incumbency, candidate age, and chamber — and how each of those has changed across recent election cycles.";
+  const MA_TITLE = "AI Use in Massachusetts Campaign Disclosures";
+  const MA_SUBTITLE_1 =
+    "A read of Massachusetts OCPF campaign-finance disclosures for state candidates, looking for payments to the same AI-vendor taxonomy tracked on the Federal tab. This is a separate dataset from a different disclosure system — smaller in scale, with its own itemization rules — and is not directly comparable dollar-for-dollar with the federal figures.";
+
+  let currentDataset = "federal";
+
+  function activateDataset(tab) {
+    currentDataset = tab;
+    const isMa = tab === "ma";
+
+    document.body.setAttribute("data-active-dataset", tab);
+    document.querySelectorAll(".dataset-tab").forEach((btn) => {
+      const active = btn.getAttribute("data-dataset") === tab;
+      btn.classList.toggle("is-active", active);
+      btn.setAttribute("aria-selected", active ? "true" : "false");
+    });
+
+    document.getElementById("page-toc").hidden = isMa;
+    document.getElementById("legacy-toggle-bar").hidden = isMa;
+    document.getElementById("search-bar-wrap").hidden = isMa;
+    document.getElementById("footer-source-federal").hidden = isMa;
+    document.getElementById("footer-source-ma").hidden = !isMa;
+
+    document.title = isMa ? MA_TITLE : FEDERAL_TITLE;
+    document.getElementById("page-h1").textContent = isMa ? MA_TITLE : FEDERAL_TITLE;
+    document.getElementById("page-subtitle-1").textContent = isMa ? MA_SUBTITLE_1 : FEDERAL_SUBTITLE_1;
+    document.getElementById("page-subtitle-2").hidden = isMa;
+
+    if (isMa) {
+      document.getElementById("main-view").hidden = true;
+      document.getElementById("detail-view").hidden = true;
+      document.getElementById("ma-view").hidden = false;
+      window.scrollTo(0, 0);
+      ensureMaData();
+    } else {
+      document.getElementById("ma-view").hidden = true;
+    }
+  }
+
+  function wireDatasetTabs() {
+    document.querySelectorAll(".dataset-tab").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const tab = btn.getAttribute("data-dataset");
+        location.hash = tab === "ma" ? "#/ma" : "#/";
+      });
+    });
+  }
+
+  // One-time pass: stamp every federal card's <h3> with a context pill.
+  // The federal card markup is static (never rebuilt), so this only needs
+  // to run once; MA cards are built fresh by renderMaView() each time and
+  // include their pill directly.
+  function tagFederalCardsWithPill() {
+    document.querySelectorAll("#main-view .card > h3").forEach((h3) => {
+      h3.appendChild(el("span", { className: "dataset-pill dataset-pill-federal", text: "Federal · FEC" }));
+    });
+  }
+
   function detailCard(titleText, canvasId, noteText) {
     const card = el("div", { className: "card" });
     card.appendChild(el("h3", { text: titleText }));
@@ -1415,6 +1480,250 @@
     view.appendChild(el("div", { className: "card-grid single", children: [card] }));
   }
 
+  // ---- Massachusetts (OCPF) tab ----
+  let MA_DATA = null;
+  let maLoadPromise = null;
+
+  function maCardTitle(text) {
+    return el("h3", {
+      children: [document.createTextNode(text), el("span", { className: "dataset-pill dataset-pill-ma", text: "Massachusetts · OCPF" })],
+    });
+  }
+
+  function ensureMaData() {
+    if (MA_DATA) {
+      renderMaView();
+      return;
+    }
+    if (!maLoadPromise) {
+      const view = document.getElementById("ma-view");
+      view.innerHTML = "";
+      view.appendChild(el("p", { className: "lede", text: "Loading Massachusetts dataset…" }));
+      maLoadPromise = fetch("data/dashboard_ma.json")
+        .then((r) => {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        })
+        .then((json) => {
+          MA_DATA = json;
+          renderMaView();
+        })
+        .catch((err) => {
+          view.innerHTML = "";
+          view.appendChild(el("p", { className: "lede", text: "Could not load Massachusetts dataset (" + err.message + ")." }));
+          console.error(err);
+        });
+    }
+  }
+
+  function renderMaVendorsCard() {
+    const c = colors();
+    const rows = MA_DATA.vendors.slice(0, 20);
+    const labels = rows.map((r) => r.name + (r.era === "legacy" ? " (legacy)" : ""));
+    const data = rows.map((r) => r.total);
+
+    const card = el("div", { className: "card" });
+    const toolbar = el("div", { className: "card-toolbar" });
+    const toggleBtn = el("button", { className: "btn-table-toggle", text: "View as table" });
+    toolbar.appendChild(toggleBtn);
+    card.appendChild(toolbar);
+    card.appendChild(maCardTitle("AI-related expenditures by vendor, 2024 & 2026 cycles"));
+    card.appendChild(el("p", { className: "note", text: "Every OCPF expenditure record statewide for the window, matched against the same taxonomy used on the Federal tab." }));
+
+    const chartHolder = el("div", { className: "chart-holder tall" });
+    chartHolder.style.height = Math.max(320, rows.length * 26) + "px";
+    const canvas = el("canvas", { id: "chart-ma-vendors" });
+    chartHolder.appendChild(canvas);
+    const tableHolder = el("div", { className: "table-holder", attrs: { hidden: "" } });
+    card.appendChild(chartHolder);
+    card.appendChild(tableHolder);
+
+    toggleBtn.addEventListener("click", () => {
+      const showingTable = !tableHolder.hidden;
+      tableHolder.hidden = showingTable;
+      chartHolder.hidden = !showingTable;
+      toggleBtn.textContent = showingTable ? "View as table" : "View chart";
+    });
+
+    tableHolder.appendChild(
+      buildTable(
+        [
+          { label: "Vendor", render: (r) => r.name },
+          { label: "Type", render: (r) => VENDOR_GROUP_LABEL[r.group] || r.group },
+          { label: "Era", render: (r) => r.era },
+          { label: "Total", num: true, render: (r) => fmtUSD2.format(r.total) },
+          { label: "Records", num: true, render: (r) => fmtInt.format(r.records) },
+          { label: "Filers", num: true, render: (r) => fmtInt.format(r.filers) },
+        ],
+        MA_DATA.vendors
+      )
+    );
+
+    setTimeout(() => {
+      makeChart("chart-ma-vendors", {
+        type: "bar",
+        data: { labels, datasets: [{ label: "Disclosed spend", data, backgroundColor: c.ma || cssVar("--ma-accent"), borderRadius: 4, barThickness: 16 }] },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: Object.assign(tooltipBase(), {
+              callbacks: {
+                label: (ctx) => {
+                  const r = rows[ctx.dataIndex];
+                  return fmtUSD2.format(r.total) + " · " + fmtInt.format(r.records) + " records · " + fmtInt.format(r.filers) + " filers";
+                },
+              },
+            }),
+          },
+          scales: {
+            x: { grid: { color: c.grid }, ticks: { color: c.text, callback: (v) => fmtUSD0.format(v) }, border: { display: false } },
+            y: { grid: { display: false }, ticks: { color: c.text, autoSkip: false }, border: { display: false } },
+          },
+        },
+      });
+    }, 0);
+
+    return card;
+  }
+
+  function renderMaTrendCard() {
+    const c = colors();
+    const rows = MA_DATA.time_series;
+    const card = el("div", { className: "card" });
+    card.appendChild(maCardTitle("Disclosed AI-vendor spending by year"));
+    card.appendChild(el("p", { className: "note", text: "All eras, all matched vendors. 2026 is still filing." }));
+    const chartHolder = el("div", { className: "chart-holder" });
+    chartHolder.appendChild(el("canvas", { id: "chart-ma-trend" }));
+    card.appendChild(chartHolder);
+
+    setTimeout(() => {
+      makeChart("chart-ma-trend", {
+        type: "line",
+        data: {
+          labels: rows.map((r) => String(r.year)),
+          datasets: [
+            {
+              label: "Disclosed AI-vendor spend",
+              data: rows.map((r) => r.total),
+              borderColor: cssVar("--ma-accent"),
+              backgroundColor: cssVar("--ma-accent"),
+              tension: 0.25,
+              pointRadius: 4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: Object.assign(tooltipBase(), {
+              callbacks: {
+                label: (ctx) => {
+                  const r = rows[ctx.dataIndex];
+                  return fmtUSD2.format(r.total) + " · " + fmtInt.format(r.records) + " records";
+                },
+              },
+            }),
+          },
+          scales: {
+            x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+            y: { grid: { color: c.grid }, ticks: { color: c.text, callback: (v) => fmtUSD0.format(v) }, border: { display: false } },
+          },
+        },
+      });
+    }, 0);
+
+    return card;
+  }
+
+  function renderMaNotableCard() {
+    const card = el("div", { className: "card" });
+    card.appendChild(maCardTitle("Individual disclosed payments, largest first"));
+    card.appendChild(el("p", { className: "note", text: "Every matched record's own OCPF filing is one click away via the source link." }));
+    card.appendChild(
+      buildTable(
+        [
+          { label: "Date", render: (r) => r.date },
+          { label: "Filer", render: (r) => r.filer_name },
+          { label: "Vendor", render: (r) => r.vendor_names.join(", ") },
+          { label: "Amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
+          { label: "Purpose", render: (r) => r.purpose || "—" },
+          { label: "Source", link: (r) => r.source_link, external: true, render: () => "View ↗" },
+        ],
+        MA_DATA.notable_records
+      )
+    );
+    return card;
+  }
+
+  function renderMaMethodologyCard() {
+    const meta = MA_DATA.meta;
+    const sourcesCard = el("div", { className: "card" });
+    sourcesCard.appendChild(maCardTitle("Data sources"));
+    const sourcesList = el("ul", { className: "notes" });
+    meta.sources.forEach((s) => sourcesList.appendChild(el("li", { text: s })));
+    sourcesCard.appendChild(sourcesList);
+
+    const notesCard = el("div", { className: "card" });
+    notesCard.appendChild(maCardTitle("Notes & limitations"));
+    const notesList = el("ul", { className: "notes" });
+    meta.methodology_notes.forEach((s) => notesList.appendChild(el("li", { text: s })));
+    notesCard.appendChild(notesList);
+
+    return el("div", { className: "card-grid", children: [sourcesCard, notesCard] });
+  }
+
+  function renderMaView() {
+    const view = document.getElementById("ma-view");
+    view.innerHTML = "";
+    const meta = MA_DATA.meta;
+    const stats = MA_DATA.stats;
+
+    view.appendChild(
+      el("div", {
+        className: "ma-banner",
+        children: [
+          el("span", { text: "You're viewing the " }),
+          el("strong", { text: "Massachusetts" }),
+          el("span", {
+            text:
+              " tab — a separate dataset drawn from OCPF, the state's own campaign-finance disclosure system, covering the " +
+              meta.date_range.start +
+              " through " +
+              meta.date_range.end +
+              " window (the 2024 and 2026 cycles). Not merged with, and not directly comparable dollar-for-dollar to, the Federal tab.",
+          }),
+        ],
+      })
+    );
+
+    const statRow = el("div", { className: "stat-row" });
+    statRow.appendChild(statTile("Records scanned statewide", fmtInt.format(meta.records_scanned.expenditures + meta.records_scanned.subvendor), fmtInt.format(meta.records_scanned.expenditures) + " expenditures + " + fmtInt.format(meta.records_scanned.subvendor) + " subvendor payments"));
+    statRow.appendChild(statTile("Disclosed AI-vendor spend", fmtUSD0.format(stats.total_all_eras), fmtUSD0.format(stats.total_generative) + " in generative-era tools specifically"));
+    statRow.appendChild(statTile("Filers with AI-vendor spend", fmtInt.format(stats.filers_with_ai_spend), "out of " + fmtInt.format(stats.total_filers_with_activity) + " filers with any expenditure activity"));
+    statRow.appendChild(statTile("Subvendor payments tested", fmtInt.format(MA_DATA.subvendor.records_scanned), "OCPF's $5,000/$500 subcontractor-disclosure layer, no federal equivalent"));
+    view.appendChild(statRow);
+
+    view.appendChild(el("div", { className: "card-grid single", children: [renderMaVendorsCard()] }));
+    view.appendChild(el("div", { className: "card-grid single", children: [renderMaTrendCard()] }));
+    view.appendChild(el("div", { className: "card-grid single", children: [renderMaNotableCard()] }));
+    view.appendChild(renderMaMethodologyCard());
+
+    view.appendChild(
+      el("p", {
+        className: "lede",
+        text:
+          "Full pipeline code and the shared vendor/category taxonomy (pipeline/config/vendors.yaml) are in the GitHub repository. Dataset generated " +
+          new Date(meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) +
+          " UTC.",
+      })
+    );
+  }
+
   function parseHash() {
     const h = location.hash.replace(/^#\/?/, "");
     if (!h) return null;
@@ -1423,7 +1732,7 @@
     return { type: parts[0], id: decodeURIComponent(parts.slice(1).join("/")) };
   }
 
-  function router() {
+  function federalRouter() {
     const parsed = parseHash();
     if (!parsed) {
       showMainView();
@@ -1439,6 +1748,21 @@
     }
   }
 
+  // Top-level dispatcher: the URL hash decides both which dataset tab is
+  // active ("#/ma" for Massachusetts, anything else for Federal) and, on
+  // the Federal tab, which drill-down page (if any) to show. Keeping the
+  // tab itself in the hash means the browser's back/forward buttons and
+  // shared links both restore the right dataset, not just the right page.
+  function route() {
+    const raw = location.hash.replace(/^#\/?/, "");
+    if (raw === "ma") {
+      activateDataset("ma");
+      return;
+    }
+    activateDataset("federal");
+    federalRouter();
+  }
+
   function renderAll() {
     renderStats();
     renderVendors();
@@ -1449,7 +1773,7 @@
     renderLeaderboards();
     renderOutsideSpending();
     renderMethodology();
-    router();
+    route();
   }
 
   fetch("data/dashboard.json")
@@ -1473,9 +1797,14 @@
       populateLeaderboardFilters();
       buildSearchIndex();
       wireSearch();
+      wireDatasetTabs();
+      tagFederalCardsWithPill();
       renderAll();
-      window.addEventListener("hashchange", router);
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", renderAll);
+      window.addEventListener("hashchange", route);
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+        renderAll();
+        if (MA_DATA) renderMaView();
+      });
     })
     .catch((err) => {
       document.getElementById("meta-line").textContent = "Could not load dataset (" + err.message + ").";

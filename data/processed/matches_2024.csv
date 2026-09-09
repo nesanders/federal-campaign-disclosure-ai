@@ -1071,7 +1071,6 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00836916,AIR AI,SCOTTSDALE,AZ,09/03/2024,297,SOFTWARE,,,X,2024,4102320242077134328,air_ai,Air AI,general_purpose,high,administrative_productivity
 2024,C00827022,OTTER.AI,MOUNTAIN VIEW,CA,07/02/2024,244.62,SOFTWARE,,*,X,2024,4082720242015979718,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00827022,OTTER.AI,MOUNTAIN VIEW,CA,06/02/2024,91.4,SOFTWARE,,*,X,2024,4082720242015979102,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
-2024,C00815415,"DORCELLY, JEAN CLAUDE",SPRING VALLEY,NY,06/18/2024,400,EVENT FEE,Administrative/Salary/Overhead Expenses ,,,2024,4121020241075532372,anthropic,Anthropic (Claude),general_purpose,medium,administrative_productivity
 2024,C00825851,CAMPAIGN NUCLEUS LLC,MEDINA,OH,09/24/2024,5000,DIGITAL MARKETING,,,,2024,4112020241071618572,campaign_nucleus,Campaign Nucleus,political_specific,high,unspecified
 2024,C00825851,OPENAI,SAN FRANCISCO,CA,08/10/2024,20,CREDIT CARD PMT [SB21B.8223]: SOFTWARE SUBSCRIPTION,,,X,2024,4112020241071618610,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2024,C00574889,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,01/16/2024,6738.79,FUNDRAISING TEXT MESSAGES,,,,2024,4042620241920846741,amplify_ai,Amplify.ai (TruVerse),political_specific,high,communications_copy;fundraising
@@ -1164,7 +1163,6 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2024,C00653196,GRAMMARLY,SAN FRANCISCO,CA,07/26/2024,225,DIGITAL SUBSCRIPTIONS,,*,X,2024,4111820241070282565,grammarly,Grammarly,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,08/05/2024,-390,DIGITAL SUBSCRIPTIONS,,*,X,2024,4111820241070282464,otter_ai,Otter.ai,general_purpose,high,unspecified
 2024,C00653196,OTTER.AI,LOS ALTOS,CA,08/05/2024,390,DIGITAL SUBSCRIPTIONS,,*,X,2024,4111820241070282465,otter_ai,Otter.ai,general_purpose,high,unspecified
-2024,C00042366,JEAN CLAUDE RESTAURANT,NEW YORK,NY,09/15/2024,420,CATERING/FACILITIES/ EVENT COSTS,,MEMO ENTRY,X,2024,4121620241077030467,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2024,C00839597,OTTER.AI,MOUNTAIN VIEW,CA,08/06/2024,67.96,SUBSCRIPTION,,*,X,2024,4043020251188445342,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
 2024,C00812388,"GRAMMARLY, INC.",SAN FRANCISCO,CA,10/01/2024,125,COMPUTER SOFTWARE,,*,X,2024,4103020241012498830,grammarly,Grammarly,general_purpose,high,administrative_productivity
 2024,C00839597,OTTER.AI,MOUNTAIN VIEW,CA,07/03/2024,67.96,SUBSCRIPTION,,*,X,2024,4043020251188445481,otter_ai,Otter.ai,general_purpose,high,administrative_productivity

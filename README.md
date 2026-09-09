@@ -47,6 +47,25 @@ AI-indicative language and researching the payee names that turned up.
 **Live site:** enable GitHub Pages for this repo (Settings -> Pages -> Deploy
 from branch -> `main` / `/docs`) and it will serve `docs/index.html`.
 
+## Massachusetts tab
+
+The site has a second, fully separate dataset: a **Massachusetts** tab
+(switcher at the top of the page, defaulting to **Federal**) reading itemized
+expenditure and subvendor records from OCPF, the Massachusetts Office of
+Campaign and Political Finance, via its public API (`api.ocpf.us`) --
+Massachusetts has no bulk-file distribution comparable to the FEC's. It uses
+the same vendor taxonomy as the federal side, applied unmodified, over a
+fixed date window covering the 2024 and 2026 cycles (OCPF filers report
+continuously rather than in discrete federal-style two-year cycles).
+
+The two datasets are never merged and are not directly comparable
+dollar-for-dollar -- different disclosure regime, different itemization
+floor ($50 per item at OCPF vs. FEC's effective $200/payee/cycle), vastly
+different scale. Every card on the Massachusetts tab carries its own
+"Massachusetts &middot; OCPF" pill (and every federal card a matching
+"Federal &middot; FEC" one) so which dataset a given chart belongs to is
+never ambiguous.
+
 ## How it works
 
 ```
@@ -70,8 +89,18 @@ pipeline/build_dataset.py            joins matches to candidate/committee
                                       reference data, aggregates, builds the
                                       vendor/candidate/race detail pages' data,
                                       and writes docs/data/dashboard.json
+pipeline/fetch_ocpf.py               downloads Massachusetts OCPF itemized
+                                      expenditure and subvendor records via
+                                      api.ocpf.us for the 2024+2026 cycle window
+pipeline/parse_ocpf.py               scans those records for AI-vendor matches
+                                      and totals how many distinct filers
+                                      reported any expenditure activity at all
+pipeline/build_dataset_ma.py         aggregates OCPF matches and writes
+                                      docs/data/dashboard_ma.json (a separate
+                                      file/schema from the federal dataset)
 docs/                                the static site (GitHub Pages source);
-                                      reads docs/data/dashboard.json client-side
+                                      reads docs/data/dashboard.json and
+                                      docs/data/dashboard_ma.json client-side
 ```
 
 Run the whole pipeline locally:
@@ -83,10 +112,14 @@ python pipeline/fetch_legislators.py
 python pipeline/parse_disbursements.py
 python pipeline/parse_outside_spending.py
 python pipeline/build_dataset.py
+python pipeline/fetch_ocpf.py
+python pipeline/parse_ocpf.py
+python pipeline/build_dataset_ma.py
 ```
 
 `.github/workflows/refresh-data.yml` runs this weekly and commits the updated
-`docs/data/dashboard.json`, so the site stays current as new filings land.
+`docs/data/dashboard.json` and `docs/data/dashboard_ma.json`, so the site
+stays current as new filings land.
 
 ## Data sources
 
@@ -104,6 +137,10 @@ python pipeline/build_dataset.py
     (there is no dedicated bulk file for Schedule F alone)
 - [unitedstates/congress-legislators](https://github.com/unitedstates/congress-legislators)
   -- birthdates, for the candidate-age breakdown (public domain)
+- Massachusetts OCPF public API (`api.ocpf.us/search/items`, no key
+  required) -- itemized expenditure (`SearchTypeCategory=B`) and subvendor
+  (`SearchTypeCategory=S`) records; powers the Massachusetts tab only, kept
+  fully separate from the FEC-sourced data above
 
 ## Methodology, in brief
 
@@ -181,8 +218,10 @@ pipeline/                 the data pipeline (Python)
 data/raw/                 downloaded FEC/legislators source files (gitignored, large)
 data/processed/           filtered AI-vendor-match CSVs and per-committee/
                           per-spender total-expenditure CSVs, per cycle
-                          (committed, small)
+                          (committed, small); ocpf_*.csv are the Massachusetts
+                          equivalents (not split by cycle)
 docs/                     GitHub Pages site
   index.html, css/, js/    static dashboard (vanilla JS + a vendored Chart.js build)
-  data/dashboard.json      aggregated data the site reads
+  data/dashboard.json      aggregated federal data the site reads
+  data/dashboard_ma.json   aggregated Massachusetts data (separate file/schema)
 ```

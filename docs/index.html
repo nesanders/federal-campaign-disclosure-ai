@@ -6,14 +6,24 @@
 <title>AI Use in Federal Campaign Disclosures</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-active-dataset="federal">
 
 <header class="site">
   <div class="wrap">
-    <h1>AI Use in Federal Campaign Disclosures</h1>
-    <p class="subtitle">A read of federal campaign-finance disclosures for U.S. House and Senate candidates, looking for payments to AI vendors and how that spending breaks down by vendor, stated purpose, party, incumbency, candidate age, and chamber &mdash; and how each of those has changed across recent election cycles.</p>
-    <p class="subtitle">Built from the same public FEC disclosure data campaigns themselves file, covering a broad set of AI vendors &mdash; general-purpose chatbots and campaign-specific tools alike &mdash; across the 2020&ndash;2026 election cycles.</p>
-    <nav class="toc">
+    <div class="dataset-tabs" id="dataset-tabs" role="tablist" aria-label="Choose dataset">
+      <button type="button" class="dataset-tab is-active" data-dataset="federal" role="tab" aria-selected="true" aria-controls="main-view detail-view">
+        <span class="dataset-tab-title">Federal</span>
+        <span class="dataset-tab-sub">U.S. House &amp; Senate &middot; FEC</span>
+      </button>
+      <button type="button" class="dataset-tab" data-dataset="ma" role="tab" aria-selected="false" aria-controls="ma-view">
+        <span class="dataset-tab-title">Massachusetts</span>
+        <span class="dataset-tab-sub">State races &middot; OCPF</span>
+      </button>
+    </div>
+    <h1 id="page-h1">AI Use in Federal Campaign Disclosures</h1>
+    <p class="subtitle" id="page-subtitle-1">A read of federal campaign-finance disclosures for U.S. House and Senate candidates, looking for payments to AI vendors and how that spending breaks down by vendor, stated purpose, party, incumbency, candidate age, and chamber &mdash; and how each of those has changed across recent election cycles.</p>
+    <p class="subtitle" id="page-subtitle-2">Built from the same public FEC disclosure data campaigns themselves file, covering a broad set of AI vendors &mdash; general-purpose chatbots and campaign-specific tools alike &mdash; across the 2020&ndash;2026 election cycles.</p>
+    <nav class="toc" id="page-toc">
       <a href="#overview">Overview</a>
       <a href="#vendors">Vendors</a>
       <a href="#usecases">Stated use</a>
@@ -264,12 +274,15 @@
 
   </div><!-- #main-view -->
 
+  <div id="ma-view" hidden></div>
+
 </main>
 
 <footer class="site">
   <div class="wrap">
     <p id="footer-generated"></p>
-    <p>Source data: Federal Election Commission bulk downloads (fec.gov) and the unitedstates/congress-legislators project. This is an independent analysis and is not affiliated with the FEC or any campaign or vendor named here.</p>
+    <p id="footer-source-federal">Source data: Federal Election Commission bulk downloads (fec.gov) and the unitedstates/congress-legislators project. This is an independent analysis and is not affiliated with the FEC or any campaign or vendor named here.</p>
+    <p id="footer-source-ma" hidden>Source data: Massachusetts Office of Campaign and Political Finance (ocpf.us), via its public API. This is an independent analysis and is not affiliated with OCPF or any campaign or vendor named here.</p>
   </div>
 </footer>
 

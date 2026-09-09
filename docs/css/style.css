@@ -23,6 +23,10 @@
   --seq-450: #2a78d6;
   --seq-550: #1c5cab;
   --seq-650: #104281;
+
+  --ma-accent:      #7d3c98;
+  --ma-accent-soft: #f1e6f5;
+  --fed-accent-soft: #e3edfa;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,6 +49,10 @@
     --series-6: #008300;
     --series-7: #9085e9;
     --series-8: #e66767;
+
+    --ma-accent:      #c48fdb;
+    --ma-accent-soft: #2f2035;
+    --fed-accent-soft: #16233a;
   }
 }
 :root[data-theme="dark"] {
@@ -66,6 +74,10 @@
   --series-6: #008300;
   --series-7: #9085e9;
   --series-8: #e66767;
+
+  --ma-accent:      #c48fdb;
+  --ma-accent-soft: #2f2035;
+  --fed-accent-soft: #16233a;
 }
 
 * { box-sizing: border-box; }
@@ -266,6 +278,44 @@ table.data-table.scroll-wrap { display: block; overflow-x: auto; }
 .search-empty { color: var(--text-muted); font-size: 0.84rem; padding: 8px 10px; }
 
 [hidden] { display: none !important; }
+
+/* Dataset tabs: federal vs. Massachusetts are two entirely separate
+   datasets (different disclosure regime, different scale, not merged) --
+   this switcher is the primary way a visitor moves between them, and its
+   own coloring carries into every card via .dataset-pill below. */
+.dataset-tabs { display: inline-flex; gap: 4px; margin: 4px 0 18px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 4px; }
+.dataset-tab {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
+  background: transparent; border: none; border-radius: 8px; cursor: pointer;
+  padding: 8px 16px; text-align: left; color: var(--text-secondary);
+}
+.dataset-tab:hover { background: var(--page-plane); color: var(--text-primary); }
+.dataset-tab-title { font-weight: 700; font-size: 0.98rem; }
+.dataset-tab-sub { font-size: 0.74rem; color: var(--text-muted); }
+.dataset-tab.is-active { background: var(--fed-accent-soft); }
+.dataset-tab.is-active .dataset-tab-title { color: var(--series-1); }
+.dataset-tab[data-dataset="ma"].is-active { background: var(--ma-accent-soft); }
+.dataset-tab[data-dataset="ma"].is-active .dataset-tab-title { color: var(--ma-accent); }
+
+/* Context pill: stamped on every card's title row so which dataset a given
+   chart or table belongs to is never ambiguous, even mid-scroll. */
+.dataset-pill {
+  display: inline-flex; align-items: center; gap: 5px; font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.02em; padding: 2px 9px; border-radius: 999px; margin-left: 10px;
+  vertical-align: middle; white-space: nowrap;
+}
+.dataset-pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; }
+.dataset-pill-federal { background: var(--fed-accent-soft); color: var(--series-1); }
+.dataset-pill-federal::before { background: var(--series-1); }
+.dataset-pill-ma { background: var(--ma-accent-soft); color: var(--ma-accent); }
+.dataset-pill-ma::before { background: var(--ma-accent); }
+
+.ma-banner {
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  background: var(--ma-accent-soft); border: 1px solid var(--ma-accent);
+  border-radius: 10px; padding: 12px 18px; margin-bottom: 28px; font-size: 0.9rem; color: var(--text-secondary);
+}
+.ma-banner strong { color: var(--ma-accent); }
 
 @media (max-width: 640px) {
   .card-grid { grid-template-columns: 1fr; }

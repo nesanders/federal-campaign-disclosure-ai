@@ -217,7 +217,6 @@ cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_de
 2026,C00766659,OPEN AI LLC,SAN FRANCISCO,CA,06/13/2025,20,"CHAT GPT, SOFTWARE SUBSCRIPTION",,,,2025,4111020251293300025,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00766659,OPEN AI LLC,SAN FRANCISCO,CA,06/14/2025,20,"CHAT GPT, SOFTWARE SUBSCRIPTION",,,,2025,4111020251293300026,openai,OpenAI (ChatGPT),general_purpose,high,administrative_productivity
 2026,C00894915,DESCRIPT,SAN FRANCISCO,CA,02/21/2025,35,SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2025,4042120251185624745,descript,Descript,general_purpose,high,administrative_productivity
-2026,C00042366,JEAN CLAUDE BISTRO,NEW YORK,NY,03/23/2025,301.71,CATERING/FACILITIES/ EVENT COSTS,,MEMO ENTRY,X,2025,4052120251203688442,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
 2026,C00000935,QUILLER.AI,WASHINGTON,DC,11/24/2025,1000,WIRE SERVICES/ ON LINE SVCS.,Administrative/Salary/Overhead Expenses ,MEMO ENTRY,X,2025,4021120261306811509,quiller,Quiller,political_specific,high,administrative_productivity
 2026,C00000935,OTTER.AI,MOUNTAIN VIEW,CA,11/05/2025,63.6,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2025,4021120261306813086,otter_ai,Otter.ai,general_purpose,high,unspecified
 2026,C00580068,DESCRIPT,SAN FRANCISCO,CA,10/02/2025,38.85,SOFTWARE,,*,X,2025,4121620251298927359,descript,Descript,general_purpose,high,administrative_productivity

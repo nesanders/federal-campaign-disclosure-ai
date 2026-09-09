@@ -117,6 +117,12 @@ general_purpose:
       - {pattern: "claude ai", confidence: high}
       - {pattern: "claude\\.ai", confidence: high}
       - {pattern: "\\bclaude\\b", confidence: medium}
+    # "Claude" alone collides with people actually named Claude -- confirmed
+    # in Massachusetts OCPF data against candidates Jean Claude Sanon and
+    # Laverne Claude-Bruce.
+    exclude:
+      - "jean.{0,3}claude"
+      - "claude.?bruce"
   - id: google_ai
     name: Google (Gemini / Vertex AI)
     homepage: https://ai.google
@@ -142,8 +148,12 @@ general_purpose:
       - "gemini trust"
       - "gemini space station"
       - "gemini earn"
+      - "gemini sign"
+      - "gemini productions"
+      - "toskr"
       - "exchange fee"
       - "merchant fee"
+      - "processing fee"
       - "credit card processing"
       - "bitcoin"
   - id: aws_ai
@@ -245,6 +255,12 @@ general_purpose:
     # core product predates the generative-AI wave.
     patterns:
       - {pattern: "\\bdescript\\b", confidence: high}
+    # Gannett/LocalIQ's bank merchant descriptor abbreviates to something
+    # like "A/descript..." (likely a mangled "AD/DESCRIPTION"), which
+    # collides with this pattern -- confirmed in Massachusetts OCPF data.
+    exclude:
+      - "localiq"
+      - "gan ne"
   - id: jasper_ai
     name: Jasper AI
     homepage: https://jasper.ai
@@ -479,6 +495,10 @@ political_specific:
     era: generative
     patterns:
       - {pattern: "campaign brain", confidence: high}
+    # Collides with the ordinary idiom "campaign brain trust" -- confirmed
+    # in Massachusetts OCPF data (a state senator's own holiday party).
+    exclude:
+      - "brain trust"
   - id: campaign_nucleus
     name: Campaign Nucleus
     homepage: https://campaignnucleus.com
@@ -507,6 +527,10 @@ political_specific:
     patterns:
       - {pattern: "pubsent", confidence: high}
       - {pattern: "\\bconvos\\b", confidence: medium}
+    # Collides with unrelated payees whose name happens to contain "Convos"
+    # -- confirmed in Massachusetts OCPF data ("Heavy Hearted Convos Inc.").
+    exclude:
+      - "heavy hearted"
   - id: votersai
     name: VotersAI
     homepage: https://votersai.com

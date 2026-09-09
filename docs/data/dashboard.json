@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-09T00:26:35.660299Z",
+    "generated_at": "2026-09-09T13:02:13.947585Z",
     "cycles": [
       2020,
       2022,
@@ -18,10 +18,10 @@
       "unitedstates/congress-legislators (birthdates, for age analysis)"
     ],
     "matched_row_counts_by_cycle": {
-      "2020": 461,
+      "2020": 460,
       "2022": 1340,
-      "2024": 1759,
-      "2026": 2202
+      "2024": 1757,
+      "2026": 2201
     },
     "ie_matched_row_counts_by_cycle": {
       "2020": 1,
@@ -196,8 +196,8 @@
       "amount_high": 54916.96,
       "count_high": 378,
       "distinct_committees_high": 65,
-      "amount_medium": 758411.68,
-      "count_medium": 607
+      "amount_medium": 757289.97,
+      "count_medium": 604
     },
     {
       "id": "donoratlas",
@@ -484,8 +484,8 @@
       "amount_high": 39.98,
       "count_high": 2,
       "distinct_committees_high": 1,
-      "amount_medium": 280081.66,
-      "count_medium": 24
+      "amount_medium": 279281.66,
+      "count_medium": 23
     },
     {
       "id": "aaru",
@@ -14534,39 +14534,6 @@
     },
     {
       "cycle": 2026,
-      "entity_id": "C00042366",
-      "entity_type": "committee",
-      "entity_name": "DSCC",
-      "cand_party": "Democratic",
-      "office": "Other",
-      "ici": "Unknown",
-      "cand_state": "",
-      "cand_district": "",
-      "ai_amount_high": 1694.71,
-      "ai_count_high": 6,
-      "ai_amount_high_ex_legacy": 132.5,
-      "ai_count_high_ex_legacy": 1,
-      "total_expenditure": 82172969.31,
-      "pct_ai": 0.002,
-      "pct_ai_ex_legacy": 0.0,
-      "use_categories": [
-        "administrative_productivity",
-        "unspecified"
-      ],
-      "vendor_ids": [
-        "anthropic",
-        "descript",
-        "otter_ai"
-      ],
-      "use_categories_ex_legacy": [
-        "administrative_productivity"
-      ],
-      "vendor_ids_ex_legacy": [
-        "anthropic"
-      ]
-    },
-    {
-      "cycle": 2026,
       "entity_id": "S6ME00373",
       "entity_type": "candidate",
       "entity_name": "PLATNER, GRAHAM",
@@ -16677,6 +16644,39 @@
       ],
       "vendor_ids": [
         "anthropic",
+        "otter_ai"
+      ],
+      "use_categories_ex_legacy": [
+        "administrative_productivity"
+      ],
+      "vendor_ids_ex_legacy": [
+        "anthropic"
+      ]
+    },
+    {
+      "cycle": 2026,
+      "entity_id": "C00042366",
+      "entity_type": "committee",
+      "entity_name": "DSCC",
+      "cand_party": "Democratic",
+      "office": "Other",
+      "ici": "Unknown",
+      "cand_state": "",
+      "cand_district": "",
+      "ai_amount_high": 1694.71,
+      "ai_count_high": 6,
+      "ai_amount_high_ex_legacy": 132.5,
+      "ai_count_high_ex_legacy": 1,
+      "total_expenditure": 82172969.31,
+      "pct_ai": 0.002,
+      "pct_ai_ex_legacy": 0.0,
+      "use_categories": [
+        "administrative_productivity",
+        "unspecified"
+      ],
+      "vendor_ids": [
+        "anthropic",
+        "descript",
         "otter_ai"
       ],
       "use_categories_ex_legacy": [
@@ -31501,8 +31501,8 @@
       "race_id": "House-NY-17",
       "amount_high": 3973.36,
       "count_high": 19,
-      "total_expenditure": 11398546.72,
-      "pct_ai": 0.035,
+      "total_expenditure": 3298581.94,
+      "pct_ai": 0.12,
       "by_vendor": [
         {
           "vendor_id": "openai",
@@ -47368,7 +47368,7 @@
           "name": "LAWLER, MICHAEL VINCENT",
           "party": "Republican",
           "amount_high": 3973.36,
-          "pct_ai": 0.035,
+          "pct_ai": 0.12,
           "cycles": [
             2026
           ]

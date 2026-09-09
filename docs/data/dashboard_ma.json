@@ -1,0 +1,577 @@
+{
+  "meta": {
+    "generated_at": "2026-09-09T12:29:04+00:00",
+    "source_label": "Massachusetts Office of Campaign and Political Finance (OCPF)",
+    "date_range": {
+      "start": "2023-01-01",
+      "end": "2026-09-09"
+    },
+    "records_scanned": {
+      "expenditures": 324905,
+      "subvendor": 2697
+    },
+    "sources": [
+      "OCPF public API (api.ocpf.us/search/items), SearchTypeCategory=B (expenditures) and S (subvendor payments) -- every itemized record OCPF has on file for the window below, not a sample.",
+      "Same AI vendor/category taxonomy as the federal dashboard (pipeline/config/vendors.yaml), applied unmodified against each record's payee name, OCPF's own clarified payee name, stated purpose, and OCPF's own clarified purpose."
+    ],
+    "methodology_notes": [
+      "OCPF itemizes Schedule B expenditures above $50 per item -- a much lower floor than the FEC's effective $200-per-payee-per-cycle threshold, which is why many of the real matches here are small individual monthly SaaS subscriptions that would never separately itemize under FEC's rule.",
+      "Massachusetts committees report continuously rather than in discrete federal-style two-year cycles; this dashboard instead uses a fixed date window covering the 2024 and 2026 election cycles.",
+      "A vendor paid $5,000+ by a committee must itself itemize any $500+ payment it makes to a subvendor -- a disclosure layer with no federal equivalent, tested here as its own category (see below).",
+      "As with the federal dashboard, this dataset only sees a payment if its payee name or purpose text names a vendor on this project's taxonomy -- disclosed AI spend is a floor on real usage, not a ceiling.",
+      "No Massachusetts-specific vendor-discovery pass has been run against this taxonomy; it is the same list built from and tested against federal disclosures."
+    ]
+  },
+  "stats": {
+    "total_all_eras": 23219.26,
+    "total_generative": 11087.09,
+    "matched_records": 314,
+    "filers_with_ai_spend": 57,
+    "total_filers_with_activity": 2515
+  },
+  "vendors": [
+    {
+      "id": "openai",
+      "name": "OpenAI (ChatGPT)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://openai.com",
+      "lean_context": null,
+      "total": 6917.54,
+      "records": 175,
+      "filers": 27
+    },
+    {
+      "id": "calltime_ai",
+      "name": "CallTime.AI",
+      "group": "political_specific",
+      "era": "legacy",
+      "homepage": "https://www.calltime.ai",
+      "lean_context": "progressive-aligned (per public reporting)",
+      "total": 3600.0,
+      "records": 14,
+      "filers": 2
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://grammarly.com",
+      "lean_context": null,
+      "total": 3272.4,
+      "records": 35,
+      "filers": 10
+    },
+    {
+      "id": "campaign_nucleus",
+      "name": "Campaign Nucleus",
+      "group": "political_specific",
+      "era": "legacy",
+      "homepage": "https://campaignnucleus.com",
+      "lean_context": "reported GOP-aligned; developed by Brad Parscale (Trump 2016/2020 digital director)",
+      "total": 2698.28,
+      "records": 6,
+      "filers": 2
+    },
+    {
+      "id": "donoratlas",
+      "name": "DonorAtlas",
+      "group": "political_specific",
+      "era": "generative",
+      "homepage": "https://donoratlas.com",
+      "lean_context": "progressive-aligned (per public reporting)",
+      "total": 2100.0,
+      "records": 7,
+      "filers": 3
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic (Claude)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://anthropic.com",
+      "lean_context": null,
+      "total": 1534.91,
+      "records": 25,
+      "filers": 8
+    },
+    {
+      "id": "otter_ai",
+      "name": "Otter.ai",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://otter.ai",
+      "lean_context": null,
+      "total": 1526.17,
+      "records": 25,
+      "filers": 4
+    },
+    {
+      "id": "descript",
+      "name": "Descript",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://descript.com",
+      "lean_context": null,
+      "total": 1035.32,
+      "records": 14,
+      "filers": 3
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity AI",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://perplexity.ai",
+      "lean_context": null,
+      "total": 352.5,
+      "records": 8,
+      "filers": 2
+    },
+    {
+      "id": "xai_grok",
+      "name": "xAI (Grok)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://x.ai",
+      "lean_context": null,
+      "total": 100.0,
+      "records": 1,
+      "filers": 1
+    },
+    {
+      "id": "campaign_brain",
+      "name": "Campaign Brain",
+      "group": "political_specific",
+      "era": "generative",
+      "homepage": "https://www.campaign-brain.com",
+      "lean_context": null,
+      "total": 50.0,
+      "records": 1,
+      "filers": 1
+    },
+    {
+      "id": "daisychain",
+      "name": "Daisychain",
+      "group": "political_specific",
+      "era": "generative",
+      "homepage": "https://www.daisychain.app",
+      "lean_context": "progressive-aligned (per public reporting)",
+      "total": 14.5,
+      "records": 1,
+      "filers": 1
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://midjourney.com",
+      "lean_context": null,
+      "total": 10.63,
+      "records": 1,
+      "filers": 1
+    },
+    {
+      "id": "google_ai",
+      "name": "Google (Gemini / Vertex AI)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://ai.google",
+      "lean_context": null,
+      "total": 7.01,
+      "records": 1,
+      "filers": 1
+    }
+  ],
+  "time_series": [
+    {
+      "year": 2023,
+      "total": 3385.75,
+      "records": 23
+    },
+    {
+      "year": 2024,
+      "total": 4500.41,
+      "records": 31
+    },
+    {
+      "year": 2025,
+      "total": 6739.83,
+      "records": 90
+    },
+    {
+      "year": 2026,
+      "total": 8593.27,
+      "records": 170
+    }
+  ],
+  "subvendor": {
+    "records_scanned": 2697,
+    "matched_records": 0,
+    "total": 0
+  },
+  "notable_records": [
+    {
+      "vendor_ids": [
+        "calltime_ai"
+      ],
+      "vendor_names": [
+        "CallTime.AI"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Mossalam, Nichole",
+      "filer_cpf_id": "16668",
+      "date": "6/25/2024",
+      "amount": 750.0,
+      "purpose": "Calltime AI",
+      "vendor_display": "Call time",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=932490"
+    },
+    {
+      "vendor_ids": [
+        "calltime_ai"
+      ],
+      "vendor_names": [
+        "CallTime.AI"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Mossalam, Nichole",
+      "filer_cpf_id": "16668",
+      "date": "7/25/2024",
+      "amount": 750.0,
+      "purpose": "Calltime AI",
+      "vendor_display": "Call Time",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=936309"
+    },
+    {
+      "vendor_ids": [
+        "campaign_nucleus"
+      ],
+      "vendor_names": [
+        "Campaign Nucleus"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Minogue, Michael",
+      "filer_cpf_id": "19431",
+      "date": "11/4/2025",
+      "amount": 645.16,
+      "purpose": "Software",
+      "vendor_display": "3745 Medina Road Unit C Medina, OH 44256",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1002623"
+    },
+    {
+      "vendor_ids": [
+        "campaign_nucleus"
+      ],
+      "vendor_names": [
+        "Campaign Nucleus"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Dibble, Stephen",
+      "filer_cpf_id": "17784",
+      "date": "3/18/2023",
+      "amount": 517.5,
+      "purpose": "Purchase voter list",
+      "vendor_display": "DEBIT WITHDRAWAL CAMPAIGN NUCLEUS",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=874874"
+    },
+    {
+      "vendor_ids": [
+        "campaign_nucleus"
+      ],
+      "vendor_names": [
+        "Campaign Nucleus"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Minogue, Michael",
+      "filer_cpf_id": "19431",
+      "date": "11/7/2025",
+      "amount": 500.0,
+      "purpose": "Software",
+      "vendor_display": "Campaign Nucleus",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1002527"
+    },
+    {
+      "vendor_ids": [
+        "campaign_nucleus"
+      ],
+      "vendor_names": [
+        "Campaign Nucleus"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Minogue, Michael",
+      "filer_cpf_id": "19431",
+      "date": "12/22/2025",
+      "amount": 500.0,
+      "purpose": "SOFTWARE",
+      "vendor_display": "CAMPAIGN NUCLEUS",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1013135"
+    },
+    {
+      "vendor_ids": [
+        "campaign_nucleus"
+      ],
+      "vendor_names": [
+        "Campaign Nucleus"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Minogue, Michael",
+      "filer_cpf_id": "19431",
+      "date": "1/20/2026",
+      "amount": 483.87,
+      "purpose": "SOFTWARE",
+      "vendor_display": "CAMPAIGN NUCLEUS",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1016472"
+    },
+    {
+      "vendor_ids": [
+        "descript"
+      ],
+      "vendor_names": [
+        "Descript"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Santana, Henry",
+      "filer_cpf_id": "18331",
+      "date": "8/5/2024",
+      "amount": 306.0,
+      "purpose": "software subscription",
+      "vendor_display": "DESCRIPT",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=942035"
+    },
+    {
+      "vendor_ids": [
+        "descript"
+      ],
+      "vendor_names": [
+        "Descript"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Santana, Henry",
+      "filer_cpf_id": "18331",
+      "date": "8/5/2025",
+      "amount": 306.0,
+      "purpose": "Audio and video editing software subscription",
+      "vendor_display": "DESCRIPT",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=988027"
+    },
+    {
+      "vendor_ids": [
+        "donoratlas"
+      ],
+      "vendor_names": [
+        "DonorAtlas"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Tarsky, Joshua",
+      "filer_cpf_id": "18824",
+      "date": "7/23/2024",
+      "amount": 300.0,
+      "purpose": "Donor Research",
+      "vendor_display": "DONORATLAS",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=937212"
+    },
+    {
+      "vendor_ids": [
+        "donoratlas"
+      ],
+      "vendor_names": [
+        "DonorAtlas"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "White, Patrick",
+      "filer_cpf_id": "18730",
+      "date": "7/31/2024",
+      "amount": 300.0,
+      "purpose": "List research tool",
+      "vendor_display": "Donoratlas",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=936124"
+    },
+    {
+      "vendor_ids": [
+        "donoratlas"
+      ],
+      "vendor_names": [
+        "DonorAtlas"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "White, Patrick",
+      "filer_cpf_id": "18730",
+      "date": "9/3/2024",
+      "amount": 300.0,
+      "purpose": "Donor research",
+      "vendor_display": "Donoratlas",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=946006"
+    },
+    {
+      "vendor_ids": [
+        "donoratlas"
+      ],
+      "vendor_names": [
+        "DonorAtlas"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Tarsky, Joshua",
+      "filer_cpf_id": "18824",
+      "date": "9/23/2024",
+      "amount": 300.0,
+      "purpose": "Committee Fundraising Platform",
+      "vendor_display": "DONORATLAS",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=945613"
+    },
+    {
+      "vendor_ids": [
+        "donoratlas"
+      ],
+      "vendor_names": [
+        "DonorAtlas"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Tarsky, Joshua",
+      "filer_cpf_id": "18824",
+      "date": "10/22/2024",
+      "amount": 300.0,
+      "purpose": "donor research",
+      "vendor_display": "DONORATLAS",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=949623"
+    },
+    {
+      "vendor_ids": [
+        "donoratlas"
+      ],
+      "vendor_names": [
+        "DonorAtlas"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Coalition for Healthy Democracy 2026",
+      "filer_cpf_id": "95538",
+      "date": "7/2/2025",
+      "amount": 300.0,
+      "purpose": "Subscription - Research Tool",
+      "vendor_display": "DonorAtlas",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1003635"
+    },
+    {
+      "vendor_ids": [
+        "donoratlas"
+      ],
+      "vendor_names": [
+        "DonorAtlas"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Coalition for Healthy Democracy 2026",
+      "filer_cpf_id": "95538",
+      "date": "8/4/2025",
+      "amount": 300.0,
+      "purpose": "Subscription - Research Tool",
+      "vendor_display": "DonorAtlas",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1003635"
+    },
+    {
+      "vendor_ids": [
+        "otter_ai"
+      ],
+      "vendor_names": [
+        "Otter.ai"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Wilson, Jacob",
+      "filer_cpf_id": "17673",
+      "date": "5/1/2025",
+      "amount": 255.0,
+      "purpose": "AI meeting notetaker/transcription/insights services",
+      "vendor_display": "Otter.AI",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=975685"
+    },
+    {
+      "vendor_ids": [
+        "otter_ai"
+      ],
+      "vendor_names": [
+        "Otter.ai"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Wilson, Jacob",
+      "filer_cpf_id": "17673",
+      "date": "5/1/2026",
+      "amount": 255.0,
+      "purpose": "meeting transcripts",
+      "vendor_display": "Otter.ai Inc",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1027054"
+    },
+    {
+      "vendor_ids": [
+        "openai"
+      ],
+      "vendor_names": [
+        "OpenAI (ChatGPT)"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Brownsberger, William N.",
+      "filer_cpf_id": "14454",
+      "date": "11/6/2025",
+      "amount": 212.5,
+      "purpose": "Technology",
+      "vendor_display": "ChatGPT subscription",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1001876"
+    },
+    {
+      "vendor_ids": [
+        "anthropic"
+      ],
+      "vendor_names": [
+        "Anthropic (Claude)"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Farley-Bouvier, Tricia",
+      "filer_cpf_id": "15376",
+      "date": "11/10/2025",
+      "amount": 212.5,
+      "purpose": "Subscription service",
+      "vendor_display": "CLAUDE.AI SUBSCRIPTION ANTHROPIC.COM",
+      "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1001884"
+    }
+  ]
+}
