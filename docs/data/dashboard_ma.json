@@ -1,13 +1,13 @@
 {
   "meta": {
-    "generated_at": "2026-09-14T23:27:07+00:00",
+    "generated_at": "2026-09-14T15:36:05+00:00",
     "source_label": "Massachusetts Office of Campaign and Political Finance (OCPF)",
     "date_range": {
       "start": "2023-01-01",
       "end": "2026-09-14"
     },
     "records_scanned": {
-      "expenditures": 325288,
+      "expenditures": 325269,
       "subvendor": 2711
     },
     "sources": [
@@ -19,14 +19,14 @@
       "Massachusetts committees report continuously rather than in discrete federal-style two-year cycles; this dashboard instead uses a fixed date window covering the 2024 and 2026 election cycles.",
       "A vendor paid $5,000+ by a committee must itself itemize any $500+ payment it makes to a subvendor -- a disclosure layer with no federal equivalent, tested here as its own category (see below).",
       "As with the federal dashboard, this dataset only sees a payment if its payee name or purpose text names a vendor on this project's taxonomy -- disclosed AI spend is a floor on real usage, not a ceiling.",
-      "This taxonomy was empirically mined against Massachusetts payee/purpose text directly (not only inherited from the federal side): every distinct OCPF payee was scanned for AI-indicative language, plus a manual read of the highest-dollar unmatched payees, which is how Read.ai, Captions, and Canva's AI photo feature were found and verified as real payees before being added -- see pipeline/config/vendors.yaml for what was found, checked, and rejected."
+      "No Massachusetts-specific vendor-discovery pass has been run against this taxonomy; it is the same list built from and tested against federal disclosures."
     ]
   },
   "stats": {
-    "total_all_eras": 24187.04,
-    "total_generative": 11696.8,
-    "matched_records": 342,
-    "filers_with_ai_spend": 59,
+    "total_all_eras": 23219.26,
+    "total_generative": 11087.09,
+    "matched_records": 314,
+    "filers_with_ai_spend": 57,
     "total_filers_with_activity": 2516
   },
   "vendors": [
@@ -119,28 +119,6 @@
       "filers": 3
     },
     {
-      "id": "read_ai",
-      "name": "Read.ai",
-      "group": "general_purpose",
-      "era": "generative",
-      "homepage": "https://read.ai",
-      "lean_context": null,
-      "total": 371.25,
-      "records": 2,
-      "filers": 1
-    },
-    {
-      "id": "canva_ai",
-      "name": "Canva (Magic Studio / AI Photo)",
-      "group": "general_purpose",
-      "era": "legacy",
-      "homepage": "https://canva.com",
-      "lean_context": null,
-      "total": 358.07,
-      "records": 16,
-      "filers": 2
-    },
-    {
       "id": "perplexity",
       "name": "Perplexity AI",
       "group": "general_purpose",
@@ -150,17 +128,6 @@
       "total": 352.5,
       "records": 8,
       "filers": 2
-    },
-    {
-      "id": "captions_ai",
-      "name": "Captions",
-      "group": "general_purpose",
-      "era": "generative",
-      "homepage": "https://captions.ai",
-      "lean_context": null,
-      "total": 238.46,
-      "records": 10,
-      "filers": 1
     },
     {
       "id": "xai_grok",
@@ -231,13 +198,13 @@
     },
     {
       "year": 2025,
-      "total": 7035.56,
-      "records": 96
+      "total": 6739.83,
+      "records": 90
     },
     {
       "year": 2026,
-      "total": 9265.32,
-      "records": 192
+      "total": 8593.27,
+      "records": 170
     }
   ],
   "subvendor": {
