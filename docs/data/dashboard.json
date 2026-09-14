@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-14T15:34:38.445704Z",
+    "generated_at": "2026-09-14T23:32:10.582788Z",
     "cycles": [
       2020,
       2022,
@@ -864,7 +864,7 @@
       "count": 206,
       "distinct_candidates": 32,
       "era": "generative",
-      "total_expenditure": 296671661.99
+      "total_expenditure": 296665906.38
     },
     {
       "cand_party": "Republican",
@@ -873,7 +873,7 @@
       "count": 63,
       "distinct_candidates": 14,
       "era": "legacy",
-      "total_expenditure": 296671661.99
+      "total_expenditure": 296665906.38
     },
     {
       "cand_party": "Republican",
@@ -882,7 +882,7 @@
       "count": 3,
       "distinct_candidates": 1,
       "era": "generative",
-      "total_expenditure": 296671661.99
+      "total_expenditure": 296665906.38
     },
     {
       "cand_party": "Republican",
@@ -891,7 +891,7 @@
       "count": 138,
       "distinct_candidates": 26,
       "era": "legacy",
-      "total_expenditure": 296671661.99
+      "total_expenditure": 296665906.38
     }
   ],
   "by_incumbency": [
@@ -974,7 +974,7 @@
       "count": 115,
       "distinct_candidates": 21,
       "era": "generative",
-      "total_expenditure": 407723702.09
+      "total_expenditure": 407717946.48
     },
     {
       "ici": "Open seat",
@@ -983,7 +983,7 @@
       "count": 38,
       "distinct_candidates": 8,
       "era": "legacy",
-      "total_expenditure": 407723702.09
+      "total_expenditure": 407717946.48
     },
     {
       "ici": "Open seat",
@@ -992,7 +992,7 @@
       "count": 51,
       "distinct_candidates": 10,
       "era": "generative",
-      "total_expenditure": 407723702.09
+      "total_expenditure": 407717946.48
     },
     {
       "ici": "Open seat",
@@ -1001,7 +1001,7 @@
       "count": 80,
       "distinct_candidates": 19,
       "era": "legacy",
-      "total_expenditure": 407723702.09
+      "total_expenditure": 407717946.48
     },
     {
       "ici": "Unknown",
@@ -1066,7 +1066,7 @@
       "count": 134,
       "distinct_candidates": 17,
       "era": "generative",
-      "total_expenditure": 385994744.4
+      "total_expenditure": 385988988.79
     },
     {
       "office": "Senate",
@@ -1075,7 +1075,7 @@
       "count": 117,
       "distinct_candidates": 25,
       "era": "legacy",
-      "total_expenditure": 385994744.4
+      "total_expenditure": 385988988.79
     },
     {
       "office": "Senate",
@@ -1084,7 +1084,7 @@
       "count": 41,
       "distinct_candidates": 4,
       "era": "generative",
-      "total_expenditure": 385994744.4
+      "total_expenditure": 385988988.79
     },
     {
       "office": "Senate",
@@ -1093,7 +1093,7 @@
       "count": 138,
       "distinct_candidates": 22,
       "era": "legacy",
-      "total_expenditure": 385994744.4
+      "total_expenditure": 385988988.79
     }
   ],
   "by_age_bucket": [
@@ -1349,7 +1349,7 @@
       "count": 527,
       "distinct_candidates": 85,
       "era": "generative",
-      "total_expenditure": 894279728.93
+      "total_expenditure": 894273973.32
     },
     {
       "cycle": 2026,
@@ -1358,7 +1358,7 @@
       "count": 226,
       "distinct_candidates": 51,
       "era": "legacy",
-      "total_expenditure": 894279728.93
+      "total_expenditure": 894273973.32
     },
     {
       "cycle": 2026,
@@ -1367,7 +1367,7 @@
       "count": 91,
       "distinct_candidates": 22,
       "era": "generative",
-      "total_expenditure": 894279728.93
+      "total_expenditure": 894273973.32
     },
     {
       "cycle": 2026,
@@ -1376,7 +1376,7 @@
       "count": 383,
       "distinct_candidates": 70,
       "era": "legacy",
-      "total_expenditure": 894279728.93
+      "total_expenditure": 894273973.32
     }
   ],
   "time_series_by_party": [
@@ -1531,7 +1531,7 @@
       "count": 209,
       "distinct_candidates": 33,
       "era": "generative",
-      "total_expenditure": 296671661.99
+      "total_expenditure": 296665906.38
     },
     {
       "cycle": 2026,
@@ -1540,7 +1540,7 @@
       "count": 201,
       "distinct_candidates": 39,
       "era": "legacy",
-      "total_expenditure": 296671661.99
+      "total_expenditure": 296665906.38
     }
   ],
   "time_series_by_incumbency": [
@@ -1704,7 +1704,7 @@
       "count": 166,
       "distinct_candidates": 31,
       "era": "generative",
-      "total_expenditure": 407723702.09
+      "total_expenditure": 407717946.48
     },
     {
       "cycle": 2026,
@@ -1713,7 +1713,7 @@
       "count": 118,
       "distinct_candidates": 25,
       "era": "legacy",
-      "total_expenditure": 407723702.09
+      "total_expenditure": 407717946.48
     },
     {
       "cycle": 2026,
@@ -1841,7 +1841,7 @@
       "count": 175,
       "distinct_candidates": 21,
       "era": "generative",
-      "total_expenditure": 385994744.4
+      "total_expenditure": 385988988.79
     },
     {
       "cycle": 2026,
@@ -1850,7 +1850,7 @@
       "count": 255,
       "distinct_candidates": 40,
       "era": "legacy",
-      "total_expenditure": 385994744.4
+      "total_expenditure": 385988988.79
     }
   ],
   "top_committees": [
