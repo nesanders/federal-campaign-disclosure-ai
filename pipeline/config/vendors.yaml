@@ -99,6 +99,34 @@
 # given name and "veo" with an unrelated Spanish-language business name
 # ("Veo Veo Estudio"), and neither appeared in the data in a qualified,
 # unambiguous form.
+#
+# Fourth pass (Massachusetts empirical mining): the same corpus-mining
+# method from the second pass, run against ~325,000 OCPF (Massachusetts)
+# expenditure records instead of FEC's -- grouped by distinct payee,
+# scanned for a broad set of AI-indicative keywords ("ai", "gpt", "bot",
+# "automat", "generative", "algorithm", "assistant", "synthetic",
+# "machine learning", "neural", "smart", etc.), plus a separate read of the
+# ~300 highest-dollar unmatched payees regardless of keyword, to catch a
+# non-lexical find the way "Quiller" or "BattlegroundAI" were originally
+# found. That surfaced read_ai, captions_ai, and canva_ai below, all
+# confirmed as real payees with real corresponding AI products before being
+# added. It also surfaced, and rejected, several tempting non-matches:
+# Robocent and HubDialer (both real political phone/text vendors, but
+# neither is AI-branded -- Robocent's own docs say messages go through a
+# human agent, and HubDialer markets itself as a "predictive dialer," a
+# decades-old statistical telephony technique, not AI); Zapier ($4,166.53
+# across 22 payments) considered and rejected because, unlike the
+# already-included legacy vendors above, Zapier's core product (rule-based
+# "if this, then that" automation) isn't AI-branded at all -- only a 2024+
+# "Agents"/"AI Actions" add-on is -- and every matching record here just
+# says "software subscription," with nothing distinguishing a charge for
+# the AI feature from the plain automation product predating it by over a
+# decade; and bare keywords "smart"/"assistant"/"automat" themselves, which
+# turned out to be dominated by a consultant literally named Chanda Smart
+# and ordinary "campaign assistant" staff titles -- confirming those words
+# should never become patterns on their own. A parallel search for
+# additional Massachusetts Republican-aligned AI tools (mirroring the third
+# pass above) found only Aaru, already in this list.
 
 general_purpose:
   - id: openai
@@ -289,6 +317,41 @@ general_purpose:
     patterns:
       - {pattern: "otter\\.ai", confidence: high}
       - {pattern: "\\botter ai\\b", confidence: high}
+  - id: read_ai
+    name: Read.ai
+    homepage: https://read.ai
+    era: generative
+    # AI meeting notetaker/transcription/analytics tool -- the same
+    # category as Otter.ai above, confirmed as a real payee in Massachusetts
+    # OCPF data (fourth pass, see header note).
+    patterns:
+      - {pattern: "read\\.ai", confidence: high}
+      - {pattern: "\\breadai\\b", confidence: high}
+  - id: captions_ai
+    name: Captions
+    homepage: https://captions.ai
+    era: generative
+    # AI video-editing/dubbing/auto-caption app (VC-backed, $25M Series B
+    # led by Kleiner Perkins), built on generative AI from founding --
+    # confirmed as a real payee in Massachusetts OCPF data, billed both as
+    # "Captions.ai" and under its maker's other DBA, "Mirage (Captions)".
+    patterns:
+      - {pattern: "captions\\.ai", confidence: high}
+      - {pattern: "mirage \\(captions", confidence: high}
+  - id: canva_ai
+    name: Canva (Magic Studio / AI Photo)
+    homepage: https://canva.com
+    era: legacy
+    # Canva itself predates the generative-AI wave (founded 2013); its
+    # "Magic Studio" suite (Magic Media image/video generation, Magic Edit,
+    # generative fill) is a genuine later-added generative feature set,
+    # same pattern as Descript/Grammarly/Otter.ai above. Scoped to the
+    # "Canva AI" billing descriptor specifically -- confirmed as a real,
+    # recurring payee charge in Massachusetts OCPF data -- rather than bare
+    # "Canva", which would also match plain (non-AI) design-subscription
+    # charges and, via simple substring matching, "canvassing"/"canvasser."
+    patterns:
+      - {pattern: "canva ai", confidence: high}
   - id: fal_ai
     name: fal.ai
     homepage: https://fal.ai

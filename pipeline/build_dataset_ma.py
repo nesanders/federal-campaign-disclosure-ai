@@ -179,8 +179,12 @@ def main() -> None:
                 "As with the federal dashboard, this dataset only sees a payment if its payee name or "
                 "purpose text names a vendor on this project's taxonomy -- disclosed AI spend is a floor "
                 "on real usage, not a ceiling.",
-                "No Massachusetts-specific vendor-discovery pass has been run against this taxonomy; it is "
-                "the same list built from and tested against federal disclosures.",
+                "This taxonomy was empirically mined against Massachusetts payee/purpose text directly "
+                "(not only inherited from the federal side): every distinct OCPF payee was scanned for "
+                "AI-indicative language, plus a manual read of the highest-dollar unmatched payees, which "
+                "is how Read.ai, Captions, and Canva's AI photo feature were found and verified as real "
+                "payees before being added -- see pipeline/config/vendors.yaml for what was found, "
+                "checked, and rejected.",
             ],
         },
         "stats": {
