@@ -1327,7 +1327,9 @@
     stats.appendChild(statTile("Total high-confidence spending", fmtUSD0.format(v.amount_high), fmtInt.format(v.count_high) + " disbursement records"));
     if (overall) stats.appendChild(statTile("Committees paying this vendor", fmtInt.format(overall.distinct_committees_high)));
     if (overall && overall.amount_medium > 0) {
-      stats.appendChild(statTile("Lower-confidence signal (excluded above)", fmtUSD0.format(overall.amount_medium), "ambiguous word matches -- see methodology"));
+      stats.appendChild(
+        statTile("Lower-confidence signal", fmtUSD0.format(overall.amount_medium), "ambiguous word matches, excluded from every chart on this page but included (tagged) in the tables below -- see methodology")
+      );
     }
     view.appendChild(stats);
 
@@ -1339,9 +1341,12 @@
     const grid2 = el("div", { className: "card-grid" });
     grid2.appendChild(
       detailCard(
-        "Party split (House/Senate candidates)",
+        "Party split",
         "detail-chart-party",
-        "Democratic vs. Republican: " + fmtPartyRatio(v) + (v.dem_rep_ratio !== null ? " -- ratio of Democratic to Republican spending" : "")
+        "Democratic vs. Republican: " +
+          fmtPartyRatio(v) +
+          (v.dem_rep_ratio !== null ? " -- ratio of Democratic to Republican spending" : "") +
+          ". Only House/Senate candidate committees have a reliable party; \"PACs, committees & other offices\" is everything else (party committees, PACs, non-House/Senate candidates), so the slices add up to this vendor's full high-confidence total."
       )
     );
     grid2.appendChild(detailCard("By incumbency status", "detail-chart-ici"));
@@ -1356,10 +1361,17 @@
     const cmteCard = el("div", { className: "card" });
     cmteCard.appendChild(el("h3", { text: "Top committees paying " + v.name }));
     cmteCard.appendChild(
+      el("p", {
+        className: "note",
+        text: "Includes lower-confidence (ambiguous-word) matches, in their own column -- a committee whose only match is an ambiguous word still shows up here.",
+      })
+    );
+    cmteCard.appendChild(
       buildTable(
         [
           { label: "Committee", render: (r) => r.cmte_name || r.cmte_id },
-          { label: "Amount", num: true, render: (r) => fmtUSD0.format(r.amount) },
+          { label: "High-confidence $", num: true, render: (r) => fmtUSD0.format(r.amount_high) },
+          { label: "Lower-confidence $", num: true, render: (r) => (r.amount_medium > 0 ? fmtUSD0.format(r.amount_medium) : "—") },
           { label: "Records", num: true, render: (r) => fmtInt.format(r.count) },
           { label: "FEC record", link: (r) => fecCommitteeUrl(r.cmte_id), external: true, render: () => "View ↗" },
         ],
@@ -1375,7 +1387,7 @@
         el("p", {
           className: "note",
           text:
-            "The stated purpose FEC has on file for each specific payment, largest first" +
+            "The stated purpose FEC has on file for each specific payment, largest first, including lower-confidence (ambiguous-word) matches -- see the Confidence column" +
             (v.records.length >= MAX_DETAIL_RECORDS ? " (capped at " + fmtInt.format(MAX_DETAIL_RECORDS) + " records)" : "") +
             ".",
         })
@@ -1386,6 +1398,7 @@
             { label: "Date", render: (r) => r.date },
             { label: "Candidate / committee", link: (r) => (r.cand_id ? "#/candidate/" + r.cand_id : null), render: (r) => r.cand_name || r.cmte_name || "—" },
             { label: "Amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
+            { label: "Confidence", render: (r) => r.confidence },
             { label: "Stated purpose", render: (r) => r.purpose || "—" },
           ],
           v.records
@@ -1443,7 +1456,16 @@
       },
     });
 
-    const partySlices = v.by_party.filter((r) => r.amount > 0);
+    // v.by_party only covers House/Senate candidate committees, which is
+    // usually well short of amount_high (PACs, party committees, and
+    // non-House/Senate candidates carry no reliable party). Add that gap
+    // back as an explicit "Other" slice so the pie's total always
+    // reconciles with the vendor's full high-confidence spend instead of
+    // silently only covering part of it.
+    const partySlices = v.by_party.filter((r) => r.amount > 0).slice();
+    if (v.other_amount > 0) {
+      partySlices.push({ cand_party: "PACs, committees & other offices", amount: v.other_amount });
+    }
     makeChart("detail-chart-party", {
       type: "pie",
       data: {

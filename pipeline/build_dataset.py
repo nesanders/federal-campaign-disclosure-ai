@@ -326,6 +326,7 @@ def expenditure_records(df_slice: pd.DataFrame, extra_fields: list[str], limit: 
             "payee": rec.payee_name,
             "amount": round(float(rec.transaction_amt), 2),
             "purpose": stated_purpose(rec),
+            "confidence": rec.confidence,
         }
         for field in extra_fields:
             row[field] = getattr(rec, field, "")
@@ -635,6 +636,7 @@ def main() -> None:
         vhi = vsub[vsub["confidence"] == "high"]
         if vhi.empty:
             continue
+        vmed = vsub[vsub["confidence"] == "medium"]
         vname = vsub["vendor_name"].iloc[0]
         vgroup = vsub["vendor_group"].iloc[0]
         ts = (
@@ -650,9 +652,18 @@ def main() -> None:
             .head(TOP_N_VENDOR_CANDIDATES)
             .to_dict(orient="records")
         )
+        # Committees table includes both confidence tiers (unlike the stats
+        # above, which stay high-confidence-only) so a committee whose only
+        # match is an ambiguous word isn't invisible here -- ranked by
+        # combined amount so such committees can still surface in the top N.
         top_cmtes = (
-            vhi.groupby(["cmte_id", "cmte_name"], as_index=False)
-            .agg(amount=("transaction_amt", "sum"), count=("sub_id", "nunique"))
+            vsub.assign(
+                amount_high=lambda d: d["transaction_amt"].where(d["confidence"] == "high", 0.0),
+                amount_medium=lambda d: d["transaction_amt"].where(d["confidence"] == "medium", 0.0),
+            )
+            .groupby(["cmte_id", "cmte_name"], as_index=False)
+            .agg(amount_high=("amount_high", "sum"), amount_medium=("amount_medium", "sum"), count=("sub_id", "nunique"))
+            .assign(amount=lambda d: d["amount_high"] + d["amount_medium"])
             .sort_values("amount", ascending=False)
             .head(TOP_N_VENDOR_COMMITTEES)
             .to_dict(orient="records")
@@ -673,6 +684,8 @@ def main() -> None:
             "homepage": homepage_by_id.get(vid),
             "amount_high": round(float(vhi["transaction_amt"].sum()), 2),
             "count_high": int(vhi["sub_id"].nunique()),
+            "amount_medium": round(float(vmed["transaction_amt"].sum()), 2),
+            "count_medium": int(vmed["sub_id"].nunique()),
             "time_series": ts,
             "time_series_by_party": ts_by_party,
             "by_candidate": by_cand,
@@ -680,9 +693,24 @@ def main() -> None:
             "by_party": agg_amount_count(v_office, ["cand_party"]),
             "by_incumbency": agg_amount_count(v_office, ["ici"]),
             "by_chamber": agg_amount_count(v_office, ["office"]),
-            "records": expenditure_records(vhi, ["cand_id", "cand_name", "cand_party", "cmte_name"], MAX_DETAIL_RECORDS),
+            # Both confidence tiers, same reasoning as top_committees above --
+            # the frontend tags each row so lower-confidence ones are clearly
+            # marked, not silently blended in.
+            "records": expenditure_records(vsub, ["cand_id", "cand_name", "cand_party", "cmte_name"], MAX_DETAIL_RECORDS),
         }
         vendor_detail_row.update(party_split(v_office))
+        # The party pie only covers House/Senate candidate committees (the
+        # only rows with a reliable party attribution); "other" is every
+        # other high-confidence dollar for this vendor -- PACs, party
+        # committees, and non-House/Senate candidates -- so the pie's total
+        # reconciles with amount_high instead of silently only covering part
+        # of it.
+        vendor_detail_row["other_amount"] = round(
+            vendor_detail_row["amount_high"] - vendor_detail_row["dem_amount"] - vendor_detail_row["rep_amount"], 2
+        )
+        vendor_detail_row["other_count"] = (
+            vendor_detail_row["count_high"] - vendor_detail_row["dem_count"] - vendor_detail_row["rep_count"]
+        )
         vendors_detail[vid] = vendor_detail_row
 
     # --- candidate detail pages (any office, high confidence, any cycle) ---
