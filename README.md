@@ -17,6 +17,23 @@ dollar figure. Section 5 ("Leaderboards") is sortable/filterable (by cycle
 and functional area) tables of the biggest AI spenders in dollar terms and
 as a share of their budget.
 
+A vendor's detail page also shows its own Democratic-vs-Republican spending
+split (a pie chart, a "spending over time" line chart, and the underlying
+ratio, restricted like the rest of the party breakdown to House/Senate
+candidate committees), and every vendor table on the site carries a "D:R
+ratio" column. Both a vendor's and a candidate's detail page list every
+individual matched disbursement -- date, counterparty, amount, and the
+FEC-filed **stated purpose** text itself (not just an aggregate) -- capped
+at the 300 largest per entity.
+
+A "Weekly disclosure timeline" chart (in the Trends section, and on the
+Massachusetts tab) bins every matched disbursement by week two ways: when
+the expenditure itself happened, and when the disclosure report that
+covers it was filed. On Massachusetts these are both real OCPF-reported
+dates; on the federal side there is no per-record filed date in the FEC's
+bulk data, so the report date is a calendar-rule approximation from the
+report type and year (see Methodology).
+
 Every vendor is also tagged with an **era**: `generative` (built on modern
 LLM/diffusion/voice-clone AI) or `legacy` (a company that predates the
 generative-AI wave and either still runs on older, non-generative technology
@@ -95,6 +112,14 @@ pipeline/fetch_ocpf.py               downloads Massachusetts OCPF itemized
 pipeline/parse_ocpf.py               scans those records for AI-vendor matches
                                       and totals how many distinct filers
                                       reported any expenditure activity at all
+pipeline/fetch_ocpf_report_dates.py  fetches each matched record's real
+                                      report-filed date from OCPF's
+                                      report/{reportId} endpoint, for the
+                                      weekly disclosure timeline
+pipeline/fetch_ocpf_filer_party.py   fetches each matched filer's major-party
+                                      affiliation from OCPF's
+                                      filer/payload/{cpfId} endpoint, for the
+                                      Democratic-vs-Republican split
 pipeline/build_dataset_ma.py         aggregates OCPF matches and writes
                                       docs/data/dashboard_ma.json (a separate
                                       file/schema from the federal dataset)
@@ -114,6 +139,8 @@ python pipeline/parse_outside_spending.py
 python pipeline/build_dataset.py
 python pipeline/fetch_ocpf.py
 python pipeline/parse_ocpf.py
+python pipeline/fetch_ocpf_report_dates.py
+python pipeline/fetch_ocpf_filer_party.py
 python pipeline/build_dataset_ma.py
 ```
 
@@ -140,7 +167,10 @@ stays current as new filings land.
 - Massachusetts OCPF public API (`api.ocpf.us/search/items`, no key
   required) -- itemized expenditure (`SearchTypeCategory=B`) and subvendor
   (`SearchTypeCategory=S`) records; powers the Massachusetts tab only, kept
-  fully separate from the FEC-sourced data above
+  fully separate from the FEC-sourced data above. Two more OCPF endpoints
+  are used for matched records only: `report/{reportId}` (each report's
+  real filed date) and `filer/payload/{cpfId}` (each filer's major-party
+  affiliation).
 
 ## Methodology, in brief
 
@@ -196,6 +226,21 @@ stays current as new filings land.
   answers "how big is AI spend relative to everything these AI-using
   campaigns spend," not "what share of all campaign spending nationally
   goes to AI."
+- The weekly disclosure timeline's federal "report filed" series is an
+  **approximation**, not a disclosed fact: the FEC's bulk `oppexp` file has
+  no per-record filed date, only a report-type code (`RPT_TP`) and year, so
+  `pipeline/lib/fec_report_dates.py` maps each code to that report type's
+  statutory/calendar due date (e.g. general-election Tuesday, quarterly
+  deadlines). Massachusetts's equivalent series uses OCPF's own real
+  `dateFiled` field instead, fetched per report.
+- The Democratic-vs-Republican split restricts to House/Senate candidate
+  committees on the federal side (same scope as the other party breakdowns).
+  On Massachusetts, OCPF's expenditure records carry no party field at all,
+  so the split is joined in from each filer's own `partyAffiliation` on
+  OCPF's filer record (fetched once per distinct filer, not per record);
+  filers OCPF doesn't mark with a major-party affiliation (ballot-question
+  committees, PACs, and others) are excluded from the split entirely rather
+  than counted as a third category.
 - "Outside spending" (independent expenditures and coordinated party
   expenditures) is spending by someone other than the candidate's own
   campaign and is kept structurally separate from every other number on the
@@ -219,7 +264,8 @@ data/raw/                 downloaded FEC/legislators source files (gitignored, l
 data/processed/           filtered AI-vendor-match CSVs and per-committee/
                           per-spender total-expenditure CSVs, per cycle
                           (committed, small); ocpf_*.csv are the Massachusetts
-                          equivalents (not split by cycle)
+                          equivalents (not split by cycle), including
+                          ocpf_report_dates.csv and ocpf_filer_party.csv
 docs/                     GitHub Pages site
   index.html, css/, js/    static dashboard (vanilla JS + a vendored Chart.js build)
   data/dashboard.json      aggregated federal data the site reads

@@ -44,6 +44,12 @@ jobs:
       - name: Parse OCPF records for AI-vendor matches
         run: python pipeline/parse_ocpf.py
 
+      - name: Fetch OCPF report filed dates
+        run: python pipeline/fetch_ocpf_report_dates.py
+
+      - name: Fetch OCPF filer party affiliation
+        run: python pipeline/fetch_ocpf_filer_party.py
+
       - name: Build Massachusetts dashboard dataset
         run: python pipeline/build_dataset_ma.py
 

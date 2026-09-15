@@ -1,461 +1,461 @@
-cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_desc,memo_text,memo_cd,rpt_yr,sub_id,vendor_ids,vendor_names,vendor_groups,confidences,use_categories
-2020,C00401190,CALL TIME.AI,LOS ANGELES,CA,01/13/2020,980,SOFTWARE LICENSE,,,,2020,4030420201700697956,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,02/14/2020,350,NUMERO,Administrative/Salary/Overhead Expenses ,,,2020,4042720201740278789,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
-2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,03/16/2020,350,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2020,4042720201740278790,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
-2020,C00401190,CLAUDE BROWN,WILSON,NC,07/02/2019,565.6,OFFICE ASSISTANCE LABOR,,,,2019,4101420191674192403,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,08/30/2019,414.1,OFFICE ASSISTANCE LABOR,,,,2019,4101420191674192405,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,01/02/2019,464.6,OFFICE ASSISTANCE LABOR,,,,2019,4040920191646090460,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,01/30/2019,515.1,OFFICE ASSISTANCE LABOR,,,,2019,4040920191646090462,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,02/28/2019,525.2,OFFICE ASSISTANCE LABOR,,,,2019,4040920191646090464,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,03/31/2019,575.7,OFFICE ASSISTANCE LABOR,,,,2019,4040920191646090466,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,12/18/2019,750,SOFTWARE,,*,X,2019,4051920201762107889,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,11/04/2019,1500,SOFTWARE,,*,X,2019,4051920201762107871,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,10/07/2019,750,SOFTWARE,,*,X,2019,4051920201762107861,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00711804,AMPLIFY.AI,LOS ALTOS,CA,01/30/2020,3750,SOFTWARE LICENSING FEE,,,,2020,4050620201741958877,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00653121,GRAMMARLY,SAN FRANCISCO,CA,01/28/2019,360,SUBSCRIPTION,,,,2019,4041820191646725115,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,10/15/2019,350,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2019,4021820201692732960,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
-2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,11/14/2019,350,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2019,4021820201692732961,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
-2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,11/22/2019,350,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2019,4021820201692732962,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
-2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,12/23/2019,350,SOFTWARE,Solicitation and Fundraising Expenses ,,,2019,4021820201692732963,numero_ai,Numero (donor database / call time),political_specific,high,fundraising;administrative_productivity
-2020,C00310532,EYESOVER TECHNOLOGIES INC.,FREDERICTON,NB,01/11/2019,1500,SURVEY RESEARCH,Solicitation and Fundraising Expenses ,,,2019,4041820191646725577,eyesover,EyesOver,political_specific,high,research_strategy;fundraising
-2020,C00715664,CALL TIME AI,LOS ANGELES,CA,11/13/2019,540,CALL TIME FUNDRAISING SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2019,4022020201693402411,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00715664,CALL TIME AI,LOS ANGELES,CA,12/13/2019,540,CALL TIME FUNDRAISING SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2019,4022020201693402412,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00075820,EYESOVER TECHNOLOGIES INC,FREDERICTON,NE,09/09/2019,2000,RESEARCH MATERIAL,,,,2019,4103120191676277048,eyesover,EyesOver,political_specific,high,research_strategy
-2020,C00401190,CLAUDE BROWN,WILSON,NC,05/01/2019,565.6,OFFICE ASSISTANCE LABOR,,,,2019,4071120191659327127,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,06/03/2019,545.4,OFFICE ASSISTANCE LABOR,,,,2019,4071120191659327129,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00496075,GRAMMARLY INC.,SAN FRANCISCO,CA,04/01/2019,139.95,SOFTWARE,,,X,2019,4071220191659352284,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00027466,"HOWLETT, CLAUDE A. MR.",SCOTTSDALE,AZ,05/10/2019,607.06,IN-KIND CONTRIBUTION,,IN KIND: CATERING,,2019,4062120191658484270,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00390476,GRAMMARLY,SAN FRANCISCO,CA,06/10/2019,139.95,OFFICE EXPENSE,,,X,2019,4011620201684852990,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,10/03/2019,434.3,OFFICE ASSISTANCE LABOR,,,,2019,4012120201685395215,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,10/31/2019,464.6,OFFICE ASSISTANCE LABOR,,,,2019,4012120201685395216,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,11/25/2019,750,OFFICE ASSISTANCE LABOR,,,,2019,4012120201685395217,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,12/06/2019,212.1,OFFICE ASSISTANCE LABOR,,,,2019,4012120201685395218,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,12/19/2019,121.2,OFFICE ASSISTANCE LABOR,,,,2019,4012120201685395219,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00701599,CALL TIME AI,VISALIA,CA,07/09/2020,2175,SOFTWARE,,,,2020,4092520201850022835,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,05/11/2020,2175,SOFTWARE,,,,2020,4092520201850022699,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,06/09/2020,2175,SOFTWARE,,,,2020,4092520201850022703,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,04/09/2020,1825,SOFTWARE,,,,2020,4092520201850022773,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,04/28/2020,128.27,SOFTWARE,,,,2020,4092520201850022736,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00711317,CALLTIME.AI,CHICAGO,IL,07/29/2019,680,SOFTWARE,Solicitation and Fundraising Expenses ,,,2019,4022020201693397609,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00711317,CALLTIME.AI,CHICAGO,IL,08/26/2019,780,SOFTWARE,Solicitation and Fundraising Expenses ,,,2019,4022020201693397610,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00711317,CALLTIME.AI,CHICAGO,IL,09/26/2019,780,SOFTWARE,Solicitation and Fundraising Expenses ,,,2019,4022020201693397611,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00721290,CALLTIME AI,VISALIA,CA,10/31/2019,1410,SOFTWARE SUBSCRIPTION,,*,X,2019,4021220201689414916,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00703975,AMPLIFY.AI,LOS ALTOS,CA,11/13/2020,25000,DIGITAL ADVERTISING,,,,2020,4121120201969265102,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative
-2020,C00703975,AMPLIFY.AI,LOS ALTOS,CA,11/13/2020,21882.29,PHOTO LICENSES,,,,2020,4121120201969265103,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00703975,AMPLIFY.AI,LOS ALTOS,CA,10/29/2020,100000,PHOTO/MUSIC LICENSES,,,,2020,4121120201969258145,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,11/18/2019,120,SOFTWARE,,*,X,2020,4030420201700705994,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,10/08/2020,175,DUES AND SUBSCRIPTIONS,,,X,2020,4111920201958248875,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,04/15/2020,55.27,SOFTWARE,,*,X,2020,4052620201763261723,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,04/15/2020,55.4,SOFTWARE,,*,X,2020,4052620201763261767,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,04/15/2020,54,SOFTWARE,,*,X,2020,4052620201763261884,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00711614,CALLTIME.AI,LOS ANGELES,CA,07/10/2019,100,INKIND FROM CANDIDATE: SOFTWARE SUBSCRIPTION,,*,X,2019,4062620211311777542,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,08/17/2019,17500,SOFTWARE SUBSCRIPTION,,,,2019,4062620211311775157,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00711614,CALLTIME.AI,LOS ANGELES,CA,07/14/2019,1750,INKIND FROM CANDIDATE: SOFTWARE SUBSCRIPTION,,*,X,2019,4062620211311777621,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00700534,CALLTIME.AI,VISALIA,CA,07/10/2019,750,FUNDRAISING SOFTWARE,,,,2019,4081920201829336440,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00700534,CALLTIME.AI,VISALIA,CA,08/11/2019,25,FUNDRAISING SOFTWARE,,,,2019,4081920201829336441,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00700534,CALLTIME.AI,VISALIA,CA,09/10/2019,25,FUNDRAISING SOFTWARE,,,,2019,4081920201829336442,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00696054,GEMINI AUDIO VIDEO,FAIRFIELD,IA,12/30/2019,240,AUDIO VISUAL SERVICES,Campaign Event Expenses,,,2019,4072020201791748569,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
-2020,C00314575,GEMINI PROPERTIES,TULSA,OK,10/31/2019,2438,CATERING FOR EVENT,,,,2019,4040320201734767267,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
-2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,12/16/2019,262.75,MEDIA PRODUCTION,,*,X,2019,4041420201736280177,descript,Descript,general_purpose,high,unspecified
-2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,07/18/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,4032520201715240257,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,09/04/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,4032520201715240258,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,07/18/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,4032520201715243269,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,08/18/2019,120,SOFTWARE,,*,X,2019,4032520201715243270,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,09/04/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,4032520201715243271,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,10/18/2019,120,SOFTWARE,,*,X,2019,4040320201734783308,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,09/18/2019,120,SOFTWARE,,*,X,2019,4040320201734782413,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00675884,"BANKS, CLAUDE",CANTON,MS,11/29/2019,337.5,PAYROLL,,,,2019,4030420201700704167,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00700534,CALLTIME.AI,VISALIA,CA,05/12/2019,250,FUNDRAISING SOFTWARE,,,,2019,4081220201828109879,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00700534,CALLTIME.AI,VISALIA,CA,06/10/2019,500,FUNDRAISING SOFTWARE,,,,2019,4081220201828109880,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,10/09/2019,1475,SOFTWARE,,,,2019,4082020201829435175,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,12/18/2019,105.86,SOFTWARE,,,,2019,4082020201829435162,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,10/09/2019,100,SOFTWARE,,,,2019,4082020201829435214,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,12/09/2019,1575,SOFTWARE,,,,2019,4082020201829435232,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,11/12/2019,1575,SOFTWARE,,,,2019,4082020201829435249,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,01/14/2019,40,SOFTWARE,,,,2019,4031920201703916964,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
-2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,01/14/2019,55,SOFTWARE,,,,2019,4031920201703916965,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
-2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,02/12/2019,55,SOFTWARE,,,,2019,4031920201703916966,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
-2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,03/12/2019,55,SOFTWARE,,,,2019,4031920201703916967,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
-2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,04/12/2019,55,SOFTWARE,,,,2019,4031920201703916968,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
-2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,05/13/2019,55,SOFTWARE,,,,2019,4031920201703916969,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
-2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,06/05/2019,120,SOFTWARE,,*,X,2019,4020820201687851177,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,06/28/2019,120,SOFTWARE,,*,X,2019,4020820201687852067,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,08/08/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,4021020201688377641,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/01/2019,303.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189418,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/01/2019,500,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189419,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/01/2019,203,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189420,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/03/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189421,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/11/2019,103,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189422,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/15/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189423,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/18/2019,500,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189424,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/22/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189425,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/22/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189426,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/23/2019,1000,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189427,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/29/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189428,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/29/2019,203,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189429,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/30/2019,203,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189430,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/01/2019,403.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189431,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/06/2019,303.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189432,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/06/2019,303,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189433,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/08/2019,203,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189434,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/13/2019,203,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189435,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/13/2019,2000,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189436,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/15/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189437,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/17/2019,500,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189438,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/04/2019,406.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189389,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/07/2019,3000,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189390,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/07/2019,90,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189391,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/08/2019,250,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189392,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/11/2019,200,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189393,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/15/2019,443.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189394,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/28/2019,302.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189395,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/31/2019,700,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189396,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/07/2019,1500,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189397,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/17/2019,203,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189439,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/20/2019,200,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189440,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/22/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189441,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/23/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189442,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/28/2019,203,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189443,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/28/2019,303,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189444,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/30/2019,403.95,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189445,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/03/2019,500,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189446,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/11/2019,303.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189398,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/11/2019,300,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189399,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/19/2019,708.75,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189400,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/25/2019,202.25,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189401,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/25/2019,202.49,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189402,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/25/2019,203.85,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189403,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/25/2019,122.25,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189404,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/01/2019,403.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189405,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/04/2019,123,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189406,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/04/2019,500,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189407,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/05/2019,203,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189408,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/06/2019,1800,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189409,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/11/2019,203,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189410,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/11/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189411,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/14/2019,403,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189412,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/18/2019,203,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189413,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/19/2019,303.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189414,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/25/2019,202.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189415,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/25/2019,103.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189416,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/26/2019,403,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189417,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/03/2019,302.75,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189447,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/04/2019,1000,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189448,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/11/2019,2000,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189449,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/13/2019,303,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189450,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/17/2019,203,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189451,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/17/2019,203,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189452,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/17/2019,300,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189453,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/21/2019,403,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189454,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/24/2019,202.5,CONSULTANT - FUNDRAISING,,,,2019,4030220211191189455,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/26/2019,1250,PAYROLL,,,,2019,4030220211191189456,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/16/2019,2400,PAYROLL,,,,2019,4030220211191190076,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/21/2019,1500,PAYROLL,,,,2019,4030220211191190077,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/29/2019,1000,PAYROLL,,,,2019,4030220211191190078,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/29/2019,500,PAYROLL,,,,2019,4030220211191190079,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/05/2019,1500,PAYROLL,,,,2019,4030220211191190080,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/13/2019,1500,PAYROLL,,,,2019,4030220211191190081,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/15/2019,800,USE OF BOAT FOR PAC EVENT,,* IN-KIND RECEIVED,,2019,4030220211191190082,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/19/2019,1500,PAYROLL,,,,2019,4030220211191190083,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/25/2019,1500,PAYROLL,,,,2019,4030220211191190084,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/02/2019,1500,PAYROLL,,,,2019,4030220211191190085,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/06/2019,500,PAYROLL,,,,2019,4030220211191190086,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/11/2019,1500,PAYROLL,,,,2019,4030220211191190087,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/16/2019,1500,PAYROLL,,,,2019,4030220211191190088,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/23/2019,1500,PAYROLL,,,,2019,4030220211191190089,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/29/2019,800,USE OF BOAT FOR PAC EVENT,,* IN-KIND RECEIVED,,2019,4030220211191190090,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/30/2019,1500,PAYROLL,,,,2019,4030220211191190091,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/02/2019,1250,PAYROLL,,,,2019,4030220211191190059,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/08/2019,1250,PAYROLL,,,,2019,4030220211191190060,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/16/2019,1250,PAYROLL,,,,2019,4030220211191190061,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/24/2019,1250,PAYROLL,,,,2019,4030220211191190062,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/29/2019,1250,PAYROLL,,,,2019,4030220211191190063,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/06/2019,1500,PAYROLL,,,,2019,4030220211191190064,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/08/2019,500,PAYROLL,,,,2019,4030220211191190065,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/12/2019,1500,PAYROLL,,,,2019,4030220211191190066,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/20/2019,1500,PAYROLL,,,,2019,4030220211191190067,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/26/2019,1500,PAYROLL,,,,2019,4030220211191190068,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/03/2019,1500,PAYROLL,,,,2019,4030220211191190069,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/09/2019,1500,PAYROLL,,,,2019,4030220211191190070,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/16/2019,1500,PAYROLL,,,,2019,4030220211191190071,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/23/2019,2000,PAYROLL,,,,2019,4030220211191190072,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/01/2019,1500,PAYROLL,,,,2019,4030220211191190073,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/11/2019,500,PAYROLL,,,,2019,4030220211191190074,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/15/2019,1000,PAYROLL,,,,2019,4030220211191190075,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,07/29/2020,139.99,SOFTWARE / LICENSING,,,X,2020,4092520201850030447,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00697441,"TRUVERSE, INC.",LOS ALTOS,CA,01/14/2020,15000,LIST ACQUISION,,,,2020,4030420201700713749,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,06/11/2020,54,SOFTWARE,,*,X,2020,4101120201857439394,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,05/16/2020,54,SOFTWARE,,*,X,2020,4101120201857439299,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00697441,"TRUVERSE, INC.",LOS ALTOS,CA,03/20/2020,3620.69,DIGITAL LIST BUILDING,,,,2020,4060820201774522279,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00724609,PAYPAL,SAN JOSE,CA,08/17/2020,29.95,GRAMMARLY SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2020,4111020201893430712,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00724609,PAYPAL,SAN JOSE,CA,09/17/2020,29.95,GRAMMARLY SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2020,4111020201893430716,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,07/22/2020,29.95,SUBSCRIPTION,,,,2020,4111220201900314152,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,09/23/2020,29.95,SUBSCRIPTION,,,,2020,4111220201900314364,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,08/21/2020,29.95,SUBSCRIPTION,,,,2020,4111220201900314253,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00578302,CALLTIME.AI,LOS ANGELES,CA,09/17/2020,450,FUNDRAISING SOFTWARE,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2020,4120320201963404184,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00701284,CALLTIME AI,LOS ANGELES,CA,12/02/2020,1475,SOFTWARE SUBSCRIPTION,,,,2020,4021720211142199913,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,07/01/2020,-1500,CREDIT,,*,X,2020,4111920201958191683,calltime_ai,CallTime.AI,political_specific,high,unspecified
-2020,C00701284,CALLTIME AI,LOS ANGELES,CA,07/08/2020,3105,SOFTWARE SUBSCRIPTION,,,,2020,4110520201891559459,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00728832,CALLTIME.AI,LOS ANGELES,CA,07/06/2020,690,SOFTWARE,,*,X,2020,4111020201893431700,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,01/06/2020,269,MEDIA PRODUCTION,,*,X,2020,4030420201700720562,descript,Descript,general_purpose,high,unspecified
-2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,01/14/2020,350,SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,4022420201694192681,numero_ai,Numero (donor database / call time),political_specific,high,fundraising;administrative_productivity
-2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,04/16/2020,3225.8,DIGITAL-ACQUISITION,,,,2020,4081420201828812225,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00717827,"SHELBY, CLAUDE",CHAMPAIGN,IL,09/10/2020,300,FIELD,Administrative/Salary/Overhead Expenses ,,,2020,4111220201900304234,anthropic,Anthropic (Claude),general_purpose,medium,administrative_productivity
-2020,C00721928,CALLTIME.AI,LOS ANGELES,CA,01/27/2020,780,DATABASE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2020,4030620201702628820,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00721928,CALLTIME.AI,LOS ANGELES,CA,02/25/2020,780,DATABASE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2020,4030620201702628821,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00390476,GRAMMARLY,SAN FRANCISCO,CA,06/09/2020,139.95,OFFICE EXPENSE,,,X,2020,4112620201961680912,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00703975,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,06/03/2020,300000,DIGITAL ADVERTISING,,,,2020,4072120201792853822,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative
-2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,08/14/2020,8119.44,TEXTING SERVICES,,,,2020,4112520201960743233,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,07/24/2020,15000,TEXTING SERVICES,,,,2020,4112520201960742898,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,09/17/2020,175000,TEXTING SERVICES,,,,2020,4112520201960743084,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,08/14/2020,4000,TEXTING SERVICES,,,,2020,4112520201960743147,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00728832,CALLTIME.AI,LOS ANGELES,CA,05/13/2020,540,SOFTWARE,,*,X,2020,4061520201774954698,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00721183,CALLTIME.AI,VISALIA,CA,07/02/2020,780,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,4111220201900308132,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00721183,CALLTIME.AI,VISALIA,CA,08/02/2020,780,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,4111220201900308133,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00721183,CALLTIME.AI,VISALIA,CA,08/04/2020,139.5,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,4111220201900308134,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00721183,CALLTIME.AI,VISALIA,CA,09/02/2020,930,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,4111220201900308135,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,08/18/2020,120,SOFTWARE,,*,X,2020,4022620211189810974,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,09/17/2020,5000,ONLINE FUNDRAISING,,,,2020,4022620211189810773,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
-2020,C00023838,PROMPT.IO INC.,SEATTLE,WA,10/22/2020,58.56,PRESIDENT BUSH DINNER TEXT INVITE,Administrative/Salary/Overhead Expenses ,,,2020,4120920201967676233,prompt_io,Prompt.io,political_specific,high,administrative_productivity
-2020,C00023838,PROMPT.IO INC.,SEATTLE,WA,10/22/2020,52.36,PRESIDENT BUSH DINNER TEXT INVITE,Administrative/Salary/Overhead Expenses ,,,2020,4120920201967676234,prompt_io,Prompt.io,political_specific,high,administrative_productivity
-2020,C00023838,PROMPT.IO INC.,SEATTLE,WA,10/23/2020,-58.56,VOID FOR ERRONEOUSLY DUPLICATED PAYMENT MADE ON 10/15/2020 FOR $58.56,Administrative/Salary/Overhead Expenses ,,,2020,4120920201967676235,prompt_io,Prompt.io,political_specific,high,administrative_productivity
-2020,C00023838,PROMPT.IO INC.,SEATTLE,WA,10/15/2020,58.56,PRESIDENT BUSH DINNER TEXT INVITE,Administrative/Salary/Overhead Expenses ,,,2020,4120920201967676230,prompt_io,Prompt.io,political_specific,high,administrative_productivity
-2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,05/18/2020,120,SOFTWARE,,*,X,2020,4073020201809400532,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,06/25/2020,5000,DIGITAL-ACQUISITION,,,,2020,4073020201809400461,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00721183,CALLTIME.AI,VISALIA,CA,11/03/2020,930,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,4121120201969305408,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,06/09/2020,14,SOFTWARE,,*,X,2020,4072120201792838128,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00638767,CHATFUEL,SAN FRANCISCO,CA,09/09/2020,15,TEXTING EXPENSE,,,,2020,4041720211278066639,chatfuel,Chatfuel,general_purpose,high,unspecified
-2020,C00638767,CHATFUEL,SAN FRANCISCO,CA,08/10/2020,15,COMMUNICAITON SOFTWARE EXPENSE,,,,2020,4041720211278066638,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
-2020,C00638767,CHATFUEL,SAN FRANCISCO,CA,09/09/2020,50,TEXTING EXPENSE,,,,2020,4041720211278066640,chatfuel,Chatfuel,general_purpose,high,unspecified
-2020,C00638767,CHATFUEL,SAN FRANCISCO,CA,10/09/2020,15,TEXTING EXPENSE,,,,2020,4041820211278105909,chatfuel,Chatfuel,general_purpose,high,unspecified
-2020,C00696153,AMPLIFY.AI,LOS ALTOS,CA,07/01/2020,15000,DIGITAL MARKETING SERVICES,,,,2020,4120520201965127116,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,07/30/2020,262.6,OFFICE ASSISTANCE LABOR,,,,2020,4102320201883362475,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,09/01/2020,202,OFFICE ASSISTANCE LABOR,,,,2020,4102320201883362476,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,07/01/2020,404,OFFICE ASSISTANCE LABOR,,,,2020,4102320201883362474,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00732826,PROMPT.IO INC,SEATTLE,WA,10/24/2020,911.2,MESSAGING SERVICE,,,,2020,4123120201987382261,prompt_io,Prompt.io,political_specific,high,unspecified
-2020,C00739045,PURCHASE AUTHORIZED ON 05/13 CALL TIME CALLTIME.AI CA S460134606489218 CARD 8755,,CA,05/14/2020,25,MARKETING,,,,2020,4062920201778612119,calltime_ai,CallTime.AI,political_specific,high,unspecified
-2020,C00451336,"WIGGINS, CLAUDE",GRAMERCY,LA,12/22/2020,700,CANVASSER,,,,2020,4042520211279052278,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00701599,CALL TIME AI,VISALIA,CA,02/10/2020,1725,SOFTWARE,,,,2020,4081920201829335464,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,01/06/2020,400,SOFTWARE,,,,2020,4081920201829335341,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,03/09/2020,3.36,SOFTWARE,,,,2020,4081920201829335327,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,03/09/2020,1825,SOFTWARE,,,,2020,4081920201829335380,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,01/09/2020,1725,SOFTWARE,,,,2020,4081920201829335384,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/01/2020,1001.75,PAYROLL,,,,2020,4072020201791779474,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/08/2020,1001.75,PAYROLL,,,,2020,4072020201791779475,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/15/2020,1001.75,PAYROLL,,,,2020,4072020201791779476,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/22/2020,1001.75,PAYROLL,,,,2020,4072020201791779477,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/29/2020,2001.75,PAYROLL,,,,2020,4072020201791779478,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/05/2020,2001.75,PAYROLL,,,,2020,4072020201791779479,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/26/2020,2001.75,PAYROLL,,,,2020,4072020201791779482,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/12/2020,2001.75,PAYROLL,,,,2020,4072020201791779480,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/19/2020,2001.75,PAYROLL,,,,2020,4072020201791779481,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/03/2020,400,TRAINING STIPEND,,,,2020,4072020201791779468,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/03/2020,1501.75,PAYROLL,,,,2020,4072020201791779469,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/06/2020,250,TRAINING STIPEND,,,,2020,4072020201791779470,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/10/2020,751.75,PAYROLL,,,,2020,4072020201791779471,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/17/2020,1001.75,PAYROLL,,,,2020,4072020201791779472,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/24/2020,1001.75,PAYROLL,,,,2020,4072020201791779473,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00703975,AMPLIFY.AI,LOS ALTOS,CA,07/23/2020,300000,DIGITAL ADVERTISING,,,,2020,4082620201830365901,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative
-2020,C00640623,"NIELSEN, CLAUDE",MOUNTAIN BRK,AL,11/03/2020,696,EVENT BEVERAGES,,* IN-KIND RECEIVED,,2020,4121220201973034666,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/28/2020,2001.75,PAYROLL,,,,2020,4111720201900679537,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/04/2020,2001.75,PAYROLL,,,,2020,4111720201900679538,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/11/2020,2001.75,PAYROLL,,,,2020,4111720201900679539,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/18/2020,2001.75,PAYROLL,,,,2020,4111720201900679540,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/25/2020,2001.75,PAYROLL,,,,2020,4111720201900679541,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/03/2020,2001.75,PAYROLL,,,,2020,4111720201900679526,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/10/2020,2001.75,PAYROLL,,,,2020,4111720201900679527,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/13/2020,2371.47,REIMBURSEMENT (VENDORS THAT AGGREGATE OVER $200 LISTED BELOW),,,,2020,4111720201900679528,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/17/2020,2001.75,PAYROLL,,,,2020,4111720201900679530,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/24/2020,2001.75,PAYROLL,,,,2020,4111720201900679531,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/31/2020,2001.75,PAYROLL,,,,2020,4111720201900679532,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/07/2020,2001.75,PAYROLL,,,,2020,4111720201900679533,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/14/2020,2001.75,PAYROLL,,,,2020,4111720201900679534,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/21/2020,2001.75,PAYROLL,,,,2020,4111720201900679535,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/25/2020,13500,PURCHASE OF PAC VEHICLE,,,,2020,4111720201900679536,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,10/01/2020,200,OFFICE ASSISTANCE LABOR,,,,2020,4111020201893419709,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,11/01/2019,7500,SOFTWARE SUBSCRIPTION,,,,2019,4100620211372393164,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,11/13/2019,7500,SOFTWARE SUBSCRIPTION,,,,2019,4100620211372393165,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00682211,"FOSTER, MARY CLAUDE",SEATTLE,WA,06/24/2019,500,AIRFARE,Travel Expenses,,X,2019,4011320221388528675,anthropic,Anthropic (Claude),general_purpose,high,unspecified
-2020,C00694455,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,09/23/2019,7500,INFORMATION TECHNOLOGY & INTERNET SERVICES,,,,2019,4073020211324197691,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00694455,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,10/11/2019,22500,INFORMATION TECHNOLOGY & INTERNET SERVICES,,,,2019,4073020211324205092,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00699249,CALLTIME.AI,LOS ANGELES,CA,04/27/2020,1250,PURCHASE AUTHORIZED ON 04/25 CALL TIME CALLTIME.AI CA S460116735608549 CARD 1161,,,,2020,4102120201882402166,calltime_ai,CallTime.AI,political_specific,high,unspecified
-2020,C00699249,CALLTIME.AI,LOS ANGELES,CA,05/26/2020,1050,PURCHASE AUTHORIZED ON 05/25 CALL TIME CALLTIME.AI CA S580146735576320 CARD 1161,,,,2020,4102120201882402167,calltime_ai,CallTime.AI,political_specific,high,unspecified
-2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,11/16/2020,45,SOFTWARE,,*,X,2020,4010620212033561129,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,10/20/2020,45,SOFTWARE,,*,X,2020,4010620212033560970,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,08/20/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,4121820201977477686,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
-2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,07/18/2020,120,SOFTWARE,,*,X,2020,4121820201977477800,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,06/18/2020,120,SOFTWARE,,*,X,2020,4121820201977476125,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,09/10/2020,175,DUES AND SUBSCRIPTIONS,,,X,2020,4111920201958200916,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00038505,PROMPT.IO,SEATTLE,WA,09/14/2020,10000,SUBSCRIPTION FEE FOR FUNDRAISING/VOLUNTEER RECRUITMENT TEXTS,,,,2020,4091820211371090287,prompt_io,Prompt.io,political_specific,high,fundraising;administrative_productivity
-2020,C00667279,CALL TIME    CALLTIME.AI CA,,,08/04/2020,740,CALL TIME    CALLTIME.AI CA,Solicitation and Fundraising Expenses ,CALL TIME    CALLTIME.AI CA,,2020,4111020201893430523,calltime_ai,CallTime.AI,political_specific,high,fundraising
-2020,C00667279,CALL TIME    CALLTIME.AI CA,,,07/06/2020,740,CALL TIME    CALLTIME.AI CA,Solicitation and Fundraising Expenses ,CALL TIME    CALLTIME.AI CA,,2020,4111020201893430509,calltime_ai,CallTime.AI,political_specific,high,fundraising
-2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,08/14/2020,54,SOFTWARE,,*,X,2020,4111020201893429774,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,09/21/2020,54,SOFTWARE,,*,X,2020,4111020201893429895,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,07/21/2020,54,SOFTWARE,,*,X,2020,4111020201893429635,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00721183,CALLTIME.AI,VISALIA,CA,10/02/2020,930,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,4110720201892250449,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
-2020,C00693234,DESCRIPT INC.,SAN FRANCISCO,CA,03/30/2020,216,SOFTWARE,,*,X,2020,4102920201889416512,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00042366,GRAMMARLY,SAN FRANCISCO,CA,06/01/2020,139.95,PRINTING,,MEMO ENTRY,X,2020,4102620201887060695,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00739045,CALL TIME AI,,CA,03/13/2020,725,PHONE BANKING,,,,2020,4041020201735498112,calltime_ai,CallTime.AI,political_specific,high,unspecified
-2020,C00000935,OTTER.AI,PALO ALTO,CA,06/01/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271368588,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00000935,OTTER.AI,LOS ALTOS,CA,06/01/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271368554,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00000935,OTTER.AI,LOS ALTOS,CA,07/01/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271373106,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00000935,OTTER.AI,LOS ALTOS,CA,06/30/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271373129,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00000935,OTTER.AI,LOS ALTOS,CA,07/31/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271379016,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00000935,OTTER.AI,LOS ALTOS,CA,07/30/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271379051,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00000935,OTTER.AI,LOS ALTOS,CA,08/31/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040620211275770541,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00701284,CALLTIME AI,LOS ANGELES,CA,10/05/2020,3105,SOFTWARE SUBSCRIPTION,,,,2020,4111020201894186942,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00000935,OTTER.AI,LOS ALTOS,CA,08/31/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040620211275770499,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00000935,OTTER.AI,LOS ALTOS,CA,10/01/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271383840,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00000935,OTTER.AI,LOS ALTOS,CA,09/30/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271383868,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00000935,OTTER.AI,LOS ALTOS,CA,11/02/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271386954,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00000935,OTTER.AI,PALO ALTO,CA,10/30/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271386982,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00000935,OTTER.AI,PALO ALTO,CA,11/30/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271395441,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00000935,OTTER.AI,LOS ALTOS,CA,12/01/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4040120211271395417,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,10/18/2020,120,SOFTWARE,,*,X,2020,4040620211275779194,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,09/18/2020,120,SOFTWARE,,*,X,2020,4040620211275778728,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,10/22/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,4040620211275782679,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
-2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,11/02/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,4040620211275782680,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
-2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,11/19/2020,15000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,4040620211275782681,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
-2020,C00000935,OTTER.AI,LOS ALTOS,CA,05/01/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,4032620211268917286,otter_ai,Otter.ai,general_purpose,high,unspecified
-2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,10/16/2020,59064,TEXTING SERVICES,,,,2020,4042820211280322241,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,11/02/2020,246000,TEXTING SERVICES,,,,2020,4042820211280322352,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00401224,GRAMMARLY,SAN FRANCISCO,CA,01/17/2020,83.97,PENALOZA 01/31: TRAINING COURSE FEE,Administrative/Salary/Overhead Expenses ,,X,2020,4032420201705120646,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,05/29/2020,5000,DIGITAL-ACQUISITION,,,,2020,4062420201777310827,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00741611,TRUVERSE INC,LOS ALTOS,CA,08/17/2020,15000,CAMPAIGN SOFTWARE,,,,2020,4061120211307170693,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00099267,CHATFUEL,SAN FRANCISCO,CA,06/09/2020,15,ONLINE BOT SUBSCRIPTION,,,X,2020,4040720211276557646,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
-2020,C00741611,TRUVERSE INC,LOS ALTOS,CA,11/03/2020,5000,CAMPAIGN SOFTWARE,,,,2020,4061120211307173116,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00099267,CHATFUEL,SAN FRANCISCO,CA,12/31/2020,20,CHATBOX SERVICE,,,X,2020,4050920211292753433,chatfuel,Chatfuel,general_purpose,high,unspecified
-2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,05/11/2020,14,VIDEO PRODUCTION,,*,X,2020,4062320201776762624,descript,Descript,general_purpose,high,advertising_creative
-2020,C00701284,CALLTIME AI,LOS ANGELES,CA,06/03/2020,1050,SOFTWARE SUBSCRIPTION,,,,2020,4072220201794123641,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701284,CALLTIME AI,LOS ANGELES,CA,04/02/2020,1050,SOFTWARE SUBSCRIPTION,,,,2020,4072220201794123581,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701284,CALLTIME AI,LOS ANGELES,CA,06/16/2020,135.58,SOFTWARE SUBSCRIPTION,,,,2020,4072220201794123586,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701284,CALLTIME AI,LOS ANGELES,CA,05/04/2020,1050,SOFTWARE SUBSCRIPTION,,,,2020,4072220201794123550,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00718866,"TRUVERSE, INC.",LOS ALTOS,CA,12/15/2020,7500,SOFTWARE SUBSCRIPTION,,,,2020,4061120211307158868,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00693234,DESCRIPT INC.,SAN FRANCISCO,CA,02/06/2020,18,SOFTWARE,,*,X,2020,4032620201715904086,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00693234,DESCRIPT INC.,SAN FRANCISCO,CA,02/06/2020,18,SOFTWARE,,*,X,2020,4032620201715904087,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00693234,DESCRIPT INC.,SAN FRANCISCO,CA,02/06/2020,180,SOFTWARE,,*,X,2020,4032620201715904088,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00693234,DESCRIPT INC.,SAN FRANCISCO,CA,02/21/2020,18,SOFTWARE,,*,X,2020,4032620201715906830,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00693234,DESCRIPT INC.,SAN FRANCISCO,CA,02/21/2020,216,SOFTWARE,,*,X,2020,4032620201715906831,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00667741,"CLAUDE, RONALD",DEDHAM,MA,01/22/2020,500,TRANSLATION SERVICES,,,,2020,4050820201742207426,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,03/10/2020,434.6,OFFICE ASSISTANCE LABOR,,,,2020,4041420201736299081,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,03/24/2020,161.6,OFFICE ASSISTANCE LABOR,,,,2020,4041420201736299082,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00715664,CALL TIME AI,LOS ANGELES,CA,02/13/2020,25,CALL TIME SOFTWARD,Administrative/Salary/Overhead Expenses ,,,2020,4043020201741228351,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00715664,CALL TIME AI,LOS ANGELES,CA,01/13/2020,25,CALL TIME SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2020,4043020201741228350,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00715664,CALL TIME AI,LOS ANGELES,CA,03/13/2020,25,CALL TIME SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2020,4043020201741228352,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,02/18/2020,7500,SOFTWARE SUBSCRIPTION,,,,2020,4032720201718009616,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00711614,CAFE CLAUDE RESTAURANT,SAN FRANCISCO,CA,02/14/2020,551.04,CATERING,,*,X,2020,4032720201718012751,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,03/27/2020,7500,SOFTWARE SUBSCRIPTION,,,,2020,4042120201737650189,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,03/09/2020,309,OFFICE SUPPLIES,,*,X,2020,4042320201738421865,descript,Descript,general_purpose,high,unspecified
-2020,C00728832,CALLTIME.AI,LOS ANGELES,CA,06/19/2020,690,SOFTWARE,,*,X,2020,4080620201813189595,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00728832,CALLTIME.AI,LOS ANGELES,CA,06/19/2020,65.78,SOFTWARE,,*,X,2020,4080620201813189596,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00711549,"TRUVERSE, INC.",LOS ALTOS,CA,11/17/2020,5000,SUBSCRIPTION,,,,2020,4091720211371025897,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00694455,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,05/13/2020,10086,INFORMATION TECHNOLOGY & INTERNET SERVICES,,,,2020,4072920211323314780,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00038505,GRAMMARLY,SAN FRANCISCO,CA,12/10/2020,29.95,COMPUTER SOFTWARE,,,,2020,4091920211371112200,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00370007,GRAMMARLY,SAN FRANCISCO,CA,01/30/2020,83.97,INTERNET SERVICE/USAGE,,*,X,2020,4042020201737508980,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00038505,PROMPT.IO,SEATTLE,WA,07/07/2020,10000,SUBSCRIPTION FEE FOR FUNDRAISING/STATE CONVENTION TEXTS,,,,2020,4092520211372029439,prompt_io,Prompt.io,political_specific,high,fundraising;administrative_productivity
-2020,C00696153,AMPLIFY.AI,LOS ALTOS,CA,10/14/2020,28500,DIGITAL MARKETING SERVICES,,,,2020,4050820211288126972,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00731380,CALLTIME.AI,VISAILA,CA,02/06/2020,375,CALLTIME SERVICE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2020,4091220201835376072,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00731380,CALLTIME.AI,VISAILA,CA,03/06/2020,525,CALLTIME SUBSCRIPTION EXPENSE,Administrative/Salary/Overhead Expenses ,,,2020,4091220201835376073,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,07/27/2020,14,SOFTWARE,,*,X,2020,4082220201829666299,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,07/06/2020,14,SUBSCRIPTION,,*,X,2020,4082220201829666230,descript,Descript,general_purpose,high,administrative_productivity
-2020,C00711549,"TRUVERSE, INC.",LOS ALTOS,CA,09/22/2020,12500,SUBSCRIPTION,,,,2020,4070720211320301042,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00191247,GRAMMARLY,SAN FRANCISCO,CA,03/30/2020,75,SUBSCRIPTION,,,X,2020,4090320201834516216,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,07/23/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,4090220201834357459,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
-2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,12/30/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,4020320212018082033,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
-2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,12/03/2020,175,DUES AND SUBSCRIPTIONS,,,X,2020,4063020211312977908,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,08/10/2020,174.99,DUES AND SUBSCRIPTIONS,,,X,2020,4101620201858324569,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00744946,GEMINI G.E.L. LLC,LOS ANGELES,CA,10/01/2020,50000,ARTWORK,,* IN-KIND RECEIVED,,2020,4030920211239283801,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
-2020,C00744946,GEMINI G.E.L. LLC,LOS ANGELES,CA,10/01/2020,18000,ARTWORK,,* IN-KIND RECEIVED,,2020,4030920211239283736,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
-2020,C00744946,GEMINI G.E.L. LLC,LOS ANGELES,CA,10/01/2020,7500,ARTWORK,,* IN-KIND RECEIVED,,2020,4030920211239283774,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
-2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,02/12/2020,750,SOFTWARE,,*,X,2020,4042220201737827285,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,03/17/2020,750,CAMPAIGN SOFTWARE,,*,X,2020,4042220201737827290,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00632059,CALLTIME.AI,VISALIA,CA,01/13/2020,980,SOFTWARE,,,,2020,4050520201741829957,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00632059,CALLTIME.AI,VISALIA,CA,03/13/2020,980,SOFTWARE,,,,2020,4050520201741829958,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00632059,CALLTIME.AI,VISALIA,CA,03/18/2020,950,SOFTWARE,,*,X,2020,4050520201741830019,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00632059,CALLTIME.AI,VISALIA,CA,03/18/2020,950,SOFTWARE,,*,X,2020,4050520201741830020,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/28/2020,1501.75,PAYROLL,,,,2020,4041720201737297266,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/06/2020,751.75,PAYROLL,,,,2020,4041720201737297267,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/13/2020,751.75,PAYROLL,,,,2020,4041720201737297268,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/24/2020,250,PAYROLL,,,,2020,4041720201737297269,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/26/2020,1000,PAYROLL,,,,2020,4041720201737297270,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/31/2020,1500,PAYROLL,,,,2020,4041720201737297271,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/06/2020,1450,PAYROLL,,,,2020,4041720201737297256,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/10/2020,751.86,PAYROLL,,,,2020,4041720201737297257,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/17/2020,1451.86,PAYROLL,,,,2020,4041720201737297258,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/24/2020,751.86,PAYROLL,,,,2020,4041720201737297259,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/31/2020,751.86,PAYROLL,,,,2020,4041720201737297260,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/06/2020,750,PAYROLL,,,,2020,4041720201737297261,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/07/2020,751.75,PAYROLL,,,,2020,4041720201737297262,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/10/2020,103.5,REIMBURSEMENT (VENDORS THAT AGGREGATE OVER $200 LISTED BELOW),,,,2020,4041720201737297263,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/14/2020,751.75,PAYROLL,,,,2020,4041720201737297264,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/21/2020,1501.75,PAYROLL,,,,2020,4041720201737297265,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00721019,CALLTIME AI,LOS ANGELES,CA,01/09/2020,1400,SOFTWARE SUBSCRIPTION,,,,2020,4050520201741828000,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00721019,CALLTIME AI,LOS ANGELES,CA,03/09/2020,1400,SOFTWARE SUBSCRIPTION,,,,2020,4050520201741828008,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00721019,CALLTIME AI,LOS ANGELES,CA,02/10/2020,1400,SOFTWARE SUBSCRIPTION,,,,2020,4050520201741827987,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00496075,GRAMMARLY INC.,SAN FRANCISCO,CA,03/09/2020,139.95,SOFTWARE,,,X,2020,4050720201742098617,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00099267,CHATFUEL,SAN FRANCISCO,CA,11/23/2020,20,CHATBOT PLATFORM SUBSCRIPTION,,,X,2020,4052720211297508381,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
-2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,11/10/2020,175,DUES AND SUBSCRIPTIONS,,,X,2020,4063020211312960394,grammarly,Grammarly,general_purpose,high,unspecified
-2020,C00711549,"TRUVERSE, INC.",LOS ALTOS,CA,06/30/2020,15000,SUBSCRIPTION,,,,2020,4010920212066319948,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00401224,GRAMMARLY,SAN FRANCISCO,CA,09/21/2020,600,AMEX 09/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2020,4012120212115705273,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00491357,EYESOVER TECHNOLOGIES,NEW BRUNSWICK,,05/30/2020,5000,SUBSCRIPTION,,,,2020,4120920221633949493,eyesover,EyesOver,political_specific,high,administrative_productivity
-2020,C00718270,CALLTIME AI,VISALIA,CA,02/27/2020,1250,FUNDRAISING,,,,2020,4121820211386186185,calltime_ai,CallTime.AI,political_specific,high,fundraising
-2020,C00718270,CALLTIME AI,VISALIA,CA,03/27/2020,1250,FUNDRAISING,,,,2020,4121820211386186186,calltime_ai,CallTime.AI,political_specific,high,fundraising
-2020,C00718270,CALLTIME AI,VISALIA,CA,04/27/2020,1250,,,,,2020,4121820211386186111,calltime_ai,CallTime.AI,political_specific,high,unspecified
-2020,C00718270,CALLTIME AI,VISALIA,CA,06/29/2020,1250,,,,,2020,4121820211386186112,calltime_ai,CallTime.AI,political_specific,high,unspecified
-2020,C00718270,CALLTIME AI,VISALIA,CA,07/27/2020,1250,CALL PROGRAM,,,,2020,4121820211386186053,calltime_ai,CallTime.AI,political_specific,high,unspecified
-2020,C00718270,CALLTIME AI,VISALIA,CA,08/27/2020,1250,CAMPAIGN CALL PROGRAM,,,,2020,4121820211386186054,calltime_ai,CallTime.AI,political_specific,high,unspecified
-2020,C00718270,CALLTIME AI,VISALIA,CA,09/16/2020,173.68,CAMPAIGN CALL PROGRAM,,,,2020,4121820211386186055,calltime_ai,CallTime.AI,political_specific,high,unspecified
-2020,C00718270,CALLTIME AI,VISALIA,CA,09/28/2020,1725,CAMPAIGN CALL PROGRAM,,,,2020,4121820211386186056,calltime_ai,CallTime.AI,political_specific,high,unspecified
-2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,03/11/2020,75,OFFICE SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407903017,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,12/07/2020,125,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021820221409131520,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,07/07/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407903205,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,04/07/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021820221409131228,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,05/07/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021820221409131278,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,06/08/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407903116,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,09/02/2020,3.9,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407903678,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,09/08/2020,100,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407903679,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,08/07/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407903414,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,10/07/2020,.04,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021820221409131381,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,10/07/2020,125,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021820221409131382,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,11/09/2020,125,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,4021520221407904024,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00668137,"BROWN, CLAUDE",HIGHLAND PARK,MI,08/03/2020,50,CANVASSING,,,,2020,4092320221576788601,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00668137,"BROWN, CLAUDE",HIGHLAND PARK,MI,08/01/2020,50,CANVASSING,,,,2020,4092320221576788630,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00668137,"BROWN, CLAUDE",HIGHLAND PARK,MI,08/04/2020,120,CANVASSING,,,,2020,4092320221576788570,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00695346,"ROBINSON, DALE",LOS ANGELES,CA,10/13/2020,36000,"REIMBURSEMENT FOR SENDGRID, SPEECHIFAI AND TWILIO",Administrative/Salary/Overhead Expenses ,,,2020,4052020241949758177,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
-2020,C00695346,SPEECHIFAI,BROOKLYN,NY,10/13/2020,853.47,,Advertising Expenses ,,X,2020,4052020241949758180,sosha,SoSha (Speechifai),political_specific,high,advertising_creative
-2020,C00695346,SPEECHIFAI,BROOKLYN,NY,08/20/2020,507,BLIZZARD SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2020,4060320241952946224,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
-2020,C00695346,SPEECHIFAI,BROOKLYN,NY,08/24/2020,252,SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2020,4060320241952946226,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
-2020,C00711614,CAFE CLAUDE RESTAURANT,SAN FRANCISCO,CA,01/22/2020,133.72,MEALS,,*,X,2020,4100620211372389830,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,01/06/2020,7500,SOFTWARE SUBSCRIPTION,,,,2020,4100620211372388751,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,01/21/2020,7500,SOFTWARE SUBSCRIPTION,,,,2020,4100620211372388752,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
-2020,C00718270,CALLTIME AI,VISALIA,CA,11/27/2020,1725,FUNDRAISING,,,,2020,4122220211386484038,calltime_ai,CallTime.AI,political_specific,high,fundraising
-2020,C00718270,CALLTIME AI,VISALIA,CA,10/27/2020,1725,FUNDRAISING,,,,2020,4122120211386315048,calltime_ai,CallTime.AI,political_specific,high,fundraising
-2020,C00578302,CALLTIME.AI,LOS ANGELES,CA,10/17/2020,450,CALL TIME,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2020,4011520212093713537,calltime_ai,CallTime.AI,political_specific,high,fundraising
-2020,C00701599,CALL TIME AI,VISALIA,CA,08/11/2020,3000,SOFTWARE,,,,2020,4020520211120652850,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00701599,CALL TIME AI,VISALIA,CA,08/10/2020,3000,SOFTWARE,,,,2020,4020520211120653000,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
-2020,C00401190,CLAUDE BROWN,WILSON,NC,12/02/2020,200,OFFICE ASSISTANCE LABOR,,,,2020,4011920212093821791,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,12/14/2020,1000,OFFICE ASSISTANCE LABOR,,,,2020,4011920212093821792,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00401190,CLAUDE BROWN,WILSON,NC,12/01/2020,272.7,OFFICE ASSISTANCE LABOR,,,,2020,4011920212093821790,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00603084,OTTER.AI,LOS ALTOS,CA,12/08/2020,240,SOFTWARE,,*,X,2020,4020220212140270621,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
-2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,12/02/2020,29.95,WEB SERVICE/SUBSCRIPTION,,,,2020,4020220212140269147,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,12/31/2020,29.95,WEB SERVICE/SUBSCRIPTION,,,,2020,4020220212140269181,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,12/17/2020,195800,TEXTING SERVICES,,,,2020,4020920211122803986,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
-2020,C00031088,PROMPT.IO INC.,SEATTLE,WA,10/30/2020,12000,PAYMENT FOR FUTURE TEXT MESSAGES: SEE MEMO TEXT,,,,2020,4021320211141100923,prompt_io,Prompt.io,political_specific,high,communications_copy
-2020,C00401224,GRAMMARLY,SAN FRANCISCO,CA,12/28/2020,139.95,AMEX 12/31: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2020,4031120211242897306,grammarly,Grammarly,general_purpose,high,administrative_productivity
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/02/2020,1001.75,PAYROLL,,,,2020,4031820211261735713,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/13/2020,1001.75,PAYROLL,,,,2020,4031820211261735714,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/16/2020,1001.75,PAYROLL,,,,2020,4031820211261735975,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/23/2020,1001.75,PAYROLL,,,,2020,4031820211261735976,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/23/2020,1001.75,PAYROLL,,,,2020,4031820211261735977,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/06/2020,1001.75,PAYROLL,,,,2020,4031820211261735978,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/13/2020,2501.75,PAYROLL,,,,2020,4031820211261735979,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/17/2020,500,TRAINING STIPEND,,,,2020,4031820211261735980,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/20/2020,1001.75,PAYROLL,,,,2020,4031820211261735981,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/18/2020,1001.75,PAYROLL,,,,2020,4031820211261735647,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/24/2020,1001.75,PAYROLL,,,,2020,4031820211261735648,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/31/2020,1001.75,PAYROLL,,,,2020,4031820211261735649,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/27/2020,1001.75,PAYROLL,,,,2020,4031820211261735642,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/04/2020,1001.75,PAYROLL,,,,2020,4031820211261735643,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/08/2020,500,PAYROLL,,,,2020,4031820211261735644,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/08/2020,1001.75,PAYROLL,,,,2020,4031820211261735645,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
-2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/11/2020,1001.75,PAYROLL,,,,2020,4031820211261735646,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+cycle,cmte_id,name,city,state,transaction_dt,transaction_amt,purpose,category_desc,memo_text,memo_cd,rpt_yr,rpt_tp,sub_id,vendor_ids,vendor_names,vendor_groups,confidences,use_categories
+2020,C00401190,CALL TIME.AI,LOS ANGELES,CA,01/13/2020,980,SOFTWARE LICENSE,,,,2020,12P,4030420201700697956,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,02/14/2020,350,NUMERO,Administrative/Salary/Overhead Expenses ,,,2020,Q1,4042720201740278789,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
+2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,03/16/2020,350,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2020,Q1,4042720201740278790,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
+2020,C00401190,CLAUDE BROWN,WILSON,NC,07/02/2019,565.6,OFFICE ASSISTANCE LABOR,,,,2019,Q3,4101420191674192403,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,08/30/2019,414.1,OFFICE ASSISTANCE LABOR,,,,2019,Q3,4101420191674192405,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,01/02/2019,464.6,OFFICE ASSISTANCE LABOR,,,,2019,Q1,4040920191646090460,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,01/30/2019,515.1,OFFICE ASSISTANCE LABOR,,,,2019,Q1,4040920191646090462,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,02/28/2019,525.2,OFFICE ASSISTANCE LABOR,,,,2019,Q1,4040920191646090464,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,03/31/2019,575.7,OFFICE ASSISTANCE LABOR,,,,2019,Q1,4040920191646090466,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,12/18/2019,750,SOFTWARE,,*,X,2019,YE,4051920201762107889,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,11/04/2019,1500,SOFTWARE,,*,X,2019,YE,4051920201762107871,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,10/07/2019,750,SOFTWARE,,*,X,2019,YE,4051920201762107861,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00711804,AMPLIFY.AI,LOS ALTOS,CA,01/30/2020,3750,SOFTWARE LICENSING FEE,,,,2020,Q1,4050620201741958877,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00653121,GRAMMARLY,SAN FRANCISCO,CA,01/28/2019,360,SUBSCRIPTION,,,,2019,Q1,4041820191646725115,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,10/15/2019,350,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2019,YE,4021820201692732960,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
+2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,11/14/2019,350,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2019,YE,4021820201692732961,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
+2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,11/22/2019,350,SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2019,YE,4021820201692732962,numero_ai,Numero (donor database / call time),political_specific,high,administrative_productivity
+2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,12/23/2019,350,SOFTWARE,Solicitation and Fundraising Expenses ,,,2019,YE,4021820201692732963,numero_ai,Numero (donor database / call time),political_specific,high,fundraising;administrative_productivity
+2020,C00310532,EYESOVER TECHNOLOGIES INC.,FREDERICTON,NB,01/11/2019,1500,SURVEY RESEARCH,Solicitation and Fundraising Expenses ,,,2019,Q1,4041820191646725577,eyesover,EyesOver,political_specific,high,research_strategy;fundraising
+2020,C00715664,CALL TIME AI,LOS ANGELES,CA,11/13/2019,540,CALL TIME FUNDRAISING SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2019,YE,4022020201693402411,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00715664,CALL TIME AI,LOS ANGELES,CA,12/13/2019,540,CALL TIME FUNDRAISING SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2019,YE,4022020201693402412,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00075820,EYESOVER TECHNOLOGIES INC,FREDERICTON,NE,09/09/2019,2000,RESEARCH MATERIAL,,,,2019,M10,4103120191676277048,eyesover,EyesOver,political_specific,high,research_strategy
+2020,C00401190,CLAUDE BROWN,WILSON,NC,05/01/2019,565.6,OFFICE ASSISTANCE LABOR,,,,2019,Q2,4071120191659327127,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,06/03/2019,545.4,OFFICE ASSISTANCE LABOR,,,,2019,Q2,4071120191659327129,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00496075,GRAMMARLY INC.,SAN FRANCISCO,CA,04/01/2019,139.95,SOFTWARE,,,X,2019,Q2,4071220191659352284,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00027466,"HOWLETT, CLAUDE A. MR.",SCOTTSDALE,AZ,05/10/2019,607.06,IN-KIND CONTRIBUTION,,IN KIND: CATERING,,2019,M6,4062120191658484270,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00390476,GRAMMARLY,SAN FRANCISCO,CA,06/10/2019,139.95,OFFICE EXPENSE,,,X,2019,Q3,4011620201684852990,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,10/03/2019,434.3,OFFICE ASSISTANCE LABOR,,,,2019,YE,4012120201685395215,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,10/31/2019,464.6,OFFICE ASSISTANCE LABOR,,,,2019,YE,4012120201685395216,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,11/25/2019,750,OFFICE ASSISTANCE LABOR,,,,2019,YE,4012120201685395217,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,12/06/2019,212.1,OFFICE ASSISTANCE LABOR,,,,2019,YE,4012120201685395218,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,12/19/2019,121.2,OFFICE ASSISTANCE LABOR,,,,2019,YE,4012120201685395219,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00701599,CALL TIME AI,VISALIA,CA,07/09/2020,2175,SOFTWARE,,,,2020,12P,4092520201850022835,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,05/11/2020,2175,SOFTWARE,,,,2020,Q2,4092520201850022699,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,06/09/2020,2175,SOFTWARE,,,,2020,Q2,4092520201850022703,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,04/09/2020,1825,SOFTWARE,,,,2020,Q2,4092520201850022773,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,04/28/2020,128.27,SOFTWARE,,,,2020,Q2,4092520201850022736,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00711317,CALLTIME.AI,CHICAGO,IL,07/29/2019,680,SOFTWARE,Solicitation and Fundraising Expenses ,,,2019,Q3,4022020201693397609,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00711317,CALLTIME.AI,CHICAGO,IL,08/26/2019,780,SOFTWARE,Solicitation and Fundraising Expenses ,,,2019,Q3,4022020201693397610,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00711317,CALLTIME.AI,CHICAGO,IL,09/26/2019,780,SOFTWARE,Solicitation and Fundraising Expenses ,,,2019,Q3,4022020201693397611,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00721290,CALLTIME AI,VISALIA,CA,10/31/2019,1410,SOFTWARE SUBSCRIPTION,,*,X,2019,YE,4021220201689414916,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00703975,AMPLIFY.AI,LOS ALTOS,CA,11/13/2020,25000,DIGITAL ADVERTISING,,,,2020,30G,4121120201969265102,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative
+2020,C00703975,AMPLIFY.AI,LOS ALTOS,CA,11/13/2020,21882.29,PHOTO LICENSES,,,,2020,30G,4121120201969265103,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00703975,AMPLIFY.AI,LOS ALTOS,CA,10/29/2020,100000,PHOTO/MUSIC LICENSES,,,,2020,30G,4121120201969258145,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,11/18/2019,120,SOFTWARE,,*,X,2020,M2,4030420201700705994,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,10/08/2020,175,DUES AND SUBSCRIPTIONS,,,X,2020,12G,4111920201958248875,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,04/15/2020,55.27,SOFTWARE,,*,X,2020,12P,4052620201763261723,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,04/15/2020,55.4,SOFTWARE,,*,X,2020,12P,4052620201763261767,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,04/15/2020,54,SOFTWARE,,*,X,2020,12P,4052620201763261884,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00711614,CALLTIME.AI,LOS ANGELES,CA,07/10/2019,100,INKIND FROM CANDIDATE: SOFTWARE SUBSCRIPTION,,*,X,2019,Q3,4062620211311777542,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,08/17/2019,17500,SOFTWARE SUBSCRIPTION,,,,2019,Q3,4062620211311775157,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00711614,CALLTIME.AI,LOS ANGELES,CA,07/14/2019,1750,INKIND FROM CANDIDATE: SOFTWARE SUBSCRIPTION,,*,X,2019,Q3,4062620211311777621,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00700534,CALLTIME.AI,VISALIA,CA,07/10/2019,750,FUNDRAISING SOFTWARE,,,,2019,Q3,4081920201829336440,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00700534,CALLTIME.AI,VISALIA,CA,08/11/2019,25,FUNDRAISING SOFTWARE,,,,2019,Q3,4081920201829336441,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00700534,CALLTIME.AI,VISALIA,CA,09/10/2019,25,FUNDRAISING SOFTWARE,,,,2019,Q3,4081920201829336442,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00696054,GEMINI AUDIO VIDEO,FAIRFIELD,IA,12/30/2019,240,AUDIO VISUAL SERVICES,Campaign Event Expenses,,,2019,YE,4072020201791748569,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2020,C00314575,GEMINI PROPERTIES,TULSA,OK,10/31/2019,2438,CATERING FOR EVENT,,,,2019,YE,4040320201734767267,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,12/16/2019,262.75,MEDIA PRODUCTION,,*,X,2019,YE,4041420201736280177,descript,Descript,general_purpose,high,unspecified
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,07/18/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,M10,4032520201715240257,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,09/04/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,M10,4032520201715240258,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,07/18/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,M11,4032520201715243269,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,08/18/2019,120,SOFTWARE,,*,X,2019,M11,4032520201715243270,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,09/04/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,M11,4032520201715243271,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,10/18/2019,120,SOFTWARE,,*,X,2019,M12,4040320201734783308,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,09/18/2019,120,SOFTWARE,,*,X,2019,M12,4040320201734782413,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00675884,"BANKS, CLAUDE",CANTON,MS,11/29/2019,337.5,PAYROLL,,,,2019,YE,4030420201700704167,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00700534,CALLTIME.AI,VISALIA,CA,05/12/2019,250,FUNDRAISING SOFTWARE,,,,2019,Q2,4081220201828109879,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00700534,CALLTIME.AI,VISALIA,CA,06/10/2019,500,FUNDRAISING SOFTWARE,,,,2019,Q2,4081220201828109880,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,10/09/2019,1475,SOFTWARE,,,,2019,YE,4082020201829435175,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,12/18/2019,105.86,SOFTWARE,,,,2019,YE,4082020201829435162,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,10/09/2019,100,SOFTWARE,,,,2019,YE,4082020201829435214,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,12/09/2019,1575,SOFTWARE,,,,2019,YE,4082020201829435232,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,11/12/2019,1575,SOFTWARE,,,,2019,YE,4082020201829435249,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,01/14/2019,40,SOFTWARE,,,,2019,MY,4031920201703916964,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
+2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,01/14/2019,55,SOFTWARE,,,,2019,MY,4031920201703916965,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
+2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,02/12/2019,55,SOFTWARE,,,,2019,MY,4031920201703916966,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
+2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,03/12/2019,55,SOFTWARE,,,,2019,MY,4031920201703916967,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
+2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,04/12/2019,55,SOFTWARE,,,,2019,MY,4031920201703916968,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
+2020,C00688739,CHATFUEL,SAN FRANCISCO,CA,05/13/2019,55,SOFTWARE,,,,2019,MY,4031920201703916969,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,06/05/2019,120,SOFTWARE,,*,X,2019,M7,4020820201687851177,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,06/28/2019,120,SOFTWARE,,*,X,2019,M7,4020820201687852067,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,GRAMMARLY,SAN FRANCISCO,CA,08/08/2019,120,PUBLICATIONS/SUBSCRIPTIONS,,*,X,2019,M9,4021020201688377641,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/01/2019,303.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189418,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/01/2019,500,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189419,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/01/2019,203,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189420,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/03/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189421,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/11/2019,103,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189422,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/15/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189423,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/18/2019,500,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189424,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/22/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189425,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/22/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189426,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/23/2019,1000,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189427,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/29/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189428,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/29/2019,203,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189429,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/30/2019,203,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189430,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/01/2019,403.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189431,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/06/2019,303.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189432,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/06/2019,303,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189433,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/08/2019,203,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189434,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/13/2019,203,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189435,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/13/2019,2000,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189436,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/15/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189437,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/17/2019,500,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189438,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/04/2019,406.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189389,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/07/2019,3000,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189390,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/07/2019,90,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189391,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/08/2019,250,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189392,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/11/2019,200,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189393,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/15/2019,443.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189394,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/28/2019,302.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189395,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/31/2019,700,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189396,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/07/2019,1500,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189397,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/17/2019,203,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189439,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/20/2019,200,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189440,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/22/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189441,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/23/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189442,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/28/2019,203,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189443,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/28/2019,303,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189444,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/30/2019,403.95,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189445,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/03/2019,500,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189446,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/11/2019,303.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189398,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/11/2019,300,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189399,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/19/2019,708.75,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189400,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/25/2019,202.25,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189401,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/25/2019,202.49,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189402,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/25/2019,203.85,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189403,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/25/2019,122.25,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189404,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/01/2019,403.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189405,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/04/2019,123,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189406,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/04/2019,500,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189407,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/05/2019,203,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189408,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/06/2019,1800,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189409,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/11/2019,203,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189410,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/11/2019,203.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189411,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/14/2019,403,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189412,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/18/2019,203,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189413,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/19/2019,303.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189414,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/25/2019,202.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189415,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/25/2019,103.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189416,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/26/2019,403,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189417,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/03/2019,302.75,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189447,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/04/2019,1000,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189448,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/11/2019,2000,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189449,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/13/2019,303,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189450,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/17/2019,203,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189451,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/17/2019,203,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189452,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/17/2019,300,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189453,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/21/2019,403,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189454,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/24/2019,202.5,CONSULTANT - FUNDRAISING,,,,2019,MY,4030220211191189455,anthropic,Anthropic (Claude),general_purpose,medium,fundraising
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/26/2019,1250,PAYROLL,,,,2019,MY,4030220211191189456,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/16/2019,2400,PAYROLL,,,,2019,YE,4030220211191190076,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/21/2019,1500,PAYROLL,,,,2019,YE,4030220211191190077,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/29/2019,1000,PAYROLL,,,,2019,YE,4030220211191190078,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/29/2019,500,PAYROLL,,,,2019,YE,4030220211191190079,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/05/2019,1500,PAYROLL,,,,2019,YE,4030220211191190080,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/13/2019,1500,PAYROLL,,,,2019,YE,4030220211191190081,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/15/2019,800,USE OF BOAT FOR PAC EVENT,,* IN-KIND RECEIVED,,2019,YE,4030220211191190082,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/19/2019,1500,PAYROLL,,,,2019,YE,4030220211191190083,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/25/2019,1500,PAYROLL,,,,2019,YE,4030220211191190084,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/02/2019,1500,PAYROLL,,,,2019,YE,4030220211191190085,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/06/2019,500,PAYROLL,,,,2019,YE,4030220211191190086,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/11/2019,1500,PAYROLL,,,,2019,YE,4030220211191190087,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/16/2019,1500,PAYROLL,,,,2019,YE,4030220211191190088,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/23/2019,1500,PAYROLL,,,,2019,YE,4030220211191190089,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/29/2019,800,USE OF BOAT FOR PAC EVENT,,* IN-KIND RECEIVED,,2019,YE,4030220211191190090,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/30/2019,1500,PAYROLL,,,,2019,YE,4030220211191190091,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/02/2019,1250,PAYROLL,,,,2019,YE,4030220211191190059,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/08/2019,1250,PAYROLL,,,,2019,YE,4030220211191190060,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/16/2019,1250,PAYROLL,,,,2019,YE,4030220211191190061,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/24/2019,1250,PAYROLL,,,,2019,YE,4030220211191190062,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/29/2019,1250,PAYROLL,,,,2019,YE,4030220211191190063,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/06/2019,1500,PAYROLL,,,,2019,YE,4030220211191190064,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/08/2019,500,PAYROLL,,,,2019,YE,4030220211191190065,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/12/2019,1500,PAYROLL,,,,2019,YE,4030220211191190066,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/20/2019,1500,PAYROLL,,,,2019,YE,4030220211191190067,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/26/2019,1500,PAYROLL,,,,2019,YE,4030220211191190068,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/03/2019,1500,PAYROLL,,,,2019,YE,4030220211191190069,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/09/2019,1500,PAYROLL,,,,2019,YE,4030220211191190070,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/16/2019,1500,PAYROLL,,,,2019,YE,4030220211191190071,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/23/2019,2000,PAYROLL,,,,2019,YE,4030220211191190072,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/01/2019,1500,PAYROLL,,,,2019,YE,4030220211191190073,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/11/2019,500,PAYROLL,,,,2019,YE,4030220211191190074,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/15/2019,1000,PAYROLL,,,,2019,YE,4030220211191190075,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,07/29/2020,139.99,SOFTWARE / LICENSING,,,X,2020,M8,4092520201850030447,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00697441,"TRUVERSE, INC.",LOS ALTOS,CA,01/14/2020,15000,LIST ACQUISION,,,,2020,M2,4030420201700713749,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,06/11/2020,54,SOFTWARE,,*,X,2020,Q2,4101120201857439394,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,05/16/2020,54,SOFTWARE,,*,X,2020,Q2,4101120201857439299,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00697441,"TRUVERSE, INC.",LOS ALTOS,CA,03/20/2020,3620.69,DIGITAL LIST BUILDING,,,,2020,M4,4060820201774522279,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00724609,PAYPAL,SAN JOSE,CA,08/17/2020,29.95,GRAMMARLY SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2020,Q3,4111020201893430712,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00724609,PAYPAL,SAN JOSE,CA,09/17/2020,29.95,GRAMMARLY SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2020,Q3,4111020201893430716,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,07/22/2020,29.95,SUBSCRIPTION,,,,2020,Q3,4111220201900314152,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,09/23/2020,29.95,SUBSCRIPTION,,,,2020,Q3,4111220201900314364,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,08/21/2020,29.95,SUBSCRIPTION,,,,2020,Q3,4111220201900314253,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00578302,CALLTIME.AI,LOS ANGELES,CA,09/17/2020,450,FUNDRAISING SOFTWARE,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2020,30G,4120320201963404184,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00701284,CALLTIME AI,LOS ANGELES,CA,12/02/2020,1475,SOFTWARE SUBSCRIPTION,,,,2020,YE,4021720211142199913,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,07/01/2020,-1500,CREDIT,,*,X,2020,Q3,4111920201958191683,calltime_ai,CallTime.AI,political_specific,high,unspecified
+2020,C00701284,CALLTIME AI,LOS ANGELES,CA,07/08/2020,3105,SOFTWARE SUBSCRIPTION,,,,2020,Q3,4110520201891559459,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00728832,CALLTIME.AI,LOS ANGELES,CA,07/06/2020,690,SOFTWARE,,*,X,2020,Q3,4111020201893431700,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,01/06/2020,269,MEDIA PRODUCTION,,*,X,2020,M2,4030420201700720562,descript,Descript,general_purpose,high,unspecified
+2020,C00696245,NUMERO.AI SOFTWARE,SAN FRANCISCO,CA,01/14/2020,350,SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,12P,4022420201694192681,numero_ai,Numero (donor database / call time),political_specific,high,fundraising;administrative_productivity
+2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,04/16/2020,3225.8,DIGITAL-ACQUISITION,,,,2020,M5,4081420201828812225,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00717827,"SHELBY, CLAUDE",CHAMPAIGN,IL,09/10/2020,300,FIELD,Administrative/Salary/Overhead Expenses ,,,2020,Q3,4111220201900304234,anthropic,Anthropic (Claude),general_purpose,medium,administrative_productivity
+2020,C00721928,CALLTIME.AI,LOS ANGELES,CA,01/27/2020,780,DATABASE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2020,12P,4030620201702628820,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00721928,CALLTIME.AI,LOS ANGELES,CA,02/25/2020,780,DATABASE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2020,12P,4030620201702628821,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00390476,GRAMMARLY,SAN FRANCISCO,CA,06/09/2020,139.95,OFFICE EXPENSE,,,X,2020,Q3,4112620201961680912,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00703975,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,06/03/2020,300000,DIGITAL ADVERTISING,,,,2020,M7,4072120201792853822,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative
+2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,08/14/2020,8119.44,TEXTING SERVICES,,,,2020,Q3,4112520201960743233,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,07/24/2020,15000,TEXTING SERVICES,,,,2020,Q3,4112520201960742898,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,09/17/2020,175000,TEXTING SERVICES,,,,2020,Q3,4112520201960743084,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,08/14/2020,4000,TEXTING SERVICES,,,,2020,Q3,4112520201960743147,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00728832,CALLTIME.AI,LOS ANGELES,CA,05/13/2020,540,SOFTWARE,,*,X,2020,12P,4061520201774954698,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00721183,CALLTIME.AI,VISALIA,CA,07/02/2020,780,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,Q3,4111220201900308132,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00721183,CALLTIME.AI,VISALIA,CA,08/02/2020,780,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,Q3,4111220201900308133,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00721183,CALLTIME.AI,VISALIA,CA,08/04/2020,139.5,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,Q3,4111220201900308134,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00721183,CALLTIME.AI,VISALIA,CA,09/02/2020,930,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,Q3,4111220201900308135,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,08/18/2020,120,SOFTWARE,,*,X,2020,M10,4022620211189810974,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,09/17/2020,5000,ONLINE FUNDRAISING,,,,2020,M10,4022620211189810773,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2020,C00023838,PROMPT.IO INC.,SEATTLE,WA,10/22/2020,58.56,PRESIDENT BUSH DINNER TEXT INVITE,Administrative/Salary/Overhead Expenses ,,,2020,30G,4120920201967676233,prompt_io,Prompt.io,political_specific,high,administrative_productivity
+2020,C00023838,PROMPT.IO INC.,SEATTLE,WA,10/22/2020,52.36,PRESIDENT BUSH DINNER TEXT INVITE,Administrative/Salary/Overhead Expenses ,,,2020,30G,4120920201967676234,prompt_io,Prompt.io,political_specific,high,administrative_productivity
+2020,C00023838,PROMPT.IO INC.,SEATTLE,WA,10/23/2020,-58.56,VOID FOR ERRONEOUSLY DUPLICATED PAYMENT MADE ON 10/15/2020 FOR $58.56,Administrative/Salary/Overhead Expenses ,,,2020,30G,4120920201967676235,prompt_io,Prompt.io,political_specific,high,administrative_productivity
+2020,C00023838,PROMPT.IO INC.,SEATTLE,WA,10/15/2020,58.56,PRESIDENT BUSH DINNER TEXT INVITE,Administrative/Salary/Overhead Expenses ,,,2020,30G,4120920201967676230,prompt_io,Prompt.io,political_specific,high,administrative_productivity
+2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,05/18/2020,120,SOFTWARE,,*,X,2020,M7,4073020201809400532,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,06/25/2020,5000,DIGITAL-ACQUISITION,,,,2020,M7,4073020201809400461,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00721183,CALLTIME.AI,VISALIA,CA,11/03/2020,930,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,30G,4121120201969305408,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,06/09/2020,14,SOFTWARE,,*,X,2020,M7,4072120201792838128,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00638767,CHATFUEL,SAN FRANCISCO,CA,09/09/2020,15,TEXTING EXPENSE,,,,2020,Q3,4041720211278066639,chatfuel,Chatfuel,general_purpose,high,unspecified
+2020,C00638767,CHATFUEL,SAN FRANCISCO,CA,08/10/2020,15,COMMUNICAITON SOFTWARE EXPENSE,,,,2020,Q3,4041720211278066638,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
+2020,C00638767,CHATFUEL,SAN FRANCISCO,CA,09/09/2020,50,TEXTING EXPENSE,,,,2020,Q3,4041720211278066640,chatfuel,Chatfuel,general_purpose,high,unspecified
+2020,C00638767,CHATFUEL,SAN FRANCISCO,CA,10/09/2020,15,TEXTING EXPENSE,,,,2020,12G,4041820211278105909,chatfuel,Chatfuel,general_purpose,high,unspecified
+2020,C00696153,AMPLIFY.AI,LOS ALTOS,CA,07/01/2020,15000,DIGITAL MARKETING SERVICES,,,,2020,Q3,4120520201965127116,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,07/30/2020,262.6,OFFICE ASSISTANCE LABOR,,,,2020,Q3,4102320201883362475,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,09/01/2020,202,OFFICE ASSISTANCE LABOR,,,,2020,Q3,4102320201883362476,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,07/01/2020,404,OFFICE ASSISTANCE LABOR,,,,2020,Q3,4102320201883362474,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00732826,PROMPT.IO INC,SEATTLE,WA,10/24/2020,911.2,MESSAGING SERVICE,,,,2020,30G,4123120201987382261,prompt_io,Prompt.io,political_specific,high,unspecified
+2020,C00739045,PURCHASE AUTHORIZED ON 05/13 CALL TIME CALLTIME.AI CA S460134606489218 CARD 8755,,CA,05/14/2020,25,MARKETING,,,,2020,TER,4062920201778612119,calltime_ai,CallTime.AI,political_specific,high,unspecified
+2020,C00451336,"WIGGINS, CLAUDE",GRAMERCY,LA,12/22/2020,700,CANVASSER,,,,2020,YE,4042520211279052278,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00701599,CALL TIME AI,VISALIA,CA,02/10/2020,1725,SOFTWARE,,,,2020,Q1,4081920201829335464,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,01/06/2020,400,SOFTWARE,,,,2020,Q1,4081920201829335341,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,03/09/2020,3.36,SOFTWARE,,,,2020,Q1,4081920201829335327,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,03/09/2020,1825,SOFTWARE,,,,2020,Q1,4081920201829335380,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,01/09/2020,1725,SOFTWARE,,,,2020,Q1,4081920201829335384,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/01/2020,1001.75,PAYROLL,,,,2020,Q2,4072020201791779474,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/08/2020,1001.75,PAYROLL,,,,2020,Q2,4072020201791779475,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/15/2020,1001.75,PAYROLL,,,,2020,Q2,4072020201791779476,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/22/2020,1001.75,PAYROLL,,,,2020,Q2,4072020201791779477,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,05/29/2020,2001.75,PAYROLL,,,,2020,Q2,4072020201791779478,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/05/2020,2001.75,PAYROLL,,,,2020,Q2,4072020201791779479,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/26/2020,2001.75,PAYROLL,,,,2020,Q2,4072020201791779482,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/12/2020,2001.75,PAYROLL,,,,2020,Q2,4072020201791779480,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,06/19/2020,2001.75,PAYROLL,,,,2020,Q2,4072020201791779481,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/03/2020,400,TRAINING STIPEND,,,,2020,Q2,4072020201791779468,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/03/2020,1501.75,PAYROLL,,,,2020,Q2,4072020201791779469,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/06/2020,250,TRAINING STIPEND,,,,2020,Q2,4072020201791779470,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/10/2020,751.75,PAYROLL,,,,2020,Q2,4072020201791779471,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/17/2020,1001.75,PAYROLL,,,,2020,Q2,4072020201791779472,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,04/24/2020,1001.75,PAYROLL,,,,2020,Q2,4072020201791779473,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00703975,AMPLIFY.AI,LOS ALTOS,CA,07/23/2020,300000,DIGITAL ADVERTISING,,,,2020,M8,4082620201830365901,amplify_ai,Amplify.ai (TruVerse),political_specific,high,advertising_creative
+2020,C00640623,"NIELSEN, CLAUDE",MOUNTAIN BRK,AL,11/03/2020,696,EVENT BEVERAGES,,* IN-KIND RECEIVED,,2020,30G,4121220201973034666,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/28/2020,2001.75,PAYROLL,,,,2020,Q3,4111720201900679537,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/04/2020,2001.75,PAYROLL,,,,2020,Q3,4111720201900679538,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/11/2020,2001.75,PAYROLL,,,,2020,Q3,4111720201900679539,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/18/2020,2001.75,PAYROLL,,,,2020,Q3,4111720201900679540,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,09/25/2020,2001.75,PAYROLL,,,,2020,Q3,4111720201900679541,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/03/2020,2001.75,PAYROLL,,,,2020,Q3,4111720201900679526,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/10/2020,2001.75,PAYROLL,,,,2020,Q3,4111720201900679527,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/13/2020,2371.47,REIMBURSEMENT (VENDORS THAT AGGREGATE OVER $200 LISTED BELOW),,,,2020,Q3,4111720201900679528,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/17/2020,2001.75,PAYROLL,,,,2020,Q3,4111720201900679530,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/24/2020,2001.75,PAYROLL,,,,2020,Q3,4111720201900679531,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,07/31/2020,2001.75,PAYROLL,,,,2020,Q3,4111720201900679532,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/07/2020,2001.75,PAYROLL,,,,2020,Q3,4111720201900679533,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/14/2020,2001.75,PAYROLL,,,,2020,Q3,4111720201900679534,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/21/2020,2001.75,PAYROLL,,,,2020,Q3,4111720201900679535,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,08/25/2020,13500,PURCHASE OF PAC VEHICLE,,,,2020,Q3,4111720201900679536,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,10/01/2020,200,OFFICE ASSISTANCE LABOR,,,,2020,12G,4111020201893419709,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,11/01/2019,7500,SOFTWARE SUBSCRIPTION,,,,2019,YE,4100620211372393164,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,11/13/2019,7500,SOFTWARE SUBSCRIPTION,,,,2019,YE,4100620211372393165,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00682211,"FOSTER, MARY CLAUDE",SEATTLE,WA,06/24/2019,500,AIRFARE,Travel Expenses,,X,2019,M7,4011320221388528675,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00694455,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,09/23/2019,7500,INFORMATION TECHNOLOGY & INTERNET SERVICES,,,,2019,Q3,4073020211324197691,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00694455,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,10/11/2019,22500,INFORMATION TECHNOLOGY & INTERNET SERVICES,,,,2019,YE,4073020211324205092,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00699249,CALLTIME.AI,LOS ANGELES,CA,04/27/2020,1250,PURCHASE AUTHORIZED ON 04/25 CALL TIME CALLTIME.AI CA S460116735608549 CARD 1161,,,,2020,Q2,4102120201882402166,calltime_ai,CallTime.AI,political_specific,high,unspecified
+2020,C00699249,CALLTIME.AI,LOS ANGELES,CA,05/26/2020,1050,PURCHASE AUTHORIZED ON 05/25 CALL TIME CALLTIME.AI CA S580146735576320 CARD 1161,,,,2020,Q2,4102120201882402167,calltime_ai,CallTime.AI,political_specific,high,unspecified
+2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,11/16/2020,45,SOFTWARE,,*,X,2020,30G,4010620212033561129,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,10/20/2020,45,SOFTWARE,,*,X,2020,30G,4010620212033560970,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,08/20/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,M9,4121820201977477686,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,07/18/2020,120,SOFTWARE,,*,X,2020,M9,4121820201977477800,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,06/18/2020,120,SOFTWARE,,*,X,2020,M9,4121820201977476125,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,09/10/2020,175,DUES AND SUBSCRIPTIONS,,,X,2020,M10,4111920201958200916,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00038505,PROMPT.IO,SEATTLE,WA,09/14/2020,10000,SUBSCRIPTION FEE FOR FUNDRAISING/VOLUNTEER RECRUITMENT TEXTS,,,,2020,M10,4091820211371090287,prompt_io,Prompt.io,political_specific,high,fundraising;administrative_productivity
+2020,C00667279,CALL TIME    CALLTIME.AI CA,,,08/04/2020,740,CALL TIME    CALLTIME.AI CA,Solicitation and Fundraising Expenses ,CALL TIME    CALLTIME.AI CA,,2020,Q3,4111020201893430523,calltime_ai,CallTime.AI,political_specific,high,fundraising
+2020,C00667279,CALL TIME    CALLTIME.AI CA,,,07/06/2020,740,CALL TIME    CALLTIME.AI CA,Solicitation and Fundraising Expenses ,CALL TIME    CALLTIME.AI CA,,2020,Q3,4111020201893430509,calltime_ai,CallTime.AI,political_specific,high,fundraising
+2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,08/14/2020,54,SOFTWARE,,*,X,2020,Q3,4111020201893429774,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,09/21/2020,54,SOFTWARE,,*,X,2020,Q3,4111020201893429895,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00492140,DESCRIPT,SAN FRANCISCO,CA,07/21/2020,54,SOFTWARE,,*,X,2020,Q3,4111020201893429635,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00721183,CALLTIME.AI,VISALIA,CA,10/02/2020,930,FUNDRAISING/CALL TIME SOFTWARE,Solicitation and Fundraising Expenses ,,,2020,12G,4110720201892250449,calltime_ai,CallTime.AI,political_specific,high,fundraising;administrative_productivity
+2020,C00693234,DESCRIPT INC.,SAN FRANCISCO,CA,03/30/2020,216,SOFTWARE,,*,X,2020,M4,4102920201889416512,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00042366,GRAMMARLY,SAN FRANCISCO,CA,06/01/2020,139.95,PRINTING,,MEMO ENTRY,X,2020,M8,4102620201887060695,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00739045,CALL TIME AI,,CA,03/13/2020,725,PHONE BANKING,,,,2020,Q1,4041020201735498112,calltime_ai,CallTime.AI,political_specific,high,unspecified
+2020,C00000935,OTTER.AI,PALO ALTO,CA,06/01/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,M7,4040120211271368588,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00000935,OTTER.AI,LOS ALTOS,CA,06/01/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,M7,4040120211271368554,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00000935,OTTER.AI,LOS ALTOS,CA,07/01/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,M8,4040120211271373106,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00000935,OTTER.AI,LOS ALTOS,CA,06/30/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,M8,4040120211271373129,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00000935,OTTER.AI,LOS ALTOS,CA,07/31/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,M9,4040120211271379016,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00000935,OTTER.AI,LOS ALTOS,CA,07/30/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,M9,4040120211271379051,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00000935,OTTER.AI,LOS ALTOS,CA,08/31/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,M10,4040620211275770541,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00701284,CALLTIME AI,LOS ANGELES,CA,10/05/2020,3105,SOFTWARE SUBSCRIPTION,,,,2020,12G,4111020201894186942,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00000935,OTTER.AI,LOS ALTOS,CA,08/31/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,M10,4040620211275770499,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00000935,OTTER.AI,LOS ALTOS,CA,10/01/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,30G,4040120211271383840,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00000935,OTTER.AI,LOS ALTOS,CA,09/30/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,30G,4040120211271383868,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00000935,OTTER.AI,LOS ALTOS,CA,11/02/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,30G,4040120211271386954,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00000935,OTTER.AI,PALO ALTO,CA,10/30/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,30G,4040120211271386982,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00000935,OTTER.AI,PALO ALTO,CA,11/30/2020,420,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,YE,4040120211271395441,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00000935,OTTER.AI,LOS ALTOS,CA,12/01/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,YE,4040120211271395417,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,10/18/2020,120,SOFTWARE,,*,X,2020,30G,4040620211275779194,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,WWW.GRAMMARLY.COM,SAN FRANCISCO,CA,09/18/2020,120,SOFTWARE,,*,X,2020,30G,4040620211275778728,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,10/22/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,30G,4040620211275782679,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,11/02/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,30G,4040620211275782680,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,11/19/2020,15000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,30G,4040620211275782681,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2020,C00000935,OTTER.AI,LOS ALTOS,CA,05/01/2020,4.99,GENERIC CMTE. SUBSCRIPTIONS,,MEMO ENTRY,X,2020,M6,4032620211268917286,otter_ai,Otter.ai,general_purpose,high,unspecified
+2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,10/16/2020,59064,TEXTING SERVICES,,,,2020,30G,4042820211280322241,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,11/02/2020,246000,TEXTING SERVICES,,,,2020,30G,4042820211280322352,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00401224,GRAMMARLY,SAN FRANCISCO,CA,01/17/2020,83.97,PENALOZA 01/31: TRAINING COURSE FEE,Administrative/Salary/Overhead Expenses ,,X,2020,M2,4032420201705120646,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,05/29/2020,5000,DIGITAL-ACQUISITION,,,,2020,M6,4062420201777310827,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00741611,TRUVERSE INC,LOS ALTOS,CA,08/17/2020,15000,CAMPAIGN SOFTWARE,,,,2020,Q3,4061120211307170693,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00099267,CHATFUEL,SAN FRANCISCO,CA,06/09/2020,15,ONLINE BOT SUBSCRIPTION,,,X,2020,M7,4040720211276557646,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
+2020,C00741611,TRUVERSE INC,LOS ALTOS,CA,11/03/2020,5000,CAMPAIGN SOFTWARE,,,,2020,30G,4061120211307173116,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00099267,CHATFUEL,SAN FRANCISCO,CA,12/31/2020,20,CHATBOX SERVICE,,,X,2020,YE,4050920211292753433,chatfuel,Chatfuel,general_purpose,high,unspecified
+2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,05/11/2020,14,VIDEO PRODUCTION,,*,X,2020,M6,4062320201776762624,descript,Descript,general_purpose,high,advertising_creative
+2020,C00701284,CALLTIME AI,LOS ANGELES,CA,06/03/2020,1050,SOFTWARE SUBSCRIPTION,,,,2020,Q2,4072220201794123641,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701284,CALLTIME AI,LOS ANGELES,CA,04/02/2020,1050,SOFTWARE SUBSCRIPTION,,,,2020,Q2,4072220201794123581,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701284,CALLTIME AI,LOS ANGELES,CA,06/16/2020,135.58,SOFTWARE SUBSCRIPTION,,,,2020,Q2,4072220201794123586,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701284,CALLTIME AI,LOS ANGELES,CA,05/04/2020,1050,SOFTWARE SUBSCRIPTION,,,,2020,Q2,4072220201794123550,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00718866,"TRUVERSE, INC.",LOS ALTOS,CA,12/15/2020,7500,SOFTWARE SUBSCRIPTION,,,,2020,12R,4061120211307158868,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00693234,DESCRIPT INC.,SAN FRANCISCO,CA,02/06/2020,18,SOFTWARE,,*,X,2020,M3,4032620201715904086,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00693234,DESCRIPT INC.,SAN FRANCISCO,CA,02/06/2020,18,SOFTWARE,,*,X,2020,M3,4032620201715904087,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00693234,DESCRIPT INC.,SAN FRANCISCO,CA,02/06/2020,180,SOFTWARE,,*,X,2020,M3,4032620201715904088,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00693234,DESCRIPT INC.,SAN FRANCISCO,CA,02/21/2020,18,SOFTWARE,,*,X,2020,M3,4032620201715906830,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00693234,DESCRIPT INC.,SAN FRANCISCO,CA,02/21/2020,216,SOFTWARE,,*,X,2020,M3,4032620201715906831,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00667741,"CLAUDE, RONALD",DEDHAM,MA,01/22/2020,500,TRANSLATION SERVICES,,,,2020,Q1,4050820201742207426,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,03/10/2020,434.6,OFFICE ASSISTANCE LABOR,,,,2020,Q1,4041420201736299081,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,03/24/2020,161.6,OFFICE ASSISTANCE LABOR,,,,2020,Q1,4041420201736299082,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00715664,CALL TIME AI,LOS ANGELES,CA,02/13/2020,25,CALL TIME SOFTWARD,Administrative/Salary/Overhead Expenses ,,,2020,Q1,4043020201741228351,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00715664,CALL TIME AI,LOS ANGELES,CA,01/13/2020,25,CALL TIME SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2020,Q1,4043020201741228350,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00715664,CALL TIME AI,LOS ANGELES,CA,03/13/2020,25,CALL TIME SOFTWARE,Administrative/Salary/Overhead Expenses ,,,2020,Q1,4043020201741228352,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,02/18/2020,7500,SOFTWARE SUBSCRIPTION,,,,2020,M3,4032720201718009616,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00711614,CAFE CLAUDE RESTAURANT,SAN FRANCISCO,CA,02/14/2020,551.04,CATERING,,*,X,2020,M3,4032720201718012751,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,03/27/2020,7500,SOFTWARE SUBSCRIPTION,,,,2020,M4,4042120201737650189,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,03/09/2020,309,OFFICE SUPPLIES,,*,X,2020,M4,4042320201738421865,descript,Descript,general_purpose,high,unspecified
+2020,C00728832,CALLTIME.AI,LOS ANGELES,CA,06/19/2020,690,SOFTWARE,,*,X,2020,Q2,4080620201813189595,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00728832,CALLTIME.AI,LOS ANGELES,CA,06/19/2020,65.78,SOFTWARE,,*,X,2020,Q2,4080620201813189596,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00711549,"TRUVERSE, INC.",LOS ALTOS,CA,11/17/2020,5000,SUBSCRIPTION,,,,2020,30G,4091720211371025897,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00694455,"TRUVERSE, INC. DBA AMPLIFY.AI",LOS ALTOS,CA,05/13/2020,10086,INFORMATION TECHNOLOGY & INTERNET SERVICES,,,,2020,Q2,4072920211323314780,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00038505,GRAMMARLY,SAN FRANCISCO,CA,12/10/2020,29.95,COMPUTER SOFTWARE,,,,2020,YE,4091920211371112200,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00370007,GRAMMARLY,SAN FRANCISCO,CA,01/30/2020,83.97,INTERNET SERVICE/USAGE,,*,X,2020,M4,4042020201737508980,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00038505,PROMPT.IO,SEATTLE,WA,07/07/2020,10000,SUBSCRIPTION FEE FOR FUNDRAISING/STATE CONVENTION TEXTS,,,,2020,M8,4092520211372029439,prompt_io,Prompt.io,political_specific,high,fundraising;administrative_productivity
+2020,C00696153,AMPLIFY.AI,LOS ALTOS,CA,10/14/2020,28500,DIGITAL MARKETING SERVICES,,,,2020,12G,4050820211288126972,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00731380,CALLTIME.AI,VISAILA,CA,02/06/2020,375,CALLTIME SERVICE SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2020,Q1,4091220201835376072,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00731380,CALLTIME.AI,VISAILA,CA,03/06/2020,525,CALLTIME SUBSCRIPTION EXPENSE,Administrative/Salary/Overhead Expenses ,,,2020,Q1,4091220201835376073,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,07/27/2020,14,SOFTWARE,,*,X,2020,M8,4082220201829666299,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00696948,DESCRIPT,SAN FRANCISCO,CA,07/06/2020,14,SUBSCRIPTION,,*,X,2020,M8,4082220201829666230,descript,Descript,general_purpose,high,administrative_productivity
+2020,C00711549,"TRUVERSE, INC.",LOS ALTOS,CA,09/22/2020,12500,SUBSCRIPTION,,,,2020,Q3,4070720211320301042,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00191247,GRAMMARLY,SAN FRANCISCO,CA,03/30/2020,75,SUBSCRIPTION,,,X,2020,M4,4090320201834516216,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,07/23/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,M8,4090220201834357459,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2020,C00010603,TRUVERSE INC,LOS ALTOS,CA,12/30/2020,5000,ONLINE FUNDRAISING-ACQUISITION,,,,2020,YE,4020320212018082033,amplify_ai,Amplify.ai (TruVerse),political_specific,high,fundraising
+2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,12/03/2020,175,DUES AND SUBSCRIPTIONS,,,X,2020,YE,4063020211312977908,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,08/10/2020,174.99,DUES AND SUBSCRIPTIONS,,,X,2020,M9,4101620201858324569,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00744946,GEMINI G.E.L. LLC,LOS ANGELES,CA,10/01/2020,50000,ARTWORK,,* IN-KIND RECEIVED,,2020,12G,4030920211239283801,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2020,C00744946,GEMINI G.E.L. LLC,LOS ANGELES,CA,10/01/2020,18000,ARTWORK,,* IN-KIND RECEIVED,,2020,12G,4030920211239283736,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2020,C00744946,GEMINI G.E.L. LLC,LOS ANGELES,CA,10/01/2020,7500,ARTWORK,,* IN-KIND RECEIVED,,2020,12G,4030920211239283774,google_ai,Google (Gemini / Vertex AI),general_purpose,medium,unspecified
+2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,02/12/2020,750,SOFTWARE,,*,X,2020,Q1,4042220201737827285,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00573949,CALLTIME.AI,LOS ANGELES,CA,03/17/2020,750,CAMPAIGN SOFTWARE,,*,X,2020,Q1,4042220201737827290,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00632059,CALLTIME.AI,VISALIA,CA,01/13/2020,980,SOFTWARE,,,,2020,Q1,4050520201741829957,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00632059,CALLTIME.AI,VISALIA,CA,03/13/2020,980,SOFTWARE,,,,2020,Q1,4050520201741829958,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00632059,CALLTIME.AI,VISALIA,CA,03/18/2020,950,SOFTWARE,,*,X,2020,Q1,4050520201741830019,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00632059,CALLTIME.AI,VISALIA,CA,03/18/2020,950,SOFTWARE,,*,X,2020,Q1,4050520201741830020,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/28/2020,1501.75,PAYROLL,,,,2020,Q1,4041720201737297266,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/06/2020,751.75,PAYROLL,,,,2020,Q1,4041720201737297267,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/13/2020,751.75,PAYROLL,,,,2020,Q1,4041720201737297268,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/24/2020,250,PAYROLL,,,,2020,Q1,4041720201737297269,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/26/2020,1000,PAYROLL,,,,2020,Q1,4041720201737297270,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,03/31/2020,1500,PAYROLL,,,,2020,Q1,4041720201737297271,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/06/2020,1450,PAYROLL,,,,2020,Q1,4041720201737297256,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/10/2020,751.86,PAYROLL,,,,2020,Q1,4041720201737297257,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/17/2020,1451.86,PAYROLL,,,,2020,Q1,4041720201737297258,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/24/2020,751.86,PAYROLL,,,,2020,Q1,4041720201737297259,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,01/31/2020,751.86,PAYROLL,,,,2020,Q1,4041720201737297260,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/06/2020,750,PAYROLL,,,,2020,Q1,4041720201737297261,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/07/2020,751.75,PAYROLL,,,,2020,Q1,4041720201737297262,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/10/2020,103.5,REIMBURSEMENT (VENDORS THAT AGGREGATE OVER $200 LISTED BELOW),,,,2020,Q1,4041720201737297263,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/14/2020,751.75,PAYROLL,,,,2020,Q1,4041720201737297264,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,02/21/2020,1501.75,PAYROLL,,,,2020,Q1,4041720201737297265,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00721019,CALLTIME AI,LOS ANGELES,CA,01/09/2020,1400,SOFTWARE SUBSCRIPTION,,,,2020,Q1,4050520201741828000,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00721019,CALLTIME AI,LOS ANGELES,CA,03/09/2020,1400,SOFTWARE SUBSCRIPTION,,,,2020,Q1,4050520201741828008,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00721019,CALLTIME AI,LOS ANGELES,CA,02/10/2020,1400,SOFTWARE SUBSCRIPTION,,,,2020,Q1,4050520201741827987,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00496075,GRAMMARLY INC.,SAN FRANCISCO,CA,03/09/2020,139.95,SOFTWARE,,,X,2020,Q1,4050720201742098617,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00099267,CHATFUEL,SAN FRANCISCO,CA,11/23/2020,20,CHATBOT PLATFORM SUBSCRIPTION,,,X,2020,30G,4052720211297508381,chatfuel,Chatfuel,general_purpose,high,administrative_productivity
+2020,C00003418,GRAMMARLY,SAN FRANCISCO,CA,11/10/2020,175,DUES AND SUBSCRIPTIONS,,,X,2020,30G,4063020211312960394,grammarly,Grammarly,general_purpose,high,unspecified
+2020,C00711549,"TRUVERSE, INC.",LOS ALTOS,CA,06/30/2020,15000,SUBSCRIPTION,,,,2020,Q2,4010920212066319948,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00401224,GRAMMARLY,SAN FRANCISCO,CA,09/21/2020,600,AMEX 09/30: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2020,M10,4012120212115705273,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00491357,EYESOVER TECHNOLOGIES,NEW BRUNSWICK,,05/30/2020,5000,SUBSCRIPTION,,,,2020,Q2,4120920221633949493,eyesover,EyesOver,political_specific,high,administrative_productivity
+2020,C00718270,CALLTIME AI,VISALIA,CA,02/27/2020,1250,FUNDRAISING,,,,2020,Q1,4121820211386186185,calltime_ai,CallTime.AI,political_specific,high,fundraising
+2020,C00718270,CALLTIME AI,VISALIA,CA,03/27/2020,1250,FUNDRAISING,,,,2020,Q1,4121820211386186186,calltime_ai,CallTime.AI,political_specific,high,fundraising
+2020,C00718270,CALLTIME AI,VISALIA,CA,04/27/2020,1250,,,,,2020,Q2,4121820211386186111,calltime_ai,CallTime.AI,political_specific,high,unspecified
+2020,C00718270,CALLTIME AI,VISALIA,CA,06/29/2020,1250,,,,,2020,Q2,4121820211386186112,calltime_ai,CallTime.AI,political_specific,high,unspecified
+2020,C00718270,CALLTIME AI,VISALIA,CA,07/27/2020,1250,CALL PROGRAM,,,,2020,Q3,4121820211386186053,calltime_ai,CallTime.AI,political_specific,high,unspecified
+2020,C00718270,CALLTIME AI,VISALIA,CA,08/27/2020,1250,CAMPAIGN CALL PROGRAM,,,,2020,Q3,4121820211386186054,calltime_ai,CallTime.AI,political_specific,high,unspecified
+2020,C00718270,CALLTIME AI,VISALIA,CA,09/16/2020,173.68,CAMPAIGN CALL PROGRAM,,,,2020,Q3,4121820211386186055,calltime_ai,CallTime.AI,political_specific,high,unspecified
+2020,C00718270,CALLTIME AI,VISALIA,CA,09/28/2020,1725,CAMPAIGN CALL PROGRAM,,,,2020,Q3,4121820211386186056,calltime_ai,CallTime.AI,political_specific,high,unspecified
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,03/11/2020,75,OFFICE SUBSCRIPTIONS,Administrative/Salary/Overhead Expenses ,,,2020,M4,4021520221407903017,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,12/07/2020,125,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,YE,4021820221409131520,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,07/07/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,M8,4021520221407903205,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,04/07/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,M5,4021820221409131228,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,05/07/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,M6,4021820221409131278,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,06/08/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,M7,4021520221407903116,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,09/02/2020,3.9,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,M10,4021520221407903678,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,09/08/2020,100,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,M10,4021520221407903679,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,08/07/2020,75,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,M9,4021520221407903414,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,10/07/2020,.04,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,12G,4021820221409131381,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,10/07/2020,125,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,12G,4021820221409131382,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00709691,GRAMMARLY,SAN FRANCISCO,CA,11/09/2020,125,OFFICE SUPPLIES,Administrative/Salary/Overhead Expenses ,,,2020,30G,4021520221407904024,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00668137,"BROWN, CLAUDE",HIGHLAND PARK,MI,08/03/2020,50,CANVASSING,,,,2020,Q3,4092320221576788601,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00668137,"BROWN, CLAUDE",HIGHLAND PARK,MI,08/01/2020,50,CANVASSING,,,,2020,Q3,4092320221576788630,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00668137,"BROWN, CLAUDE",HIGHLAND PARK,MI,08/04/2020,120,CANVASSING,,,,2020,Q3,4092320221576788570,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00695346,"ROBINSON, DALE",LOS ANGELES,CA,10/13/2020,36000,"REIMBURSEMENT FOR SENDGRID, SPEECHIFAI AND TWILIO",Administrative/Salary/Overhead Expenses ,,,2020,12G,4052020241949758177,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
+2020,C00695346,SPEECHIFAI,BROOKLYN,NY,10/13/2020,853.47,,Advertising Expenses ,,X,2020,12G,4052020241949758180,sosha,SoSha (Speechifai),political_specific,high,advertising_creative
+2020,C00695346,SPEECHIFAI,BROOKLYN,NY,08/20/2020,507,BLIZZARD SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2020,Q3,4060320241952946224,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
+2020,C00695346,SPEECHIFAI,BROOKLYN,NY,08/24/2020,252,SUBSCRIPTION,Administrative/Salary/Overhead Expenses ,,,2020,Q3,4060320241952946226,sosha,SoSha (Speechifai),political_specific,high,administrative_productivity
+2020,C00711614,CAFE CLAUDE RESTAURANT,SAN FRANCISCO,CA,01/22/2020,133.72,MEALS,,*,X,2020,M2,4100620211372389830,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,01/06/2020,7500,SOFTWARE SUBSCRIPTION,,,,2020,M2,4100620211372388751,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00711614,AMPLIFY.AI,LOS ALTOS,CA,01/21/2020,7500,SOFTWARE SUBSCRIPTION,,,,2020,M2,4100620211372388752,amplify_ai,Amplify.ai (TruVerse),political_specific,high,administrative_productivity
+2020,C00718270,CALLTIME AI,VISALIA,CA,11/27/2020,1725,FUNDRAISING,,,,2020,YE,4122220211386484038,calltime_ai,CallTime.AI,political_specific,high,fundraising
+2020,C00718270,CALLTIME AI,VISALIA,CA,10/27/2020,1725,FUNDRAISING,,,,2020,30G,4122120211386315048,calltime_ai,CallTime.AI,political_specific,high,fundraising
+2020,C00578302,CALLTIME.AI,LOS ANGELES,CA,10/17/2020,450,CALL TIME,Solicitation and Fundraising Expenses ,SUB-VENDOR ITEMIZATION OF  CHASE CARDMEMBER SERVICE,X,2020,YE,4011520212093713537,calltime_ai,CallTime.AI,political_specific,high,fundraising
+2020,C00701599,CALL TIME AI,VISALIA,CA,08/11/2020,3000,SOFTWARE,,,,2020,Q3,4020520211120652850,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00701599,CALL TIME AI,VISALIA,CA,08/10/2020,3000,SOFTWARE,,,,2020,Q3,4020520211120653000,calltime_ai,CallTime.AI,political_specific,high,administrative_productivity
+2020,C00401190,CLAUDE BROWN,WILSON,NC,12/02/2020,200,OFFICE ASSISTANCE LABOR,,,,2020,YE,4011920212093821791,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,12/14/2020,1000,OFFICE ASSISTANCE LABOR,,,,2020,YE,4011920212093821792,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00401190,CLAUDE BROWN,WILSON,NC,12/01/2020,272.7,OFFICE ASSISTANCE LABOR,,,,2020,YE,4011920212093821790,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00603084,OTTER.AI,LOS ALTOS,CA,12/08/2020,240,SOFTWARE,,*,X,2020,YE,4020220212140270621,otter_ai,Otter.ai,general_purpose,high,administrative_productivity
+2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,12/02/2020,29.95,WEB SERVICE/SUBSCRIPTION,,,,2020,YE,4020220212140269147,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00706267,GRAMMARLY,SAN FRANCISCO,CA,12/31/2020,29.95,WEB SERVICE/SUBSCRIPTION,,,,2020,YE,4020220212140269181,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00696526,AMPLIFY.AI,LOS ALTOS,CA,12/17/2020,195800,TEXTING SERVICES,,,,2020,YE,4020920211122803986,amplify_ai,Amplify.ai (TruVerse),political_specific,high,unspecified
+2020,C00031088,PROMPT.IO INC.,SEATTLE,WA,10/30/2020,12000,PAYMENT FOR FUTURE TEXT MESSAGES: SEE MEMO TEXT,,,,2020,30G,4021320211141100923,prompt_io,Prompt.io,political_specific,high,communications_copy
+2020,C00401224,GRAMMARLY,SAN FRANCISCO,CA,12/28/2020,139.95,AMEX 12/31: SOFTWARE,Administrative/Salary/Overhead Expenses ,,X,2020,YE,4031120211242897306,grammarly,Grammarly,general_purpose,high,administrative_productivity
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/02/2020,1001.75,PAYROLL,,,,2020,12G,4031820211261735713,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/13/2020,1001.75,PAYROLL,,,,2020,12G,4031820211261735714,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/16/2020,1001.75,PAYROLL,,,,2020,30G,4031820211261735975,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/23/2020,1001.75,PAYROLL,,,,2020,30G,4031820211261735976,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,10/23/2020,1001.75,PAYROLL,,,,2020,30G,4031820211261735977,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/06/2020,1001.75,PAYROLL,,,,2020,30G,4031820211261735978,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/13/2020,2501.75,PAYROLL,,,,2020,30G,4031820211261735979,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/17/2020,500,TRAINING STIPEND,,,,2020,30G,4031820211261735980,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/20/2020,1001.75,PAYROLL,,,,2020,30G,4031820211261735981,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/18/2020,1001.75,PAYROLL,,,,2020,YE,4031820211261735647,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/24/2020,1001.75,PAYROLL,,,,2020,YE,4031820211261735648,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/31/2020,1001.75,PAYROLL,,,,2020,YE,4031820211261735649,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,11/27/2020,1001.75,PAYROLL,,,,2020,YE,4031820211261735642,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/04/2020,1001.75,PAYROLL,,,,2020,YE,4031820211261735643,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/08/2020,500,PAYROLL,,,,2020,YE,4031820211261735644,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/08/2020,1001.75,PAYROLL,,,,2020,YE,4031820211261735645,anthropic,Anthropic (Claude),general_purpose,medium,unspecified
+2020,C00663211,"TAYLOR, CLAUDE",SILVER SPRING,MD,12/11/2020,1001.75,PAYROLL,,,,2020,YE,4031820211261735646,anthropic,Anthropic (Claude),general_purpose,medium,unspecified

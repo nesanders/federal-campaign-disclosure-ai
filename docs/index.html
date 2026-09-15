@@ -183,6 +183,15 @@
         <div class="table-holder" data-panel="trend-chamber" hidden></div>
       </div>
     </div>
+    <div class="card-grid single">
+      <div class="card">
+        <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="trend-weekly">View as table</button></div>
+        <h3>Weekly disclosure timeline</h3>
+        <p class="note">Every matched disbursement, all confidence tiers and eras, binned by week: when the expenditure itself happened vs. when the disclosing report was filed (for report types tied to a fixed calendar -- quarterly, monthly, mid-year, year-end, pre/post-general -- an approximate deadline; for primary/special-election and other state-specific report types, no per-record filed date exists in this bulk source, so the expenditure's own date is used as a fallback -- see <a href="#methodology">methodology</a>).</p>
+        <div class="chart-holder tall" data-panel="trend-weekly"><canvas id="chart-trend-weekly"></canvas></div>
+        <div class="table-holder" data-panel="trend-weekly" hidden></div>
+      </div>
+    </div>
   </section>
 
   <section id="top-committees" class="block">

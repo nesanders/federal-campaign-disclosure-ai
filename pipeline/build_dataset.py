@@ -25,7 +25,7 @@ import csv
 import json
 import sys
 from collections import defaultdict
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 import pandas as pd
@@ -40,6 +40,7 @@ from lib.reference_data import (  # noqa: E402
     load_legislator_birthdates,
 )
 from lib.vendor_match import Taxonomy  # noqa: E402
+from lib.fec_report_dates import approximate_report_date, parse_mmddyyyy  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PROCESSED_DIR = ROOT / "data" / "processed"
@@ -50,6 +51,7 @@ ICI_LABEL = {"I": "Incumbent", "C": "Challenger", "O": "Open seat"}
 CURRENT_CYCLE = 2026
 TOP_N_VENDOR_CANDIDATES = 30
 TOP_N_VENDOR_COMMITTEES = 20
+MAX_DETAIL_RECORDS = 300
 
 
 def load_committee_totals(cycle: int) -> dict[str, float]:
@@ -76,6 +78,55 @@ def high_ids(vendor_ids: str, confidences: str) -> list[str]:
 
 def high_ids_ex_legacy(high_vendor_ids: list[str], era_by_id: dict) -> list[str]:
     return [v for v in high_vendor_ids if era_by_id.get(v, "generative") != "legacy"]
+
+
+def _week_start(d: date) -> str:
+    return (d - timedelta(days=d.weekday())).isoformat()
+
+
+def build_weekly_histogram(df: pd.DataFrame) -> dict:
+    """Two independent weekly counts, over every matched disbursement row
+    (all confidence tiers, all eras -- the same scope as the "AI-related
+    disbursement records found" headline stat): when the expenditure
+    itself happened (TRANSACTION_DT) vs. an approximate date for the
+    report that disclosed it. "Report" here is one committee's one
+    report (deduplicated by committee + RPT_YR + RPT_TP, the same way the
+    Massachusetts side dedupes by its own report_id) rather than one row
+    per disbursement, since a single report can itemize many AI-vendor
+    line items and counting each would just reshape the expenditure
+    histogram rather than show anything about filing cadence. See
+    lib/fec_report_dates.py for what the report date actually is: a real
+    calendar-rule deadline for quarterly/monthly/year-end/mid-year and
+    pre/post-general reports, falling back to the transaction's own date
+    for report types tied to a state's own primary/special-election
+    calendar, which this pipeline does not have."""
+    expenditure_weeks: dict[str, dict] = defaultdict(lambda: {"count": 0, "amount": 0.0})
+    report_weeks: dict[str, int] = defaultdict(int)
+    reports_seen: set[tuple] = set()
+
+    for row in df.itertuples(index=False):
+        txn_date = parse_mmddyyyy(getattr(row, "transaction_dt", None))
+        if txn_date:
+            wk = _week_start(txn_date)
+            expenditure_weeks[wk]["count"] += 1
+            expenditure_weeks[wk]["amount"] += float(getattr(row, "transaction_amt", 0) or 0)
+
+        report_key = (getattr(row, "cmte_id", None), getattr(row, "rpt_yr", None), getattr(row, "rpt_tp", None))
+        if report_key not in reports_seen:
+            reports_seen.add(report_key)
+            report_date = approximate_report_date(
+                getattr(row, "rpt_tp", None), getattr(row, "rpt_yr", None), getattr(row, "transaction_dt", None)
+            )
+            if report_date:
+                report_weeks[_week_start(report_date)] += 1
+
+    return {
+        "expenditures": [
+            {"week": wk, "count": v["count"], "amount": round(v["amount"], 2)}
+            for wk, v in sorted(expenditure_weeks.items())
+        ],
+        "reports_filed": [{"week": wk, "count": n} for wk, n in sorted(report_weeks.items())],
+    }
 
 
 def parse_cycle(cycle: int, session: requests.Session, birthdates: dict[str, str]) -> pd.DataFrame:
@@ -194,6 +245,11 @@ def explode_vendors(df: pd.DataFrame, era_by_id: dict) -> pd.DataFrame:
                     "age": rec.age,
                     "cmte_id": rec.cmte_id,
                     "cmte_name": rec.cmte_name,
+                    "payee_name": rec.name,
+                    "transaction_dt": rec.transaction_dt,
+                    "purpose": rec.purpose,
+                    "category_desc": rec.category_desc,
+                    "memo_text": rec.memo_text,
                     "transaction_amt": rec.transaction_amt,
                     "sub_id": rec.sub_id,
                     "use_categories": rec.use_categories,
@@ -215,6 +271,67 @@ def agg_amount_count(df: pd.DataFrame, by: list[str]) -> list[dict]:
     g["distinct_candidates"] = df[df["cand_id"] != ""].groupby(by, dropna=False)["cand_id"].nunique()
     g["distinct_candidates"] = g["distinct_candidates"].fillna(0).astype(int)
     return g.reset_index().to_dict(orient="records")
+
+
+def party_split(df_slice: pd.DataFrame) -> dict:
+    """Democratic-vs-Republican amount/count for one vendor or one slice of
+    disbursements, restricted by the caller to House/Senate candidate
+    committees (the only rows with a reliable party attribution -- see
+    the party/incumbency/chamber breakdown elsewhere in this file).
+
+    `ratio` is dem_amount / rep_amount, computed only when BOTH sides have
+    at least one dollar -- a one-sided split (e.g. every dollar Democratic)
+    would produce infinity or zero, neither of which is meaningful as a
+    ratio or safely JSON-serializable; the frontend reads dem_amount/
+    rep_amount directly to render "All D"/"All R" in that case.
+    """
+    dem = df_slice[df_slice["cand_party"] == "Democratic"]
+    rep = df_slice[df_slice["cand_party"] == "Republican"]
+    dem_amount = float(dem["transaction_amt"].sum())
+    rep_amount = float(rep["transaction_amt"].sum())
+    ratio = round(dem_amount / rep_amount, 3) if dem_amount > 0 and rep_amount > 0 else None
+    return {
+        "dem_amount": round(dem_amount, 2),
+        "rep_amount": round(rep_amount, 2),
+        "dem_count": int(dem["sub_id"].nunique()),
+        "rep_count": int(rep["sub_id"].nunique()),
+        "dem_rep_ratio": ratio,
+    }
+
+
+def stated_purpose(rec) -> str:
+    """The most specific stated-purpose text FEC has for a disbursement:
+    PURPOSE first (the field campaigns fill in for this specific line
+    item), falling back to CATEGORY_DESC or MEMO_TEXT when PURPOSE itself
+    is blank, which happens often enough (a bare category code with no
+    free-text purpose) to be worth not just showing an empty cell."""
+    for value in (rec.purpose, rec.category_desc, rec.memo_text):
+        if value:
+            return value
+    return ""
+
+
+def expenditure_records(df_slice: pd.DataFrame, extra_fields: list[str], limit: int) -> list[dict]:
+    """Individual disbursement rows for a vendor or candidate detail page --
+    the actual stated purpose FEC has on file for each specific payment,
+    not just an aggregate. `extra_fields` names additional exploded-frame
+    columns to carry through (e.g. candidate name for a vendor page,
+    vendor name for a candidate page). Capped at `limit`, largest amounts
+    first, since a heavily-matched vendor can have hundreds of rows."""
+    rows = []
+    for rec in df_slice.itertuples(index=False):
+        row = {
+            "date": rec.transaction_dt,
+            "cycle": int(rec.cycle),
+            "payee": rec.payee_name,
+            "amount": round(float(rec.transaction_amt), 2),
+            "purpose": stated_purpose(rec),
+        }
+        for field in extra_fields:
+            row[field] = getattr(rec, field, "")
+        rows.append(row)
+    rows.sort(key=lambda r: -r["amount"])
+    return rows[:limit]
 
 
 def rename_key(rows: list[dict], old: str, new: str) -> list[dict]:
@@ -268,6 +385,7 @@ def main() -> None:
     if not per_cycle:
         raise SystemExit("no cycles available -- run fetch + parse steps first")
     df = pd.concat(per_cycle, ignore_index=True)
+    weekly_histogram = build_weekly_histogram(df)
     universe = pd.concat(universe_per_cycle, ignore_index=True)
     universe_by_cand = universe.groupby("cand_id", as_index=False).agg(
         {"cand_party": "first", "office": "first", "ici": "first", "age_bucket": "first",
@@ -304,20 +422,20 @@ def main() -> None:
     for (vid, vname, vgroup), sub in exploded.groupby(["vendor_id", "vendor_name", "vendor_group"]):
         hi = sub[sub["confidence"] == "high"]
         med = sub[sub["confidence"] == "medium"]
-        vendor_rows.append(
-            {
-                "id": vid,
-                "name": vname,
-                "group": vgroup,
-                "era": era_by_id.get(vid, "generative"),
-                "homepage": homepage_by_id.get(vid),
-                "amount_high": round(float(hi["transaction_amt"].sum()), 2),
-                "count_high": int(hi["sub_id"].nunique()),
-                "distinct_committees_high": int(hi["cmte_id"].nunique()),
-                "amount_medium": round(float(med["transaction_amt"].sum()), 2),
-                "count_medium": int(med["sub_id"].nunique()),
-            }
-        )
+        row = {
+            "id": vid,
+            "name": vname,
+            "group": vgroup,
+            "era": era_by_id.get(vid, "generative"),
+            "homepage": homepage_by_id.get(vid),
+            "amount_high": round(float(hi["transaction_amt"].sum()), 2),
+            "count_high": int(hi["sub_id"].nunique()),
+            "distinct_committees_high": int(hi["cmte_id"].nunique()),
+            "amount_medium": round(float(med["transaction_amt"].sum()), 2),
+            "count_medium": int(med["sub_id"].nunique()),
+        }
+        row.update(party_split(hi[hi["office"].isin(["House", "Senate"])]))
+        vendor_rows.append(row)
     vendor_rows.sort(key=lambda r: r["amount_high"], reverse=True)
 
     vendor_group_totals = (
@@ -540,7 +658,14 @@ def main() -> None:
             .to_dict(orient="records")
         )
         v_office = vhi[vhi["office"].isin(["House", "Senate"])]
-        vendors_detail[vid] = {
+        ts_by_party = (
+            v_office[v_office["cand_party"].isin(["Democratic", "Republican"])]
+            .groupby(["cycle", "cand_party"], as_index=False)
+            .agg(amount=("transaction_amt", "sum"), count=("sub_id", "nunique"))
+            .rename(columns={"cand_party": "party"})
+            .to_dict(orient="records")
+        )
+        vendor_detail_row = {
             "id": vid,
             "name": vname,
             "group": vgroup,
@@ -549,12 +674,16 @@ def main() -> None:
             "amount_high": round(float(vhi["transaction_amt"].sum()), 2),
             "count_high": int(vhi["sub_id"].nunique()),
             "time_series": ts,
+            "time_series_by_party": ts_by_party,
             "by_candidate": by_cand,
             "top_committees": top_cmtes,
             "by_party": agg_amount_count(v_office, ["cand_party"]),
             "by_incumbency": agg_amount_count(v_office, ["ici"]),
             "by_chamber": agg_amount_count(v_office, ["office"]),
+            "records": expenditure_records(vhi, ["cand_id", "cand_name", "cand_party", "cmte_name"], MAX_DETAIL_RECORDS),
         }
+        vendor_detail_row.update(party_split(v_office))
+        vendors_detail[vid] = vendor_detail_row
 
     # --- candidate detail pages (any office, high confidence, any cycle) ---
     # Not restricted to House/Senate: the vendor pages' "top candidates" charts
@@ -619,6 +748,7 @@ def main() -> None:
             "by_vendor": by_vendor,
             "by_category": by_category,
             "by_cycle": sorted(by_cycle, key=lambda r: r["cycle"]),
+            "records": expenditure_records(csub, ["vendor_id", "vendor_name", "cmte_name"], MAX_DETAIL_RECORDS),
         }
 
     # --- race / seat pages ---
@@ -922,6 +1052,7 @@ def main() -> None:
             "'Outside spending' (independent expenditures and coordinated party expenditures) tracks AI-vendor money spent FOR or AGAINST a candidate by someone other than that candidate's own campaign -- Super PACs, hybrid PACs, and party committees -- kept separate from every other figure on this site because the campaign never sees or reports this spending itself. Independent expenditures (Schedule E) are legally uncoordinated with the candidate; coordinated party expenditures (Schedule F) are a national or state party committee spending on a candidate's behalf, coordinated, up to a statutory per-candidate cap. Even within outside spending, this only shows what a Super PAC or party committee paid a vendor directly -- if that money instead went to a consulting or media-buying firm that itself used an AI tool, that sub-layer of spending is invisible here the same way it is for candidate committees.",
             "Schedule E (independent expenditures) comes from the FEC's dedicated independent-expenditure bulk file, which explicitly warns that it contains both original and amended reports without removing the originals. This pipeline drops every filing (by FILE_NUM) that a later amendment superseded, keeping only the final version -- see parse_outside_spending.py.",
             "Schedule F (coordinated party expenditures) has no dedicated bulk file; these transactions are pulled from the FEC's general committee-to-committee transaction file (transaction type '24C'), which lacks a purpose field, so vendor matches here rely on payee name and a memo field that is often blank -- category/use-case labeling is accordingly thinner for this schedule than elsewhere on the site. Scanning all four cycles found exactly one qualifying high-confidence payment; coordinated party spending is capped by statute and, in what we found, goes overwhelmingly to traditional media buyers rather than named AI vendors -- a real finding, not a parsing gap.",
+            "The weekly disclosure timeline's 'Reports filed' series is an approximation, not a disclosed fact: FEC's bulk oppexp file carries no per-record filed date, only a report-type code (RPT_TP) and year (RPT_YR). Quarterly, monthly, mid-year, year-end, and pre/post-GENERAL-election reports have a fixed calendar deadline this pipeline computes exactly (see pipeline/lib/fec_report_dates.py); pre-primary, pre-convention, pre-runoff, and special-election reports depend on a specific state's own election calendar, which this pipeline does not have, so those fall back to using the expenditure's own transaction date. 'Reports filed' counts one committee's one report once (deduplicated by committee + RPT_YR + RPT_TP), not once per disbursement line item.",
         ],
     }
 
@@ -936,6 +1067,7 @@ def main() -> None:
         "by_chamber": by_chamber,
         "by_age_bucket": by_age,
         "time_series": time_series,
+        "weekly_histogram": weekly_histogram,
         "time_series_by_party": time_series_by_party,
         "time_series_by_incumbency": time_series_by_incumbency,
         "time_series_by_chamber": time_series_by_chamber,

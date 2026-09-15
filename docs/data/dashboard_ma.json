@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_at": "2026-09-14T23:32:02+00:00",
+    "generated_at": "2026-09-15T00:08:52+00:00",
     "source_label": "Massachusetts Office of Campaign and Political Finance (OCPF)",
     "date_range": {
       "start": "2023-01-01",
-      "end": "2026-09-14"
+      "end": "2026-09-15"
     },
     "records_scanned": {
       "expenditures": 325289,
@@ -19,6 +19,8 @@
       "Massachusetts committees report continuously rather than in discrete federal-style two-year cycles; this dashboard instead uses a fixed date window covering the 2024 and 2026 election cycles.",
       "A vendor paid $5,000+ by a committee must itself itemize any $500+ payment it makes to a subvendor -- a disclosure layer with no federal equivalent, tested here as its own category (see below).",
       "As with the federal dashboard, this dataset only sees a payment if its payee name or purpose text names a vendor on this project's taxonomy -- disclosed AI spend is a floor on real usage, not a ceiling.",
+      "The weekly disclosure timeline's 'Reports filed' series uses OCPF's own dateFiled field from its report/{reportId} endpoint -- a real filed date, unlike the federal dashboard's approximated report dates -- counted once per distinct report (a single report can disclose many expenditure line items in one filing).",
+      "Democratic-vs-Republican spending uses each filer's partyAffiliation from OCPF's own filer/payload/{cpfId} endpoint -- fetched per distinct filer (a few dozen, not per record), since OCPF's expenditure records themselves carry no party field. Filers OCPF does not mark with a major-party affiliation (ballot-question committees, PACs, and a handful of others) are excluded from the party split entirely, not counted as a third category -- see the filers_with_known_party figure alongside the split.",
       "This taxonomy was empirically mined against Massachusetts payee/purpose text directly (not only inherited from the federal side): every distinct OCPF payee was scanned for AI-indicative language, plus a manual read of the highest-dollar unmatched payees, which is how Read.ai, Captions, and Canva's AI photo feature were found and verified as real payees before being added -- see pipeline/config/vendors.yaml for what was found, checked, and rejected."
     ]
   },
@@ -39,7 +41,10 @@
       "lean_context": null,
       "total": 6917.54,
       "records": 175,
-      "filers": 27
+      "filers": 27,
+      "dem_amount": 5231.77,
+      "rep_amount": 1367.02,
+      "dem_rep_ratio": 3.827
     },
     {
       "id": "calltime_ai",
@@ -50,7 +55,10 @@
       "lean_context": "progressive-aligned (per public reporting)",
       "total": 3600.0,
       "records": 14,
-      "filers": 2
+      "filers": 2,
+      "dem_amount": 3600.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
     },
     {
       "id": "grammarly",
@@ -61,7 +69,10 @@
       "lean_context": null,
       "total": 3272.4,
       "records": 35,
-      "filers": 10
+      "filers": 10,
+      "dem_amount": 2182.2,
+      "rep_amount": 1090.2,
+      "dem_rep_ratio": 2.002
     },
     {
       "id": "campaign_nucleus",
@@ -72,7 +83,10 @@
       "lean_context": "reported GOP-aligned; developed by Brad Parscale (Trump 2016/2020 digital director)",
       "total": 2698.28,
       "records": 6,
-      "filers": 2
+      "filers": 2,
+      "dem_amount": 0.0,
+      "rep_amount": 2129.03,
+      "dem_rep_ratio": null
     },
     {
       "id": "donoratlas",
@@ -83,7 +97,10 @@
       "lean_context": "progressive-aligned (per public reporting)",
       "total": 2100.0,
       "records": 7,
-      "filers": 3
+      "filers": 3,
+      "dem_amount": 1500.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
     },
     {
       "id": "anthropic",
@@ -94,7 +111,10 @@
       "lean_context": null,
       "total": 1534.91,
       "records": 25,
-      "filers": 8
+      "filers": 8,
+      "dem_amount": 1322.41,
+      "rep_amount": 212.5,
+      "dem_rep_ratio": 6.223
     },
     {
       "id": "otter_ai",
@@ -105,7 +125,10 @@
       "lean_context": null,
       "total": 1526.17,
       "records": 25,
-      "filers": 4
+      "filers": 4,
+      "dem_amount": 936.17,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
     },
     {
       "id": "descript",
@@ -116,7 +139,10 @@
       "lean_context": null,
       "total": 1035.32,
       "records": 14,
-      "filers": 3
+      "filers": 3,
+      "dem_amount": 983.9,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
     },
     {
       "id": "read_ai",
@@ -127,7 +153,10 @@
       "lean_context": null,
       "total": 371.25,
       "records": 2,
-      "filers": 1
+      "filers": 1,
+      "dem_amount": 371.25,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
     },
     {
       "id": "canva_ai",
@@ -138,7 +167,10 @@
       "lean_context": null,
       "total": 358.07,
       "records": 16,
-      "filers": 2
+      "filers": 2,
+      "dem_amount": 358.07,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
     },
     {
       "id": "perplexity",
@@ -149,7 +181,10 @@
       "lean_context": null,
       "total": 352.5,
       "records": 8,
-      "filers": 2
+      "filers": 2,
+      "dem_amount": 120.0,
+      "rep_amount": 232.5,
+      "dem_rep_ratio": 0.516
     },
     {
       "id": "captions_ai",
@@ -160,7 +195,10 @@
       "lean_context": null,
       "total": 238.46,
       "records": 10,
-      "filers": 1
+      "filers": 1,
+      "dem_amount": 238.46,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
     },
     {
       "id": "xai_grok",
@@ -171,7 +209,10 @@
       "lean_context": null,
       "total": 100.0,
       "records": 1,
-      "filers": 1
+      "filers": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 100.0,
+      "dem_rep_ratio": null
     },
     {
       "id": "campaign_brain",
@@ -182,7 +223,10 @@
       "lean_context": null,
       "total": 50.0,
       "records": 1,
-      "filers": 1
+      "filers": 1,
+      "dem_amount": 50.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
     },
     {
       "id": "daisychain",
@@ -193,7 +237,10 @@
       "lean_context": "progressive-aligned (per public reporting)",
       "total": 14.5,
       "records": 1,
-      "filers": 1
+      "filers": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
     },
     {
       "id": "midjourney",
@@ -204,7 +251,10 @@
       "lean_context": null,
       "total": 10.63,
       "records": 1,
-      "filers": 1
+      "filers": 1,
+      "dem_amount": 10.63,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
     },
     {
       "id": "google_ai",
@@ -215,7 +265,10 @@
       "lean_context": null,
       "total": 7.01,
       "records": 1,
-      "filers": 1
+      "filers": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 7.01,
+      "dem_rep_ratio": null
     }
   ],
   "time_series": [
@@ -240,6 +293,871 @@
       "records": 192
     }
   ],
+  "time_series_by_party": [
+    {
+      "year": 2023,
+      "party": "Democratic",
+      "amount": 2736.5
+    },
+    {
+      "year": 2024,
+      "party": "Democratic",
+      "amount": 3996.73
+    },
+    {
+      "year": 2024,
+      "party": "Republican",
+      "amount": 503.68
+    },
+    {
+      "year": 2025,
+      "party": "Democratic",
+      "amount": 4060.63
+    },
+    {
+      "year": 2025,
+      "party": "Republican",
+      "amount": 2098.68
+    },
+    {
+      "year": 2026,
+      "party": "Democratic",
+      "amount": 6111.0
+    },
+    {
+      "year": 2026,
+      "party": "Republican",
+      "amount": 2535.9
+    }
+  ],
+  "party_split": {
+    "dem_amount": 16904.86,
+    "rep_amount": 5138.26,
+    "dem_count": 267,
+    "rep_count": 48,
+    "dem_rep_ratio": 3.29,
+    "filers_with_known_party": 52
+  },
+  "weekly_histogram": {
+    "expenditures": [
+      {
+        "week": "2022-12-26",
+        "count": 1,
+        "amount": 175.0
+      },
+      {
+        "week": "2023-01-02",
+        "count": 1,
+        "amount": 175.0
+      },
+      {
+        "week": "2023-01-16",
+        "count": 1,
+        "amount": 153.0
+      },
+      {
+        "week": "2023-01-23",
+        "count": 1,
+        "amount": 153.0
+      },
+      {
+        "week": "2023-02-06",
+        "count": 1,
+        "amount": 175.0
+      },
+      {
+        "week": "2023-02-27",
+        "count": 2,
+        "amount": 127.5
+      },
+      {
+        "week": "2023-03-06",
+        "count": 1,
+        "amount": 175.0
+      },
+      {
+        "week": "2023-03-13",
+        "count": 1,
+        "amount": 517.5
+      },
+      {
+        "week": "2023-03-27",
+        "count": 1,
+        "amount": 51.75
+      },
+      {
+        "week": "2023-04-03",
+        "count": 1,
+        "amount": 175.0
+      },
+      {
+        "week": "2023-05-01",
+        "count": 1,
+        "amount": 175.0
+      },
+      {
+        "week": "2023-06-05",
+        "count": 1,
+        "amount": 175.0
+      },
+      {
+        "week": "2023-06-26",
+        "count": 1,
+        "amount": 153.0
+      },
+      {
+        "week": "2023-07-03",
+        "count": 1,
+        "amount": 175.0
+      },
+      {
+        "week": "2023-07-31",
+        "count": 1,
+        "amount": 175.0
+      },
+      {
+        "week": "2023-09-04",
+        "count": 1,
+        "amount": 175.0
+      },
+      {
+        "week": "2023-09-18",
+        "count": 1,
+        "amount": 50.0
+      },
+      {
+        "week": "2023-10-02",
+        "count": 1,
+        "amount": 175.0
+      },
+      {
+        "week": "2023-10-23",
+        "count": 3,
+        "amount": 80.0
+      },
+      {
+        "week": "2023-11-06",
+        "count": 1,
+        "amount": 175.0
+      },
+      {
+        "week": "2024-01-01",
+        "count": 1,
+        "amount": 153.0
+      },
+      {
+        "week": "2024-01-15",
+        "count": 2,
+        "amount": 184.88
+      },
+      {
+        "week": "2024-02-26",
+        "count": 1,
+        "amount": 31.88
+      },
+      {
+        "week": "2024-03-04",
+        "count": 1,
+        "amount": 114.75
+      },
+      {
+        "week": "2024-03-25",
+        "count": 1,
+        "amount": 20.0
+      },
+      {
+        "week": "2024-04-01",
+        "count": 1,
+        "amount": 31.88
+      },
+      {
+        "week": "2024-04-29",
+        "count": 2,
+        "amount": 51.88
+      },
+      {
+        "week": "2024-05-13",
+        "count": 1,
+        "amount": 109.99
+      },
+      {
+        "week": "2024-05-27",
+        "count": 2,
+        "amount": 51.88
+      },
+      {
+        "week": "2024-06-24",
+        "count": 2,
+        "amount": 770.0
+      },
+      {
+        "week": "2024-07-01",
+        "count": 2,
+        "amount": 184.88
+      },
+      {
+        "week": "2024-07-22",
+        "count": 2,
+        "amount": 1050.0
+      },
+      {
+        "week": "2024-07-29",
+        "count": 4,
+        "amount": 391.87
+      },
+      {
+        "week": "2024-08-05",
+        "count": 1,
+        "amount": 306.0
+      },
+      {
+        "week": "2024-08-26",
+        "count": 2,
+        "amount": 51.88
+      },
+      {
+        "week": "2024-09-02",
+        "count": 1,
+        "amount": 300.0
+      },
+      {
+        "week": "2024-09-23",
+        "count": 1,
+        "amount": 300.0
+      },
+      {
+        "week": "2024-09-30",
+        "count": 1,
+        "amount": 31.88
+      },
+      {
+        "week": "2024-10-21",
+        "count": 1,
+        "amount": 300.0
+      },
+      {
+        "week": "2024-10-28",
+        "count": 1,
+        "amount": 31.88
+      },
+      {
+        "week": "2024-12-16",
+        "count": 1,
+        "amount": 31.88
+      },
+      {
+        "week": "2025-01-06",
+        "count": 1,
+        "amount": 20.0
+      },
+      {
+        "week": "2025-01-13",
+        "count": 2,
+        "amount": 292.95
+      },
+      {
+        "week": "2025-01-20",
+        "count": 1,
+        "amount": 31.88
+      },
+      {
+        "week": "2025-02-03",
+        "count": 1,
+        "amount": 20.0
+      },
+      {
+        "week": "2025-02-24",
+        "count": 1,
+        "amount": 31.88
+      },
+      {
+        "week": "2025-03-03",
+        "count": 3,
+        "amount": 220.0
+      },
+      {
+        "week": "2025-03-10",
+        "count": 1,
+        "amount": 153.0
+      },
+      {
+        "week": "2025-03-24",
+        "count": 1,
+        "amount": 31.88
+      },
+      {
+        "week": "2025-04-07",
+        "count": 2,
+        "amount": 150.05
+      },
+      {
+        "week": "2025-04-14",
+        "count": 1,
+        "amount": 36.1
+      },
+      {
+        "week": "2025-04-28",
+        "count": 3,
+        "amount": 297.51
+      },
+      {
+        "week": "2025-05-05",
+        "count": 1,
+        "amount": 20.0
+      },
+      {
+        "week": "2025-05-19",
+        "count": 3,
+        "amount": 162.34
+      },
+      {
+        "week": "2025-05-26",
+        "count": 1,
+        "amount": 20.0
+      },
+      {
+        "week": "2025-06-02",
+        "count": 2,
+        "amount": 80.0
+      },
+      {
+        "week": "2025-06-16",
+        "count": 1,
+        "amount": 36.1
+      },
+      {
+        "week": "2025-06-23",
+        "count": 1,
+        "amount": 20.0
+      },
+      {
+        "week": "2025-06-30",
+        "count": 5,
+        "amount": 553.0
+      },
+      {
+        "week": "2025-07-07",
+        "count": 1,
+        "amount": 20.0
+      },
+      {
+        "week": "2025-07-14",
+        "count": 1,
+        "amount": 36.1
+      },
+      {
+        "week": "2025-07-21",
+        "count": 2,
+        "amount": 40.0
+      },
+      {
+        "week": "2025-07-28",
+        "count": 1,
+        "amount": 20.0
+      },
+      {
+        "week": "2025-08-04",
+        "count": 5,
+        "amount": 706.0
+      },
+      {
+        "week": "2025-08-18",
+        "count": 2,
+        "amount": 56.1
+      },
+      {
+        "week": "2025-08-25",
+        "count": 3,
+        "amount": 193.0
+      },
+      {
+        "week": "2025-09-01",
+        "count": 4,
+        "amount": 125.0
+      },
+      {
+        "week": "2025-09-15",
+        "count": 1,
+        "amount": 36.1
+      },
+      {
+        "week": "2025-09-22",
+        "count": 3,
+        "amount": 74.38
+      },
+      {
+        "week": "2025-09-29",
+        "count": 5,
+        "amount": 191.25
+      },
+      {
+        "week": "2025-10-06",
+        "count": 2,
+        "amount": 46.24
+      },
+      {
+        "week": "2025-10-13",
+        "count": 2,
+        "amount": 57.35
+      },
+      {
+        "week": "2025-10-20",
+        "count": 2,
+        "amount": 53.13
+      },
+      {
+        "week": "2025-10-27",
+        "count": 3,
+        "amount": 106.25
+      },
+      {
+        "week": "2025-11-03",
+        "count": 6,
+        "amount": 1479.85
+      },
+      {
+        "week": "2025-11-10",
+        "count": 1,
+        "amount": 212.5
+      },
+      {
+        "week": "2025-11-17",
+        "count": 3,
+        "amount": 78.6
+      },
+      {
+        "week": "2025-11-24",
+        "count": 2,
+        "amount": 42.5
+      },
+      {
+        "week": "2025-12-01",
+        "count": 4,
+        "amount": 185.94
+      },
+      {
+        "week": "2025-12-08",
+        "count": 3,
+        "amount": 245.74
+      },
+      {
+        "week": "2025-12-15",
+        "count": 2,
+        "amount": 57.35
+      },
+      {
+        "week": "2025-12-22",
+        "count": 4,
+        "amount": 695.5
+      },
+      {
+        "week": "2025-12-29",
+        "count": 5,
+        "amount": 158.43
+      },
+      {
+        "week": "2026-01-05",
+        "count": 4,
+        "amount": 322.49
+      },
+      {
+        "week": "2026-01-12",
+        "count": 3,
+        "amount": 314.2
+      },
+      {
+        "week": "2026-01-19",
+        "count": 5,
+        "amount": 689.52
+      },
+      {
+        "week": "2026-01-26",
+        "count": 5,
+        "amount": 99.99
+      },
+      {
+        "week": "2026-02-02",
+        "count": 7,
+        "amount": 444.68
+      },
+      {
+        "week": "2026-02-09",
+        "count": 4,
+        "amount": 260.31
+      },
+      {
+        "week": "2026-02-16",
+        "count": 3,
+        "amount": 163.6
+      },
+      {
+        "week": "2026-02-23",
+        "count": 7,
+        "amount": 141.43
+      },
+      {
+        "week": "2026-03-02",
+        "count": 11,
+        "amount": 890.92
+      },
+      {
+        "week": "2026-03-09",
+        "count": 5,
+        "amount": 408.72
+      },
+      {
+        "week": "2026-03-16",
+        "count": 2,
+        "amount": 57.35
+      },
+      {
+        "week": "2026-03-23",
+        "count": 3,
+        "amount": 68.12
+      },
+      {
+        "week": "2026-03-30",
+        "count": 7,
+        "amount": 355.93
+      },
+      {
+        "week": "2026-04-06",
+        "count": 5,
+        "amount": 109.99
+      },
+      {
+        "week": "2026-04-13",
+        "count": 4,
+        "amount": 322.98
+      },
+      {
+        "week": "2026-04-20",
+        "count": 3,
+        "amount": 95.63
+      },
+      {
+        "week": "2026-04-27",
+        "count": 9,
+        "amount": 669.26
+      },
+      {
+        "week": "2026-05-04",
+        "count": 6,
+        "amount": 168.5
+      },
+      {
+        "week": "2026-05-11",
+        "count": 5,
+        "amount": 284.75
+      },
+      {
+        "week": "2026-05-18",
+        "count": 5,
+        "amount": 248.6
+      },
+      {
+        "week": "2026-05-25",
+        "count": 8,
+        "amount": 349.27
+      },
+      {
+        "week": "2026-06-01",
+        "count": 7,
+        "amount": 185.95
+      },
+      {
+        "week": "2026-06-08",
+        "count": 5,
+        "amount": 97.24
+      },
+      {
+        "week": "2026-06-15",
+        "count": 5,
+        "amount": 179.54
+      },
+      {
+        "week": "2026-06-22",
+        "count": 6,
+        "amount": 393.13
+      },
+      {
+        "week": "2026-06-29",
+        "count": 10,
+        "amount": 403.44
+      },
+      {
+        "week": "2026-07-06",
+        "count": 6,
+        "amount": 118.49
+      },
+      {
+        "week": "2026-07-13",
+        "count": 5,
+        "amount": 152.98
+      },
+      {
+        "week": "2026-07-20",
+        "count": 3,
+        "amount": 259.67
+      },
+      {
+        "week": "2026-07-27",
+        "count": 5,
+        "amount": 216.87
+      },
+      {
+        "week": "2026-08-03",
+        "count": 10,
+        "amount": 265.62
+      },
+      {
+        "week": "2026-08-10",
+        "count": 5,
+        "amount": 93.5
+      },
+      {
+        "week": "2026-08-17",
+        "count": 5,
+        "amount": 199.85
+      },
+      {
+        "week": "2026-08-24",
+        "count": 5,
+        "amount": 99.98
+      },
+      {
+        "week": "2026-08-31",
+        "count": 2,
+        "amount": 74.38
+      }
+    ],
+    "reports_filed": [
+      {
+        "week": "2023-01-30",
+        "count": 1
+      },
+      {
+        "week": "2023-02-06",
+        "count": 1
+      },
+      {
+        "week": "2023-04-03",
+        "count": 2
+      },
+      {
+        "week": "2023-07-03",
+        "count": 1
+      },
+      {
+        "week": "2023-10-02",
+        "count": 1
+      },
+      {
+        "week": "2023-10-30",
+        "count": 1
+      },
+      {
+        "week": "2023-11-27",
+        "count": 1
+      },
+      {
+        "week": "2024-01-29",
+        "count": 2
+      },
+      {
+        "week": "2024-02-05",
+        "count": 1
+      },
+      {
+        "week": "2024-03-04",
+        "count": 1
+      },
+      {
+        "week": "2024-04-01",
+        "count": 2
+      },
+      {
+        "week": "2024-04-29",
+        "count": 2
+      },
+      {
+        "week": "2024-06-03",
+        "count": 3
+      },
+      {
+        "week": "2024-07-01",
+        "count": 2
+      },
+      {
+        "week": "2024-07-29",
+        "count": 4
+      },
+      {
+        "week": "2024-08-05",
+        "count": 1
+      },
+      {
+        "week": "2024-09-02",
+        "count": 4
+      },
+      {
+        "week": "2024-09-30",
+        "count": 3
+      },
+      {
+        "week": "2024-10-28",
+        "count": 1
+      },
+      {
+        "week": "2024-11-04",
+        "count": 1
+      },
+      {
+        "week": "2024-12-30",
+        "count": 1
+      },
+      {
+        "week": "2025-02-03",
+        "count": 3
+      },
+      {
+        "week": "2025-03-03",
+        "count": 2
+      },
+      {
+        "week": "2025-03-31",
+        "count": 4
+      },
+      {
+        "week": "2025-04-28",
+        "count": 2
+      },
+      {
+        "week": "2025-05-05",
+        "count": 3
+      },
+      {
+        "week": "2025-06-02",
+        "count": 5
+      },
+      {
+        "week": "2025-06-30",
+        "count": 4
+      },
+      {
+        "week": "2025-07-28",
+        "count": 2
+      },
+      {
+        "week": "2025-08-04",
+        "count": 5
+      },
+      {
+        "week": "2025-08-11",
+        "count": 1
+      },
+      {
+        "week": "2025-09-01",
+        "count": 9
+      },
+      {
+        "week": "2025-09-29",
+        "count": 9
+      },
+      {
+        "week": "2025-11-03",
+        "count": 12
+      },
+      {
+        "week": "2025-12-01",
+        "count": 11
+      },
+      {
+        "week": "2025-12-15",
+        "count": 1
+      },
+      {
+        "week": "2025-12-29",
+        "count": 11
+      },
+      {
+        "week": "2026-01-05",
+        "count": 2
+      },
+      {
+        "week": "2026-02-02",
+        "count": 14
+      },
+      {
+        "week": "2026-02-09",
+        "count": 1
+      },
+      {
+        "week": "2026-03-02",
+        "count": 16
+      },
+      {
+        "week": "2026-03-16",
+        "count": 1
+      },
+      {
+        "week": "2026-03-30",
+        "count": 13
+      },
+      {
+        "week": "2026-04-06",
+        "count": 2
+      },
+      {
+        "week": "2026-04-20",
+        "count": 7
+      },
+      {
+        "week": "2026-04-27",
+        "count": 6
+      },
+      {
+        "week": "2026-05-04",
+        "count": 11
+      },
+      {
+        "week": "2026-06-01",
+        "count": 24
+      },
+      {
+        "week": "2026-06-29",
+        "count": 17
+      },
+      {
+        "week": "2026-07-06",
+        "count": 4
+      },
+      {
+        "week": "2026-07-27",
+        "count": 2
+      },
+      {
+        "week": "2026-08-03",
+        "count": 19
+      },
+      {
+        "week": "2026-08-10",
+        "count": 6
+      },
+      {
+        "week": "2026-08-24",
+        "count": 1
+      },
+      {
+        "week": "2026-08-31",
+        "count": 25
+      },
+      {
+        "week": "2026-09-07",
+        "count": 1
+      }
+    ]
+  },
   "subvendor": {
     "records_scanned": 2711,
     "matched_records": 0,
@@ -258,6 +1176,7 @@
       ],
       "filer_name": "Mossalam, Nichole",
       "filer_cpf_id": "16668",
+      "filer_party": "Democratic",
       "date": "6/25/2024",
       "amount": 750.0,
       "purpose": "Calltime AI",
@@ -276,6 +1195,7 @@
       ],
       "filer_name": "Mossalam, Nichole",
       "filer_cpf_id": "16668",
+      "filer_party": "Democratic",
       "date": "7/25/2024",
       "amount": 750.0,
       "purpose": "Calltime AI",
@@ -294,6 +1214,7 @@
       ],
       "filer_name": "Minogue, Michael",
       "filer_cpf_id": "19431",
+      "filer_party": "Republican",
       "date": "11/4/2025",
       "amount": 645.16,
       "purpose": "Software",
@@ -312,6 +1233,7 @@
       ],
       "filer_name": "Dibble, Stephen",
       "filer_cpf_id": "17784",
+      "filer_party": "Unknown",
       "date": "3/18/2023",
       "amount": 517.5,
       "purpose": "Purchase voter list",
@@ -330,6 +1252,7 @@
       ],
       "filer_name": "Minogue, Michael",
       "filer_cpf_id": "19431",
+      "filer_party": "Republican",
       "date": "11/7/2025",
       "amount": 500.0,
       "purpose": "Software",
@@ -348,6 +1271,7 @@
       ],
       "filer_name": "Minogue, Michael",
       "filer_cpf_id": "19431",
+      "filer_party": "Republican",
       "date": "12/22/2025",
       "amount": 500.0,
       "purpose": "SOFTWARE",
@@ -366,6 +1290,7 @@
       ],
       "filer_name": "Minogue, Michael",
       "filer_cpf_id": "19431",
+      "filer_party": "Republican",
       "date": "1/20/2026",
       "amount": 483.87,
       "purpose": "SOFTWARE",
@@ -384,6 +1309,7 @@
       ],
       "filer_name": "Santana, Henry",
       "filer_cpf_id": "18331",
+      "filer_party": "Democratic",
       "date": "8/5/2024",
       "amount": 306.0,
       "purpose": "software subscription",
@@ -402,6 +1328,7 @@
       ],
       "filer_name": "Santana, Henry",
       "filer_cpf_id": "18331",
+      "filer_party": "Democratic",
       "date": "8/5/2025",
       "amount": 306.0,
       "purpose": "Audio and video editing software subscription",
@@ -420,6 +1347,7 @@
       ],
       "filer_name": "Coalition for Healthy Democracy 2026",
       "filer_cpf_id": "95538",
+      "filer_party": "Unknown",
       "date": "7/2/2025",
       "amount": 300.0,
       "purpose": "Subscription - Research Tool",
@@ -438,6 +1366,7 @@
       ],
       "filer_name": "Coalition for Healthy Democracy 2026",
       "filer_cpf_id": "95538",
+      "filer_party": "Unknown",
       "date": "8/4/2025",
       "amount": 300.0,
       "purpose": "Subscription - Research Tool",
@@ -456,6 +1385,7 @@
       ],
       "filer_name": "Tarsky, Joshua",
       "filer_cpf_id": "18824",
+      "filer_party": "Democratic",
       "date": "7/23/2024",
       "amount": 300.0,
       "purpose": "Donor Research",
@@ -474,6 +1404,7 @@
       ],
       "filer_name": "Tarsky, Joshua",
       "filer_cpf_id": "18824",
+      "filer_party": "Democratic",
       "date": "9/23/2024",
       "amount": 300.0,
       "purpose": "Committee Fundraising Platform",
@@ -492,6 +1423,7 @@
       ],
       "filer_name": "Tarsky, Joshua",
       "filer_cpf_id": "18824",
+      "filer_party": "Democratic",
       "date": "10/22/2024",
       "amount": 300.0,
       "purpose": "donor research",
@@ -510,6 +1442,7 @@
       ],
       "filer_name": "White, Patrick",
       "filer_cpf_id": "18730",
+      "filer_party": "Democratic",
       "date": "7/31/2024",
       "amount": 300.0,
       "purpose": "List research tool",
@@ -528,6 +1461,7 @@
       ],
       "filer_name": "White, Patrick",
       "filer_cpf_id": "18730",
+      "filer_party": "Democratic",
       "date": "9/3/2024",
       "amount": 300.0,
       "purpose": "Donor research",
@@ -546,6 +1480,7 @@
       ],
       "filer_name": "Wilson, Jacob",
       "filer_cpf_id": "17673",
+      "filer_party": "Unknown",
       "date": "5/1/2025",
       "amount": 255.0,
       "purpose": "AI meeting notetaker/transcription/insights services",
@@ -564,6 +1499,7 @@
       ],
       "filer_name": "Wilson, Jacob",
       "filer_cpf_id": "17673",
+      "filer_party": "Unknown",
       "date": "5/1/2026",
       "amount": 255.0,
       "purpose": "meeting transcripts",
@@ -582,6 +1518,7 @@
       ],
       "filer_name": "Barrett, Michael J.",
       "filer_cpf_id": "10866",
+      "filer_party": "Democratic",
       "date": "2/9/2026",
       "amount": 212.5,
       "purpose": "subscription to AI software",
@@ -600,6 +1537,7 @@
       ],
       "filer_name": "Boldyga, Nick",
       "filer_cpf_id": "14831",
+      "filer_party": "Republican",
       "date": "3/3/2026",
       "amount": 212.5,
       "purpose": "Cloud-based Workflow Service - ( Office & Campaign)",

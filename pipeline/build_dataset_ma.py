@@ -16,7 +16,7 @@ import argparse
 import csv
 import json
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import sys
@@ -29,6 +29,56 @@ PROCESSED_DIR = ROOT / "data" / "processed"
 OUT_PATH = ROOT / "docs" / "data" / "dashboard_ma.json"
 
 NOTABLE_RECORD_LIMIT = 20
+
+
+def _parse_mdy(value: str) -> date | None:
+    if not value:
+        return None
+    try:
+        m, d, y = (int(p) for p in value.strip().split("/"))
+        return date(y, m, d)
+    except (ValueError, AttributeError):
+        return None
+
+
+def _week_start(d: date) -> str:
+    return (d - timedelta(days=d.weekday())).isoformat()
+
+
+def build_weekly_histogram(matched_rows: list[dict], report_dates: dict[str, dict]) -> dict:
+    """Two independent weekly counts: when the expenditure itself happened
+    (`date`, one row per matched record) vs. when the OCPF report disclosing
+    it was filed (`dateFiled` from the report endpoint, one count per
+    DISTINCT report -- a single report can disclose many expenditure line
+    items, so counting every row here would inflate the report side by
+    however itemized that report happened to be)."""
+    expenditure_weeks: dict[str, dict] = defaultdict(lambda: {"count": 0, "amount": 0.0})
+    reports_seen: set[str] = set()
+    report_weeks: dict[str, int] = defaultdict(int)
+
+    for row in matched_rows:
+        d = _parse_mdy(row["date"])
+        if d:
+            wk = _week_start(d)
+            expenditure_weeks[wk]["count"] += 1
+            expenditure_weeks[wk]["amount"] += float(row["amount"] or 0)
+
+        report_id = row.get("report_id")
+        if report_id and report_id not in reports_seen:
+            reports_seen.add(report_id)
+            info = report_dates.get(report_id)
+            if info and info.get("date_filed"):
+                fd = _parse_mdy(info["date_filed"])
+                if fd:
+                    report_weeks[_week_start(fd)] += 1
+
+    return {
+        "expenditures": [
+            {"week": wk, "count": v["count"], "amount": round(v["amount"], 2)}
+            for wk, v in sorted(expenditure_weeks.items())
+        ],
+        "reports_filed": [{"week": wk, "count": n} for wk, n in sorted(report_weeks.items())],
+    }
 
 
 def load_vendor_meta(taxonomy: Taxonomy) -> dict[str, dict]:
@@ -58,6 +108,23 @@ def main() -> None:
     matches_path = PROCESSED_DIR / "ocpf_matches.csv"
     subvendor_path = PROCESSED_DIR / "ocpf_subvendor_matches.csv"
     filer_totals_path = PROCESSED_DIR / "ocpf_filer_totals.csv"
+    report_dates_path = PROCESSED_DIR / "ocpf_report_dates.csv"
+
+    report_dates: dict[str, dict] = {}
+    if report_dates_path.exists():
+        for row in csv.DictReader(open(report_dates_path, encoding="utf-8")):
+            report_dates[row["report_id"]] = row
+
+    # Filer party affiliation: OCPF's per-record expenditure data has no
+    # party field at all (see fetch_ocpf_filer_party.py), so this is looked
+    # up per distinct filer via a separate small fetch, the same pattern as
+    # report_dates above.
+    filer_party_path = PROCESSED_DIR / "ocpf_filer_party.csv"
+    filer_party: dict[str, str] = {}
+    if filer_party_path.exists():
+        for row in csv.DictReader(open(filer_party_path, encoding="utf-8")):
+            if row["party"]:
+                filer_party[row["filer_cpf_id"]] = row["party"]
 
     rows = list(csv.DictReader(open(matches_path, encoding="utf-8")))
     subvendor_matched_rows = list(csv.DictReader(open(subvendor_path, encoding="utf-8")))
@@ -72,12 +139,16 @@ def main() -> None:
     vendor_totals: dict[str, float] = defaultdict(float)
     vendor_records: dict[str, int] = defaultdict(int)
     vendor_filers: dict[str, set] = defaultdict(set)
+    vendor_party_amount: dict[str, dict] = defaultdict(lambda: {"Democratic": 0.0, "Republican": 0.0})
 
     total_all = 0.0
     total_generative = 0.0
     matched_filers: set = set()
     year_totals: dict[int, float] = defaultdict(float)
     year_records: dict[int, int] = defaultdict(int)
+    year_party_totals: dict[tuple, float] = defaultdict(float)
+    party_totals = {"Democratic": 0.0, "Republican": 0.0}
+    party_counts = {"Democratic": 0, "Republican": 0}
 
     notable_records = []
 
@@ -87,6 +158,7 @@ def main() -> None:
         vnames = row["vendor_names"].split(";")
         veras = row["vendor_eras"].split(";")
         confidences = row["confidences"].split(";")
+        party = filer_party.get(row["filer_cpf_id"], "")
 
         total_all += amount
         if any(era == "generative" for era in veras):
@@ -97,13 +169,21 @@ def main() -> None:
             year = int(row["date"].split("/")[-1])
             year_totals[year] += amount
             year_records[year] += 1
+            if party in ("Democratic", "Republican"):
+                year_party_totals[(year, party)] += amount
         except (ValueError, IndexError):
             pass
+
+        if party in ("Democratic", "Republican"):
+            party_totals[party] += amount
+            party_counts[party] += 1
 
         for vid in vids:
             vendor_totals[vid] += amount
             vendor_records[vid] += 1
             vendor_filers[vid].add(row["filer_cpf_id"])
+            if party in ("Democratic", "Republican"):
+                vendor_party_amount[vid][party] += amount
 
         notable_records.append(
             {
@@ -112,6 +192,7 @@ def main() -> None:
                 "confidences": confidences,
                 "filer_name": row["filer_name"],
                 "filer_cpf_id": row["filer_cpf_id"],
+                "filer_party": party or "Unknown",
                 "date": row["date"],
                 "amount": round(amount, 2),
                 "purpose": row["clarified_purpose"] or row["purpose"],
@@ -120,9 +201,13 @@ def main() -> None:
             }
         )
 
+    def dem_rep_ratio(dem_amount: float, rep_amount: float) -> float | None:
+        return round(dem_amount / rep_amount, 3) if dem_amount > 0 and rep_amount > 0 else None
+
     vendors_out = []
     for vid, total in vendor_totals.items():
         meta = vendor_meta.get(vid, {"id": vid, "name": vid, "group": "unknown", "era": "generative"})
+        vp = vendor_party_amount[vid]
         vendors_out.append(
             {
                 "id": vid,
@@ -134,6 +219,9 @@ def main() -> None:
                 "total": round(total, 2),
                 "records": vendor_records[vid],
                 "filers": len(vendor_filers[vid]),
+                "dem_amount": round(vp["Democratic"], 2),
+                "rep_amount": round(vp["Republican"], 2),
+                "dem_rep_ratio": dem_rep_ratio(vp["Democratic"], vp["Republican"]),
             }
         )
     vendors_out.sort(key=lambda v: -v["total"])
@@ -143,8 +231,24 @@ def main() -> None:
         for year in sorted(year_totals)
     ]
 
+    time_series_by_party = [
+        {"year": year, "party": party, "amount": round(amount, 2)}
+        for (year, party), amount in sorted(year_party_totals.items())
+    ]
+
+    party_split = {
+        "dem_amount": round(party_totals["Democratic"], 2),
+        "rep_amount": round(party_totals["Republican"], 2),
+        "dem_count": party_counts["Democratic"],
+        "rep_count": party_counts["Republican"],
+        "dem_rep_ratio": dem_rep_ratio(party_totals["Democratic"], party_totals["Republican"]),
+        "filers_with_known_party": sum(1 for p in filer_party.values() if p in ("Democratic", "Republican")),
+    }
+
     notable_records.sort(key=lambda r: -r["amount"])
     notable_records = notable_records[:NOTABLE_RECORD_LIMIT]
+
+    weekly_histogram = build_weekly_histogram(rows, report_dates)
 
     subvendor_total = sum(float(r["amount"] or 0) for r in subvendor_matched_rows)
 
@@ -179,6 +283,16 @@ def main() -> None:
                 "As with the federal dashboard, this dataset only sees a payment if its payee name or "
                 "purpose text names a vendor on this project's taxonomy -- disclosed AI spend is a floor "
                 "on real usage, not a ceiling.",
+                "The weekly disclosure timeline's 'Reports filed' series uses OCPF's own dateFiled field "
+                "from its report/{reportId} endpoint -- a real filed date, unlike the federal dashboard's "
+                "approximated report dates -- counted once per distinct report (a single report can "
+                "disclose many expenditure line items in one filing).",
+                "Democratic-vs-Republican spending uses each filer's partyAffiliation from OCPF's own "
+                "filer/payload/{cpfId} endpoint -- fetched per distinct filer (a few dozen, not per "
+                "record), since OCPF's expenditure records themselves carry no party field. Filers OCPF "
+                "does not mark with a major-party affiliation (ballot-question committees, PACs, and a "
+                "handful of others) are excluded from the party split entirely, not counted as a third "
+                "category -- see the filers_with_known_party figure alongside the split.",
                 "This taxonomy was empirically mined against Massachusetts payee/purpose text directly "
                 "(not only inherited from the federal side): every distinct OCPF payee was scanned for "
                 "AI-indicative language, plus a manual read of the highest-dollar unmatched payees, which "
@@ -196,6 +310,9 @@ def main() -> None:
         },
         "vendors": vendors_out,
         "time_series": time_series,
+        "time_series_by_party": time_series_by_party,
+        "party_split": party_split,
+        "weekly_histogram": weekly_histogram,
         "subvendor": {
             "records_scanned": total_subvendor_records,
             "matched_records": len(subvendor_matched_rows),

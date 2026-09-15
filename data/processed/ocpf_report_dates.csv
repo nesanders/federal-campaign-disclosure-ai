@@ -1,0 +1,293 @@
+report_id,date_filed,report_type,is_amendment
+869908,2/2/2023,Bank Report,False
+870530,2/6/2023,Bank Report,False
+874874,4/3/2023,Bank Report,False
+875984,4/4/2023,Bank Report,False
+886502,7/5/2023,Bank Report,False
+898141,10/3/2023,Bank Report,False
+902280,11/1/2023,Bank Report,False
+905822,11/30/2023,External Activity Report,False
+916599,2/2/2024,Bank Report,False
+916704,2/2/2024,Bank Report,False
+916971,2/5/2024,Bank Report,False
+919448,3/4/2024,Bank Report,False
+922087,4/1/2024,Bank Report,False
+922373,4/2/2024,Bank Report,False
+926510,5/3/2024,Bank Report,False
+926545,5/3/2024,Bank Report,False
+928820,6/3/2024,Bank Report,False
+929064,6/3/2024,Bank Report,False
+930341,6/5/2024,Bank Report,False
+932490,7/1/2024,Bank Report,False
+933619,7/3/2024,Bank Report,False
+936124,8/1/2024,Bank Report,False
+936309,8/1/2024,Bank Report,False
+936869,8/2/2024,Bank Report,False
+937212,8/2/2024,Bank Report,False
+937541,8/5/2024,Bank Report,False
+940936,9/3/2024,Bank Report,False
+941614,9/4/2024,Bank Report,False
+941984,9/4/2024,Bank Report,False
+942035,9/4/2024,Bank Report,False
+945613,10/2/2024,Bank Report,False
+945909,10/3/2024,Bank Report,False
+946006,10/3/2024,Bank Report,False
+949623,11/1/2024,Bank Report,False
+950834,11/4/2024,Bank Report,False
+957792,1/4/2025,Bank Report,False
+961911,2/3/2025,Bank Report,False
+962609,2/3/2025,Bank Report,False
+962880,2/4/2025,Bank Report,False
+964356,3/3/2025,Bank Report,False
+965594,3/4/2025,Bank Report,False
+968597,4/2/2025,Bank Report,False
+968974,4/3/2025,Bank Report,False
+969045,4/3/2025,Bank Report,False
+969064,4/3/2025,Bank Report,False
+971329,5/1/2025,Bank Report,False
+971401,5/1/2025,Bank Report,False
+972693,5/5/2025,Bank Report,False
+972707,5/5/2025,Bank Report,False
+972709,5/5/2025,Bank Report,False
+974815,6/2/2025,Bank Report,False
+974995,6/2/2025,Bank Report,False
+975685,6/3/2025,Bank Report,False
+975818,6/3/2025,Bank Report,False
+976432,6/5/2025,Bank Report,False
+978766,7/1/2025,Bank Report,False
+979586,7/2/2025,Bank Report,False
+979641,7/2/2025,Bank Report,False
+980126,7/3/2025,Bank Report,False
+982767,8/1/2025,Bank Report,False
+983277,8/1/2025,Bank Report,False
+983703,8/4/2025,Bank Report,False
+983824,8/4/2025,Bank Report,False
+984331,8/4/2025,Bank Report,False
+984586,8/5/2025,Bank Report,False
+984807,8/5/2025,Bank Report,False
+985628,8/12/2025,Credit Card Report,False
+987176,9/2/2025,Bank Report,False
+987892,9/2/2025,Bank Report,False
+987998,9/3/2025,Bank Report,False
+988017,9/3/2025,Bank Report,False
+988027,9/3/2025,Bank Report,False
+988303,9/3/2025,Bank Report,False
+988643,9/4/2025,Bank Report,False
+988897,9/4/2025,Credit Card Report,False
+989102,9/5/2025,Bank Report,False
+991955,10/2/2025,Bank Report,False
+992083,10/2/2025,Bank Report,False
+992714,10/3/2025,Bank Report,False
+992931,10/3/2025,Bank Report,False
+992979,10/3/2025,Bank Report,False
+993060,10/3/2025,Bank Report,False
+993206,10/3/2025,Bank Report,True
+993299,10/4/2025,Bank Report,False
+993307,10/4/2025,Bank Report,True
+996934,11/3/2025,Bank Report,False
+997939,11/4/2025,Bank Report,False
+997996,11/4/2025,Bank Report,False
+998099,11/4/2025,Bank Report,False
+998129,11/4/2025,Bank Report,False
+998157,11/4/2025,Bank Report,False
+998452,11/5/2025,Bank Report,False
+998504,11/5/2025,Bank Report,False
+998540,11/5/2025,Bank Report,False
+998583,11/5/2025,Bank Report,False
+998676,11/5/2025,Credit Card Report,True
+998677,11/5/2025,Credit Card Report,True
+1000680,12/1/2025,Bank Report,False
+1000757,12/1/2025,Bank Report,False
+1001876,12/3/2025,Bank Report,False
+1001884,12/3/2025,Bank Report,False
+1002084,12/4/2025,Bank Report,False
+1002117,12/4/2025,Credit Card Report,False
+1002229,12/4/2025,Bank Report,False
+1002336,12/4/2025,Bank Report,False
+1002412,12/4/2025,Bank Report,False
+1002527,12/5/2025,Credit Card Report,False
+1002623,12/5/2025,Bank Report,False
+1003635,12/17/2025,Initial Report (BQ),False
+1004705,1/1/2026,Credit Card Report,False
+1004776,1/2/2026,Bank Report,False
+1004829,1/2/2026,Bank Report,False
+1005022,1/2/2026,Bank Report,False
+1005086,1/2/2026,Bank Report,False
+1005227,1/2/2026,Bank Report,False
+1005293,1/2/2026,Bank Report,False
+1005463,1/2/2026,Bank Report,False
+1005580,1/2/2026,Bank Report,False
+1005921,1/4/2026,Bank Report,False
+1006020,1/4/2026,Bank Report,False
+1006152,1/5/2026,Bank Report,False
+1006547,1/5/2026,Bank Report,False
+1011224,2/2/2026,Bank Report,False
+1011246,2/2/2026,Bank Report,False
+1011403,2/2/2026,Bank Report,False
+1011804,2/3/2026,Bank Report,False
+1012001,2/3/2026,Bank Report,False
+1012050,2/3/2026,Bank Report,False
+1012100,2/3/2026,Bank Report,False
+1012272,2/3/2026,Bank Report,False
+1012456,2/3/2026,Bank Report,False
+1012474,2/3/2026,Bank Report,False
+1012785,2/4/2026,Bank Report,False
+1012987,2/5/2026,Bank Report,False
+1013006,2/5/2026,Bank Report,False
+1013135,2/5/2026,Credit Card Report,False
+1013539,2/11/2026,Credit Card Report,True
+1014570,3/2/2026,Bank Report,False
+1014599,3/2/2026,Bank Report,False
+1014731,3/2/2026,Bank Report,False
+1014814,3/2/2026,Bank Report,False
+1014972,3/2/2026,Bank Report,False
+1015389,3/3/2026,Bank Report,False
+1015738,3/3/2026,Bank Report,False
+1015761,3/3/2026,Bank Report,False
+1015830,3/4/2026,Bank Report,False
+1015845,3/4/2026,Bank Report,False
+1015962,3/4/2026,Bank Report,False
+1016020,3/4/2026,Bank Report,False
+1016069,3/4/2026,Bank Report,False
+1016113,3/4/2026,Bank Report,False
+1016472,3/5/2026,Credit Card Report,False
+1016780,3/7/2026,Reimbursement Report,False
+1017326,3/16/2026,Credit Card Report,False
+1018402,4/1/2026,Bank Report,False
+1018422,4/1/2026,Bank Report,False
+1018671,4/1/2026,Bank Report,False
+1018816,4/1/2026,Bank Report,False
+1018839,4/1/2026,Bank Report,False
+1019073,4/2/2026,Bank Report,False
+1019309,4/2/2026,Bank Report,False
+1019625,4/2/2026,Bank Report,False
+1019809,4/2/2026,Bank Report,False
+1019990,4/3/2026,Bank Report,False
+1020216,4/3/2026,Bank Report,False
+1020316,4/4/2026,Bank Report,False
+1020323,4/4/2026,Bank Report,False
+1020442,4/6/2026,Credit Card Report,False
+1020527,4/6/2026,Credit Card Report,False
+1022120,4/22/2026,Bank Report,True
+1022266,4/23/2026,Bank Report,True
+1022279,4/23/2026,Bank Report,True
+1022288,4/23/2026,Bank Report,True
+1022299,4/23/2026,Bank Report,True
+1022307,4/23/2026,Bank Report,True
+1022316,4/23/2026,Bank Report,True
+1022836,4/30/2026,Credit Card Report,False
+1023026,5/1/2026,Bank Report,False
+1023047,5/1/2026,Bank Report,False
+1023056,5/1/2026,Bank Report,False
+1023293,5/1/2026,Bank Report,False
+1023300,5/1/2026,Bank Report,False
+1023457,5/4/2026,Bank Report,False
+1023617,5/4/2026,Bank Report,False
+1023646,5/4/2026,Bank Report,False
+1023862,5/4/2026,Bank Report,False
+1024065,5/4/2026,Credit Card Report,False
+1024388,5/5/2026,Bank Report,False
+1024390,5/5/2026,Bank Report,False
+1024558,5/5/2026,Bank Report,False
+1024669,5/5/2026,Bank Report,False
+1024682,5/5/2026,Bank Report,False
+1024729,5/5/2026,Bank Report,False
+1026773,6/1/2026,Bank Report,False
+1026791,6/1/2026,Bank Report,False
+1026798,6/1/2026,Bank Report,False
+1026934,6/1/2026,Bank Report,False
+1027009,6/1/2026,Bank Report,False
+1027054,6/1/2026,Bank Report,False
+1027284,6/1/2026,Bank Report,False
+1027299,6/1/2026,Bank Report,False
+1027494,6/2/2026,Bank Report,False
+1027790,6/3/2026,Bank Report,False
+1027899,6/3/2026,Bank Report,False
+1027979,6/3/2026,Bank Report,False
+1028054,6/3/2026,Bank Report,False
+1028138,6/3/2026,Bank Report,False
+1028170,6/3/2026,Bank Report,False
+1028260,6/3/2026,Bank Report,False
+1028321,6/3/2026,Bank Report,False
+1028518,6/4/2026,Credit Card Report,False
+1028546,6/4/2026,Bank Report,False
+1028568,6/4/2026,Bank Report,False
+1028655,6/5/2026,Bank Report,False
+1028668,6/5/2026,Bank Report,False
+1028714,6/5/2026,Bank Report,False
+1028960,6/6/2026,Credit Card Report,False
+1030559,7/1/2026,Bank Report,False
+1030581,7/1/2026,Bank Report,False
+1031001,7/1/2026,Bank Report,False
+1031094,7/1/2026,Bank Report,False
+1031176,7/1/2026,Bank Report,False
+1031186,7/1/2026,Bank Report,False
+1031324,7/2/2026,Bank Report,False
+1031475,7/2/2026,Bank Report,False
+1031624,7/2/2026,Bank Report,False
+1031798,7/2/2026,Bank Report,False
+1031906,7/2/2026,Bank Report,False
+1031918,7/3/2026,Bank Report,False
+1031926,7/3/2026,Bank Report,False
+1031952,7/3/2026,Bank Report,False
+1031999,7/3/2026,Bank Report,False
+1032045,7/3/2026,Bank Report,False
+1032274,7/5/2026,Credit Card Report,False
+1032450,7/6/2026,Bank Report,False
+1032463,7/6/2026,Bank Report,False
+1032508,7/6/2026,Bank Report,False
+1032887,7/8/2026,Credit Card Report,False
+1034666,7/29/2026,Credit Card Report,False
+1034667,7/29/2026,Credit Card Report,False
+1035041,8/3/2026,Bank Report,False
+1035060,8/3/2026,Bank Report,False
+1035456,8/3/2026,Bank Report,False
+1035471,8/3/2026,Bank Report,False
+1035601,8/3/2026,Bank Report,False
+1035696,8/3/2026,Bank Report,False
+1035719,8/3/2026,Bank Report,False
+1035863,8/4/2026,Bank Report,False
+1035913,8/4/2026,Bank Report,False
+1036081,8/4/2026,Bank Report,False
+1036150,8/4/2026,Credit Card Report,False
+1036171,8/4/2026,Bank Report,False
+1036448,8/4/2026,Bank Report,False
+1036465,8/5/2026,Bank Report,False
+1036828,8/5/2026,Bank Report,False
+1036841,8/5/2026,Bank Report,False
+1037037,8/5/2026,Bank Report,False
+1037055,8/5/2026,Bank Report,False
+1037493,8/8/2026,Credit Card Report,False
+1037659,8/10/2026,Bank Report,True
+1037728,8/10/2026,Bank Report,True
+1037744,8/10/2026,Bank Report,True
+1037747,8/10/2026,Bank Report,True
+1037837,8/11/2026,Bank Report,True
+1037860,8/11/2026,Bank Report,True
+1040233,8/30/2026,Credit Card Report,False
+1040455,9/1/2026,Bank Report,False
+1040470,9/1/2026,Bank Report,False
+1040649,9/1/2026,Bank Report,False
+1040691,9/1/2026,Bank Report,False
+1040974,9/2/2026,Bank Report,False
+1041004,9/2/2026,Bank Report,False
+1041062,9/2/2026,Bank Report,False
+1041251,9/2/2026,Bank Report,False
+1041274,9/2/2026,Bank Report,False
+1041329,9/2/2026,Bank Report,False
+1041407,9/2/2026,Bank Report,False
+1041442,9/2/2026,Pre-primary Report,False
+1041465,9/2/2026,Bank Report,False
+1041501,9/2/2026,Bank Report,True
+1041546,9/2/2026,Bank Report,False
+1041843,9/3/2026,Bank Report,False
+1041883,9/3/2026,Bank Report,False
+1041975,9/3/2026,Bank Report,False
+1042159,9/4/2026,Bank Report,False
+1042174,9/4/2026,Bank Report,False
+1042220,9/4/2026,Bank Report,False
+1042321,9/4/2026,Bank Report,False
+1042323,9/4/2026,Bank Report,False
+1042325,9/4/2026,Bank Report,False
+1042383,9/5/2026,Credit Card Report,False
+1042475,9/8/2026,60th Day Preceding Election Report,True

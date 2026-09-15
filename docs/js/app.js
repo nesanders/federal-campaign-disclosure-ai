@@ -5,6 +5,19 @@
   const fmtUSD2 = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
   const fmtInt = new Intl.NumberFormat("en-US");
   const fmtPct = (v, digits) => (v === null || v === undefined ? "—" : v.toFixed(digits === undefined ? 2 : digits) + "%");
+  // Democratic-vs-Republican spending ratio for one vendor: `dem_rep_ratio`
+  // is null whenever either side is exactly zero (see party_split() in
+  // build_dataset.py), so those cases are spelled out instead of showing
+  // an infinite or zero ratio.
+  function fmtPartyRatio(r) {
+    const ratio = r.dem_rep_ratio;
+    if (ratio !== null && ratio !== undefined) {
+      return ratio >= 1 ? ratio.toFixed(2) + "× D" : (1 / ratio).toFixed(2) + "× R";
+    }
+    if (r.dem_amount > 0) return "All D";
+    if (r.rep_amount > 0) return "All R";
+    return "—";
+  }
   function pctDecimalsFor(maxVal) {
     if (maxVal >= 10) return 1;
     if (maxVal >= 1) return 2;
@@ -72,6 +85,7 @@
     unspecified: "Unspecified / generic",
   };
   const MIN_TOTAL_FOR_PCT_TABLE = 5000;
+  const MAX_DETAIL_RECORDS = 300; // must match MAX_DETAIL_RECORDS in pipeline/build_dataset.py
 
   let DATA = null;
   let vendorNameById = {};
@@ -368,6 +382,7 @@
         { key: "amount_high", label: "High-confidence $", num: true },
         { key: "count_high", label: "Records", num: true },
         { key: "amount_medium", label: "Lower-confidence $", num: true },
+        { key: "party_ratio", label: "D:R ratio", num: true },
         { key: "website", label: "Website", link: (r) => r.website || null, external: true, render: (r) => (r.website ? "Visit ↗" : "—") },
       ],
       DATA.vendors_overall
@@ -380,6 +395,7 @@
           amount_high: fmtUSD0.format(r.amount_high),
           count_high: fmtInt.format(r.count_high),
           amount_medium: fmtUSD0.format(r.amount_medium),
+          party_ratio: fmtPartyRatio(r),
           website: r.homepage || "",
         }))
     );
@@ -663,6 +679,92 @@
     const byChamber = {};
     CHAMBER_ORDER.forEach((k) => (byChamber[k] = DATA.time_series_by_chamber.filter((r) => r.office === k && eraFilter.includes(r.era))));
     lineChart("chart-trend-chamber", "trend-chamber", cycles, byChamber, c.chamber);
+
+    if (DATA.weekly_histogram) {
+      renderWeeklyHistogram("chart-trend-weekly", "trend-weekly", DATA.weekly_histogram, c.general_purpose, c.muted);
+    }
+  }
+
+  // ---- weekly disclosure-timeline histogram: shared by the Federal
+  // "trends" section and the Massachusetts tab. `histogram` is
+  // {expenditures: [{week, count, amount}], reports_filed: [{week, count}]}
+  // -- two independently-binned series (see build_dataset.py /
+  // build_dataset_ma.py), unioned onto one sorted week axis here so a week
+  // with only one of the two series still gets a zero-height bar for the
+  // other rather than being dropped. ----
+  function renderWeeklyHistogram(canvasId, panel, histogram, expColor, repColor) {
+    const c = colors();
+    const expByWeek = {};
+    histogram.expenditures.forEach((r) => (expByWeek[r.week] = r));
+    const repByWeek = {};
+    histogram.reports_filed.forEach((r) => (repByWeek[r.week] = r));
+    const weeks = Array.from(new Set([...Object.keys(expByWeek), ...Object.keys(repByWeek)])).sort();
+
+    const fmtWeekLabel = (wk) => new Date(wk + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+    const labels = weeks.map(fmtWeekLabel);
+
+    makeChart(canvasId, {
+      type: "bar",
+      data: {
+        labels,
+        datasets: [
+          {
+            label: "Expenditures",
+            data: weeks.map((wk) => (expByWeek[wk] ? expByWeek[wk].count : 0)),
+            backgroundColor: expColor,
+            borderRadius: 2,
+          },
+          {
+            label: "Reports filed",
+            data: weeks.map((wk) => (repByWeek[wk] ? repByWeek[wk].count : 0)),
+            backgroundColor: repColor,
+            borderRadius: 2,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: Object.assign({ position: "top" }, legendBase()),
+          tooltip: Object.assign(tooltipBase(), {
+            callbacks: {
+              title: (ctx) => "Week of " + ctx[0].label,
+              label: (ctx) => {
+                if (ctx.dataset.label === "Expenditures") {
+                  const row = expByWeek[weeks[ctx.dataIndex]];
+                  return "Expenditures: " + fmtInt.format(ctx.parsed.y) + (row ? " (" + fmtUSD2.format(row.amount) + ")" : "");
+                }
+                return "Reports filed: " + fmtInt.format(ctx.parsed.y);
+              },
+            },
+          }),
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: c.text, maxRotation: 0, autoSkip: true, maxTicksLimit: 14 }, border: { display: false } },
+          y: { grid: { color: c.grid }, ticks: { color: c.text, precision: 0 }, border: { display: false } },
+        },
+      },
+    });
+
+    setPanelTable(
+      panel,
+      [
+        { label: "Week of" },
+        { label: "Expenditures", num: true },
+        { label: "Amount", num: true },
+        { label: "Reports filed", num: true },
+      ].map((h, i) => Object.assign(h, { key: ["week", "expenditures", "amount", "reports"][i] })),
+      weeks
+        .slice()
+        .reverse()
+        .map((wk) => ({
+          week: fmtWeekLabel(wk),
+          expenditures: fmtInt.format(expByWeek[wk] ? expByWeek[wk].count : 0),
+          amount: fmtUSD2.format(expByWeek[wk] ? expByWeek[wk].amount : 0),
+          reports: fmtInt.format(repByWeek[wk] ? repByWeek[wk].count : 0),
+        }))
+    );
   }
 
   function renderTopCommittees() {
@@ -1221,9 +1323,21 @@
     view.appendChild(grid);
 
     const grid2 = el("div", { className: "card-grid" });
-    grid2.appendChild(detailCard("By party (House/Senate candidates)", "detail-chart-party"));
+    grid2.appendChild(
+      detailCard(
+        "Party split (House/Senate candidates)",
+        "detail-chart-party",
+        "Democratic vs. Republican: " + fmtPartyRatio(v) + (v.dem_rep_ratio !== null ? " -- ratio of Democratic to Republican spending" : "")
+      )
+    );
     grid2.appendChild(detailCard("By incumbency status", "detail-chart-ici"));
     view.appendChild(grid2);
+
+    if (v.time_series_by_party && v.time_series_by_party.length) {
+      const partyTrendGrid = el("div", { className: "card-grid single" });
+      partyTrendGrid.appendChild(detailCard("Party spending over time", "detail-chart-party-trend"));
+      view.appendChild(partyTrendGrid);
+    }
 
     const cmteCard = el("div", { className: "card" });
     cmteCard.appendChild(el("h3", { text: "Top committees paying " + v.name }));
@@ -1239,6 +1353,32 @@
       )
     );
     view.appendChild(el("div", { className: "card-grid single", children: [cmteCard] }));
+
+    if (v.records && v.records.length) {
+      const recordsCard = el("div", { className: "card" });
+      recordsCard.appendChild(el("h3", { text: "Individual disbursements" }));
+      recordsCard.appendChild(
+        el("p", {
+          className: "note",
+          text:
+            "The stated purpose FEC has on file for each specific payment, largest first" +
+            (v.records.length >= MAX_DETAIL_RECORDS ? " (capped at " + fmtInt.format(MAX_DETAIL_RECORDS) + " records)" : "") +
+            ".",
+        })
+      );
+      recordsCard.appendChild(
+        buildTable(
+          [
+            { label: "Date", render: (r) => r.date },
+            { label: "Candidate / committee", link: (r) => (r.cand_id ? "#/candidate/" + r.cand_id : null), render: (r) => r.cand_name || r.cmte_name || "—" },
+            { label: "Amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
+            { label: "Stated purpose", render: (r) => r.purpose || "—" },
+          ],
+          v.records
+        )
+      );
+      view.appendChild(el("div", { className: "card-grid single", children: [recordsCard] }));
+    }
 
     // charts
     const cycles = v.time_series.map((r) => r.cycle).sort((a, b) => a - b);
@@ -1289,22 +1429,64 @@
       },
     });
 
+    const partySlices = v.by_party.filter((r) => r.amount > 0);
     makeChart("detail-chart-party", {
-      type: "bar",
+      type: "pie",
       data: {
-        labels: v.by_party.map((r) => r.cand_party),
-        datasets: [{ data: v.by_party.map((r) => r.amount), backgroundColor: v.by_party.map((r) => c.party[r.cand_party] || c.muted), borderRadius: 4, barThickness: 24 }],
+        labels: partySlices.map((r) => r.cand_party),
+        datasets: [{ data: partySlices.map((r) => r.amount), backgroundColor: partySlices.map((r) => c.party[r.cand_party] || c.muted) }],
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        plugins: { legend: { display: false }, tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => fmtUSD0.format(ctx.parsed.y) } }) },
-        scales: {
-          x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
-          y: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
+        plugins: {
+          legend: Object.assign({ position: "bottom" }, legendBase()),
+          tooltip: Object.assign(tooltipBase(), {
+            callbacks: {
+              label: (ctx) => {
+                const total = partySlices.reduce((a, r) => a + r.amount, 0);
+                return ctx.label + ": " + fmtUSD0.format(ctx.parsed) + " (" + fmtPct((ctx.parsed / total) * 100, 1) + ")";
+              },
+            },
+          }),
         },
       },
     });
+
+    if (v.time_series_by_party && v.time_series_by_party.length) {
+      const partyCycles = Array.from(new Set(v.time_series_by_party.map((r) => r.cycle))).sort((a, b) => a - b);
+      const seriesByParty = {};
+      ["Democratic", "Republican"].forEach((p) => (seriesByParty[p] = v.time_series_by_party.filter((r) => r.party === p)));
+      makeChart("detail-chart-party-trend", {
+        type: "line",
+        data: {
+          labels: partyCycles.map(String),
+          datasets: Object.keys(seriesByParty)
+            .filter((p) => seriesByParty[p].length)
+            .map((p) => ({
+              label: p,
+              data: partyCycles.map((cy) => (seriesByParty[p].find((r) => r.cycle === cy) || {}).amount || 0),
+              borderColor: c.party[p],
+              backgroundColor: c.party[p],
+              borderWidth: 2,
+              pointRadius: 4,
+              tension: 0.15,
+            })),
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: Object.assign({ position: "top" }, legendBase()),
+            tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => ctx.dataset.label + ": " + fmtUSD0.format(ctx.parsed.y) } }),
+          },
+          scales: {
+            x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+            y: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
+          },
+        },
+      });
+    }
 
     makeChart("detail-chart-ici", {
       type: "bar",
@@ -1395,6 +1577,32 @@
       )
     );
     view.appendChild(el("div", { className: "card-grid single", children: [catCard] }));
+
+    if (cd.records && cd.records.length) {
+      const recordsCard = el("div", { className: "card" });
+      recordsCard.appendChild(el("h3", { text: "Individual disbursements" }));
+      recordsCard.appendChild(
+        el("p", {
+          className: "note",
+          text:
+            "The stated purpose FEC has on file for each specific payment, largest first" +
+            (cd.records.length >= MAX_DETAIL_RECORDS ? " (capped at " + fmtInt.format(MAX_DETAIL_RECORDS) + " records)" : "") +
+            ".",
+        })
+      );
+      recordsCard.appendChild(
+        buildTable(
+          [
+            { label: "Date", render: (r) => r.date },
+            { label: "Vendor", link: (r) => "#/vendor/" + r.vendor_id, render: (r) => r.vendor_name },
+            { label: "Amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
+            { label: "Stated purpose", render: (r) => r.purpose || "—" },
+          ],
+          cd.records
+        )
+      );
+      view.appendChild(el("div", { className: "card-grid single", children: [recordsCard] }));
+    }
 
     makeChart("detail-chart-cycle", {
       type: "line",
@@ -1554,6 +1762,7 @@
           { label: "Total", num: true, render: (r) => fmtUSD2.format(r.total) },
           { label: "Records", num: true, render: (r) => fmtInt.format(r.records) },
           { label: "Filers", num: true, render: (r) => fmtInt.format(r.filers) },
+          { label: "D:R ratio", num: true, render: (r) => fmtPartyRatio(r) },
         ],
         MA_DATA.vendors
       )
@@ -1640,6 +1849,146 @@
     return card;
   }
 
+  // MA has no per-vendor drill-down pages (a single flat tab, unlike the
+  // Federal vendor/candidate detail pages), so the party pie/line charts
+  // live at the page level: overall Democratic-vs-Republican AI-vendor
+  // spend across every matched record, not broken out per vendor.
+  function renderMaPartyPieCard() {
+    const c = colors();
+    const ps = MA_DATA.party_split;
+    const card = el("div", { className: "card" });
+    card.appendChild(maCardTitle("Party split"));
+    card.appendChild(
+      el("p", {
+        className: "note",
+        text:
+          "Democratic vs. Republican, by filer party (OCPF's own filer record, not a text match): " +
+          fmtPartyRatio({ dem_amount: ps.dem_amount, rep_amount: ps.rep_amount, dem_rep_ratio: ps.dem_rep_ratio }) +
+          (ps.dem_rep_ratio !== null ? " ratio of Democratic to Republican spending." : ".") +
+          " " +
+          fmtInt.format(ps.filers_with_known_party) +
+          " of " +
+          fmtInt.format(MA_DATA.stats.filers_with_ai_spend) +
+          " matched filers have a known major-party affiliation.",
+      })
+    );
+    const chartHolder = el("div", { className: "chart-holder" });
+    chartHolder.appendChild(el("canvas", { id: "chart-ma-party-pie" }));
+    card.appendChild(chartHolder);
+
+    setTimeout(() => {
+      const slices = [
+        { party: "Democratic", amount: ps.dem_amount },
+        { party: "Republican", amount: ps.rep_amount },
+      ].filter((s) => s.amount > 0);
+      makeChart("chart-ma-party-pie", {
+        type: "pie",
+        data: {
+          labels: slices.map((s) => s.party),
+          datasets: [{ data: slices.map((s) => s.amount), backgroundColor: slices.map((s) => c.party[s.party] || c.muted) }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: Object.assign({ position: "bottom" }, legendBase()),
+            tooltip: Object.assign(tooltipBase(), {
+              callbacks: {
+                label: (ctx) => {
+                  const total = slices.reduce((a, s) => a + s.amount, 0);
+                  return ctx.label + ": " + fmtUSD2.format(ctx.parsed) + " (" + fmtPct((ctx.parsed / total) * 100, 1) + ")";
+                },
+              },
+            }),
+          },
+        },
+      });
+    }, 0);
+
+    return card;
+  }
+
+  function renderMaPartyTrendCard() {
+    const c = colors();
+    const rows = MA_DATA.time_series_by_party || [];
+    const card = el("div", { className: "card" });
+    card.appendChild(maCardTitle("Party spending over time"));
+    card.appendChild(el("p", { className: "note", text: "Democratic vs. Republican AI-vendor spend by year, same filer-party lookup as the pie chart." }));
+    const chartHolder = el("div", { className: "chart-holder" });
+    chartHolder.appendChild(el("canvas", { id: "chart-ma-party-trend" }));
+    card.appendChild(chartHolder);
+
+    setTimeout(() => {
+      const years = Array.from(new Set(rows.map((r) => r.year))).sort((a, b) => a - b);
+      const seriesByParty = {};
+      ["Democratic", "Republican"].forEach((p) => (seriesByParty[p] = rows.filter((r) => r.party === p)));
+      makeChart("chart-ma-party-trend", {
+        type: "line",
+        data: {
+          labels: years.map(String),
+          datasets: Object.keys(seriesByParty)
+            .filter((p) => seriesByParty[p].length)
+            .map((p) => ({
+              label: p,
+              data: years.map((y) => (seriesByParty[p].find((r) => r.year === y) || {}).amount || 0),
+              borderColor: c.party[p],
+              backgroundColor: c.party[p],
+              borderWidth: 2,
+              pointRadius: 4,
+              tension: 0.15,
+            })),
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: Object.assign({ position: "top" }, legendBase()),
+            tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => ctx.dataset.label + ": " + fmtUSD2.format(ctx.parsed.y) } }),
+          },
+          scales: {
+            x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+            y: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
+          },
+        },
+      });
+    }, 0);
+
+    return card;
+  }
+
+  function renderMaWeeklyCard() {
+    const card = el("div", { className: "card" });
+    const toolbar = el("div", { className: "card-toolbar" });
+    const toggleBtn = el("button", { className: "btn-table-toggle", text: "View as table" });
+    toolbar.appendChild(toggleBtn);
+    card.appendChild(toolbar);
+    card.appendChild(maCardTitle("Weekly disclosure timeline"));
+    card.appendChild(
+      el("p", {
+        className: "note",
+        text: "Every matched expenditure, binned by week: when the expenditure itself happened vs. when OCPF's own record shows the covering report was filed (a real filed date from OCPF, not an approximation).",
+      })
+    );
+    const chartHolder = el("div", { className: "chart-holder", attrs: { "data-panel": "ma-weekly" } });
+    chartHolder.appendChild(el("canvas", { id: "chart-ma-weekly" }));
+    const tableHolder = el("div", { className: "table-holder", attrs: { "data-panel": "ma-weekly", hidden: "" } });
+    card.appendChild(chartHolder);
+    card.appendChild(tableHolder);
+
+    toggleBtn.addEventListener("click", () => {
+      const showingTable = !tableHolder.hidden;
+      tableHolder.hidden = showingTable;
+      chartHolder.hidden = !showingTable;
+      toggleBtn.textContent = showingTable ? "View as table" : "View chart";
+    });
+
+    setTimeout(() => {
+      renderWeeklyHistogram("chart-ma-weekly", "ma-weekly", MA_DATA.weekly_histogram, cssVar("--ma-accent"), cssVar("--text-muted"));
+    }, 0);
+
+    return card;
+  }
+
   function renderMaNotableCard() {
     const card = el("div", { className: "card" });
     card.appendChild(maCardTitle("Individual disclosed payments, largest first"));
@@ -1649,6 +1998,7 @@
         [
           { label: "Date", render: (r) => r.date },
           { label: "Filer", render: (r) => r.filer_name },
+          { label: "Party", render: (r) => r.filer_party },
           { label: "Vendor", render: (r) => r.vendor_names.join(", ") },
           { label: "Amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
           { label: "Purpose", render: (r) => r.purpose || "—" },
@@ -1710,6 +2060,10 @@
 
     view.appendChild(el("div", { className: "card-grid single", children: [renderMaVendorsCard()] }));
     view.appendChild(el("div", { className: "card-grid single", children: [renderMaTrendCard()] }));
+    if (MA_DATA.party_split) {
+      view.appendChild(el("div", { className: "card-grid", children: [renderMaPartyPieCard(), renderMaPartyTrendCard()] }));
+    }
+    view.appendChild(el("div", { className: "card-grid single", children: [renderMaWeeklyCard()] }));
     view.appendChild(el("div", { className: "card-grid single", children: [renderMaNotableCard()] }));
     view.appendChild(renderMaMethodologyCard());
 

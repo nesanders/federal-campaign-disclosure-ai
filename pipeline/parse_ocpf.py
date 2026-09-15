@@ -37,6 +37,7 @@ SUBVENDOR_MATCH_FIELDS = ["subvendorName", "vendorName", "purpose"]
 
 EXPENDITURE_OUT_FIELDS = [
     "record_id",
+    "report_id",
     "filer_cpf_id",
     "filer_name",
     "date",
@@ -55,6 +56,7 @@ EXPENDITURE_OUT_FIELDS = [
 ]
 SUBVENDOR_OUT_FIELDS = [
     "record_id",
+    "report_id",
     "filer_cpf_id",
     "filer_name",
     "date",
@@ -112,6 +114,7 @@ def parse_expenditures(taxonomy: Taxonomy, subvendor_scanned: int) -> int:
             writer.writerow(
                 {
                     "record_id": rec_id,
+                    "report_id": rec.get("reportId"),
                     "filer_cpf_id": rec.get("filerCpfId"),
                     "filer_name": rec.get("filerFullNameReverse"),
                     "date": rec.get("date"),
@@ -174,6 +177,7 @@ def parse_subvendor(taxonomy: Taxonomy) -> tuple[int, int]:
             writer.writerow(
                 {
                     "record_id": rec_id,
+                    "report_id": rec.get("reportId"),
                     "filer_cpf_id": rec.get("filerCpfId"),
                     "filer_name": rec.get("filerFullNameReverse"),
                     "date": rec.get("date"),

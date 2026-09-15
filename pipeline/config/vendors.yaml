@@ -14,8 +14,10 @@
 #
 # Matching runs against the concatenation of the disbursement's payee NAME,
 # PURPOSE, and CATEGORY_DESC/MEMO_TEXT fields, case-insensitive, on the
-# `patterns` (regex, word-boundary wrapped by the pipeline unless the pattern
-# already contains \b). `confidence: high` patterns are unambiguous vendor/
+# `patterns` (plain regex -- NOT automatically word-boundary wrapped; a
+# pattern that needs one, e.g. a short name that could appear as a
+# substring of an unrelated word ("openai" inside "OPENAIR"), must include
+# its own \b). `confidence: high` patterns are unambiguous vendor/
 # product names; `confidence: medium` patterns are words that also have
 # common non-AI meanings (e.g. "Gemini", "Copilot", "Grok") and are reported
 # separately on the dashboard as lower-confidence signal rather than folded
@@ -133,8 +135,14 @@ general_purpose:
     name: OpenAI (ChatGPT)
     homepage: https://openai.com
     era: generative
+    # "openai" bare (no word boundary) matched "OPENAIR" -- a real FEC
+    # payee (an airline/travel charge, "AIRFARE" purpose) -- confirmed via
+    # the vendor detail page's per-disbursement records. \b fixes it: FEC
+    # data never spells the company's name attached to another word this
+    # way, unlike some medium-confidence bare-word patterns elsewhere in
+    # this file that need an `exclude` list instead.
     patterns:
-      - {pattern: "openai", confidence: high}
+      - {pattern: "\\bopenai\\b", confidence: high}
       - {pattern: "chat ?gpt", confidence: high}
   - id: anthropic
     name: Anthropic (Claude)
@@ -142,9 +150,12 @@ general_purpose:
     era: generative
     patterns:
       - {pattern: "\\banthropic\\b", confidence: high}
-      - {pattern: "claude ai", confidence: high}
+      - {pattern: "\\bclaude ai\\b", confidence: high}
       - {pattern: "claude\\.ai", confidence: high}
       - {pattern: "\\bclaude\\b", confidence: medium}
+    # "claude ai" (no trailing boundary) matched "...CLAUDE AIRFARE" -- a
+    # travel reimbursement for someone named Claude, not Anthropic --
+    # confirmed via a vendor detail page's per-disbursement records.
     # "Claude" alone collides with people actually named Claude -- confirmed
     # in Massachusetts OCPF data against candidates Jean Claude Sanon and
     # Laverne Claude-Bruce.
