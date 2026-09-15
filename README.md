@@ -34,6 +34,13 @@ dates; on the federal side there is no per-record filed date in the FEC's
 bulk data, so the report date is a calendar-rule approximation from the
 report type and year (see Methodology).
 
+A **vendor co-occurrence matrix** (Section 1) shows which AI vendors tend to
+get paid by the same committees, normalized as Jaccard similarity -- of the
+committees that pay either vendor in a pair, the share that pay both --
+rather than a raw shared-committee count, so a vendor with many payers
+doesn't dominate the matrix just by being widely used. Covers the top 15
+generative-era vendors by high-confidence spend.
+
 Every vendor is also tagged with an **era**: `generative` (built on modern
 LLM/diffusion/voice-clone AI) or `legacy` (a company that predates the
 generative-AI wave and either still runs on older, non-generative technology

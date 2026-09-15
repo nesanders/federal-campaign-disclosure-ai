@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-15T11:45:24.056801Z",
+    "generated_at": "2026-09-15T11:52:01.128637Z",
     "cycles": [
       2020,
       2022,
@@ -52,7 +52,8 @@
       "'Outside spending' (independent expenditures and coordinated party expenditures) tracks AI-vendor money spent FOR or AGAINST a candidate by someone other than that candidate's own campaign -- Super PACs, hybrid PACs, and party committees -- kept separate from every other figure on this site because the campaign never sees or reports this spending itself. Independent expenditures (Schedule E) are legally uncoordinated with the candidate; coordinated party expenditures (Schedule F) are a national or state party committee spending on a candidate's behalf, coordinated, up to a statutory per-candidate cap. Even within outside spending, this only shows what a Super PAC or party committee paid a vendor directly -- if that money instead went to a consulting or media-buying firm that itself used an AI tool, that sub-layer of spending is invisible here the same way it is for candidate committees.",
       "Schedule E (independent expenditures) comes from the FEC's dedicated independent-expenditure bulk file, which explicitly warns that it contains both original and amended reports without removing the originals. This pipeline drops every filing (by FILE_NUM) that a later amendment superseded, keeping only the final version -- see parse_outside_spending.py.",
       "Schedule F (coordinated party expenditures) has no dedicated bulk file; these transactions are pulled from the FEC's general committee-to-committee transaction file (transaction type '24C'), which lacks a purpose field, so vendor matches here rely on payee name and a memo field that is often blank -- category/use-case labeling is accordingly thinner for this schedule than elsewhere on the site. Scanning all four cycles found exactly one qualifying high-confidence payment; coordinated party spending is capped by statute and, in what we found, goes overwhelmingly to traditional media buyers rather than named AI vendors -- a real finding, not a parsing gap.",
-      "The weekly disclosure timeline's 'Reports filed' series is an approximation, not a disclosed fact: FEC's bulk oppexp file carries no per-record filed date, only a report-type code (RPT_TP) and year (RPT_YR). Quarterly, monthly, mid-year, year-end, and pre/post-GENERAL-election reports have a fixed calendar deadline this pipeline computes exactly (see pipeline/lib/fec_report_dates.py); pre-primary, pre-convention, pre-runoff, and special-election reports depend on a specific state's own election calendar, which this pipeline does not have, so those fall back to using the expenditure's own transaction date. 'Reports filed' counts one committee's one report once (deduplicated by committee + RPT_YR + RPT_TP), not once per disbursement line item."
+      "The weekly disclosure timeline's 'Reports filed' series is an approximation, not a disclosed fact: FEC's bulk oppexp file carries no per-record filed date, only a report-type code (RPT_TP) and year (RPT_YR). Quarterly, monthly, mid-year, year-end, and pre/post-GENERAL-election reports have a fixed calendar deadline this pipeline computes exactly (see pipeline/lib/fec_report_dates.py); pre-primary, pre-convention, pre-runoff, and special-election reports depend on a specific state's own election calendar, which this pipeline does not have, so those fall back to using the expenditure's own transaction date. 'Reports filed' counts one committee's one report once (deduplicated by committee + RPT_YR + RPT_TP), not once per disbursement line item.",
+      "The vendor co-occurrence matrix is normalized as Jaccard similarity -- |committees paying both vendors| / |committees paying either one| -- not a raw shared-committee count, so a vendor with many payers (e.g. Daisychain) doesn't dominate the matrix just by being widely used; a pair only reads as 'related' if committees that use one of them disproportionately also use the other. Limited to the top 15 generative-era vendors by high-confidence spend and to committees (not candidates), since every vendor payment has a paying committee but not every one has a linked candidate; it is not recomputed when the legacy-vendor toggle is on."
     ]
   },
   "vendors_overall": [
@@ -686,6 +687,1411 @@
       "dem_rep_ratio": null
     }
   ],
+  "vendor_cooccurrence": {
+    "vendor_ids": [
+      "daisychain",
+      "sosha",
+      "anthropic",
+      "openai",
+      "donoratlas",
+      "convos",
+      "chorus_ai",
+      "quiller",
+      "votersai",
+      "xai_grok",
+      "air_ai",
+      "jasper_ai",
+      "perplexity",
+      "heygen",
+      "runwayml"
+    ],
+    "vendor_names": [
+      "Daisychain",
+      "SoSha (Speechifai)",
+      "Anthropic (Claude)",
+      "OpenAI (ChatGPT)",
+      "DonorAtlas",
+      "Convos (PubSent)",
+      "Chorus AI",
+      "Quiller",
+      "VotersAI",
+      "xAI (Grok)",
+      "Air AI",
+      "Jasper AI",
+      "Perplexity AI",
+      "HeyGen",
+      "Runway"
+    ],
+    "committee_counts": [
+      15,
+      14,
+      65,
+      80,
+      20,
+      4,
+      3,
+      7,
+      1,
+      7,
+      1,
+      1,
+      3,
+      2,
+      1
+    ],
+    "cells": [
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "daisychain",
+        "jaccard": 1.0,
+        "count_both": 15
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "sosha",
+        "jaccard": 0.0741,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0127,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "openai",
+        "jaccard": 0.0326,
+        "count_both": 3
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "quiller",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "heygen",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0741,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "sosha",
+        "jaccard": 1.0,
+        "count_both": 14
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "openai",
+        "jaccard": 0.033,
+        "count_both": 3
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0303,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.1333,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "quiller",
+        "jaccard": 0.05,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "heygen",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0127,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "sosha",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "anthropic",
+        "jaccard": 1.0,
+        "count_both": 65
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "openai",
+        "jaccard": 0.124,
+        "count_both": 16
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0149,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "quiller",
+        "jaccard": 0.0141,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.0286,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0303,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "heygen",
+        "jaccard": 0.0308,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0154,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0326,
+        "count_both": 3
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "sosha",
+        "jaccard": 0.033,
+        "count_both": 3
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "anthropic",
+        "jaccard": 0.124,
+        "count_both": 16
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "openai",
+        "jaccard": 1.0,
+        "count_both": 80
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0122,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "quiller",
+        "jaccard": 0.0235,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.0116,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0247,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "heygen",
+        "jaccard": 0.0123,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "sosha",
+        "jaccard": 0.0303,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "openai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "donoratlas",
+        "jaccard": 1.0,
+        "count_both": 20
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "quiller",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "heygen",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "sosha",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "openai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "convos",
+        "jaccard": 1.0,
+        "count_both": 4
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "quiller",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "heygen",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "sosha",
+        "jaccard": 0.1333,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0149,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "openai",
+        "jaccard": 0.0122,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "chorus_ai",
+        "jaccard": 1.0,
+        "count_both": 3
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "quiller",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "heygen",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "sosha",
+        "jaccard": 0.05,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0141,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "openai",
+        "jaccard": 0.0235,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "quiller",
+        "jaccard": 1.0,
+        "count_both": 7
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "heygen",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "sosha",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "openai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "quiller",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "votersai",
+        "jaccard": 1.0,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "heygen",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "votersai",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "sosha",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0286,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "openai",
+        "jaccard": 0.0116,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "quiller",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "xai_grok",
+        "jaccard": 1.0,
+        "count_both": 7
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "air_ai",
+        "jaccard": 0.1429,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "heygen",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "xai_grok",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "sosha",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "openai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "quiller",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.1429,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "air_ai",
+        "jaccard": 1.0,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "heygen",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "sosha",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "openai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "quiller",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "jasper_ai",
+        "jaccard": 1.0,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "heygen",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "sosha",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0303,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "openai",
+        "jaccard": 0.0247,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "quiller",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "perplexity",
+        "jaccard": 1.0,
+        "count_both": 3
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "heygen",
+        "jaccard": 0.25,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "sosha",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0308,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "openai",
+        "jaccard": 0.0123,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "quiller",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "perplexity",
+        "jaccard": 0.25,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "heygen",
+        "jaccard": 1.0,
+        "count_both": 2
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "sosha",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0154,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "openai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "quiller",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "xai_grok",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "heygen",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "runwayml",
+        "jaccard": 1.0,
+        "count_both": 1
+      }
+    ]
+  },
   "vendor_group_totals": [
     {
       "vendor_group": "general_purpose",

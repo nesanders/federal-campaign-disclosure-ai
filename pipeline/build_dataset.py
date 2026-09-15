@@ -52,6 +52,7 @@ CURRENT_CYCLE = 2026
 TOP_N_VENDOR_CANDIDATES = 30
 TOP_N_VENDOR_COMMITTEES = 20
 MAX_DETAIL_RECORDS = 300
+TOP_N_COOCCURRENCE_VENDORS = 15
 
 
 def load_committee_totals(cycle: int) -> dict[str, float]:
@@ -299,6 +300,52 @@ def party_split(df_slice: pd.DataFrame) -> dict:
     }
 
 
+def build_vendor_cooccurrence(high: pd.DataFrame, vendor_rows: list[dict]) -> dict:
+    """Normalized co-occurrence (Jaccard similarity) between every pair of
+    the top generative-era vendors by high-confidence spend: for vendors A
+    and B, the share of committees paying EITHER one that pay BOTH --
+    |committees(A) & committees(B)| / |committees(A) | committees(B)|.
+    Jaccard (rather than a raw shared-committee count) is what makes this
+    "normalized": a huge vendor like Daisychain would otherwise top every
+    row of a raw co-occurrence count just by having the most payers, not
+    because it's actually paired with other vendors more often.
+
+    Restricted to committees (not candidates) since that's the actual
+    paying entity and every vendor has one, including PAC/party-committee
+    spend with no linked candidate. Legacy-era vendors are excluded to
+    match the site's default scope; this matrix isn't recomputed when the
+    legacy toggle is flipped (see the frontend note)."""
+    top_ids = [
+        v["id"]
+        for v in sorted(vendor_rows, key=lambda r: -r["amount_high"])
+        if v["era"] != "legacy" and v["amount_high"] > 0
+    ][:TOP_N_COOCCURRENCE_VENDORS]
+    committees_by_vendor = high[high["vendor_id"].isin(top_ids)].groupby("vendor_id")["cmte_id"].apply(set).to_dict()
+    vendor_names = {v["id"]: v["name"] for v in vendor_rows}
+
+    cells = []
+    for va in top_ids:
+        a = committees_by_vendor.get(va, set())
+        for vb in top_ids:
+            b = committees_by_vendor.get(vb, set())
+            inter = len(a & b)
+            union = len(a | b)
+            cells.append(
+                {
+                    "vendor_a": va,
+                    "vendor_b": vb,
+                    "jaccard": round(inter / union, 4) if union else 0.0,
+                    "count_both": inter,
+                }
+            )
+    return {
+        "vendor_ids": top_ids,
+        "vendor_names": [vendor_names[v] for v in top_ids],
+        "committee_counts": [len(committees_by_vendor.get(v, set())) for v in top_ids],
+        "cells": cells,
+    }
+
+
 def stated_purpose(rec) -> str:
     """The most specific stated-purpose text FEC has for a disbursement:
     PURPOSE first (the field campaigns fill in for this specific line
@@ -438,6 +485,7 @@ def main() -> None:
         row.update(party_split(hi[hi["office"].isin(["House", "Senate"])]))
         vendor_rows.append(row)
     vendor_rows.sort(key=lambda r: r["amount_high"], reverse=True)
+    vendor_cooccurrence = build_vendor_cooccurrence(high, vendor_rows)
 
     vendor_group_totals = (
         high.groupby(["vendor_group", "vendor_era"])
@@ -1083,12 +1131,14 @@ def main() -> None:
             "Schedule E (independent expenditures) comes from the FEC's dedicated independent-expenditure bulk file, which explicitly warns that it contains both original and amended reports without removing the originals. This pipeline drops every filing (by FILE_NUM) that a later amendment superseded, keeping only the final version -- see parse_outside_spending.py.",
             "Schedule F (coordinated party expenditures) has no dedicated bulk file; these transactions are pulled from the FEC's general committee-to-committee transaction file (transaction type '24C'), which lacks a purpose field, so vendor matches here rely on payee name and a memo field that is often blank -- category/use-case labeling is accordingly thinner for this schedule than elsewhere on the site. Scanning all four cycles found exactly one qualifying high-confidence payment; coordinated party spending is capped by statute and, in what we found, goes overwhelmingly to traditional media buyers rather than named AI vendors -- a real finding, not a parsing gap.",
             "The weekly disclosure timeline's 'Reports filed' series is an approximation, not a disclosed fact: FEC's bulk oppexp file carries no per-record filed date, only a report-type code (RPT_TP) and year (RPT_YR). Quarterly, monthly, mid-year, year-end, and pre/post-GENERAL-election reports have a fixed calendar deadline this pipeline computes exactly (see pipeline/lib/fec_report_dates.py); pre-primary, pre-convention, pre-runoff, and special-election reports depend on a specific state's own election calendar, which this pipeline does not have, so those fall back to using the expenditure's own transaction date. 'Reports filed' counts one committee's one report once (deduplicated by committee + RPT_YR + RPT_TP), not once per disbursement line item.",
+            "The vendor co-occurrence matrix is normalized as Jaccard similarity -- |committees paying both vendors| / |committees paying either one| -- not a raw shared-committee count, so a vendor with many payers (e.g. Daisychain) doesn't dominate the matrix just by being widely used; a pair only reads as 'related' if committees that use one of them disproportionately also use the other. Limited to the top 15 generative-era vendors by high-confidence spend and to committees (not candidates), since every vendor payment has a paying committee but not every one has a linked candidate; it is not recomputed when the legacy-vendor toggle is on.",
         ],
     }
 
     out = {
         "meta": meta,
         "vendors_overall": vendor_rows,
+        "vendor_cooccurrence": vendor_cooccurrence,
         "vendor_group_totals": vendor_group_totals,
         "use_categories": cat_rows,
         "use_category_by_vendor_group": use_category_by_vendor_group,

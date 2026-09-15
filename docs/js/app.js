@@ -98,6 +98,32 @@
     };
   }
 
+  // ---- sequential color scale for the vendor co-occurrence heatmap:
+  // interpolates through the site's existing single-hue blue ramp
+  // (page background at t=0 so "no overlap" reads as blank, then the same
+  // --seq-250..--seq-650 steps already used for the age-bucket chart) so
+  // no new palette is introduced for one chart. ----
+  function hexToRgb(hex) {
+    const h = hex.replace("#", "");
+    const n = h.length === 3 ? h.split("").map((c) => c + c).join("") : h;
+    const v = parseInt(n, 16);
+    return [(v >> 16) & 255, (v >> 8) & 255, v & 255];
+  }
+  function seqScale(t) {
+    const stops = [cssVar("--page-plane"), cssVar("--seq-250"), cssVar("--seq-350"), cssVar("--seq-450"), cssVar("--seq-550"), cssVar("--seq-650")].map(hexToRgb);
+    const clamped = Math.max(0, Math.min(1, t));
+    const pos = clamped * (stops.length - 1);
+    const i = Math.min(stops.length - 2, Math.floor(pos));
+    const f = pos - i;
+    const [r1, g1, b1] = stops[i];
+    const [r2, g2, b2] = stops[i + 1];
+    const rgb = [Math.round(r1 + (r2 - r1) * f), Math.round(g1 + (g2 - g1) * f), Math.round(b1 + (b2 - b1) * f)];
+    // Perceptual luminance decides label color: dark text on the light
+    // early stops, white text once the fill gets dark enough to need it.
+    const luminance = (0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]) / 255;
+    return { bg: "rgb(" + rgb.join(",") + ")", fg: luminance > 0.6 ? cssVar("--text-primary") : "#fff" };
+  }
+
   const VENDOR_GROUP_LABEL = { general_purpose: "General-purpose AI", political_specific: "Campaign-specific AI" };
   const AGE_ORDER = ["Under 40", "40-49", "50-59", "60-69", "70+", "Unknown"];
   const INCUMBENCY_ORDER = ["Incumbent", "Challenger", "Open seat", "Unknown"];
@@ -454,6 +480,62 @@
       div.innerHTML = legendHtml;
       holder.parentElement.insertBefore(div, holder);
     }
+
+    renderVendorCooccurrence();
+  }
+
+  // Vendor x vendor heatmap: DATA.vendor_cooccurrence is fixed (top 15
+  // generative-era vendors, computed once in the pipeline -- see its
+  // methodology note), so this doesn't depend on the era toggle or any
+  // view mode; it just needs to run once per full render.
+  function renderVendorCooccurrence() {
+    const mount = document.getElementById("vendor-matrix-holder");
+    if (!mount) return;
+    const co = DATA.vendor_cooccurrence;
+    if (!co || !co.vendor_ids || !co.vendor_ids.length) {
+      mount.innerHTML = "";
+      return;
+    }
+    mount.innerHTML = "";
+
+    const cellByPair = {};
+    co.cells.forEach((c) => (cellByPair[c.vendor_a + "|" + c.vendor_b] = c));
+
+    const table = el("table", { className: "matrix-table" });
+    const thead = el("thead");
+    const headRow = el("tr");
+    headRow.appendChild(el("th", { className: "matrix-corner" }));
+    co.vendor_ids.forEach((vid, i) => {
+      headRow.appendChild(el("th", { className: "matrix-col-label", children: [el("span", { text: co.vendor_names[i] })] }));
+    });
+    thead.appendChild(headRow);
+    table.appendChild(thead);
+
+    const tbody = el("tbody");
+    co.vendor_ids.forEach((rowId, ri) => {
+      const tr = el("tr");
+      tr.appendChild(el("th", { className: "matrix-row-label", text: co.vendor_names[ri] + " (" + fmtInt.format(co.committee_counts[ri]) + ")" }));
+      co.vendor_ids.forEach((colId, ci) => {
+        const isDiagonal = rowId === colId;
+        const cell = cellByPair[rowId + "|" + colId];
+        const td = el("td", { className: "matrix-cell" + (isDiagonal ? " is-diagonal" : "") });
+        if (isDiagonal) {
+          td.textContent = "—";
+          td.title = co.vendor_names[ri] + ": " + fmtInt.format(co.committee_counts[ri]) + " paying committees";
+        } else if (cell) {
+          const { bg, fg } = seqScale(cell.jaccard);
+          td.style.background = bg;
+          td.style.color = fg;
+          td.textContent = cell.jaccard > 0 ? Math.round(cell.jaccard * 100) + "%" : "—";
+          td.title = co.vendor_names[ri] + " × " + co.vendor_names[ci] + ": " + fmtPct(cell.jaccard * 100, 1) + " Jaccard (" + fmtInt.format(cell.count_both) + " of " + fmtInt.format(co.committee_counts[ri] + co.committee_counts[ci] - cell.count_both) + " combined committees pay both)";
+        }
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+
+    mount.appendChild(el("div", { className: "matrix-wrap", children: [table] }));
   }
 
   // Sums the per-(id, era) rows the pipeline emits into one row per id,

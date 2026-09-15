@@ -121,6 +121,11 @@ section.block > p.lede { color: var(--text-secondary); max-width: 80ch; margin: 
 .card-grid.single { grid-template-columns: 1fr; }
 
 .card {
+  /* A grid item's automatic minimum width is its content's intrinsic
+     size unless overridden -- without this, a wide table/matrix inside
+     an overflow-x:auto wrapper expands the grid track (and the page)
+     instead of scrolling internally. */
+  min-width: 0;
   background: var(--surface-1);
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -198,6 +203,25 @@ table.data-table th.sortable .sort-arrow { color: var(--text-muted); margin-left
 table.data-table td a, table.data-table a.entity-link { color: var(--series-1); text-decoration: none; }
 table.data-table td a:hover, table.data-table a.entity-link:hover { text-decoration: underline; }
 table.data-table.scroll-wrap { display: block; overflow-x: auto; }
+
+.matrix-wrap { overflow-x: auto; padding-bottom: 4px; }
+table.matrix-table { border-collapse: collapse; font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+table.matrix-table th, table.matrix-table td { padding: 0; }
+table.matrix-table th.matrix-row-label {
+  text-align: right; padding: 0 10px 0 0; white-space: nowrap; font-weight: 500;
+  color: var(--text-secondary); position: sticky; left: 0; background: var(--surface-1);
+}
+table.matrix-table th.matrix-corner { background: var(--surface-1); position: sticky; left: 0; }
+table.matrix-table th.matrix-col-label { height: 108px; vertical-align: bottom; text-align: left; }
+table.matrix-table th.matrix-col-label span {
+  display: inline-block; transform: rotate(-45deg); transform-origin: left bottom;
+  white-space: nowrap; font-weight: 500; color: var(--text-secondary); padding-bottom: 4px;
+}
+table.matrix-table td.matrix-cell {
+  width: 46px; height: 34px; min-width: 46px; text-align: center;
+  border: 2px solid var(--page-plane); cursor: default;
+}
+table.matrix-table td.matrix-cell.is-diagonal { background: var(--surface-1) !important; color: var(--text-muted); }
 
 .chart-holder canvas { cursor: pointer; }
 
