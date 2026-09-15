@@ -656,18 +656,20 @@ def main() -> None:
         # above, which stay high-confidence-only) so a committee whose only
         # match is an ambiguous word isn't invisible here -- ranked by
         # combined amount so such committees can still surface in the top N.
-        top_cmtes = (
-            vsub.assign(
-                amount_high=lambda d: d["transaction_amt"].where(d["confidence"] == "high", 0.0),
-                amount_medium=lambda d: d["transaction_amt"].where(d["confidence"] == "medium", 0.0),
-            )
-            .groupby(["cmte_id", "cmte_name"], as_index=False)
-            .agg(amount_high=("amount_high", "sum"), amount_medium=("amount_medium", "sum"), count=("sub_id", "nunique"))
-            .assign(amount=lambda d: d["amount_high"] + d["amount_medium"])
-            .sort_values("amount", ascending=False)
-            .head(TOP_N_VENDOR_COMMITTEES)
-            .to_dict(orient="records")
-        )
+        # high/medium are grouped separately (not via a single masked sum)
+        # so count_high/count_medium are each an accurate distinct-record
+        # count for that tier alone, not just the combined total.
+        def _cmte_group(d):
+            return d.groupby(["cmte_id", "cmte_name"], as_index=False).agg(amount=("transaction_amt", "sum"), count=("sub_id", "nunique"))
+
+        cmte_hi = _cmte_group(vsub[vsub["confidence"] == "high"]).rename(columns={"amount": "amount_high", "count": "count_high"})
+        cmte_med = _cmte_group(vsub[vsub["confidence"] == "medium"]).rename(columns={"amount": "amount_medium", "count": "count_medium"})
+        cmte_merged = pd.merge(cmte_hi, cmte_med, on=["cmte_id", "cmte_name"], how="outer").fillna(0)
+        cmte_merged["count_high"] = cmte_merged["count_high"].astype(int)
+        cmte_merged["count_medium"] = cmte_merged["count_medium"].astype(int)
+        cmte_merged["amount"] = cmte_merged["amount_high"] + cmte_merged["amount_medium"]
+        cmte_merged["count"] = cmte_merged["count_high"] + cmte_merged["count_medium"]
+        top_cmtes = cmte_merged.sort_values("amount", ascending=False).head(TOP_N_VENDOR_COMMITTEES).to_dict(orient="records")
         v_office = vhi[vhi["office"].isin(["House", "Senate"])]
         ts_by_party = (
             v_office[v_office["cand_party"].isin(["Democratic", "Republican"])]

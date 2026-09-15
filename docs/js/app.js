@@ -29,6 +29,24 @@
     if (r.rep_amount > 0) return 0;
     return null;
   }
+  // FEC dates come through as "MM/DD/YYYY" strings, which sort wrong as
+  // plain text (e.g. "01/09/2026" < "12/12/2025" alphabetically). Rows that
+  // need a sortable date carry this alongside the display string.
+  function mdySortValue(str) {
+    if (!str) return null;
+    const parts = str.split("/");
+    if (parts.length !== 3) return null;
+    const [m, d, y] = parts.map(Number);
+    if (!m || !d || !y) return null;
+    return y * 10000 + m * 100 + d;
+  }
+  // A small colored badge for a medium-confidence (ambiguous-word) match,
+  // vs. plain muted text for high confidence -- so a reader scanning the
+  // Confidence column doesn't have to read every cell's text closely.
+  function confidencePill(conf) {
+    if (conf === "medium") return el("span", { className: "pill pill-medium-confidence", text: "Lower confidence" });
+    return el("span", { className: "text-muted", text: "High confidence" });
+  }
   function pctDecimalsFor(maxVal) {
     if (maxVal >= 10) return 1;
     if (maxVal >= 1) return 2;
@@ -136,7 +154,15 @@
     ieSpenders: { key: "amount", dir: "desc" },
     ieRecords: { key: "transaction_amt", dir: "desc" },
     pceRecords: { key: "transaction_amt", dir: "desc" },
+    vendorCommittees: { key: "amount_high", dir: "desc" },
+    vendorRecords: { key: "amount", dir: "desc" },
+    candidateRecords: { key: "amount", dir: "desc" },
   };
+  // Off by default site-wide (persists across vendor pages, like the legacy
+  // toggle): the "Top committees" and "Individual disbursements" tables on
+  // a vendor detail page only show ambiguous-word (medium-confidence)
+  // matches when this is on.
+  let vendorDetailShowLowConf = false;
   const filterState = { cycle: "all", category: "all" };
 
   function catLabel(id) {
@@ -223,6 +249,10 @@
     const tbody = el("tbody");
     rows.forEach((r) => {
       const tr = el("tr");
+      if (opts.rowClass) {
+        const cls = opts.rowClass(r);
+        if (cls) tr.className = cls;
+      }
       headers.forEach((h) => {
         const td = el("td");
         if (h.num) td.classList.add("num");
@@ -1358,54 +1388,121 @@
       view.appendChild(partyTrendGrid);
     }
 
-    const cmteCard = el("div", { className: "card" });
-    cmteCard.appendChild(el("h3", { text: "Top committees paying " + v.name }));
-    cmteCard.appendChild(
-      el("p", {
-        className: "note",
-        text: "Includes lower-confidence (ambiguous-word) matches, in their own column -- a committee whose only match is an ambiguous word still shows up here.",
-      })
-    );
-    cmteCard.appendChild(
-      buildTable(
-        [
-          { label: "Committee", render: (r) => r.cmte_name || r.cmte_id },
-          { label: "High-confidence $", num: true, render: (r) => fmtUSD0.format(r.amount_high) },
-          { label: "Lower-confidence $", num: true, render: (r) => (r.amount_medium > 0 ? fmtUSD0.format(r.amount_medium) : "—") },
-          { label: "Records", num: true, render: (r) => fmtInt.format(r.count) },
-          { label: "FEC record", link: (r) => fecCommitteeUrl(r.cmte_id), external: true, render: () => "View ↗" },
-        ],
-        v.top_committees
-      )
-    );
-    view.appendChild(el("div", { className: "card-grid single", children: [cmteCard] }));
+    // Both tables below default to high-confidence-only, matching every
+    // chart on this page; the toggle bar reveals ambiguous-word matches in
+    // both at once, each clearly tagged (a pill in Lower-confidence $ / the
+    // Confidence column, plus a tinted row) rather than blended in
+    // silently. Rebuilding just this container (not the whole page) keeps
+    // the toggle and header-click sorting snappy.
+    const confSection = el("div");
+    view.appendChild(confSection);
 
-    if (v.records && v.records.length) {
-      const recordsCard = el("div", { className: "card" });
-      recordsCard.appendChild(el("h3", { text: "Individual disbursements" }));
-      recordsCard.appendChild(
+    function renderConfidenceSection() {
+      confSection.innerHTML = "";
+
+      const toggleId = "vendor-lowconf-toggle";
+      const toggleInput = el("input", { attrs: { type: "checkbox", id: toggleId } });
+      toggleInput.checked = vendorDetailShowLowConf;
+      toggleInput.addEventListener("change", () => {
+        vendorDetailShowLowConf = toggleInput.checked;
+        renderConfidenceSection();
+      });
+      // A <label> wrapper (not a plain <span>) matters here: clicking the
+      // slider visual hits that span, not the absolutely-positioned input
+      // underneath it, but a <label> forwards a click anywhere inside it to
+      // the form control it wraps -- same structure as the legacy toggle.
+      const toggleSwitch = el("label", { className: "toggle-switch", children: [toggleInput, el("span", { className: "toggle-slider", attrs: { "aria-hidden": "true" } })] });
+      const toggleLabel = el("label", {
+        className: "confidence-toggle-label",
+        attrs: { for: toggleId },
+        children: [
+          document.createTextNode("Include lower-confidence matches"),
+          el("span", {
+            className: "confidence-toggle-sub",
+            text: "Off by default: ambiguous word matches (e.g. a person literally named “Claude”) are hidden from the two tables below. Turn on to see them too, clearly tagged — see methodology.",
+          }),
+        ],
+      });
+      confSection.appendChild(el("div", { className: "confidence-toggle-bar", children: [toggleSwitch, toggleLabel] }));
+
+      const cmteRowsAll = v.top_committees.map((r) => Object.assign({}, r, { cmte_display: r.cmte_name || r.cmte_id }));
+      const cmteRows = sortRows(
+        cmteRowsAll.filter((r) => vendorDetailShowLowConf || r.amount_high > 0),
+        sortState.vendorCommittees
+      );
+      const cmteCard = el("div", { className: "card" });
+      cmteCard.appendChild(el("h3", { text: "Top committees paying " + v.name }));
+      cmteCard.appendChild(
         el("p", {
           className: "note",
-          text:
-            "The stated purpose FEC has on file for each specific payment, largest first, including lower-confidence (ambiguous-word) matches -- see the Confidence column" +
-            (v.records.length >= MAX_DETAIL_RECORDS ? " (capped at " + fmtInt.format(MAX_DETAIL_RECORDS) + " records)" : "") +
-            ".",
+          text: vendorDetailShowLowConf
+            ? "Includes lower-confidence (ambiguous-word) matches -- a committee whose only match is an ambiguous word is tagged and still shows up here."
+            : "High-confidence matches only. Turn on the toggle above to include ambiguous-word matches too.",
         })
       );
-      recordsCard.appendChild(
-        buildTable(
-          [
-            { label: "Date", render: (r) => r.date },
-            { label: "Candidate / committee", link: (r) => (r.cand_id ? "#/candidate/" + r.cand_id : null), render: (r) => r.cand_name || r.cmte_name || "—" },
-            { label: "Amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
-            { label: "Confidence", render: (r) => r.confidence },
-            { label: "Stated purpose", render: (r) => r.purpose || "—" },
-          ],
-          v.records
-        )
+      const cmteHeaders = withSort(
+        "vendorCommittees",
+        [
+          { label: "Committee", sortKey: "cmte_display", render: (r) => r.cmte_display },
+          { label: "High-confidence $", sortKey: "amount_high", num: true, render: (r) => fmtUSD0.format(r.amount_high) },
+          vendorDetailShowLowConf
+            ? {
+                label: "Lower-confidence $",
+                sortKey: "amount_medium",
+                num: true,
+                cell: (r) =>
+                  r.amount_medium > 0
+                    ? el("span", { className: "pill pill-medium-confidence", text: fmtUSD0.format(r.amount_medium) })
+                    : document.createTextNode("—"),
+              }
+            : null,
+          { label: "Records", sortKey: "count", num: true, render: (r) => fmtInt.format(r.count) },
+          { label: "FEC record", sortKey: null, link: (r) => fecCommitteeUrl(r.cmte_id), external: true, render: () => "View ↗" },
+        ].filter(Boolean),
+        renderConfidenceSection
       );
-      view.appendChild(el("div", { className: "card-grid single", children: [recordsCard] }));
+      cmteCard.appendChild(
+        buildTable(cmteHeaders, cmteRows, { sort: sortState.vendorCommittees, rowClass: (r) => (r.amount_high === 0 ? "row-medium-confidence" : null) })
+      );
+      confSection.appendChild(el("div", { className: "card-grid single", children: [cmteCard] }));
+
+      if (v.records && v.records.length) {
+        const recRowsAll = v.records.map((r) => Object.assign({}, r, { display_name: r.cand_name || r.cmte_name || "", date_sort: mdySortValue(r.date) }));
+        const recRows = sortRows(
+          recRowsAll.filter((r) => vendorDetailShowLowConf || r.confidence === "high"),
+          sortState.vendorRecords
+        );
+        const recordsCard = el("div", { className: "card" });
+        recordsCard.appendChild(el("h3", { text: "Individual disbursements" }));
+        recordsCard.appendChild(
+          el("p", {
+            className: "note",
+            text:
+              "The stated purpose FEC has on file for each specific payment, largest first" +
+              (vendorDetailShowLowConf ? ", including lower-confidence (ambiguous-word) matches -- see the Confidence column" : " (high-confidence matches only)") +
+              (v.records.length >= MAX_DETAIL_RECORDS ? " (capped at " + fmtInt.format(MAX_DETAIL_RECORDS) + " records)" : "") +
+              ".",
+          })
+        );
+        const recHeaders = withSort(
+          "vendorRecords",
+          [
+            { label: "Date", sortKey: "date_sort", render: (r) => r.date },
+            { label: "Candidate / committee", sortKey: "display_name", link: (r) => (r.cand_id ? "#/candidate/" + r.cand_id : null), render: (r) => r.display_name || "—" },
+            { label: "Amount", sortKey: "amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
+            vendorDetailShowLowConf ? { label: "Confidence", sortKey: "confidence", cell: (r) => confidencePill(r.confidence) } : null,
+            { label: "Stated purpose", sortKey: "purpose", render: (r) => r.purpose || "—" },
+          ].filter(Boolean),
+          renderConfidenceSection
+        );
+        recordsCard.appendChild(
+          buildTable(recHeaders, recRows, { sort: sortState.vendorRecords, rowClass: (r) => (r.confidence === "medium" ? "row-medium-confidence" : null) })
+        );
+        confSection.appendChild(el("div", { className: "card-grid single", children: [recordsCard] }));
+      }
     }
+
+    renderConfidenceSection();
 
     // charts
     const cycles = v.time_series.map((r) => r.cycle).sort((a, b) => a - b);
@@ -1626,17 +1723,21 @@
             ".",
         })
       );
-      recordsCard.appendChild(
-        buildTable(
-          [
-            { label: "Date", render: (r) => r.date },
-            { label: "Vendor", link: (r) => "#/vendor/" + r.vendor_id, render: (r) => r.vendor_name },
-            { label: "Amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
-            { label: "Stated purpose", render: (r) => r.purpose || "—" },
-          ],
-          cd.records
-        )
+      const recRows = sortRows(
+        cd.records.map((r) => Object.assign({}, r, { date_sort: mdySortValue(r.date) })),
+        sortState.candidateRecords
       );
+      const recHeaders = withSort(
+        "candidateRecords",
+        [
+          { label: "Date", sortKey: "date_sort", render: (r) => r.date },
+          { label: "Vendor", sortKey: "vendor_name", link: (r) => "#/vendor/" + r.vendor_id, render: (r) => r.vendor_name },
+          { label: "Amount", sortKey: "amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
+          { label: "Stated purpose", sortKey: "purpose", render: (r) => r.purpose || "—" },
+        ],
+        () => renderCandidateDetail(id)
+      );
+      recordsCard.appendChild(buildTable(recHeaders, recRows, { sort: sortState.candidateRecords }));
       view.appendChild(el("div", { className: "card-grid single", children: [recordsCard] }));
     }
 

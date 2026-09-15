@@ -207,6 +207,18 @@ table.data-table.scroll-wrap { display: block; overflow-x: auto; }
 .detail-stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 18px 0 28px; }
 .pill { display: inline-block; font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; background: var(--surface-1); border: 1px solid var(--border); color: var(--text-secondary); margin-left: 8px; }
 .pill.pill-legacy { background: var(--series-4); border-color: var(--series-4); color: #1a1400; }
+.pill.pill-medium-confidence { background: var(--series-2); border-color: var(--series-2); color: #fff; margin-left: 0; }
+tr.row-medium-confidence { background: color-mix(in srgb, var(--series-2) 7%, transparent); }
+.text-muted { color: var(--text-muted); }
+
+.confidence-toggle-bar {
+  display: flex; align-items: flex-start; gap: 12px;
+  margin: 4px 0 20px; padding: 10px 14px;
+  background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+  max-width: 74ch;
+}
+.confidence-toggle-label { font-size: 0.86rem; color: var(--text-primary); font-weight: 500; cursor: pointer; }
+.confidence-toggle-sub { display: block; color: var(--text-muted); font-weight: 400; font-size: 0.78rem; margin-top: 3px; }
 
 .legacy-toggle-bar {
   display: flex; align-items: flex-start; gap: 12px;

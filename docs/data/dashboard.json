@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-15T11:33:45.671023Z",
+    "generated_at": "2026-09-15T11:45:24.056801Z",
     "cycles": [
       2020,
       2022,
@@ -24287,9 +24287,11 @@
           "cmte_id": "C00836916",
           "cmte_name": "TEAM KENNEDY",
           "amount_high": 4071.33,
+          "count_high": 12,
           "amount_medium": 0.0,
-          "count": 12,
-          "amount": 4071.33
+          "count_medium": 0,
+          "amount": 4071.33,
+          "count": 12
         }
       ],
       "by_party": [],
@@ -24746,161 +24748,201 @@
           "cmte_id": "C00696526",
           "cmte_name": "MARK KELLY FOR SENATE",
           "amount_high": 2864904.11,
+          "count_high": 36,
           "amount_medium": 0.0,
-          "count": 36,
-          "amount": 2864904.11
+          "count_medium": 0,
+          "amount": 2864904.11,
+          "count": 36
         },
         {
           "cmte_id": "C00343871",
           "cmte_name": "SCHIFF FOR SENATE",
           "amount_high": 2226155.6,
+          "count_high": 29,
           "amount_medium": 0.0,
-          "count": 29,
-          "amount": 2226155.6
+          "count_medium": 0,
+          "amount": 2226155.6,
+          "count": 29
         },
         {
           "cmte_id": "C00411330",
           "cmte_name": "FRIENDS OF BERNIE SANDERS",
           "amount_high": 883167.79,
+          "count_high": 51,
           "amount_medium": 0.0,
-          "count": 51,
-          "amount": 883167.79
+          "count_medium": 0,
+          "amount": 883167.79,
+          "count": 51
         },
         {
           "cmte_id": "C00703975",
           "cmte_name": "BIDEN FOR PRESIDENT",
           "amount_high": 746882.29,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 746882.29
+          "count_medium": 0,
+          "amount": 746882.29,
+          "count": 5
         },
         {
           "cmte_id": "C00777771",
           "cmte_name": "TIM RYAN FOR OHIO",
           "amount_high": 503855.1,
+          "count_high": 22,
           "amount_medium": 0.0,
-          "count": 22,
-          "amount": 503855.1
+          "count_medium": 0,
+          "amount": 503855.1,
+          "count": 22
         },
         {
           "cmte_id": "C00718866",
           "cmte_name": "JON OSSOFF FOR SENATE",
           "amount_high": 496257.81,
+          "count_high": 43,
           "amount_medium": 0.0,
-          "count": 43,
-          "amount": 496257.81
+          "count_medium": 0,
+          "amount": 496257.81,
+          "count": 43
         },
         {
           "cmte_id": "C00574889",
           "cmte_name": "TAMMY FOR ILLINOIS",
           "amount_high": 410263.55,
+          "count_high": 53,
           "amount_medium": 0.0,
-          "count": 53,
-          "amount": 410263.55
+          "count_medium": 0,
+          "amount": 410263.55,
+          "count": 53
         },
         {
           "cmte_id": "C00343871",
           "cmte_name": "SCHIFF FOR CONGRESS",
           "amount_high": 340548.29,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 340548.29
+          "count_medium": 0,
+          "amount": 340548.29,
+          "count": 5
         },
         {
           "cmte_id": "C00680934",
           "cmte_name": "ILHAN FOR CONGRESS",
           "amount_high": 253083.08000000002,
+          "count_high": 29,
           "amount_medium": 0.0,
-          "count": 29,
-          "amount": 253083.08000000002
+          "count_medium": 0,
+          "amount": 253083.08000000002,
+          "count": 29
         },
         {
           "cmte_id": "C00010603",
           "cmte_name": "DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE",
           "amount_high": 233225.8,
+          "count_high": 45,
           "amount_medium": 0.0,
-          "count": 45,
-          "amount": 233225.8
+          "count_medium": 0,
+          "amount": 233225.8,
+          "count": 45
         },
         {
           "cmte_id": "C00784959",
           "cmte_name": "MANDELA BARNES FOR WISCONSIN",
           "amount_high": 222694.31,
+          "count_high": 17,
           "amount_medium": 0.0,
-          "count": 17,
-          "amount": 222694.31
+          "count_medium": 0,
+          "amount": 222694.31,
+          "count": 17
         },
         {
           "cmte_id": "C00836346",
           "cmte_name": "CAMPAIGN FOR DEMOCRACY COMMITTEE",
           "amount_high": 184174.31,
+          "count_high": 22,
           "amount_medium": 0.0,
-          "count": 22,
-          "amount": 184174.31
+          "count_medium": 0,
+          "amount": 184174.31,
+          "count": 22
         },
         {
           "cmte_id": "C00777904",
           "cmte_name": "CHERI BEASLEY FOR NORTH CAROLINA",
           "amount_high": 141900.82,
+          "count_high": 19,
           "amount_medium": 0.0,
-          "count": 19,
-          "amount": 141900.82
+          "count_medium": 0,
+          "amount": 141900.82,
+          "count": 19
         },
         {
           "cmte_id": "C00834218",
           "cmte_name": "ELISSA SLOTKIN FOR MICHIGAN",
           "amount_high": 109884.14,
+          "count_high": 22,
           "amount_medium": 0.0,
-          "count": 22,
-          "amount": 109884.14
+          "count_medium": 0,
+          "amount": 109884.14,
+          "count": 22
         },
         {
           "cmte_id": "C00484642",
           "cmte_name": "SMP",
           "amount_high": 108195.45,
+          "count_high": 39,
           "amount_medium": 0.0,
-          "count": 39,
-          "amount": 108195.45
+          "count_medium": 0,
+          "amount": 108195.45,
+          "count": 39
         },
         {
           "cmte_id": "C00765164",
           "cmte_name": "ALEX PADILLA FOR SENATE",
           "amount_high": 98692.81,
+          "count_high": 38,
           "amount_medium": 0.0,
-          "count": 38,
-          "amount": 98692.81
+          "count_medium": 0,
+          "amount": 98692.81,
+          "count": 38
         },
         {
           "cmte_id": "C00731042",
           "cmte_name": "POWERED BY PEOPLE",
           "amount_high": 65225.18,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 65225.18
+          "count_medium": 0,
+          "amount": 65225.18,
+          "count": 6
         },
         {
           "cmte_id": "C00711614",
           "cmte_name": "TOM STEYER 2020",
           "amount_high": 62500.0,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 62500.0
+          "count_medium": 0,
+          "amount": 62500.0,
+          "count": 7
         },
         {
           "cmte_id": "C00769901",
           "cmte_name": "MALCOLM PAC",
           "amount_high": 59348.84,
+          "count_high": 9,
           "amount_medium": 0.0,
-          "count": 9,
-          "amount": 59348.84
+          "count_medium": 0,
+          "amount": 59348.84,
+          "count": 9
         },
         {
           "cmte_id": "C00703975",
           "cmte_name": "HARRIS FOR PRESIDENT",
           "amount_high": 50000.0,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 50000.0
+          "count_medium": 0,
+          "amount": 50000.0,
+          "count": 2
         }
       ],
       "by_party": [
@@ -28844,161 +28886,201 @@
           "cmte_id": "C00663211",
           "cmte_name": "MAD DOG PAC",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 527194.09,
-          "count": 445,
-          "amount": 527194.09
+          "count_medium": 445,
+          "amount": 527194.09,
+          "count": 445
         },
         {
           "cmte_id": "C00141812",
           "cmte_name": "DEMOCRATIC STATE CENTRAL COMMITTEE OF MARYLAND",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 111313.70999999999,
-          "count": 37,
-          "amount": 111313.70999999999
+          "count_medium": 37,
+          "amount": 111313.70999999999,
+          "count": 37
         },
         {
           "cmte_id": "C00834077",
           "cmte_name": "NEVER BACK DOWN INC.",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 36250.020000000004,
-          "count": 16,
-          "amount": 36250.020000000004
+          "count_medium": 16,
+          "amount": 36250.020000000004,
+          "count": 16
         },
         {
           "cmte_id": "C00603084",
           "cmte_name": "NATIONAL DEMOCRATIC TRAINING COMMITTEE (NDTC)",
           "amount_high": 16328.09,
+          "count_high": 17,
           "amount_medium": 0.0,
-          "count": 17,
-          "amount": 16328.09
+          "count_medium": 0,
+          "amount": 16328.09,
+          "count": 17
         },
         {
           "cmte_id": "C00677492",
           "cmte_name": "SHEILA CHERFILUS MCCORMICK FOR CONGRESS, INC",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 14785.289999999999,
-          "count": 31,
-          "amount": 14785.289999999999
+          "count_medium": 31,
+          "amount": 14785.289999999999,
+          "count": 31
         },
         {
           "cmte_id": "C00401190",
           "cmte_name": "BUTTERFIELD FOR CONGRESS",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 14614.300000000001,
-          "count": 36,
-          "amount": 14614.300000000001
+          "count_medium": 36,
+          "amount": 14614.300000000001,
+          "count": 36
         },
         {
           "cmte_id": "C00916601",
           "cmte_name": "CLAUDE KEISSIEH FOR CONGRESS",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 12990.0,
-          "count": 3,
-          "amount": 12990.0
+          "count_medium": 3,
+          "amount": 12990.0,
+          "count": 3
         },
         {
           "cmte_id": "C00287904",
           "cmte_name": "SHEILA JACKSON LEE FOR CONGRESS",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 10000.0,
-          "count": 1,
-          "amount": 10000.0
+          "count_medium": 1,
+          "amount": 10000.0,
+          "count": 1
         },
         {
           "cmte_id": "C00395848",
           "cmte_name": "CLEAVER FOR CONGRESS",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 10000.0,
-          "count": 1,
-          "amount": 10000.0
+          "count_medium": 1,
+          "amount": 10000.0,
+          "count": 1
         },
         {
           "cmte_id": "C00499988",
           "cmte_name": "COTTON FOR SENATE, INC.",
           "amount_high": 4520.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 4520.0
+          "count_medium": 0,
+          "amount": 4520.0,
+          "count": 3
         },
         {
           "cmte_id": "C00832253",
           "cmte_name": "EMORD FOR SENATE INC.",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 4404.64,
-          "count": 6,
-          "amount": 4404.64
+          "count_medium": 6,
+          "amount": 4404.64,
+          "count": 6
         },
         {
           "cmte_id": "C00933085",
           "cmte_name": "A FIGHT WORTH HAVING",
           "amount_high": 3957.22,
+          "count_high": 47,
           "amount_medium": 0.0,
-          "count": 47,
-          "amount": 3957.22
+          "count_medium": 0,
+          "amount": 3957.22,
+          "count": 47
         },
         {
           "cmte_id": "C00781443",
           "cmte_name": "BRITT FOR ALABAMA INC",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 3899.05,
-          "count": 1,
-          "amount": 3899.05
+          "count_medium": 1,
+          "amount": 3899.05,
+          "count": 1
         },
         {
           "cmte_id": "C00800912",
           "cmte_name": "COMMITTEE TO ELECT DUKE FOR CONGRESS",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 3600.0,
-          "count": 7,
-          "amount": 3600.0
+          "count_medium": 7,
+          "amount": 3600.0,
+          "count": 7
         },
         {
           "cmte_id": "C00800003",
           "cmte_name": "CRAIG RIEDEL FOR OHIO",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 2415.95,
-          "count": 1,
-          "amount": 2415.95
+          "count_medium": 1,
+          "amount": 2415.95,
+          "count": 1
         },
         {
           "cmte_id": "C00913087",
           "cmte_name": "BATTLEGROUND ALLIANCE PAC",
           "amount_high": 1813.55,
+          "count_high": 14,
           "amount_medium": 0.0,
-          "count": 14,
-          "amount": 1813.55
+          "count_medium": 0,
+          "amount": 1813.55,
+          "count": 14
         },
         {
           "cmte_id": "C00922492",
           "cmte_name": "JASON KNAPP FOR CONGRESS",
           "amount_high": 1527.52,
+          "count_high": 13,
           "amount_medium": 0.0,
-          "count": 13,
-          "amount": 1527.52
+          "count_medium": 0,
+          "amount": 1527.52,
+          "count": 13
         },
         {
           "cmte_id": "C00860254",
           "cmte_name": "MUSLIMS UNITED PAC",
           "amount_high": 1283.1,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 1283.1
+          "count_medium": 0,
+          "amount": 1283.1,
+          "count": 6
         },
         {
           "cmte_id": "C00896951",
           "cmte_name": "AMERICAN MUCKRAKERS II",
           "amount_high": 1275.33,
+          "count_high": 38,
           "amount_medium": 0.0,
-          "count": 38,
-          "amount": 1275.33
+          "count_medium": 0,
+          "amount": 1275.33,
+          "count": 38
         },
         {
           "cmte_id": "C00089482",
           "cmte_name": "UTAH REPUBLICAN PARTY",
           "amount_high": 1249.58,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 1249.58
+          "count_medium": 0,
+          "amount": 1249.58,
+          "count": 1
         }
       ],
       "by_party": [
@@ -32976,161 +33058,201 @@
           "cmte_id": "C00578302",
           "cmte_name": "LOU CORREA FOR CONGRESS",
           "amount_high": 48461.35,
+          "count_high": 68,
           "amount_medium": 0.0,
-          "count": 68,
-          "amount": 48461.35
+          "count_medium": 0,
+          "amount": 48461.35,
+          "count": 68
         },
         {
           "cmte_id": "C00573261",
           "cmte_name": "END CITIZENS UNITED",
           "amount_high": 38277.63,
+          "count_high": 36,
           "amount_medium": 0.0,
-          "count": 36,
-          "amount": 38277.63
+          "count_medium": 0,
+          "amount": 38277.63,
+          "count": 36
         },
         {
           "cmte_id": "C00798132",
           "cmte_name": "SHRI FOR CONGRESS",
           "amount_high": 37083.93,
+          "count_high": 41,
           "amount_medium": 0.0,
-          "count": 41,
-          "amount": 37083.93
+          "count_medium": 0,
+          "amount": 37083.93,
+          "count": 41
         },
         {
           "cmte_id": "C00614115",
           "cmte_name": "NELSON FOR WISCONSIN",
           "amount_high": 37042.22,
+          "count_high": 23,
           "amount_medium": 0.0,
-          "count": 23,
-          "amount": 37042.22
+          "count_medium": 0,
+          "amount": 37042.22,
+          "count": 23
         },
         {
           "cmte_id": "C00859108",
           "cmte_name": "MAXINE FOR CONGRESS",
           "amount_high": 30775.690000000002,
+          "count_high": 13,
           "amount_medium": 0.0,
-          "count": 13,
-          "amount": 30775.690000000002
+          "count_medium": 0,
+          "amount": 30775.690000000002,
+          "count": 13
         },
         {
           "cmte_id": "C00771972",
           "cmte_name": "HEARTLAND PATRIOTS",
           "amount_high": 25475.0,
+          "count_high": 24,
           "amount_medium": 0.0,
-          "count": 24,
-          "amount": 25475.0
+          "count_medium": 0,
+          "amount": 25475.0,
+          "count": 24
         },
         {
           "cmte_id": "C00701599",
           "cmte_name": "JON HOADLEY FOR CONGRESS",
           "amount_high": 24987.489999999998,
+          "count_high": 17,
           "amount_medium": 0.0,
-          "count": 17,
-          "amount": 24987.489999999998
+          "count_medium": 0,
+          "amount": 24987.489999999998,
+          "count": 17
         },
         {
           "cmte_id": "C00725101",
           "cmte_name": "CHRISTY SMITH FOR CONGRESS",
           "amount_high": 23850.0,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 23850.0
+          "count_medium": 0,
+          "amount": 23850.0,
+          "count": 7
         },
         {
           "cmte_id": "C00794354",
           "cmte_name": "ROBIN FULFORD FOR CONGRESS",
           "amount_high": 20802.57,
+          "count_high": 25,
           "amount_medium": 0.0,
-          "count": 25,
-          "amount": 20802.57
+          "count_medium": 0,
+          "amount": 20802.57,
+          "count": 25
         },
         {
           "cmte_id": "C00813758",
           "cmte_name": "TOKUDA FOR HAWAII",
           "amount_high": 19763.62,
+          "count_high": 15,
           "amount_medium": 0.0,
-          "count": 15,
-          "amount": 19763.62
+          "count_medium": 0,
+          "amount": 19763.62,
+          "count": 15
         },
         {
           "cmte_id": "C00767798",
           "cmte_name": "HOLLY MCCORMACK FOR CONGRESS",
           "amount_high": 19110.05,
+          "count_high": 27,
           "amount_medium": 0.0,
-          "count": 27,
-          "amount": 19110.05
+          "count_medium": 0,
+          "amount": 19110.05,
+          "count": 27
         },
         {
           "cmte_id": "C00839597",
           "cmte_name": "COLIN ALLRED FOR SENATE",
           "amount_high": 18978.0,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 18978.0
+          "count_medium": 0,
+          "amount": 18978.0,
+          "count": 7
         },
         {
           "cmte_id": "C00808329",
           "cmte_name": "ETTINGER FOR CONGRESS",
           "amount_high": 18365.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 18365.0
+          "count_medium": 0,
+          "amount": 18365.0,
+          "count": 4
         },
         {
           "cmte_id": "C00767343",
           "cmte_name": "MUAD FOR CONGRESS",
           "amount_high": 18242.84,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 18242.84
+          "count_medium": 0,
+          "amount": 18242.84,
+          "count": 7
         },
         {
           "cmte_id": "C00648956",
           "cmte_name": "RISING ELECTORATE PAC",
           "amount_high": 17851.0,
+          "count_high": 22,
           "amount_medium": 0.0,
-          "count": 22,
-          "amount": 17851.0
+          "count_medium": 0,
+          "amount": 17851.0,
+          "count": 22
         },
         {
           "cmte_id": "C00779439",
           "cmte_name": "MARISA WOOD FOR CONGRESS",
           "amount_high": 17347.79,
+          "count_high": 17,
           "amount_medium": 0.0,
-          "count": 17,
-          "amount": 17347.79
+          "count_medium": 0,
+          "amount": 17347.79,
+          "count": 17
         },
         {
           "cmte_id": "C00777771",
           "cmte_name": "TIM RYAN FOR OHIO",
           "amount_high": 16215.09,
+          "count_high": 17,
           "amount_medium": 0.0,
-          "count": 17,
-          "amount": 16215.09
+          "count_medium": 0,
+          "amount": 16215.09,
+          "count": 17
         },
         {
           "cmte_id": "C00904466",
           "cmte_name": "RAJA FOR ILLINOIS",
           "amount_high": 15000.0,
+          "count_high": 10,
           "amount_medium": 0.0,
-          "count": 10,
-          "amount": 15000.0
+          "count_medium": 0,
+          "amount": 15000.0,
+          "count": 10
         },
         {
           "cmte_id": "C00916437",
           "cmte_name": "GRAHAM FOR MAINE",
           "amount_high": 14750.0,
+          "count_high": 10,
           "amount_medium": 0.0,
-          "count": 10,
-          "amount": 14750.0
+          "count_medium": 0,
+          "amount": 14750.0,
+          "count": 10
         },
         {
           "cmte_id": "C00558627",
           "cmte_name": "GALLEGO FOR ARIZONA",
           "amount_high": 14075.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 14075.0
+          "count_medium": 0,
+          "amount": 14075.0,
+          "count": 4
         }
       ],
       "by_party": [
@@ -36809,9 +36931,11 @@
           "cmte_id": "C00776062",
           "cmte_name": "AMERICAN MUCKRAKERS PAC",
           "amount_high": 500.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 500.0
+          "count_medium": 0,
+          "amount": 500.0,
+          "count": 1
         }
       ],
       "by_party": [],
@@ -37093,161 +37217,201 @@
           "cmte_id": "C00003418",
           "cmte_name": "REPUBLICAN NATIONAL COMMITTEE",
           "amount_high": 703533.8300000001,
+          "count_high": 26,
           "amount_medium": 0.0,
-          "count": 26,
-          "amount": 703533.8300000001
+          "count_medium": 0,
+          "amount": 703533.8300000001,
+          "count": 26
         },
         {
           "cmte_id": "C00770941",
           "cmte_name": "TRUMP SAVE AMERICA JOINT FUNDRAISING COMMITTEE",
           "amount_high": 590000.0,
+          "count_high": 31,
           "amount_medium": 0.0,
-          "count": 31,
-          "amount": 590000.0
+          "count_medium": 0,
+          "amount": 590000.0,
+          "count": 31
         },
         {
           "cmte_id": "C00873893",
           "cmte_name": "TRUMP NATIONAL COMMITTEE JFC, INC.",
           "amount_high": 493118.86,
+          "count_high": 23,
           "amount_medium": 0.0,
-          "count": 23,
-          "amount": 493118.86
+          "count_medium": 0,
+          "amount": 493118.86,
+          "count": 23
         },
         {
           "cmte_id": "C00828541",
           "cmte_name": "NEVER SURRENDER, INC.",
           "amount_high": 401172.31,
+          "count_high": 33,
           "amount_medium": 0.0,
-          "count": 33,
-          "amount": 401172.31
+          "count_medium": 0,
+          "amount": 401172.31,
+          "count": 33
         },
         {
           "cmte_id": "C00027466",
           "cmte_name": "NRSC",
           "amount_high": 259302.56,
+          "count_high": 45,
           "amount_medium": 0.0,
-          "count": 45,
-          "amount": 259302.56
+          "count_medium": 0,
+          "amount": 259302.56,
+          "count": 45
         },
         {
           "cmte_id": "C00867937",
           "cmte_name": "TRUMP 47 COMMITTEE, INC.",
           "amount_high": 240000.0,
+          "count_high": 16,
           "amount_medium": 0.0,
-          "count": 16,
-          "amount": 240000.0
+          "count_medium": 0,
+          "amount": 240000.0,
+          "count": 16
         },
         {
           "cmte_id": "C00825851",
           "cmte_name": "MAKE AMERICA GREAT AGAIN INC.",
           "amount_high": 118666.67,
+          "count_high": 22,
           "amount_medium": 0.0,
-          "count": 22,
-          "amount": 118666.67
+          "count_medium": 0,
+          "amount": 118666.67,
+          "count": 22
         },
         {
           "cmte_id": "C00769232",
           "cmte_name": "JEFFERSON RISING",
           "amount_high": 109500.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 109500.0
+          "count_medium": 0,
+          "amount": 109500.0,
+          "count": 4
         },
         {
           "cmte_id": "C00608695",
           "cmte_name": "MIKE JOHNSON FOR LOUISIANA",
           "amount_high": 87000.0,
+          "count_high": 28,
           "amount_medium": 0.0,
-          "count": 28,
-          "amount": 87000.0
+          "count_medium": 0,
+          "amount": 87000.0,
+          "count": 28
         },
         {
           "cmte_id": "C00632257",
           "cmte_name": "MAST FOR CONGRESS",
           "amount_high": 24272.92,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 24272.92
+          "count_medium": 0,
+          "amount": 24272.92,
+          "count": 6
         },
         {
           "cmte_id": "C00277335",
           "cmte_name": "FAIRFAX COUNTY REPUBLICAN COMMITTEE (FEDERAL)",
           "amount_high": 17400.0,
+          "count_high": 12,
           "amount_medium": 0.0,
-          "count": 12,
-          "amount": 17400.0
+          "count_medium": 0,
+          "amount": 17400.0,
+          "count": 12
         },
         {
           "cmte_id": "C00852343",
           "cmte_name": "KARI LAKE FOR SENATE",
           "amount_high": 14440.64,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 14440.64
+          "count_medium": 0,
+          "amount": 14440.64,
+          "count": 7
         },
         {
           "cmte_id": "C00814509",
           "cmte_name": "BIENVENIDO ACTION PAC",
           "amount_high": 12500.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 12500.0
+          "count_medium": 0,
+          "amount": 12500.0,
+          "count": 4
         },
         {
           "cmte_id": "C00932848",
           "cmte_name": "BAISLEY FOR SENATE",
           "amount_high": 11930.0,
+          "count_high": 8,
           "amount_medium": 0.0,
-          "count": 8,
-          "amount": 11930.0
+          "count_medium": 0,
+          "amount": 11930.0,
+          "count": 8
         },
         {
           "cmte_id": "C00701003",
           "cmte_name": "HUNT FOR SENATE",
           "amount_high": 10023.84,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 10023.84
+          "count_medium": 0,
+          "amount": 10023.84,
+          "count": 4
         },
         {
           "cmte_id": "C00856120",
           "cmte_name": "KARI LAKE VICTORY FUND",
           "amount_high": 9744.95,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 9744.95
+          "count_medium": 0,
+          "amount": 9744.95,
+          "count": 6
         },
         {
           "cmte_id": "C00005926",
           "cmte_name": "ILLINOIS REPUBLICAN PARTY - FEDERAL",
           "amount_high": 6614.71,
+          "count_high": 10,
           "amount_medium": 0.0,
-          "count": 10,
-          "amount": 6614.71
+          "count_medium": 0,
+          "amount": 6614.71,
+          "count": 10
         },
         {
           "cmte_id": "C00172510",
           "cmte_name": "REPUBLICAN STATE COMMITTEE OF DELAWARE",
           "amount_high": 6119.58,
+          "count_high": 8,
           "amount_medium": 0.0,
-          "count": 8,
-          "amount": 6119.58
+          "count_medium": 0,
+          "amount": 6119.58,
+          "count": 8
         },
         {
           "cmte_id": "C00033134",
           "cmte_name": "COLORADO REPUBLICAN COMMITTEE",
           "amount_high": 5044.12,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 5044.12
+          "count_medium": 0,
+          "amount": 5044.12,
+          "count": 2
         },
         {
           "cmte_id": "C00849810",
           "cmte_name": "ROGERS FOR SENATE",
           "amount_high": 4085.48,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 4085.48
+          "count_medium": 0,
+          "amount": 4085.48,
+          "count": 2
         }
       ],
       "by_party": [
@@ -40932,17 +41096,21 @@
           "cmte_id": "C00670216",
           "cmte_name": "YOUTH PROGRESSIVE ACTION CATALYST",
           "amount_high": 420.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 420.0
+          "count_medium": 0,
+          "amount": 420.0,
+          "count": 1
         },
         {
           "cmte_id": "C00603084",
           "cmte_name": "NATIONAL DEMOCRATIC TRAINING COMMITTEE (NDTC)",
           "amount_high": 42.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 42.0
+          "count_medium": 0,
+          "amount": 42.0,
+          "count": 1
         }
       ],
       "by_party": [],
@@ -41057,33 +41225,41 @@
           "cmte_id": "C00710103",
           "cmte_name": "NANCY MACE FOR CONGRESS",
           "amount_high": 7618.74,
+          "count_high": 20,
           "amount_medium": 0.0,
-          "count": 20,
-          "amount": 7618.74
+          "count_medium": 0,
+          "amount": 7618.74,
+          "count": 20
         },
         {
           "cmte_id": "C00099267",
           "cmte_name": "TEXAS DEMOCRATIC PARTY",
           "amount_high": 315.0,
+          "count_high": 16,
           "amount_medium": 0.0,
-          "count": 16,
-          "amount": 315.0
+          "count_medium": 0,
+          "amount": 315.0,
+          "count": 16
         },
         {
           "cmte_id": "C00688739",
           "cmte_name": "DITCH FUND",
           "amount_high": 315.0,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 315.0
+          "count_medium": 0,
+          "amount": 315.0,
+          "count": 6
         },
         {
           "cmte_id": "C00638767",
           "cmte_name": "CORI BUSH FOR CONGRESS",
           "amount_high": 95.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 95.0
+          "count_medium": 0,
+          "amount": 95.0,
+          "count": 4
         }
       ],
       "by_party": [
@@ -41722,25 +41898,31 @@
           "cmte_id": "C00703975",
           "cmte_name": "HARRIS FOR PRESIDENT",
           "amount_high": 12500.0,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 12500.0
+          "count_medium": 0,
+          "amount": 12500.0,
+          "count": 5
         },
         {
           "cmte_id": "C00631549",
           "cmte_name": "FORWARD MAJORITY ACTION",
           "amount_high": 5950.0,
+          "count_high": 17,
           "amount_medium": 0.0,
-          "count": 17,
-          "amount": 5950.0
+          "count_medium": 0,
+          "amount": 5950.0,
+          "count": 17
         },
         {
           "cmte_id": "C00341396",
           "cmte_name": "MOVEON.ORG POLITICAL ACTION",
           "amount_high": 1313.1200000000001,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 1313.1200000000001
+          "count_medium": 0,
+          "amount": 1313.1200000000001,
+          "count": 6
         }
       ],
       "by_party": [],
@@ -42149,41 +42331,51 @@
           "cmte_id": "C00909309",
           "cmte_name": "TODD ACHILLES FOR IDAHO",
           "amount_high": 19848.989999999998,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 19848.989999999998
+          "count_medium": 0,
+          "amount": 19848.989999999998,
+          "count": 5
         },
         {
           "cmte_id": "C00910034",
           "cmte_name": "RUTH FORTUNE FOR CONGRESS",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 895.15,
-          "count": 1,
-          "amount": 895.15
+          "count_medium": 1,
+          "amount": 895.15,
+          "count": 1
         },
         {
           "cmte_id": "C00900480",
           "cmte_name": "FRIENDS OF JON THORP",
           "amount_high": 844.5,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 844.5
+          "count_medium": 0,
+          "amount": 844.5,
+          "count": 1
         },
         {
           "cmte_id": "C00911735",
           "cmte_name": "FLOYD TAYLOR FOR CONGRESS",
           "amount_high": 562.86,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 562.86
+          "count_medium": 0,
+          "amount": 562.86,
+          "count": 2
         },
         {
           "cmte_id": "C00917021",
           "cmte_name": "ISABELLE HARMAN FOR CONGRESS",
           "amount_high": 108.76,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 108.76
+          "count_medium": 0,
+          "amount": 108.76,
+          "count": 1
         }
       ],
       "by_party": [
@@ -42488,121 +42680,151 @@
           "cmte_id": "C00902668",
           "cmte_name": "ABDUL FOR U.S. SENATE",
           "amount_high": 169451.73,
+          "count_high": 9,
           "amount_medium": 0.0,
-          "count": 9,
-          "amount": 169451.73
+          "count_medium": 0,
+          "amount": 169451.73,
+          "count": 9
         },
         {
           "cmte_id": "C00458000",
           "cmte_name": "PROGRESSIVE CHANGE CAMPAIGN COMMITTEE",
           "amount_high": 91127.46,
+          "count_high": 11,
           "amount_medium": 0.0,
-          "count": 11,
-          "amount": 91127.46
+          "count_medium": 0,
+          "amount": 91127.46,
+          "count": 11
         },
         {
           "cmte_id": "C00695346",
           "cmte_name": "FIELD TEAM 6 FEC",
           "amount_high": 30123.410000000003,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 30123.410000000003
+          "count_medium": 0,
+          "amount": 30123.410000000003,
+          "count": 2
         },
         {
           "cmte_id": "C00632133",
           "cmte_name": "SWING LEFT",
           "amount_high": 25620.38,
+          "count_high": 36,
           "amount_medium": 0.0,
-          "count": 36,
-          "amount": 25620.38
+          "count_medium": 0,
+          "amount": 25620.38,
+          "count": 36
         },
         {
           "cmte_id": "C00855916",
           "cmte_name": "JANE GEORGE TN COMMITTEE TO ELECT",
           "amount_high": 13734.05,
+          "count_high": 9,
           "amount_medium": 0.0,
-          "count": 9,
-          "amount": 13734.05
+          "count_medium": 0,
+          "amount": 13734.05,
+          "count": 9
         },
         {
           "cmte_id": "C00929703",
           "cmte_name": "DR. KRISTIN HOOK FOR CONGRESS",
           "amount_high": 4099.4800000000005,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 4099.4800000000005
+          "count_medium": 0,
+          "amount": 4099.4800000000005,
+          "count": 3
         },
         {
           "cmte_id": "C00896357",
           "cmte_name": "OJEDA FOR NC",
           "amount_high": 3624.9399999999996,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 3624.9399999999996
+          "count_medium": 0,
+          "amount": 3624.9399999999996,
+          "count": 2
         },
         {
           "cmte_id": "C00909804",
           "cmte_name": "KIMBERLY HARDY FOR CONGRESS",
           "amount_high": 2225.3100000000004,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 2225.3100000000004
+          "count_medium": 0,
+          "amount": 2225.3100000000004,
+          "count": 4
         },
         {
           "cmte_id": "C00906529",
           "cmte_name": "HARRY JARIN FOR CONGRESS",
           "amount_high": 1868.29,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 1868.29
+          "count_medium": 0,
+          "amount": 1868.29,
+          "count": 2
         },
         {
           "cmte_id": "C00923581",
           "cmte_name": "J SAL FOR CONGRESS",
           "amount_high": 650.86,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 650.86
+          "count_medium": 0,
+          "amount": 650.86,
+          "count": 1
         },
         {
           "cmte_id": "C00697334",
           "cmte_name": "MCCORKLE FOR COLORADO",
           "amount_high": 560.21,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 560.21
+          "count_medium": 0,
+          "amount": 560.21,
+          "count": 3
         },
         {
           "cmte_id": "C00916809",
           "cmte_name": "FRIENDS OF WILLIAM LAWRENCE",
           "amount_high": 248.24,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 248.24
+          "count_medium": 0,
+          "amount": 248.24,
+          "count": 2
         },
         {
           "cmte_id": "C00928283",
           "cmte_name": "KAREN ORTIZ FOR CONGRESS",
           "amount_high": 230.44,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 230.44
+          "count_medium": 0,
+          "amount": 230.44,
+          "count": 2
         },
         {
           "cmte_id": "C00812479",
           "cmte_name": "TOGETHER WE ELECT PAC",
           "amount_high": -0.01,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": -0.01
+          "count_medium": 0,
+          "amount": -0.01,
+          "count": 1
         },
         {
           "cmte_id": "C00920314",
           "cmte_name": "CHELSEY HOCKETT FOR CONGRESS",
           "amount_high": -17.380000000000003,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": -17.380000000000003
+          "count_medium": 0,
+          "amount": -17.380000000000003,
+          "count": 2
         }
       ],
       "by_party": [
@@ -43994,161 +44216,201 @@
           "cmte_id": "C00309567",
           "cmte_name": "PROMETHEAN PAC",
           "amount_high": 2759.45,
+          "count_high": 32,
           "amount_medium": 0.0,
-          "count": 32,
-          "amount": 2759.45
+          "count_medium": 0,
+          "amount": 2759.45,
+          "count": 32
         },
         {
           "cmte_id": "C00804856",
           "cmte_name": "LF PAC",
           "amount_high": 1722.48,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 1722.48
+          "count_medium": 0,
+          "amount": 1722.48,
+          "count": 3
         },
         {
           "cmte_id": "C00844159",
           "cmte_name": "TIM SHEEHY FOR MONTANA",
           "amount_high": 920.0,
+          "count_high": 16,
           "amount_medium": 0.0,
-          "count": 16,
-          "amount": 920.0
+          "count_medium": 0,
+          "amount": 920.0,
+          "count": 16
         },
         {
           "cmte_id": "C00696948",
           "cmte_name": "BERNIE 2020",
           "amount_high": 896.75,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 896.75
+          "count_medium": 0,
+          "amount": 896.75,
+          "count": 7
         },
         {
           "cmte_id": "C00660795",
           "cmte_name": "DAN CRENSHAW FOR CONGRESS",
           "amount_high": 896.51,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 896.51
+          "count_medium": 0,
+          "amount": 896.51,
+          "count": 4
         },
         {
           "cmte_id": "C00492140",
           "cmte_name": "AB PAC",
           "amount_high": 869.67,
+          "count_high": 20,
           "amount_medium": 0.0,
-          "count": 20,
-          "amount": 869.67
+          "count_medium": 0,
+          "amount": 869.67,
+          "count": 20
         },
         {
           "cmte_id": "C00010603",
           "cmte_name": "DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE",
           "amount_high": 864.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 864.0
+          "count_medium": 0,
+          "amount": 864.0,
+          "count": 3
         },
         {
           "cmte_id": "C00588657",
           "cmte_name": "TEXANS FOR JODEY ARRINGTON",
           "amount_high": 864.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 864.0
+          "count_medium": 0,
+          "amount": 864.0,
+          "count": 3
         },
         {
           "cmte_id": "C00693234",
           "cmte_name": "WARREN FOR PRESIDENT, INC.",
           "amount_high": 666.0,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 666.0
+          "count_medium": 0,
+          "amount": 666.0,
+          "count": 6
         },
         {
           "cmte_id": "C00786822",
           "cmte_name": "MAXWELL ALEJANDRO FROST FOR CONGRESS",
           "amount_high": 642.62,
+          "count_high": 19,
           "amount_medium": 0.0,
-          "count": 19,
-          "amount": 642.62
+          "count_medium": 0,
+          "amount": 642.62,
+          "count": 19
         },
         {
           "cmte_id": "C00554709",
           "cmte_name": "MARK DESAULNIER FOR CONGRESS",
           "amount_high": 638.62,
+          "count_high": 11,
           "amount_medium": 0.0,
-          "count": 11,
-          "amount": 638.62
+          "count_medium": 0,
+          "amount": 638.62,
+          "count": 11
         },
         {
           "cmte_id": "C00876383",
           "cmte_name": "FRIENDS OF MELISSA CHAUDHRY FOR CONGRESS",
           "amount_high": 636.27,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 636.27
+          "count_medium": 0,
+          "amount": 636.27,
+          "count": 6
         },
         {
           "cmte_id": "C00927400",
           "cmte_name": "TROBOUGH FOR AZ",
           "amount_high": 518.4,
+          "count_high": 8,
           "amount_medium": 0.0,
-          "count": 8,
-          "amount": 518.4
+          "count_medium": 0,
+          "amount": 518.4,
+          "count": 8
         },
         {
           "cmte_id": "C00639591",
           "cmte_name": "ALEXANDRIA OCASIO-CORTEZ FOR CONGRESS",
           "amount_high": 432.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 432.0
+          "count_medium": 0,
+          "amount": 432.0,
+          "count": 1
         },
         {
           "cmte_id": "C00883660",
           "cmte_name": "CATHOLICS FOR THE FUTURE, INC.",
           "amount_high": 409.16,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 409.16
+          "count_medium": 0,
+          "amount": 409.16,
+          "count": 3
         },
         {
           "cmte_id": "C00851733",
           "cmte_name": "VOICES FOR A BETTER FUTURE PAC",
           "amount_high": 367.77,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 367.77
+          "count_medium": 0,
+          "amount": 367.77,
+          "count": 3
         },
         {
           "cmte_id": "C00907345",
           "cmte_name": "CITIZENS FOR JON BUCHWALD",
           "amount_high": 307.01,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 307.01
+          "count_medium": 0,
+          "amount": 307.01,
+          "count": 1
         },
         {
           "cmte_id": "C00697334",
           "cmte_name": "MCCORKLE FOR COLORADO",
           "amount_high": 300.0,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 300.0
+          "count_medium": 0,
+          "amount": 300.0,
+          "count": 5
         },
         {
           "cmte_id": "C00905463",
           "cmte_name": "ALLEN SPENCE THE PROSPERITY AGENDA",
           "amount_high": 298.0,
+          "count_high": 9,
           "amount_medium": 0.0,
-          "count": 9,
-          "amount": 298.0
+          "count_medium": 0,
+          "amount": 298.0,
+          "count": 9
         },
         {
           "cmte_id": "C00920223",
           "cmte_name": "FRIENDS OF JARED SULLIVAN FOR US SENATE",
           "amount_high": 288.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 288.0
+          "count_medium": 0,
+          "amount": 288.0,
+          "count": 1
         }
       ],
       "by_party": [
@@ -47302,161 +47564,201 @@
           "cmte_id": "C00903039",
           "cmte_name": "HALEY STEVENS FOR SENATE",
           "amount_high": 8400.0,
+          "count_high": 14,
           "amount_medium": 0.0,
-          "count": 14,
-          "amount": 8400.0
+          "count_medium": 0,
+          "amount": 8400.0,
+          "count": 14
         },
         {
           "cmte_id": "C00484642",
           "cmte_name": "SMP",
           "amount_high": 5000.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 5000.0
+          "count_medium": 0,
+          "amount": 5000.0,
+          "count": 1
         },
         {
           "cmte_id": "C00409730",
           "cmte_name": "NEW DEMOCRAT COALITION ACTION FUND",
           "amount_high": 5000.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 5000.0
+          "count_medium": 0,
+          "amount": 5000.0,
+          "count": 1
         },
         {
           "cmte_id": "C00919985",
           "cmte_name": "BOBBY PULIDO FOR TEXAS",
           "amount_high": 4500.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 4500.0
+          "count_medium": 0,
+          "amount": 4500.0,
+          "count": 1
         },
         {
           "cmte_id": "C00016899",
           "cmte_name": "OHIO DEMOCRATIC PARTY - FEDERAL",
           "amount_high": 4200.0,
+          "count_high": 14,
           "amount_medium": 0.0,
-          "count": 14,
-          "amount": 4200.0
+          "count_medium": 0,
+          "amount": 4200.0,
+          "count": 14
         },
         {
           "cmte_id": "C00901173",
           "cmte_name": "MCMORROW FOR MICHIGAN",
           "amount_high": 3900.0,
+          "count_high": 13,
           "amount_medium": 0.0,
-          "count": 13,
-          "amount": 3900.0
+          "count_medium": 0,
+          "amount": 3900.0,
+          "count": 13
         },
         {
           "cmte_id": "C00668228",
           "cmte_name": "NEVADANS FOR STEVEN HORSFORD",
           "amount_high": 3600.0,
+          "count_high": 12,
           "amount_medium": 0.0,
-          "count": 12,
-          "amount": 3600.0
+          "count_medium": 0,
+          "amount": 3600.0,
+          "count": 12
         },
         {
           "cmte_id": "C00641555",
           "cmte_name": "SQUARE ONE POLITICS",
           "amount_high": 3300.0,
+          "count_high": 11,
           "amount_medium": 0.0,
-          "count": 11,
-          "amount": 3300.0
+          "count_medium": 0,
+          "amount": 3300.0,
+          "count": 11
         },
         {
           "cmte_id": "C00898775",
           "cmte_name": "MARLENE FOR CONGRESS 2026",
           "amount_high": 1800.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 1800.0
+          "count_medium": 0,
+          "amount": 1800.0,
+          "count": 3
         },
         {
           "cmte_id": "C00365536",
           "cmte_name": "CHC BOLD PAC",
           "amount_high": 1667.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 1667.0
+          "count_medium": 0,
+          "amount": 1667.0,
+          "count": 1
         },
         {
           "cmte_id": "C00854588",
           "cmte_name": "MANNY LOPEZ FOR CONGRESS",
           "amount_high": 1500.0,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 1500.0
+          "count_medium": 0,
+          "amount": 1500.0,
+          "count": 5
         },
         {
           "cmte_id": "C00787648",
           "cmte_name": "CHRIS DELUZIO FOR CONGRESS",
           "amount_high": 1200.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 1200.0
+          "count_medium": 0,
+          "amount": 1200.0,
+          "count": 4
         },
         {
           "cmte_id": "C00806893",
           "cmte_name": "JANE FONDA CLIMATE PAC",
           "amount_high": 1200.0,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 1200.0
+          "count_medium": 0,
+          "amount": 1200.0,
+          "count": 2
         },
         {
           "cmte_id": "C00810416",
           "cmte_name": "JENNIFER SCHULTZ VOLUNTEER COMMITTEE",
           "amount_high": 1200.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 1200.0
+          "count_medium": 0,
+          "amount": 1200.0,
+          "count": 4
         },
         {
           "cmte_id": "C00916171",
           "cmte_name": "ERICA 4 OK 2026",
           "amount_high": 750.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 750.0
+          "count_medium": 0,
+          "amount": 750.0,
+          "count": 3
         },
         {
           "cmte_id": "C00547240",
           "cmte_name": "MOULTON FOR CONGRESS",
           "amount_high": 600.0,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 600.0
+          "count_medium": 0,
+          "amount": 600.0,
+          "count": 2
         },
         {
           "cmte_id": "C00864579",
           "cmte_name": "DIEMER FOR CONGRESS, LLC",
           "amount_high": 600.0,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 600.0
+          "count_medium": 0,
+          "amount": 600.0,
+          "count": 2
         },
         {
           "cmte_id": "C00872739",
           "cmte_name": "FRIENDS OF DAN RUBY",
           "amount_high": 600.0,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 600.0
+          "count_medium": 0,
+          "amount": 600.0,
+          "count": 2
         },
         {
           "cmte_id": "C00923649",
           "cmte_name": "SHAMEU SUPER PAC LLC",
           "amount_high": 600.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 600.0
+          "count_medium": 0,
+          "amount": 600.0,
+          "count": 1
         },
         {
           "cmte_id": "C00914440",
           "cmte_name": "HEATH HOWARD FOR CONGRESS",
           "amount_high": 300.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 300.0
+          "count_medium": 0,
+          "amount": 300.0,
+          "count": 1
         }
       ],
       "by_party": [
@@ -48751,49 +49053,61 @@
           "cmte_id": "C00933085",
           "cmte_name": "A FIGHT WORTH HAVING",
           "amount_high": 539.55,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 539.55
+          "count_medium": 0,
+          "amount": 539.55,
+          "count": 5
         },
         {
           "cmte_id": "C00926907",
           "cmte_name": "WITTA FOR CONGRESS COMMITTEE",
           "amount_high": 297.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 297.0
+          "count_medium": 0,
+          "amount": 297.0,
+          "count": 3
         },
         {
           "cmte_id": "C00901793",
           "cmte_name": "CARBONARA FOR CONGRESS",
           "amount_high": 220.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 220.0
+          "count_medium": 0,
+          "amount": 220.0,
+          "count": 1
         },
         {
           "cmte_id": "C00898817",
           "cmte_name": "SCHWARZE FOR SENATE",
           "amount_high": 198.0,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 198.0
+          "count_medium": 0,
+          "amount": 198.0,
+          "count": 2
         },
         {
           "cmte_id": "C00903195",
           "cmte_name": "ZATESLO FOR CONGRESS",
           "amount_high": 182.27,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 182.27
+          "count_medium": 0,
+          "amount": 182.27,
+          "count": 2
         },
         {
           "cmte_id": "C00896951",
           "cmte_name": "AMERICAN MUCKRAKERS II",
           "amount_high": 1.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 1.0
+          "count_medium": 0,
+          "amount": 1.0,
+          "count": 1
         }
       ],
       "by_party": [
@@ -49094,57 +49408,71 @@
           "cmte_id": "C00769232",
           "cmte_name": "JEFFERSON RISING",
           "amount_high": 215500.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 215500.0
+          "count_medium": 0,
+          "amount": 215500.0,
+          "count": 3
         },
         {
           "cmte_id": "C00853861",
           "cmte_name": "GLCF, INC.",
           "amount_high": 38000.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 38000.0
+          "count_medium": 0,
+          "amount": 38000.0,
+          "count": 4
         },
         {
           "cmte_id": "C00491357",
           "cmte_name": "STEVE DAINES FOR MONTANA",
           "amount_high": 5000.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 5000.0
+          "count_medium": 0,
+          "amount": 5000.0,
+          "count": 1
         },
         {
           "cmte_id": "C00075820",
           "cmte_name": "NRCC",
           "amount_high": 2000.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 2000.0
+          "count_medium": 0,
+          "amount": 2000.0,
+          "count": 1
         },
         {
           "cmte_id": "C00849810",
           "cmte_name": "ROGERS FOR SENATE",
           "amount_high": 1700.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 1700.0
+          "count_medium": 0,
+          "amount": 1700.0,
+          "count": 1
         },
         {
           "cmte_id": "C00310532",
           "cmte_name": "KAY GRANGER CAMPAIGN FUND",
           "amount_high": 1500.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 1500.0
+          "count_medium": 0,
+          "amount": 1500.0,
+          "count": 1
         },
         {
           "cmte_id": "C00769232",
           "cmte_name": "AMERICAN GREATNESS PAC",
           "amount_high": 1000.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 1000.0
+          "count_medium": 0,
+          "amount": 1000.0,
+          "count": 1
         }
       ],
       "by_party": [
@@ -49361,9 +49689,11 @@
           "cmte_id": "C00933085",
           "cmte_name": "A FIGHT WORTH HAVING",
           "amount_high": 675.51,
+          "count_high": 33,
           "amount_medium": 0.0,
-          "count": 33,
-          "amount": 675.51
+          "count_medium": 0,
+          "amount": 675.51,
+          "count": 33
         }
       ],
       "by_party": [],
@@ -49815,113 +50145,141 @@
           "cmte_id": "C00744946",
           "cmte_name": "HARRIS VICTORY FUND",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 186894.63,
-          "count": 2,
-          "amount": 186894.63
+          "count_medium": 2,
+          "amount": 186894.63,
+          "count": 2
         },
         {
           "cmte_id": "C00744946",
           "cmte_name": "BIDEN VICTORY FUND",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 75500.0,
-          "count": 3,
-          "amount": 75500.0
+          "count_medium": 3,
+          "amount": 75500.0,
+          "count": 3
         },
         {
           "cmte_id": "C00789552",
           "cmte_name": "RESTORE OUR FREEDOM PAC",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 5000.0,
-          "count": 1,
-          "amount": 5000.0
+          "count_medium": 1,
+          "amount": 5000.0,
+          "count": 1
         },
         {
           "cmte_id": "C00811711",
           "cmte_name": "DAO FOR AMERICA",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 2828.54,
-          "count": 3,
-          "amount": 2828.54
+          "count_medium": 3,
+          "amount": 2828.54,
+          "count": 3
         },
         {
           "cmte_id": "C00866244",
           "cmte_name": "MARJORIE MIKELS FOR CONGRESS 2024",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 2450.0,
-          "count": 3,
-          "amount": 2450.0
+          "count_medium": 3,
+          "amount": 2450.0,
+          "count": 3
         },
         {
           "cmte_id": "C00314575",
           "cmte_name": "COLLINS FOR SENATOR",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 2438.0,
-          "count": 1,
-          "amount": 2438.0
+          "count_medium": 1,
+          "amount": 2438.0,
+          "count": 1
         },
         {
           "cmte_id": "C00384529",
           "cmte_name": "LISA MURKOWSKI FOR US SENATE",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 1286.85,
-          "count": 1,
-          "amount": 1286.85
+          "count_medium": 1,
+          "amount": 1286.85,
+          "count": 1
         },
         {
           "cmte_id": "C00802496",
           "cmte_name": "TIM REICHERT FOR CONGRESS",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 1093.83,
-          "count": 4,
-          "amount": 1093.83
+          "count_medium": 4,
+          "amount": 1093.83,
+          "count": 4
         },
         {
           "cmte_id": "C00379735",
           "cmte_name": "COLE FOR CONGRESS",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 812.58,
-          "count": 1,
-          "amount": 812.58
+          "count_medium": 1,
+          "amount": 812.58,
+          "count": 1
         },
         {
           "cmte_id": "C00539825",
           "cmte_name": "CAPITO FOR WEST VIRGINIA",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 263.59,
-          "count": 1,
-          "amount": 263.59
+          "count_medium": 1,
+          "amount": 263.59,
+          "count": 1
         },
         {
           "cmte_id": "C00846642",
           "cmte_name": "PRESCOTT FOR CONGRESS",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 255.88,
-          "count": 1,
-          "amount": 255.88
+          "count_medium": 1,
+          "amount": 255.88,
+          "count": 1
         },
         {
           "cmte_id": "C00696054",
           "cmte_name": "MARIANNE WILLIAMSON FOR PRESIDENT",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 240.0,
-          "count": 1,
-          "amount": 240.0
+          "count_medium": 1,
+          "amount": 240.0,
+          "count": 1
         },
         {
           "cmte_id": "C00805275",
           "cmte_name": "ADAM FOR COLORADO",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 217.76,
-          "count": 1,
-          "amount": 217.76
+          "count_medium": 1,
+          "amount": 217.76,
+          "count": 1
         },
         {
           "cmte_id": "C00899336",
           "cmte_name": "MARK LEONARD FOR CALIFORNIA",
           "amount_high": 39.98,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 39.98
+          "count_medium": 0,
+          "amount": 39.98,
+          "count": 2
         }
       ],
       "by_party": [
@@ -50587,161 +50945,201 @@
           "cmte_id": "C00401224",
           "cmte_name": "ACTBLUE",
           "amount_high": 28397.96,
+          "count_high": 21,
           "amount_medium": 0.0,
-          "count": 21,
-          "amount": 28397.96
+          "count_medium": 0,
+          "amount": 28397.96,
+          "count": 21
         },
         {
           "cmte_id": "C00010603",
           "cmte_name": "DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE",
           "amount_high": 24040.0,
+          "count_high": 68,
           "amount_medium": 0.0,
-          "count": 68,
-          "amount": 24040.0
+          "count_medium": 0,
+          "amount": 24040.0,
+          "count": 68
         },
         {
           "cmte_id": "C00812388",
           "cmte_name": "MARY PELTOLA FOR ALASKA",
           "amount_high": 3700.53,
+          "count_high": 29,
           "amount_medium": 0.0,
-          "count": 29,
-          "amount": 3700.53
+          "count_medium": 0,
+          "amount": 3700.53,
+          "count": 29
         },
         {
           "cmte_id": "C00003418",
           "cmte_name": "REPUBLICAN NATIONAL COMMITTEE",
           "amount_high": 2436.01,
+          "count_high": 16,
           "amount_medium": 0.0,
-          "count": 16,
-          "amount": 2436.01
+          "count_medium": 0,
+          "amount": 2436.01,
+          "count": 16
         },
         {
           "cmte_id": "C00540302",
           "cmte_name": "TIM SCOTT FOR AMERICA",
           "amount_high": 1733.67,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 1733.67
+          "count_medium": 0,
+          "amount": 1733.67,
+          "count": 3
         },
         {
           "cmte_id": "C00653196",
           "cmte_name": "DAVID TRONE FOR MARYLAND",
           "amount_high": 1379.24,
+          "count_high": 9,
           "amount_medium": 0.0,
-          "count": 9,
-          "amount": 1379.24
+          "count_medium": 0,
+          "amount": 1379.24,
+          "count": 9
         },
         {
           "cmte_id": "C00709691",
           "cmte_name": "NEW JOURNEY PAC, INC.",
           "amount_high": 1258.49,
+          "count_high": 15,
           "amount_medium": 0.0,
-          "count": 15,
-          "amount": 1258.49
+          "count_medium": 0,
+          "amount": 1258.49,
+          "count": 15
         },
         {
           "cmte_id": "C00496075",
           "cmte_name": "RAND PAUL FOR US SENATE",
           "amount_high": 979.6499999999999,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 979.6499999999999
+          "count_medium": 0,
+          "amount": 979.6499999999999,
+          "count": 7
         },
         {
           "cmte_id": "C00651042",
           "cmte_name": "MOMS FED UP",
           "amount_high": 540.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 540.0
+          "count_medium": 0,
+          "amount": 540.0,
+          "count": 1
         },
         {
           "cmte_id": "C00675108",
           "cmte_name": "JOE MORELLE FOR CONGRESS",
           "amount_high": 540.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 540.0
+          "count_medium": 0,
+          "amount": 540.0,
+          "count": 1
         },
         {
           "cmte_id": "C00405878",
           "cmte_name": "AMERICANS FOR LEGAL IMMIGRATION PAC",
           "amount_high": 515.73,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 515.73
+          "count_medium": 0,
+          "amount": 515.73,
+          "count": 4
         },
         {
           "cmte_id": "C00075820",
           "cmte_name": "NRCC",
           "amount_high": 457.92,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 457.92
+          "count_medium": 0,
+          "amount": 457.92,
+          "count": 1
         },
         {
           "cmte_id": "C00786657",
           "cmte_name": "FRY FOR CONGRESS",
           "amount_high": 450.0,
+          "count_high": 15,
           "amount_medium": 0.0,
-          "count": 15,
-          "amount": 450.0
+          "count_medium": 0,
+          "amount": 450.0,
+          "count": 15
         },
         {
           "cmte_id": "C00852137",
           "cmte_name": "ROB FOR PA",
           "amount_high": 400.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 400.0
+          "count_medium": 0,
+          "amount": 400.0,
+          "count": 4
         },
         {
           "cmte_id": "C00632133",
           "cmte_name": "SWING LEFT",
           "amount_high": 377.28,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 377.28
+          "count_medium": 0,
+          "amount": 377.28,
+          "count": 3
         },
         {
           "cmte_id": "C00653121",
           "cmte_name": "PAUL DAVIS FOR KANSAS",
           "amount_high": 360.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 360.0
+          "count_medium": 0,
+          "amount": 360.0,
+          "count": 1
         },
         {
           "cmte_id": "C00658385",
           "cmte_name": "MARK GREEN FOR CONGRESS",
           "amount_high": 316.08,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 316.08
+          "count_medium": 0,
+          "amount": 316.08,
+          "count": 2
         },
         {
           "cmte_id": "C00828541",
           "cmte_name": "NEVER SURRENDER, INC.",
           "amount_high": 306.0,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 306.0
+          "count_medium": 0,
+          "amount": 306.0,
+          "count": 2
         },
         {
           "cmte_id": "C00042366",
           "cmte_name": "DSCC",
           "amount_high": 279.9,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 279.9
+          "count_medium": 0,
+          "amount": 279.9,
+          "count": 2
         },
         {
           "cmte_id": "C00390476",
           "cmte_name": "CATHY MCMORRIS RODGERS FOR CONGRESS",
           "amount_high": 279.9,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 279.9
+          "count_medium": 0,
+          "amount": 279.9,
+          "count": 2
         }
       ],
       "by_party": [
@@ -53961,17 +54359,21 @@
           "cmte_id": "C00933085",
           "cmte_name": "A FIGHT WORTH HAVING",
           "amount_high": 971.1899999999999,
+          "count_high": 9,
           "amount_medium": 0.0,
-          "count": 9,
-          "amount": 971.1899999999999
+          "count_medium": 0,
+          "amount": 971.1899999999999,
+          "count": 9
         },
         {
           "cmte_id": "C00926907",
           "cmte_name": "WITTA FOR CONGRESS COMMITTEE",
           "amount_high": 948.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 948.0
+          "count_medium": 0,
+          "amount": 948.0,
+          "count": 1
         }
       ],
       "by_party": [
@@ -54173,17 +54575,21 @@
           "cmte_id": "C00887323",
           "cmte_name": "THE PROGRESS COALITION",
           "amount_high": 884.0,
+          "count_high": 9,
           "amount_medium": 0.0,
-          "count": 9,
-          "amount": 884.0
+          "count_medium": 0,
+          "amount": 884.0,
+          "count": 9
         },
         {
           "cmte_id": "C00711358",
           "cmte_name": "JOSE CASTILLO FOR CONGRESS",
           "amount_high": 791.74,
+          "count_high": 8,
           "amount_medium": 0.0,
-          "count": 8,
-          "amount": 791.74
+          "count_medium": 0,
+          "amount": 791.74,
+          "count": 8
         }
       ],
       "by_party": [
@@ -54448,9 +54854,11 @@
           "cmte_id": "C00792283",
           "cmte_name": "GLENN F. IVEY FOR CONGRESS",
           "amount_high": 2288.88,
+          "count_high": 23,
           "amount_medium": 0.0,
-          "count": 23,
-          "amount": 2288.88
+          "count_medium": 0,
+          "amount": 2288.88,
+          "count": 23
         }
       ],
       "by_party": [],
@@ -54766,9 +55174,11 @@
           "cmte_id": "C00933085",
           "cmte_name": "A FIGHT WORTH HAVING",
           "amount_high": 881.46,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 881.46
+          "count_medium": 0,
+          "amount": 881.46,
+          "count": 6
         }
       ],
       "by_party": [],
@@ -54896,9 +55306,11 @@
           "cmte_id": "C00901793",
           "cmte_name": "CARBONARA FOR CONGRESS",
           "amount_high": 483.0,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 483.0
+          "count_medium": 0,
+          "amount": 483.0,
+          "count": 7
         }
       ],
       "by_party": [
@@ -55078,41 +55490,51 @@
           "cmte_id": "C00892794",
           "cmte_name": "SHOLDON DANIELS FOR THE PEOPLE",
           "amount_high": 893.76,
+          "count_high": 14,
           "amount_medium": 0.0,
-          "count": 14,
-          "amount": 893.76
+          "count_medium": 0,
+          "amount": 893.76,
+          "count": 14
         },
         {
           "cmte_id": "C00933085",
           "cmte_name": "A FIGHT WORTH HAVING",
           "amount_high": 313.92,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 313.92
+          "count_medium": 0,
+          "amount": 313.92,
+          "count": 1
         },
         {
           "cmte_id": "C00896548",
           "cmte_name": "SHEEPDOG PAC",
           "amount_high": 303.84,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 303.84
+          "count_medium": 0,
+          "amount": 303.84,
+          "count": 1
         },
         {
           "cmte_id": "C00766659",
           "cmte_name": "NOVEMBER COALITION",
           "amount_high": 90.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 90.0
+          "count_medium": 0,
+          "amount": 90.0,
+          "count": 3
         },
         {
           "cmte_id": "C00857714",
           "cmte_name": "TIM PECK FOR CONGRESS",
           "amount_high": 10.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 10.0
+          "count_medium": 0,
+          "amount": 10.0,
+          "count": 1
         }
       ],
       "by_party": [
@@ -55580,145 +56002,181 @@
           "cmte_id": "C00672295",
           "cmte_name": "FRIENDS OF LUCY MCBATH",
           "amount_high": 85500.83,
+          "count_high": 140,
           "amount_medium": 0.0,
-          "count": 140,
-          "amount": 85500.83
+          "count_medium": 0,
+          "amount": 85500.83,
+          "count": 140
         },
         {
           "cmte_id": "C00935494",
           "cmte_name": "HAMMER FOR ND",
           "amount_high": 18184.28,
+          "count_high": 8,
           "amount_medium": 0.0,
-          "count": 8,
-          "amount": 18184.28
+          "count_medium": 0,
+          "amount": 18184.28,
+          "count": 8
         },
         {
           "cmte_id": "C00844985",
           "cmte_name": "HILL HARPER FOR MICHIGAN",
           "amount_high": 13841.0,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 13841.0
+          "count_medium": 0,
+          "amount": 13841.0,
+          "count": 7
         },
         {
           "cmte_id": "C00783498",
           "cmte_name": "MAX STEINER FOR CONGRESS",
           "amount_high": 13544.449999999999,
+          "count_high": 83,
           "amount_medium": 0.0,
-          "count": 83,
-          "amount": 13544.449999999999
+          "count_medium": 0,
+          "amount": 13544.449999999999,
+          "count": 83
         },
         {
           "cmte_id": "C00833608",
           "cmte_name": "BARBARA LEE FOR US SENATE",
           "amount_high": 13471.0,
+          "count_high": 9,
           "amount_medium": 0.0,
-          "count": 9,
-          "amount": 13471.0
+          "count_medium": 0,
+          "amount": 13471.0,
+          "count": 9
         },
         {
           "cmte_id": "C00776740",
           "cmte_name": "WOMEN WIN WISCONSIN PAC",
           "amount_high": 13467.0,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 13467.0
+          "count_medium": 0,
+          "amount": 13467.0,
+          "count": 7
         },
         {
           "cmte_id": "C00836627",
           "cmte_name": "PRESTON FOR PENNSYLVANIA",
           "amount_high": 12516.0,
+          "count_high": 11,
           "amount_medium": 0.0,
-          "count": 11,
-          "amount": 12516.0
+          "count_medium": 0,
+          "amount": 12516.0,
+          "count": 11
         },
         {
           "cmte_id": "C00774273",
           "cmte_name": "BRANDON MOSELY FOR CONGRESS",
           "amount_high": 12133.19,
+          "count_high": 50,
           "amount_medium": 0.0,
-          "count": 50,
-          "amount": 12133.19
+          "count_medium": 0,
+          "amount": 12133.19,
+          "count": 50
         },
         {
           "cmte_id": "C00864124",
           "cmte_name": "TRYGVE HAMMER FOR CONGRESS",
           "amount_high": 10764.0,
+          "count_high": 10,
           "amount_medium": 0.0,
-          "count": 10,
-          "amount": 10764.0
+          "count_medium": 0,
+          "amount": 10764.0,
+          "count": 10
         },
         {
           "cmte_id": "C00746719",
           "cmte_name": "DOCTORS IN POLITICS",
           "amount_high": 9097.0,
+          "count_high": 9,
           "amount_medium": 0.0,
-          "count": 9,
-          "amount": 9097.0
+          "count_medium": 0,
+          "amount": 9097.0,
+          "count": 9
         },
         {
           "cmte_id": "C00914549",
           "cmte_name": "CALDWELL FOR CONGRESS",
           "amount_high": 9065.07,
+          "count_high": 12,
           "amount_medium": 0.0,
-          "count": 12,
-          "amount": 9065.07
+          "count_medium": 0,
+          "amount": 9065.07,
+          "count": 12
         },
         {
           "cmte_id": "C00915975",
           "cmte_name": "AISHA FOR MICHIGAN",
           "amount_high": 6404.0,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 6404.0
+          "count_medium": 0,
+          "amount": 6404.0,
+          "count": 5
         },
         {
           "cmte_id": "C00902965",
           "cmte_name": "ELIZABETH PANDICH FOR CONGRESS",
           "amount_high": 4292.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 4292.0
+          "count_medium": 0,
+          "amount": 4292.0,
+          "count": 4
         },
         {
           "cmte_id": "C00748582",
           "cmte_name": "REALLY AMERICAN PAC",
           "amount_high": 2867.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 2867.0
+          "count_medium": 0,
+          "amount": 2867.0,
+          "count": 3
         },
         {
           "cmte_id": "C00696245",
           "cmte_name": "FRIENDS OF AGATHA",
           "amount_high": 2450.0,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 2450.0
+          "count_medium": 0,
+          "amount": 2450.0,
+          "count": 7
         },
         {
           "cmte_id": "C00580068",
           "cmte_name": "PROGRESSIVE TURNOUT PROJECT",
           "amount_high": 1682.01,
+          "count_high": 16,
           "amount_medium": 0.0,
-          "count": 16,
-          "amount": 1682.01
+          "count_medium": 0,
+          "amount": 1682.01,
+          "count": 16
         },
         {
           "cmte_id": "C00853945",
           "cmte_name": "MERIKA COLEMAN FOR CONGRESS",
           "amount_high": 1600.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 1600.0
+          "count_medium": 0,
+          "amount": 1600.0,
+          "count": 3
         },
         {
           "cmte_id": "C00917674",
           "cmte_name": "SHAVONNE HEDGEPETH FOR CONGRESS",
           "amount_high": 1500.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 1500.0
+          "count_medium": 0,
+          "amount": 1500.0,
+          "count": 1
         }
       ],
       "by_party": [
@@ -59668,161 +60126,201 @@
           "cmte_id": "C00003418",
           "cmte_name": "REPUBLICAN NATIONAL COMMITTEE",
           "amount_high": 9966.09,
+          "count_high": 31,
           "amount_medium": 0.0,
-          "count": 31,
-          "amount": 9966.09
+          "count_medium": 0,
+          "amount": 9966.09,
+          "count": 31
         },
         {
           "cmte_id": "C00580068",
           "cmte_name": "PROGRESSIVE TURNOUT PROJECT",
           "amount_high": 4769.81,
+          "count_high": 17,
           "amount_medium": 0.0,
-          "count": 17,
-          "amount": 4769.81
+          "count_medium": 0,
+          "amount": 4769.81,
+          "count": 17
         },
         {
           "cmte_id": "C00815415",
           "cmte_name": "LAWLER FOR CONGRESS, INC.",
           "amount_high": 3474.0,
+          "count_high": 16,
           "amount_medium": 0.0,
-          "count": 16,
-          "amount": 3474.0
+          "count_medium": 0,
+          "amount": 3474.0,
+          "count": 16
         },
         {
           "cmte_id": "C00851733",
           "cmte_name": "VOICES FOR A BETTER FUTURE PAC",
           "amount_high": 2701.96,
+          "count_high": 19,
           "amount_medium": 0.0,
-          "count": 19,
-          "amount": 2701.96
+          "count_medium": 0,
+          "amount": 2701.96,
+          "count": 19
         },
         {
           "cmte_id": "C00843508",
           "cmte_name": "CORNEL WEST FOR PRESIDENT",
           "amount_high": 2200.0,
+          "count_high": 11,
           "amount_medium": 0.0,
-          "count": 11,
-          "amount": 2200.0
+          "count_medium": 0,
+          "amount": 2200.0,
+          "count": 11
         },
         {
           "cmte_id": "C00608398",
           "cmte_name": "JOHN KENNEDY FOR US",
           "amount_high": 2033.8,
+          "count_high": 11,
           "amount_medium": 0.0,
-          "count": 11,
-          "amount": 2033.8
+          "count_medium": 0,
+          "amount": 2033.8,
+          "count": 11
         },
         {
           "cmte_id": "C00799031",
           "cmte_name": "UNITED DEMOCRACY PROJECT ('UDP')",
           "amount_high": 1899.15,
+          "count_high": 14,
           "amount_medium": 0.0,
-          "count": 14,
-          "amount": 1899.15
+          "count_medium": 0,
+          "amount": 1899.15,
+          "count": 14
         },
         {
           "cmte_id": "C00543983",
           "cmte_name": "BILL CASSIDY FOR US SENATE",
           "amount_high": 1745.99,
+          "count_high": 21,
           "amount_medium": 0.0,
-          "count": 21,
-          "amount": 1745.99
+          "count_medium": 0,
+          "amount": 1745.99,
+          "count": 21
         },
         {
           "cmte_id": "C00503185",
           "cmte_name": "RO FOR CONGRESS INC",
           "amount_high": 1480.83,
+          "count_high": 12,
           "amount_medium": 0.0,
-          "count": 12,
-          "amount": 1480.83
+          "count_medium": 0,
+          "amount": 1480.83,
+          "count": 12
         },
         {
           "cmte_id": "C00848333",
           "cmte_name": "JEFF HURD FOR CONGRESS",
           "amount_high": 1386.17,
+          "count_high": 15,
           "amount_medium": 0.0,
-          "count": 15,
-          "amount": 1386.17
+          "count_medium": 0,
+          "amount": 1386.17,
+          "count": 15
         },
         {
           "cmte_id": "C00860254",
           "cmte_name": "MUSLIMS UNITED PAC",
           "amount_high": 1283.1,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 1283.1
+          "count_medium": 0,
+          "amount": 1283.1,
+          "count": 6
         },
         {
           "cmte_id": "C00927400",
           "cmte_name": "TROBOUGH FOR AZ",
           "amount_high": 1139.1,
+          "count_high": 15,
           "amount_medium": 0.0,
-          "count": 15,
-          "amount": 1139.1
+          "count_medium": 0,
+          "amount": 1139.1,
+          "count": 15
         },
         {
           "cmte_id": "C00917211",
           "cmte_name": "JAZMIN J ROBINSON FOR THE PEOPLE",
           "amount_high": 1110.0,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 1110.0
+          "count_medium": 0,
+          "amount": 1110.0,
+          "count": 5
         },
         {
           "cmte_id": "C00650432",
           "cmte_name": "DEMOCRATS WORK FOR AMERICA, INC",
           "amount_high": 1076.04,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 1076.04
+          "count_medium": 0,
+          "amount": 1076.04,
+          "count": 2
         },
         {
           "cmte_id": "C00341396",
           "cmte_name": "MOVEON.ORG POLITICAL ACTION",
           "amount_high": 975.08,
+          "count_high": 16,
           "amount_medium": 0.0,
-          "count": 16,
-          "amount": 975.08
+          "count_medium": 0,
+          "amount": 975.08,
+          "count": 16
         },
         {
           "cmte_id": "C00876383",
           "cmte_name": "FRIENDS OF MELISSA CHAUDHRY FOR CONGRESS",
           "amount_high": 905.31,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 905.31
+          "count_medium": 0,
+          "amount": 905.31,
+          "count": 4
         },
         {
           "cmte_id": "C00764233",
           "cmte_name": "DEFEND THE VOTE",
           "amount_high": 890.4,
+          "count_high": 14,
           "amount_medium": 0.0,
-          "count": 14,
-          "amount": 890.4
+          "count_medium": 0,
+          "amount": 890.4,
+          "count": 14
         },
         {
           "cmte_id": "C00933085",
           "cmte_name": "A FIGHT WORTH HAVING",
           "amount_high": 763.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 763.0
+          "count_medium": 0,
+          "amount": 763.0,
+          "count": 4
         },
         {
           "cmte_id": "C00906768",
           "cmte_name": "KLOIBER FOR CONGRESS",
           "amount_high": 745.33,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 745.33
+          "count_medium": 0,
+          "amount": 745.33,
+          "count": 5
         },
         {
           "cmte_id": "C00556506",
           "cmte_name": "TED LIEU FOR CONGRESS",
           "amount_high": 685.5699999999999,
+          "count_high": 8,
           "amount_medium": 0.0,
-          "count": 8,
-          "amount": 685.5699999999999
+          "count_medium": 0,
+          "amount": 685.5699999999999,
+          "count": 8
         }
       ],
       "by_party": [
@@ -63800,161 +64298,201 @@
           "cmte_id": "C00000935",
           "cmte_name": "DCCC",
           "amount_high": 27940.62,
+          "count_high": 151,
           "amount_medium": 0.0,
-          "count": 151,
-          "amount": 27940.62
+          "count_medium": 0,
+          "amount": 27940.62,
+          "count": 151
         },
         {
           "cmte_id": "C00010603",
           "cmte_name": "DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE",
           "amount_high": 9485.869999999999,
+          "count_high": 16,
           "amount_medium": 0.0,
-          "count": 16,
-          "amount": 9485.869999999999
+          "count_medium": 0,
+          "amount": 9485.869999999999,
+          "count": 16
         },
         {
           "cmte_id": "C00042366",
           "cmte_name": "DSCC",
           "amount_high": 5738.29,
+          "count_high": 9,
           "amount_medium": 0.0,
-          "count": 9,
-          "amount": 5738.29
+          "count_medium": 0,
+          "amount": 5738.29,
+          "count": 9
         },
         {
           "cmte_id": "C00718866",
           "cmte_name": "JON OSSOFF FOR SENATE",
           "amount_high": 5382.92,
+          "count_high": 16,
           "amount_medium": 0.0,
-          "count": 16,
-          "amount": 5382.92
+          "count_medium": 0,
+          "amount": 5382.92,
+          "count": 16
         },
         {
           "cmte_id": "C00901173",
           "cmte_name": "MCMORROW FOR MICHIGAN",
           "amount_high": 3779.9,
+          "count_high": 10,
           "amount_medium": 0.0,
-          "count": 10,
-          "amount": 3779.9
+          "count_medium": 0,
+          "amount": 3779.9,
+          "count": 10
         },
         {
           "cmte_id": "C00019331",
           "cmte_name": "DEMOCRATIC PARTY OF WISCONSIN FEDERAL",
           "amount_high": 2793.27,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 2793.27
+          "count_medium": 0,
+          "amount": 2793.27,
+          "count": 3
         },
         {
           "cmte_id": "C00193433",
           "cmte_name": "EMILYS LIST",
           "amount_high": 1874.51,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 1874.51
+          "count_medium": 0,
+          "amount": 1874.51,
+          "count": 4
         },
         {
           "cmte_id": "C00264697",
           "cmte_name": "FRIENDS OF SHERROD BROWN",
           "amount_high": 1873.9299999999998,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 1873.9299999999998
+          "count_medium": 0,
+          "amount": 1873.9299999999998,
+          "count": 6
         },
         {
           "cmte_id": "C00495358",
           "cmte_name": "KAINE FOR VIRGINIA",
           "amount_high": 1787.76,
+          "count_high": 25,
           "amount_medium": 0.0,
-          "count": 25,
-          "amount": 1787.76
+          "count_medium": 0,
+          "amount": 1787.76,
+          "count": 25
         },
         {
           "cmte_id": "C00343871",
           "cmte_name": "SCHIFF FOR SENATE",
           "amount_high": 1720.55,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 1720.55
+          "count_medium": 0,
+          "amount": 1720.55,
+          "count": 5
         },
         {
           "cmte_id": "C00653196",
           "cmte_name": "DAVID TRONE FOR MARYLAND",
           "amount_high": 1632.03,
+          "count_high": 18,
           "amount_medium": 0.0,
-          "count": 18,
-          "amount": 1632.03
+          "count_medium": 0,
+          "amount": 1632.03,
+          "count": 18
         },
         {
           "cmte_id": "C00667741",
           "cmte_name": "THE COMMITTEE TO ELECT AYANNA PRESSLEY",
           "amount_high": 1395.28,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 1395.28
+          "count_medium": 0,
+          "amount": 1395.28,
+          "count": 4
         },
         {
           "cmte_id": "C00492785",
           "cmte_name": "TED CRUZ FOR SENATE",
           "amount_high": 1211.81,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 1211.81
+          "count_medium": 0,
+          "amount": 1211.81,
+          "count": 3
         },
         {
           "cmte_id": "C00431056",
           "cmte_name": "BOB CASEY FOR SENATE INC",
           "amount_high": 1204.79,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 1204.79
+          "count_medium": 0,
+          "amount": 1204.79,
+          "count": 4
         },
         {
           "cmte_id": "C00660464",
           "cmte_name": "CHRIS PAPPAS FOR SENATE",
           "amount_high": 1200.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 1200.0
+          "count_medium": 0,
+          "amount": 1200.0,
+          "count": 1
         },
         {
           "cmte_id": "C00827022",
           "cmte_name": "2024 DEMOCRATIC NATIONAL CONVENTION COMMITTEE",
           "amount_high": 1150.03,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 1150.03
+          "count_medium": 0,
+          "amount": 1150.03,
+          "count": 6
         },
         {
           "cmte_id": "C00783274",
           "cmte_name": "BOOKER FOR KENTUCKY",
           "amount_high": 1146.08,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 1146.08
+          "count_medium": 0,
+          "amount": 1146.08,
+          "count": 4
         },
         {
           "cmte_id": "C00929844",
           "cmte_name": "ALLRED FOR TEXAS",
           "amount_high": 1112.0700000000002,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 1112.0700000000002
+          "count_medium": 0,
+          "amount": 1112.0700000000002,
+          "count": 7
         },
         {
           "cmte_id": "C00459255",
           "cmte_name": "FRIENDS OF TODD YOUNG, INC.",
           "amount_high": 1080.0,
+          "count_high": 36,
           "amount_medium": 0.0,
-          "count": 36,
-          "amount": 1080.0
+          "count_medium": 0,
+          "amount": 1080.0,
+          "count": 36
         },
         {
           "cmte_id": "C00878454",
           "cmte_name": "MAGGIE FOR CONGRESS",
           "amount_high": 975.89,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 975.89
+          "count_medium": 0,
+          "amount": 975.89,
+          "count": 4
         }
       ],
       "by_party": [
@@ -67648,25 +68186,31 @@
           "cmte_id": "C00933085",
           "cmte_name": "A FIGHT WORTH HAVING",
           "amount_high": 1515.29,
+          "count_high": 35,
           "amount_medium": 0.0,
-          "count": 35,
-          "amount": 1515.29
+          "count_medium": 0,
+          "amount": 1515.29,
+          "count": 35
         },
         {
           "cmte_id": "C00580068",
           "cmte_name": "PROGRESSIVE TURNOUT PROJECT",
           "amount_high": 600.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 600.0
+          "count_medium": 0,
+          "amount": 600.0,
+          "count": 3
         },
         {
           "cmte_id": "C00938837",
           "cmte_name": "GREGORY BURGESS FOR CONGRESS",
           "amount_high": 75.0,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 75.0
+          "count_medium": 0,
+          "amount": 75.0,
+          "count": 5
         }
       ],
       "by_party": [
@@ -68534,161 +69078,201 @@
           "cmte_id": "C00608398",
           "cmte_name": "JOHN KENNEDY FOR US",
           "amount_high": 196527.0,
+          "count_high": 11,
           "amount_medium": 0.0,
-          "count": 11,
-          "amount": 196527.0
+          "count_medium": 0,
+          "amount": 196527.0,
+          "count": 11
         },
         {
           "cmte_id": "C00892737",
           "cmte_name": "CONSTANTINO FOR CONGRESS, INC.",
           "amount_high": 194400.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 194400.0
+          "count_medium": 0,
+          "amount": 194400.0,
+          "count": 4
         },
         {
           "cmte_id": "C00257337",
           "cmte_name": "KEN CALVERT FOR CONGRESS COMMITTEE",
           "amount_high": 123640.0,
+          "count_high": 13,
           "amount_medium": 0.0,
-          "count": 13,
-          "amount": 123640.0
+          "count_medium": 0,
+          "amount": 123640.0,
+          "count": 13
         },
         {
           "cmte_id": "C00341396",
           "cmte_name": "MOVEON.ORG POLITICAL ACTION",
           "amount_high": 101075.37,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 101075.37
+          "count_medium": 0,
+          "amount": 101075.37,
+          "count": 6
         },
         {
           "cmte_id": "C00810754",
           "cmte_name": "TRUDY BUSCH VALENTINE FOR SENATE",
           "amount_high": 85890.0,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 85890.0
+          "count_medium": 0,
+          "amount": 85890.0,
+          "count": 5
         },
         {
           "cmte_id": "C00722207",
           "cmte_name": "MARK PUKITA FOR US SENATE 2022",
           "amount_high": 64800.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 64800.0
+          "count_medium": 0,
+          "amount": 64800.0,
+          "count": 3
         },
         {
           "cmte_id": "C00546499",
           "cmte_name": "MIKE BOST FOR CONGRESS COMMITTEE",
           "amount_high": 42050.0,
+          "count_high": 9,
           "amount_medium": 0.0,
-          "count": 9,
-          "amount": 42050.0
+          "count_medium": 0,
+          "amount": 42050.0,
+          "count": 9
         },
         {
           "cmte_id": "C00521948",
           "cmte_name": "RODNEY FOR CONGRESS",
           "amount_high": 39500.0,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 39500.0
+          "count_medium": 0,
+          "amount": 39500.0,
+          "count": 6
         },
         {
           "cmte_id": "C00031088",
           "cmte_name": "WASHINGTON STATE REPUBLICAN PARTY",
           "amount_high": 35396.25,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 35396.25
+          "count_medium": 0,
+          "amount": 35396.25,
+          "count": 2
         },
         {
           "cmte_id": "C00522425",
           "cmte_name": "FUTURE FIRST LEADERSHIP PAC",
           "amount_high": 33333.34,
+          "count_high": 10,
           "amount_medium": 0.0,
-          "count": 10,
-          "amount": 33333.34
+          "count_medium": 0,
+          "amount": 33333.34,
+          "count": 10
         },
         {
           "cmte_id": "C00856112",
           "cmte_name": "JILL STEIN FOR PRESIDENT 2024",
           "amount_high": 28000.0,
+          "count_high": 10,
           "amount_medium": 0.0,
-          "count": 10,
-          "amount": 28000.0
+          "count_medium": 0,
+          "amount": 28000.0,
+          "count": 10
         },
         {
           "cmte_id": "C00854778",
           "cmte_name": "DEAN 24, INC.",
           "amount_high": 20000.0,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 20000.0
+          "count_medium": 0,
+          "amount": 20000.0,
+          "count": 2
         },
         {
           "cmte_id": "C00774109",
           "cmte_name": "LARS MAPSTEAD FOR PRESIDENT",
           "amount_high": 20000.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 20000.0
+          "count_medium": 0,
+          "amount": 20000.0,
+          "count": 4
         },
         {
           "cmte_id": "C00839944",
           "cmte_name": "VIN KRUTTIVENTI FOR CONGRESS 2024",
           "amount_high": 20000.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 20000.0
+          "count_medium": 0,
+          "amount": 20000.0,
+          "count": 4
         },
         {
           "cmte_id": "C00038505",
           "cmte_name": "NORTH CAROLINA REPUBLICAN PARTY",
           "amount_high": 20000.0,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 20000.0
+          "count_medium": 0,
+          "amount": 20000.0,
+          "count": 2
         },
         {
           "cmte_id": "C00859439",
           "cmte_name": "DIXON FOR CONGRESS",
           "amount_high": 16400.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 16400.0
+          "count_medium": 0,
+          "amount": 16400.0,
+          "count": 3
         },
         {
           "cmte_id": "C00840108",
           "cmte_name": "GUNDERSON FOR CONGRESS",
           "amount_high": 15600.0,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 15600.0
+          "count_medium": 0,
+          "amount": 15600.0,
+          "count": 7
         },
         {
           "cmte_id": "C00935114",
           "cmte_name": "GALLAGHER FOR CONGRESS",
           "amount_high": 15340.0,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 15340.0
+          "count_medium": 0,
+          "amount": 15340.0,
+          "count": 5
         },
         {
           "cmte_id": "C00747170",
           "cmte_name": "ELECT REPUBLICANS",
           "amount_high": 13750.0,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 13750.0
+          "count_medium": 0,
+          "amount": 13750.0,
+          "count": 6
         },
         {
           "cmte_id": "C00711358",
           "cmte_name": "JOSE CASTILLO FOR CONGRESS",
           "amount_high": 11590.0,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 11590.0
+          "count_medium": 0,
+          "amount": 11590.0,
+          "count": 5
         }
       ],
       "by_party": [
@@ -70842,81 +71426,101 @@
           "cmte_id": "C00000935",
           "cmte_name": "DCCC",
           "amount_high": 9000.0,
+          "count_high": 9,
           "amount_medium": 0.0,
-          "count": 9,
-          "amount": 9000.0
+          "count_medium": 0,
+          "amount": 9000.0,
+          "count": 9
         },
         {
           "cmte_id": "C00019331",
           "cmte_name": "DEMOCRATIC PARTY OF WISCONSIN FEDERAL",
           "amount_high": 1800.0,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 1800.0
+          "count_medium": 0,
+          "amount": 1800.0,
+          "count": 2
         },
         {
           "cmte_id": "C00835041",
           "cmte_name": "FORWARD BLUE",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 1580.0,
-          "count": 5,
-          "amount": 1580.0
+          "count_medium": 5,
+          "amount": 1580.0,
+          "count": 5
         },
         {
           "cmte_id": "C00010603",
           "cmte_name": "DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 1494.0,
-          "count": 1,
-          "amount": 1494.0
+          "count_medium": 1,
+          "amount": 1494.0,
+          "count": 1
         },
         {
           "cmte_id": "C00864124",
           "cmte_name": "TRYGVE HAMMER FOR CONGRESS",
           "amount_high": 1067.5,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 1067.5
+          "count_medium": 0,
+          "amount": 1067.5,
+          "count": 6
         },
         {
           "cmte_id": "C00887323",
           "cmte_name": "THE PROGRESS COALITION",
           "amount_high": 996.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 996.0
+          "count_medium": 0,
+          "amount": 996.0,
+          "count": 4
         },
         {
           "cmte_id": "C00692319",
           "cmte_name": "VPP",
           "amount_high": 747.5,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 747.5
+          "count_medium": 0,
+          "amount": 747.5,
+          "count": 4
         },
         {
           "cmte_id": "C00167015",
           "cmte_name": "DEMOCRATIC PARTY OF ILLINOIS",
           "amount_high": 740.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 740.0
+          "count_medium": 0,
+          "amount": 740.0,
+          "count": 4
         },
         {
           "cmte_id": "C00876383",
           "cmte_name": "FRIENDS OF MELISSA CHAUDHRY FOR CONGRESS",
           "amount_high": 605.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 605.0
+          "count_medium": 0,
+          "amount": 605.0,
+          "count": 3
         },
         {
           "cmte_id": "C00856153",
           "cmte_name": "NEW. DIGITAL. NOW.",
           "amount_high": 0.0,
+          "count_high": 0,
           "amount_medium": 285.0,
-          "count": 1,
-          "amount": 285.0
+          "count_medium": 1,
+          "amount": 285.0,
+          "count": 1
         }
       ],
       "by_party": [
@@ -71489,9 +72093,11 @@
           "cmte_id": "C00027466",
           "cmte_name": "NRSC",
           "amount_high": 1700.16,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 1700.16
+          "count_medium": 0,
+          "amount": 1700.16,
+          "count": 5
         }
       ],
       "by_party": [
@@ -71612,9 +72218,11 @@
           "cmte_id": "C00789966",
           "cmte_name": "FORWARD PARTY",
           "amount_high": 83.74,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 83.74
+          "count_medium": 0,
+          "amount": 83.74,
+          "count": 1
         }
       ],
       "by_party": [],
@@ -71682,9 +72290,11 @@
           "cmte_id": "C00858688",
           "cmte_name": "LICCARDO FOR CONGRESS",
           "amount_high": 564.0,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 564.0
+          "count_medium": 0,
+          "amount": 564.0,
+          "count": 6
         }
       ],
       "by_party": [
@@ -71870,121 +72480,151 @@
           "cmte_id": "C00695346",
           "cmte_name": "FIELD TEAM 6",
           "amount_high": 44806.19,
+          "count_high": 6,
           "amount_medium": 0.0,
-          "count": 6,
-          "amount": 44806.19
+          "count_medium": 0,
+          "amount": 44806.19,
+          "count": 6
         },
         {
           "cmte_id": "C00010603",
           "cmte_name": "DNC SERVICES CORP / DEMOCRATIC NATIONAL COMMITTEE",
           "amount_high": 22770.0,
+          "count_high": 14,
           "amount_medium": 0.0,
-          "count": 14,
-          "amount": 22770.0
+          "count_medium": 0,
+          "amount": 22770.0,
+          "count": 14
         },
         {
           "cmte_id": "C00695346",
           "cmte_name": "FIELD TEAM 6 FEC",
           "amount_high": 15657.48,
+          "count_high": 12,
           "amount_medium": 0.0,
-          "count": 12,
-          "amount": 15657.48
+          "count_medium": 0,
+          "amount": 15657.48,
+          "count": 12
         },
         {
           "cmte_id": "C00909994",
           "cmte_name": "FIELD TEAM 6, INC.",
           "amount_high": 14592.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 14592.0
+          "count_medium": 0,
+          "amount": 14592.0,
+          "count": 3
         },
         {
           "cmte_id": "C00650432",
           "cmte_name": "DEMOCRATS WORK FOR AMERICA, INC",
           "amount_high": 13011.6,
+          "count_high": 11,
           "amount_medium": 0.0,
-          "count": 11,
-          "amount": 13011.6
+          "count_medium": 0,
+          "amount": 13011.6,
+          "count": 11
         },
         {
           "cmte_id": "C00341396",
           "cmte_name": "MOVEON.ORG POLITICAL ACTION",
           "amount_high": 7795.6,
+          "count_high": 14,
           "amount_medium": 0.0,
-          "count": 14,
-          "amount": 7795.6
+          "count_medium": 0,
+          "amount": 7795.6,
+          "count": 14
         },
         {
           "cmte_id": "C00619759",
           "cmte_name": "CREATIVE MAJORITY POLITICAL ACTION COMMITTEE",
           "amount_high": 6750.0,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 6750.0
+          "count_medium": 0,
+          "amount": 6750.0,
+          "count": 2
         },
         {
           "cmte_id": "C00835587",
           "cmte_name": "VOTE SAVE AMERICA",
           "amount_high": 6000.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 6000.0
+          "count_medium": 0,
+          "amount": 6000.0,
+          "count": 1
         },
         {
           "cmte_id": "C00703975",
           "cmte_name": "HARRIS FOR PRESIDENT",
           "amount_high": 6000.0,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 6000.0
+          "count_medium": 0,
+          "amount": 6000.0,
+          "count": 4
         },
         {
           "cmte_id": "C00812479",
           "cmte_name": "TOGETHER WE ELECT PAC",
           "amount_high": 5015.37,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 5015.37
+          "count_medium": 0,
+          "amount": 5015.37,
+          "count": 5
         },
         {
           "cmte_id": "C00019331",
           "cmte_name": "DEMOCRATIC PARTY OF WISCONSIN FEDERAL",
           "amount_high": 4427.8,
+          "count_high": 4,
           "amount_medium": 0.0,
-          "count": 4,
-          "amount": 4427.8
+          "count_medium": 0,
+          "amount": 4427.8,
+          "count": 4
         },
         {
           "cmte_id": "C00806893",
           "cmte_name": "JANE FONDA CLIMATE PAC",
           "amount_high": 3960.0,
+          "count_high": 1,
           "amount_medium": 0.0,
-          "count": 1,
-          "amount": 3960.0
+          "count_medium": 0,
+          "amount": 3960.0,
+          "count": 1
         },
         {
           "cmte_id": "C00573261",
           "cmte_name": "END CITIZENS UNITED",
           "amount_high": 3525.0,
+          "count_high": 9,
           "amount_medium": 0.0,
-          "count": 9,
-          "amount": 3525.0
+          "count_medium": 0,
+          "amount": 3525.0,
+          "count": 9
         },
         {
           "cmte_id": "C00843029",
           "cmte_name": "COURAGEOUS LEADERS",
           "amount_high": 2124.0,
+          "count_high": 7,
           "amount_medium": 0.0,
-          "count": 7,
-          "amount": 2124.0
+          "count_medium": 0,
+          "amount": 2124.0,
+          "count": 7
         },
         {
           "cmte_id": "C00920488",
           "cmte_name": "CAMMIE FOR CONGRESS",
           "amount_high": 1840.0,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 1840.0
+          "count_medium": 0,
+          "amount": 1840.0,
+          "count": 5
         }
       ],
       "by_party": [
@@ -73249,9 +73889,11 @@
           "cmte_id": "C00930214",
           "cmte_name": "WENDY HUANG FOR CONGRESS",
           "amount_high": 11524.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 11524.0
+          "count_medium": 0,
+          "amount": 11524.0,
+          "count": 3
         }
       ],
       "by_party": [
@@ -73415,57 +74057,71 @@
           "cmte_id": "C00836916",
           "cmte_name": "TEAM KENNEDY",
           "amount_high": 3784.82,
+          "count_high": 22,
           "amount_medium": 0.0,
-          "count": 22,
-          "amount": 3784.82
+          "count_medium": 0,
+          "amount": 3784.82,
+          "count": 22
         },
         {
           "cmte_id": "C00796045",
           "cmte_name": "TRUTH AND COURAGE PAC",
           "amount_high": 600.0,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 600.0
+          "count_medium": 0,
+          "amount": 600.0,
+          "count": 2
         },
         {
           "cmte_id": "C00917393",
           "cmte_name": "BRISCOE CAIN FOR CONGRESS",
           "amount_high": 600.0,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 600.0
+          "count_medium": 0,
+          "amount": 600.0,
+          "count": 2
         },
         {
           "cmte_id": "C00851980",
           "cmte_name": "FRIENDS OF DAVE MCCORMICK",
           "amount_high": 150.0,
+          "count_high": 5,
           "amount_medium": 0.0,
-          "count": 5,
-          "amount": 150.0
+          "count_medium": 0,
+          "amount": 150.0,
+          "count": 5
         },
         {
           "cmte_id": "C00908525",
           "cmte_name": "BLUE COLLAR CASEY",
           "amount_high": 110.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 110.0
+          "count_medium": 0,
+          "amount": 110.0,
+          "count": 3
         },
         {
           "cmte_id": "C00509729",
           "cmte_name": "THOMAS MASSIE FOR CONGRESS",
           "amount_high": 90.0,
+          "count_high": 3,
           "amount_medium": 0.0,
-          "count": 3,
-          "amount": 90.0
+          "count_medium": 0,
+          "amount": 90.0,
+          "count": 3
         },
         {
           "cmte_id": "C00940452",
           "cmte_name": "MARIE HURABIELL FOR CONGRESS",
           "amount_high": 20.41,
+          "count_high": 2,
           "amount_medium": 0.0,
-          "count": 2,
-          "amount": 20.41
+          "count_medium": 0,
+          "amount": 20.41,
+          "count": 2
         }
       ],
       "by_party": [
