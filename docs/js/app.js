@@ -18,6 +18,17 @@
     if (r.rep_amount > 0) return "All R";
     return "—";
   }
+  // Numeric proxy for sorting the same D:R ratio buildPartyRatio renders as
+  // text: a finite ratio sorts on its own value, "All D" (no Republican
+  // spending at all) sorts above every finite ratio, "All R" (no Democratic
+  // spending) sorts below every finite ratio, and no data sorts last via
+  // sortRows' existing null handling.
+  function partyRatioSortValue(r) {
+    if (r.dem_rep_ratio !== null && r.dem_rep_ratio !== undefined) return r.dem_rep_ratio;
+    if (r.dem_amount > 0) return Infinity;
+    if (r.rep_amount > 0) return 0;
+    return null;
+  }
   function pctDecimalsFor(maxVal) {
     if (maxVal >= 10) return 1;
     if (maxVal >= 1) return 2;
@@ -119,6 +130,7 @@
   const chartInstances = {};
   const viewModes = { breakdowns: "dollar", trends: "dollar" };
   const sortState = {
+    vendors: { key: "amount_high", dir: "desc" },
     dollar: { key: "ai_amount_high", dir: "desc" },
     pct: { key: "pct_ai", dir: "desc" },
     ieSpenders: { key: "amount", dir: "desc" },
@@ -201,7 +213,8 @@
         if (opts.sort && opts.sort.key === h.sortKey) {
           th.appendChild(el("span", { className: "sort-arrow", text: opts.sort.dir === "asc" ? "↑" : "↓" }));
         }
-        th.addEventListener("click", () => opts.onSort && opts.onSort(h.sortKey));
+        const onSort = h.onSort || opts.onSort;
+        th.addEventListener("click", () => onSort && onSort(h.sortKey));
       }
       trh.appendChild(th);
     });
@@ -238,11 +251,11 @@
     return table;
   }
 
-  function setPanelTable(panel, headers, rows) {
+  function setPanelTable(panel, headers, rows, opts) {
     const holder = document.querySelector('.table-holder[data-panel="' + panel + '"]');
     if (!holder) return;
     holder.innerHTML = "";
-    holder.appendChild(buildTable(headers, rows));
+    holder.appendChild(buildTable(headers, rows, opts));
   }
 
   function wireToggles() {
@@ -373,32 +386,33 @@
       },
     });
 
-    setPanelTable(
-      "vendors",
-      [
-        { key: "name", label: "Vendor", link: (r) => "#/vendor/" + r.id },
-        { key: "group", label: "Type" },
-        { key: "era", label: "Era" },
-        { key: "amount_high", label: "High-confidence $", num: true },
-        { key: "count_high", label: "Records", num: true },
-        { key: "amount_medium", label: "Lower-confidence $", num: true },
-        { key: "party_ratio", label: "D:R ratio", num: true },
-        { key: "website", label: "Website", link: (r) => r.website || null, external: true, render: (r) => (r.website ? "Visit ↗" : "—") },
-      ],
+    const vendorTableRows = sortRows(
       DATA.vendors_overall
         .filter((v) => eraFilter.includes(v.era))
-        .map((r) => ({
-          id: r.id,
-          name: r.name,
-          group: VENDOR_GROUP_LABEL[r.group] || r.group,
-          era: r.era === "legacy" ? "Legacy (pre-generative AI)" : "Generative",
-          amount_high: fmtUSD0.format(r.amount_high),
-          count_high: fmtInt.format(r.count_high),
-          amount_medium: fmtUSD0.format(r.amount_medium),
-          party_ratio: fmtPartyRatio(r),
-          website: r.homepage || "",
-        }))
+        .map((r) =>
+          Object.assign({}, r, {
+            group_label: VENDOR_GROUP_LABEL[r.group] || r.group,
+            era_label: r.era === "legacy" ? "Legacy (pre-generative AI)" : "Generative",
+            party_ratio_value: partyRatioSortValue(r),
+          })
+        ),
+      sortState.vendors
     );
+    const vendorHeaders = withSort(
+      "vendors",
+      [
+        { label: "Vendor", sortKey: "name", link: (r) => "#/vendor/" + r.id, render: (r) => r.name },
+        { label: "Type", sortKey: "group_label", render: (r) => r.group_label },
+        { label: "Era", sortKey: "era_label", render: (r) => r.era_label },
+        { label: "High-confidence $", sortKey: "amount_high", num: true, render: (r) => fmtUSD0.format(r.amount_high) },
+        { label: "Records", sortKey: "count_high", num: true, render: (r) => fmtInt.format(r.count_high) },
+        { label: "Lower-confidence $", sortKey: "amount_medium", num: true, render: (r) => fmtUSD0.format(r.amount_medium) },
+        { label: "D:R ratio", sortKey: "party_ratio_value", num: true, render: (r) => fmtPartyRatio(r) },
+        { label: "Website", sortKey: null, link: (r) => r.homepage || null, external: true, render: (r) => (r.homepage ? "Visit ↗" : "—") },
+      ],
+      renderVendors
+    );
+    setPanelTable("vendors", vendorHeaders, vendorTableRows, { sort: sortState.vendors });
 
     const legendHtml =
       '<span class="key"><span class="swatch" style="background:' + c.general_purpose + '"></span>General-purpose AI</span>' +
