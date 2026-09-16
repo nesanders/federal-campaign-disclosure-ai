@@ -150,6 +150,7 @@
   const MAX_DETAIL_RECORDS_MA = 300; // must match MAX_DETAIL_RECORDS_MA in pipeline/build_dataset_ma.py
   let includeLegacy = false;
   let searchIndex = [];
+  let maSearchIndex = [];
   let searchFilterType = "all";
 
   function eraFilterList() {
@@ -1124,6 +1125,32 @@
     });
   }
 
+  // Same shape as buildSearchIndex(), for the Massachusetts tab: OCPF
+  // "filers" (almost always candidate committees) indexed as "candidate"
+  // for consistency with the Federal tab's labeling, plus MA vendors.
+  // No "race" type -- MA candidates aren't grouped into races here.
+  function buildMaSearchIndex() {
+    maSearchIndex = [];
+    Object.values(MA_DATA.filers_detail || {}).forEach((f) => {
+      maSearchIndex.push({
+        type: "candidate",
+        label: f.name,
+        sub: f.party,
+        searchText: [f.name, f.party].filter(Boolean).join(" ").toLowerCase(),
+        href: "#/ma/candidate/" + f.id,
+      });
+    });
+    (MA_DATA.vendors || []).forEach((v) => {
+      maSearchIndex.push({
+        type: "vendor",
+        label: v.name,
+        sub: (VENDOR_GROUP_LABEL[v.group] || v.group) + (v.era === "legacy" ? " · legacy" : ""),
+        searchText: [v.name, v.group, v.era].filter(Boolean).join(" ").toLowerCase(),
+        href: "#/ma/vendor/" + v.id,
+      });
+    });
+  }
+
   const SEARCH_TYPE_ORDER = ["candidate", "vendor", "race"];
 
   function runSearch(query) {
@@ -1134,8 +1161,9 @@
       results.innerHTML = "";
       return;
     }
+    const activeIndex = currentDataset === "ma" ? maSearchIndex : searchIndex;
     const byType = { candidate: [], vendor: [], race: [] };
-    searchIndex.forEach((item) => {
+    activeIndex.forEach((item) => {
       if (searchFilterType !== "all" && item.type !== searchFilterType) return;
       if (item.searchText.indexOf(q) === -1) return;
       byType[item.type].push(item);
@@ -1377,7 +1405,6 @@
 
     document.getElementById("page-toc").hidden = isMa;
     document.getElementById("legacy-toggle-bar").hidden = isMa;
-    document.getElementById("search-bar-wrap").hidden = isMa;
     document.getElementById("footer-source-federal").hidden = isMa;
     document.getElementById("footer-source-ma").hidden = !isMa;
 
@@ -1385,6 +1412,22 @@
     document.getElementById("page-h1").textContent = isMa ? MA_TITLE : FEDERAL_TITLE;
     document.getElementById("page-subtitle-1").textContent = isMa ? MA_SUBTITLE_1 : FEDERAL_SUBTITLE_1;
     document.getElementById("page-subtitle-2").hidden = isMa;
+
+    // The search bar itself is shared by both tabs (see runSearch(), which
+    // picks searchIndex vs. maSearchIndex off currentDataset) -- only its
+    // "Races" filter changes, since MA candidates aren't grouped into
+    // races here. Switching tabs always closes any open results and drops
+    // a "race" filter carried over from Federal, rather than searching a
+    // type that can never match on MA.
+    const raceChip = document.querySelector('.search-filter-chips .chip[data-filter="race"]');
+    if (raceChip) raceChip.hidden = isMa;
+    document.getElementById("global-search-input").placeholder = isMa ? "Search candidates, vendors…" : "Search candidates, vendors, races…";
+    if (isMa && searchFilterType === "race") {
+      searchFilterType = "all";
+      document.querySelectorAll(".search-filter-chips .chip").forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-filter") === "all"));
+    }
+    document.getElementById("search-results").hidden = true;
+    document.getElementById("global-search-input").value = "";
 
     if (isMa) {
       document.getElementById("main-view").hidden = true;
@@ -1963,6 +2006,7 @@
           MA_DATA = json;
           maVendorEraById = {};
           MA_DATA.vendors.forEach((v) => (maVendorEraById[v.id] = v.era));
+          buildMaSearchIndex();
           maRouter(pendingMaSubroute);
         })
         .catch((err) => {

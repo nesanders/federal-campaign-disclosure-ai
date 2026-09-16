@@ -98,6 +98,11 @@ the Federal tab): spend over time, a Democratic-vs-Republican party split,
 and every individual matched disbursement, sortable, with a one-click link
 back to that record's own OCPF filing.
 
+The search bar at the top of the page is shared by both tabs: on
+Massachusetts it searches MA candidates and vendors (no "Races" filter,
+since MA candidates aren't grouped into races here) and its results link to
+the MA detail pages above instead of the Federal ones.
+
 ## How it works
 
 ```
