@@ -29,6 +29,8 @@ PROCESSED_DIR = ROOT / "data" / "processed"
 OUT_PATH = ROOT / "docs" / "data" / "dashboard_ma.json"
 
 NOTABLE_RECORD_LIMIT = 20
+MAX_DETAIL_RECORDS_MA = 300
+TOP_N_MA_FILERS = 20
 
 
 def _parse_mdy(value: str) -> date | None:
@@ -152,6 +154,23 @@ def main() -> None:
 
     notable_records = []
 
+    # Per-filer ("candidate" equivalent -- OCPF's filers are almost all
+    # candidate committees) and per-vendor detail, for the click-through
+    # pages: mirrors the federal dashboard's candidates_detail/
+    # vendors_detail, built from every matched row rather than just the
+    # top-20 notable_records used by the overview table.
+    filer_names: dict[str, str] = {}
+    filer_totals: dict[str, float] = defaultdict(float)
+    filer_record_count: dict[str, int] = defaultdict(int)
+    filer_vendor_ids: dict[str, set] = defaultdict(set)
+    filer_year_totals: dict[str, dict[int, dict]] = defaultdict(lambda: defaultdict(lambda: {"amount": 0.0, "count": 0}))
+    filer_records: dict[str, list] = defaultdict(list)
+
+    vendor_year_totals: dict[str, dict[int, dict]] = defaultdict(lambda: defaultdict(lambda: {"amount": 0.0, "count": 0}))
+    vendor_year_party_totals: dict[str, dict[int, dict]] = defaultdict(lambda: defaultdict(lambda: {"Democratic": 0.0, "Republican": 0.0}))
+    vendor_by_filer: dict[str, dict[str, dict]] = defaultdict(lambda: defaultdict(lambda: {"amount": 0.0, "count": 0}))
+    vendor_detail_records: dict[str, list] = defaultdict(list)
+
     for row in rows:
         amount = float(row["amount"] or 0)
         vids = row["vendor_ids"].split(";")
@@ -159,31 +178,75 @@ def main() -> None:
         veras = row["vendor_eras"].split(";")
         confidences = row["confidences"].split(";")
         party = filer_party.get(row["filer_cpf_id"], "")
+        filer_id = row["filer_cpf_id"]
+        purpose_display = row["clarified_purpose"] or row["purpose"]
 
         total_all += amount
         if any(era == "generative" for era in veras):
             total_generative += amount
-        matched_filers.add(row["filer_cpf_id"])
+        matched_filers.add(filer_id)
 
         try:
             year = int(row["date"].split("/")[-1])
+        except (ValueError, IndexError):
+            year = None
+
+        if year is not None:
             year_totals[year] += amount
             year_records[year] += 1
             if party in ("Democratic", "Republican"):
                 year_party_totals[(year, party)] += amount
-        except (ValueError, IndexError):
-            pass
 
         if party in ("Democratic", "Republican"):
             party_totals[party] += amount
             party_counts[party] += 1
 
-        for vid in vids:
+        if filer_id not in filer_names:
+            filer_names[filer_id] = row["filer_name"]
+        filer_totals[filer_id] += amount
+        filer_record_count[filer_id] += 1
+        if year is not None:
+            filer_year_totals[filer_id][year]["amount"] += amount
+            filer_year_totals[filer_id][year]["count"] += 1
+        filer_records[filer_id].append(
+            {
+                "date": row["date"],
+                "vendor_ids": vids,
+                "vendor_names": vnames,
+                "confidences": confidences,
+                "amount": round(amount, 2),
+                "purpose": purpose_display,
+                "source_link": row["source_link"],
+            }
+        )
+
+        for vid, vname, confidence in zip(vids, vnames, confidences):
             vendor_totals[vid] += amount
             vendor_records[vid] += 1
-            vendor_filers[vid].add(row["filer_cpf_id"])
+            vendor_filers[vid].add(filer_id)
             if party in ("Democratic", "Republican"):
                 vendor_party_amount[vid][party] += amount
+
+            filer_vendor_ids[filer_id].add(vid)
+            vendor_by_filer[vid][filer_id]["amount"] += amount
+            vendor_by_filer[vid][filer_id]["count"] += 1
+            vendor_detail_records[vid].append(
+                {
+                    "date": row["date"],
+                    "filer_cpf_id": filer_id,
+                    "filer_name": row["filer_name"],
+                    "filer_party": party or "Unknown",
+                    "amount": round(amount, 2),
+                    "purpose": purpose_display,
+                    "confidence": confidence,
+                    "source_link": row["source_link"],
+                }
+            )
+            if year is not None:
+                vendor_year_totals[vid][year]["amount"] += amount
+                vendor_year_totals[vid][year]["count"] += 1
+                if party in ("Democratic", "Republican"):
+                    vendor_year_party_totals[vid][year][party] += amount
 
         notable_records.append(
             {
@@ -191,11 +254,11 @@ def main() -> None:
                 "vendor_names": vnames,
                 "confidences": confidences,
                 "filer_name": row["filer_name"],
-                "filer_cpf_id": row["filer_cpf_id"],
+                "filer_cpf_id": filer_id,
                 "filer_party": party or "Unknown",
                 "date": row["date"],
                 "amount": round(amount, 2),
-                "purpose": row["clarified_purpose"] or row["purpose"],
+                "purpose": purpose_display,
                 "vendor_display": row["clarified_name"] or row["vendor"],
                 "source_link": row["source_link"],
             }
@@ -225,6 +288,76 @@ def main() -> None:
             }
         )
     vendors_out.sort(key=lambda v: -v["total"])
+
+    # Per-filer ("candidate") detail pages -- every filer with at least one
+    # matched record, not just the ones in the top-20 notable_records table.
+    filers_detail = {}
+    for filer_id, total in filer_totals.items():
+        ts = [
+            {"year": year, "amount": round(v["amount"], 2), "count": v["count"]}
+            for year, v in sorted(filer_year_totals[filer_id].items())
+        ]
+        recs = sorted(filer_records[filer_id], key=lambda r: -r["amount"])[:MAX_DETAIL_RECORDS_MA]
+        filers_detail[filer_id] = {
+            "id": filer_id,
+            "name": filer_names[filer_id],
+            "party": filer_party.get(filer_id) or "Unknown",
+            "total": round(total, 2),
+            "records_count": filer_record_count[filer_id],
+            "vendor_ids": sorted(filer_vendor_ids[filer_id]),
+            "time_series": ts,
+            "records": recs,
+        }
+
+    # Per-vendor detail pages -- same shape as vendors_out but with the
+    # individual records, a per-year trend, a per-party trend, and a
+    # by-filer breakdown, mirroring the federal dashboard's vendors_detail.
+    vendors_detail = {}
+    for vid in vendor_totals:
+        meta = vendor_meta.get(vid, {"id": vid, "name": vid, "group": "unknown", "era": "generative"})
+        vp = vendor_party_amount[vid]
+        ts = [
+            {"year": year, "amount": round(v["amount"], 2), "count": v["count"]}
+            for year, v in sorted(vendor_year_totals[vid].items())
+        ]
+        ts_by_party = [
+            {"year": year, "party": p, "amount": round(amt, 2)}
+            for year, pmap in sorted(vendor_year_party_totals[vid].items())
+            for p, amt in pmap.items()
+            if amt > 0
+        ]
+        by_filer = sorted(
+            (
+                {
+                    "filer_cpf_id": fid,
+                    "filer_name": filer_names.get(fid, fid),
+                    "filer_party": filer_party.get(fid) or "Unknown",
+                    "amount": round(v["amount"], 2),
+                    "count": v["count"],
+                }
+                for fid, v in vendor_by_filer[vid].items()
+            ),
+            key=lambda r: -r["amount"],
+        )[:TOP_N_MA_FILERS]
+        recs = sorted(vendor_detail_records[vid], key=lambda r: -r["amount"])[:MAX_DETAIL_RECORDS_MA]
+        vendors_detail[vid] = {
+            "id": vid,
+            "name": meta["name"],
+            "group": meta["group"],
+            "era": meta["era"],
+            "homepage": meta.get("homepage"),
+            "lean_context": meta.get("lean_context"),
+            "total": round(vendor_totals[vid], 2),
+            "records_count": vendor_records[vid],
+            "filers_count": len(vendor_filers[vid]),
+            "dem_amount": round(vp["Democratic"], 2),
+            "rep_amount": round(vp["Republican"], 2),
+            "dem_rep_ratio": dem_rep_ratio(vp["Democratic"], vp["Republican"]),
+            "time_series": ts,
+            "time_series_by_party": ts_by_party,
+            "by_filer": by_filer,
+            "records": recs,
+        }
 
     time_series = [
         {"year": year, "total": round(year_totals[year], 2), "records": year_records[year]}
@@ -299,6 +432,9 @@ def main() -> None:
                 "is how Read.ai, Captions, and Canva's AI photo feature were found and verified as real "
                 "payees before being added -- see pipeline/config/vendors.yaml for what was found, "
                 "checked, and rejected.",
+                "Vendor and filer detail pages (click a vendor or filer name) draw on every matched "
+                "record for that vendor/filer, not just the top 20 shown in the overview table below -- "
+                "capped at 300 records per page, largest first, the same cap the federal dashboard uses.",
             ],
         },
         "stats": {
@@ -309,6 +445,8 @@ def main() -> None:
             "total_filers_with_activity": total_filers_with_activity,
         },
         "vendors": vendors_out,
+        "vendors_detail": vendors_detail,
+        "filers_detail": filers_detail,
         "time_series": time_series,
         "time_series_by_party": time_series_by_party,
         "party_split": party_split,

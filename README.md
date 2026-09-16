@@ -90,6 +90,14 @@ different scale. Every card on the Massachusetts tab carries its own
 "Federal &middot; FEC" one) so which dataset a given chart belongs to is
 never ambiguous.
 
+Like the Federal tab, every vendor name and filer name on the Massachusetts
+tab is a link to its own detail page (`#/ma/vendor/<id>` /
+`#/ma/candidate/<id>` -- OCPF calls the entity a "filer," almost always a
+candidate committee, so it's labeled "candidate" here for consistency with
+the Federal tab): spend over time, a Democratic-vs-Republican party split,
+and every individual matched disbursement, sortable, with a one-click link
+back to that record's own OCPF filing.
+
 ## How it works
 
 ```

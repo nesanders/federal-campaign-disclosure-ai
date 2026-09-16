@@ -146,6 +146,8 @@
   let vendorNameById = {};
   let vendorHomepageById = {};
   let vendorEraById = {};
+  let maVendorEraById = {};
+  const MAX_DETAIL_RECORDS_MA = 300; // must match MAX_DETAIL_RECORDS_MA in pipeline/build_dataset_ma.py
   let includeLegacy = false;
   let searchIndex = [];
   let searchFilterType = "all";
@@ -171,6 +173,21 @@
     });
     return frag;
   }
+  // Same idea as vendorLinksCell, but always links internally to the MA
+  // vendor detail page (#/ma/vendor/<id>) rather than preferring an
+  // external homepage -- these are the parallel arrays a matched MA
+  // record carries (vendor_ids/vendor_names), not a single id.
+  function maVendorLinksCell(vendorIds, vendorNames) {
+    const frag = document.createDocumentFragment();
+    vendorIds.forEach((vid, i) => {
+      if (i > 0) frag.appendChild(document.createTextNode(", "));
+      frag.appendChild(el("a", { className: "entity-link", href: "#/ma/vendor/" + vid, text: vendorNames[i] || vid }));
+      if (maVendorEraById[vid] === "legacy") {
+        frag.appendChild(el("span", { className: "pill pill-legacy", text: "legacy" }));
+      }
+    });
+    return frag;
+  }
   const chartInstances = {};
   const viewModes = { breakdowns: "dollar", trends: "dollar" };
   const sortState = {
@@ -183,6 +200,9 @@
     vendorCommittees: { key: "amount_high", dir: "desc" },
     vendorRecords: { key: "amount", dir: "desc" },
     candidateRecords: { key: "amount", dir: "desc" },
+    maVendorFilers: { key: "amount", dir: "desc" },
+    maVendorRecords: { key: "amount", dir: "desc" },
+    maCandidateRecords: { key: "amount", dir: "desc" },
   };
   // Off by default site-wide (persists across vendor pages, like the legacy
   // toggle): the "Top committees" and "Individual disbursements" tables on
@@ -1369,11 +1389,11 @@
     if (isMa) {
       document.getElementById("main-view").hidden = true;
       document.getElementById("detail-view").hidden = true;
-      document.getElementById("ma-view").hidden = false;
       window.scrollTo(0, 0);
       ensureMaData();
     } else {
       document.getElementById("ma-view").hidden = true;
+      document.getElementById("ma-detail-view").hidden = true;
     }
   }
 
@@ -1917,13 +1937,21 @@
     });
   }
 
+  // Which MA sub-route to show once the dataset finishes loading -- set by
+  // route() right before activateDataset("ma") triggers ensureMaData(),
+  // since the fetch is async and the hash could point straight at a detail
+  // page on a cold load (a shared link to a MA vendor/candidate page).
+  let pendingMaSubroute = "";
+
   function ensureMaData() {
     if (MA_DATA) {
-      renderMaView();
+      maRouter(pendingMaSubroute);
       return;
     }
     if (!maLoadPromise) {
       const view = document.getElementById("ma-view");
+      document.getElementById("ma-detail-view").hidden = true;
+      view.hidden = false;
       view.innerHTML = "";
       view.appendChild(el("p", { className: "lede", text: "Loading Massachusetts dataset…" }));
       maLoadPromise = fetch("data/dashboard_ma.json")
@@ -1933,14 +1961,52 @@
         })
         .then((json) => {
           MA_DATA = json;
-          renderMaView();
+          maVendorEraById = {};
+          MA_DATA.vendors.forEach((v) => (maVendorEraById[v.id] = v.era));
+          maRouter(pendingMaSubroute);
         })
         .catch((err) => {
           view.innerHTML = "";
           view.appendChild(el("p", { className: "lede", text: "Could not load Massachusetts dataset (" + err.message + ")." }));
           console.error(err);
         });
+    } else {
+      maLoadPromise.then(() => {
+        if (MA_DATA) maRouter(pendingMaSubroute);
+      });
     }
+  }
+
+  function maBackLink() {
+    return el("a", { href: "#/ma", className: "back-link", text: "← Back to Massachusetts dashboard" });
+  }
+
+  // Mirrors federalRouter(): "" shows the main MA dashboard, "vendor/<id>"
+  // and "candidate/<id>" (an OCPF filer -- almost always a candidate
+  // committee) show a detail page in #ma-detail-view instead.
+  function maRouter(sub) {
+    const mainView = document.getElementById("ma-view");
+    const detailView = document.getElementById("ma-detail-view");
+    if (!sub) {
+      detailView.hidden = true;
+      mainView.hidden = false;
+      renderMaView();
+      window.scrollTo(0, 0);
+      return;
+    }
+    mainView.hidden = true;
+    detailView.hidden = false;
+    const parts = sub.split("/");
+    const type = parts[0];
+    const id = decodeURIComponent(parts.slice(1).join("/"));
+    if (type === "vendor") renderMaVendorDetail(id);
+    else if (type === "candidate") renderMaCandidateDetail(id);
+    else {
+      detailView.innerHTML = "";
+      detailView.appendChild(maBackLink());
+      detailView.appendChild(el("p", { text: "Page not found." }));
+    }
+    window.scrollTo(0, 0);
   }
 
   function renderMaVendorsCard() {
@@ -1975,7 +2041,7 @@
     tableHolder.appendChild(
       buildTable(
         [
-          { label: "Vendor", render: (r) => r.name },
+          { label: "Vendor", link: (r) => "#/ma/vendor/" + r.id, render: (r) => r.name },
           { label: "Type", render: (r) => VENDOR_GROUP_LABEL[r.group] || r.group },
           { label: "Era", render: (r) => r.era },
           { label: "Total", num: true, render: (r) => fmtUSD2.format(r.total) },
@@ -1995,6 +2061,13 @@
           indexAxis: "y",
           responsive: true,
           maintainAspectRatio: false,
+          onClick: (evt, elements, chart) => {
+            const pts = chart.getElementsAtEventForMode(evt, "nearest", { intersect: true }, false);
+            if (pts.length) location.hash = "#/ma/vendor/" + rows[pts[0].index].id;
+          },
+          onHover: (evt, elements) => {
+            evt.native.target.style.cursor = elements.length ? "pointer" : "default";
+          },
           plugins: {
             legend: { display: false },
             tooltip: Object.assign(tooltipBase(), {
@@ -2216,9 +2289,9 @@
       buildTable(
         [
           { label: "Date", render: (r) => r.date },
-          { label: "Filer", render: (r) => r.filer_name },
+          { label: "Filer", link: (r) => "#/ma/candidate/" + r.filer_cpf_id, render: (r) => r.filer_name },
           { label: "Party", render: (r) => r.filer_party },
-          { label: "Vendor", render: (r) => r.vendor_names.join(", ") },
+          { label: "Vendor", cell: (r) => maVendorLinksCell(r.vendor_ids, r.vendor_names) },
           { label: "Amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
           { label: "Purpose", render: (r) => r.purpose || "—" },
           { label: "Source", link: (r) => r.source_link, external: true, render: () => "View ↗" },
@@ -2227,6 +2300,271 @@
       )
     );
     return card;
+  }
+
+  function maDetailCard(titleText, canvasId, noteText) {
+    const card = el("div", { className: "card" });
+    card.appendChild(el("h3", { text: titleText }));
+    if (noteText) card.appendChild(el("p", { className: "note", text: noteText }));
+    card.appendChild(el("div", { className: "chart-holder", children: [el("canvas", { id: canvasId })] }));
+    return card;
+  }
+
+  function renderMaVendorDetail(id) {
+    const view = document.getElementById("ma-detail-view");
+    view.innerHTML = "";
+    const v = MA_DATA.vendors_detail[id];
+    view.appendChild(maBackLink());
+    if (!v) {
+      view.appendChild(el("p", { text: "Vendor not found in the Massachusetts AI-spend dataset." }));
+      return;
+    }
+    const c = colors();
+
+    const header = el("div", { className: "detail-header" });
+    const h2 = el("h2", { text: v.name });
+    h2.appendChild(el("span", { className: "pill", text: VENDOR_GROUP_LABEL[v.group] || v.group }));
+    if (v.era === "legacy") h2.appendChild(el("span", { className: "pill pill-legacy", text: "Legacy (pre-generative AI)" }));
+    header.appendChild(h2);
+    if (v.homepage) {
+      header.appendChild(el("a", { className: "entity-link", href: v.homepage, text: "Vendor website ↗", attrs: { target: "_blank", rel: "noopener" } }));
+    }
+    view.appendChild(header);
+    view.appendChild(
+      el("p", { className: "lede", text: "Every OCPF expenditure record naming this vendor, statewide, for the 2024 & 2026 cycle window. See methodology for what counts as a match." })
+    );
+
+    const stats = el("div", { className: "detail-stat-row" });
+    stats.appendChild(statTile("Total disclosed spending", fmtUSD0.format(v.total), fmtInt.format(v.records_count) + " disbursement records"));
+    stats.appendChild(statTile("Filers paying this vendor", fmtInt.format(v.filers_count)));
+    view.appendChild(stats);
+
+    const grid = el("div", { className: "card-grid" });
+    grid.appendChild(maDetailCard("Spending over time", "ma-detail-chart-ts"));
+    grid.appendChild(maDetailCard("Party split", "ma-detail-chart-party", "Democratic vs. Republican, by filer party. “Unknown” is filers OCPF doesn't mark with a major-party affiliation, so the slices add up to this vendor's full total."));
+    view.appendChild(grid);
+
+    if (v.time_series_by_party && v.time_series_by_party.length) {
+      view.appendChild(el("div", { className: "card-grid single", children: [maDetailCard("Party spending over time", "ma-detail-chart-party-trend")] }));
+    }
+
+    const filerRowsAll = v.by_filer.map((r) => Object.assign({}, r));
+    const filerRows = sortRows(filerRowsAll, sortState.maVendorFilers);
+    const filerHeaders = withSort(
+      "maVendorFilers",
+      [
+        { label: "Filer", sortKey: "filer_name", link: (r) => "#/ma/candidate/" + r.filer_cpf_id, render: (r) => r.filer_name },
+        { label: "Party", sortKey: "filer_party", render: (r) => r.filer_party },
+        { label: "Amount", sortKey: "amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
+        { label: "Records", sortKey: "count", num: true, render: (r) => fmtInt.format(r.count) },
+      ],
+      () => renderMaVendorDetail(id)
+    );
+    const filerCard = el("div", { className: "card" });
+    filerCard.appendChild(el("h3", { text: "Filers paying " + v.name }));
+    filerCard.appendChild(buildTable(filerHeaders, filerRows, { sort: sortState.maVendorFilers }));
+    view.appendChild(el("div", { className: "card-grid single", children: [filerCard] }));
+
+    if (v.records && v.records.length) {
+      const recRowsAll = v.records.map((r) => Object.assign({}, r, { date_sort: mdySortValue(r.date) }));
+      const recRows = sortRows(recRowsAll, sortState.maVendorRecords);
+      const recHeaders = withSort(
+        "maVendorRecords",
+        [
+          { label: "Date", sortKey: "date_sort", render: (r) => r.date },
+          { label: "Filer", sortKey: "filer_name", link: (r) => "#/ma/candidate/" + r.filer_cpf_id, render: (r) => r.filer_name },
+          { label: "Party", sortKey: "filer_party", render: (r) => r.filer_party },
+          { label: "Amount", sortKey: "amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
+          { label: "Purpose", sortKey: "purpose", render: (r) => r.purpose || "—" },
+          { label: "Source", sortKey: null, link: (r) => r.source_link, external: true, render: () => "View ↗" },
+        ],
+        () => renderMaVendorDetail(id)
+      );
+      const recordsCard = el("div", { className: "card" });
+      recordsCard.appendChild(el("h3", { text: "Individual disbursements" }));
+      recordsCard.appendChild(
+        el("p", {
+          className: "note",
+          text: "Every matched record's own OCPF filing is one click away via the source link, largest first" + (v.records.length >= MAX_DETAIL_RECORDS_MA ? " (capped at " + fmtInt.format(MAX_DETAIL_RECORDS_MA) + " records)" : "") + ".",
+        })
+      );
+      recordsCard.appendChild(buildTable(recHeaders, recRows, { sort: sortState.maVendorRecords }));
+      view.appendChild(el("div", { className: "card-grid single", children: [recordsCard] }));
+    }
+
+    // charts
+    const years = v.time_series.map((r) => r.year).sort((a, b) => a - b);
+    makeChart("ma-detail-chart-ts", {
+      type: "line",
+      data: {
+        labels: years.map(String),
+        datasets: [
+          {
+            label: v.name,
+            data: years.map((y) => (v.time_series.find((r) => r.year === y) || {}).amount || 0),
+            borderColor: cssVar("--ma-accent"),
+            backgroundColor: cssVar("--ma-accent"),
+            borderWidth: 2,
+            pointRadius: 4,
+            tension: 0.15,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => fmtUSD0.format(ctx.parsed.y) } }) },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+          y: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
+        },
+      },
+    });
+
+    const otherAmount = Math.max(0, v.total - v.dem_amount - v.rep_amount);
+    const partySlices = [
+      { label: "Democratic", amount: v.dem_amount, color: c.party.Democratic },
+      { label: "Republican", amount: v.rep_amount, color: c.party.Republican },
+      { label: "Unknown", amount: otherAmount, color: c.muted },
+    ].filter((s) => s.amount > 0);
+    makeChart("ma-detail-chart-party", {
+      type: "pie",
+      data: { labels: partySlices.map((s) => s.label), datasets: [{ data: partySlices.map((s) => s.amount), backgroundColor: partySlices.map((s) => s.color) }] },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: Object.assign({ position: "bottom" }, legendBase()),
+          tooltip: Object.assign(tooltipBase(), {
+            callbacks: {
+              label: (ctx) => {
+                const total = partySlices.reduce((a, s) => a + s.amount, 0);
+                return ctx.label + ": " + fmtUSD0.format(ctx.parsed) + " (" + fmtPct((ctx.parsed / total) * 100, 1) + ")";
+              },
+            },
+          }),
+        },
+      },
+    });
+
+    if (v.time_series_by_party && v.time_series_by_party.length) {
+      const partyYears = Array.from(new Set(v.time_series_by_party.map((r) => r.year))).sort((a, b) => a - b);
+      const seriesByParty = {};
+      ["Democratic", "Republican"].forEach((p) => (seriesByParty[p] = v.time_series_by_party.filter((r) => r.party === p)));
+      makeChart("ma-detail-chart-party-trend", {
+        type: "line",
+        data: {
+          labels: partyYears.map(String),
+          datasets: Object.keys(seriesByParty)
+            .filter((p) => seriesByParty[p].length)
+            .map((p) => ({
+              label: p,
+              data: partyYears.map((y) => (seriesByParty[p].find((r) => r.year === y) || {}).amount || 0),
+              borderColor: c.party[p],
+              backgroundColor: c.party[p],
+              borderWidth: 2,
+              pointRadius: 4,
+              tension: 0.15,
+            })),
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: Object.assign({ position: "top" }, legendBase()),
+            tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => ctx.dataset.label + ": " + fmtUSD0.format(ctx.parsed.y) } }),
+          },
+          scales: {
+            x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+            y: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
+          },
+        },
+      });
+    }
+  }
+
+  function renderMaCandidateDetail(id) {
+    const view = document.getElementById("ma-detail-view");
+    view.innerHTML = "";
+    const f = MA_DATA.filers_detail[id];
+    view.appendChild(maBackLink());
+    if (!f) {
+      view.appendChild(el("p", { text: "Filer not found in the Massachusetts AI-spend dataset." }));
+      return;
+    }
+    const c = colors();
+
+    const header = el("div", { className: "detail-header" });
+    const h2 = el("h2", { text: f.name });
+    h2.appendChild(el("span", { className: "pill", text: f.party }));
+    header.appendChild(h2);
+    view.appendChild(header);
+    view.appendChild(
+      el("p", { className: "lede", text: "Every OCPF expenditure record naming an AI vendor from this filer, statewide, for the 2024 & 2026 cycle window." })
+    );
+
+    const stats = el("div", { className: "detail-stat-row" });
+    stats.appendChild(statTile("Total disclosed AI-vendor spending", fmtUSD0.format(f.total), fmtInt.format(f.records_count) + " disbursement records"));
+    stats.appendChild(statTile("Distinct AI vendors used", fmtInt.format(f.vendor_ids.length)));
+    view.appendChild(stats);
+
+    view.appendChild(el("div", { className: "card-grid single", children: [maDetailCard("Spending over time", "ma-cand-chart-ts")] }));
+
+    if (f.records && f.records.length) {
+      const recRowsAll = f.records.map((r) =>
+        Object.assign({}, r, { display_vendor: r.vendor_names.join(", "), date_sort: mdySortValue(r.date) })
+      );
+      const recRows = sortRows(recRowsAll, sortState.maCandidateRecords);
+      const recHeaders = withSort(
+        "maCandidateRecords",
+        [
+          { label: "Date", sortKey: "date_sort", render: (r) => r.date },
+          { label: "Vendor", sortKey: "display_vendor", cell: (r) => maVendorLinksCell(r.vendor_ids, r.vendor_names) },
+          { label: "Amount", sortKey: "amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
+          { label: "Purpose", sortKey: "purpose", render: (r) => r.purpose || "—" },
+          { label: "Source", sortKey: null, link: (r) => r.source_link, external: true, render: () => "View ↗" },
+        ],
+        () => renderMaCandidateDetail(id)
+      );
+      const recordsCard = el("div", { className: "card" });
+      recordsCard.appendChild(el("h3", { text: "Individual disbursements" }));
+      recordsCard.appendChild(
+        el("p", {
+          className: "note",
+          text: "Every matched record's own OCPF filing is one click away via the source link, largest first" + (f.records.length >= MAX_DETAIL_RECORDS_MA ? " (capped at " + fmtInt.format(MAX_DETAIL_RECORDS_MA) + " records)" : "") + ".",
+        })
+      );
+      recordsCard.appendChild(buildTable(recHeaders, recRows, { sort: sortState.maCandidateRecords }));
+      view.appendChild(el("div", { className: "card-grid single", children: [recordsCard] }));
+    }
+
+    const years = f.time_series.map((r) => r.year).sort((a, b) => a - b);
+    makeChart("ma-cand-chart-ts", {
+      type: "line",
+      data: {
+        labels: years.map(String),
+        datasets: [
+          {
+            label: f.name,
+            data: years.map((y) => (f.time_series.find((r) => r.year === y) || {}).amount || 0),
+            borderColor: cssVar("--ma-accent"),
+            backgroundColor: cssVar("--ma-accent"),
+            borderWidth: 2,
+            pointRadius: 4,
+            tension: 0.15,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: Object.assign(tooltipBase(), { callbacks: { label: (ctx) => fmtUSD0.format(ctx.parsed.y) } }) },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+          y: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
+        },
+      },
+    });
   }
 
   function renderMaMethodologyCard() {
@@ -2328,7 +2666,8 @@
   // shared links both restore the right dataset, not just the right page.
   function route() {
     const raw = location.hash.replace(/^#\/?/, "");
-    if (raw === "ma") {
+    if (raw === "ma" || raw.indexOf("ma/") === 0) {
+      pendingMaSubroute = raw === "ma" ? "" : raw.slice(3);
       activateDataset("ma");
       return;
     }
