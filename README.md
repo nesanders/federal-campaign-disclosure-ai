@@ -103,6 +103,17 @@ Massachusetts it searches MA candidates and vendors (no "Races" filter,
 since MA candidates aren't grouped into races here) and its results link to
 the MA detail pages above instead of the Federal ones.
 
+Like the Federal tab's breakdown/trend charts, the Massachusetts yearly
+trend chart has a `$` / `% of total spend` toggle. The denominator is each
+filer's own total reported OCPF expenditure that year -- every itemized
+record, not just AI-vendor matches (`ocpf_filer_year_totals.csv`, the same
+role `parse_disbursements.py`'s committee totals play for the federal
+dashboard) -- summed, per year, across the filers who show at least one
+AI-vendor disbursement that year specifically, matching the federal
+dashboard's "relative to AI-using campaigns" framing. A filer's own detail
+page shows the same "AI as % of total spend" stat the federal candidate
+page does.
+
 ## How it works
 
 ```
@@ -129,9 +140,12 @@ pipeline/build_dataset.py            joins matches to candidate/committee
 pipeline/fetch_ocpf.py               downloads Massachusetts OCPF itemized
                                       expenditure and subvendor records via
                                       api.ocpf.us for the 2024+2026 cycle window
-pipeline/parse_ocpf.py               scans those records for AI-vendor matches
-                                      and totals how many distinct filers
-                                      reported any expenditure activity at all
+pipeline/parse_ocpf.py               scans those records for AI-vendor matches;
+                                      totals how many distinct filers reported
+                                      any expenditure activity at all, and each
+                                      filer's own total spend by year (every
+                                      record, not just AI-vendor matches -- the
+                                      % of total spend toggle's denominator)
 pipeline/fetch_ocpf_report_dates.py  fetches each matched record's real
                                       report-filed date from OCPF's
                                       report/{reportId} endpoint, for the
@@ -285,7 +299,8 @@ data/processed/           filtered AI-vendor-match CSVs and per-committee/
                           per-spender total-expenditure CSVs, per cycle
                           (committed, small); ocpf_*.csv are the Massachusetts
                           equivalents (not split by cycle), including
-                          ocpf_report_dates.csv and ocpf_filer_party.csv
+                          ocpf_report_dates.csv, ocpf_filer_party.csv, and
+                          ocpf_filer_year_totals.csv
 docs/                     GitHub Pages site
   index.html, css/, js/    static dashboard (vanilla JS + a vendored Chart.js build)
   data/dashboard.json      aggregated federal data the site reads

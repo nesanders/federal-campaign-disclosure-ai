@@ -190,7 +190,7 @@
     return frag;
   }
   const chartInstances = {};
-  const viewModes = { breakdowns: "dollar", trends: "dollar" };
+  const viewModes = { breakdowns: "dollar", trends: "dollar", maTrends: "dollar" };
   const sortState = {
     vendors: { key: "amount_high", dir: "desc" },
     dollar: { key: "ai_amount_high", dir: "desc" },
@@ -374,6 +374,26 @@
     });
   }
 
+  // Shared by both tabs' header meta-line, which is one DOM element (not
+  // rebuilt per dataset) -- whichever tab is active decides what it says,
+  // so switching tabs must actively overwrite it rather than leaving
+  // Federal's text showing while Massachusetts is on screen.
+  function metaLineTextFederal() {
+    const meta = DATA.meta;
+    return "Data generated " + new Date(meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC · cycles: " + meta.cycles.join(", ");
+  }
+  function metaLineTextMa() {
+    const meta = MA_DATA.meta;
+    return (
+      "Data generated " +
+      new Date(meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) +
+      " UTC · covers " +
+      meta.date_range.start +
+      " through " +
+      meta.date_range.end
+    );
+  }
+
   function renderStats() {
     const meta = DATA.meta;
     const totalMatchedRows = Object.values(meta.matched_row_counts_by_cycle || {}).reduce((a, b) => a + b, 0);
@@ -403,8 +423,7 @@
         ? " Legacy-era vendors (pre-generative-AI companies branded “AI”) are currently included, via the toggle above."
         : " " + nLegacyHidden + " legacy-era vendor" + (nLegacyHidden === 1 ? "" : "s") + " with disclosed spending are hidden by default (toggle above to include them) &mdash; see methodology.");
 
-    document.getElementById("meta-line").textContent =
-      "Data generated " + new Date(meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC · cycles: " + meta.cycles.join(", ");
+    if (currentDataset !== "ma") document.getElementById("meta-line").textContent = metaLineTextFederal();
     document.getElementById("footer-generated").textContent = "Dataset last built " + meta.generated_at + ".";
   }
 
@@ -1432,11 +1451,13 @@
     if (isMa) {
       document.getElementById("main-view").hidden = true;
       document.getElementById("detail-view").hidden = true;
+      document.getElementById("meta-line").textContent = MA_DATA ? metaLineTextMa() : "Loading Massachusetts dataset…";
       window.scrollTo(0, 0);
       ensureMaData();
     } else {
       document.getElementById("ma-view").hidden = true;
       document.getElementById("ma-detail-view").hidden = true;
+      document.getElementById("meta-line").textContent = metaLineTextFederal();
     }
   }
 
@@ -2007,6 +2028,7 @@
           maVendorEraById = {};
           MA_DATA.vendors.forEach((v) => (maVendorEraById[v.id] = v.era));
           buildMaSearchIndex();
+          if (currentDataset === "ma") document.getElementById("meta-line").textContent = metaLineTextMa();
           maRouter(pendingMaSubroute);
         })
         .catch((err) => {
@@ -2135,60 +2157,96 @@
   }
 
   function renderMaTrendCard() {
-    const c = colors();
-    const rows = MA_DATA.time_series;
     const card = el("div", { className: "card" });
-    card.appendChild(maCardTitle("Disclosed AI-vendor spending by year"));
-    card.appendChild(el("p", { className: "note", text: "All eras, all matched vendors. 2026 is still filing." }));
-    const chartHolder = el("div", { className: "chart-holder" });
-    chartHolder.appendChild(el("canvas", { id: "chart-ma-trend" }));
-    card.appendChild(chartHolder);
 
-    setTimeout(() => {
-      makeChart("chart-ma-trend", {
-        type: "line",
-        data: {
-          labels: rows.map((r) => String(r.year)),
-          datasets: [
-            {
-              label: "Disclosed AI-vendor spend",
-              data: rows.map((r) => r.total),
-              borderColor: cssVar("--ma-accent"),
-              backgroundColor: cssVar("--ma-accent"),
-              tension: 0.25,
-              pointRadius: 4,
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: { display: false },
-            tooltip: Object.assign(tooltipBase(), {
-              callbacks: {
-                label: (ctx) => {
-                  const r = rows[ctx.dataIndex];
-                  return fmtUSD2.format(r.total) + " · " + fmtInt.format(r.records) + " records";
-                },
-              },
-            }),
-          },
-          scales: {
-            x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
-            y: { grid: { color: c.grid }, ticks: { color: c.text, callback: (v) => fmtUSD0.format(v) }, border: { display: false } },
-          },
-        },
+    function renderContent() {
+      card.innerHTML = "";
+      const c = colors();
+      const rows = MA_DATA.time_series;
+      const mode = viewModes.maTrends;
+
+      const toolbar = el("div", { className: "view-toggle", attrs: { "data-toggle-group": "ma-trends" } });
+      const dollarBtn = el("button", { className: "btn-view-mode" + (mode === "dollar" ? " is-active" : ""), text: "$ amount" });
+      const pctBtn = el("button", { className: "btn-view-mode" + (mode === "pct" ? " is-active" : ""), text: "% of total spend" });
+      dollarBtn.addEventListener("click", () => {
+        viewModes.maTrends = "dollar";
+        renderContent();
       });
-    }, 0);
+      pctBtn.addEventListener("click", () => {
+        viewModes.maTrends = "pct";
+        renderContent();
+      });
+      toolbar.appendChild(dollarBtn);
+      toolbar.appendChild(pctBtn);
+      card.appendChild(toolbar);
 
+      card.appendChild(maCardTitle("Disclosed AI-vendor spending by year"));
+      card.appendChild(
+        el("p", {
+          className: "note",
+          text:
+            mode === "pct"
+              ? "AI-vendor spend as a share of that year's total reported OCPF spend by the filers who used an AI vendor that year. 2026 is still filing."
+              : "All eras, all matched vendors. 2026 is still filing.",
+        })
+      );
+      const chartHolder = el("div", { className: "chart-holder" });
+      chartHolder.appendChild(el("canvas", { id: "chart-ma-trend" }));
+      card.appendChild(chartHolder);
+
+      const values = rows.map((r) => (mode === "pct" ? (r.total_expenditure > 0 ? (r.total / r.total_expenditure) * 100 : 0) : r.total));
+      const pctDigits = pctDecimalsFor(Math.max(0, ...values));
+      const fmtAxis = mode === "pct" ? (v) => v.toFixed(pctDigits) + "%" : fmtUSD0.format;
+      const fmtVal = mode === "pct" ? (v) => fmtPct(v, pctDigits) : fmtUSD0.format;
+
+      setTimeout(() => {
+        makeChart("chart-ma-trend", {
+          type: "line",
+          data: {
+            labels: rows.map((r) => String(r.year)),
+            datasets: [
+              {
+                label: "Disclosed AI-vendor spend",
+                data: values,
+                borderColor: cssVar("--ma-accent"),
+                backgroundColor: cssVar("--ma-accent"),
+                tension: 0.25,
+                pointRadius: 4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: Object.assign(tooltipBase(), {
+                callbacks: {
+                  label: (ctx) => {
+                    const r = rows[ctx.dataIndex];
+                    const base = fmtVal(values[ctx.dataIndex]) + " · " + fmtInt.format(r.records) + " records";
+                    return mode === "pct" ? base + " · " + fmtUSD0.format(r.total) + " of " + fmtUSD0.format(r.total_expenditure) : base;
+                  },
+                },
+              }),
+            },
+            scales: {
+              x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+              y: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtAxis }, border: { display: false } },
+            },
+          },
+        });
+      }, 0);
+    }
+
+    renderContent();
     return card;
   }
 
-  // MA has no per-vendor drill-down pages (a single flat tab, unlike the
-  // Federal vendor/candidate detail pages), so the party pie/line charts
-  // live at the page level: overall Democratic-vs-Republican AI-vendor
-  // spend across every matched record, not broken out per vendor.
+  // A vendor's own detail page has its own party split (see
+  // renderMaVendorDetail); this page-level pie/line pair covers overall
+  // Democratic-vs-Republican AI-vendor spend across every matched record,
+  // not broken out per vendor.
   function renderMaPartyPieCard() {
     const c = colors();
     const ps = MA_DATA.party_split;
@@ -2549,6 +2607,8 @@
 
     const stats = el("div", { className: "detail-stat-row" });
     stats.appendChild(statTile("Total disclosed AI-vendor spending", fmtUSD0.format(f.total), fmtInt.format(f.records_count) + " disbursement records"));
+    stats.appendChild(statTile("Total reported expenditure", f.total_expenditure ? fmtUSD0.format(f.total_expenditure) : "—"));
+    stats.appendChild(statTile("AI as % of total spend", fmtPct(f.pct_ai, 3)));
     stats.appendChild(statTile("Distinct AI vendors used", fmtInt.format(f.vendor_ids.length)));
     view.appendChild(stats);
 

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-16T00:51:43+00:00",
+    "generated_at": "2026-09-16T12:46:47+00:00",
     "source_label": "Massachusetts Office of Campaign and Political Finance (OCPF)",
     "date_range": {
       "start": "2023-01-01",
@@ -22,7 +22,8 @@
       "The weekly disclosure timeline's 'Reports filed' series uses OCPF's own dateFiled field from its report/{reportId} endpoint -- a real filed date, unlike the federal dashboard's approximated report dates -- counted once per distinct report (a single report can disclose many expenditure line items in one filing).",
       "Democratic-vs-Republican spending uses each filer's partyAffiliation from OCPF's own filer/payload/{cpfId} endpoint -- fetched per distinct filer (a few dozen, not per record), since OCPF's expenditure records themselves carry no party field. Filers OCPF does not mark with a major-party affiliation (ballot-question committees, PACs, and a handful of others) are excluded from the party split entirely, not counted as a third category -- see the filers_with_known_party figure alongside the split.",
       "This taxonomy was empirically mined against Massachusetts payee/purpose text directly (not only inherited from the federal side): every distinct OCPF payee was scanned for AI-indicative language, plus a manual read of the highest-dollar unmatched payees, which is how Read.ai, Captions, and Canva's AI photo feature were found and verified as real payees before being added -- see pipeline/config/vendors.yaml for what was found, checked, and rejected.",
-      "Vendor and filer detail pages (click a vendor or filer name) draw on every matched record for that vendor/filer, not just the top 20 shown in the overview table below -- capped at 300 records per page, largest first, the same cap the federal dashboard uses."
+      "Vendor and filer detail pages (click a vendor or filer name) draw on every matched record for that vendor/filer, not just the top 20 shown in the overview table below -- capped at 300 records per page, largest first, the same cap the federal dashboard uses.",
+      "The $ / % of total spend toggle divides AI-vendor spend by each filer's own total reported OCPF expenditure that year (every itemized record, not just AI-vendor matches -- the same role parse_disbursements.py's committee totals play for the federal dashboard). For the yearly trend chart, the denominator is the combined total spend of the filers who show at least one AI-vendor disbursement THAT year, not of every filer with any activity -- the same 'relative to AI-using campaigns' framing the federal dashboard uses for its own percentages."
     ]
   },
   "stats": {
@@ -30,7 +31,9 @@
     "total_generative": 11696.8,
     "matched_records": 342,
     "filers_with_ai_spend": 59,
-    "total_filers_with_activity": 2516
+    "total_filers_with_activity": 2516,
+    "total_expenditure_ai_filers": 24058206.94,
+    "pct_ai_overall": 0.101
   },
   "vendors": [
     {
@@ -4893,6 +4896,8 @@
       "vendor_ids": [
         "grammarly"
       ],
+      "total_expenditure": 63315.57,
+      "pct_ai": 0.205,
       "time_series": [
         {
           "year": 2025,
@@ -4927,6 +4932,8 @@
       "vendor_ids": [
         "grammarly"
       ],
+      "total_expenditure": 25573.08,
+      "pct_ai": 0.598,
       "time_series": [
         {
           "year": 2025,
@@ -4961,6 +4968,8 @@
       "vendor_ids": [
         "grammarly"
       ],
+      "total_expenditure": 294334.1,
+      "pct_ai": 0.052,
       "time_series": [
         {
           "year": 2023,
@@ -4996,6 +5005,8 @@
         "anthropic",
         "read_ai"
       ],
+      "total_expenditure": 150727.11,
+      "pct_ai": 0.391,
       "time_series": [
         {
           "year": 2025,
@@ -5081,6 +5092,8 @@
         "openai",
         "xai_grok"
       ],
+      "total_expenditure": 17008.62,
+      "pct_ai": 3.586,
       "time_series": [
         {
           "year": 2026,
@@ -5207,6 +5220,8 @@
         "descript",
         "openai"
       ],
+      "total_expenditure": 918750.82,
+      "pct_ai": 0.168,
       "time_series": [
         {
           "year": 2025,
@@ -5501,6 +5516,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 95881.71,
+      "pct_ai": 0.022,
       "time_series": [
         {
           "year": 2026,
@@ -5536,6 +5553,8 @@
         "daisychain",
         "donoratlas"
       ],
+      "total_expenditure": 4788983.33,
+      "pct_ai": 0.013,
       "time_series": [
         {
           "year": 2025,
@@ -5605,6 +5624,8 @@
       "vendor_ids": [
         "campaign_brain"
       ],
+      "total_expenditure": 20909.27,
+      "pct_ai": 0.239,
       "time_series": [
         {
           "year": 2023,
@@ -5640,6 +5661,8 @@
         "openai",
         "otter_ai"
       ],
+      "total_expenditure": 19468.9,
+      "pct_ai": 4.116,
       "time_series": [
         {
           "year": 2024,
@@ -5864,6 +5887,8 @@
       "vendor_ids": [
         "grammarly"
       ],
+      "total_expenditure": 591894.21,
+      "pct_ai": 0.071,
       "time_series": [
         {
           "year": 2024,
@@ -5939,6 +5964,8 @@
         "grammarly",
         "openai"
       ],
+      "total_expenditure": 143432.42,
+      "pct_ai": 0.484,
       "time_series": [
         {
           "year": 2025,
@@ -6293,6 +6320,8 @@
       "vendor_ids": [
         "grammarly"
       ],
+      "total_expenditure": 625207.39,
+      "pct_ai": 0.098,
       "time_series": [
         {
           "year": 2023,
@@ -6387,6 +6416,8 @@
       "vendor_ids": [
         "campaign_nucleus"
       ],
+      "total_expenditure": 15787.86,
+      "pct_ai": 3.606,
       "time_series": [
         {
           "year": 2023,
@@ -6436,6 +6467,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 237021.28,
+      "pct_ai": 0.045,
       "time_series": [
         {
           "year": 2026,
@@ -6470,6 +6503,8 @@
       "vendor_ids": [
         "canva_ai"
       ],
+      "total_expenditure": 327564.42,
+      "pct_ai": 0.041,
       "time_series": [
         {
           "year": 2025,
@@ -6629,6 +6664,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 13423.71,
+      "pct_ai": 0.946,
       "time_series": [
         {
           "year": 2026,
@@ -6663,6 +6700,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 28920.1,
+      "pct_ai": 0.661,
       "time_series": [
         {
           "year": 2025,
@@ -6822,6 +6861,8 @@
       "vendor_ids": [
         "captions_ai"
       ],
+      "total_expenditure": 316886.71,
+      "pct_ai": 0.075,
       "time_series": [
         {
           "year": 2025,
@@ -6996,6 +7037,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 8204.0,
+      "pct_ai": 0.259,
       "time_series": [
         {
           "year": 2026,
@@ -7030,6 +7073,8 @@
       "vendor_ids": [
         "anthropic"
       ],
+      "total_expenditure": 33916.75,
+      "pct_ai": 0.627,
       "time_series": [
         {
           "year": 2025,
@@ -7064,6 +7109,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 198072.66,
+      "pct_ai": 0.054,
       "time_series": [
         {
           "year": 2026,
@@ -7158,6 +7205,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 561771.16,
+      "pct_ai": 0.048,
       "time_series": [
         {
           "year": 2025,
@@ -7377,6 +7426,8 @@
       "vendor_ids": [
         "grammarly"
       ],
+      "total_expenditure": 13991.63,
+      "pct_ai": 0.911,
       "time_series": [
         {
           "year": 2023,
@@ -7426,6 +7477,8 @@
       "vendor_ids": [
         "anthropic"
       ],
+      "total_expenditure": 148621.44,
+      "pct_ai": 0.143,
       "time_series": [
         {
           "year": 2026,
@@ -7460,6 +7513,8 @@
       "vendor_ids": [
         "descript"
       ],
+      "total_expenditure": 4168.49,
+      "pct_ai": 1.234,
       "time_series": [
         {
           "year": 2026,
@@ -7509,6 +7564,8 @@
       "vendor_ids": [
         "google_ai"
       ],
+      "total_expenditure": 46905.8,
+      "pct_ai": 0.015,
       "time_series": [
         {
           "year": 2026,
@@ -7543,6 +7600,8 @@
       "vendor_ids": [
         "otter_ai"
       ],
+      "total_expenditure": 28201.09,
+      "pct_ai": 0.284,
       "time_series": [
         {
           "year": 2023,
@@ -7607,6 +7666,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 126881.94,
+      "pct_ai": 0.291,
       "time_series": [
         {
           "year": 2025,
@@ -7931,6 +7992,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 6654.72,
+      "pct_ai": 0.601,
       "time_series": [
         {
           "year": 2024,
@@ -7965,6 +8028,8 @@
       "vendor_ids": [
         "grammarly"
       ],
+      "total_expenditure": 44658.67,
+      "pct_ai": 0.685,
       "time_series": [
         {
           "year": 2023,
@@ -8019,6 +8084,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 558993.95,
+      "pct_ai": 0.148,
       "time_series": [
         {
           "year": 2025,
@@ -8253,6 +8320,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 34690.96,
+      "pct_ai": 0.123,
       "time_series": [
         {
           "year": 2026,
@@ -8302,6 +8371,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 64081.78,
+      "pct_ai": 0.774,
       "time_series": [
         {
           "year": 2026,
@@ -8411,6 +8482,8 @@
       "vendor_ids": [
         "grammarly"
       ],
+      "total_expenditure": 58610.77,
+      "pct_ai": 0.783,
       "time_series": [
         {
           "year": 2024,
@@ -8485,6 +8558,8 @@
       "vendor_ids": [
         "anthropic"
       ],
+      "total_expenditure": 33965.0,
+      "pct_ai": 0.626,
       "time_series": [
         {
           "year": 2026,
@@ -8519,6 +8594,8 @@
       "vendor_ids": [
         "campaign_nucleus"
       ],
+      "total_expenditure": 12102854.81,
+      "pct_ai": 0.018,
       "time_series": [
         {
           "year": 2025,
@@ -8603,6 +8680,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 366069.59,
+      "pct_ai": 0.012,
       "time_series": [
         {
           "year": 2026,
@@ -8652,6 +8731,8 @@
       "vendor_ids": [
         "calltime_ai"
       ],
+      "total_expenditure": 69423.4,
+      "pct_ai": 2.161,
       "time_series": [
         {
           "year": 2024,
@@ -8701,6 +8782,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 619005.42,
+      "pct_ai": 0.038,
       "time_series": [
         {
           "year": 2025,
@@ -8891,6 +8974,8 @@
         "grammarly",
         "perplexity"
       ],
+      "total_expenditure": 254722.75,
+      "pct_ai": 0.339,
       "time_series": [
         {
           "year": 2024,
@@ -9190,6 +9275,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 79308.28,
+      "pct_ai": 0.102,
       "time_series": [
         {
           "year": 2025,
@@ -9269,6 +9356,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 88282.56,
+      "pct_ai": 0.181,
       "time_series": [
         {
           "year": 2026,
@@ -9333,6 +9422,8 @@
       "vendor_ids": [
         "calltime_ai"
       ],
+      "total_expenditure": 91441.75,
+      "pct_ai": 2.297,
       "time_series": [
         {
           "year": 2023,
@@ -9532,6 +9623,8 @@
       "vendor_ids": [
         "anthropic"
       ],
+      "total_expenditure": 12748.76,
+      "pct_ai": 0.833,
       "time_series": [
         {
           "year": 2026,
@@ -9626,6 +9719,8 @@
       "vendor_ids": [
         "descript"
       ],
+      "total_expenditure": 262115.99,
+      "pct_ai": 0.233,
       "time_series": [
         {
           "year": 2024,
@@ -9680,6 +9775,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 93536.93,
+      "pct_ai": 0.27,
       "time_series": [
         {
           "year": 2025,
@@ -9884,6 +9981,8 @@
       "vendor_ids": [
         "anthropic"
       ],
+      "total_expenditure": 18954.61,
+      "pct_ai": 1.708,
       "time_series": [
         {
           "year": 2026,
@@ -9963,6 +10062,8 @@
       "vendor_ids": [
         "donoratlas"
       ],
+      "total_expenditure": 103097.14,
+      "pct_ai": 0.873,
       "time_series": [
         {
           "year": 2024,
@@ -10027,6 +10128,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 22564.24,
+      "pct_ai": 0.094,
       "time_series": [
         {
           "year": 2026,
@@ -10061,6 +10164,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 150028.73,
+      "pct_ai": 0.027,
       "time_series": [
         {
           "year": 2025,
@@ -10111,6 +10216,8 @@
         "canva_ai",
         "openai"
       ],
+      "total_expenditure": 82158.18,
+      "pct_ai": 0.401,
       "time_series": [
         {
           "year": 2025,
@@ -10315,6 +10422,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 71781.69,
+      "pct_ai": 0.118,
       "time_series": [
         {
           "year": 2026,
@@ -10394,6 +10503,8 @@
       "vendor_ids": [
         "anthropic"
       ],
+      "total_expenditure": 111881.09,
+      "pct_ai": 0.128,
       "time_series": [
         {
           "year": 2026,
@@ -10533,6 +10644,8 @@
       "vendor_ids": [
         "midjourney"
       ],
+      "total_expenditure": 192910.99,
+      "pct_ai": 0.006,
       "time_series": [
         {
           "year": 2025,
@@ -10568,6 +10681,8 @@
         "donoratlas",
         "perplexity"
       ],
+      "total_expenditure": 57914.81,
+      "pct_ai": 1.243,
       "time_series": [
         {
           "year": 2024,
@@ -10708,6 +10823,8 @@
         "openai",
         "otter_ai"
       ],
+      "total_expenditure": 187901.82,
+      "pct_ai": 0.328,
       "time_series": [
         {
           "year": 2025,
@@ -10837,6 +10954,8 @@
       "vendor_ids": [
         "openai"
       ],
+      "total_expenditure": 319234.64,
+      "pct_ai": 0.22,
       "time_series": [
         {
           "year": 2025,
@@ -11026,6 +11145,8 @@
       "vendor_ids": [
         "otter_ai"
       ],
+      "total_expenditure": 3202376.19,
+      "pct_ai": 0.019,
       "time_series": [
         {
           "year": 2025,
@@ -11301,22 +11422,26 @@
     {
       "year": 2023,
       "total": 3385.75,
-      "records": 23
+      "records": 23,
+      "total_expenditure": 312459.98
     },
     {
       "year": 2024,
       "total": 4500.41,
-      "records": 31
+      "records": 31,
+      "total_expenditure": 837724.27
     },
     {
       "year": 2025,
       "total": 7035.56,
-      "records": 96
+      "records": 96,
+      "total_expenditure": 8260763.94
     },
     {
       "year": 2026,
       "total": 9265.32,
-      "records": 192
+      "records": 192,
+      "total_expenditure": 14647258.75
     }
   ],
   "time_series_by_party": [

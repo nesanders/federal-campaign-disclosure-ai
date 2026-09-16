@@ -2,12 +2,15 @@
 """Match raw OCPF expenditure and subvendor records against the AI vendor
 taxonomy, and separately total how many distinct filers reported any
 expenditure activity at all (the denominator for "how many campaigns show
-AI spend" on the dashboard).
+AI spend" on the dashboard) and each filer's total reported spend by year
+(the denominator for "AI spend as a % of total spend" -- the same role
+load_committee_totals() plays for the federal dashboard).
 
 Reads data/raw/ocpf/{expenditures,subvendor}.jsonl (produced by
 fetch_ocpf.py) and writes data/processed/ocpf_matches.csv,
-data/processed/ocpf_subvendor_matches.csv, and
-data/processed/ocpf_filer_totals.csv.
+data/processed/ocpf_subvendor_matches.csv,
+data/processed/ocpf_filer_totals.csv, and
+data/processed/ocpf_filer_year_totals.csv.
 
 Matches against the concatenation of `vendor`, `clarifiedName`, `purpose`,
 and `clarifiedPurpose` (`subvendorName`/`vendorName`/`purpose` for subvendor
@@ -23,6 +26,7 @@ import argparse
 import csv
 import json
 import sys
+from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -84,11 +88,20 @@ def parse_expenditures(taxonomy: Taxonomy, subvendor_scanned: int) -> int:
     src = RAW_DIR / "expenditures.jsonl"
     out_path = PROCESSED_DIR / "ocpf_matches.csv"
     filers_totals_path = PROCESSED_DIR / "ocpf_filer_totals.csv"
+    filer_year_totals_path = PROCESSED_DIR / "ocpf_filer_year_totals.csv"
 
     total = 0
     matched = 0
     filers_seen: set[str] = set()
     seen_ids: set = set()
+    # Every record's own amount, by (filer, year), regardless of whether it
+    # matched the AI-vendor taxonomy -- the denominator for "AI spend as a
+    # % of total spend" (see build_dataset_ma.py). Deduped by id separately
+    # from `seen_ids` above, since that set only covers matched records but
+    # a raw duplicate line would otherwise inflate this total for every
+    # record, not just matched ones.
+    filer_year_totals: dict[tuple[str, int], float] = defaultdict(float)
+    seen_ids_all: set = set()
 
     with open(src, encoding="utf-8") as f_in, open(out_path, "w", newline="", encoding="utf-8") as f_out:
         writer = csv.DictWriter(f_out, fieldnames=EXPENDITURE_OUT_FIELDS)
@@ -97,7 +110,17 @@ def parse_expenditures(taxonomy: Taxonomy, subvendor_scanned: int) -> int:
         for line in f_in:
             rec = json.loads(line)
             total += 1
-            filers_seen.add(str(rec.get("filerCpfId", "")))
+            filer_id = str(rec.get("filerCpfId", ""))
+            filers_seen.add(filer_id)
+
+            rec_id_all = rec.get("id")
+            if rec_id_all not in seen_ids_all:
+                seen_ids_all.add(rec_id_all)
+                try:
+                    year = int(str(rec.get("date", "")).split("/")[-1])
+                    filer_year_totals[(filer_id, year)] += _amount(rec)
+                except (ValueError, IndexError):
+                    pass
 
             text = " ".join(str(rec.get(f) or "") for f in EXPENDITURE_MATCH_FIELDS)
             vendor_hits = taxonomy.match_vendors(text)
@@ -140,6 +163,12 @@ def parse_expenditures(taxonomy: Taxonomy, subvendor_scanned: int) -> int:
             ["total_filers_with_expenditure_activity", "total_expenditure_records", "total_subvendor_records"]
         )
         writer.writerow([len(filers_seen), total, subvendor_scanned])
+
+    with open(filer_year_totals_path, "w", newline="", encoding="utf-8") as f_yr:
+        writer = csv.writer(f_yr)
+        writer.writerow(["filer_cpf_id", "year", "total_expenditure"])
+        for (filer_id, year), amount in sorted(filer_year_totals.items()):
+            writer.writerow([filer_id, year, round(amount, 2)])
 
     print(
         f"expenditures: {total:,} records scanned, {matched:,} matched, "

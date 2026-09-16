@@ -111,11 +111,20 @@ def main() -> None:
     subvendor_path = PROCESSED_DIR / "ocpf_subvendor_matches.csv"
     filer_totals_path = PROCESSED_DIR / "ocpf_filer_totals.csv"
     report_dates_path = PROCESSED_DIR / "ocpf_report_dates.csv"
+    filer_year_totals_path = PROCESSED_DIR / "ocpf_filer_year_totals.csv"
 
     report_dates: dict[str, dict] = {}
     if report_dates_path.exists():
         for row in csv.DictReader(open(report_dates_path, encoding="utf-8")):
             report_dates[row["report_id"]] = row
+
+    # Each filer's own total reported spend by year, regardless of vendor --
+    # the denominator for "AI spend as a % of total spend" (parse_ocpf.py's
+    # equivalent of the federal pipeline's load_committee_totals()).
+    filer_year_expenditure: dict[str, dict[int, float]] = defaultdict(dict)
+    if filer_year_totals_path.exists():
+        for row in csv.DictReader(open(filer_year_totals_path, encoding="utf-8")):
+            filer_year_expenditure[row["filer_cpf_id"]][int(row["year"])] = float(row["total_expenditure"])
 
     # Filer party affiliation: OCPF's per-record expenditure data has no
     # party field at all (see fetch_ocpf_filer_party.py), so this is looked
@@ -149,6 +158,7 @@ def main() -> None:
     year_totals: dict[int, float] = defaultdict(float)
     year_records: dict[int, int] = defaultdict(int)
     year_party_totals: dict[tuple, float] = defaultdict(float)
+    year_ai_filers: dict[int, set] = defaultdict(set)
     party_totals = {"Democratic": 0.0, "Republican": 0.0}
     party_counts = {"Democratic": 0, "Republican": 0}
 
@@ -194,6 +204,7 @@ def main() -> None:
         if year is not None:
             year_totals[year] += amount
             year_records[year] += 1
+            year_ai_filers[year].add(filer_id)
             if party in ("Democratic", "Republican"):
                 year_party_totals[(year, party)] += amount
 
@@ -298,6 +309,7 @@ def main() -> None:
             for year, v in sorted(filer_year_totals[filer_id].items())
         ]
         recs = sorted(filer_records[filer_id], key=lambda r: -r["amount"])[:MAX_DETAIL_RECORDS_MA]
+        filer_total_expenditure = sum(filer_year_expenditure.get(filer_id, {}).values())
         filers_detail[filer_id] = {
             "id": filer_id,
             "name": filer_names[filer_id],
@@ -305,6 +317,8 @@ def main() -> None:
             "total": round(total, 2),
             "records_count": filer_record_count[filer_id],
             "vendor_ids": sorted(filer_vendor_ids[filer_id]),
+            "total_expenditure": round(filer_total_expenditure, 2),
+            "pct_ai": round(total / filer_total_expenditure * 100, 3) if filer_total_expenditure > 0 else None,
             "time_series": ts,
             "records": recs,
         }
@@ -359,8 +373,22 @@ def main() -> None:
             "records": recs,
         }
 
+    # Denominator for "AI spend as a % of total spend" on the yearly trend
+    # chart: each year, the combined total reported spend (not just
+    # AI-vendor spend) of the filers who show at least one AI-vendor
+    # disbursement THAT year -- not of every filer with any activity --
+    # same "relative to AI-using campaigns" framing the federal dashboard
+    # uses for its own time-series/breakdown percentages.
+    def year_ai_filer_total_expenditure(year: int) -> float:
+        return sum(filer_year_expenditure.get(fid, {}).get(year, 0.0) for fid in year_ai_filers[year])
+
     time_series = [
-        {"year": year, "total": round(year_totals[year], 2), "records": year_records[year]}
+        {
+            "year": year,
+            "total": round(year_totals[year], 2),
+            "records": year_records[year],
+            "total_expenditure": round(year_ai_filer_total_expenditure(year), 2),
+        }
         for year in sorted(year_totals)
     ]
 
@@ -368,6 +396,8 @@ def main() -> None:
         {"year": year, "party": party, "amount": round(amount, 2)}
         for (year, party), amount in sorted(year_party_totals.items())
     ]
+
+    total_expenditure_ai_filers = sum(year_ai_filer_total_expenditure(y) for y in year_totals)
 
     party_split = {
         "dem_amount": round(party_totals["Democratic"], 2),
@@ -435,6 +465,13 @@ def main() -> None:
                 "Vendor and filer detail pages (click a vendor or filer name) draw on every matched "
                 "record for that vendor/filer, not just the top 20 shown in the overview table below -- "
                 "capped at 300 records per page, largest first, the same cap the federal dashboard uses.",
+                "The $ / % of total spend toggle divides AI-vendor spend by each filer's own total "
+                "reported OCPF expenditure that year (every itemized record, not just AI-vendor "
+                "matches -- the same role parse_disbursements.py's committee totals play for the "
+                "federal dashboard). For the yearly trend chart, the denominator is the combined total "
+                "spend of the filers who show at least one AI-vendor disbursement THAT year, not of "
+                "every filer with any activity -- the same 'relative to AI-using campaigns' framing "
+                "the federal dashboard uses for its own percentages.",
             ],
         },
         "stats": {
@@ -443,6 +480,8 @@ def main() -> None:
             "matched_records": len(rows),
             "filers_with_ai_spend": len(matched_filers),
             "total_filers_with_activity": total_filers_with_activity,
+            "total_expenditure_ai_filers": round(total_expenditure_ai_filers, 2),
+            "pct_ai_overall": round(total_all / total_expenditure_ai_filers * 100, 3) if total_expenditure_ai_filers > 0 else None,
         },
         "vendors": vendors_out,
         "vendors_detail": vendors_detail,
