@@ -209,6 +209,8 @@ table.data-table th.sortable .sort-arrow { color: var(--text-muted); margin-left
 table.data-table td a, table.data-table a.entity-link { color: var(--series-1); text-decoration: none; }
 table.data-table td a:hover, table.data-table a.entity-link:hover { text-decoration: underline; }
 table.data-table.scroll-wrap { display: block; overflow-x: auto; }
+table.data-table th[title] { text-decoration: underline dotted; text-decoration-color: var(--text-muted); text-underline-offset: 3px; }
+table.data-table th[title]:not(.sortable) { cursor: help; }
 
 .matrix-wrap { overflow-x: auto; padding-bottom: 4px; }
 table.matrix-table { border-collapse: collapse; font-size: 0.78rem; font-variant-numeric: tabular-nums; }
@@ -371,11 +373,26 @@ tr.row-medium-confidence { background: color-mix(in srgb, var(--series-2) 7%, tr
 /* Compare-tab vendor table: category tags, description column, and the
    momentum column's directional badge (recent-vs-earlier spending trend,
    blended across whichever of Federal/MA a vendor has data in). */
-.tag-chip { display: inline-block; font-size: 0.7rem; padding: 2px 7px; border-radius: 999px; background: var(--surface-1); border: 1px solid var(--border); color: var(--text-secondary); margin: 0 4px 2px 0; }
+.tag-chip {
+  display: inline-block; font: inherit; font-size: 0.7rem; line-height: 1.4; padding: 2px 7px; border-radius: 999px;
+  background: var(--surface-1); border: 1px solid var(--border); color: var(--text-secondary); margin: 0 4px 2px 0;
+  cursor: pointer;
+}
+.tag-chip:hover { border-color: var(--compare-accent); color: var(--compare-accent); }
+.tag-chip.is-active { background: var(--compare-accent); border-color: var(--compare-accent); color: #fff; }
 .desc-cell { max-width: 280px; white-space: normal; color: var(--text-secondary); }
 .trend-up { color: var(--series-6); font-weight: 600; white-space: nowrap; }
 .trend-down { color: var(--series-8); font-weight: 600; white-space: nowrap; }
 .trend-flat { color: var(--text-muted); white-space: nowrap; }
+
+.active-filter-bar {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 0.85rem; color: var(--text-secondary);
+}
+.filter-clear-btn {
+  font: inherit; font-size: 0.78rem; color: var(--series-1); background: none; border: none; cursor: pointer;
+  padding: 0; text-decoration: underline;
+}
+.filter-clear-btn:hover { color: var(--text-primary); }
 
 @media (max-width: 640px) {
   .card-grid { grid-template-columns: 1fr; }

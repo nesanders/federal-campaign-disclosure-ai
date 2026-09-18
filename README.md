@@ -157,8 +157,11 @@ the product) and 1-2 `tags` drawn from the same use-case-category
 vocabulary already used to label disbursement purpose text elsewhere on
 the site (see `pipeline/config/vendors.yaml`). Both are hand-written per
 vendor, characterizing the product itself rather than any one payment's
-stated purpose. Respects the same legacy-vendor toggle as the other two
-tabs.
+stated purpose. Clicking a category tag filters the table to every vendor
+carrying that tag (click it again, or the "Clear filter" button that
+appears, to undo); every column header carries hover text spelling out
+exactly what that column measures. Respects the same legacy-vendor toggle
+as the other two tabs.
 
 ## How it works
 

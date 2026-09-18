@@ -294,7 +294,7 @@
     const thead = el("thead");
     const trh = el("tr");
     headers.forEach((h) => {
-      const th = el("th", { text: h.label });
+      const th = el("th", { text: h.label, attrs: h.title ? { title: h.title } : undefined });
       if (h.num) th.classList.add("num");
       if (h.sortKey) {
         th.classList.add("sortable");
@@ -2901,9 +2901,27 @@
     administrative_productivity: "Admin/productivity",
     unspecified: "Unspecified",
   };
+  // Persists across re-renders like the legacy toggle and confidence
+  // toggle do -- switching tabs and coming back keeps the filter active
+  // rather than silently dropping it.
+  let compareFilterTag = null;
+
   function tagChips(tags) {
     const frag = document.createDocumentFragment();
-    (tags || []).forEach((t) => frag.appendChild(el("span", { className: "tag-chip", text: TAG_SHORT_LABELS[t] || t })));
+    (tags || []).forEach((t) => {
+      const label = TAG_SHORT_LABELS[t] || t;
+      const isActive = compareFilterTag === t;
+      const chip = el("button", {
+        className: "tag-chip" + (isActive ? " is-active" : ""),
+        text: label,
+        attrs: { type: "button", title: (isActive ? "Clear the \"" + label + "\" filter" : "Filter the table to \"" + label + "\"") },
+      });
+      chip.addEventListener("click", () => {
+        compareFilterTag = isActive ? null : t;
+        renderCompareView();
+      });
+      frag.appendChild(chip);
+    });
     return frag;
   }
 
@@ -3020,7 +3038,8 @@
     const eraFilter = eraFilterList();
     const allRows = buildCompareRows();
     const nLegacyHidden = allRows.filter((r) => r.era === "legacy" && r.volume > 0).length;
-    const rows = allRows.filter((r) => eraFilter.includes(r.era));
+    const eraRows = allRows.filter((r) => eraFilter.includes(r.era));
+    const rows = compareFilterTag ? eraRows.filter((r) => (r.tags || []).includes(compareFilterTag)) : eraRows;
 
     view.appendChild(
       el("div", {
@@ -3058,29 +3077,86 @@
       el("p", {
         className: "note",
         text:
-          "High-confidence text matches only, on each tab's own dataset (see each tab's methodology for what that means there). Combined volume sums the two. Momentum compares each vendor's own more-recent half of its time series (Federal: election cycles; Massachusetts: calendar years) against its earlier half, weighted toward whichever dataset carries more of its spend, shown as a multiplier (e.g. “14.2x”) once growth passes 3x since a percentage that large stops being readable; “New” means its earlier half had little or no spend (under $25) to compare against, so no rate is computable at all. " +
+          "High-confidence text matches only, on each tab's own dataset (see each tab's methodology for what that means there). Combined volume sums the two. Momentum compares each vendor's own more-recent half of its time series (Federal: election cycles; Massachusetts: calendar years) against its earlier half, weighted toward whichever dataset carries more of its spend, shown as a multiplier (e.g. “14.2x”) once growth passes 3x since a percentage that large stops being readable; “New” means its earlier half had little or no spend (under $25) to compare against, so no rate is computable at all. Click a category tag to filter the table to it; hover any column header for details. " +
           (includeLegacy
             ? "Legacy-era vendors are currently included, via the toggle above."
             : nLegacyHidden + " legacy-era vendor" + (nLegacyHidden === 1 ? "" : "s") + " with disclosed spending " + (nLegacyHidden === 1 ? "is" : "are") + " hidden by default (toggle above to include them)."),
       })
     );
 
-    const tableRows = sortRows(rows, sortState.compare);
-    const headers = withSort(
-      "compare",
-      [
-        { label: "Vendor", sortKey: "name", render: (r) => r.name },
-        { label: "Category", sortKey: null, cell: (r) => tagChips(r.tags) },
-        { label: "How campaigns use it", sortKey: null, cell: (r) => el("span", { className: "desc-cell", text: r.description || "—" }) },
-        { label: "Federal $", sortKey: "fed_amount", num: true, link: (r) => (r.fed_amount > 0 ? "#/vendor/" + r.id : null), render: (r) => (r.fed_amount > 0 ? fmtUSD0.format(r.fed_amount) : "—") },
-        { label: "Massachusetts $", sortKey: "ma_amount", num: true, link: (r) => (r.ma_amount > 0 ? "#/ma/vendor/" + r.id : null), render: (r) => (r.ma_amount > 0 ? fmtUSD0.format(r.ma_amount) : "—") },
-        { label: "Combined volume", sortKey: "volume", num: true, render: (r) => fmtUSD0.format(r.volume) },
-        { label: "Momentum", sortKey: "momentum_sort", cell: (r) => momentumBadge(r) },
-        { label: "Era", sortKey: "era", render: (r) => (r.era === "legacy" ? "Legacy" : "Generative") },
-      ],
-      renderCompareView
-    );
-    card.appendChild(buildTable(headers, tableRows, { sort: sortState.compare }));
+    if (compareFilterTag) {
+      const bar = el("div", { className: "active-filter-bar" });
+      bar.appendChild(document.createTextNode("Filtered to category: "));
+      bar.appendChild(el("span", { className: "tag-chip is-active", text: TAG_SHORT_LABELS[compareFilterTag] || compareFilterTag }));
+      const clearBtn = el("button", { className: "filter-clear-btn", text: "Clear filter ✕", attrs: { type: "button" } });
+      clearBtn.addEventListener("click", () => {
+        compareFilterTag = null;
+        renderCompareView();
+      });
+      bar.appendChild(clearBtn);
+      card.appendChild(bar);
+    }
+
+    if (!rows.length) {
+      card.appendChild(el("p", { className: "note", text: "No vendors match this filter." }));
+    } else {
+      const tableRows = sortRows(rows, sortState.compare);
+      const headers = withSort(
+        "compare",
+        [
+          { label: "Vendor", sortKey: "name", render: (r) => r.name },
+          {
+            label: "Category",
+            sortKey: null,
+            title: "The 1-2 use-case tags that best characterize this product (same vocabulary used to label disbursement purpose text elsewhere on the site). Click a tag to filter the table to it.",
+            cell: (r) => tagChips(r.tags),
+          },
+          {
+            label: "How campaigns use it",
+            sortKey: null,
+            title: "A one-line, hand-written summary of what the product is and how a campaign typically uses it -- not derived from any single disbursement's stated purpose.",
+            cell: (r) => el("span", { className: "desc-cell", text: r.description || "—" }),
+          },
+          {
+            label: "Federal $",
+            sortKey: "fed_amount",
+            num: true,
+            title: "High-confidence text matches to this vendor on the Federal (FEC) tab. Click the amount to open its Federal vendor page.",
+            link: (r) => (r.fed_amount > 0 ? "#/vendor/" + r.id : null),
+            render: (r) => (r.fed_amount > 0 ? fmtUSD0.format(r.fed_amount) : "—"),
+          },
+          {
+            label: "Massachusetts $",
+            sortKey: "ma_amount",
+            num: true,
+            title: "High-confidence text matches to this vendor on the Massachusetts (OCPF) tab. Click the amount to open its Massachusetts vendor page.",
+            link: (r) => (r.ma_amount > 0 ? "#/ma/vendor/" + r.id : null),
+            render: (r) => (r.ma_amount > 0 ? fmtUSD0.format(r.ma_amount) : "—"),
+          },
+          {
+            label: "Combined volume",
+            sortKey: "volume",
+            num: true,
+            title: "Federal $ + Massachusetts $ added together -- the only column on this page that combines the two datasets into one number.",
+            render: (r) => fmtUSD0.format(r.volume),
+          },
+          {
+            label: "Momentum",
+            sortKey: "momentum_sort",
+            title: "The vendor's more-recent half of its own time series vs. its earlier half (Federal: election cycles; Massachusetts: calendar years), weighted toward whichever dataset carries more of its spend. Shown as +/-% normally, or as a multiplier (\"14.2x\") once growth passes 3x; \"New\" means the earlier half had too little spend (under $25) to compute a rate.",
+            cell: (r) => momentumBadge(r),
+          },
+          {
+            label: "Era",
+            sortKey: "era",
+            title: "Generative: built on modern LLM/diffusion/voice-clone AI. Legacy: an \"AI\"-branded company that predates the generative-AI wave -- hidden by default via the toggle above.",
+            render: (r) => (r.era === "legacy" ? "Legacy" : "Generative"),
+          },
+        ],
+        renderCompareView
+      );
+      card.appendChild(buildTable(headers, tableRows, { sort: sortState.compare }));
+    }
     view.appendChild(el("div", { className: "card-grid single", children: [card] }));
 
     view.appendChild(
