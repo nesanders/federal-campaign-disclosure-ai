@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated_at": "2026-09-16T12:46:47+00:00",
+    "generated_at": "2026-09-18T14:48:58+00:00",
     "source_label": "Massachusetts Office of Campaign and Political Finance (OCPF)",
     "date_range": {
       "start": "2023-01-01",
-      "end": "2026-09-16"
+      "end": "2026-09-18"
     },
     "records_scanned": {
       "expenditures": 325289,
@@ -23,7 +23,8 @@
       "Democratic-vs-Republican spending uses each filer's partyAffiliation from OCPF's own filer/payload/{cpfId} endpoint -- fetched per distinct filer (a few dozen, not per record), since OCPF's expenditure records themselves carry no party field. Filers OCPF does not mark with a major-party affiliation (ballot-question committees, PACs, and a handful of others) are excluded from the party split entirely, not counted as a third category -- see the filers_with_known_party figure alongside the split.",
       "This taxonomy was empirically mined against Massachusetts payee/purpose text directly (not only inherited from the federal side): every distinct OCPF payee was scanned for AI-indicative language, plus a manual read of the highest-dollar unmatched payees, which is how Read.ai, Captions, and Canva's AI photo feature were found and verified as real payees before being added -- see pipeline/config/vendors.yaml for what was found, checked, and rejected.",
       "Vendor and filer detail pages (click a vendor or filer name) draw on every matched record for that vendor/filer, not just the top 20 shown in the overview table below -- capped at 300 records per page, largest first, the same cap the federal dashboard uses.",
-      "The $ / % of total spend toggle divides AI-vendor spend by each filer's own total reported OCPF expenditure that year (every itemized record, not just AI-vendor matches -- the same role parse_disbursements.py's committee totals play for the federal dashboard). For the yearly trend chart, the denominator is the combined total spend of the filers who show at least one AI-vendor disbursement THAT year, not of every filer with any activity -- the same 'relative to AI-using campaigns' framing the federal dashboard uses for its own percentages."
+      "The $ / % of total spend toggle divides AI-vendor spend by each filer's own total reported OCPF expenditure that year (every itemized record, not just AI-vendor matches -- the same role parse_disbursements.py's committee totals play for the federal dashboard). For the yearly trend chart, the denominator is the combined total spend of the filers who show at least one AI-vendor disbursement THAT year, not of every filer with any activity -- the same 'relative to AI-using campaigns' framing the federal dashboard uses for its own percentages.",
+      "The legacy-vendor toggle (top of page, off by default) filters the vendor chart/table, the yearly trend chart, and the party split (pie + over-time), same as the equivalent Federal charts: a record counts toward the generative-only figures if AT LEAST ONE of its matched vendors is generative-era. The weekly disclosure timeline and the 'Individual disclosed payments' table below are NOT filtered by this toggle -- both always show every confidence tier and era, the same scope the Federal dashboard's own weekly timeline uses, so every disclosed payment stays auditable regardless of the toggle; each row there is tagged with its confidence and era instead."
     ]
   },
   "stats": {
@@ -31,6 +32,7 @@
     "total_generative": 11696.8,
     "matched_records": 342,
     "filers_with_ai_spend": 59,
+    "filers_with_ai_spend_ex_legacy": 42,
     "total_filers_with_activity": 2516,
     "total_expenditure_ai_filers": 24058206.94,
     "pct_ai_overall": 0.101
@@ -44,7 +46,11 @@
       "homepage": "https://openai.com",
       "lean_context": null,
       "total": 6917.54,
+      "amount_high": 6917.54,
+      "amount_medium": 0.0,
       "records": 175,
+      "records_high": 175,
+      "records_medium": 0,
       "filers": 27,
       "dem_amount": 5231.77,
       "rep_amount": 1367.02,
@@ -58,7 +64,11 @@
       "homepage": "https://www.calltime.ai",
       "lean_context": "progressive-aligned (per public reporting)",
       "total": 3600.0,
+      "amount_high": 3600.0,
+      "amount_medium": 0.0,
       "records": 14,
+      "records_high": 14,
+      "records_medium": 0,
       "filers": 2,
       "dem_amount": 3600.0,
       "rep_amount": 0.0,
@@ -72,7 +82,11 @@
       "homepage": "https://grammarly.com",
       "lean_context": null,
       "total": 3272.4,
+      "amount_high": 3272.4,
+      "amount_medium": 0.0,
       "records": 35,
+      "records_high": 35,
+      "records_medium": 0,
       "filers": 10,
       "dem_amount": 2182.2,
       "rep_amount": 1090.2,
@@ -86,7 +100,11 @@
       "homepage": "https://campaignnucleus.com",
       "lean_context": "reported GOP-aligned; developed by Brad Parscale (Trump 2016/2020 digital director)",
       "total": 2698.28,
+      "amount_high": 2698.28,
+      "amount_medium": 0.0,
       "records": 6,
+      "records_high": 6,
+      "records_medium": 0,
       "filers": 2,
       "dem_amount": 0.0,
       "rep_amount": 2129.03,
@@ -100,7 +118,11 @@
       "homepage": "https://donoratlas.com",
       "lean_context": "progressive-aligned (per public reporting)",
       "total": 2100.0,
+      "amount_high": 2100.0,
+      "amount_medium": 0.0,
       "records": 7,
+      "records_high": 7,
+      "records_medium": 0,
       "filers": 3,
       "dem_amount": 1500.0,
       "rep_amount": 0.0,
@@ -114,7 +136,11 @@
       "homepage": "https://anthropic.com",
       "lean_context": null,
       "total": 1534.91,
+      "amount_high": 1534.91,
+      "amount_medium": 0.0,
       "records": 25,
+      "records_high": 25,
+      "records_medium": 0,
       "filers": 8,
       "dem_amount": 1322.41,
       "rep_amount": 212.5,
@@ -128,7 +154,11 @@
       "homepage": "https://otter.ai",
       "lean_context": null,
       "total": 1526.17,
+      "amount_high": 1526.17,
+      "amount_medium": 0.0,
       "records": 25,
+      "records_high": 25,
+      "records_medium": 0,
       "filers": 4,
       "dem_amount": 936.17,
       "rep_amount": 0.0,
@@ -142,7 +172,11 @@
       "homepage": "https://descript.com",
       "lean_context": null,
       "total": 1035.32,
+      "amount_high": 1035.32,
+      "amount_medium": 0.0,
       "records": 14,
+      "records_high": 14,
+      "records_medium": 0,
       "filers": 3,
       "dem_amount": 983.9,
       "rep_amount": 0.0,
@@ -156,7 +190,11 @@
       "homepage": "https://read.ai",
       "lean_context": null,
       "total": 371.25,
+      "amount_high": 371.25,
+      "amount_medium": 0.0,
       "records": 2,
+      "records_high": 2,
+      "records_medium": 0,
       "filers": 1,
       "dem_amount": 371.25,
       "rep_amount": 0.0,
@@ -170,7 +208,11 @@
       "homepage": "https://canva.com",
       "lean_context": null,
       "total": 358.07,
+      "amount_high": 358.07,
+      "amount_medium": 0.0,
       "records": 16,
+      "records_high": 16,
+      "records_medium": 0,
       "filers": 2,
       "dem_amount": 358.07,
       "rep_amount": 0.0,
@@ -184,7 +226,11 @@
       "homepage": "https://perplexity.ai",
       "lean_context": null,
       "total": 352.5,
+      "amount_high": 352.5,
+      "amount_medium": 0.0,
       "records": 8,
+      "records_high": 8,
+      "records_medium": 0,
       "filers": 2,
       "dem_amount": 120.0,
       "rep_amount": 232.5,
@@ -198,7 +244,11 @@
       "homepage": "https://captions.ai",
       "lean_context": null,
       "total": 238.46,
+      "amount_high": 238.46,
+      "amount_medium": 0.0,
       "records": 10,
+      "records_high": 10,
+      "records_medium": 0,
       "filers": 1,
       "dem_amount": 238.46,
       "rep_amount": 0.0,
@@ -212,7 +262,11 @@
       "homepage": "https://x.ai",
       "lean_context": null,
       "total": 100.0,
+      "amount_high": 100.0,
+      "amount_medium": 0.0,
       "records": 1,
+      "records_high": 1,
+      "records_medium": 0,
       "filers": 1,
       "dem_amount": 0.0,
       "rep_amount": 100.0,
@@ -226,7 +280,11 @@
       "homepage": "https://www.campaign-brain.com",
       "lean_context": null,
       "total": 50.0,
+      "amount_high": 50.0,
+      "amount_medium": 0.0,
       "records": 1,
+      "records_high": 1,
+      "records_medium": 0,
       "filers": 1,
       "dem_amount": 50.0,
       "rep_amount": 0.0,
@@ -240,7 +298,11 @@
       "homepage": "https://www.daisychain.app",
       "lean_context": "progressive-aligned (per public reporting)",
       "total": 14.5,
+      "amount_high": 14.5,
+      "amount_medium": 0.0,
       "records": 1,
+      "records_high": 1,
+      "records_medium": 0,
       "filers": 1,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -254,7 +316,11 @@
       "homepage": "https://midjourney.com",
       "lean_context": null,
       "total": 10.63,
+      "amount_high": 10.63,
+      "amount_medium": 0.0,
       "records": 1,
+      "records_high": 1,
+      "records_medium": 0,
       "filers": 1,
       "dem_amount": 10.63,
       "rep_amount": 0.0,
@@ -268,7 +334,11 @@
       "homepage": "https://ai.google",
       "lean_context": null,
       "total": 7.01,
+      "amount_high": 7.01,
+      "amount_medium": 0.0,
       "records": 1,
+      "records_high": 1,
+      "records_medium": 0,
       "filers": 1,
       "dem_amount": 0.0,
       "rep_amount": 7.01,
@@ -11423,25 +11493,37 @@
       "year": 2023,
       "total": 3385.75,
       "records": 23,
-      "total_expenditure": 312459.98
+      "total_expenditure": 312459.98,
+      "total_ex_legacy": 50.0,
+      "records_ex_legacy": 1,
+      "total_expenditure_ex_legacy": 20909.27
     },
     {
       "year": 2024,
       "total": 4500.41,
       "records": 31,
-      "total_expenditure": 837724.27
+      "total_expenditure": 837724.27,
+      "total_ex_legacy": 1659.99,
+      "records_ex_legacy": 12,
+      "total_expenditure_ex_legacy": 130682.36
     },
     {
       "year": 2025,
       "total": 7035.56,
       "records": 96,
-      "total_expenditure": 8260763.94
+      "total_expenditure": 8260763.94,
+      "total_ex_legacy": 3082.61,
+      "records_ex_legacy": 65,
+      "total_expenditure_ex_legacy": 3171756.14
     },
     {
       "year": 2026,
       "total": 9265.32,
       "records": 192,
-      "total_expenditure": 14647258.75
+      "total_expenditure": 14647258.75,
+      "total_ex_legacy": 6904.2,
+      "records_ex_legacy": 154,
+      "total_expenditure_ex_legacy": 4337482.65
     }
   ],
   "time_series_by_party": [
@@ -11481,6 +11563,38 @@
       "amount": 2535.9
     }
   ],
+  "time_series_by_party_ex_legacy": [
+    {
+      "year": 2023,
+      "party": "Democratic",
+      "amount": 50.0
+    },
+    {
+      "year": 2024,
+      "party": "Democratic",
+      "amount": 1659.99
+    },
+    {
+      "year": 2025,
+      "party": "Democratic",
+      "amount": 2441.36
+    },
+    {
+      "year": 2025,
+      "party": "Republican",
+      "amount": 20.0
+    },
+    {
+      "year": 2026,
+      "party": "Democratic",
+      "amount": 4693.17
+    },
+    {
+      "year": 2026,
+      "party": "Republican",
+      "amount": 1899.03
+    }
+  ],
   "party_split": {
     "dem_amount": 16904.86,
     "rep_amount": 5138.26,
@@ -11488,6 +11602,14 @@
     "rep_count": 48,
     "dem_rep_ratio": 3.29,
     "filers_with_known_party": 52
+  },
+  "party_split_ex_legacy": {
+    "dem_amount": 8844.52,
+    "rep_amount": 1919.03,
+    "dem_count": 189,
+    "rep_count": 25,
+    "dem_rep_ratio": 4.609,
+    "filers_with_known_party": 38
   },
   "weekly_histogram": {
     "expenditures": [
@@ -12322,6 +12444,9 @@
       "vendor_names": [
         "CallTime.AI"
       ],
+      "vendor_eras": [
+        "legacy"
+      ],
       "confidences": [
         "high"
       ],
@@ -12340,6 +12465,9 @@
       ],
       "vendor_names": [
         "CallTime.AI"
+      ],
+      "vendor_eras": [
+        "legacy"
       ],
       "confidences": [
         "high"
@@ -12360,6 +12488,9 @@
       "vendor_names": [
         "Campaign Nucleus"
       ],
+      "vendor_eras": [
+        "legacy"
+      ],
       "confidences": [
         "high"
       ],
@@ -12378,6 +12509,9 @@
       ],
       "vendor_names": [
         "Campaign Nucleus"
+      ],
+      "vendor_eras": [
+        "legacy"
       ],
       "confidences": [
         "high"
@@ -12398,6 +12532,9 @@
       "vendor_names": [
         "Campaign Nucleus"
       ],
+      "vendor_eras": [
+        "legacy"
+      ],
       "confidences": [
         "high"
       ],
@@ -12416,6 +12553,9 @@
       ],
       "vendor_names": [
         "Campaign Nucleus"
+      ],
+      "vendor_eras": [
+        "legacy"
       ],
       "confidences": [
         "high"
@@ -12436,6 +12576,9 @@
       "vendor_names": [
         "Campaign Nucleus"
       ],
+      "vendor_eras": [
+        "legacy"
+      ],
       "confidences": [
         "high"
       ],
@@ -12454,6 +12597,9 @@
       ],
       "vendor_names": [
         "Descript"
+      ],
+      "vendor_eras": [
+        "legacy"
       ],
       "confidences": [
         "high"
@@ -12474,6 +12620,9 @@
       "vendor_names": [
         "Descript"
       ],
+      "vendor_eras": [
+        "legacy"
+      ],
       "confidences": [
         "high"
       ],
@@ -12492,6 +12641,9 @@
       ],
       "vendor_names": [
         "DonorAtlas"
+      ],
+      "vendor_eras": [
+        "generative"
       ],
       "confidences": [
         "high"
@@ -12512,6 +12664,9 @@
       "vendor_names": [
         "DonorAtlas"
       ],
+      "vendor_eras": [
+        "generative"
+      ],
       "confidences": [
         "high"
       ],
@@ -12530,6 +12685,9 @@
       ],
       "vendor_names": [
         "DonorAtlas"
+      ],
+      "vendor_eras": [
+        "generative"
       ],
       "confidences": [
         "high"
@@ -12550,6 +12708,9 @@
       "vendor_names": [
         "DonorAtlas"
       ],
+      "vendor_eras": [
+        "generative"
+      ],
       "confidences": [
         "high"
       ],
@@ -12568,6 +12729,9 @@
       ],
       "vendor_names": [
         "DonorAtlas"
+      ],
+      "vendor_eras": [
+        "generative"
       ],
       "confidences": [
         "high"
@@ -12588,6 +12752,9 @@
       "vendor_names": [
         "DonorAtlas"
       ],
+      "vendor_eras": [
+        "generative"
+      ],
       "confidences": [
         "high"
       ],
@@ -12606,6 +12773,9 @@
       ],
       "vendor_names": [
         "DonorAtlas"
+      ],
+      "vendor_eras": [
+        "generative"
       ],
       "confidences": [
         "high"
@@ -12626,6 +12796,9 @@
       "vendor_names": [
         "Otter.ai"
       ],
+      "vendor_eras": [
+        "legacy"
+      ],
       "confidences": [
         "high"
       ],
@@ -12644,6 +12817,9 @@
       ],
       "vendor_names": [
         "Otter.ai"
+      ],
+      "vendor_eras": [
+        "legacy"
       ],
       "confidences": [
         "high"
@@ -12664,6 +12840,9 @@
       "vendor_names": [
         "Anthropic (Claude)"
       ],
+      "vendor_eras": [
+        "generative"
+      ],
       "confidences": [
         "high"
       ],
@@ -12682,6 +12861,9 @@
       ],
       "vendor_names": [
         "OpenAI (ChatGPT)"
+      ],
+      "vendor_eras": [
+        "generative"
       ],
       "confidences": [
         "high"

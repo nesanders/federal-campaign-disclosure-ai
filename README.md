@@ -116,9 +116,22 @@ page does.
 
 The legacy-vendor toggle (top of the page) is shared by both tabs too: off
 by default, it hides legacy-era vendors (e.g. CallTime.AI, Grammarly,
-Otter.ai) from the Massachusetts vendor chart and table the same way it
-hides them from every Federal chart and table, and a legacy vendor's own
-detail page still always shows its full history regardless.
+Otter.ai) from every Massachusetts aggregate view the same way it does on
+Federal -- the vendor chart and table, the yearly spending trend, the
+party split pie, and the party-spending-over-time chart. As on Federal, it
+does *not* filter the weekly disclosure timeline or the "Individual
+disclosed payments" table (both always show every matched record, all
+eras and confidence tiers -- see "Notes & limitations" on the page itself),
+nor a vendor's or candidate's own detail page, which always shows its full
+history regardless of the toggle.
+
+Every record-level table on both tabs (a vendor's or candidate's own
+disbursement history, and the overview's notable-payments table) carries a
+Confidence column alongside any legacy-vendor pill, so a reader can always
+tell whether a given row is a high-confidence vendor-name match or a
+lower-confidence match on an ambiguous word. The main vendor table and
+chart on both tabs also split each vendor's total into "High-confidence $"
+and "Lower-confidence $" rather than blending them into one figure.
 
 ## How it works
 

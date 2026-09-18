@@ -174,6 +174,20 @@
     });
     return frag;
   }
+  // A single vendor, always linked internally to its detail page (unlike
+  // vendorLinksCell, which prefers an external homepage when known) --
+  // for a records table's Vendor column, where clicking through to compare
+  // vendors matters more than a quick homepage visit. Still tags a legacy
+  // vendor, since a candidate's own records mix eras the toggle never
+  // filters (that page always shows full history).
+  function vendorNameCell(vendorId, vendorName) {
+    const frag = document.createDocumentFragment();
+    frag.appendChild(el("a", { className: "entity-link", href: "#/vendor/" + vendorId, text: vendorName }));
+    if (vendorEraById[vendorId] === "legacy") {
+      frag.appendChild(el("span", { className: "pill pill-legacy", text: "legacy" }));
+    }
+    return frag;
+  }
   // Same idea as vendorLinksCell, but always links internally to the MA
   // vendor detail page (#/ma/vendor/<id>) rather than preferring an
   // external homepage -- these are the parallel arrays a matched MA
@@ -1914,7 +1928,7 @@
         "candidateRecords",
         [
           { label: "Date", sortKey: "date_sort", render: (r) => r.date },
-          { label: "Vendor", sortKey: "vendor_name", link: (r) => "#/vendor/" + r.vendor_id, render: (r) => r.vendor_name },
+          { label: "Vendor", sortKey: "vendor_name", cell: (r) => vendorNameCell(r.vendor_id, r.vendor_name) },
           { label: "Amount", sortKey: "amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
           { label: "Stated purpose", sortKey: "purpose", render: (r) => r.purpose || "—" },
         ],
@@ -2096,10 +2110,10 @@
     const c = colors();
     const eraFilter = eraFilterList();
     const shownVendors = MA_DATA.vendors.filter((v) => eraFilter.includes(v.era));
-    const nLegacyHidden = MA_DATA.vendors.filter((v) => v.era === "legacy" && v.total > 0).length;
+    const nLegacyHidden = MA_DATA.vendors.filter((v) => v.era === "legacy" && v.amount_high > 0).length;
     const rows = shownVendors.slice(0, 20);
     const labels = rows.map((r) => r.name + (r.era === "legacy" ? " (legacy)" : ""));
-    const data = rows.map((r) => r.total);
+    const data = rows.map((r) => r.amount_high);
 
     const card = el("div", { className: "card" });
     const toolbar = el("div", { className: "card-toolbar" });
@@ -2137,7 +2151,8 @@
           { label: "Vendor", link: (r) => "#/ma/vendor/" + r.id, render: (r) => r.name },
           { label: "Type", render: (r) => VENDOR_GROUP_LABEL[r.group] || r.group },
           { label: "Era", render: (r) => r.era },
-          { label: "Total", num: true, render: (r) => fmtUSD2.format(r.total) },
+          { label: "High-confidence $", num: true, render: (r) => fmtUSD2.format(r.amount_high) },
+          { label: "Lower-confidence $", num: true, render: (r) => (r.amount_medium > 0 ? fmtUSD2.format(r.amount_medium) : "—") },
           { label: "Records", num: true, render: (r) => fmtInt.format(r.records) },
           { label: "Filers", num: true, render: (r) => fmtInt.format(r.filers) },
           { label: "D:R ratio", num: true, render: (r) => fmtPartyRatio(r) },
@@ -2167,7 +2182,10 @@
               callbacks: {
                 label: (ctx) => {
                   const r = rows[ctx.dataIndex];
-                  return fmtUSD2.format(r.total) + " · " + fmtInt.format(r.records) + " records · " + fmtInt.format(r.filers) + " filers";
+                  return [
+                    fmtUSD2.format(r.amount_high) + " · " + fmtInt.format(r.records) + " records · " + fmtInt.format(r.filers) + " filers",
+                    r.amount_medium > 0 ? "+" + fmtUSD2.format(r.amount_medium) + " lower-confidence signal" : "",
+                  ].filter(Boolean);
                 },
               },
             }),
@@ -2189,7 +2207,15 @@
     function renderContent() {
       card.innerHTML = "";
       const c = colors();
-      const rows = MA_DATA.time_series;
+      // Legacy-vendor toggle picks between each year's all-eras figures and
+      // its "_ex_legacy" (generative-only) ones -- same rule as every other
+      // era-filtered Federal chart: a record counts as generative if at
+      // least one of its matched vendors is generative-era.
+      const rows = MA_DATA.time_series.map((r) =>
+        includeLegacy
+          ? r
+          : { year: r.year, total: r.total_ex_legacy, records: r.records_ex_legacy, total_expenditure: r.total_expenditure_ex_legacy }
+      );
       const mode = viewModes.maTrends;
 
       const toolbar = el("div", { className: "view-toggle", attrs: { "data-toggle-group": "ma-trends" } });
@@ -2212,9 +2238,9 @@
         el("p", {
           className: "note",
           text:
-            mode === "pct"
+            (mode === "pct"
               ? "AI-vendor spend as a share of that year's total reported OCPF spend by the filers who used an AI vendor that year. 2026 is still filing."
-              : "All eras, all matched vendors. 2026 is still filing.",
+              : "2026 is still filing.") + (includeLegacy ? " All eras, all matched vendors." : " Generative-era vendors only -- toggle above to include legacy-era vendors."),
         })
       );
       const chartHolder = el("div", { className: "chart-holder" });
@@ -2276,7 +2302,8 @@
   // not broken out per vendor.
   function renderMaPartyPieCard() {
     const c = colors();
-    const ps = MA_DATA.party_split;
+    const ps = includeLegacy ? MA_DATA.party_split : MA_DATA.party_split_ex_legacy;
+    const filersShown = includeLegacy ? MA_DATA.stats.filers_with_ai_spend : MA_DATA.stats.filers_with_ai_spend_ex_legacy;
     const card = el("div", { className: "card" });
     card.appendChild(maCardTitle("Party split"));
     card.appendChild(
@@ -2289,8 +2316,10 @@
           " " +
           fmtInt.format(ps.filers_with_known_party) +
           " of " +
-          fmtInt.format(MA_DATA.stats.filers_with_ai_spend) +
-          " matched filers have a known major-party affiliation.",
+          fmtInt.format(filersShown) +
+          " matched filers have a known major-party affiliation" +
+          (includeLegacy ? "" : " (generative-era vendors only)") +
+          ".",
       })
     );
     const chartHolder = el("div", { className: "chart-holder" });
@@ -2331,10 +2360,17 @@
 
   function renderMaPartyTrendCard() {
     const c = colors();
-    const rows = MA_DATA.time_series_by_party || [];
+    const rows = (includeLegacy ? MA_DATA.time_series_by_party : MA_DATA.time_series_by_party_ex_legacy) || [];
     const card = el("div", { className: "card" });
     card.appendChild(maCardTitle("Party spending over time"));
-    card.appendChild(el("p", { className: "note", text: "Democratic vs. Republican AI-vendor spend by year, same filer-party lookup as the pie chart." }));
+    card.appendChild(
+      el("p", {
+        className: "note",
+        text:
+          "Democratic vs. Republican AI-vendor spend by year, same filer-party lookup as the pie chart." +
+          (includeLegacy ? "" : " Generative-era vendors only."),
+      })
+    );
     const chartHolder = el("div", { className: "chart-holder" });
     chartHolder.appendChild(el("canvas", { id: "chart-ma-party-trend" }));
     card.appendChild(chartHolder);
@@ -2387,7 +2423,7 @@
     card.appendChild(
       el("p", {
         className: "note",
-        text: "Every matched expenditure, binned by week: when the expenditure itself happened vs. when OCPF's own record shows the covering report was filed (a real filed date from OCPF, not an approximation).",
+        text: "Every matched expenditure, all confidence tiers and eras (not filtered by the legacy-vendor toggle), binned by week: when the expenditure itself happened vs. when OCPF's own record shows the covering report was filed (a real filed date from OCPF, not an approximation).",
       })
     );
     const chartHolder = el("div", { className: "chart-holder", attrs: { "data-panel": "ma-weekly" } });
@@ -2413,7 +2449,13 @@
   function renderMaNotableCard() {
     const card = el("div", { className: "card" });
     card.appendChild(maCardTitle("Individual disclosed payments, largest first"));
-    card.appendChild(el("p", { className: "note", text: "Every matched record's own OCPF filing is one click away via the source link." }));
+    card.appendChild(
+      el("p", {
+        className: "note",
+        text:
+          "Every matched record's own OCPF filing is one click away via the source link. Unlike the charts above, this table is NOT filtered by the legacy-vendor toggle -- it always shows every confidence tier and era (see the Vendor and Confidence columns), so every disclosed payment stays auditable.",
+      })
+    );
     card.appendChild(
       buildTable(
         [
@@ -2421,6 +2463,7 @@
           { label: "Filer", link: (r) => "#/ma/candidate/" + r.filer_cpf_id, render: (r) => r.filer_name },
           { label: "Party", render: (r) => r.filer_party },
           { label: "Vendor", cell: (r) => maVendorLinksCell(r.vendor_ids, r.vendor_names) },
+          { label: "Confidence", cell: (r) => confidencePill(r.confidences.indexOf("medium") !== -1 ? "medium" : "high") },
           { label: "Amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
           { label: "Purpose", render: (r) => r.purpose || "—" },
           { label: "Source", link: (r) => r.source_link, external: true, render: () => "View ↗" },
@@ -2503,6 +2546,7 @@
           { label: "Date", sortKey: "date_sort", render: (r) => r.date },
           { label: "Filer", sortKey: "filer_name", link: (r) => "#/ma/candidate/" + r.filer_cpf_id, render: (r) => r.filer_name },
           { label: "Party", sortKey: "filer_party", render: (r) => r.filer_party },
+          { label: "Confidence", sortKey: "confidence", cell: (r) => confidencePill(r.confidence) },
           { label: "Amount", sortKey: "amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
           { label: "Purpose", sortKey: "purpose", render: (r) => r.purpose || "—" },
           { label: "Source", sortKey: null, link: (r) => r.source_link, external: true, render: () => "View ↗" },
@@ -2651,6 +2695,7 @@
         [
           { label: "Date", sortKey: "date_sort", render: (r) => r.date },
           { label: "Vendor", sortKey: "display_vendor", cell: (r) => maVendorLinksCell(r.vendor_ids, r.vendor_names) },
+          { label: "Confidence", sortKey: null, cell: (r) => confidencePill(r.confidences.indexOf("medium") !== -1 ? "medium" : "high") },
           { label: "Amount", sortKey: "amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
           { label: "Purpose", sortKey: "purpose", render: (r) => r.purpose || "—" },
           { label: "Source", sortKey: null, link: (r) => r.source_link, external: true, render: () => "View ↗" },
@@ -2741,8 +2786,20 @@
 
     const statRow = el("div", { className: "stat-row" });
     statRow.appendChild(statTile("Records scanned statewide", fmtInt.format(meta.records_scanned.expenditures + meta.records_scanned.subvendor), fmtInt.format(meta.records_scanned.expenditures) + " expenditures + " + fmtInt.format(meta.records_scanned.subvendor) + " subvendor payments"));
-    statRow.appendChild(statTile("Disclosed AI-vendor spend", fmtUSD0.format(stats.total_all_eras), fmtUSD0.format(stats.total_generative) + " in generative-era tools specifically"));
-    statRow.appendChild(statTile("Filers with AI-vendor spend", fmtInt.format(stats.filers_with_ai_spend), "out of " + fmtInt.format(stats.total_filers_with_activity) + " filers with any expenditure activity"));
+    statRow.appendChild(
+      statTile(
+        "Disclosed AI-vendor spend",
+        fmtUSD0.format(includeLegacy ? stats.total_all_eras : stats.total_generative),
+        (includeLegacy ? "all eras" : "generative-era vendors only") + " -- toggle above to include legacy-era vendors"
+      )
+    );
+    statRow.appendChild(
+      statTile(
+        "Filers with AI-vendor spend",
+        fmtInt.format(includeLegacy ? stats.filers_with_ai_spend : stats.filers_with_ai_spend_ex_legacy),
+        "out of " + fmtInt.format(stats.total_filers_with_activity) + " filers with any expenditure activity"
+      )
+    );
     statRow.appendChild(statTile("Subvendor payments tested", fmtInt.format(MA_DATA.subvendor.records_scanned), "OCPF's $5,000/$500 subcontractor-disclosure layer, no federal equivalent"));
     view.appendChild(statRow);
 

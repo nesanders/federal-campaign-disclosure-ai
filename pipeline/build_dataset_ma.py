@@ -151,16 +151,35 @@ def main() -> None:
     vendor_records: dict[str, int] = defaultdict(int)
     vendor_filers: dict[str, set] = defaultdict(set)
     vendor_party_amount: dict[str, dict] = defaultdict(lambda: {"Democratic": 0.0, "Republican": 0.0})
+    # High vs. medium (ambiguous-word) confidence, split per vendor -- the
+    # same High-confidence $/Lower-confidence $ columns the federal
+    # dashboard's own vendor table shows, so a blended "Total" column never
+    # hides how much of it rests on an ambiguous text match.
+    vendor_totals_by_confidence: dict[str, dict] = defaultdict(lambda: {"high": 0.0, "medium": 0.0})
+    vendor_records_by_confidence: dict[str, dict] = defaultdict(lambda: {"high": 0, "medium": 0})
 
     total_all = 0.0
     total_generative = 0.0
     matched_filers: set = set()
+    matched_filers_ex_legacy: set = set()
     year_totals: dict[int, float] = defaultdict(float)
     year_records: dict[int, int] = defaultdict(int)
     year_party_totals: dict[tuple, float] = defaultdict(float)
     year_ai_filers: dict[int, set] = defaultdict(set)
     party_totals = {"Democratic": 0.0, "Republican": 0.0}
     party_counts = {"Democratic": 0, "Republican": 0}
+
+    # "_ex_legacy" mirrors of the above, gated on the same rule
+    # total_generative already uses (at least one of the row's matched
+    # vendors is generative-era) -- the denominator for the legacy-vendor
+    # toggle everywhere it applies on the Massachusetts tab, same as the
+    # federal dashboard's own _ex_legacy fields.
+    year_totals_ex_legacy: dict[int, float] = defaultdict(float)
+    year_records_ex_legacy: dict[int, int] = defaultdict(int)
+    year_party_totals_ex_legacy: dict[tuple, float] = defaultdict(float)
+    year_ai_filers_ex_legacy: dict[int, set] = defaultdict(set)
+    party_totals_ex_legacy = {"Democratic": 0.0, "Republican": 0.0}
+    party_counts_ex_legacy = {"Democratic": 0, "Republican": 0}
 
     notable_records = []
 
@@ -191,9 +210,11 @@ def main() -> None:
         filer_id = row["filer_cpf_id"]
         purpose_display = row["clarified_purpose"] or row["purpose"]
 
+        is_generative_row = any(era == "generative" for era in veras)
         total_all += amount
-        if any(era == "generative" for era in veras):
+        if is_generative_row:
             total_generative += amount
+            matched_filers_ex_legacy.add(filer_id)
         matched_filers.add(filer_id)
 
         try:
@@ -207,10 +228,19 @@ def main() -> None:
             year_ai_filers[year].add(filer_id)
             if party in ("Democratic", "Republican"):
                 year_party_totals[(year, party)] += amount
+            if is_generative_row:
+                year_totals_ex_legacy[year] += amount
+                year_records_ex_legacy[year] += 1
+                year_ai_filers_ex_legacy[year].add(filer_id)
+                if party in ("Democratic", "Republican"):
+                    year_party_totals_ex_legacy[(year, party)] += amount
 
         if party in ("Democratic", "Republican"):
             party_totals[party] += amount
             party_counts[party] += 1
+            if is_generative_row:
+                party_totals_ex_legacy[party] += amount
+                party_counts_ex_legacy[party] += 1
 
         if filer_id not in filer_names:
             filer_names[filer_id] = row["filer_name"]
@@ -235,6 +265,9 @@ def main() -> None:
             vendor_totals[vid] += amount
             vendor_records[vid] += 1
             vendor_filers[vid].add(filer_id)
+            conf_key = confidence if confidence in ("high", "medium") else "medium"
+            vendor_totals_by_confidence[vid][conf_key] += amount
+            vendor_records_by_confidence[vid][conf_key] += 1
             if party in ("Democratic", "Republican"):
                 vendor_party_amount[vid][party] += amount
 
@@ -263,6 +296,7 @@ def main() -> None:
             {
                 "vendor_ids": vids,
                 "vendor_names": vnames,
+                "vendor_eras": veras,
                 "confidences": confidences,
                 "filer_name": row["filer_name"],
                 "filer_cpf_id": filer_id,
@@ -282,6 +316,8 @@ def main() -> None:
     for vid, total in vendor_totals.items():
         meta = vendor_meta.get(vid, {"id": vid, "name": vid, "group": "unknown", "era": "generative"})
         vp = vendor_party_amount[vid]
+        vconf = vendor_totals_by_confidence[vid]
+        vconf_n = vendor_records_by_confidence[vid]
         vendors_out.append(
             {
                 "id": vid,
@@ -291,14 +327,18 @@ def main() -> None:
                 "homepage": meta.get("homepage"),
                 "lean_context": meta.get("lean_context"),
                 "total": round(total, 2),
+                "amount_high": round(vconf["high"], 2),
+                "amount_medium": round(vconf["medium"], 2),
                 "records": vendor_records[vid],
+                "records_high": vconf_n["high"],
+                "records_medium": vconf_n["medium"],
                 "filers": len(vendor_filers[vid]),
                 "dem_amount": round(vp["Democratic"], 2),
                 "rep_amount": round(vp["Republican"], 2),
                 "dem_rep_ratio": dem_rep_ratio(vp["Democratic"], vp["Republican"]),
             }
         )
-    vendors_out.sort(key=lambda v: -v["total"])
+    vendors_out.sort(key=lambda v: -v["amount_high"])
 
     # Per-filer ("candidate") detail pages -- every filer with at least one
     # matched record, not just the ones in the top-20 notable_records table.
@@ -382,12 +422,18 @@ def main() -> None:
     def year_ai_filer_total_expenditure(year: int) -> float:
         return sum(filer_year_expenditure.get(fid, {}).get(year, 0.0) for fid in year_ai_filers[year])
 
+    def year_ai_filer_total_expenditure_ex_legacy(year: int) -> float:
+        return sum(filer_year_expenditure.get(fid, {}).get(year, 0.0) for fid in year_ai_filers_ex_legacy[year])
+
     time_series = [
         {
             "year": year,
             "total": round(year_totals[year], 2),
             "records": year_records[year],
             "total_expenditure": round(year_ai_filer_total_expenditure(year), 2),
+            "total_ex_legacy": round(year_totals_ex_legacy[year], 2),
+            "records_ex_legacy": year_records_ex_legacy[year],
+            "total_expenditure_ex_legacy": round(year_ai_filer_total_expenditure_ex_legacy(year), 2),
         }
         for year in sorted(year_totals)
     ]
@@ -395,6 +441,10 @@ def main() -> None:
     time_series_by_party = [
         {"year": year, "party": party, "amount": round(amount, 2)}
         for (year, party), amount in sorted(year_party_totals.items())
+    ]
+    time_series_by_party_ex_legacy = [
+        {"year": year, "party": party, "amount": round(amount, 2)}
+        for (year, party), amount in sorted(year_party_totals_ex_legacy.items())
     ]
 
     total_expenditure_ai_filers = sum(year_ai_filer_total_expenditure(y) for y in year_totals)
@@ -406,6 +456,16 @@ def main() -> None:
         "rep_count": party_counts["Republican"],
         "dem_rep_ratio": dem_rep_ratio(party_totals["Democratic"], party_totals["Republican"]),
         "filers_with_known_party": sum(1 for p in filer_party.values() if p in ("Democratic", "Republican")),
+    }
+    party_split_ex_legacy = {
+        "dem_amount": round(party_totals_ex_legacy["Democratic"], 2),
+        "rep_amount": round(party_totals_ex_legacy["Republican"], 2),
+        "dem_count": party_counts_ex_legacy["Democratic"],
+        "rep_count": party_counts_ex_legacy["Republican"],
+        "dem_rep_ratio": dem_rep_ratio(party_totals_ex_legacy["Democratic"], party_totals_ex_legacy["Republican"]),
+        "filers_with_known_party": sum(
+            1 for fid in matched_filers_ex_legacy if filer_party.get(fid) in ("Democratic", "Republican")
+        ),
     }
 
     notable_records.sort(key=lambda r: -r["amount"])
@@ -472,6 +532,14 @@ def main() -> None:
                 "spend of the filers who show at least one AI-vendor disbursement THAT year, not of "
                 "every filer with any activity -- the same 'relative to AI-using campaigns' framing "
                 "the federal dashboard uses for its own percentages.",
+                "The legacy-vendor toggle (top of page, off by default) filters the vendor chart/table, "
+                "the yearly trend chart, and the party split (pie + over-time), same as the equivalent "
+                "Federal charts: a record counts toward the generative-only figures if AT LEAST ONE of "
+                "its matched vendors is generative-era. The weekly disclosure timeline and the "
+                "'Individual disclosed payments' table below are NOT filtered by this toggle -- both "
+                "always show every confidence tier and era, the same scope the Federal dashboard's own "
+                "weekly timeline uses, so every disclosed payment stays auditable regardless of the "
+                "toggle; each row there is tagged with its confidence and era instead.",
             ],
         },
         "stats": {
@@ -479,6 +547,7 @@ def main() -> None:
             "total_generative": round(total_generative, 2),
             "matched_records": len(rows),
             "filers_with_ai_spend": len(matched_filers),
+            "filers_with_ai_spend_ex_legacy": len(matched_filers_ex_legacy),
             "total_filers_with_activity": total_filers_with_activity,
             "total_expenditure_ai_filers": round(total_expenditure_ai_filers, 2),
             "pct_ai_overall": round(total_all / total_expenditure_ai_filers * 100, 3) if total_expenditure_ai_filers > 0 else None,
@@ -488,7 +557,9 @@ def main() -> None:
         "filers_detail": filers_detail,
         "time_series": time_series,
         "time_series_by_party": time_series_by_party,
+        "time_series_by_party_ex_legacy": time_series_by_party_ex_legacy,
         "party_split": party_split,
+        "party_split_ex_legacy": party_split_ex_legacy,
         "weekly_histogram": weekly_histogram,
         "subvendor": {
             "records_scanned": total_subvendor_records,
