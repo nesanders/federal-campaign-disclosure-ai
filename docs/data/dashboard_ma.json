@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-18T14:48:58+00:00",
+    "generated_at": "2026-09-18T15:14:22+00:00",
     "source_label": "Massachusetts Office of Campaign and Political Finance (OCPF)",
     "date_range": {
       "start": "2023-01-01",
@@ -45,6 +45,11 @@
       "era": "generative",
       "homepage": "https://openai.com",
       "lean_context": null,
+      "description": "General-purpose AI chatbot campaigns use to draft emails, speeches, social media copy, and other written content.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
       "total": 6917.54,
       "amount_high": 6917.54,
       "amount_medium": 0.0,
@@ -63,6 +68,11 @@
       "era": "legacy",
       "homepage": "https://www.calltime.ai",
       "lean_context": "progressive-aligned (per public reporting)",
+      "description": "Donor call-time scheduling and CRM tool used to organize and prioritize fundraising calls.",
+      "tags": [
+        "fundraising",
+        "administrative_productivity"
+      ],
       "total": 3600.0,
       "amount_high": 3600.0,
       "amount_medium": 0.0,
@@ -81,6 +91,11 @@
       "era": "legacy",
       "homepage": "https://grammarly.com",
       "lean_context": null,
+      "description": "AI writing-assistant used to proofread and edit campaign emails, press releases, and other copy.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
       "total": 3272.4,
       "amount_high": 3272.4,
       "amount_medium": 0.0,
@@ -99,6 +114,11 @@
       "era": "legacy",
       "homepage": "https://campaignnucleus.com",
       "lean_context": "reported GOP-aligned; developed by Brad Parscale (Trump 2016/2020 digital director)",
+      "description": "Campaign CRM/command-center platform (data parsing, sentiment, targeting) used to manage voter and donor data.",
+      "tags": [
+        "data_targeting",
+        "administrative_productivity"
+      ],
       "total": 2698.28,
       "amount_high": 2698.28,
       "amount_medium": 0.0,
@@ -117,6 +137,11 @@
       "era": "generative",
       "homepage": "https://donoratlas.com",
       "lean_context": "progressive-aligned (per public reporting)",
+      "description": "AI-powered donor-prospecting and research platform used to identify and target potential donors.",
+      "tags": [
+        "fundraising",
+        "data_targeting"
+      ],
       "total": 2100.0,
       "amount_high": 2100.0,
       "amount_medium": 0.0,
@@ -135,6 +160,11 @@
       "era": "generative",
       "homepage": "https://anthropic.com",
       "lean_context": null,
+      "description": "General-purpose AI chatbot (Claude) used for drafting communications, research memos, and policy analysis.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
       "total": 1534.91,
       "amount_high": 1534.91,
       "amount_medium": 0.0,
@@ -153,6 +183,11 @@
       "era": "legacy",
       "homepage": "https://otter.ai",
       "lean_context": null,
+      "description": "AI transcription tool used to transcribe meetings, calls, and events into searchable notes.",
+      "tags": [
+        "administrative_productivity",
+        "research_strategy"
+      ],
       "total": 1526.17,
       "amount_high": 1526.17,
       "amount_medium": 0.0,
@@ -171,6 +206,10 @@
       "era": "legacy",
       "homepage": "https://descript.com",
       "lean_context": null,
+      "description": "AI-powered audio/video editing tool used to edit podcasts, ads, and other campaign video/audio content.",
+      "tags": [
+        "advertising_creative"
+      ],
       "total": 1035.32,
       "amount_high": 1035.32,
       "amount_medium": 0.0,
@@ -189,6 +228,11 @@
       "era": "generative",
       "homepage": "https://read.ai",
       "lean_context": null,
+      "description": "AI meeting assistant used to transcribe, summarize, and surface insights from calls and meetings.",
+      "tags": [
+        "administrative_productivity",
+        "research_strategy"
+      ],
       "total": 371.25,
       "amount_high": 371.25,
       "amount_medium": 0.0,
@@ -207,6 +251,10 @@
       "era": "legacy",
       "homepage": "https://canva.com",
       "lean_context": null,
+      "description": "Canva's AI design features (Magic Studio, AI Photo) used to create graphics, flyers, and social media visuals.",
+      "tags": [
+        "advertising_creative"
+      ],
       "total": 358.07,
       "amount_high": 358.07,
       "amount_medium": 0.0,
@@ -225,6 +273,10 @@
       "era": "generative",
       "homepage": "https://perplexity.ai",
       "lean_context": null,
+      "description": "AI-powered search/research assistant used for opposition research and rapid fact-checking.",
+      "tags": [
+        "research_strategy"
+      ],
       "total": 352.5,
       "amount_high": 352.5,
       "amount_medium": 0.0,
@@ -243,6 +295,11 @@
       "era": "generative",
       "homepage": "https://captions.ai",
       "lean_context": null,
+      "description": "AI video-editing tool (auto-captions, AI avatars) used to produce short-form social video content.",
+      "tags": [
+        "advertising_creative",
+        "synthetic_media"
+      ],
       "total": 238.46,
       "amount_high": 238.46,
       "amount_medium": 0.0,
@@ -261,6 +318,11 @@
       "era": "generative",
       "homepage": "https://x.ai",
       "lean_context": null,
+      "description": "xAI's general-purpose chatbot, used for drafting content and quick research the way other AI chatbots are.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
       "total": 100.0,
       "amount_high": 100.0,
       "amount_medium": 0.0,
@@ -279,6 +341,11 @@
       "era": "generative",
       "homepage": "https://www.campaign-brain.com",
       "lean_context": null,
+      "description": "AI-assisted campaign strategy and communications platform used to draft plans and messaging.",
+      "tags": [
+        "research_strategy",
+        "communications_copy"
+      ],
       "total": 50.0,
       "amount_high": 50.0,
       "amount_medium": 0.0,
@@ -297,6 +364,11 @@
       "era": "generative",
       "homepage": "https://www.daisychain.app",
       "lean_context": "progressive-aligned (per public reporting)",
+      "description": "AI-assisted political texting platform used for voter outreach and mobilization campaigns.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
       "total": 14.5,
       "amount_high": 14.5,
       "amount_medium": 0.0,
@@ -315,6 +387,11 @@
       "era": "generative",
       "homepage": "https://midjourney.com",
       "lean_context": null,
+      "description": "AI image-generation tool used to create graphics and visuals for ads and social media posts.",
+      "tags": [
+        "advertising_creative",
+        "synthetic_media"
+      ],
       "total": 10.63,
       "amount_high": 10.63,
       "amount_medium": 0.0,
@@ -333,6 +410,11 @@
       "era": "generative",
       "homepage": "https://ai.google",
       "lean_context": null,
+      "description": "Google's general-purpose AI assistant and cloud AI platform (Gemini/Vertex AI), used for drafting content and data analysis.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
       "total": 7.01,
       "amount_high": 7.01,
       "amount_medium": 0.0,
@@ -353,6 +435,11 @@
       "era": "legacy",
       "homepage": "https://grammarly.com",
       "lean_context": null,
+      "description": "AI writing-assistant used to proofread and edit campaign emails, press releases, and other copy.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
       "total": 3272.4,
       "records_count": 35,
       "filers_count": 10,
@@ -850,6 +937,11 @@
       "era": "generative",
       "homepage": "https://anthropic.com",
       "lean_context": null,
+      "description": "General-purpose AI chatbot (Claude) used for drafting communications, research memos, and policy analysis.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
       "total": 1534.91,
       "records_count": 25,
       "filers_count": 8,
@@ -1203,6 +1295,11 @@
       "era": "generative",
       "homepage": "https://read.ai",
       "lean_context": null,
+      "description": "AI meeting assistant used to transcribe, summarize, and surface insights from calls and meetings.",
+      "tags": [
+        "administrative_productivity",
+        "research_strategy"
+      ],
       "total": 371.25,
       "records_count": 2,
       "filers_count": 1,
@@ -1272,6 +1369,11 @@
       "era": "generative",
       "homepage": "https://x.ai",
       "lean_context": null,
+      "description": "xAI's general-purpose chatbot, used for drafting content and quick research the way other AI chatbots are.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
       "total": 100.0,
       "records_count": 1,
       "filers_count": 1,
@@ -1321,6 +1423,11 @@
       "era": "generative",
       "homepage": "https://openai.com",
       "lean_context": null,
+      "description": "General-purpose AI chatbot campaigns use to draft emails, speeches, social media copy, and other written content.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
       "total": 6917.54,
       "records_count": 175,
       "filers_count": 27,
@@ -3268,6 +3375,10 @@
       "era": "legacy",
       "homepage": "https://descript.com",
       "lean_context": null,
+      "description": "AI-powered audio/video editing tool used to edit podcasts, ads, and other campaign video/audio content.",
+      "tags": [
+        "advertising_creative"
+      ],
       "total": 1035.32,
       "records_count": 14,
       "filers_count": 3,
@@ -3481,6 +3592,11 @@
       "era": "generative",
       "homepage": "https://www.daisychain.app",
       "lean_context": "progressive-aligned (per public reporting)",
+      "description": "AI-assisted political texting platform used for voter outreach and mobilization campaigns.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
       "total": 14.5,
       "records_count": 1,
       "filers_count": 1,
@@ -3524,6 +3640,11 @@
       "era": "generative",
       "homepage": "https://donoratlas.com",
       "lean_context": "progressive-aligned (per public reporting)",
+      "description": "AI-powered donor-prospecting and research platform used to identify and target potential donors.",
+      "tags": [
+        "fundraising",
+        "data_targeting"
+      ],
       "total": 2100.0,
       "records_count": 7,
       "filers_count": 3,
@@ -3652,6 +3773,11 @@
       "era": "generative",
       "homepage": "https://www.campaign-brain.com",
       "lean_context": null,
+      "description": "AI-assisted campaign strategy and communications platform used to draft plans and messaging.",
+      "tags": [
+        "research_strategy",
+        "communications_copy"
+      ],
       "total": 50.0,
       "records_count": 1,
       "filers_count": 1,
@@ -3701,6 +3827,11 @@
       "era": "legacy",
       "homepage": "https://otter.ai",
       "lean_context": null,
+      "description": "AI transcription tool used to transcribe meetings, calls, and events into searchable notes.",
+      "tags": [
+        "administrative_productivity",
+        "research_strategy"
+      ],
       "total": 1526.17,
       "records_count": 25,
       "filers_count": 4,
@@ -4036,6 +4167,11 @@
       "era": "legacy",
       "homepage": "https://campaignnucleus.com",
       "lean_context": "reported GOP-aligned; developed by Brad Parscale (Trump 2016/2020 digital director)",
+      "description": "Campaign CRM/command-center platform (data parsing, sentiment, targeting) used to manage voter and donor data.",
+      "tags": [
+        "data_targeting",
+        "administrative_productivity"
+      ],
       "total": 2698.28,
       "records_count": 6,
       "filers_count": 2,
@@ -4157,6 +4293,10 @@
       "era": "legacy",
       "homepage": "https://canva.com",
       "lean_context": null,
+      "description": "Canva's AI design features (Magic Studio, AI Photo) used to create graphics, flyers, and social media visuals.",
+      "tags": [
+        "advertising_creative"
+      ],
       "total": 358.07,
       "records_count": 16,
       "filers_count": 2,
@@ -4373,6 +4513,11 @@
       "era": "generative",
       "homepage": "https://captions.ai",
       "lean_context": null,
+      "description": "AI video-editing tool (auto-captions, AI avatars) used to produce short-form social video content.",
+      "tags": [
+        "advertising_creative",
+        "synthetic_media"
+      ],
       "total": 238.46,
       "records_count": 10,
       "filers_count": 1,
@@ -4522,6 +4667,11 @@
       "era": "generative",
       "homepage": "https://ai.google",
       "lean_context": null,
+      "description": "Google's general-purpose AI assistant and cloud AI platform (Gemini/Vertex AI), used for drafting content and data analysis.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
       "total": 7.01,
       "records_count": 1,
       "filers_count": 1,
@@ -4571,6 +4721,11 @@
       "era": "legacy",
       "homepage": "https://www.calltime.ai",
       "lean_context": "progressive-aligned (per public reporting)",
+      "description": "Donor call-time scheduling and CRM tool used to organize and prioritize fundraising calls.",
+      "tags": [
+        "fundraising",
+        "administrative_productivity"
+      ],
       "total": 3600.0,
       "records_count": 14,
       "filers_count": 2,
@@ -4767,6 +4922,10 @@
       "era": "generative",
       "homepage": "https://perplexity.ai",
       "lean_context": null,
+      "description": "AI-powered search/research assistant used for opposition research and rapid fact-checking.",
+      "tags": [
+        "research_strategy"
+      ],
       "total": 352.5,
       "records_count": 8,
       "filers_count": 2,
@@ -4913,6 +5072,11 @@
       "era": "generative",
       "homepage": "https://midjourney.com",
       "lean_context": null,
+      "description": "AI image-generation tool used to create graphics and visuals for ads and social media posts.",
+      "tags": [
+        "advertising_creative",
+        "synthetic_media"
+      ],
       "total": 10.63,
       "records_count": 1,
       "filers_count": 1,

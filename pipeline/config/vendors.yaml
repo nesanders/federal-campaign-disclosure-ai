@@ -129,12 +129,24 @@
 # should never become patterns on their own. A parallel search for
 # additional Massachusetts Republican-aligned AI tools (mirroring the third
 # pass above) found only Aaru, already in this list.
+#
+# Fifth pass (Federal-vs-state compare tab): every vendor got a
+# `description` -- a one-line, present-tense summary of how a campaign
+# actually uses the product (e.g. "AI voice-generation tool used to
+# produce narration ... audio without a studio recording"), and `tags` --
+# 1-2 ids drawn from the existing `use_case_categories` list below (the
+# same vocabulary already used to label disbursement purpose text),
+# characterizing the product itself rather than any one payment's stated
+# purpose. Both power the vendor table on the new Compare tab, which sits
+# alongside a description/tags-free per-disbursement purpose match.
 
 general_purpose:
   - id: openai
     name: OpenAI (ChatGPT)
     homepage: https://openai.com
     era: generative
+    description: "General-purpose AI chatbot campaigns use to draft emails, speeches, social media copy, and other written content."
+    tags: [communications_copy, administrative_productivity]
     # "openai" bare (no word boundary) matched "OPENAIR" -- a real FEC
     # payee (an airline/travel charge, "AIRFARE" purpose) -- confirmed via
     # the vendor detail page's per-disbursement records. \b fixes it: FEC
@@ -148,6 +160,8 @@ general_purpose:
     name: Anthropic (Claude)
     homepage: https://anthropic.com
     era: generative
+    description: "General-purpose AI chatbot (Claude) used for drafting communications, research memos, and policy analysis."
+    tags: [communications_copy, research_strategy]
     patterns:
       - {pattern: "\\banthropic\\b", confidence: high}
       - {pattern: "\\bclaude ai\\b", confidence: high}
@@ -166,6 +180,8 @@ general_purpose:
     name: Google (Gemini / Vertex AI)
     homepage: https://ai.google
     era: generative
+    description: "Google's general-purpose AI assistant and cloud AI platform (Gemini/Vertex AI), used for drafting content and data analysis."
+    tags: [communications_copy, research_strategy]
     patterns:
       - {pattern: "google gemini", confidence: high}
       - {pattern: "gemini for google workspace", confidence: high}
@@ -199,6 +215,8 @@ general_purpose:
     name: AWS AI services (Bedrock, SageMaker, Q)
     homepage: https://aws.amazon.com/ai/
     era: generative
+    description: "Amazon's AI/ML cloud services (Bedrock, SageMaker, Q), used to build or run AI-powered features in a campaign's own tools."
+    tags: [administrative_productivity, data_targeting]
     patterns:
       - {pattern: "aws bedrock", confidence: high}
       - {pattern: "amazon bedrock", confidence: high}
@@ -211,6 +229,8 @@ general_purpose:
     name: Microsoft Azure AI
     homepage: https://azure.microsoft.com/en-us/solutions/ai
     era: generative
+    description: "Microsoft's AI cloud services (e.g. Azure OpenAI Service), used to power AI features inside campaign software."
+    tags: [administrative_productivity, data_targeting]
     patterns:
       - {pattern: "azure openai", confidence: high}
       - {pattern: "azure ai\\b", confidence: high}
@@ -220,6 +240,8 @@ general_purpose:
     name: Microsoft Copilot
     homepage: https://copilot.microsoft.com
     era: generative
+    description: "Microsoft's AI assistant built into Office apps, used for drafting documents, emails, and presentations."
+    tags: [administrative_productivity, communications_copy]
     patterns:
       - {pattern: "microsoft copilot", confidence: high}
       - {pattern: "copilot for microsoft ?365", confidence: high}
@@ -229,6 +251,8 @@ general_purpose:
     name: xAI (Grok)
     homepage: https://x.ai
     era: generative
+    description: "xAI's general-purpose chatbot, used for drafting content and quick research the way other AI chatbots are."
+    tags: [communications_copy, research_strategy]
     patterns:
       - {pattern: "\\bxai\\b", confidence: high}
       - {pattern: "x\\.ai", confidence: high}
@@ -242,12 +266,16 @@ general_purpose:
     name: Perplexity AI
     homepage: https://perplexity.ai
     era: generative
+    description: "AI-powered search/research assistant used for opposition research and rapid fact-checking."
+    tags: [research_strategy]
     patterns:
       - {pattern: "perplexity", confidence: high}
   - id: meta_ai
     name: Meta AI
     homepage: https://ai.meta.com
     era: generative
+    description: "Meta's AI assistant, built into Facebook/Instagram tools campaigns use for ad and social content creation."
+    tags: [advertising_creative, communications_copy]
     patterns:
       - {pattern: "meta ai", confidence: high}
       - {pattern: "meta llama", confidence: high}
@@ -255,12 +283,16 @@ general_purpose:
     name: Midjourney
     homepage: https://midjourney.com
     era: generative
+    description: "AI image-generation tool used to create graphics and visuals for ads and social media posts."
+    tags: [advertising_creative, synthetic_media]
     patterns:
       - {pattern: "midjourney", confidence: high}
   - id: synthesia
     name: Synthesia
     homepage: https://synthesia.io
     era: generative
+    description: "AI video-generation platform used to create avatar-narrated videos for ads and voter outreach without filming."
+    tags: [synthetic_media, advertising_creative]
     # Founded 2017 (pre-ChatGPT), but the product has been AI video
     # synthesis from day one, not a legacy tool with AI bolted on later.
     patterns:
@@ -269,18 +301,24 @@ general_purpose:
     name: ElevenLabs
     homepage: https://elevenlabs.io
     era: generative
+    description: "AI voice-generation and cloning tool used to produce narration, robocall, and ad audio without a studio recording."
+    tags: [synthetic_media, advertising_creative]
     patterns:
       - {pattern: "eleven ?labs", confidence: high}
   - id: heygen
     name: HeyGen
     homepage: https://heygen.com
     era: generative
+    description: "AI avatar-video generator used to produce spokesperson-style videos for ads and social content."
+    tags: [synthetic_media, advertising_creative]
     patterns:
       - {pattern: "heygen", confidence: high}
   - id: runwayml
     name: Runway
     homepage: https://runwayml.com
     era: generative
+    description: "AI video-generation and editing tool used to produce and edit ad creative and social video."
+    tags: [synthetic_media, advertising_creative]
     patterns:
       - {pattern: "runwayml", confidence: high}
       - {pattern: "runway ai", confidence: high}
@@ -289,6 +327,8 @@ general_purpose:
     name: Descript
     homepage: https://descript.com
     era: legacy
+    description: "AI-powered audio/video editing tool used to edit podcasts, ads, and other campaign video/audio content."
+    tags: [advertising_creative]
     # Founded 2017 as a transcript-based audio/video editor; added
     # generative features (Overdub voice cloning) starting 2019 but the
     # core product predates the generative-AI wave.
@@ -304,6 +344,8 @@ general_purpose:
     name: Jasper AI
     homepage: https://jasper.ai
     era: generative
+    description: "AI copywriting tool used to draft marketing, advertising, and fundraising copy at scale."
+    tags: [advertising_creative, communications_copy]
     patterns:
       - {pattern: "jasper\\.ai", confidence: high}
       - {pattern: "jasper ai", confidence: high}
@@ -311,18 +353,24 @@ general_purpose:
     name: Adobe Firefly
     homepage: https://firefly.adobe.com
     era: generative
+    description: "Adobe's generative AI image tool, used to create and edit graphics for ads and campaign materials."
+    tags: [advertising_creative]
     patterns:
       - {pattern: "adobe firefly", confidence: high}
   - id: character_ai
     name: Character.AI
     homepage: https://character.ai
     era: generative
+    description: "AI chatbot-persona platform; general-purpose conversational AI occasionally used for content drafting."
+    tags: [communications_copy]
     patterns:
       - {pattern: "character\\.ai", confidence: high}
   - id: otter_ai
     name: Otter.ai
     homepage: https://otter.ai
     era: legacy
+    description: "AI transcription tool used to transcribe meetings, calls, and events into searchable notes."
+    tags: [administrative_productivity, research_strategy]
     # Founded 2016 as a speech-to-text transcription tool; added
     # generative "AI Chat" summarization in 2023, well after founding.
     patterns:
@@ -332,6 +380,8 @@ general_purpose:
     name: Read.ai
     homepage: https://read.ai
     era: generative
+    description: "AI meeting assistant used to transcribe, summarize, and surface insights from calls and meetings."
+    tags: [administrative_productivity, research_strategy]
     # AI meeting notetaker/transcription/analytics tool -- the same
     # category as Otter.ai above, confirmed as a real payee in Massachusetts
     # OCPF data (fourth pass, see header note).
@@ -342,6 +392,8 @@ general_purpose:
     name: Captions
     homepage: https://captions.ai
     era: generative
+    description: "AI video-editing tool (auto-captions, AI avatars) used to produce short-form social video content."
+    tags: [advertising_creative, synthetic_media]
     # AI video-editing/dubbing/auto-caption app (VC-backed, $25M Series B
     # led by Kleiner Perkins), built on generative AI from founding --
     # confirmed as a real payee in Massachusetts OCPF data, billed both as
@@ -353,6 +405,8 @@ general_purpose:
     name: Canva (Magic Studio / AI Photo)
     homepage: https://canva.com
     era: legacy
+    description: "Canva's AI design features (Magic Studio, AI Photo) used to create graphics, flyers, and social media visuals."
+    tags: [advertising_creative]
     # Canva itself predates the generative-AI wave (founded 2013); its
     # "Magic Studio" suite (Magic Media image/video generation, Magic Edit,
     # generative fill) is a genuine later-added generative feature set,
@@ -367,12 +421,16 @@ general_purpose:
     name: fal.ai
     homepage: https://fal.ai
     era: generative
+    description: "AI image/video generation infrastructure, used by developers building AI-powered creative tools."
+    tags: [advertising_creative, synthetic_media]
     patterns:
       - {pattern: "fal\\.ai", confidence: high}
   - id: chatfuel
     name: Chatfuel
     homepage: https://chatfuel.com
     era: legacy
+    description: "AI chatbot-builder platform used to run automated Facebook Messenger/website chatbots for voter engagement."
+    tags: [communications_copy, data_targeting]
     # Founded 2015 as a rule-based Facebook Messenger chatbot builder,
     # predating generative/LLM-based conversational AI entirely.
     patterns:
@@ -381,12 +439,16 @@ general_purpose:
     name: SiteSpeakAI
     homepage: https://sitespeak.ai
     era: generative
+    description: "AI chatbot-builder for websites, used to power an automated Q&A assistant on a campaign's own site."
+    tags: [communications_copy, administrative_productivity]
     patterns:
       - {pattern: "sitespeak ?ai", confidence: high}
   - id: smartlead_ai
     name: Smartlead.ai
     homepage: https://smartlead.ai
     era: generative
+    description: "AI-assisted cold-email outreach platform used for fundraising and list-building email campaigns."
+    tags: [fundraising, communications_copy]
     patterns:
       - {pattern: "smartlead\\.ai", confidence: high}
       - {pattern: "\\bsmartlead ai\\b", confidence: high}
@@ -394,12 +456,16 @@ general_purpose:
     name: Instantly.ai
     homepage: https://instantly.ai
     era: generative
+    description: "AI-assisted email outreach/deliverability platform used for fundraising and bulk email campaigns."
+    tags: [fundraising, communications_copy]
     patterns:
       - {pattern: "instantly\\.ai", confidence: high}
   - id: air_ai
     name: Air AI
     homepage: https://air.ai
     era: generative
+    description: "AI voice-agent platform used to run automated phone calls for voter outreach or fundraising."
+    tags: [data_targeting, fundraising]
     patterns:
       - {pattern: "\\bair ai\\b", confidence: high}
       - {pattern: "\\bair\\.ai\\b", confidence: high}
@@ -407,6 +473,8 @@ general_purpose:
     name: Grammarly
     homepage: https://grammarly.com
     era: legacy
+    description: "AI writing-assistant used to proofread and edit campaign emails, press releases, and other copy."
+    tags: [communications_copy, administrative_productivity]
     # Founded 2009 on rule-based/statistical grammar checking; added
     # generative rewriting ("GrammarlyGO") only in 2023.
     patterns:
@@ -415,6 +483,8 @@ general_purpose:
     name: Kling AI
     homepage: https://klingai.com
     era: generative
+    description: "AI video-generation tool used to produce short ad or social video clips from text/image prompts."
+    tags: [synthetic_media, advertising_creative]
     patterns:
       # Bare "Kling" is also a common surname (payroll/staff entries for a
       # "Kling, Shannon" showed up in testing); require the "AI" qualifier.
@@ -423,6 +493,8 @@ general_purpose:
     name: Luma Labs (Luma AI)
     homepage: https://lumalabs.ai
     era: generative
+    description: "AI video/3D-generation tool (Luma AI) used to produce visual content for ads and social media."
+    tags: [synthetic_media, advertising_creative]
     patterns:
       - {pattern: "luma labs", confidence: high}
 
@@ -431,6 +503,8 @@ political_specific:
     name: Quiller
     homepage: https://quiller.ai
     era: generative
+    description: "AI-assisted fundraising-email copywriting platform built specifically for political campaigns."
+    tags: [fundraising, communications_copy]
     lean_context: progressive-aligned (per public reporting)
     patterns:
       # Bare "Quiller" is also an ordinary English word (a component in
@@ -442,6 +516,8 @@ political_specific:
     name: BattlegroundAI
     homepage: https://battlegroundai.org
     era: generative
+    description: "AI platform built for campaigns to draft fundraising and communications copy at scale."
+    tags: [fundraising, communications_copy]
     lean_context: progressive-aligned (per public reporting)
     patterns:
       - {pattern: "battleground ?ai", confidence: high}
@@ -449,6 +525,8 @@ political_specific:
     name: Chorus AI
     homepage: https://chorus.ai
     era: generative
+    description: "AI-assisted messaging/copywriting platform built for political campaign communications."
+    tags: [communications_copy, fundraising]
     lean_context: progressive-aligned (per public reporting)
     patterns:
       - {pattern: "chorus ai", confidence: high}
@@ -457,6 +535,8 @@ political_specific:
     name: DonorAtlas
     homepage: https://donoratlas.com
     era: generative
+    description: "AI-powered donor-prospecting and research platform used to identify and target potential donors."
+    tags: [fundraising, data_targeting]
     lean_context: progressive-aligned (per public reporting)
     patterns:
       - {pattern: "donor ?atlas", confidence: high}
@@ -464,6 +544,8 @@ political_specific:
     name: RivalMind
     homepage: https://rivalmind.ai
     era: generative
+    description: "AI opposition-research and rapid-response platform built for political campaigns."
+    tags: [research_strategy]
     lean_context: progressive-aligned (per public reporting)
     patterns:
       - {pattern: "rivalmind", confidence: high}
@@ -472,6 +554,8 @@ political_specific:
     name: Aaru
     homepage: https://aaru.com
     era: generative
+    description: "AI voter-simulation and predictive-modeling tool used for campaign strategy and message testing."
+    tags: [research_strategy, data_targeting]
     lean_context: reported GOP-aligned use of voter-simulation tools
     patterns:
       - {pattern: "\\baaru\\b", confidence: medium}
@@ -479,6 +563,8 @@ political_specific:
     name: MiroFish
     homepage: null
     era: generative
+    description: "AI-powered campaign strategy/simulation tool, reported used for message and voter modeling."
+    tags: [research_strategy, data_targeting]
     lean_context: reported GOP-aligned use of voter-simulation tools
     patterns:
       - {pattern: "mirofish", confidence: high}
@@ -486,6 +572,8 @@ political_specific:
     name: EyesOver
     homepage: https://www.eyesover.us
     era: legacy
+    description: "Social-media monitoring/listening tool (legacy \"AI\" branding) used to track press and social sentiment."
+    tags: [research_strategy]
     # Founded 2015 as a social-listening/monitoring tool, predating
     # generative-AI-based analysis; brands itself "AI" in the older,
     # analytics-dashboard sense of the word.
@@ -496,6 +584,8 @@ political_specific:
     name: CallTime.AI
     homepage: https://www.calltime.ai
     era: legacy
+    description: "Donor call-time scheduling and CRM tool used to organize and prioritize fundraising calls."
+    tags: [fundraising, administrative_productivity]
     # Founded 2017, before the generative-AI wave; a donor call-time
     # scheduling/CRM tool rather than an LLM-based product.
     lean_context: progressive-aligned (per public reporting)
@@ -507,6 +597,8 @@ political_specific:
     name: Amplify.ai (TruVerse)
     homepage: https://truverse.net
     era: legacy
+    description: "Rule-based political chatbot/voter-outreach platform (formerly TruVerse) used for automated voter texting and Q&A."
+    tags: [communications_copy, data_targeting]
     # Founded 2016 (as TruVerse) as a rule-based political chatbot/voter
     # outreach platform, years before ChatGPT-era generative AI; despite
     # the "AI" name, most of its reported spend predates any generative
@@ -519,6 +611,8 @@ political_specific:
     name: Prompt.io
     homepage: https://prompt.io
     era: legacy
+    description: "Political peer-to-peer texting platform used for voter outreach and fundraising text campaigns."
+    tags: [communications_copy, fundraising]
     # Founded 2014 as a political texting/peer-to-peer messaging platform,
     # a decade before "prompt" became generative-AI shorthand; the "AI" in
     # its branding predates the current meaning of the term.
@@ -532,6 +626,8 @@ political_specific:
     name: Numero (donor database / call time)
     homepage: https://www.numero.ai
     era: legacy
+    description: "Donor-database and call-time tool used to organize fundraising calls and donor records."
+    tags: [fundraising, administrative_productivity]
     # Founded 2018-2019 as a donor-database/call-time tool, before the
     # generative-AI wave reshaped what "AI" campaign tools typically mean.
     patterns:
@@ -543,6 +639,8 @@ political_specific:
     name: Daisychain
     homepage: https://www.daisychain.app
     era: generative
+    description: "AI-assisted political texting platform used for voter outreach and mobilization campaigns."
+    tags: [communications_copy, data_targeting]
     lean_context: progressive-aligned (per public reporting)
     patterns:
       # One word in FEC filings ("DAISYCHAIN INC."); kept distinct from the
@@ -553,6 +651,8 @@ political_specific:
     name: SoSha (Speechifai)
     homepage: https://www.sosha.ai
     era: generative
+    description: "AI speech-to-text/content tool (Speechifai) used to turn spoken remarks into written campaign content."
+    tags: [communications_copy]
     patterns:
       - {pattern: "\\bsosha\\b", confidence: high}
       - {pattern: "speechifai", confidence: high}
@@ -560,6 +660,8 @@ political_specific:
     name: Change Agent AI
     homepage: https://thechange.ai
     era: generative
+    description: "AI-assisted organizing/communications platform built for nonprofits, unions, and progressive campaigns."
+    tags: [communications_copy, data_targeting]
     lean_context: built for nonprofits, unions & progressive campaigns (per public reporting)
     patterns:
       - {pattern: "change agent ai", confidence: high}
@@ -567,6 +669,8 @@ political_specific:
     name: Campaign Brain
     homepage: https://www.campaign-brain.com
     era: generative
+    description: "AI-assisted campaign strategy and communications platform used to draft plans and messaging."
+    tags: [research_strategy, communications_copy]
     patterns:
       - {pattern: "campaign brain", confidence: high}
     # Collides with the ordinary idiom "campaign brain trust" -- confirmed
@@ -577,6 +681,8 @@ political_specific:
     name: Campaign Nucleus
     homepage: https://campaignnucleus.com
     era: legacy
+    description: "Campaign CRM/command-center platform (data parsing, sentiment, targeting) used to manage voter and donor data."
+    tags: [data_targeting, administrative_productivity]
     # Brad Parscale's ("Parscale Strategy") campaign CRM/command-center
     # platform, in market since ~2020-2021 (confirmed as a real FEC payee
     # -- "CAMPAIGN NUCLEUS" / "CAMPAIGN NUCLEUS LLC" / "WWW.CAMPAIGNNUCLEUS.COM"
@@ -593,6 +699,8 @@ political_specific:
     name: Convos (PubSent)
     homepage: https://convos.ai
     era: generative
+    description: "AI-agent political texting platform (formerly PubSent) used for automated voter outreach conversations."
+    tags: [communications_copy, data_targeting]
     # AI-agent political texting platform, rebranded from PubSent in 2025.
     # Both names are real FEC payees in the 2026 cycle ("CONVOS" and
     # "PUBSENT", both based in Caldwell, NJ). "Convos" alone is an ordinary
@@ -609,6 +717,8 @@ political_specific:
     name: VotersAI
     homepage: https://votersai.com
     era: generative
+    description: "AI campaign-management platform covering voter data, outreach, and field operations."
+    tags: [data_targeting, administrative_productivity]
     # AI campaign-management platform (voter data, outreach, field ops)
     # that publicly launched March 2026 -- too new to have surfaced in this
     # dataset yet (zero matches as of this writing), added proactively

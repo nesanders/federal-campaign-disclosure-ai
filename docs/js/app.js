@@ -218,6 +218,7 @@
     maVendorFilers: { key: "amount", dir: "desc" },
     maVendorRecords: { key: "amount", dir: "desc" },
     maCandidateRecords: { key: "amount", dir: "desc" },
+    compare: { key: "volume", dir: "desc" },
   };
   // Off by default site-wide (persists across vendor pages, like the legacy
   // toggle): the "Top committees" and "Individual disbursements" tables on
@@ -371,11 +372,12 @@
     input.addEventListener("change", () => {
       includeLegacy = input.checked;
       renderAll();
-      // Shared toggle, both tabs: re-render Massachusetts too if its data
-      // is already loaded, so switching tabs afterward shows the new
-      // setting immediately rather than stale content from before the
-      // toggle changed.
+      // Shared toggle, all three tabs: re-render Massachusetts and/or
+      // Compare too if their data is already loaded, so switching tabs
+      // afterward shows the new setting immediately rather than stale
+      // content from before the toggle changed.
       if (MA_DATA) renderMaView();
+      if (MA_DATA && currentDataset === "compare") renderCompareView();
     });
   }
 
@@ -411,6 +413,12 @@
       " through " +
       meta.date_range.end
     );
+  }
+  function metaLineTextCompare() {
+    const fedStr = "Federal: generated " + new Date(DATA.meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC";
+    if (!MA_DATA) return fedStr + " · Massachusetts: loading…";
+    const maStr = "Massachusetts: generated " + new Date(MA_DATA.meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC";
+    return fedStr + " · " + maStr;
   }
 
   function renderStats() {
@@ -1427,25 +1435,37 @@
   const MA_TITLE = "AI Use in Massachusetts Campaign Disclosures";
   const MA_SUBTITLE_1 =
     "A read of Massachusetts OCPF campaign-finance disclosures for state candidates, looking for payments to the same AI-vendor taxonomy tracked on the Federal tab. This is a separate dataset from a different disclosure system — smaller in scale, with its own itemization rules — and is not directly comparable dollar-for-dollar with the federal figures.";
+  const COMPARE_TITLE = "AI Vendors: Federal vs. Massachusetts";
+  const COMPARE_SUBTITLE_1 =
+    "Every AI vendor found on either the Federal or Massachusetts tab, side by side: what each is disclosed to have spent on federal House/Senate races vs. Massachusetts state races, combined spend volume, and a recent-momentum signal — plus what campaigns actually use each tool for.";
 
   let currentDataset = "federal";
 
   // Federal excludes legacy vendors from every chart/table below the
   // toggle; MA only has one such vendor-listing card (renderMaVendorsCard)
   // to filter, so its wording says so rather than overclaiming "every
-  // chart and table" -- and MA has no #methodology anchor to link to.
-  function updateLegacyToggleText(isMa) {
+  // chart and table" -- MA has no #methodology anchor to link to, and the
+  // Compare tab's single table is the only thing its own toggle affects.
+  function updateLegacyToggleText(tab) {
     const sub = document.querySelector(".legacy-toggle-sub");
     if (!sub) return;
-    sub.innerHTML = isMa
-      ? "Off by default: companies founded before generative AI existed but still branded “AI” (e.g. CallTime.AI, Grammarly, Otter.ai) are excluded from the vendor chart and table below by default. Their own vendor pages are always visible."
-      : "Off by default: companies founded before generative AI existed but still branded “AI” (e.g. Amplify.ai, Grammarly, Otter.ai) are excluded from every chart and table below. Their own vendor pages are always visible — see <a href=\"#methodology\">methodology</a>.";
+    if (tab === "ma") {
+      sub.innerHTML =
+        "Off by default: companies founded before generative AI existed but still branded “AI” (e.g. CallTime.AI, Grammarly, Otter.ai) are excluded from the vendor chart and table below by default. Their own vendor pages are always visible.";
+    } else if (tab === "compare") {
+      sub.innerHTML =
+        "Off by default: companies founded before generative AI existed but still branded “AI” (e.g. Amplify.ai, Grammarly, Otter.ai) are excluded from the table below by default.";
+    } else {
+      sub.innerHTML =
+        "Off by default: companies founded before generative AI existed but still branded “AI” (e.g. Amplify.ai, Grammarly, Otter.ai) are excluded from every chart and table below. Their own vendor pages are always visible — see <a href=\"#methodology\">methodology</a>.";
+    }
   }
 
   function activateDataset(tab) {
     currentDataset = tab;
     const isMa = tab === "ma";
-    updateLegacyToggleText(isMa);
+    const isCompare = tab === "compare";
+    updateLegacyToggleText(tab);
 
     document.body.setAttribute("data-active-dataset", tab);
     document.querySelectorAll(".dataset-tab").forEach((btn) => {
@@ -1454,40 +1474,57 @@
       btn.setAttribute("aria-selected", active ? "true" : "false");
     });
 
-    document.getElementById("page-toc").hidden = isMa;
-    document.getElementById("footer-source-federal").hidden = isMa;
+    document.getElementById("page-toc").hidden = isMa || isCompare;
+    document.getElementById("footer-source-federal").hidden = isMa || isCompare;
     document.getElementById("footer-source-ma").hidden = !isMa;
+    document.getElementById("footer-source-compare").hidden = !isCompare;
 
-    document.title = isMa ? MA_TITLE : FEDERAL_TITLE;
-    document.getElementById("page-h1").textContent = isMa ? MA_TITLE : FEDERAL_TITLE;
-    document.getElementById("page-subtitle-1").textContent = isMa ? MA_SUBTITLE_1 : FEDERAL_SUBTITLE_1;
-    document.getElementById("page-subtitle-2").hidden = isMa;
+    document.title = isMa ? MA_TITLE : isCompare ? COMPARE_TITLE : FEDERAL_TITLE;
+    document.getElementById("page-h1").textContent = isMa ? MA_TITLE : isCompare ? COMPARE_TITLE : FEDERAL_TITLE;
+    document.getElementById("page-subtitle-1").textContent = isMa ? MA_SUBTITLE_1 : isCompare ? COMPARE_SUBTITLE_1 : FEDERAL_SUBTITLE_1;
+    document.getElementById("page-subtitle-2").hidden = isMa || isCompare;
 
-    // The search bar itself is shared by both tabs (see runSearch(), which
-    // picks searchIndex vs. maSearchIndex off currentDataset) -- only its
-    // "Races" filter changes, since MA candidates aren't grouped into
-    // races here. Switching tabs always closes any open results and drops
-    // a "race" filter carried over from Federal, rather than searching a
-    // type that can never match on MA.
-    const raceChip = document.querySelector('.search-filter-chips .chip[data-filter="race"]');
-    if (raceChip) raceChip.hidden = isMa;
-    document.getElementById("global-search-input").placeholder = isMa ? "Search candidates, vendors…" : "Search candidates, vendors, races…";
-    if (isMa && searchFilterType === "race") {
-      searchFilterType = "all";
-      document.querySelectorAll(".search-filter-chips .chip").forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-filter") === "all"));
+    // The search bar covers Federal and MA candidates/vendors (see
+    // runSearch(), which picks searchIndex vs. maSearchIndex off
+    // currentDataset); the Compare tab has no entity pages of its own
+    // (every link goes to a Federal or MA vendor page, already searchable
+    // from those tabs), so it's simplest to hide the bar there rather than
+    // pick one dataset's index for it.
+    document.getElementById("search-bar-wrap").hidden = isCompare;
+    if (!isCompare) {
+      const raceChip = document.querySelector('.search-filter-chips .chip[data-filter="race"]');
+      if (raceChip) raceChip.hidden = isMa;
+      document.getElementById("global-search-input").placeholder = isMa ? "Search candidates, vendors…" : "Search candidates, vendors, races…";
+      if (isMa && searchFilterType === "race") {
+        searchFilterType = "all";
+        document.querySelectorAll(".search-filter-chips .chip").forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-filter") === "all"));
+      }
     }
     document.getElementById("search-results").hidden = true;
     document.getElementById("global-search-input").value = "";
 
+    document.getElementById("main-view").hidden = isMa || isCompare;
+    document.getElementById("detail-view").hidden = isMa || isCompare;
+    document.getElementById("ma-view").hidden = !isMa;
+    document.getElementById("ma-detail-view").hidden = true;
+    document.getElementById("compare-view").hidden = !isCompare;
+
     if (isMa) {
-      document.getElementById("main-view").hidden = true;
-      document.getElementById("detail-view").hidden = true;
       document.getElementById("meta-line").textContent = MA_DATA ? metaLineTextMa() : "Loading Massachusetts dataset…";
       window.scrollTo(0, 0);
       ensureMaData();
+    } else if (isCompare) {
+      document.getElementById("meta-line").textContent = metaLineTextCompare();
+      window.scrollTo(0, 0);
+      if (MA_DATA) {
+        renderCompareView();
+      } else {
+        const view = document.getElementById("compare-view");
+        view.innerHTML = "";
+        view.appendChild(el("p", { className: "lede", text: "Loading Massachusetts dataset…" }));
+        ensureCompareData();
+      }
     } else {
-      document.getElementById("ma-view").hidden = true;
-      document.getElementById("ma-detail-view").hidden = true;
       document.getElementById("meta-line").textContent = metaLineTextFederal();
     }
   }
@@ -1496,7 +1533,7 @@
     document.querySelectorAll(".dataset-tab").forEach((btn) => {
       btn.addEventListener("click", () => {
         const tab = btn.getAttribute("data-dataset");
-        location.hash = tab === "ma" ? "#/ma" : "#/";
+        location.hash = tab === "federal" ? "#/" : "#/" + tab;
       });
     });
   }
@@ -2038,17 +2075,15 @@
   // page on a cold load (a shared link to a MA vendor/candidate page).
   let pendingMaSubroute = "";
 
-  function ensureMaData() {
-    if (MA_DATA) {
-      maRouter(pendingMaSubroute);
-      return;
-    }
+  // Fetches (or awaits an in-flight fetch of) the MA dataset with no
+  // router/view side effects, so both the MA tab (ensureMaData, below) and
+  // the Compare tab (ensureCompareData) -- which also needs MA_DATA, since
+  // its table sits on top of both datasets at once -- can share one
+  // in-flight request instead of racing two fetches if a user switches
+  // tabs before the first one lands.
+  function loadMaData() {
+    if (MA_DATA) return Promise.resolve(MA_DATA);
     if (!maLoadPromise) {
-      const view = document.getElementById("ma-view");
-      document.getElementById("ma-detail-view").hidden = true;
-      view.hidden = false;
-      view.innerHTML = "";
-      view.appendChild(el("p", { className: "lede", text: "Loading Massachusetts dataset…" }));
       maLoadPromise = fetch("data/dashboard_ma.json")
         .then((r) => {
           if (!r.ok) throw new Error("HTTP " + r.status);
@@ -2060,18 +2095,46 @@
           MA_DATA.vendors.forEach((v) => (maVendorEraById[v.id] = v.era));
           buildMaSearchIndex();
           if (currentDataset === "ma") document.getElementById("meta-line").textContent = metaLineTextMa();
-          maRouter(pendingMaSubroute);
+          if (currentDataset === "compare") document.getElementById("meta-line").textContent = metaLineTextCompare();
+          return MA_DATA;
         })
         .catch((err) => {
-          view.innerHTML = "";
-          view.appendChild(el("p", { className: "lede", text: "Could not load Massachusetts dataset (" + err.message + ")." }));
           console.error(err);
+          throw err;
         });
-    } else {
-      maLoadPromise.then(() => {
-        if (MA_DATA) maRouter(pendingMaSubroute);
-      });
     }
+    return maLoadPromise;
+  }
+
+  function ensureMaData() {
+    if (MA_DATA) {
+      maRouter(pendingMaSubroute);
+      return;
+    }
+    const view = document.getElementById("ma-view");
+    document.getElementById("ma-detail-view").hidden = true;
+    view.hidden = false;
+    view.innerHTML = "";
+    view.appendChild(el("p", { className: "lede", text: "Loading Massachusetts dataset…" }));
+    loadMaData()
+      .then(() => maRouter(pendingMaSubroute))
+      .catch((err) => {
+        view.innerHTML = "";
+        view.appendChild(el("p", { className: "lede", text: "Could not load Massachusetts dataset (" + err.message + ")." }));
+      });
+  }
+
+  function ensureCompareData() {
+    loadMaData()
+      .then(() => {
+        if (currentDataset === "compare") renderCompareView();
+      })
+      .catch((err) => {
+        if (currentDataset !== "compare") return;
+        const view = document.getElementById("compare-view");
+        view.innerHTML = "";
+        view.appendChild(el("p", { className: "lede", text: "Could not load Massachusetts dataset (" + err.message + ")." }));
+      });
   }
 
   function maBackLink() {
@@ -2823,6 +2886,211 @@
     );
   }
 
+  // ---- Compare tab: one vendor table spanning both datasets ----
+
+  // Short display text for the compare table's Category column -- same ids
+  // as CATEGORY_LABELS (and vendors.yaml's own `tags`), just tighter for a
+  // narrow table cell than the full disbursement-purpose label text.
+  const TAG_SHORT_LABELS = {
+    advertising_creative: "Advertising/creative",
+    communications_copy: "Comms copy",
+    synthetic_media: "Synthetic media",
+    research_strategy: "Research/strategy",
+    fundraising: "Fundraising",
+    data_targeting: "Voter data/targeting",
+    administrative_productivity: "Admin/productivity",
+    unspecified: "Unspecified",
+  };
+  function tagChips(tags) {
+    const frag = document.createDocumentFragment();
+    (tags || []).forEach((t) => frag.appendChild(el("span", { className: "tag-chip", text: TAG_SHORT_LABELS[t] || t })));
+    return frag;
+  }
+
+  // A near-zero (but nonzero) earlier-half baseline blows a plain
+  // percent-change up to absurd, meaningless magnitudes (a vendor going
+  // from $4 to $5,000 is not "a 124,900% increase" in any useful sense);
+  // computeMomentum treats anything under this floor as too small a base
+  // to rate, the same as an exact zero.
+  const MOMENTUM_BASE_FLOOR = 25;
+
+  // A vendor's own time series (Federal: per-cycle; MA: per-year) split in
+  // half by period count, comparing the more recent half's total against
+  // the earlier half's as a growth rate. `isNew` flags a vendor with no
+  // meaningful spend in the earlier half and some in the recent half -- a
+  // ratio isn't usefully computable off that small a base, but "went from
+  // nothing to something" is itself the signal worth surfacing, so it's
+  // returned separately rather than folded into `value` as a fake number.
+  function computeMomentum(series, periodKey) {
+    if (!series || series.length < 2) return { value: null, isNew: false };
+    const sorted = series.slice().sort((a, b) => a[periodKey] - b[periodKey]);
+    const mid = Math.ceil(sorted.length / 2);
+    const firstSum = sorted.slice(0, mid).reduce((a, r) => a + r.amount, 0);
+    const secondSum = sorted.slice(mid).reduce((a, r) => a + r.amount, 0);
+    if (firstSum < MOMENTUM_BASE_FLOOR) return { value: null, isNew: secondSum > 0 };
+    return { value: (secondSum - firstSum) / firstSum, isNew: false };
+  }
+
+  // Combines each dataset's own momentum into one figure, weighted by how
+  // much of the vendor's high-confidence spend sits in that dataset -- a
+  // vendor spent almost entirely in Massachusetts has its blended momentum
+  // driven mostly by the Massachusetts trend, and vice versa.
+  function blendMomentum(fed, fedAmt, ma, maAmt) {
+    const parts = [];
+    if (fed.value !== null && fedAmt > 0) parts.push([fed.value, fedAmt]);
+    if (ma.value !== null && maAmt > 0) parts.push([ma.value, maAmt]);
+    const isNew = fed.isNew || ma.isNew;
+    if (!parts.length) return { value: null, isNew };
+    const totalWeight = parts.reduce((a, p) => a + p[1], 0);
+    const value = parts.reduce((a, p) => a + p[0] * p[1], 0) / totalWeight;
+    return { value, isNew };
+  }
+
+  function momentumBadge(r) {
+    if (r.momentum_value === null && !r.momentum_is_new) return el("span", { className: "text-muted", text: "—" });
+    if (r.momentum_value === null && r.momentum_is_new) return el("span", { className: "trend-up", text: "▲ New" });
+    const pct = r.momentum_value * 100;
+    const cls = pct > 3 ? "trend-up" : pct < -3 ? "trend-down" : "trend-flat";
+    const arrow = pct > 3 ? "▲" : pct < -3 ? "▼" : "▶";
+    const prefix = r.momentum_is_new ? "New, " : "";
+    // A vendor whose earlier half was real but tiny (say $30) can still
+    // multiply hundreds-fold once volume picks up -- a five- or six-digit
+    // percentage is technically correct but unreadable, so above 3x growth
+    // this switches to multiplier notation ("14.2x"), which is how that
+    // kind of jump normally gets described.
+    const label = r.momentum_value >= 3 ? (r.momentum_value + 1).toFixed(1) + "x" : (pct >= 0 ? "+" : "") + pct.toFixed(0) + "%";
+    return el("span", { className: cls, text: arrow + " " + prefix + label });
+  }
+
+  // One row per vendor id found on either tab -- a vendor matched only on
+  // Federal (or only on Massachusetts) still gets a row, with "—" for the
+  // side it has no data on, so the table also shows which tools are
+  // federal-only or state-only, not just the ones that overlap.
+  function buildCompareRows() {
+    const byId = {};
+    DATA.vendors_overall.forEach((v) => {
+      byId[v.id] = Object.assign({ id: v.id }, byId[v.id], {
+        name: v.name,
+        group: v.group,
+        era: v.era,
+        tags: v.tags || [],
+        description: v.description,
+        fed_amount: v.amount_high,
+        fed_amount_medium: v.amount_medium,
+      });
+    });
+    MA_DATA.vendors.forEach((v) => {
+      const existing = byId[v.id];
+      byId[v.id] = Object.assign({ id: v.id }, existing, {
+        name: (existing && existing.name) || v.name,
+        group: (existing && existing.group) || v.group,
+        era: (existing && existing.era) || v.era,
+        tags: (existing && existing.tags && existing.tags.length ? existing.tags : v.tags) || [],
+        description: (existing && existing.description) || v.description,
+        ma_amount: v.amount_high,
+        ma_amount_medium: v.amount_medium,
+      });
+    });
+
+    return Object.values(byId).map((r) => {
+      const fed_amount = r.fed_amount || 0;
+      const ma_amount = r.ma_amount || 0;
+      const fedSeries = (DATA.vendors_detail[r.id] || {}).time_series || [];
+      const maSeries = (MA_DATA.vendors_detail[r.id] || {}).time_series || [];
+      const fedM = computeMomentum(fedSeries, "cycle");
+      const maM = computeMomentum(maSeries, "year");
+      const momentum = blendMomentum(fedM, fed_amount, maM, ma_amount);
+      return Object.assign({}, r, {
+        fed_amount,
+        ma_amount,
+        volume: fed_amount + ma_amount,
+        momentum_value: momentum.value,
+        momentum_is_new: momentum.isNew,
+        // A capped finite stand-in for "new" so it sorts above every real
+        // growth rate without the NaN a literal Infinity - Infinity tie
+        // would produce in sortRows' plain subtraction comparator.
+        momentum_sort: momentum.value !== null ? momentum.value : momentum.isNew ? 10 : null,
+      });
+    });
+  }
+
+  function renderCompareView() {
+    const view = document.getElementById("compare-view");
+    view.innerHTML = "";
+    const eraFilter = eraFilterList();
+    const allRows = buildCompareRows();
+    const nLegacyHidden = allRows.filter((r) => r.era === "legacy" && r.volume > 0).length;
+    const rows = allRows.filter((r) => eraFilter.includes(r.era));
+
+    view.appendChild(
+      el("div", {
+        className: "compare-banner",
+        children: [
+          el("span", { text: "You're viewing the " }),
+          el("strong", { text: "Compare" }),
+          el("span", {
+            text:
+              " tab — every AI vendor found on either the Federal (FEC) or Massachusetts (OCPF) tab, in one table. The two source datasets cover different offices, timeframes, and itemization rules, so their dollar figures are shown side by side rather than added into one number, other than the Combined volume column below.",
+          }),
+        ],
+      })
+    );
+
+    const nFederal = rows.filter((r) => r.fed_amount > 0).length;
+    const nMa = rows.filter((r) => r.ma_amount > 0).length;
+    const nBoth = rows.filter((r) => r.fed_amount > 0 && r.ma_amount > 0).length;
+    const totalVolume = rows.reduce((a, r) => a + r.volume, 0);
+
+    const statRow = el("div", { className: "stat-row" });
+    statRow.appendChild(
+      statTile(
+        "AI vendors compared",
+        fmtInt.format(rows.length),
+        nFederal + " on Federal · " + nMa + " on Massachusetts · " + nBoth + " on both" + (includeLegacy ? "" : " · " + nLegacyHidden + " legacy vendor" + (nLegacyHidden === 1 ? "" : "s") + " hidden")
+      )
+    );
+    statRow.appendChild(statTile("Combined high-confidence spend", fmtUSD0.format(totalVolume), "Federal + Massachusetts high-confidence vendor totals, summed"));
+    view.appendChild(statRow);
+
+    const card = el("div", { className: "card" });
+    card.appendChild(el("h3", { text: "AI vendors: Federal vs. Massachusetts" }));
+    card.appendChild(
+      el("p", {
+        className: "note",
+        text:
+          "High-confidence text matches only, on each tab's own dataset (see each tab's methodology for what that means there). Combined volume sums the two. Momentum compares each vendor's own more-recent half of its time series (Federal: election cycles; Massachusetts: calendar years) against its earlier half, weighted toward whichever dataset carries more of its spend, shown as a multiplier (e.g. “14.2x”) once growth passes 3x since a percentage that large stops being readable; “New” means its earlier half had little or no spend (under $25) to compare against, so no rate is computable at all. " +
+          (includeLegacy
+            ? "Legacy-era vendors are currently included, via the toggle above."
+            : nLegacyHidden + " legacy-era vendor" + (nLegacyHidden === 1 ? "" : "s") + " with disclosed spending " + (nLegacyHidden === 1 ? "is" : "are") + " hidden by default (toggle above to include them)."),
+      })
+    );
+
+    const tableRows = sortRows(rows, sortState.compare);
+    const headers = withSort(
+      "compare",
+      [
+        { label: "Vendor", sortKey: "name", render: (r) => r.name },
+        { label: "Category", sortKey: null, cell: (r) => tagChips(r.tags) },
+        { label: "How campaigns use it", sortKey: null, cell: (r) => el("span", { className: "desc-cell", text: r.description || "—" }) },
+        { label: "Federal $", sortKey: "fed_amount", num: true, link: (r) => (r.fed_amount > 0 ? "#/vendor/" + r.id : null), render: (r) => (r.fed_amount > 0 ? fmtUSD0.format(r.fed_amount) : "—") },
+        { label: "Massachusetts $", sortKey: "ma_amount", num: true, link: (r) => (r.ma_amount > 0 ? "#/ma/vendor/" + r.id : null), render: (r) => (r.ma_amount > 0 ? fmtUSD0.format(r.ma_amount) : "—") },
+        { label: "Combined volume", sortKey: "volume", num: true, render: (r) => fmtUSD0.format(r.volume) },
+        { label: "Momentum", sortKey: "momentum_sort", cell: (r) => momentumBadge(r) },
+        { label: "Era", sortKey: "era", render: (r) => (r.era === "legacy" ? "Legacy" : "Generative") },
+      ],
+      renderCompareView
+    );
+    card.appendChild(buildTable(headers, tableRows, { sort: sortState.compare }));
+    view.appendChild(el("div", { className: "card-grid single", children: [card] }));
+
+    view.appendChild(
+      el("p", {
+        className: "lede",
+        text: "Full pipeline code and the shared vendor/category taxonomy (pipeline/config/vendors.yaml) are in the GitHub repository. See the Federal and Massachusetts tabs' own methodology notes for what each dataset does and doesn't cover.",
+      })
+    );
+  }
+
   function parseHash() {
     const h = location.hash.replace(/^#\/?/, "");
     if (!h) return null;
@@ -2857,6 +3125,10 @@
     if (raw === "ma" || raw.indexOf("ma/") === 0) {
       pendingMaSubroute = raw === "ma" ? "" : raw.slice(3);
       activateDataset("ma");
+      return;
+    }
+    if (raw === "compare") {
+      activateDataset("compare");
       return;
     }
     activateDataset("federal");
@@ -2904,6 +3176,7 @@
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
         renderAll();
         if (MA_DATA) renderMaView();
+        if (MA_DATA && currentDataset === "compare") renderCompareView();
       });
     })
     .catch((err) => {

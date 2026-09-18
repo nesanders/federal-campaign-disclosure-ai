@@ -92,6 +92,8 @@ def load_vendor_meta(taxonomy: Taxonomy) -> dict[str, dict]:
             "era": v.era,
             "homepage": v.homepage,
             "lean_context": v.lean_context,
+            "description": v.description,
+            "tags": list(v.tags),
         }
         for v in taxonomy.vendors
     }
@@ -326,6 +328,8 @@ def main() -> None:
                 "era": meta["era"],
                 "homepage": meta.get("homepage"),
                 "lean_context": meta.get("lean_context"),
+                "description": meta.get("description"),
+                "tags": meta.get("tags", []),
                 "total": round(total, 2),
                 "amount_high": round(vconf["high"], 2),
                 "amount_medium": round(vconf["medium"], 2),
@@ -401,6 +405,8 @@ def main() -> None:
             "era": meta["era"],
             "homepage": meta.get("homepage"),
             "lean_context": meta.get("lean_context"),
+            "description": meta.get("description"),
+            "tags": meta.get("tags", []),
             "total": round(vendor_totals[vid], 2),
             "records_count": vendor_records[vid],
             "filers_count": len(vendor_filers[vid]),

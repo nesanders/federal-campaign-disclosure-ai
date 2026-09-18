@@ -27,6 +27,8 @@
   --ma-accent:      #7d3c98;
   --ma-accent-soft: #f1e6f5;
   --fed-accent-soft: #e3edfa;
+  --compare-accent:      #1baf7a;
+  --compare-accent-soft: #e1f5ee;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,6 +55,8 @@
     --ma-accent:      #c48fdb;
     --ma-accent-soft: #2f2035;
     --fed-accent-soft: #16233a;
+    --compare-accent:      #199e70;
+    --compare-accent-soft: #14332a;
   }
 }
 :root[data-theme="dark"] {
@@ -78,6 +82,8 @@
   --ma-accent:      #c48fdb;
   --ma-accent-soft: #2f2035;
   --fed-accent-soft: #16233a;
+  --compare-accent:      #199e70;
+  --compare-accent-soft: #14332a;
 }
 
 * { box-sizing: border-box; }
@@ -332,6 +338,8 @@ tr.row-medium-confidence { background: color-mix(in srgb, var(--series-2) 7%, tr
 .dataset-tab.is-active .dataset-tab-title { color: var(--series-1); }
 .dataset-tab[data-dataset="ma"].is-active { background: var(--ma-accent-soft); }
 .dataset-tab[data-dataset="ma"].is-active .dataset-tab-title { color: var(--ma-accent); }
+.dataset-tab[data-dataset="compare"].is-active { background: var(--compare-accent-soft); }
+.dataset-tab[data-dataset="compare"].is-active .dataset-tab-title { color: var(--compare-accent); }
 
 /* Context pill: stamped on every card's title row so which dataset a given
    chart or table belongs to is never ambiguous, even mid-scroll. */
@@ -352,6 +360,22 @@ tr.row-medium-confidence { background: color-mix(in srgb, var(--series-2) 7%, tr
   border-radius: 10px; padding: 12px 18px; margin-bottom: 28px; font-size: 0.9rem; color: var(--text-secondary);
 }
 .ma-banner strong { color: var(--ma-accent); }
+
+.compare-banner {
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  background: var(--compare-accent-soft); border: 1px solid var(--compare-accent);
+  border-radius: 10px; padding: 12px 18px; margin-bottom: 28px; font-size: 0.9rem; color: var(--text-secondary);
+}
+.compare-banner strong { color: var(--compare-accent); }
+
+/* Compare-tab vendor table: category tags, description column, and the
+   momentum column's directional badge (recent-vs-earlier spending trend,
+   blended across whichever of Federal/MA a vendor has data in). */
+.tag-chip { display: inline-block; font-size: 0.7rem; padding: 2px 7px; border-radius: 999px; background: var(--surface-1); border: 1px solid var(--border); color: var(--text-secondary); margin: 0 4px 2px 0; }
+.desc-cell { max-width: 280px; white-space: normal; color: var(--text-secondary); }
+.trend-up { color: var(--series-6); font-weight: 600; white-space: nowrap; }
+.trend-down { color: var(--series-8); font-weight: 600; white-space: nowrap; }
+.trend-flat { color: var(--text-muted); white-space: nowrap; }
 
 @media (max-width: 640px) {
   .card-grid { grid-template-columns: 1fr; }

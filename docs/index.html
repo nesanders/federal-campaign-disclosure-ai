@@ -19,6 +19,10 @@
         <span class="dataset-tab-title">Massachusetts</span>
         <span class="dataset-tab-sub">State races &middot; OCPF</span>
       </button>
+      <button type="button" class="dataset-tab" data-dataset="compare" role="tab" aria-selected="false" aria-controls="compare-view">
+        <span class="dataset-tab-title">Compare</span>
+        <span class="dataset-tab-sub">Federal vs. state, by vendor</span>
+      </button>
     </div>
     <h1 id="page-h1">AI Use in Federal Campaign Disclosures</h1>
     <p class="subtitle" id="page-subtitle-1">A read of federal campaign-finance disclosures for U.S. House and Senate candidates, looking for payments to AI vendors and how that spending breaks down by vendor, stated purpose, party, incumbency, candidate age, and chamber &mdash; and how each of those has changed across recent election cycles.</p>
@@ -293,6 +297,8 @@
   <div id="ma-view" hidden></div>
   <div id="ma-detail-view" hidden></div>
 
+  <div id="compare-view" hidden></div>
+
 </main>
 
 <footer class="site">
@@ -300,6 +306,7 @@
     <p id="footer-generated"></p>
     <p id="footer-source-federal">Source data: Federal Election Commission bulk downloads (fec.gov) and the unitedstates/congress-legislators project. This is an independent analysis and is not affiliated with the FEC or any campaign or vendor named here.</p>
     <p id="footer-source-ma" hidden>Source data: Massachusetts Office of Campaign and Political Finance (ocpf.us), via its public API. This is an independent analysis and is not affiliated with OCPF or any campaign or vendor named here.</p>
+    <p id="footer-source-compare" hidden>Source data: both of the above &mdash; Federal Election Commission bulk downloads (fec.gov) and Massachusetts Office of Campaign and Political Finance (ocpf.us). This is an independent analysis and is not affiliated with the FEC, OCPF, or any campaign or vendor named here.</p>
   </div>
 </footer>
 

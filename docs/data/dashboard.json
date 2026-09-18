@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-15T11:52:01.128637Z",
+    "generated_at": "2026-09-18T15:14:18.614408Z",
     "cycles": [
       2020,
       2022,
@@ -63,6 +63,11 @@
       "group": "political_specific",
       "era": "legacy",
       "homepage": "https://truverse.net",
+      "description": "Rule-based political chatbot/voter-outreach platform (formerly TruVerse) used for automated voter texting and Q&A.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
       "amount_high": 10448642.5,
       "count_high": 598,
       "distinct_committees_high": 35,
@@ -80,6 +85,11 @@
       "group": "political_specific",
       "era": "legacy",
       "homepage": "https://campaignnucleus.com",
+      "description": "Campaign CRM/command-center platform (data parsing, sentiment, targeting) used to manage voter and donor data.",
+      "tags": [
+        "data_targeting",
+        "administrative_productivity"
+      ],
       "amount_high": 3153945.0,
       "count_high": 409,
       "distinct_committees_high": 40,
@@ -97,6 +107,11 @@
       "group": "political_specific",
       "era": "legacy",
       "homepage": "https://prompt.io",
+      "description": "Political peer-to-peer texting platform used for voter outreach and fundraising text campaigns.",
+      "tags": [
+        "communications_copy",
+        "fundraising"
+      ],
       "amount_high": 1185806.37,
       "count_high": 170,
       "distinct_committees_high": 42,
@@ -114,6 +129,11 @@
       "group": "political_specific",
       "era": "legacy",
       "homepage": "https://www.calltime.ai",
+      "description": "Donor call-time scheduling and CRM tool used to organize and prioritize fundraising calls.",
+      "tags": [
+        "fundraising",
+        "administrative_productivity"
+      ],
       "amount_high": 974083.94,
       "count_high": 970,
       "distinct_committees_high": 139,
@@ -131,6 +151,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://www.daisychain.app",
+      "description": "AI-assisted political texting platform used for voter outreach and mobilization campaigns.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
       "amount_high": 343547.41,
       "count_high": 89,
       "distinct_committees_high": 15,
@@ -148,6 +173,10 @@
       "group": "political_specific",
       "era": "legacy",
       "homepage": "https://www.eyesover.us",
+      "description": "Social-media monitoring/listening tool (legacy \"AI\" branding) used to track press and social sentiment.",
+      "tags": [
+        "research_strategy"
+      ],
       "amount_high": 264700.0,
       "count_high": 12,
       "distinct_committees_high": 6,
@@ -165,6 +194,11 @@
       "group": "political_specific",
       "era": "legacy",
       "homepage": "https://www.numero.ai",
+      "description": "Donor-database and call-time tool used to organize fundraising calls and donor records.",
+      "tags": [
+        "fundraising",
+        "administrative_productivity"
+      ],
       "amount_high": 232378.83,
       "count_high": 385,
       "distinct_committees_high": 18,
@@ -182,6 +216,10 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://www.sosha.ai",
+      "description": "AI speech-to-text/content tool (Speechifai) used to turn spoken remarks into written campaign content.",
+      "tags": [
+        "communications_copy"
+      ],
       "amount_high": 158275.04,
       "count_high": 98,
       "distinct_committees_high": 14,
@@ -199,6 +237,11 @@
       "group": "general_purpose",
       "era": "legacy",
       "homepage": "https://otter.ai",
+      "description": "AI transcription tool used to transcribe meetings, calls, and events into searchable notes.",
+      "tags": [
+        "administrative_productivity",
+        "research_strategy"
+      ],
       "amount_high": 92937.59,
       "count_high": 532,
       "distinct_committees_high": 66,
@@ -216,6 +259,11 @@
       "group": "general_purpose",
       "era": "legacy",
       "homepage": "https://grammarly.com",
+      "description": "AI writing-assistant used to proofread and edit campaign emails, press releases, and other copy.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
       "amount_high": 72728.2,
       "count_high": 260,
       "distinct_committees_high": 47,
@@ -233,6 +281,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://anthropic.com",
+      "description": "General-purpose AI chatbot (Claude) used for drafting communications, research memos, and policy analysis.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
       "amount_high": 55476.74,
       "count_high": 384,
       "distinct_committees_high": 65,
@@ -250,6 +303,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://openai.com",
+      "description": "General-purpose AI chatbot campaigns use to draft emails, speeches, social media copy, and other written content.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
       "amount_high": 51497.34,
       "count_high": 531,
       "distinct_committees_high": 80,
@@ -267,6 +325,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://donoratlas.com",
+      "description": "AI-powered donor-prospecting and research platform used to identify and target potential donors.",
+      "tags": [
+        "fundraising",
+        "data_targeting"
+      ],
       "amount_high": 49917.0,
       "count_high": 97,
       "distinct_committees_high": 20,
@@ -284,6 +347,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://convos.ai",
+      "description": "AI-agent political texting platform (formerly PubSent) used for automated voter outreach conversations.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
       "amount_high": 21365.11,
       "count_high": 9,
       "distinct_committees_high": 4,
@@ -301,6 +369,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://chorus.ai",
+      "description": "AI-assisted messaging/copywriting platform built for political campaign communications.",
+      "tags": [
+        "communications_copy",
+        "fundraising"
+      ],
       "amount_high": 19763.12,
       "count_high": 28,
       "distinct_committees_high": 3,
@@ -318,6 +391,10 @@
       "group": "general_purpose",
       "era": "legacy",
       "homepage": "https://descript.com",
+      "description": "AI-powered audio/video editing tool used to edit podcasts, ads, and other campaign video/audio content.",
+      "tags": [
+        "advertising_creative"
+      ],
       "amount_high": 17910.29,
       "count_high": 245,
       "distinct_committees_high": 34,
@@ -335,6 +412,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://quiller.ai",
+      "description": "AI-assisted fundraising-email copywriting platform built specifically for political campaigns.",
+      "tags": [
+        "fundraising",
+        "communications_copy"
+      ],
       "amount_high": 14956.0,
       "count_high": 32,
       "distinct_committees_high": 7,
@@ -352,6 +434,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://votersai.com",
+      "description": "AI campaign-management platform covering voter data, outreach, and field operations.",
+      "tags": [
+        "data_targeting",
+        "administrative_productivity"
+      ],
       "amount_high": 11524.0,
       "count_high": 3,
       "distinct_committees_high": 1,
@@ -369,6 +456,11 @@
       "group": "general_purpose",
       "era": "legacy",
       "homepage": "https://chatfuel.com",
+      "description": "AI chatbot-builder platform used to run automated Facebook Messenger/website chatbots for voter engagement.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
       "amount_high": 8343.74,
       "count_high": 46,
       "distinct_committees_high": 4,
@@ -386,6 +478,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://x.ai",
+      "description": "xAI's general-purpose chatbot, used for drafting content and quick research the way other AI chatbots are.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
       "amount_high": 5355.23,
       "count_high": 39,
       "distinct_committees_high": 7,
@@ -403,6 +500,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://air.ai",
+      "description": "AI voice-agent platform used to run automated phone calls for voter outreach or fundraising.",
+      "tags": [
+        "data_targeting",
+        "fundraising"
+      ],
       "amount_high": 4071.33,
       "count_high": 12,
       "distinct_committees_high": 1,
@@ -420,6 +522,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://jasper.ai",
+      "description": "AI copywriting tool used to draft marketing, advertising, and fundraising copy at scale.",
+      "tags": [
+        "advertising_creative",
+        "communications_copy"
+      ],
       "amount_high": 2288.88,
       "count_high": 23,
       "distinct_committees_high": 1,
@@ -437,6 +544,10 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://perplexity.ai",
+      "description": "AI-powered search/research assistant used for opposition research and rapid fact-checking.",
+      "tags": [
+        "research_strategy"
+      ],
       "amount_high": 2190.29,
       "count_high": 43,
       "distinct_committees_high": 3,
@@ -454,6 +565,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://heygen.com",
+      "description": "AI avatar-video generator used to produce spokesperson-style videos for ads and social content.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
       "amount_high": 1919.19,
       "count_high": 10,
       "distinct_committees_high": 2,
@@ -471,6 +587,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://runwayml.com",
+      "description": "AI video-generation and editing tool used to produce and edit ad creative and social video.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
       "amount_high": 1700.16,
       "count_high": 5,
       "distinct_committees_high": 1,
@@ -488,6 +609,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://instantly.ai",
+      "description": "AI-assisted email outreach/deliverability platform used for fundraising and bulk email campaigns.",
+      "tags": [
+        "fundraising",
+        "communications_copy"
+      ],
       "amount_high": 1675.74,
       "count_high": 17,
       "distinct_committees_high": 2,
@@ -505,6 +631,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://midjourney.com",
+      "description": "AI image-generation tool used to create graphics and visuals for ads and social media posts.",
+      "tags": [
+        "advertising_creative",
+        "synthetic_media"
+      ],
       "amount_high": 1611.52,
       "count_high": 20,
       "distinct_committees_high": 5,
@@ -522,6 +653,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://elevenlabs.io",
+      "description": "AI voice-generation and cloning tool used to produce narration, robocall, and ad audio without a studio recording.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
       "amount_high": 1437.82,
       "count_high": 14,
       "distinct_committees_high": 6,
@@ -539,6 +675,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://klingai.com",
+      "description": "AI video-generation tool used to produce short ad or social video clips from text/image prompts.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
       "amount_high": 881.46,
       "count_high": 6,
       "distinct_committees_high": 1,
@@ -556,6 +697,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://fal.ai",
+      "description": "AI image/video generation infrastructure, used by developers building AI-powered creative tools.",
+      "tags": [
+        "advertising_creative",
+        "synthetic_media"
+      ],
       "amount_high": 675.51,
       "count_high": 33,
       "distinct_committees_high": 1,
@@ -573,6 +719,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://smartlead.ai",
+      "description": "AI-assisted cold-email outreach platform used for fundraising and list-building email campaigns.",
+      "tags": [
+        "fundraising",
+        "communications_copy"
+      ],
       "amount_high": 564.0,
       "count_high": 6,
       "distinct_committees_high": 1,
@@ -590,6 +741,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://www.campaign-brain.com",
+      "description": "AI-assisted campaign strategy and communications platform used to draft plans and messaging.",
+      "tags": [
+        "research_strategy",
+        "communications_copy"
+      ],
       "amount_high": 500.0,
       "count_high": 1,
       "distinct_committees_high": 1,
@@ -607,6 +763,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://lumalabs.ai",
+      "description": "AI video/3D-generation tool (Luma AI) used to produce visual content for ads and social media.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
       "amount_high": 483.0,
       "count_high": 7,
       "distinct_committees_high": 1,
@@ -624,6 +785,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://thechange.ai",
+      "description": "AI-assisted organizing/communications platform built for nonprofits, unions, and progressive campaigns.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
       "amount_high": 462.0,
       "count_high": 2,
       "distinct_committees_high": 2,
@@ -641,6 +807,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://sitespeak.ai",
+      "description": "AI chatbot-builder for websites, used to power an automated Q&A assistant on a campaign's own site.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
       "amount_high": 83.74,
       "count_high": 1,
       "distinct_committees_high": 1,
@@ -658,6 +829,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://ai.google",
+      "description": "Google's general-purpose AI assistant and cloud AI platform (Gemini/Vertex AI), used for drafting content and data analysis.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
       "amount_high": 39.98,
       "count_high": 2,
       "distinct_committees_high": 1,
@@ -675,6 +851,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://aaru.com",
+      "description": "AI voter-simulation and predictive-modeling tool used for campaign strategy and message testing.",
+      "tags": [
+        "research_strategy",
+        "data_targeting"
+      ],
       "amount_high": 0.0,
       "count_high": 0,
       "distinct_committees_high": 0,
@@ -25666,6 +25847,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://air.ai",
+      "description": "AI voice-agent platform used to run automated phone calls for voter outreach or fundraising.",
+      "tags": [
+        "data_targeting",
+        "fundraising"
+      ],
       "amount_high": 4071.33,
       "count_high": 12,
       "amount_medium": 0.0,
@@ -25863,6 +26049,11 @@
       "group": "political_specific",
       "era": "legacy",
       "homepage": "https://truverse.net",
+      "description": "Rule-based political chatbot/voter-outreach platform (formerly TruVerse) used for automated voter texting and Q&A.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
       "amount_high": 10448642.5,
       "count_high": 598,
       "amount_medium": 0.0,
@@ -30015,6 +30206,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://anthropic.com",
+      "description": "General-purpose AI chatbot (Claude) used for drafting communications, research memos, and policy analysis.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
       "amount_high": 55476.74,
       "count_high": 384,
       "amount_medium": 757789.97,
@@ -34165,6 +34361,11 @@
       "group": "political_specific",
       "era": "legacy",
       "homepage": "https://www.calltime.ai",
+      "description": "Donor call-time scheduling and CRM tool used to organize and prioritize fundraising calls.",
+      "tags": [
+        "fundraising",
+        "administrative_productivity"
+      ],
       "amount_high": 974083.94,
       "count_high": 970,
       "amount_medium": 0.0,
@@ -38319,6 +38520,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://www.campaign-brain.com",
+      "description": "AI-assisted campaign strategy and communications platform used to draft plans and messaging.",
+      "tags": [
+        "research_strategy",
+        "communications_copy"
+      ],
       "amount_high": 500.0,
       "count_high": 1,
       "amount_medium": 0.0,
@@ -38375,6 +38581,11 @@
       "group": "political_specific",
       "era": "legacy",
       "homepage": "https://campaignnucleus.com",
+      "description": "Campaign CRM/command-center platform (data parsing, sentiment, targeting) used to manage voter and donor data.",
+      "tags": [
+        "data_targeting",
+        "administrative_productivity"
+      ],
       "amount_high": 3153945.0,
       "count_high": 409,
       "amount_medium": 0.0,
@@ -42484,6 +42695,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://thechange.ai",
+      "description": "AI-assisted organizing/communications platform built for nonprofits, unions, and progressive campaigns.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
       "amount_high": 462.0,
       "count_high": 2,
       "amount_medium": 0.0,
@@ -42562,6 +42778,11 @@
       "group": "general_purpose",
       "era": "legacy",
       "homepage": "https://chatfuel.com",
+      "description": "AI chatbot-builder platform used to run automated Facebook Messenger/website chatbots for voter engagement.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
       "amount_high": 8343.74,
       "count_high": 46,
       "amount_medium": 0.0,
@@ -43272,6 +43493,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://chorus.ai",
+      "description": "AI-assisted messaging/copywriting platform built for political campaign communications.",
+      "tags": [
+        "communications_copy",
+        "fundraising"
+      ],
       "amount_high": 19763.12,
       "count_high": 28,
       "amount_medium": 0.0,
@@ -43686,6 +43912,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://convos.ai",
+      "description": "AI-agent political texting platform (formerly PubSent) used for automated voter outreach conversations.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
       "amount_high": 21365.11,
       "count_high": 9,
       "amount_medium": 895.15,
@@ -43956,6 +44187,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://www.daisychain.app",
+      "description": "AI-assisted political texting platform used for voter outreach and mobilization campaigns.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
       "amount_high": 343547.41,
       "count_high": 89,
       "amount_medium": 0.0,
@@ -45365,6 +45601,10 @@
       "group": "general_purpose",
       "era": "legacy",
       "homepage": "https://descript.com",
+      "description": "AI-powered audio/video editing tool used to edit podcasts, ads, and other campaign video/audio content.",
+      "tags": [
+        "advertising_creative"
+      ],
       "amount_high": 17910.29,
       "count_high": 245,
       "amount_medium": 0.0,
@@ -48829,6 +49069,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://donoratlas.com",
+      "description": "AI-powered donor-prospecting and research platform used to identify and target potential donors.",
+      "tags": [
+        "fundraising",
+        "data_targeting"
+      ],
       "amount_high": 49917.0,
       "count_high": 97,
       "amount_medium": 0.0,
@@ -50395,6 +50640,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://elevenlabs.io",
+      "description": "AI voice-generation and cloning tool used to produce narration, robocall, and ad audio without a studio recording.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
       "amount_high": 1437.82,
       "count_high": 14,
       "amount_medium": 0.0,
@@ -50748,6 +50998,10 @@
       "group": "political_specific",
       "era": "legacy",
       "homepage": "https://www.eyesover.us",
+      "description": "Social-media monitoring/listening tool (legacy \"AI\" branding) used to track press and social sentiment.",
+      "tags": [
+        "research_strategy"
+      ],
       "amount_high": 264700.0,
       "count_high": 12,
       "amount_medium": 0.0,
@@ -51077,6 +51331,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://fal.ai",
+      "description": "AI image/video generation infrastructure, used by developers building AI-powered creative tools.",
+      "tags": [
+        "advertising_creative",
+        "synthetic_media"
+      ],
       "amount_high": 675.51,
       "count_high": 33,
       "amount_medium": 0.0,
@@ -51517,6 +51776,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://ai.google",
+      "description": "Google's general-purpose AI assistant and cloud AI platform (Gemini/Vertex AI), used for drafting content and data analysis.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
       "amount_high": 39.98,
       "count_high": 2,
       "amount_medium": 279281.66,
@@ -52028,6 +52292,11 @@
       "group": "general_purpose",
       "era": "legacy",
       "homepage": "https://grammarly.com",
+      "description": "AI writing-assistant used to proofread and edit campaign emails, press releases, and other copy.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
       "amount_high": 72728.2,
       "count_high": 260,
       "amount_medium": 0.0,
@@ -55738,6 +56007,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://heygen.com",
+      "description": "AI avatar-video generator used to produce spokesperson-style videos for ads and social content.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
       "amount_high": 1919.19,
       "count_high": 10,
       "amount_medium": 0.0,
@@ -55942,6 +56216,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://instantly.ai",
+      "description": "AI-assisted email outreach/deliverability platform used for fundraising and bulk email campaigns.",
+      "tags": [
+        "fundraising",
+        "communications_copy"
+      ],
       "amount_high": 1675.74,
       "count_high": 17,
       "amount_medium": 0.0,
@@ -56242,6 +56521,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://jasper.ai",
+      "description": "AI copywriting tool used to draft marketing, advertising, and fundraising copy at scale.",
+      "tags": [
+        "advertising_creative",
+        "communications_copy"
+      ],
       "amount_high": 2288.88,
       "count_high": 23,
       "amount_medium": 0.0,
@@ -56562,6 +56846,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://klingai.com",
+      "description": "AI video-generation tool used to produce short ad or social video clips from text/image prompts.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
       "amount_high": 881.46,
       "count_high": 6,
       "amount_medium": 0.0,
@@ -56678,6 +56967,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://lumalabs.ai",
+      "description": "AI video/3D-generation tool (Luma AI) used to produce visual content for ads and social media.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
       "amount_high": 483.0,
       "count_high": 7,
       "amount_medium": 0.0,
@@ -56843,6 +57137,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://midjourney.com",
+      "description": "AI image-generation tool used to create graphics and visuals for ads and social media posts.",
+      "tags": [
+        "advertising_creative",
+        "synthetic_media"
+      ],
       "amount_high": 1611.52,
       "count_high": 20,
       "amount_medium": 0.0,
@@ -57229,6 +57528,11 @@
       "group": "political_specific",
       "era": "legacy",
       "homepage": "https://www.numero.ai",
+      "description": "Donor-database and call-time tool used to organize fundraising calls and donor records.",
+      "tags": [
+        "fundraising",
+        "administrative_productivity"
+      ],
       "amount_high": 232378.83,
       "count_high": 385,
       "amount_medium": 0.0,
@@ -61243,6 +61547,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://openai.com",
+      "description": "General-purpose AI chatbot campaigns use to draft emails, speeches, social media copy, and other written content.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
       "amount_high": 51497.34,
       "count_high": 531,
       "amount_medium": 0.0,
@@ -65393,6 +65702,11 @@
       "group": "general_purpose",
       "era": "legacy",
       "homepage": "https://otter.ai",
+      "description": "AI transcription tool used to transcribe meetings, calls, and events into searchable notes.",
+      "tags": [
+        "administrative_productivity",
+        "research_strategy"
+      ],
       "amount_high": 92937.59,
       "count_high": 532,
       "amount_medium": 0.0,
@@ -69565,6 +69879,10 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://perplexity.ai",
+      "description": "AI-powered search/research assistant used for opposition research and rapid fact-checking.",
+      "tags": [
+        "research_strategy"
+      ],
       "amount_high": 2190.29,
       "count_high": 43,
       "amount_medium": 0.0,
@@ -70175,6 +70493,11 @@
       "group": "political_specific",
       "era": "legacy",
       "homepage": "https://prompt.io",
+      "description": "Political peer-to-peer texting platform used for voter outreach and fundraising text campaigns.",
+      "tags": [
+        "communications_copy",
+        "fundraising"
+      ],
       "amount_high": 1185806.37,
       "count_high": 170,
       "amount_medium": 0.0,
@@ -72785,6 +73108,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://quiller.ai",
+      "description": "AI-assisted fundraising-email copywriting platform built specifically for political campaigns.",
+      "tags": [
+        "fundraising",
+        "communications_copy"
+      ],
       "amount_high": 14956.0,
       "count_high": 32,
       "amount_medium": 3359.0,
@@ -73443,6 +73771,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://runwayml.com",
+      "description": "AI video-generation and editing tool used to produce and edit ad creative and social video.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
       "amount_high": 1700.16,
       "count_high": 5,
       "amount_medium": 0.0,
@@ -73606,6 +73939,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://sitespeak.ai",
+      "description": "AI chatbot-builder for websites, used to power an automated Q&A assistant on a campaign's own site.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
       "amount_high": 83.74,
       "count_high": 1,
       "amount_medium": 0.0,
@@ -73662,6 +74000,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://smartlead.ai",
+      "description": "AI-assisted cold-email outreach platform used for fundraising and list-building email campaigns.",
+      "tags": [
+        "fundraising",
+        "communications_copy"
+      ],
       "amount_high": 564.0,
       "count_high": 6,
       "amount_medium": 0.0,
@@ -73815,6 +74158,10 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://www.sosha.ai",
+      "description": "AI speech-to-text/content tool (Speechifai) used to turn spoken remarks into written campaign content.",
+      "tags": [
+        "communications_copy"
+      ],
       "amount_high": 158275.04,
       "count_high": 98,
       "amount_medium": 0.0,
@@ -75261,6 +75608,11 @@
       "group": "political_specific",
       "era": "generative",
       "homepage": "https://votersai.com",
+      "description": "AI campaign-management platform covering voter data, outreach, and field operations.",
+      "tags": [
+        "data_targeting",
+        "administrative_productivity"
+      ],
       "amount_high": 11524.0,
       "count_high": 3,
       "amount_medium": 0.0,
@@ -75378,6 +75730,11 @@
       "group": "general_purpose",
       "era": "generative",
       "homepage": "https://x.ai",
+      "description": "xAI's general-purpose chatbot, used for drafting content and quick research the way other AI chatbots are.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
       "amount_high": 5355.23,
       "count_high": 39,
       "amount_medium": 0.0,

@@ -133,6 +133,33 @@ lower-confidence match on an ambiguous word. The main vendor table and
 chart on both tabs also split each vendor's total into "High-confidence $"
 and "Lower-confidence $" rather than blending them into one figure.
 
+## Compare tab
+
+A third tab puts every AI vendor found on either the Federal or
+Massachusetts tab into one sortable table: high-confidence dollars on each
+dataset side by side, a "Combined volume" column (the two summed -- the
+only place the two datasets' dollars are added together, since they cover
+different offices, timeframes, and itemization rules), and a "Momentum"
+column. Momentum splits a vendor's own time series (Federal: election
+cycles; Massachusetts: calendar years) into an earlier and a more recent
+half by period count, and compares the two halves' totals -- weighted
+toward whichever dataset carries more of that vendor's spend when it
+appears on both -- shown as a percentage, or as a multiplier ("14.2x")
+once growth passes 3x, since a five- or six-digit percentage off a small
+real base stops being a readable number. A vendor whose earlier half had
+under $25 to compare against is labeled "New" instead, since a rate isn't
+meaningfully computable that close to zero. Each row's `$` figures link to
+that vendor's own Federal or Massachusetts detail page.
+
+The table also carries two fields that exist only for this tab: a
+`description` (one line, present tense, on how a campaign actually uses
+the product) and 1-2 `tags` drawn from the same use-case-category
+vocabulary already used to label disbursement purpose text elsewhere on
+the site (see `pipeline/config/vendors.yaml`). Both are hand-written per
+vendor, characterizing the product itself rather than any one payment's
+stated purpose. Respects the same legacy-vendor toggle as the other two
+tabs.
+
 ## How it works
 
 ```

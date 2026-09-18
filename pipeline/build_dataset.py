@@ -448,6 +448,8 @@ def main() -> None:
     taxonomy_vendors = Taxonomy().vendors
     homepage_by_id = {v.id: v.homepage for v in taxonomy_vendors}
     era_by_id = {v.id: v.era for v in taxonomy_vendors}
+    description_by_id = {v.id: v.description for v in taxonomy_vendors}
+    tags_by_id = {v.id: list(v.tags) for v in taxonomy_vendors}
     df["high_vendor_ids_ex_legacy"] = df["high_vendor_ids"].apply(lambda ids: high_ids_ex_legacy(ids, era_by_id))
     df["is_high_ex_legacy"] = df["high_vendor_ids_ex_legacy"].apply(bool)
 
@@ -476,6 +478,8 @@ def main() -> None:
             "group": vgroup,
             "era": era_by_id.get(vid, "generative"),
             "homepage": homepage_by_id.get(vid),
+            "description": description_by_id.get(vid),
+            "tags": tags_by_id.get(vid, []),
             "amount_high": round(float(hi["transaction_amt"].sum()), 2),
             "count_high": int(hi["sub_id"].nunique()),
             "distinct_committees_high": int(hi["cmte_id"].nunique()),
@@ -732,6 +736,8 @@ def main() -> None:
             "group": vgroup,
             "era": era_by_id.get(vid, "generative"),
             "homepage": homepage_by_id.get(vid),
+            "description": description_by_id.get(vid),
+            "tags": tags_by_id.get(vid, []),
             "amount_high": round(float(vhi["transaction_amt"].sum()), 2),
             "count_high": int(vhi["sub_id"].nunique()),
             "amount_medium": round(float(vmed["transaction_amt"].sum()), 2),

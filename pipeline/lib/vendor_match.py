@@ -25,6 +25,8 @@ class Vendor:
     era: str = "generative"  # "generative" | "legacy" -- see config/vendors.yaml
     lean_context: str | None = None
     homepage: str | None = None
+    description: str | None = None  # one-line "how campaigns use this" summary
+    tags: tuple[str, ...] = ()  # 1-2 use_case_categories ids characterizing the product
     exclude: list[re.Pattern] = ()
 
 
@@ -60,6 +62,8 @@ class Taxonomy:
                         era=v.get("era", "generative"),
                         lean_context=v.get("lean_context"),
                         homepage=v.get("homepage") or None,
+                        description=v.get("description"),
+                        tags=tuple(v.get("tags", [])),
                         exclude=[_wrap(p) for p in v.get("exclude", [])],
                     )
                 )
