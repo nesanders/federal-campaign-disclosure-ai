@@ -114,6 +114,12 @@ dashboard's "relative to AI-using campaigns" framing. A filer's own detail
 page shows the same "AI as % of total spend" stat the federal candidate
 page does.
 
+The legacy-vendor toggle (top of the page) is shared by both tabs too: off
+by default, it hides legacy-era vendors (e.g. CallTime.AI, Grammarly,
+Otter.ai) from the Massachusetts vendor chart and table the same way it
+hides them from every Federal chart and table, and a legacy vendor's own
+detail page still always shows its full history regardless.
+
 ## How it works
 
 ```

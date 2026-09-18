@@ -357,6 +357,11 @@
     input.addEventListener("change", () => {
       includeLegacy = input.checked;
       renderAll();
+      // Shared toggle, both tabs: re-render Massachusetts too if its data
+      // is already loaded, so switching tabs afterward shows the new
+      // setting immediately rather than stale content from before the
+      // toggle changed.
+      if (MA_DATA) renderMaView();
     });
   }
 
@@ -1411,9 +1416,22 @@
 
   let currentDataset = "federal";
 
+  // Federal excludes legacy vendors from every chart/table below the
+  // toggle; MA only has one such vendor-listing card (renderMaVendorsCard)
+  // to filter, so its wording says so rather than overclaiming "every
+  // chart and table" -- and MA has no #methodology anchor to link to.
+  function updateLegacyToggleText(isMa) {
+    const sub = document.querySelector(".legacy-toggle-sub");
+    if (!sub) return;
+    sub.innerHTML = isMa
+      ? "Off by default: companies founded before generative AI existed but still branded “AI” (e.g. CallTime.AI, Grammarly, Otter.ai) are excluded from the vendor chart and table below by default. Their own vendor pages are always visible."
+      : "Off by default: companies founded before generative AI existed but still branded “AI” (e.g. Amplify.ai, Grammarly, Otter.ai) are excluded from every chart and table below. Their own vendor pages are always visible — see <a href=\"#methodology\">methodology</a>.";
+  }
+
   function activateDataset(tab) {
     currentDataset = tab;
     const isMa = tab === "ma";
+    updateLegacyToggleText(isMa);
 
     document.body.setAttribute("data-active-dataset", tab);
     document.querySelectorAll(".dataset-tab").forEach((btn) => {
@@ -1423,7 +1441,6 @@
     });
 
     document.getElementById("page-toc").hidden = isMa;
-    document.getElementById("legacy-toggle-bar").hidden = isMa;
     document.getElementById("footer-source-federal").hidden = isMa;
     document.getElementById("footer-source-ma").hidden = !isMa;
 
@@ -2077,7 +2094,10 @@
 
   function renderMaVendorsCard() {
     const c = colors();
-    const rows = MA_DATA.vendors.slice(0, 20);
+    const eraFilter = eraFilterList();
+    const shownVendors = MA_DATA.vendors.filter((v) => eraFilter.includes(v.era));
+    const nLegacyHidden = MA_DATA.vendors.filter((v) => v.era === "legacy" && v.total > 0).length;
+    const rows = shownVendors.slice(0, 20);
     const labels = rows.map((r) => r.name + (r.era === "legacy" ? " (legacy)" : ""));
     const data = rows.map((r) => r.total);
 
@@ -2087,7 +2107,14 @@
     toolbar.appendChild(toggleBtn);
     card.appendChild(toolbar);
     card.appendChild(maCardTitle("AI-related expenditures by vendor, 2024 & 2026 cycles"));
-    card.appendChild(el("p", { className: "note", text: "Every OCPF expenditure record statewide for the window, matched against the same taxonomy used on the Federal tab." }));
+    card.appendChild(
+      el("p", {
+        className: "note",
+        text:
+          "Every OCPF expenditure record statewide for the window, matched against the same taxonomy used on the Federal tab." +
+          (includeLegacy ? " Legacy-era vendors are currently included, via the toggle above." : " " + nLegacyHidden + " legacy-era vendor" + (nLegacyHidden === 1 ? "" : "s") + " with disclosed spending are hidden by default (toggle above to include them)."),
+      })
+    );
 
     const chartHolder = el("div", { className: "chart-holder tall" });
     chartHolder.style.height = Math.max(320, rows.length * 26) + "px";
@@ -2115,7 +2142,7 @@
           { label: "Filers", num: true, render: (r) => fmtInt.format(r.filers) },
           { label: "D:R ratio", num: true, render: (r) => fmtPartyRatio(r) },
         ],
-        MA_DATA.vendors
+        shownVendors
       )
     );
 
