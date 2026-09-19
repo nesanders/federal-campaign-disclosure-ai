@@ -195,11 +195,12 @@ are Cloudflare-protected entirely, so postings from that source are
 classified on title only. A posting's fields (including body text)
 refresh on later scrape runs if a previously-unreachable linked domain
 becomes fetchable -- only its first-seen date stays pinned to when it was
-originally found. A dozen other candidate sources (LinkedIn, Indeed,
+originally found. A dozen-plus other candidate sources (LinkedIn, Indeed,
 DSCC, ZipRecruiter, Arena Careers, GAIN Power's career center, NRCC,
-NRSC, RSLC, Sujata Strategies) were investigated and found to be genuine
-dead ends -- CAPTCHA- or Cloudflare-walled, a resume-collection form
-rather than a job list, or an email-only digest with no public web
+NRSC, RSLC, Sujata Strategies, Matt Lockshin's Progressive Job Board)
+were investigated and found to be genuine dead ends -- CAPTCHA- or
+Cloudflare-walled, a resume-collection form rather than a job list, or an
+email-only digest / newsletter-signup page with no public web
 listing -- see `planning/job-postings-plan.md` for the specifics of each.
 
 This is a **single-snapshot dataset, not a time series**: job postings

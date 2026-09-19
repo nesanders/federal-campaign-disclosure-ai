@@ -323,3 +323,21 @@ remaining source-hunting headroom -- the two sources added this round
 were the last concrete leads from Round 2, and this round's new dead
 ends (GAIN Power, Gusto) were already-known Cloudflare/ATS patterns, not
 new categories of blocker.
+
+## Round 4 (2026-09-19): the last lead
+
+`www.mattlockshin.com` (the redirect target left dangling at the end of
+Round 3) was safelisted and fetched. Confirmed dead end: its "Job Board"
+page (`/job-board`) is entirely a multi-step newsletter signup form
+("Tell me more about you... Sign up for my newsletter about job
+placement and recruitment") -- no individual postings anywhere on the
+page, just one example outbound link to a single Breezy HR posting. Same
+lead-capture pattern as Sujata Strategies' email-only digest, not a
+public listing to scrape. No new source added; no pipeline changes.
+
+This closes out the list of candidate sources surfaced across all four
+rounds. Nothing scrapable is known to remain unexplored at this point --
+future progress on the Republican/Democratic gap would need either a
+genuinely new source (not yet identified) or a different approach to the
+Cloudflare-walled boards (headless browser + real fingerprint), which
+raises its own ToS questions this project has chosen not to pursue.
