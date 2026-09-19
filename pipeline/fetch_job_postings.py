@@ -40,6 +40,12 @@ fetched HTML, not assumed):
     org type, location, and the *full* description (responsibilities,
     requirements, compensation) all inline in the archive page itself --
     no per-posting fetch needed, and by far the richest single source.
+    Its postings have no stable per-posting URL to link to (a single
+    accordion page, no per-item anchor in the markup), so every record's
+    "url" here is the shared listing page; each record instead carries
+    listing_only=True plus a snapshot_path/snapshot_captured_at pointing
+    at a full-page HTML snapshot saved to docs/data/job_snapshots/, so a
+    reader can still verify a posting's exact wording as scraped.
   - DLCC (www.dlcc.org/careers/): its "Work in the States" section lists
     real state-legislative and individual-campaign postings (e.g. "Kevin
     Hertel for State Senate -- Finance Director"), grouped under an <h5>
@@ -76,6 +82,7 @@ from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parent.parent
 STATE_DIR = ROOT / "data" / "processed" / "job_postings"
+SNAPSHOT_DIR = ROOT / "docs" / "data" / "job_snapshots"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
@@ -128,6 +135,23 @@ def _fetch_external_body_text(session: requests.Session, url: str, label: str) -
     except Exception as exc:  # noqa: BLE001 - an unreachable link shouldn't kill the run
         print(f"  [{label}] could not fetch external body text from {url!r}: {exc}", file=sys.stderr)
         return None
+
+
+def _save_snapshot(source: str, html_text: str) -> str:
+    """Save a full-page HTML snapshot for a source whose postings have no
+    stable per-posting URL to link to (currently just RepublicanJobs.gop,
+    a single accordion page with no per-item anchor -- confirmed by
+    inspecting the real markup, which has no id/fragment on each job
+    block). Overwritten on every run, so it always reflects what was most
+    recently scraped, not a full history -- but committed to git under
+    docs/ (so it's servable via GitHub Pages and, unlike the working copy,
+    still recoverable from git history for older runs) rather than
+    data/raw/. Returns the path relative to docs/, for the dashboard JSON
+    to build a link from.
+    """
+    SNAPSHOT_DIR.mkdir(parents=True, exist_ok=True)
+    (SNAPSHOT_DIR / f"{source}.html").write_text(html_text, encoding="utf-8")
+    return f"data/job_snapshots/{source}.html"
 
 
 def _posting_id(source: str, *parts: str) -> str:
@@ -269,6 +293,13 @@ def fetch_republicanjobs(session: requests.Session) -> list[dict]:
     soup = BeautifulSoup(resp.text, "lxml")
 
     today = time.strftime("%Y-%m-%d")
+    # This is a single accordion page with no per-item anchor -- every
+    # posting's "url" above is the same listing page, not a link to that
+    # specific posting. Snapshot the raw HTML so a reader can verify a
+    # posting's exact wording as scraped even after the live page moves on
+    # (postings here rotate as roles are filled).
+    snapshot_path = _save_snapshot("republicanjobs_gop", resp.text)
+
     records = []
     for block in soup.find_all(class_="new_job_opning_block"):
         h4 = block.find("h4")
@@ -301,6 +332,9 @@ def fetch_republicanjobs(session: requests.Session) -> list[dict]:
                 "location": location,
                 "posted_date": None,  # not exposed per-posting on this board
                 "url": url,
+                "listing_only": True,
+                "snapshot_path": snapshot_path,
+                "snapshot_captured_at": today,
                 "body_text": body_text,
                 "tags": tags,
                 "req_id": req_id,

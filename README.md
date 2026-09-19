@@ -195,7 +195,14 @@ are Cloudflare-protected entirely, so postings from that source are
 classified on title only. A posting's fields (including body text)
 refresh on later scrape runs if a previously-unreachable linked domain
 becomes fetchable -- only its first-seen date stays pinned to when it was
-originally found. A dozen-plus other candidate sources (LinkedIn, Indeed,
+originally found. RepublicanJobs.gop is a single accordion page with no
+per-posting URL to link to, so its postings instead link to a full-page
+HTML snapshot (`docs/data/job_snapshots/republicanjobs_gop.html`,
+overwritten each run but recoverable from git history) with a capture
+date, so a posting's exact wording stays verifiable even after the live
+page moves on. The tab's postings table is filterable by free-text search
+(title/org/location/AI-snippet), party, source, and AI-signal tier. A
+dozen-plus other candidate sources (LinkedIn, Indeed,
 DSCC, ZipRecruiter, Arena Careers, GAIN Power's career center, NRCC,
 NRSC, RSLC, Sujata Strategies, Matt Lockshin's Progressive Job Board)
 were investigated and found to be genuine dead ends -- CAPTCHA- or
@@ -423,6 +430,9 @@ docs/                     GitHub Pages site
   data/dashboard.json      aggregated federal data the site reads
   data/dashboard_ma.json   aggregated Massachusetts data (separate file/schema)
   data/dashboard_jobs.json aggregated job-postings data (separate file/schema)
+  data/job_snapshots/      full-page HTML snapshots for sources with no
+                          per-posting URL to link to (committed, overwritten
+                          each run; see the Job Postings tab section above)
 planning/                 scoping docs for signals not yet (or partially)
                           built -- state expansion, job postings, vendor-
                           directory mining

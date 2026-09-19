@@ -420,6 +420,16 @@ tr.row-medium-confidence { background: color-mix(in srgb, var(--series-2) 7%, tr
 .party-pill-nonpartisan, .party-pill-unknown { color: var(--text-muted); }
 .job-snippet { display: block; max-width: 320px; white-space: normal; color: var(--text-secondary); font-size: 0.82rem; font-style: italic; margin-top: 2px; }
 .job-title-cell { max-width: 260px; white-space: normal; }
+.job-snapshot-link { display: block; font-size: 0.78rem; margin-top: 2px; }
+
+.jobs-filter-bar { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 14px; align-items: flex-end; }
+.filter-field { display: flex; flex-direction: column; gap: 4px; font-size: 0.82rem; color: var(--text-secondary); }
+.filter-field-label { font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.02em; }
+.filter-field input[type="text"], .filter-field select {
+  font-size: 0.88rem; color: var(--text-primary); background: var(--surface-1); border: 1px solid var(--border);
+  border-radius: 6px; padding: 6px 10px; min-width: 160px;
+}
+.jobs-filter-bar .filter-clear-btn { align-self: center; margin-left: auto; }
 
 @media (max-width: 640px) {
   .card-grid { grid-template-columns: 1fr; }

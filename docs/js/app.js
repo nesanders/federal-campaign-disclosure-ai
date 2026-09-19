@@ -2170,6 +2170,7 @@
   // DATA or MA_DATA ----
   let JOBS_DATA = null;
   let jobsLoadPromise = null;
+  const jobsFilterState = { q: "", party: "all", source: "all", signal: "all" };
 
   function loadJobsData() {
     if (JOBS_DATA) return Promise.resolve(JOBS_DATA);
@@ -3250,6 +3251,151 @@
     return el("span", { className: "text-muted", text: "—" });
   }
 
+  function jobsAllRows() {
+    return JOBS_DATA.postings.map((p) => Object.assign({}, p, { ai_rank: p.ai_confidence === "title" ? 0 : p.ai_confidence === "skill_mention" ? 1 : 2 }));
+  }
+
+  function jobsFilteredRows() {
+    const s = jobsFilterState;
+    const q = s.q.trim().toLowerCase();
+    return jobsAllRows().filter((r) => {
+      if (s.party !== "all" && (r.party || "Unknown") !== s.party) return false;
+      if (s.source !== "all" && r.source !== s.source) return false;
+      if (s.signal === "title" && r.ai_confidence !== "title") return false;
+      if (s.signal === "skill_mention" && r.ai_confidence !== "skill_mention") return false;
+      if (s.signal === "any" && !r.ai_confidence) return false;
+      if (s.signal === "none" && r.ai_confidence) return false;
+      if (q) {
+        const hay = [r.title, r.org, r.location, r.ai_snippet].filter(Boolean).join(" ").toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+  }
+
+  // Filter controls live outside the table so re-filtering only rebuilds
+  // renderJobsTableSection's own container -- rebuilding the whole view
+  // on every keystroke would drop focus out of the search input.
+  function buildJobsFilterBar(tableContainer, stats) {
+    const bar = el("div", { className: "filter-bar jobs-filter-bar" });
+
+    const searchWrap = el("label", { className: "filter-field" });
+    searchWrap.appendChild(el("span", { className: "filter-field-label", text: "Search" }));
+    const searchInput = el("input", {
+      attrs: { type: "text", placeholder: "Title, org, or location…", value: jobsFilterState.q },
+    });
+    searchInput.addEventListener("input", () => {
+      jobsFilterState.q = searchInput.value;
+      renderJobsTableSection(tableContainer);
+    });
+    searchWrap.appendChild(searchInput);
+    bar.appendChild(searchWrap);
+
+    const partyWrap = el("label", { className: "filter-field" });
+    partyWrap.appendChild(el("span", { className: "filter-field-label", text: "Party" }));
+    const partySel = el("select");
+    partySel.appendChild(el("option", { text: "All parties", attrs: { value: "all" } }));
+    Object.keys(stats.by_party).forEach((p) => partySel.appendChild(el("option", { text: p, attrs: { value: p } })));
+    partySel.value = jobsFilterState.party;
+    partySel.addEventListener("change", () => {
+      jobsFilterState.party = partySel.value;
+      renderJobsTableSection(tableContainer);
+    });
+    partyWrap.appendChild(partySel);
+    bar.appendChild(partyWrap);
+
+    const sourceWrap = el("label", { className: "filter-field" });
+    sourceWrap.appendChild(el("span", { className: "filter-field-label", text: "Source" }));
+    const sourceSel = el("select");
+    sourceSel.appendChild(el("option", { text: "All sources", attrs: { value: "all" } }));
+    Object.keys(stats.by_source).forEach((src) => sourceSel.appendChild(el("option", { text: stats.by_source[src].label, attrs: { value: src } })));
+    sourceSel.value = jobsFilterState.source;
+    sourceSel.addEventListener("change", () => {
+      jobsFilterState.source = sourceSel.value;
+      renderJobsTableSection(tableContainer);
+    });
+    sourceWrap.appendChild(sourceSel);
+    bar.appendChild(sourceWrap);
+
+    const signalWrap = el("label", { className: "filter-field" });
+    signalWrap.appendChild(el("span", { className: "filter-field-label", text: "AI signal" }));
+    const signalSel = el("select");
+    [
+      ["all", "Any"],
+      ["any", "AI-relevant only"],
+      ["title", "AI role title"],
+      ["skill_mention", "AI skill mentioned"],
+      ["none", "No AI signal"],
+    ].forEach(([value, label]) => signalSel.appendChild(el("option", { text: label, attrs: { value } })));
+    signalSel.value = jobsFilterState.signal;
+    signalSel.addEventListener("change", () => {
+      jobsFilterState.signal = signalSel.value;
+      renderJobsTableSection(tableContainer);
+    });
+    signalWrap.appendChild(signalSel);
+    bar.appendChild(signalWrap);
+
+    const clearBtn = el("button", { className: "filter-clear-btn", text: "Clear filters ✕", attrs: { type: "button" } });
+    clearBtn.addEventListener("click", () => {
+      jobsFilterState.q = "";
+      jobsFilterState.party = "all";
+      jobsFilterState.source = "all";
+      jobsFilterState.signal = "all";
+      renderJobsView();
+    });
+    bar.appendChild(clearBtn);
+
+    return bar;
+  }
+
+  function renderJobsTableSection(tableContainer) {
+    tableContainer.innerHTML = "";
+    const allRows = jobsAllRows();
+    const filtered = jobsFilteredRows();
+    const tableRows = sortRows(filtered, sortState.jobs);
+    const headers = withSort(
+      "jobs",
+      [
+        {
+          label: "Title",
+          sortKey: "title",
+          cell: (r) => {
+            const frag = document.createDocumentFragment();
+            const cell = el("span", { className: "job-title-cell" });
+            if (r.listing_only && r.snapshot_path) {
+              cell.appendChild(el("span", { text: r.title || "(untitled)" }));
+              cell.appendChild(
+                el("a", {
+                  className: "entity-link job-snapshot-link",
+                  href: r.snapshot_path,
+                  text: "View source snapshot (captured " + (r.snapshot_captured_at || "?") + ") →",
+                  attrs: { target: "_blank", rel: "noopener" },
+                })
+              );
+            } else if (r.url) {
+              cell.appendChild(el("a", { className: "entity-link", href: r.url, text: r.title || "(untitled)", attrs: { target: "_blank", rel: "noopener" } }));
+            } else {
+              cell.appendChild(document.createTextNode(r.title || "(untitled)"));
+            }
+            if (r.ai_snippet) cell.appendChild(el("span", { className: "job-snippet", text: "“" + r.ai_snippet + "”" }));
+            frag.appendChild(cell);
+            return frag;
+          },
+        },
+        { label: "Org / Campaign", sortKey: "org", render: (r) => r.org || "—" },
+        { label: "Party", sortKey: "party", cell: (r) => partyPill(r.party) },
+        { label: "Source", sortKey: "source_label", render: (r) => r.source_label },
+        { label: "Location", sortKey: "location", render: (r) => r.location || "—" },
+        { label: "AI signal", sortKey: "ai_rank", cell: (r) => jobAiBadge(r) },
+      ],
+      () => renderJobsTableSection(tableContainer)
+    );
+    tableContainer.appendChild(
+      el("p", { className: "note", text: "Showing " + fmtInt.format(filtered.length) + " of " + fmtInt.format(allRows.length) + " postings." })
+    );
+    tableContainer.appendChild(buildTable(headers, tableRows, { sort: sortState.jobs }));
+  }
+
   function renderJobsView() {
     const view = document.getElementById("jobs-view");
     view.innerHTML = "";
@@ -3310,39 +3456,13 @@
       el("p", {
         className: "note",
         text:
-          "Every posting found across all three sources this run, AI-relevant ones sorted first by default. Click through a title to the original listing (or, for DCCC, its linked job-description PDF). The quoted snippet under a title is the exact text that triggered an AI-signal match.",
+          "Every posting found across all sources this run, AI-relevant ones sorted first by default. Click through a title to the original listing (or, for DCCC, its linked job-description PDF). Where a source has no stable link to an individual posting (RepublicanJobs.gop), the title instead links to a snapshot of the full listing page as scraped, with the capture date, so the posting's exact wording stays verifiable after the live page moves on. The quoted snippet under a title is the exact text that triggered an AI-signal match.",
       })
     );
-    const rows = JOBS_DATA.postings.map((p) => Object.assign({}, p, { ai_rank: p.ai_confidence === "title" ? 0 : p.ai_confidence === "skill_mention" ? 1 : 2 }));
-    const tableRows = sortRows(rows, sortState.jobs);
-    const headers = withSort(
-      "jobs",
-      [
-        {
-          label: "Title",
-          sortKey: "title",
-          cell: (r) => {
-            const frag = document.createDocumentFragment();
-            const cell = el("span", { className: "job-title-cell" });
-            if (r.url) {
-              cell.appendChild(el("a", { className: "entity-link", href: r.url, text: r.title || "(untitled)", attrs: { target: "_blank", rel: "noopener" } }));
-            } else {
-              cell.appendChild(document.createTextNode(r.title || "(untitled)"));
-            }
-            if (r.ai_snippet) cell.appendChild(el("span", { className: "job-snippet", text: "“" + r.ai_snippet + "”" }));
-            frag.appendChild(cell);
-            return frag;
-          },
-        },
-        { label: "Org / Campaign", sortKey: "org", render: (r) => r.org || "—" },
-        { label: "Party", sortKey: "party", cell: (r) => partyPill(r.party) },
-        { label: "Source", sortKey: "source_label", render: (r) => r.source_label },
-        { label: "Location", sortKey: "location", render: (r) => r.location || "—" },
-        { label: "AI signal", sortKey: "ai_rank", cell: (r) => jobAiBadge(r) },
-      ],
-      renderJobsView
-    );
-    tableCard.appendChild(buildTable(headers, tableRows, { sort: sortState.jobs }));
+    const tableContainer = el("div", { className: "jobs-table-container" });
+    tableCard.appendChild(buildJobsFilterBar(tableContainer, stats));
+    tableCard.appendChild(tableContainer);
+    renderJobsTableSection(tableContainer);
     view.appendChild(el("div", { className: "card-grid single", children: [tableCard] }));
 
     const sourcesCard = el("div", { className: "card" });

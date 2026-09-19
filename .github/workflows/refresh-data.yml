@@ -63,7 +63,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data/dashboard.json docs/data/dashboard_ma.json docs/data/dashboard_jobs.json data/processed/
+          git add docs/data/dashboard.json docs/data/dashboard_ma.json docs/data/dashboard_jobs.json docs/data/job_snapshots/ data/processed/
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
