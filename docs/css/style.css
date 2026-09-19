@@ -29,6 +29,8 @@
   --fed-accent-soft: #e3edfa;
   --compare-accent:      #1baf7a;
   --compare-accent-soft: #e1f5ee;
+  --jobs-accent:      #c23b7a;
+  --jobs-accent-soft: #fbe7f0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -57,6 +59,8 @@
     --fed-accent-soft: #16233a;
     --compare-accent:      #199e70;
     --compare-accent-soft: #14332a;
+    --jobs-accent:      #d9639a;
+    --jobs-accent-soft: #33202a;
   }
 }
 :root[data-theme="dark"] {
@@ -84,6 +88,8 @@
   --fed-accent-soft: #16233a;
   --compare-accent:      #199e70;
   --compare-accent-soft: #14332a;
+  --jobs-accent:      #d9639a;
+  --jobs-accent-soft: #33202a;
 }
 
 * { box-sizing: border-box; }
@@ -342,6 +348,8 @@ tr.row-medium-confidence { background: color-mix(in srgb, var(--series-2) 7%, tr
 .dataset-tab[data-dataset="ma"].is-active .dataset-tab-title { color: var(--ma-accent); }
 .dataset-tab[data-dataset="compare"].is-active { background: var(--compare-accent-soft); }
 .dataset-tab[data-dataset="compare"].is-active .dataset-tab-title { color: var(--compare-accent); }
+.dataset-tab[data-dataset="jobs"].is-active { background: var(--jobs-accent-soft); }
+.dataset-tab[data-dataset="jobs"].is-active .dataset-tab-title { color: var(--jobs-accent); }
 
 /* Context pill: stamped on every card's title row so which dataset a given
    chart or table belongs to is never ambiguous, even mid-scroll. */
@@ -393,6 +401,25 @@ tr.row-medium-confidence { background: color-mix(in srgb, var(--series-2) 7%, tr
   padding: 0; text-decoration: underline;
 }
 .filter-clear-btn:hover { color: var(--text-primary); }
+
+.jobs-banner {
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  background: var(--jobs-accent-soft); border: 1px solid var(--jobs-accent);
+  border-radius: 10px; padding: 12px 18px; margin-bottom: 28px; font-size: 0.9rem; color: var(--text-secondary);
+}
+.jobs-banner strong { color: var(--jobs-accent); }
+
+/* Job Postings tab: an AI-signal badge (title-level hire vs. a skill
+   mentioned in an otherwise ordinary role's description) and a party pill,
+   both in the postings table. */
+.pill-ai-title { background: var(--jobs-accent); border-color: var(--jobs-accent); color: #fff; }
+.pill-ai-skill { background: var(--surface-1); border: 1px solid var(--jobs-accent); color: var(--jobs-accent); }
+.party-pill { display: inline-block; font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; font-weight: 600; }
+.party-pill-democratic { color: var(--series-1); }
+.party-pill-republican { color: var(--series-8); }
+.party-pill-nonpartisan, .party-pill-unknown { color: var(--text-muted); }
+.job-snippet { display: block; max-width: 320px; white-space: normal; color: var(--text-secondary); font-size: 0.82rem; font-style: italic; margin-top: 2px; }
+.job-title-cell { max-width: 260px; white-space: normal; }
 
 @media (max-width: 640px) {
   .card-grid { grid-template-columns: 1fr; }

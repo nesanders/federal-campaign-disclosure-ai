@@ -53,11 +53,17 @@ jobs:
       - name: Build Massachusetts dashboard dataset
         run: python pipeline/build_dataset_ma.py
 
+      - name: Fetch AI-relevant campaign job postings
+        run: python pipeline/fetch_job_postings.py
+
+      - name: Build job postings dashboard dataset
+        run: python pipeline/build_dataset_jobs.py
+
       - name: Commit updated dataset
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data/dashboard.json docs/data/dashboard_ma.json data/processed/
+          git add docs/data/dashboard.json docs/data/dashboard_ma.json docs/data/dashboard_jobs.json data/processed/
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

@@ -1,5 +1,12 @@
 # Plan: AI-related campaign job postings as a signal
 
+**Status: implemented (2026-09-19).** A live "Job Postings" tab now ships
+on the site, built on this plan's own re-prioritized source order
+(RepublicanJobs.gop, DCCC, Campaigns & Elections). See "Implementation
+notes" at the bottom of this file for what was actually built and how it
+differs from the original plan below, which is otherwise left intact for
+the record.
+
 ## Objective
 
 Every signal the site currently tracks (Federal, Massachusetts, and the
@@ -148,3 +155,52 @@ but not worth prioritizing engineering effort on it first.
 This is still a single-snapshot read, not a trend — the plan's core caveat
 holds: there's no way to backfill history, so whatever scraper gets built
 should start logging now rather than waiting for a "better" moment.
+
+## Implementation notes (2026-09-19)
+
+What actually got built, and where it differs from the plan above:
+
+- **Confidence tiers**, not just a single "AI-titled" flag: `pipeline/lib/
+  job_ai_match.py` classifies each posting as `title` (an AI term in the
+  job title itself) or `skill_mention` (an AI term only in the body/
+  description of an otherwise ordinary role) — the ground-level signal
+  explicitly requested, distinct from AI leadership hiring. First real run
+  found 6 title-level and 18 skill-mention postings out of 168 scraped,
+  including genuine "county organizer"-adjacent examples (a DCCC "Finance
+  Assistant" listing that names Calltime.ai as required call-time
+  software — corroborating that same vendor's spend already tracked on
+  the Federal tab).
+- **Body text availability differs by source**, discovered only by
+  actually fetching real HTML: RepublicanJobs.gop has the full
+  description inline on its one archive page (by far the richest source);
+  DCCC's description is a linked PDF per posting, fetched and
+  text-extracted separately (`pdfminer.six`); Campaigns & Elections'
+  individual job pages are Cloudflare-gated and could not be scraped at
+  all, so that source is title-only, a real and documented data gap, not
+  an oversight.
+- **State storage moved from `data/raw/` to `data/processed/job_postings/`**,
+  a correction to this plan's own original assumption. `data/raw/` is
+  gitignored (by design, for FEC/OCPF's always-redownloadable full dumps),
+  but this feature's append-only merge needs to *survive* between GitHub
+  Actions runs to mean anything, since postings genuinely disappear at the
+  source and a fresh checkout has no memory of them otherwise. The merged
+  JSONL files are committed to git.
+- **New pipeline dependencies**: `beautifulsoup4`, `lxml`, `pdfminer.six`
+  (added to `pipeline/requirements.txt`). Confirmed working in this
+  environment after a local `cryptography`/`cffi` binding conflict was
+  resolved via `pip install --force-reinstall cffi` — worth knowing if a
+  fresh environment hits the same import error.
+- **Frontend**: a fourth dataset tab (`#/jobs`), following the same
+  pattern as Compare — its own accent color, banner, stat tiles, a
+  breakdown-by-source-and-party table, the full sortable postings table
+  (AI-relevant sorted first by default, each title linking to the original
+  listing with the matched snippet shown inline), and methodology/sources/
+  recommended-additional-sources cards. No legacy-vendor toggle or search
+  bar on this tab (neither concept applies to this dataset).
+- **Recommended additional sources** (not yet built, carried into the
+  live tab's own "Recommended additional sources" card so it's visible to
+  readers, not just this plan): NRCC/DSCC/NRSC as direct parallels to
+  DCCC; DLCC/RSLC for state-legislative (more ground-level) postings;
+  state party job boards; Indeed/LinkedIn/ZipRecruiter for broader,
+  noisier reach; individual campaign career pages for the most granular
+  but least scalable source.

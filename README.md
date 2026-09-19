@@ -163,6 +163,44 @@ appears, to undo); every column header carries hover text spelling out
 exactly what that column measures. Respects the same legacy-vendor toggle
 as the other two tabs.
 
+## Job Postings tab
+
+A fourth tab tracks a fundamentally different kind of evidence: not
+disclosed spending, but what campaigns say they're hiring for. Every
+other tab can only see AI use that shows up as a named, billed vendor in
+a disclosure filing -- a staffer using a personal ChatGPT account, or a
+campaign's own decision to invest in AI capability before any tool
+purchase appears in a filing, is invisible to that method entirely. This
+tab scrapes public campaign job boards instead and scans each posting
+for AI-related terms in two tiers: **title-level** (an AI term appears in
+the job title itself, e.g. "AI Director" -- unambiguous evidence of
+hiring specifically for AI capability) and **skill-mention** (the same
+terms appear only in the body of an otherwise ordinary role's
+description, e.g. a field organizer listing asking for "familiarity with
+ChatGPT") -- the ground-level signal, just as significant as a
+leadership hire, and shown separately rather than folded into one count.
+
+Sources (see `pipeline/fetch_job_postings.py`): the DCCC's House Campaign
+Job Board, Campaigns & Elections' jobs archive, and RepublicanJobs.gop.
+Each source's actual data shape differs and is handled accordingly --
+RepublicanJobs.gop has full descriptions inline; DCCC's descriptions are
+linked PDFs, fetched and text-extracted separately; Campaigns &
+Elections' individual job pages are Cloudflare-protected and can't be
+scraped, so postings from that source are classified on title only.
+
+This is a **single-snapshot dataset, not a time series**: job postings
+are removed once filled, so unlike every other dataset on this site there
+is no way to backfill history -- there's no equivalent of "download every
+filing since 2020." Because of that, the underlying scrape
+(`data/processed/job_postings/*.jsonl`, refreshed by the same weekly
+GitHub Actions workflow as everything else) is append-only: each run adds
+newly-seen postings to a running, committed log rather than replacing it,
+so history accumulates from whenever this feature started running. The
+tab's own "Recommended additional sources" card lists what isn't covered
+yet (NRCC/DSCC/NRSC, DLCC/RSLC, state party boards, general job boards,
+individual campaign career pages) for anyone looking to extend it
+further.
+
 ## How it works
 
 ```
@@ -206,9 +244,19 @@ pipeline/fetch_ocpf_filer_party.py   fetches each matched filer's major-party
 pipeline/build_dataset_ma.py         aggregates OCPF matches and writes
                                       docs/data/dashboard_ma.json (a separate
                                       file/schema from the federal dataset)
+pipeline/fetch_job_postings.py       scrapes AI-relevant campaign job postings
+                                      from DCCC, Campaigns & Elections, and
+                                      RepublicanJobs.gop; append-only merges
+                                      into data/processed/job_postings/*.jsonl
+                                      (not data/raw/ -- this state must survive
+                                      between runs, unlike every other fetch)
+pipeline/build_dataset_jobs.py       classifies each posting for AI relevance
+                                      (pipeline/lib/job_ai_match.py) and writes
+                                      docs/data/dashboard_jobs.json
 docs/                                the static site (GitHub Pages source);
-                                      reads docs/data/dashboard.json and
-                                      docs/data/dashboard_ma.json client-side
+                                      reads docs/data/dashboard.json,
+                                      docs/data/dashboard_ma.json, and
+                                      docs/data/dashboard_jobs.json client-side
 ```
 
 Run the whole pipeline locally:
@@ -225,6 +273,8 @@ python pipeline/parse_ocpf.py
 python pipeline/fetch_ocpf_report_dates.py
 python pipeline/fetch_ocpf_filer_party.py
 python pipeline/build_dataset_ma.py
+python pipeline/fetch_job_postings.py
+python pipeline/build_dataset_jobs.py
 ```
 
 `.github/workflows/refresh-data.yml` runs this weekly and commits the updated
@@ -350,8 +400,15 @@ data/processed/           filtered AI-vendor-match CSVs and per-committee/
                           equivalents (not split by cycle), including
                           ocpf_report_dates.csv, ocpf_filer_party.csv, and
                           ocpf_filer_year_totals.csv
+  job_postings/*.jsonl     append-only scraped job postings (committed --
+                          unlike data/raw/, this state must persist between
+                          runs; see the Job Postings tab section above)
 docs/                     GitHub Pages site
   index.html, css/, js/    static dashboard (vanilla JS + a vendored Chart.js build)
   data/dashboard.json      aggregated federal data the site reads
   data/dashboard_ma.json   aggregated Massachusetts data (separate file/schema)
+  data/dashboard_jobs.json aggregated job-postings data (separate file/schema)
+planning/                 scoping docs for signals not yet (or partially)
+                          built -- state expansion, job postings, vendor-
+                          directory mining
 ```
