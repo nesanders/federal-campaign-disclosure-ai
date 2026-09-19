@@ -98,7 +98,8 @@ def _fetch_external_body_text(session: requests.Session, url: str, label: str) -
         resp = session.get(url, headers=HEADERS, timeout=30)
         resp.raise_for_status()
         content_type = resp.headers.get("Content-Type", "")
-        if url.lower().endswith(".pdf") or "application/pdf" in content_type:
+        url_lower = url.lower()
+        if url_lower.endswith(".pdf") or "application/pdf" in content_type:
             tmp_path = STATE_DIR / "_tmp_external.pdf"
             tmp_path.write_bytes(resp.content)
             from pdfminer.high_level import extract_text
@@ -106,6 +107,23 @@ def _fetch_external_body_text(session: requests.Session, url: str, label: str) -
             text = extract_text(str(tmp_path))
             tmp_path.unlink(missing_ok=True)
             return text
+        if url_lower.endswith(".docx") or "wordprocessingml.document" in content_type:
+            import io
+
+            from docx import Document
+
+            doc = Document(io.BytesIO(resp.content))
+            return "\n".join(p.text for p in doc.paragraphs)
+        if "html" not in content_type and not url_lower.endswith((".htm", ".html")):
+            # Anything else (old-style .doc, an octet-stream, some other
+            # binary format we haven't seen yet) can't be reliably
+            # text-extracted -- feeding its raw bytes to BeautifulSoup as
+            # if it were HTML produces decoded-binary garbage that can
+            # spuriously match the AI regex, which is worse than no body
+            # text at all, so this degrades to None exactly like an
+            # unreachable link does.
+            print(f"  [{label}] skipping unrecognized content type {content_type!r} for {url!r}", file=sys.stderr)
+            return None
         return BeautifulSoup(resp.text, "lxml").get_text(" ", strip=True)
     except Exception as exc:  # noqa: BLE001 - an unreachable link shouldn't kill the run
         print(f"  [{label}] could not fetch external body text from {url!r}: {exc}", file=sys.stderr)

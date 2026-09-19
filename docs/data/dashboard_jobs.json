@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-19T18:27:56.030449+00:00",
+    "generated_at": "2026-09-19T18:32:41.692224+00:00",
     "kind": "single_snapshot",
     "sources": [
       "DCCC House Campaign Job Board (dccc.org/campaign-job-board/) -- Democratic, House races only. Titles/org/office/date/location scraped from the listing page; full description scraped from each posting's linked PDF job description.",
@@ -26,14 +26,14 @@
   "stats": {
     "total_postings": 195,
     "ai_title_postings": 6,
-    "ai_skill_mention_postings": 21,
-    "ai_any_postings": 27,
+    "ai_skill_mention_postings": 20,
+    "ai_any_postings": 26,
     "by_source": {
       "dccc": {
         "label": "DCCC House Campaign Job Board",
         "total": 17,
         "ai_title": 0,
-        "ai_skill_mention": 3,
+        "ai_skill_mention": 2,
         "body_text_available": true
       },
       "campaigns_and_elections": {
@@ -76,7 +76,7 @@
       "Democratic": {
         "total": 33,
         "ai_title": 1,
-        "ai_skill_mention": 3
+        "ai_skill_mention": 2
       },
       "Republican": {
         "total": 150,
@@ -218,22 +218,6 @@
       "has_body_text": true,
       "ai_confidence": "skill_mention",
       "ai_snippet": "efforts.  \n\u25cf  Use ActBlue, NGP, Democracy Engine, Calltime.ai and other fundraising management \n\nplatforms to maintain de"
-    },
-    {
-      "id": "6cbd92e8876a0730",
-      "source": "dccc",
-      "source_label": "DCCC House Campaign Job Board",
-      "party": "Democratic",
-      "title": "Finance Director",
-      "org": "Stanton For Congress",
-      "office": "Arizona's 4th Congressional District",
-      "location": "Arizona",
-      "posted_date": "5/19/2026",
-      "url": "https://dccc.org/wp-content/uploads/2026/05/2026-Stanton-For-Congress-Finance-Director.docx",
-      "first_seen": "2026-09-19",
-      "has_body_text": true,
-      "ai_confidence": "skill_mention",
-      "ai_snippet": "&\u0014)\ufffd!\ufffd\ufffd@d\ufffd\ufffd\u0011Y\ufffd\fC\ufffd\ufffd\b\ufffd\u0263\u000f\ufffd\u0017\ufffd\u0002\ufffd\ufffd\ufffd#(*\u001a~\u000e\ufffdU\ufffd\ufffd\u035bEc\u001c\ufffd\u0014u\ufffd7\u001bB\ufffdA\ufffd\ufffd\ufffdvTX\u0005\u0006ai\ufffdz \ufffd\u015f\ufffde\ufffd^\ufffd\ufffd0\ufffd\ub13b\ufffd-\ufffd>\ufffd\ufffd\ufffd\u001b\u0019\ufffdy\u001d\ufffdIg\ufffd\ufffd\ufffd@pdg>\u007f2$s\ufffd\ufffd-\u0012\ufffd\ufffd\ufffd\ufffd\ufffdH\ufffd}N\u000fot\ufffd\ufffdi"
     },
     {
       "id": "69525dd076a15074",
@@ -630,6 +614,22 @@
       "location": "New Jersey",
       "posted_date": "4/2/2026",
       "url": "https://dccc.org/wp-content/uploads/2026/04/2026-Organizer-JD-.docx-1.pdf",
+      "first_seen": "2026-09-19",
+      "has_body_text": true,
+      "ai_confidence": null,
+      "ai_snippet": null
+    },
+    {
+      "id": "6cbd92e8876a0730",
+      "source": "dccc",
+      "source_label": "DCCC House Campaign Job Board",
+      "party": "Democratic",
+      "title": "Finance Director",
+      "org": "Stanton For Congress",
+      "office": "Arizona's 4th Congressional District",
+      "location": "Arizona",
+      "posted_date": "5/19/2026",
+      "url": "https://dccc.org/wp-content/uploads/2026/05/2026-Stanton-For-Congress-Finance-Director.docx",
       "first_seen": "2026-09-19",
       "has_body_text": true,
       "ai_confidence": null,
