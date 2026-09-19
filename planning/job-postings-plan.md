@@ -123,3 +123,28 @@ enough postings to judge feasibility quickly) and load its jobs page to
 confirm (a) it's static HTML vs. JS-rendered, and (b) whether AI-titled
 roles actually appear there in meaningful numbers before investing in a
 scraper.
+
+## Verification results (2026-09-19)
+
+All three domains were safelisted and re-tested live; all three are static
+HTML (no headless-browser dependency needed — good news for effort
+estimate). Actual content changed the priority ranking:
+
+| Domain | Status | What was actually found |
+|---|---|---|
+| `campaignsandelections.com` | ✅ Reachable, static HTML | Only **one** listing visible on `/jobs/` right now: "LLM Developer" at LockedIn AI. This board is thinner than expected in practice — likely because it's an employer-paid posting board with low current volume, not a comprehensive feed. Lower priority than originally ranked. |
+| `dccc.org` | ✅ Reachable, static HTML | 19 real, live postings (field organizers, finance directors, political directors, a digital director — typical campaign-staff roles). **Zero AI-titled roles** in the current listing. Confirms AI-specific hiring isn't yet common in this specific, Democratic-House-race-only source — a real (if early) data point, not a scraping failure. |
+| `www.republicanjobs.gop` | ✅ Reachable, static HTML | **Best yield of the three.** Found a real on-title hit — "Director of Product Development/AI Director" at a political consulting firm — plus a "Social Media Manager" role at an explicitly "AI-Focused 501c3," and multiple other listings citing "AI tool proficiency" as a listed skill. |
+
+**Updated recommendation:** flip the original priority order. Start with
+`republicanjobs.gop`, not Campaigns & Elections — it's the only source of
+the three that actually surfaced an unambiguous AI-titled role in this
+pass. Keep DCCC as a standing bipartisan-balance check (even a "zero found"
+result is worth logging over time, since the interesting story may end up
+being an asymmetry in *when* each party's postings start naming AI roles).
+Campaigns & Elections is real but thin; worth keeping in the source list
+but not worth prioritizing engineering effort on it first.
+
+This is still a single-snapshot read, not a trend — the plan's core caveat
+holds: there's no way to backfill history, so whatever scraper gets built
+should start logging now rather than waiting for a "better" moment.

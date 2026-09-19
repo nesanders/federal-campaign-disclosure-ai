@@ -129,3 +129,20 @@ reconstruct itemized expenditures from).
 Safelist `www.pdc.wa.gov` and `data.wa.gov` (see domain list above) so a
 discovery pass can confirm what Washington's actual data access looks like
 before any fetch/parse code is written.
+
+## Verification results (2026-09-19)
+
+All domains below were safelisted and re-tested live from this container.
+
+| Domain | Status | Finding |
+|---|---|---|
+| `www.pdc.wa.gov` | ✅ Reachable | Confirmed a real "open data" page (`/political-disclosure-reporting-data/open-data`) listing dataset categories — Candidates, Committees, Independent Expenditures, Lobbying Expenditures, Financial Affairs Disclosure, Search Contributions, **Search Expenditures**. No direct CSV/API URL was visible on the page itself; it points to a GitLab wiki, `gitlab.com/wapdc/OpenData-Program/wikis/home` (reachable, `gitlab.com` already allowed), for the real developer documentation — that wiki's actual content needs a follow-up read (a single fetch only returned the page's nav chrome, not the wiki body). **Not yet confirmed whether this is a true bulk export/API or just a nicer search UI** — this is the next concrete step before writing any fetch code. |
+| `data.wa.gov` | ✅ Reachable | Confirmed to be a Socrata-style open-data portal (the standard platform many state/city bulk datasets use, which typically means a documented SODA API is available once the right dataset is found), but the specific PDC/campaign-finance dataset wasn't located in this pass — needs a direct site search on data.wa.gov for "campaign finance" or "PDC". |
+| `cal-access.sos.ca.gov` | ✅ Reachable | Page returned empty/unhelpful content on this pass — but see the finding below, which supersedes this URL. |
+| `www.sos.ca.gov` | ✅ Reachable | **Best finding of this round.** The raw-data page directly links two concrete bulk downloads: `calaccess-documentation.zip` (schema docs) and **`dbwebexport.zip`** — described as raw, transaction-level data ("tab-delimited text files from corresponding tables in the CAL-ACCESS database"), **updated daily**. This is exactly the kind of bulk file this pipeline already knows how to consume. |
+| `campaignfinance.cdn.sos.ca.gov` | ❌ **Blocked, 403** | This is where both zip files above actually live — a *third*, distinct California domain that was not part of the original safelist request and is not yet approved. **This one specific domain is the actual blocker for California** now that the other two are reachable. |
+| `www.ethics.texas.gov` | ⚠️ Reachable, but site returns 401 | The proxy tunnel succeeds (domain is genuinely safelisted and reachable) — but the Texas Ethics Commission's own server is currently returning `401 Unauthorized` with `WWW-Authenticate: Basic realm="Restricted Area"` on **every page tested, including the bare root domain**. This is the target site itself gating access, not a safelist/proxy problem — nothing to add to a domain list fixes this. Could be temporary (maintenance, bot-blocking) — worth a manual re-check later rather than more domain requests. |
+| `data.colorado.gov` | ✅ Reachable | Not yet explored in depth this round. |
+| `tracer.sos.colorado.gov` | ✅ Reachable | Confirmed this is the real Colorado TRACER system (the domain guessed in the original plan was correct). Page references a "Download Data" resource but the exact URL/format wasn't confirmed in this pass. |
+
+**Updated recommendation:** California just became the more promising near-term target, not Washington — `dbwebexport.zip` is a concrete, already-found, daily-updated bulk file, versus Washington's open-data structure still needing one more layer of discovery (the GitLab wiki). **Next step: safelist `campaignfinance.cdn.sos.ca.gov`**, then confirm the zip's actual internal file/table structure (likely needs `calaccess-documentation.zip` read alongside it to map which table holds itemized expenditures with payee name + purpose, analogous to OCPF's `clarifiedName`/`clarifiedPurpose` fields) before writing `fetch_ca.py`.

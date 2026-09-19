@@ -122,3 +122,29 @@ re-scraped on a schedule the way FEC/OCPF data does).
 Safelist all five domains above (they're all read-only reference pages,
 low risk) and do the directory-reading pass — this is the fastest of the
 three plans to actually start producing results.
+
+## Verification results (2026-09-19)
+
+Four of five domains were safelisted and read successfully; the directory
+pass produced real candidate names, cross-checked against the current
+50-entry `vendors.yaml`.
+
+| Domain | Status | Finding |
+|---|---|---|
+| `arena.run` | ✅ Reachable | Confirmed 12 named tools. 10 already in `vendors.yaml` (Quiller, CallTime.AI, Change Agent AI, Daisychain, RivalMind, BattlegroundAI, DonorAtlas, Anthropic/Claude, Perplexity, Descript) — good validation the prior research held up. **Two new candidates: Grow Progress, Notion AI.** |
+| `aconservative.ai` | ✅ Reachable | No new distinctly-AI-branded *product* beyond the site itself. It's built on GoHighLevel (generic SaaS infrastructure, not AI-specific — not a taxonomy candidate on its own). `aconservative.ai` itself is a borderline candidate: real, explicitly AI-branded, but unclear what payee name would actually appear in an FEC/OCPF filing for a service like this — needs a direct corpus search before deciding. |
+| `highergroundlabs.com` | ✅ Reachable | Richest single source — 20 named tools. Most are new to the taxonomy. Highest-confidence new candidates (multiple mentions and/or explicit AI/ML branding in their own description): **Grow Progress** (2nd mention, strong signal), **Change Research** ("custom AI targeting"), **Fathom** (real, known AI meeting-transcription product), **Swayable** (real, known ML-based ad-testing company), **INTRVL** (explicit "machine learning" branding), **New/Mode** (explicit "AI strategist" in its own description). Lower-confidence / needs individual verification: Mobilize, Clipbook, Measure Studio, OpenField, Plural, Unitary, JusticeText — directory mention alone isn't proof of AI branding, matching this plan's own risk note. **Excluded as not viable vendor candidates**: Siri, Google Translate (consumer products a campaign wouldn't pay as a distinct line-item vendor) and generic "Meta programmatic ads" (already out of scope per the existing taxonomy's own hyperscaler/ad-platform exclusion). |
+| `startupcaucus.com` | ✅ Reachable | Homepage highlights only 5 portfolio companies (Campaign Forecast, Trailmapper, Voter Science, Buzz360, Numinar) and **explicitly does not brand any of them as AI** on this page. Buzz360 and Numinar both cross-confirm the candidate names originally surfaced from Tech.GOP research last round — two independent sources now point at the same two names, which raises confidence they're worth checking, but neither source has actually confirmed AI branding yet. A `/portfolio` link exists for the fuller list but wasn't read this pass. |
+| `www.tech.gop` | ❌ **Still blocked** | Returns `502 Bad Gateway` from the proxy — the proxy log records `"gateway answered 502 to CONNECT (policy denial or upstream failure)"`, which is ambiguous between a network-policy block and a genuine failure to reach the host. Bare `tech.gop` (no `www.`) is a clean `403` — only the `www` subdomain appears to have been added, not the apex. **This needs attention on your end**: either the apex domain `tech.gop` also needs adding, or `www.tech.gop` has a real upstream connectivity problem beyond a simple allowlist entry (possibly related to `.gop` being a newer TLD). This was the single most promising GOP-side directory identified last round and is still unverified. |
+
+**Concrete candidate list so far** (pending the corpus-verification step the
+plan already specifies — none of these are added to `vendors.yaml` yet):
+Grow Progress, Notion AI, Change Research, Fathom, Swayable, INTRVL,
+New/Mode, Buzz360, Numinar, and `aconservative.ai` itself as a
+lower-confidence maybe. Next step is checking each against the raw
+`data/raw/fec/` and `data/raw/ocpf/` corpora already on disk (no new
+fetch needed) and researching era/founding-year for any that show a real
+match, per the plan's existing process. Tech.GOP remains the one gap —
+worth a second attempt once the connectivity issue is resolved, since it's
+the directory most likely to surface additional GOP-aligned names the way
+this pass did for the Democratic-aligned side.
