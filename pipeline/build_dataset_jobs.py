@@ -31,6 +31,8 @@ SOURCE_LABELS = {
     "dccc": "DCCC House Campaign Job Board",
     "campaigns_and_elections": "Campaigns & Elections jobs archive",
     "republicanjobs_gop": "RepublicanJobs.gop",
+    "dlcc": "DLCC (Work in the States)",
+    "democracyjobs": "Democracy Jobs",
 }
 
 
@@ -90,8 +92,8 @@ def main() -> None:
         }
 
     by_party = {}
-    for party in ("Democratic", "Republican", "Nonpartisan"):
-        rows = [r for r in out_postings if r["party"] == party]
+    for party in ("Democratic", "Republican", "Nonpartisan", "Unknown"):
+        rows = [r for r in out_postings if (r["party"] or "Unknown") == party]
         if not rows:
             continue
         by_party[party] = {
@@ -108,19 +110,21 @@ def main() -> None:
                 "DCCC House Campaign Job Board (dccc.org/campaign-job-board/) -- Democratic, House races only. Titles/org/office/date/location scraped from the listing page; full description scraped from each posting's linked PDF job description.",
                 "Campaigns & Elections jobs archive (campaignsandelections.com/jobs/) -- bipartisan trade-press board. Title/company/location/political-affiliation tag scraped from the listing page; individual job detail pages are Cloudflare-protected and could not be fetched, so postings from this source are classified on title only, never body text.",
                 "RepublicanJobs.gop (www.republicanjobs.gop/opportunities/) -- Republican-aligned. Title, org type, location, and the full description (responsibilities, requirements, compensation) are all scraped from the single listing page.",
+                "DLCC \"Work in the States\" (dlcc.org/careers/) -- Democratic, state-legislative and individual-campaign races (e.g. \"Kevin Hertel for State Senate -- Finance Director\"), the closest counterpart to RepublicanJobs.gop's ground-level detail on the Democratic side. Title/org/state scraped from the listing page; the linked full descriptions live on other organizations' own sites (actionnetwork.org, state party/campaign pages, jobs.gusto.com) that aren't fetched, so DLCC postings are classified on title only for now.",
+                "Democracy Jobs (democracyjobs.org) -- a general democracy/civic-tech job board, not partisan-tagged and not campaign-specific (skews nonprofit/advocacy roles). Included for additional Democratic-aligned volume; title/org scraped from the listing page, full description fetched from each posting's own detail page on the same domain.",
             ],
             "methodology_notes": [
-                "This is a single-snapshot scrape, not a time series: job postings are removed once filled, so there is no way to reconstruct what was posted last month or last year. Each run of the underlying scraper adds newly-seen postings to a running, append-only log (data/raw/job_postings/*.jsonl) rather than replacing it, so history accumulates from whenever this feature started running -- any chart of postings over time will show a collection-start artifact early on, not a real trend.",
+                "This is a single-snapshot scrape, not a time series: job postings are removed once filled, so there is no way to reconstruct what was posted last month or last year. Each run of the underlying scraper adds newly-seen postings to a running, append-only log (data/processed/job_postings/*.jsonl) rather than replacing it, so history accumulates from whenever this feature started running -- any chart of postings over time will show a collection-start artifact early on, not a real trend.",
                 "A posting is tagged “title” confidence when an AI-related term (“AI”, “ChatGPT”, “LLM”, “machine learning”, “generative AI”, “artificial intelligence”, or a GPT-N model name) appears in the job title itself -- unambiguous evidence a campaign is hiring specifically for AI capability. It's tagged “skill_mention” confidence when the same terms appear only in the body/description of an otherwise ordinary role (e.g. a field organizer listing that asks for “familiarity with ChatGPT”) -- this is the ground-level signal, distinct from AI leadership hiring, and is exactly as significant a finding as the title-level one.",
-                "Body text is not available for every source: Campaigns & Elections' individual job pages are behind Cloudflare bot protection and could not be scraped, so postings from that source can only ever be tagged “title” confidence or nothing at all -- a real absence of skill-mention data for that source, not evidence those postings don't mention AI skills.",
-                "Coverage is intentionally partial and skews toward larger/national-committee-curated races (DCCC only features competitive House races it chooses to list) rather than the full universe of campaign job postings; see \"Recommended additional sources\" for what isn't covered yet.",
+                "Body text is not available for every source: Campaigns & Elections' and DLCC's individual posting pages are either Cloudflare-protected or hosted on other organizations' own sites that this pipeline doesn't fetch, so postings from those two sources can only ever be tagged “title” confidence -- a real absence of skill-mention data for them, not evidence those postings don't mention AI skills.",
+                "Coverage is intentionally partial and skews toward larger/national- or state-committee-curated races (DCCC and DLCC only feature the races they choose to list) rather than the full universe of campaign job postings; see \"Recommended additional sources\" for what isn't covered yet.",
+                "Several broad, high-traffic boards were investigated and found not scrapable with a plain fetch: LinkedIn serves a reCAPTCHA challenge page instead of content; Indeed, DSCC, ZipRecruiter, and Arena Careers all return a Cloudflare bot-block response even though the domain itself is reachable; NRCC's \"campaign jobs\" page is a general resume-submission form with no individual postings to list; RSLC and NRSC don't appear to publish a public jobs page at all; Sujata Strategies' job list is an email-only digest with no public web listing to scrape. These are genuine access limits, not gaps left unaddressed.",
                 "Matching is simple keyword detection, not a curated vendor taxonomy like the rest of this site -- a term match does not distinguish marketing filler (\"AI tools a plus\") from a substantive requirement, though the snippet shown alongside each match lets a reader judge that for themselves.",
             ],
             "recommended_additional_sources": [
-                "NRCC (Republican House campaign committee) and DSCC/NRSC (Senate campaign committees) -- direct parallels to the DCCC board, not yet scraped.",
-                "DLCC (Democratic Legislative Campaign Committee) and RSLC (Republican State Leadership Committee) -- state legislative race job boards, likely to surface more \"county organizer\"-level ground postings than the federal committee boards do.",
-                "Individual state party job boards (e.g. state Democratic/Republican party sites), which often aggregate postings for state and local candidates below what national committees feature.",
-                "Indeed, LinkedIn Jobs, and ZipRecruiter -- much broader reach down to county-organizer-level roles, but general-purpose (not political-specific), noisier to filter, and each has its own API/ToS constraints to work through before scraping at volume.",
+                "actionnetwork.org, state party/campaign sites linked from DLCC postings, and jobs.gusto.com -- would unlock full description text (and skill-mention detection) for DLCC's postings, which are currently title-only.",
+                "GAIN Power's career center (careercenter.gainpower.org) and EMILY's List's job board (jobs.lever.co/emilyslist) -- both real, progressive/Democratic-aligned boards found this round but hosted on domains not yet fetched.",
+                "Individual state party job boards beyond DLCC's own listing, which often aggregate postings for state and local candidates below what national or state committees feature.",
                 "Individual campaign websites' own \"Join our team\" pages -- the most granular and complete source in principle, but not scalable without a maintained list of active campaign career-page URLs.",
             ],
         },

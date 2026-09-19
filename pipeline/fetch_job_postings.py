@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Scrape AI-relevant signal from campaign job postings on three boards:
+"""Scrape AI-relevant signal from campaign job postings on five boards:
 the DCCC's House Campaign Job Board, Campaigns & Elections' jobs archive,
-and RepublicanJobs.gop's opportunities page.
+RepublicanJobs.gop's opportunities page, the DLCC's careers page, and
+Democracy Jobs.
 
 This is a different kind of signal from every other fetch_*.py in this
 pipeline: it isn't itemized disclosure data with a stable historical
@@ -39,6 +40,20 @@ fetched HTML, not assumed):
     org type, location, and the *full* description (responsibilities,
     requirements, compensation) all inline in the archive page itself --
     no per-posting fetch needed, and by far the richest single source.
+  - DLCC (www.dlcc.org/careers/): its "Work in the States" section lists
+    real state-legislative and individual-campaign postings (e.g. "Kevin
+    Hertel for State Senate -- Finance Director"), grouped under an <h5>
+    per state, each linking to a PDF or an external org's own page for
+    the full description. Those linked domains (actionnetwork.org,
+    individual state party/campaign sites, jobs.gusto.com) aren't
+    fetched -- classification here is title-only, same as Campaigns &
+    Elections, until/unless those domains are added.
+  - Democracy Jobs (www.democracyjobs.org): a general democracy/civic-tech
+    job board, title/company/type/location/salary inline via a WordPress
+    job-board plugin, each posting's own page (on the same domain, no
+    extra fetch needed) carries the full description. Skews nonprofit/
+    advocacy rather than campaign-specific -- included for genuine
+    Democratic-aligned volume, not because every posting is a campaign.
 """
 from __future__ import annotations
 
@@ -239,6 +254,108 @@ def fetch_republicanjobs(session: requests.Session) -> list[dict]:
     return records
 
 
+def fetch_dlcc(session: requests.Session) -> list[dict]:
+    url = "https://www.dlcc.org/careers/"
+    resp = session.get(url, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    soup = BeautifulSoup(resp.text, "lxml")
+
+    today = time.strftime("%Y-%m-%d")
+    records = []
+    # "Work in the States" is a series of <h5>State</h5> headings each
+    # immediately followed by a <ul> of postings -- confirmed by reading
+    # the real page source, not assumed. Iterating every <h5> on the page
+    # (rather than trying to scope to one container div, whose class names
+    # are WordPress block-editor boilerplate not worth depending on) and
+    # checking whether a <ul> of links directly follows it is a robust
+    # enough proxy: nothing else on this page has that shape.
+    for h5 in soup.find_all("h5"):
+        state = h5.get_text(strip=True)
+        sib = h5.find_next_sibling()
+        if not sib or sib.name != "ul":
+            continue
+        for li in sib.find_all("li"):
+            link = li.find("a")
+            if not link:
+                continue
+            title_text = link.get_text(strip=True)
+            href = link.get("href")
+            if not title_text:
+                continue
+            # DLCC's own list format is "Org - Title" (an en-dash), same
+            # convention RepublicanJobs.gop uses in its own header text.
+            org, _, title = title_text.partition("–")
+            org = org.strip() or None
+            title = title.strip() or title_text
+            records.append(
+                {
+                    "id": _posting_id("dlcc", state, title_text),
+                    "source": "dlcc",
+                    "party": "Democratic",
+                    "title": title,
+                    "org": org,
+                    "office": None,
+                    "location": state,
+                    "posted_date": None,
+                    "url": href,
+                    # The linked PDFs/pages live on domains this pipeline
+                    # doesn't fetch (actionnetwork.org, individual state
+                    # party/campaign sites, jobs.gusto.com) -- title-only
+                    # classification, same as Campaigns & Elections.
+                    "body_text": None,
+                    "first_seen": today,
+                }
+            )
+    return records
+
+
+def fetch_democracyjobs(session: requests.Session, fetch_details: bool = True) -> list[dict]:
+    url = "https://www.democracyjobs.org/jobs"
+    resp = session.get(url, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    soup = BeautifulSoup(resp.text, "lxml")
+
+    today = time.strftime("%Y-%m-%d")
+    records = []
+    for item in soup.find_all(class_="job-listings-item"):
+        link = item.find(class_="job-details-link")
+        title = link.get_text(strip=True) if link else None
+        href = link.get("href") if link else None
+        if href and href.startswith("/"):
+            href = "https://www.democracyjobs.org" + href
+        info_links = item.find_all(class_="job-info-link-item")
+        org = info_links[0].get_text(strip=True) if info_links else None
+        if not title:
+            continue
+
+        body_text = None
+        if fetch_details and href:
+            try:
+                detail_resp = session.get(href, headers=HEADERS, timeout=30)
+                detail_resp.raise_for_status()
+                detail_soup = BeautifulSoup(detail_resp.text, "lxml")
+                body_text = detail_soup.get_text(" ", strip=True)
+            except Exception as exc:  # noqa: BLE001 - one bad detail page shouldn't kill the run
+                print(f"  [democracyjobs] could not fetch detail for {title!r}: {exc}", file=sys.stderr)
+
+        records.append(
+            {
+                "id": _posting_id("democracyjobs", title, org or ""),
+                "source": "democracyjobs",
+                "party": None,  # general democracy/civic-tech board, not partisan-tagged
+                "title": title,
+                "org": org,
+                "office": None,
+                "location": None,
+                "posted_date": None,
+                "url": href,
+                "body_text": body_text,
+                "first_seen": today,
+            }
+        )
+    return records
+
+
 def main() -> None:
     STATE_DIR.mkdir(parents=True, exist_ok=True)
     session = requests.Session()
@@ -248,6 +365,8 @@ def main() -> None:
         ("dccc", fetch_dccc),
         ("campaigns_and_elections", fetch_campaigns_and_elections),
         ("republicanjobs_gop", fetch_republicanjobs),
+        ("dlcc", fetch_dlcc),
+        ("democracyjobs", fetch_democracyjobs),
     ):
         try:
             records = fetch_fn(session)

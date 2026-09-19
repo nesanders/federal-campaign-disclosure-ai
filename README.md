@@ -181,12 +181,20 @@ ChatGPT") -- the ground-level signal, just as significant as a
 leadership hire, and shown separately rather than folded into one count.
 
 Sources (see `pipeline/fetch_job_postings.py`): the DCCC's House Campaign
-Job Board, Campaigns & Elections' jobs archive, and RepublicanJobs.gop.
-Each source's actual data shape differs and is handled accordingly --
+Job Board, Campaigns & Elections' jobs archive, RepublicanJobs.gop, the
+DLCC's "Work in the States" careers page, and Democracy Jobs. Each
+source's actual data shape differs and is handled accordingly --
 RepublicanJobs.gop has full descriptions inline; DCCC's descriptions are
-linked PDFs, fetched and text-extracted separately; Campaigns &
-Elections' individual job pages are Cloudflare-protected and can't be
-scraped, so postings from that source are classified on title only.
+linked PDFs, fetched and text-extracted separately; Democracy Jobs'
+descriptions live on its own per-posting pages, fetched directly;
+Campaigns & Elections' individual job pages are Cloudflare-protected and
+DLCC's postings link to other organizations' own sites, so postings from
+those two sources are classified on title only. A handful of other
+candidate sources (LinkedIn, Indeed, DSCC, ZipRecruiter, Arena Careers,
+NRCC, NRSC, RSLC, Sujata Strategies) were investigated and found to be
+genuine dead ends -- CAPTCHA/Cloudflare-walled, a resume-collection form
+rather than a job list, or an email-only digest with no public web
+listing -- see `planning/job-postings-plan.md` for the specifics of each.
 
 This is a **single-snapshot dataset, not a time series**: job postings
 are removed once filled, so unlike every other dataset on this site there
@@ -197,9 +205,9 @@ GitHub Actions workflow as everything else) is append-only: each run adds
 newly-seen postings to a running, committed log rather than replacing it,
 so history accumulates from whenever this feature started running. The
 tab's own "Recommended additional sources" card lists what isn't covered
-yet (NRCC/DSCC/NRSC, DLCC/RSLC, state party boards, general job boards,
-individual campaign career pages) for anyone looking to extend it
-further.
+yet (`actionnetwork.org` to unlock DLCC's full description text,
+GAIN Power's and EMILY's List's job boards, individual campaign career
+pages) for anyone looking to extend it further.
 
 ## How it works
 

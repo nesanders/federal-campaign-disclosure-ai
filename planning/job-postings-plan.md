@@ -204,3 +204,71 @@ What actually got built, and where it differs from the plan above:
   state party job boards; Indeed/LinkedIn/ZipRecruiter for broader,
   noisier reach; individual campaign career pages for the most granular
   but least scalable source.
+
+## Round 2 (2026-09-19): chasing the Federal/Democratic imbalance
+
+The user flagged that RepublicanJobs.gop (150 postings) dwarfs every
+Democratic-aligned source (29 total across DCCC, DLCC, and one
+Campaigns & Elections posting) and asked to keep looking, especially for
+campaign-level (not just national-committee-curated) postings. Thirteen
+candidate domains were safelisted and investigated one at a time by
+actually fetching each and reading real HTML, not assuming a common
+shape. Results:
+
+**Added and shipped:**
+- **DLCC "Work in the States"** (`www.dlcc.org/careers/`) — the best find
+  of this round. Real individual-campaign and state-legislative postings
+  ("Kevin Hertel for State Senate -- Finance Director," "Sue Shink for
+  State Senate -- Campaign Manager"), grouped by state under `<h5>`
+  headings, the direct Democratic-side counterpart to RepublicanJobs.gop's
+  ground-level detail. 11 postings on first run. Full descriptions live on
+  other orgs' own sites (`actionnetwork.org` hosts most of them) that
+  aren't fetched yet, so these postings are currently title-only --
+  the single highest-value next domain to add if more signal is wanted
+  from this source specifically.
+- **Democracy Jobs** (`www.democracyjobs.org`) — a general democracy/
+  civic-tech board, not partisan-tagged, skewing nonprofit/advocacy over
+  campaign roles, but real, fully scrapable (including detail-page body
+  text on the same domain), and it already surfaced two genuine
+  skill-mention hits ("Experience leveraging AI-powered tools..." for a
+  Digital Content Manager role). 12 postings on first run.
+
+**Investigated and confirmed as genuine dead ends, not gaps left
+unaddressed:**
+- **LinkedIn** -- serves a Google reCAPTCHA challenge page, not content.
+  Not scrapable without solving a CAPTCHA, which this project won't
+  attempt.
+- **Indeed, DSCC, ZipRecruiter, Arena Careers (careers.arena.run)** -- all
+  four are reachable at the network level but return a Cloudflare
+  bot-block 403 at the origin itself. No amount of domain-safelisting
+  fixes this; it would need a full headless-browser fingerprint, which
+  raises its own ToS questions this project isn't pursuing.
+- **NRCC's "campaign jobs" page** -- turned out to be a general
+  resume-submission form (name, state/position preferences, upload a
+  resume), not a list of individual open postings. Nothing to scrape.
+- **NRSC and RSLC** -- neither appears to publish a public jobs/careers
+  page at all (no matching nav links or content found on either
+  homepage).
+- **Sujata Strategies** -- its "Jobs" page turned out to be a description
+  of an email-digest product (join a mailing list to receive postings),
+  not a public web listing. The postings themselves only ever go out by
+  email, which is out of scope for a web scraper.
+
+**Found but not yet added** (real, promising, but hosted on domains not
+yet safelisted): GAIN Power's actual job board lives on a separate
+subdomain, `careercenter.gainpower.org` (its marketing page at
+`gainpower.org` is not the board itself); EMILY's List runs its board on
+Lever (`jobs.lever.co/emilyslist`) -- Lever is also a shared ATS used by
+many other organizations, so approving `jobs.lever.co` once could unlock
+more than just this one board; Matt Lockshin's Progressive Job Board
+(`mattlockshin.com/job-board`) was found via Social Justice Leadership's
+resource page but not yet fetched.
+
+**Honest takeaway**: after this round, the Republican/Democratic
+imbalance looks like it reflects genuine data availability more than
+uneven effort -- RepublicanJobs.gop is simply a larger, richer single
+board than anything found on the Democratic side so far, even after
+adding DLCC and Democracy Jobs and investigating nine other candidate
+sources. The next real lever for narrowing the gap is `actionnetwork.org`
+(unlocks DLCC body text) and `jobs.lever.co` (EMILY's List, and
+potentially more), not more source-hunting on faith.
