@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Scrape AI-relevant signal from campaign job postings on five boards:
+"""Scrape AI-relevant signal from campaign job postings on six boards:
 the DCCC's House Campaign Job Board, Campaigns & Elections' jobs archive,
-RepublicanJobs.gop's opportunities page, the DLCC's careers page, and
-Democracy Jobs.
+RepublicanJobs.gop's opportunities page, the DLCC's careers page,
+Democracy Jobs, and EMILY's List's Lever-hosted board.
 
 This is a different kind of signal from every other fetch_*.py in this
 pipeline: it isn't itemized disclosure data with a stable historical
@@ -44,16 +44,23 @@ fetched HTML, not assumed):
     real state-legislative and individual-campaign postings (e.g. "Kevin
     Hertel for State Senate -- Finance Director"), grouped under an <h5>
     per state, each linking to a PDF or an external org's own page for
-    the full description. Those linked domains (actionnetwork.org,
-    individual state party/campaign sites, jobs.gusto.com) aren't
-    fetched -- classification here is title-only, same as Campaigns &
-    Elections, until/unless those domains are added.
+    the full description. Most of those linked domains (actionnetwork.org,
+    mainedems.org, vahousedems.org) are now fetched for body text via
+    _fetch_external_body_text(); jobs.gusto.com is Cloudflare-blocked and
+    falls back to title-only for the one posting that links there.
   - Democracy Jobs (www.democracyjobs.org): a general democracy/civic-tech
     job board, title/company/type/location/salary inline via a WordPress
     job-board plugin, each posting's own page (on the same domain, no
     extra fetch needed) carries the full description. Skews nonprofit/
     advocacy rather than campaign-specific -- included for genuine
     Democratic-aligned volume, not because every posting is a campaign.
+  - EMILY's List (jobs.lever.co/emilyslist): a standard Lever board,
+    server-rendered (no headless browser needed), title/type/location
+    inline plus a per-posting detail page on the same domain for the full
+    description. This is EMILY's List's own organizational hiring
+    (development, comms, internships), not a feed of individual campaign
+    postings the way DLCC's page is -- included for the same
+    genuine-volume reason as Democracy Jobs.
 """
 from __future__ import annotations
 
@@ -75,15 +82,52 @@ HEADERS = {
 }
 
 
+def _fetch_external_body_text(session: requests.Session, url: str, label: str) -> str | None:
+    """Best-effort fetch of a linked posting's full text, whether it's a
+    PDF or an ordinary HTML page, for postings whose source only gives a
+    title inline and links out to another organization's own site for the
+    description (e.g. DLCC's "Work in the States"). Not every domain a
+    posting links to is necessarily reachable -- this degrades to None on
+    any failure (timeout, 403, DNS) exactly like fetch_dccc's own PDF
+    fetch already does, rather than letting one unreachable link fail the
+    whole run.
+    """
+    if not url:
+        return None
+    try:
+        resp = session.get(url, headers=HEADERS, timeout=30)
+        resp.raise_for_status()
+        content_type = resp.headers.get("Content-Type", "")
+        if url.lower().endswith(".pdf") or "application/pdf" in content_type:
+            tmp_path = STATE_DIR / "_tmp_external.pdf"
+            tmp_path.write_bytes(resp.content)
+            from pdfminer.high_level import extract_text
+
+            text = extract_text(str(tmp_path))
+            tmp_path.unlink(missing_ok=True)
+            return text
+        return BeautifulSoup(resp.text, "lxml").get_text(" ", strip=True)
+    except Exception as exc:  # noqa: BLE001 - an unreachable link shouldn't kill the run
+        print(f"  [{label}] could not fetch external body text from {url!r}: {exc}", file=sys.stderr)
+        return None
+
+
 def _posting_id(source: str, *parts: str) -> str:
     raw = source + "|" + "|".join(p or "" for p in parts)
     return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:16]
 
 
 def _merge_jsonl(path: Path, new_records: list[dict]) -> int:
-    """Append-only merge keyed by `id` -- existing records are never
-    overwritten (a posting's scraped_at/first-seen date should stay the
-    date it was first found, not reset every run), only new ids are added.
+    """Append-only merge keyed by `id`: a posting already on disk is never
+    *dropped*, even once it's gone from the source (that's the whole
+    point -- postings get removed once filled, and this is the only
+    record that it ever existed). But its fields *do* refresh from this
+    run's copy, with one exception -- first_seen stays pinned to whenever
+    the posting was originally found, not today's date. Without that
+    refresh, a field that starts out empty because a linked domain wasn't
+    reachable yet (e.g. DLCC's body_text, before actionnetwork.org was
+    approved) would stay empty forever even after the domain is added and
+    a later run successfully fetches it.
     """
     existing: dict[str, dict] = {}
     if path.exists():
@@ -96,9 +140,15 @@ def _merge_jsonl(path: Path, new_records: list[dict]) -> int:
                 existing[rec["id"]] = rec
     added = 0
     for rec in new_records:
-        if rec["id"] not in existing:
+        prior = existing.get(rec["id"])
+        if prior is None:
             existing[rec["id"]] = rec
             added += 1
+        else:
+            updated = dict(rec)
+            if prior.get("first_seen"):
+                updated["first_seen"] = prior["first_seen"]
+            existing[rec["id"]] = updated
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         for rec in sorted(existing.values(), key=lambda r: r["id"]):
@@ -126,19 +176,7 @@ def fetch_dccc(session: requests.Session, fetch_pdfs: bool = True) -> list[dict]
         if not title:
             continue
 
-        body_text = None
-        if fetch_pdfs and href and href.lower().endswith(".pdf"):
-            try:
-                pdf_resp = session.get(href, headers=HEADERS, timeout=30)
-                pdf_resp.raise_for_status()
-                tmp_path = STATE_DIR / "_tmp_dccc.pdf"
-                tmp_path.write_bytes(pdf_resp.content)
-                from pdfminer.high_level import extract_text
-
-                body_text = extract_text(str(tmp_path))
-                tmp_path.unlink(missing_ok=True)
-            except Exception as exc:  # noqa: BLE001 - a single bad PDF shouldn't kill the run
-                print(f"  [dccc] could not extract PDF text for {title!r}: {exc}", file=sys.stderr)
+        body_text = _fetch_external_body_text(session, href, "dccc") if fetch_pdfs and href else None
 
         records.append(
             {
@@ -254,7 +292,7 @@ def fetch_republicanjobs(session: requests.Session) -> list[dict]:
     return records
 
 
-def fetch_dlcc(session: requests.Session) -> list[dict]:
+def fetch_dlcc(session: requests.Session, fetch_details: bool = True) -> list[dict]:
     url = "https://www.dlcc.org/careers/"
     resp = session.get(url, headers=HEADERS, timeout=30)
     resp.raise_for_status()
@@ -287,6 +325,13 @@ def fetch_dlcc(session: requests.Session) -> list[dict]:
             org, _, title = title_text.partition("–")
             org = org.strip() or None
             title = title.strip() or title_text
+            # The linked PDFs/pages live on other organizations' own
+            # sites (actionnetwork.org, individual state party/campaign
+            # sites, jobs.gusto.com) -- fetched best-effort; some of
+            # those domains aren't reachable (e.g. jobs.gusto.com is
+            # Cloudflare-blocked), in which case this just falls back to
+            # title-only classification for that one posting.
+            body_text = _fetch_external_body_text(session, href, "dlcc") if fetch_details else None
             records.append(
                 {
                     "id": _posting_id("dlcc", state, title_text),
@@ -298,11 +343,7 @@ def fetch_dlcc(session: requests.Session) -> list[dict]:
                     "location": state,
                     "posted_date": None,
                     "url": href,
-                    # The linked PDFs/pages live on domains this pipeline
-                    # doesn't fetch (actionnetwork.org, individual state
-                    # party/campaign sites, jobs.gusto.com) -- title-only
-                    # classification, same as Campaigns & Elections.
-                    "body_text": None,
+                    "body_text": body_text,
                     "first_seen": today,
                 }
             )
@@ -356,6 +397,49 @@ def fetch_democracyjobs(session: requests.Session, fetch_details: bool = True) -
     return records
 
 
+def fetch_emilyslist(session: requests.Session, fetch_details: bool = True) -> list[dict]:
+    """EMILY's List's own Lever-hosted board -- its own organizational
+    hiring (development/comms/internship roles), not a feed of individual
+    campaign postings the way DLCC's page is. Included for genuine
+    Democratic-aligned volume, same rationale as Democracy Jobs, not
+    because every posting here is a campaign job.
+    """
+    url = "https://jobs.lever.co/emilyslist"
+    resp = session.get(url, headers=HEADERS, timeout=30)
+    resp.raise_for_status()
+    soup = BeautifulSoup(resp.text, "lxml")
+
+    today = time.strftime("%Y-%m-%d")
+    records = []
+    for posting in soup.find_all(class_="posting"):
+        title_el = posting.find(attrs={"data-qa": "posting-name"})
+        title = title_el.get_text(strip=True) if title_el else None
+        link = posting.find(class_="posting-title")
+        href = link.get("href") if link else None
+        cats = [c.get_text(strip=True) for c in posting.find_all(class_="posting-category")]
+        location = next((c for c in cats if c and c not in ("Full Time", "Part Time", "Intern")), None)
+        if not title:
+            continue
+
+        body_text = _fetch_external_body_text(session, href, "emilyslist") if fetch_details and href else None
+        records.append(
+            {
+                "id": _posting_id("emilyslist", title, href or ""),
+                "source": "emilyslist",
+                "party": "Democratic",
+                "title": title,
+                "org": "EMILY's List",
+                "office": None,
+                "location": location,
+                "posted_date": None,
+                "url": href,
+                "body_text": body_text,
+                "first_seen": today,
+            }
+        )
+    return records
+
+
 def main() -> None:
     STATE_DIR.mkdir(parents=True, exist_ok=True)
     session = requests.Session()
@@ -367,6 +451,7 @@ def main() -> None:
         ("republicanjobs_gop", fetch_republicanjobs),
         ("dlcc", fetch_dlcc),
         ("democracyjobs", fetch_democracyjobs),
+        ("emilyslist", fetch_emilyslist),
     ):
         try:
             records = fetch_fn(session)

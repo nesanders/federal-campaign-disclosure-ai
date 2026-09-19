@@ -272,3 +272,54 @@ adding DLCC and Democracy Jobs and investigating nine other candidate
 sources. The next real lever for narrowing the gap is `actionnetwork.org`
 (unlocks DLCC body text) and `jobs.lever.co` (EMILY's List, and
 potentially more), not more source-hunting on faith.
+
+## Round 3 (2026-09-19): actionnetwork.org, Lever, and a real merge bug
+
+The two levers identified at the end of Round 2, plus the domains needed
+to unblock the two leads left dangling there, were safelisted and
+investigated:
+
+- **`actionnetwork.org` + `mainedems.org` + `vahousedems.org`**: all three
+  now reachable, unlocking full description text for 10 of DLCC's 11
+  postings (the 11th links to `jobs.gusto.com`, which -- like GAIN Power's
+  career center, tried again this round -- turned out to be
+  Cloudflare-blocked at the origin, same dead-end pattern as Indeed/DSCC).
+- **`jobs.lever.co`** (EMILY's List): a real, server-rendered Lever board
+  -- no headless browser needed, postings are in the initial HTML. Added
+  as a sixth source. Turned out to be EMILY's List's own organizational
+  hiring (development, comms, internships), not a feed of individual
+  campaign postings -- a modest, honest addition (4 postings), not the
+  breakthrough DLCC was.
+- **`careercenter.gainpower.org`**: confirmed Cloudflare-blocked
+  (`cf-mitigated: challenge`), same as the other bot-walled sources.
+  Dead end, consistent with the first attempt.
+- **`mattlockshin.com`**: the bare domain resolves and redirects to
+  `www.mattlockshin.com`, which wasn't part of what got added -- still
+  unfetched, carried forward in the tab's own "Recommended additional
+  sources" card.
+
+**Found and fixed a real bug while wiring this up**: `_merge_jsonl`'s
+append-only design (never overwrite an existing record, only add new
+ones) was written to protect a posting's history once it disappears from
+the source -- but it was *also* silently preventing any existing
+posting's fields from ever refreshing, including `body_text`. The first
+attempt to backfill DLCC's newly-reachable descriptions produced "0 new"
+every time, because the 11 DLCC postings already existed in the merged
+file from Round 2 with `body_text: null`, and the merge logic kept that
+null forever rather than replacing it with the now-successfully-fetched
+text. Fixed by updating existing records' fields on every run while still
+pinning `first_seen` to its original value -- the only field that
+actually needs append-only permanence. This matters beyond DLCC: any
+future domain addition that unlocks previously-missing body text for an
+*already-seen* posting needs this fix to actually take effect, not just
+new postings going forward.
+
+**Result**: 191 -> 195 postings, 24 -> 27 with AI signal. Democratic
+total 29 -> 33 (DLCC's newly-unlocked body text found one additional
+skill-mention hit; EMILY's List added 4 postings with none AI-relevant).
+The Republican/Democratic gap (150 vs. 33) is now believed to reflect the
+real state of public, scrapable campaign-hiring data rather than
+remaining source-hunting headroom -- the two sources added this round
+were the last concrete leads from Round 2, and this round's new dead
+ends (GAIN Power, Gusto) were already-known Cloudflare/ATS patterns, not
+new categories of blocker.

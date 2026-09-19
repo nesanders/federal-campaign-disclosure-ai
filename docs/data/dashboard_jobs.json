@@ -1,40 +1,40 @@
 {
   "meta": {
-    "generated_at": "2026-09-19T17:56:46.604219+00:00",
+    "generated_at": "2026-09-19T18:04:43.203487+00:00",
     "kind": "single_snapshot",
     "sources": [
       "DCCC House Campaign Job Board (dccc.org/campaign-job-board/) -- Democratic, House races only. Titles/org/office/date/location scraped from the listing page; full description scraped from each posting's linked PDF job description.",
       "Campaigns & Elections jobs archive (campaignsandelections.com/jobs/) -- bipartisan trade-press board. Title/company/location/political-affiliation tag scraped from the listing page; individual job detail pages are Cloudflare-protected and could not be fetched, so postings from this source are classified on title only, never body text.",
       "RepublicanJobs.gop (www.republicanjobs.gop/opportunities/) -- Republican-aligned. Title, org type, location, and the full description (responsibilities, requirements, compensation) are all scraped from the single listing page.",
-      "DLCC \"Work in the States\" (dlcc.org/careers/) -- Democratic, state-legislative and individual-campaign races (e.g. \"Kevin Hertel for State Senate -- Finance Director\"), the closest counterpart to RepublicanJobs.gop's ground-level detail on the Democratic side. Title/org/state scraped from the listing page; the linked full descriptions live on other organizations' own sites (actionnetwork.org, state party/campaign pages, jobs.gusto.com) that aren't fetched, so DLCC postings are classified on title only for now.",
-      "Democracy Jobs (democracyjobs.org) -- a general democracy/civic-tech job board, not partisan-tagged and not campaign-specific (skews nonprofit/advocacy roles). Included for additional Democratic-aligned volume; title/org scraped from the listing page, full description fetched from each posting's own detail page on the same domain."
+      "DLCC \"Work in the States\" (dlcc.org/careers/) -- Democratic, state-legislative and individual-campaign races (e.g. \"Kevin Hertel for State Senate -- Finance Director\"), the closest counterpart to RepublicanJobs.gop's ground-level detail on the Democratic side. Title/org/state scraped from the listing page; full descriptions are fetched from wherever each posting links out to (actionnetwork.org and individual state party/campaign sites are reachable; jobs.gusto.com is Cloudflare-blocked, so the one posting hosted there stays title-only).",
+      "Democracy Jobs (democracyjobs.org) -- a general democracy/civic-tech job board, not partisan-tagged and not campaign-specific (skews nonprofit/advocacy roles). Included for additional Democratic-aligned volume; title/org scraped from the listing page, full description fetched from each posting's own detail page on the same domain.",
+      "EMILY's List (jobs.lever.co/emilyslist) -- a standard Lever board. This is EMILY's List's own organizational hiring (development, comms, internships), not a feed of individual campaign postings; included for the same genuine-volume reason as Democracy Jobs, not because every posting is a campaign job."
     ],
     "methodology_notes": [
-      "This is a single-snapshot scrape, not a time series: job postings are removed once filled, so there is no way to reconstruct what was posted last month or last year. Each run of the underlying scraper adds newly-seen postings to a running, append-only log (data/processed/job_postings/*.jsonl) rather than replacing it, so history accumulates from whenever this feature started running -- any chart of postings over time will show a collection-start artifact early on, not a real trend.",
+      "This is a single-snapshot scrape, not a time series: job postings are removed once filled, so there is no way to reconstruct what was posted last month or last year. Each run of the underlying scraper adds newly-seen postings to a running, append-only log (data/processed/job_postings/*.jsonl) rather than replacing it, so history accumulates from whenever this feature started running -- any chart of postings over time will show a collection-start artifact early on, not a real trend. A posting's fields (including body text) do refresh on later runs if a previously-unreachable linked domain becomes fetchable -- only its first-seen date stays pinned to when it was originally found.",
       "A posting is tagged \u201ctitle\u201d confidence when an AI-related term (\u201cAI\u201d, \u201cChatGPT\u201d, \u201cLLM\u201d, \u201cmachine learning\u201d, \u201cgenerative AI\u201d, \u201cartificial intelligence\u201d, or a GPT-N model name) appears in the job title itself -- unambiguous evidence a campaign is hiring specifically for AI capability. It's tagged \u201cskill_mention\u201d confidence when the same terms appear only in the body/description of an otherwise ordinary role (e.g. a field organizer listing that asks for \u201cfamiliarity with ChatGPT\u201d) -- this is the ground-level signal, distinct from AI leadership hiring, and is exactly as significant a finding as the title-level one.",
-      "Body text is not available for every source: Campaigns & Elections' and DLCC's individual posting pages are either Cloudflare-protected or hosted on other organizations' own sites that this pipeline doesn't fetch, so postings from those two sources can only ever be tagged \u201ctitle\u201d confidence -- a real absence of skill-mention data for them, not evidence those postings don't mention AI skills.",
+      "Body text is not available for every posting: Campaigns & Elections' individual posting pages are Cloudflare-protected, and one DLCC posting links to a Cloudflare-protected ATS (jobs.gusto.com), so those postings can only ever be tagged \u201ctitle\u201d confidence -- a real absence of skill-mention data for them, not evidence they don't mention AI skills.",
       "Coverage is intentionally partial and skews toward larger/national- or state-committee-curated races (DCCC and DLCC only feature the races they choose to list) rather than the full universe of campaign job postings; see \"Recommended additional sources\" for what isn't covered yet.",
-      "Several broad, high-traffic boards were investigated and found not scrapable with a plain fetch: LinkedIn serves a reCAPTCHA challenge page instead of content; Indeed, DSCC, ZipRecruiter, and Arena Careers all return a Cloudflare bot-block response even though the domain itself is reachable; NRCC's \"campaign jobs\" page is a general resume-submission form with no individual postings to list; RSLC and NRSC don't appear to publish a public jobs page at all; Sujata Strategies' job list is an email-only digest with no public web listing to scrape. These are genuine access limits, not gaps left unaddressed.",
+      "Several broad, high-traffic boards were investigated and found not scrapable with a plain fetch: LinkedIn serves a reCAPTCHA challenge page instead of content; Indeed, DSCC, ZipRecruiter, Arena Careers, and GAIN Power's career center all return a Cloudflare bot-block response even though the domain itself is reachable; NRCC's \"campaign jobs\" page is a general resume-submission form with no individual postings to list; RSLC and NRSC don't appear to publish a public jobs page at all; Sujata Strategies' job list is an email-only digest with no public web listing to scrape. These are genuine access limits, not gaps left unaddressed.",
       "Matching is simple keyword detection, not a curated vendor taxonomy like the rest of this site -- a term match does not distinguish marketing filler (\"AI tools a plus\") from a substantive requirement, though the snippet shown alongside each match lets a reader judge that for themselves."
     ],
     "recommended_additional_sources": [
-      "actionnetwork.org, state party/campaign sites linked from DLCC postings, and jobs.gusto.com -- would unlock full description text (and skill-mention detection) for DLCC's postings, which are currently title-only.",
-      "GAIN Power's career center (careercenter.gainpower.org) and EMILY's List's job board (jobs.lever.co/emilyslist) -- both real, progressive/Democratic-aligned boards found this round but hosted on domains not yet fetched.",
+      "Matt Lockshin's Progressive Job Board (mattlockshin.com/job-board) -- a specialized progressive digital-roles board, found via Social Justice Leadership's resource page but not yet fetched (its www subdomain needs its own access, separate from the bare domain).",
       "Individual state party job boards beyond DLCC's own listing, which often aggregate postings for state and local candidates below what national or state committees feature.",
       "Individual campaign websites' own \"Join our team\" pages -- the most granular and complete source in principle, but not scalable without a maintained list of active campaign career-page URLs."
     ]
   },
   "stats": {
-    "total_postings": 191,
+    "total_postings": 195,
     "ai_title_postings": 6,
-    "ai_skill_mention_postings": 20,
-    "ai_any_postings": 26,
+    "ai_skill_mention_postings": 21,
+    "ai_any_postings": 27,
     "by_source": {
       "dccc": {
         "label": "DCCC House Campaign Job Board",
         "total": 17,
         "ai_title": 0,
-        "ai_skill_mention": 2,
+        "ai_skill_mention": 3,
         "body_text_available": true
       },
       "campaigns_and_elections": {
@@ -56,7 +56,7 @@
         "total": 11,
         "ai_title": 0,
         "ai_skill_mention": 0,
-        "body_text_available": false
+        "body_text_available": true
       },
       "democracyjobs": {
         "label": "Democracy Jobs",
@@ -64,13 +64,20 @@
         "ai_title": 0,
         "ai_skill_mention": 2,
         "body_text_available": true
+      },
+      "emilyslist": {
+        "label": "EMILY's List (Lever)",
+        "total": 4,
+        "ai_title": 0,
+        "ai_skill_mention": 0,
+        "body_text_available": true
       }
     },
     "by_party": {
       "Democratic": {
-        "total": 29,
+        "total": 33,
         "ai_title": 1,
-        "ai_skill_mention": 2
+        "ai_skill_mention": 3
       },
       "Republican": {
         "total": 150,
@@ -205,13 +212,29 @@
       "title": "Finance Assistant",
       "org": "Emilia Sykes for Congress",
       "office": "Ohio's 13th Congressional District",
-      "location": "Akron, Ohio",
-      "posted_date": "6/4/2026",
-      "url": "https://dccc.org/wp-content/uploads/2026/06/ESFC-Finance-Assistant-JD.pdf",
+      "location": "Ohio",
+      "posted_date": "4/14/2026",
+      "url": "https://dccc.org/wp-content/uploads/2026/04/ESFC-Finance-Assistant-JD-1.pdf",
       "first_seen": "2026-09-19",
       "has_body_text": true,
       "ai_confidence": "skill_mention",
       "ai_snippet": "efforts.  \n\u25cf  Use ActBlue, NGP, Democracy Engine, Calltime.ai and other fundraising management \n\nplatforms to maintain de"
+    },
+    {
+      "id": "6cbd92e8876a0730",
+      "source": "dccc",
+      "source_label": "DCCC House Campaign Job Board",
+      "party": "Democratic",
+      "title": "Finance Director",
+      "org": "Stanton For Congress",
+      "office": "Arizona's 4th Congressional District",
+      "location": "Arizona",
+      "posted_date": "5/19/2026",
+      "url": "https://dccc.org/wp-content/uploads/2026/05/2026-Stanton-For-Congress-Finance-Director.docx",
+      "first_seen": "2026-09-19",
+      "has_body_text": true,
+      "ai_confidence": "skill_mention",
+      "ai_snippet": "&\u0014)\ufffd!\ufffd\ufffd@d\ufffd\ufffd\u0011Y\ufffd\fC\ufffd\ufffd\b\ufffd\u0263\u000f\ufffd\u0017\ufffd\u0002\ufffd\ufffd\ufffd#(*\u001a~\u000e\ufffdU\ufffd\ufffd\u035bEc\u001c\ufffd\u0014u\ufffd7\u001bB\ufffdA\ufffd\ufffd\ufffdvTX\u0005\u0006ai\ufffdz \ufffd\u015f\ufffde\ufffd^\ufffd\ufffd0\ufffd\ub13b\ufffd-\ufffd>\ufffd\ufffd\ufffd\u001b\u0019\ufffdy\u001d\ufffdIg\ufffd\ufffd\ufffd@pdg>\u007f2$s\ufffd\ufffd-\u0012\ufffd\ufffd\ufffd\ufffd\ufffdH\ufffd}N\u000fot\ufffd\ufffdi"
     },
     {
       "id": "69525dd076a15074",
@@ -509,9 +532,9 @@
       "title": "Area Field Organizer",
       "org": "Emilia Sykes for Congress",
       "office": "Ohio's 13th Congressional District",
-      "location": "Akron, Ohio",
-      "posted_date": "6/4/2026",
-      "url": "https://dccc.org/wp-content/uploads/2026/06/Area-Field-Organizer-Northern-Summit-Akron-Portage.pdf",
+      "location": "Ohio",
+      "posted_date": "4/28/2026",
+      "url": "https://dccc.org/wp-content/uploads/2026/04/Area-Field-Organizer-Northern-Summit-Akron-Portage-1-1.pdf",
       "first_seen": "2026-09-19",
       "has_body_text": true,
       "ai_confidence": null,
@@ -610,22 +633,6 @@
       "url": "https://dccc.org/wp-content/uploads/2026/04/2026-Organizer-JD-.docx-1.pdf",
       "first_seen": "2026-09-19",
       "has_body_text": true,
-      "ai_confidence": null,
-      "ai_snippet": null
-    },
-    {
-      "id": "6cbd92e8876a0730",
-      "source": "dccc",
-      "source_label": "DCCC House Campaign Job Board",
-      "party": "Democratic",
-      "title": "Finance Director",
-      "org": "Stanton For Congress",
-      "office": "Arizona's 4th Congressional District",
-      "location": "Arizona",
-      "posted_date": "5/19/2026",
-      "url": "https://dccc.org/wp-content/uploads/2026/05/2026-Stanton-For-Congress-Finance-Director.docx",
-      "first_seen": "2026-09-19",
-      "has_body_text": false,
       "ai_confidence": null,
       "ai_snippet": null
     },
@@ -913,7 +920,7 @@
       "posted_date": null,
       "url": "https://actionnetwork.org/user_files/user_files/000/141/409/original/sue-shink-for-state-senate-campaign-manager-job-description-2026.pdf",
       "first_seen": "2026-09-19",
-      "has_body_text": false,
+      "has_body_text": true,
       "ai_confidence": null,
       "ai_snippet": null
     },
@@ -929,7 +936,7 @@
       "posted_date": null,
       "url": "https://actionnetwork.org/user_files/user_files/000/140/255/original/district-coordinator-jd-1-3.pdf",
       "first_seen": "2026-09-19",
-      "has_body_text": false,
+      "has_body_text": true,
       "ai_confidence": null,
       "ai_snippet": null
     },
@@ -945,7 +952,7 @@
       "posted_date": null,
       "url": "https://vahousedems.org/virginia-house-democratic-caucus-executive-director/",
       "first_seen": "2026-09-19",
-      "has_body_text": false,
+      "has_body_text": true,
       "ai_confidence": null,
       "ai_snippet": null
     },
@@ -961,7 +968,7 @@
       "posted_date": null,
       "url": "https://actionnetwork.org/user_files/user_files/000/140/661/original/2026-minnesota-senate-dfl-field-organizer-job-description-1-1.pdf",
       "first_seen": "2026-09-19",
-      "has_body_text": false,
+      "has_body_text": true,
       "ai_confidence": null,
       "ai_snippet": null
     },
@@ -993,7 +1000,7 @@
       "posted_date": null,
       "url": "https://mainedems.org/wp-content/uploads/2026/06/MDP-2026-Field-Organizers-JD.pdf",
       "first_seen": "2026-09-19",
-      "has_body_text": false,
+      "has_body_text": true,
       "ai_confidence": null,
       "ai_snippet": null
     },
@@ -1009,7 +1016,7 @@
       "posted_date": null,
       "url": "https://actionnetwork.org/user_files/user_files/000/139/565/original/finance-assistant-description-2026.pdf",
       "first_seen": "2026-09-19",
-      "has_body_text": false,
+      "has_body_text": true,
       "ai_confidence": null,
       "ai_snippet": null
     },
@@ -1025,7 +1032,7 @@
       "posted_date": null,
       "url": "https://actionnetwork.org/user_files/user_files/000/144/834/original/hvf-finance-assistant-2026-job-posting.pdf",
       "first_seen": "2026-09-19",
-      "has_body_text": false,
+      "has_body_text": true,
       "ai_confidence": null,
       "ai_snippet": null
     },
@@ -1041,7 +1048,7 @@
       "posted_date": null,
       "url": "https://actionnetwork.org/user_files/user_files/000/143/738/original/hertel-finance-director-job-description-2026.pdf",
       "first_seen": "2026-09-19",
-      "has_body_text": false,
+      "has_body_text": true,
       "ai_confidence": null,
       "ai_snippet": null
     },
@@ -1057,7 +1064,7 @@
       "posted_date": null,
       "url": "https://actionnetwork.org/user_files/user_files/000/137/542/original/in-district-finance-director-job-description-updated-21026docx.pdf",
       "first_seen": "2026-09-19",
-      "has_body_text": false,
+      "has_body_text": true,
       "ai_confidence": null,
       "ai_snippet": null
     },
@@ -1073,7 +1080,71 @@
       "posted_date": null,
       "url": "https://vahousedems.org/virginia-house-democratic-caucus-policy-and-legislative-director/",
       "first_seen": "2026-09-19",
-      "has_body_text": false,
+      "has_body_text": true,
+      "ai_confidence": null,
+      "ai_snippet": null
+    },
+    {
+      "id": "a1fab37dc7f4ac84",
+      "source": "emilyslist",
+      "source_label": "EMILY's List (Lever)",
+      "party": "Democratic",
+      "title": "EMILYs List Internship - Spring 2027",
+      "org": "EMILY's List",
+      "office": null,
+      "location": "Washington, DC",
+      "posted_date": null,
+      "url": "https://jobs.lever.co/emilyslist/509caa0f-2077-4da2-9fa3-28f01f36660a",
+      "first_seen": "2026-09-19",
+      "has_body_text": true,
+      "ai_confidence": null,
+      "ai_snippet": null
+    },
+    {
+      "id": "aba1976902f95823",
+      "source": "emilyslist",
+      "source_label": "EMILY's List (Lever)",
+      "party": "Democratic",
+      "title": "EMILYs List Job Bank",
+      "org": "EMILY's List",
+      "office": null,
+      "location": "Various Campaign Locations",
+      "posted_date": null,
+      "url": "https://jobs.lever.co/emilyslist/20f401e2-c387-4840-b521-0e10319e4f85",
+      "first_seen": "2026-09-19",
+      "has_body_text": true,
+      "ai_confidence": null,
+      "ai_snippet": null
+    },
+    {
+      "id": "ccf49fb56a39deeb",
+      "source": "emilyslist",
+      "source_label": "EMILY's List (Lever)",
+      "party": "Democratic",
+      "title": "General Interest Application",
+      "org": "EMILY's List",
+      "office": null,
+      "location": "Washington, DC",
+      "posted_date": null,
+      "url": "https://jobs.lever.co/emilyslist/a2ce7c65-260f-4a57-88f6-0654df1b4664",
+      "first_seen": "2026-09-19",
+      "has_body_text": true,
+      "ai_confidence": null,
+      "ai_snippet": null
+    },
+    {
+      "id": "73922ec82b8e7ba1",
+      "source": "emilyslist",
+      "source_label": "EMILY's List (Lever)",
+      "party": "Democratic",
+      "title": "Major Gifts Assistant",
+      "org": "EMILY's List",
+      "office": null,
+      "location": "Washington, DC",
+      "posted_date": null,
+      "url": "https://jobs.lever.co/emilyslist/d7d91a73-d92a-40e7-b463-33ab3f3f8bee",
+      "first_seen": "2026-09-19",
+      "has_body_text": true,
       "ai_confidence": null,
       "ai_snippet": null
     },

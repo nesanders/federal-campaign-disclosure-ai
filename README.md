@@ -182,17 +182,23 @@ leadership hire, and shown separately rather than folded into one count.
 
 Sources (see `pipeline/fetch_job_postings.py`): the DCCC's House Campaign
 Job Board, Campaigns & Elections' jobs archive, RepublicanJobs.gop, the
-DLCC's "Work in the States" careers page, and Democracy Jobs. Each
-source's actual data shape differs and is handled accordingly --
-RepublicanJobs.gop has full descriptions inline; DCCC's descriptions are
-linked PDFs, fetched and text-extracted separately; Democracy Jobs'
-descriptions live on its own per-posting pages, fetched directly;
-Campaigns & Elections' individual job pages are Cloudflare-protected and
-DLCC's postings link to other organizations' own sites, so postings from
-those two sources are classified on title only. A handful of other
-candidate sources (LinkedIn, Indeed, DSCC, ZipRecruiter, Arena Careers,
-NRCC, NRSC, RSLC, Sujata Strategies) were investigated and found to be
-genuine dead ends -- CAPTCHA/Cloudflare-walled, a resume-collection form
+DLCC's "Work in the States" careers page, Democracy Jobs, and EMILY's
+List's Lever-hosted board. Each source's actual data shape differs and is
+handled accordingly -- RepublicanJobs.gop has full descriptions inline;
+DCCC's descriptions are linked PDFs, fetched and text-extracted
+separately; Democracy Jobs and EMILY's List have their own per-posting
+detail pages, fetched directly; DLCC's postings link out to other
+organizations' own sites (actionnetwork.org and individual state party
+pages are fetched; a Cloudflare-blocked ATS one posting links to is not)
+for their full descriptions. Campaigns & Elections' individual job pages
+are Cloudflare-protected entirely, so postings from that source are
+classified on title only. A posting's fields (including body text)
+refresh on later scrape runs if a previously-unreachable linked domain
+becomes fetchable -- only its first-seen date stays pinned to when it was
+originally found. A dozen other candidate sources (LinkedIn, Indeed,
+DSCC, ZipRecruiter, Arena Careers, GAIN Power's career center, NRCC,
+NRSC, RSLC, Sujata Strategies) were investigated and found to be genuine
+dead ends -- CAPTCHA- or Cloudflare-walled, a resume-collection form
 rather than a job list, or an email-only digest with no public web
 listing -- see `planning/job-postings-plan.md` for the specifics of each.
 
