@@ -399,3 +399,51 @@ for a careers/jobs/"join our team" link before attempting to scrape
 anything, and only build a per-site scraper for ones that actually have
 listings (there is no common platform/structure to assume across 167
 independent campaign sites the way there was for the aggregators).
+
+**Domain rounds and dead ends found while checking**: the 166 usable
+domains (167 minus `lawhelpak.com`, a Ballotpedia data error -- see
+below) were safelisted in two rounds. The first batch surfaced the same
+"www vs. bare-domain redirect target not separately approved" pattern
+seen throughout this project -- 20 sites needed their alternate form
+added. Homepage-scanning those sites for a careers/jobs nav link also
+found `apply.workable.com` (used by at least two Senate candidates, Jon
+Ossoff and James Talarico) as a second-round addition. One roster entry
+was a genuine data error, not a site issue: Ballotpedia's own
+"Campaign website" link for perennial write-in candidate Dustin Darden
+(AK Senate) points to `lawhelpak.com`, a legal-aid nonprofit unrelated
+to his candidacy -- dropped rather than requested as a domain.
+
+An earlier, exploratory pass (a looser keyword regex against every
+link's full text and href, not just nav-style labels) had flagged 16
+candidates with a "career-like link" -- almost all false positives on
+inspection: economic-policy pages that happen to say "jobs" ("Bring
+Good-Paying Jobs to Southern Arizona"), not a hiring page at all. The
+production scraper's link-matching was tightened to nav-style labels
+only (`CAREER_NAV_RE`/`CAREER_HREF_RE` -- "Careers", "Jobs", "Current
+Openings," or a `/careers/`-style URL path), which found 9 candidates
+with a real careers/jobs link. Of those: Roy Cooper's Lever board
+(`jobs.lever.co/roy-cooper`) is real but currently has zero open
+postings; Jon Ossoff's and James Talarico's Workable boards couldn't be
+read (see the "known gap" note above); Graham Platner's "Careers" page
+is a real nav link to an empty stub with no content; Abdul El-Sayed's
+"Jobs" page is a generic "submit your resume, we'll keep you posted"
+intake form, not an open listing (initially misclassified as real by
+an early version of the content-indicator check, since its role-type
+dropdown menu contained the words "Full-time" and "Part-time" -- fixed
+by requiring either a strong, posting-specific phrase ("Reports to:",
+"Responsibilities") or several weak indicators together, plus a hard
+veto on intake-form language like "keep you in the loop"). Only **one**
+of the 166 sites -- Maura Sullivan (D, NH-01) -- had an actual open,
+individually-written posting: a Regional Organizing Director role, no
+AI-related terms in the text.
+
+**Result**: 195 -> 196 postings; named-candidate-committee postings
+19 -> 20. A single new posting from 166 targeted candidate sites is a
+real, if modest, result -- it confirms the structural read from before
+this round's research (most individual campaigns do not run a public
+job board at all) rather than reflecting a gap in this round's own
+search. Every campaign-site posting gets a durable HTML snapshot saved
+to `docs/data/job_snapshots/campaign_sites/` (committed, alongside its
+live URL) since, unlike DCCC or RepublicanJobs.gop, a single candidate's
+website has no institutional permanence and can vanish entirely once a
+race ends.

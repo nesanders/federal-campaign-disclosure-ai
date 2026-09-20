@@ -182,16 +182,17 @@ leadership hire, and shown separately rather than folded into one count.
 
 Sources (see `pipeline/fetch_job_postings.py`): the DCCC's House Campaign
 Job Board, Campaigns & Elections' jobs archive, RepublicanJobs.gop, the
-DLCC's "Work in the States" careers page, Democracy Jobs, and EMILY's
-List's Lever-hosted board. Each source's actual data shape differs and is
-handled accordingly -- RepublicanJobs.gop has full descriptions inline;
-DCCC's descriptions are linked PDFs, fetched and text-extracted
-separately; Democracy Jobs and EMILY's List have their own per-posting
-detail pages, fetched directly; DLCC's postings link out to other
-organizations' own sites (actionnetwork.org and individual state party
-pages are fetched; a Cloudflare-blocked ATS one posting links to is not)
-for their full descriptions. Campaigns & Elections' individual job pages
-are Cloudflare-protected entirely, so postings from that source are
+DLCC's "Work in the States" careers page, Democracy Jobs, EMILY's List's
+Lever-hosted board, and a targeted sweep of individual campaign sites for
+this cycle's competitive House/Senate races. Each source's actual data
+shape differs and is handled accordingly -- RepublicanJobs.gop has full
+descriptions inline; DCCC's descriptions are linked PDFs, fetched and
+text-extracted separately; Democracy Jobs and EMILY's List have their own
+per-posting detail pages, fetched directly; DLCC's postings link out to
+other organizations' own sites (actionnetwork.org and individual state
+party pages are fetched; a Cloudflare-blocked ATS one posting links to is
+not) for their full descriptions. Campaigns & Elections' individual job
+pages are Cloudflare-protected entirely, so postings from that source are
 classified on title only. A posting's fields (including body text)
 refresh on later scrape runs if a previously-unreachable linked domain
 becomes fetchable -- only its first-seen date stays pinned to when it was
@@ -210,6 +211,30 @@ Cloudflare-walled, a resume-collection form rather than a job list, or an
 email-only digest / newsletter-signup page with no public web
 listing -- see `planning/job-postings-plan.md` for the specifics of each.
 
+**Individual campaign sites**: prompted by an entity-type breakdown
+(`classify_entity_type()` in `pipeline/build_dataset_jobs.py`, shown as
+its own table on the tab) showing that most postings from the other
+sources aren't actually tied to a named candidate -- RepublicanJobs.gop
+in particular anonymizes every employer to a generic category with no
+candidate, committee, or organization name attached to any of its 150
+postings. `pipeline/config/battleground_candidates_2026.json` (built
+from Ballotpedia's current House/Senate battleground lists -- see
+`planning/job-postings-plan.md`'s Round 5 for the methodology) lists 166
+major-party candidates in this cycle's competitive races with a campaign
+website on file. Each one's homepage is checked for a careers/jobs link;
+a Lever-hosted board reuses the same parser as EMILY's List, and a custom
+page is kept only if its own text reads like a real posting (not a nav
+stub or a "submit your resume for later" intake form). Because a single
+candidate's site has no institutional permanence -- it can vanish
+entirely once a race ends -- every posting found this way gets its own
+durable HTML snapshot saved to `docs/data/job_snapshots/campaign_sites/`
+alongside its live URL. Workable-hosted boards (used by at least two
+Senate candidates) are a known, documented gap: their pages are a
+JS-rendered single-page app with no content in a plain fetch, and even
+Workable's own `llms.txt` endpoint -- meant for exactly this kind of
+machine access -- returned a persistent Cloudflare rate-limit from this
+pipeline's IP.
+
 This is a **single-snapshot dataset, not a time series**: job postings
 are removed once filled, so unlike every other dataset on this site there
 is no way to backfill history -- there's no equivalent of "download every
@@ -219,9 +244,7 @@ GitHub Actions workflow as everything else) is append-only: each run adds
 newly-seen postings to a running, committed log rather than replacing it,
 so history accumulates from whenever this feature started running. The
 tab's own "Recommended additional sources" card lists what isn't covered
-yet (`actionnetwork.org` to unlock DLCC's full description text,
-GAIN Power's and EMILY's List's job boards, individual campaign career
-pages) for anyone looking to extend it further.
+yet for anyone looking to extend it further.
 
 ## How it works
 
@@ -414,6 +437,10 @@ stays current as new filings land.
 ```
 pipeline/                 the data pipeline (Python)
   config/vendors.yaml      AI vendor + use-case taxonomy, with sourcing notes
+  config/battleground_candidates_2026.json
+                          roster of competitive-race candidates + campaign
+                          website domains for the campaign_sites job-postings
+                          source (see the Job Postings tab section above)
   lib/                     shared helpers (FEC schema, vendor matching, reference data)
 data/raw/                 downloaded FEC/legislators source files (gitignored, large)
 data/processed/           filtered AI-vendor-match CSVs and per-committee/
@@ -433,6 +460,10 @@ docs/                     GitHub Pages site
   data/job_snapshots/      full-page HTML snapshots for sources with no
                           per-posting URL to link to (committed, overwritten
                           each run; see the Job Postings tab section above)
+  data/job_snapshots/campaign_sites/
+                          durable per-candidate snapshots for postings found
+                          on individual campaign sites, which (unlike every
+                          other source) have no institutional permanence
 planning/                 scoping docs for signals not yet (or partially)
                           built -- state expansion, job postings, vendor-
                           directory mining
