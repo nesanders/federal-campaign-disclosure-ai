@@ -578,7 +578,7 @@ def main() -> None:
     top_committees = top_committees_table(high_ex_legacy)
     top_committees_all_eras = top_committees_table(high)
 
-    openai_2026_candidates = candidate_2026[candidate_2026["vendor_id"] == "openai"]["cand_id"].nunique()
+    all_vendor_2026_candidates = candidate_2026["cand_id"].nunique()
 
     # --- entity leaderboard: one row per (cycle, candidate-or-committee) ---
     # Two-pass so a candidate with more than one linked committee isn't
@@ -1119,7 +1119,7 @@ def main() -> None:
         "matched_row_counts_by_cycle": row_counts,
         "ie_matched_row_counts_by_cycle": ie_row_counts,
         "pce_matched_row_counts_by_cycle": pce_row_counts,
-        "openai_high_confidence_house_senate_candidates_2026": int(openai_2026_candidates),
+        "ai_vendor_high_confidence_house_senate_candidates_2026": int(all_vendor_2026_candidates),
         "methodology_notes": [
             "Vendor matches are text matches against payee name, disbursement purpose, category description, and memo text -- not a review of underlying documents. See config/vendors.yaml for the full pattern list and its provenance.",
             "'High confidence' matches use unambiguous vendor/product names (e.g. 'OpenAI', 'ChatGPT', 'Quiller'). 'Medium confidence' matches use ambiguous words (e.g. 'Gemini', 'Copilot', 'Grok', 'Claude') that also have common non-AI meanings; these are shown only in the vendor landscape view and excluded from the party/incumbency/chamber/age/use-case/time-series breakdowns.",

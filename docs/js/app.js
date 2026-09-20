@@ -437,7 +437,7 @@
       { label: "AI vendors identified in disclosures", value: fmtInt.format(shownVendors.length), sub: nGeneral + " general-purpose · " + nPolitical + " campaign-specific" + (includeLegacy ? "" : " · " + nLegacyHidden + " legacy vendors hidden") },
       { label: "AI-related disbursement records found", value: fmtInt.format(totalMatchedRows), sub: "across " + meta.cycles.join(", ") + " cycles, all confidence tiers, all eras" },
       { label: "Total high-confidence AI spending", value: fmtUSD0.format(totalHighAmount), sub: (includeLegacy ? "all vendors" : "generative-era vendors only") + ", all committees, all cycles" },
-      { label: "2026 House/Senate candidates paying OpenAI", value: fmtInt.format(meta.openai_high_confidence_house_senate_candidates_2026), sub: "high-confidence text match to OpenAI/ChatGPT in payee name, purpose, or memo" },
+      { label: "2026 House/Senate candidates using any AI vendor", value: fmtInt.format(meta.ai_vendor_high_confidence_house_senate_candidates_2026), sub: "high-confidence text match to any vendor in the taxonomy, payee name, purpose, or memo" },
     ];
 
     const row = document.getElementById("stat-row");

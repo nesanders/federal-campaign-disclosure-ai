@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-18T15:14:18.614408Z",
+    "generated_at": "2026-09-20T23:36:24.007607Z",
     "cycles": [
       2020,
       2022,
@@ -35,7 +35,7 @@
       "2024": 0,
       "2026": 0
     },
-    "openai_high_confidence_house_senate_candidates_2026": 44,
+    "ai_vendor_high_confidence_house_senate_candidates_2026": 200,
     "methodology_notes": [
       "Vendor matches are text matches against payee name, disbursement purpose, category description, and memo text -- not a review of underlying documents. See config/vendors.yaml for the full pattern list and its provenance.",
       "'High confidence' matches use unambiguous vendor/product names (e.g. 'OpenAI', 'ChatGPT', 'Quiller'). 'Medium confidence' matches use ambiguous words (e.g. 'Gemini', 'Copilot', 'Grok', 'Claude') that also have common non-AI meanings; these are shown only in the vendor landscape view and excluded from the party/incumbency/chamber/age/use-case/time-series breakdowns.",
