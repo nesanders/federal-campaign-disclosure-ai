@@ -32,6 +32,8 @@
   --co-accent-soft: #f7ecdf;
   --ca-accent:      #a3315a;
   --ca-accent-soft: #f8e6ee;
+  --states-accent:      #4338ca;
+  --states-accent-soft: #ece9fc;
   --fed-accent-soft: #e3edfa;
   --compare-accent:      #1baf7a;
   --compare-accent-soft: #e1f5ee;
@@ -66,6 +68,8 @@
     --co-accent-soft: #3a2a14;
     --ca-accent:      #e18aab;
     --ca-accent-soft: #3a1f2a;
+    --states-accent:      #a5b4fc;
+    --states-accent-soft: #262454;
     --fed-accent-soft: #16233a;
     --compare-accent:      #199e70;
     --compare-accent-soft: #14332a;
@@ -99,6 +103,8 @@
   --co-accent-soft: #3a2a14;
   --ca-accent:      #e18aab;
   --ca-accent-soft: #3a1f2a;
+  --states-accent:      #a5b4fc;
+  --states-accent-soft: #262454;
   --fed-accent-soft: #16233a;
   --compare-accent:      #199e70;
   --compare-accent-soft: #14332a;

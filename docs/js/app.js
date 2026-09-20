@@ -380,6 +380,7 @@
       // a different state's cached data, if any, has nothing to re-render.)
       if (STATE_IDS.indexOf(currentDataset) !== -1 && STATE_DATA[currentDataset]) renderStateView(currentDataset);
       if (currentDataset === "compare" && STATE_DATA.ma) renderCompareView();
+      if (currentDataset === "states" && STATES_DATA) renderStatesView();
     });
   }
 
@@ -1440,6 +1441,9 @@
   const COMPARE_TITLE = "AI Vendors: Federal vs. Massachusetts";
   const COMPARE_SUBTITLE_1 =
     "Every AI vendor found on either the Federal or Massachusetts tab, side by side: what each is disclosed to have spent on federal House/Senate races vs. Massachusetts state races, combined spend volume, and a recent-momentum signal — plus what campaigns actually use each tool for.";
+  const STATES_TITLE = "AI Use in State Campaign Disclosures, Combined";
+  const STATES_SUBTITLE_1 =
+    "Every state this site covers — Massachusetts, Washington, Colorado, and California — unioned into one view: combined AI-vendor spend by vendor, a combined year-over-year trend, and a state-by-state leaderboard. Every figure here is a real sum of each state's own disclosed records, not an estimate (for a population-scaled national projection built from these same four states, see the Compare tab).";
 
   // One entry per state tab. Each state's dashboard JSON is built by its
   // own pipeline (build_dataset_ma.py, or the shared
@@ -1531,7 +1535,7 @@
     const stateCfg = STATE_CONFIG_BY_ID[tab];
     if (stateCfg) {
       sub.innerHTML = stateCfg.legacyToggleSub;
-    } else if (tab === "compare") {
+    } else if (tab === "compare" || tab === "states") {
       sub.innerHTML =
         "Off by default: companies founded before generative AI existed but still branded “AI” (e.g. Amplify.ai, Grammarly, Otter.ai) are excluded from the table below by default.";
     } else {
@@ -1545,7 +1549,8 @@
     const stateCfg = STATE_CONFIG_BY_ID[tab];
     const isState = !!stateCfg;
     const isCompare = tab === "compare";
-    const isOffMain = isState || isCompare;
+    const isStatesCombined = tab === "states";
+    const isOffMain = isState || isCompare || isStatesCombined;
     updateLegacyToggleText(tab);
 
     document.body.setAttribute("data-active-dataset", tab);
@@ -1561,20 +1566,22 @@
     footerState.hidden = !isState;
     if (isState) footerState.textContent = stateCfg.footerSource;
     document.getElementById("footer-source-compare").hidden = !isCompare;
+    document.getElementById("footer-source-states").hidden = !isStatesCombined;
 
-    document.title = isState ? stateCfg.title : isCompare ? COMPARE_TITLE : FEDERAL_TITLE;
-    document.getElementById("page-h1").textContent = isState ? stateCfg.title : isCompare ? COMPARE_TITLE : FEDERAL_TITLE;
-    document.getElementById("page-subtitle-1").textContent = isState ? stateCfg.subtitle1 : isCompare ? COMPARE_SUBTITLE_1 : FEDERAL_SUBTITLE_1;
+    document.title = isState ? stateCfg.title : isCompare ? COMPARE_TITLE : isStatesCombined ? STATES_TITLE : FEDERAL_TITLE;
+    document.getElementById("page-h1").textContent = isState ? stateCfg.title : isCompare ? COMPARE_TITLE : isStatesCombined ? STATES_TITLE : FEDERAL_TITLE;
+    document.getElementById("page-subtitle-1").textContent = isState ? stateCfg.subtitle1 : isCompare ? COMPARE_SUBTITLE_1 : isStatesCombined ? STATES_SUBTITLE_1 : FEDERAL_SUBTITLE_1;
     document.getElementById("page-subtitle-2").hidden = isOffMain;
 
     // The search bar covers Federal and each state's candidates/vendors
     // (see runSearch(), which picks searchIndex vs. stateSearchIndex off
-    // currentDataset); the Compare tab has no entity pages of its own (it
-    // only links out to Federal/Massachusetts vendor pages), so it's
-    // simplest to hide the bar there rather than pick one dataset's index
-    // for it.
-    document.getElementById("search-bar-wrap").hidden = isCompare;
-    if (!isCompare) {
+    // currentDataset); Compare and the combined States tab have no entity
+    // pages of their own (they only link out to Federal/state vendor
+    // pages), so it's simplest to hide the bar there rather than pick one
+    // dataset's index for it.
+    const hideSearch = isCompare || isStatesCombined;
+    document.getElementById("search-bar-wrap").hidden = hideSearch;
+    if (!hideSearch) {
       const raceChip = document.querySelector('.search-filter-chips .chip[data-filter="race"]');
       if (raceChip) raceChip.hidden = isState;
       document.getElementById("global-search-input").placeholder = isState ? "Search candidates, vendors…" : "Search candidates, vendors, races…";
@@ -1591,6 +1598,7 @@
     document.getElementById("state-view").hidden = !isState;
     document.getElementById("state-detail-view").hidden = true;
     document.getElementById("compare-view").hidden = !isCompare;
+    document.getElementById("states-view").hidden = !isStatesCombined;
 
     if (isState) {
       document.getElementById("meta-line").textContent = STATE_DATA[tab] ? metaLineTextState(tab) : "Loading " + stateCfg.label + " dataset…";
@@ -1607,6 +1615,10 @@
         view.appendChild(el("p", { className: "lede", text: "Loading Massachusetts dataset…" }));
         ensureCompareData();
       }
+    } else if (isStatesCombined) {
+      document.getElementById("meta-line").textContent = STATES_DATA ? metaLineTextStates() : "Loading combined states dataset…";
+      window.scrollTo(0, 0);
+      ensureStatesData();
     } else {
       document.getElementById("meta-line").textContent = metaLineTextFederal();
     }
@@ -2296,6 +2308,57 @@
         view.innerHTML = "";
         view.appendChild(el("p", { className: "lede", text: "Could not load Massachusetts dataset (" + err.message + ")." }));
       });
+  }
+
+  // Combined multi-state tab (see pipeline/build_dataset_states.py): a
+  // real union of the four covered states' own disclosed records, not an
+  // estimate -- a single self-contained dataset (docs/data/dashboard_states.json)
+  // rather than four separate fetches, since the build step already did
+  // the combining server-side.
+  let STATES_DATA = null;
+  let statesLoadPromise = null;
+
+  function loadStatesData() {
+    if (STATES_DATA) return Promise.resolve(STATES_DATA);
+    if (!statesLoadPromise) {
+      statesLoadPromise = fetch("data/dashboard_states.json")
+        .then((r) => {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        })
+        .then((json) => {
+          STATES_DATA = json;
+          if (currentDataset === "states") document.getElementById("meta-line").textContent = metaLineTextStates();
+          return STATES_DATA;
+        })
+        .catch((err) => {
+          console.error(err);
+          throw err;
+        });
+    }
+    return statesLoadPromise;
+  }
+
+  function ensureStatesData() {
+    if (STATES_DATA) {
+      renderStatesView();
+      return;
+    }
+    const view = document.getElementById("states-view");
+    view.hidden = false;
+    view.innerHTML = "";
+    view.appendChild(el("p", { className: "lede", text: "Loading combined states dataset…" }));
+    loadStatesData()
+      .then(() => renderStatesView())
+      .catch((err) => {
+        view.innerHTML = "";
+        view.appendChild(el("p", { className: "lede", text: "Could not load combined states dataset (" + err.message + ")." }));
+      });
+  }
+
+  function metaLineTextStates() {
+    const meta = STATES_DATA.meta;
+    return "Data generated " + new Date(meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC · " + meta.covered_states.length + " states covered";
   }
 
   function stateBackLink(stateId) {
@@ -3334,6 +3397,333 @@
     return [projCardGrid, el("div", { className: "card-grid", children: [stateCard, notesCard] })];
   }
 
+  // ---- combined States tab: a real union of the four covered states'
+  // own disclosed records (see pipeline/build_dataset_states.py), the
+  // state-level analog of how the Federal tab already unions House and
+  // Senate races into one view. Deliberately separate from Compare
+  // (Federal vs. Massachusetts specifically) and from the population
+  // projection on Compare (an estimate, not a real sum).
+  function statesCardTitle(text) {
+    return el("h3", {
+      children: [document.createTextNode(text), el("span", { className: "dataset-pill", text: "States, combined", attrs: { style: "--accent:var(--states-accent);--accent-soft:var(--states-accent-soft)" } })],
+    });
+  }
+
+  function renderStatesVendorsCard() {
+    const data = STATES_DATA;
+    const c = colors();
+    const eraFilter = eraFilterList();
+    const shownVendors = data.vendors.filter((v) => eraFilter.includes(v.era));
+    const nLegacyHidden = data.vendors.filter((v) => v.era === "legacy" && v.amount_high > 0).length;
+    const rows = shownVendors.slice(0, 20);
+    const labels = rows.map((r) => r.name + (r.era === "legacy" ? " (legacy)" : ""));
+    const chartData = rows.map((r) => r.amount_high);
+
+    const card = el("div", { className: "card" });
+    const toolbar = el("div", { className: "card-toolbar" });
+    const toggleBtn = el("button", { className: "btn-table-toggle", text: "View as table" });
+    toolbar.appendChild(toggleBtn);
+    card.appendChild(toolbar);
+    card.appendChild(statesCardTitle("AI-related expenditures by vendor, combined across covered states"));
+    card.appendChild(
+      el("p", {
+        className: "note",
+        text:
+          "Every covered state's own matched records, summed by vendor. Click a state's own dollar column to open that vendor's detail page on that state's tab." +
+          (includeLegacy ? " Legacy-era vendors are currently included, via the toggle above." : " " + nLegacyHidden + " legacy-era vendor" + (nLegacyHidden === 1 ? "" : "s") + " with disclosed spending are hidden by default (toggle above to include them)."),
+      })
+    );
+
+    const chartHolder = el("div", { className: "chart-holder tall" });
+    chartHolder.style.height = Math.max(320, rows.length * 26) + "px";
+    chartHolder.appendChild(el("canvas", { id: "chart-states-vendors" }));
+    const tableHolder = el("div", { className: "table-holder", attrs: { hidden: "" } });
+    card.appendChild(chartHolder);
+    card.appendChild(tableHolder);
+
+    toggleBtn.addEventListener("click", () => {
+      const showingTable = !tableHolder.hidden;
+      tableHolder.hidden = showingTable;
+      chartHolder.hidden = !showingTable;
+      toggleBtn.textContent = showingTable ? "View as table" : "View chart";
+    });
+
+    const stateColumns = STATES_DATA.meta.covered_states.map((stateId) => ({
+      label: STATE_CONFIG_BY_ID[stateId].label + " $",
+      num: true,
+      title: "High-confidence text matches to this vendor on the " + STATE_CONFIG_BY_ID[stateId].label + " tab. Click to open its detail page there.",
+      link: (r) => (r.by_state[stateId] && r.by_state[stateId].amount_high > 0 ? "#/" + stateId + "/vendor/" + r.id : null),
+      render: (r) => (r.by_state[stateId] && r.by_state[stateId].amount_high > 0 ? fmtUSD0.format(r.by_state[stateId].amount_high) : "—"),
+    }));
+
+    tableHolder.appendChild(
+      buildTable(
+        [
+          { label: "Vendor", render: (r) => r.name },
+          { label: "Type", render: (r) => VENDOR_GROUP_LABEL[r.group] || r.group },
+          { label: "Era", render: (r) => r.era },
+          ...stateColumns,
+          { label: "Combined $", num: true, render: (r) => fmtUSD0.format(r.amount_high) },
+          { label: "Filers", num: true, render: (r) => fmtInt.format(r.filers) },
+        ],
+        shownVendors
+      )
+    );
+
+    setTimeout(() => {
+      makeChart("chart-states-vendors", {
+        type: "bar",
+        data: { labels, datasets: [{ label: "Disclosed spend", data: chartData, backgroundColor: cssVar("--states-accent"), borderRadius: 4, barThickness: 16 }] },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: Object.assign(tooltipBase(), {
+              callbacks: {
+                label: (ctx) => {
+                  const r = rows[ctx.dataIndex];
+                  return STATES_DATA.meta.covered_states
+                    .filter((sid) => r.by_state[sid] && r.by_state[sid].amount_high > 0)
+                    .map((sid) => STATE_CONFIG_BY_ID[sid].label + ": " + fmtUSD0.format(r.by_state[sid].amount_high));
+                },
+              },
+            }),
+          },
+          scales: {
+            x: { grid: { color: c.grid }, ticks: { color: c.text, callback: (v) => fmtUSD0.format(v) }, border: { display: false } },
+            y: { grid: { display: false }, ticks: { color: c.text, autoSkip: false }, border: { display: false } },
+          },
+        },
+      });
+    }, 0);
+
+    return card;
+  }
+
+  function renderStatesTrendCard() {
+    const data = STATES_DATA;
+    const c = colors();
+    const rows = data.time_series.map((r) => (includeLegacy ? r : { year: r.year, total: r.total_ex_legacy, records: r.records_ex_legacy }));
+    const card = el("div", { className: "card" });
+    card.appendChild(statesCardTitle("Combined AI-vendor spending by year"));
+    card.appendChild(
+      el("p", {
+        className: "note",
+        text: "Every covered state's own per-year total, summed." + (includeLegacy ? " All eras, all matched vendors." : " Generative-era vendors only -- toggle above to include legacy-era vendors."),
+      })
+    );
+    const chartHolder = el("div", { className: "chart-holder" });
+    chartHolder.appendChild(el("canvas", { id: "chart-states-trend" }));
+    card.appendChild(chartHolder);
+
+    setTimeout(() => {
+      makeChart("chart-states-trend", {
+        type: "line",
+        data: {
+          labels: rows.map((r) => String(r.year)),
+          datasets: [
+            {
+              label: "Disclosed AI-vendor spend",
+              data: rows.map((r) => r.total),
+              borderColor: cssVar("--states-accent"),
+              backgroundColor: cssVar("--states-accent"),
+              tension: 0.25,
+              pointRadius: 4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: Object.assign(tooltipBase(), {
+              callbacks: {
+                label: (ctx) => {
+                  const r = rows[ctx.dataIndex];
+                  return fmtUSD0.format(r.total) + " · " + fmtInt.format(r.records) + " records";
+                },
+              },
+            }),
+          },
+          scales: {
+            x: { grid: { display: false }, ticks: { color: c.text }, border: { display: false } },
+            y: { grid: { color: c.grid }, ticks: { color: c.text, callback: fmtUSD0.format }, border: { display: false } },
+          },
+        },
+      });
+    }, 0);
+
+    return card;
+  }
+
+  function renderStatesLeaderboardCard() {
+    const rows = sortRows(
+      STATES_DATA.states_leaderboard.map((r) => Object.assign({}, r)),
+      includeLegacy ? { key: "spend_all_eras", dir: "desc" } : { key: "spend_generative", dir: "desc" }
+    );
+    const card = el("div", { className: "card" });
+    card.appendChild(statesCardTitle("State-by-state leaderboard"));
+    card.appendChild(
+      el("p", {
+        className: "note",
+        text: "\"% of state's AI-filer spend\" divides disclosed AI-vendor spend by the same filers' own total reported expenditure that state tracks -- see each state's own tab for exactly how. Click a state's name to open its own tab.",
+      })
+    );
+    card.appendChild(
+      buildTable(
+        [
+          { label: "State", link: (r) => "#/" + r.id, render: (r) => r.label },
+          { label: "Source", render: (r) => r.source_label },
+          { label: "Disclosed AI-vendor spend", num: true, render: (r) => fmtUSD0.format(includeLegacy ? r.spend_all_eras : r.spend_generative) },
+          { label: "Candidate committees using AI", num: true, render: (r) => fmtInt.format(includeLegacy ? r.filers_all_eras : r.filers_generative) },
+          { label: "Distinct vendors identified", num: true, render: (r) => fmtInt.format(includeLegacy ? r.distinct_vendors_all_eras : r.distinct_vendors_generative) },
+          { label: "% of state's AI-filer spend", num: true, render: (r) => fmtPct(r.pct_ai_overall, 3) },
+        ],
+        rows
+      )
+    );
+    return card;
+  }
+
+  function renderStatesPartyCard() {
+    const c = colors();
+    const ps = includeLegacy ? STATES_DATA.party_split : STATES_DATA.party_split_ex_legacy;
+    const card = el("div", { className: "card" });
+    card.appendChild(statesCardTitle("Party split, combined"));
+    card.appendChild(
+      el("p", {
+        className: "note",
+        text:
+          "Democratic vs. Republican, by each state's own filer-party record -- Colorado and California disclose no party field at all, so every one of their records falls under Unknown here. " +
+          fmtInt.format(ps.filers_with_known_party) +
+          " filers across all covered states have a known major-party affiliation" +
+          (includeLegacy ? "" : " (generative-era vendors only)") +
+          ".",
+      })
+    );
+    const chartHolder = el("div", { className: "chart-holder" });
+    chartHolder.appendChild(el("canvas", { id: "chart-states-party-pie" }));
+    card.appendChild(chartHolder);
+
+    setTimeout(() => {
+      const slices = [
+        { party: "Democratic", amount: ps.dem_amount },
+        { party: "Republican", amount: ps.rep_amount },
+      ].filter((s) => s.amount > 0);
+      makeChart("chart-states-party-pie", {
+        type: "pie",
+        data: {
+          labels: slices.map((s) => s.party),
+          datasets: [{ data: slices.map((s) => s.amount), backgroundColor: slices.map((s) => c.party[s.party] || c.muted) }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: Object.assign({ position: "bottom" }, legendBase()),
+            tooltip: Object.assign(tooltipBase(), {
+              callbacks: {
+                label: (ctx) => {
+                  const total = slices.reduce((a, s) => a + s.amount, 0);
+                  return ctx.label + ": " + fmtUSD2.format(ctx.parsed) + " (" + fmtPct((ctx.parsed / total) * 100, 1) + ")";
+                },
+              },
+            }),
+          },
+        },
+      });
+    }, 0);
+
+    return card;
+  }
+
+  function renderStatesMethodologyCard() {
+    const meta = STATES_DATA.meta;
+    const sourcesCard = el("div", { className: "card" });
+    sourcesCard.appendChild(statesCardTitle("Data sources"));
+    const sourcesList = el("ul", { className: "notes" });
+    meta.sources.forEach((s) => sourcesList.appendChild(el("li", { text: s })));
+    sourcesCard.appendChild(sourcesList);
+
+    const notesCard = el("div", { className: "card" });
+    notesCard.appendChild(statesCardTitle("Notes & limitations"));
+    const notesList = el("ul", { className: "notes" });
+    meta.methodology_notes.forEach((s) => notesList.appendChild(el("li", { text: s })));
+    notesCard.appendChild(notesList);
+
+    return el("div", { className: "card-grid", children: [sourcesCard, notesCard] });
+  }
+
+  function renderStatesView() {
+    const view = document.getElementById("states-view");
+    view.innerHTML = "";
+    const data = STATES_DATA;
+    const meta = data.meta;
+    const stats = data.stats;
+    const stateLabels = meta.covered_states.map((id) => STATE_CONFIG_BY_ID[id].label);
+
+    view.appendChild(
+      el("div", {
+        className: "state-banner",
+        attrs: { style: "--accent:var(--states-accent);--accent-soft:var(--states-accent-soft)" },
+        children: [
+          el("span", { text: "You're viewing " }),
+          el("strong", { text: "States, combined" }),
+          el("span", {
+            text:
+              " — every state this site currently covers (" +
+              stateLabels.join(", ") +
+              ") unioned into one view. Every figure below is a real sum of each state's own disclosed records; for a population-scaled national estimate built from these same four states, see the Compare tab.",
+          }),
+        ],
+      })
+    );
+
+    const statRow = el("div", { className: "stat-row" });
+    statRow.appendChild(statTile("States covered", fmtInt.format(meta.covered_states.length), stateLabels.join(", ")));
+    statRow.appendChild(
+      statTile(
+        "Disclosed AI-vendor spend",
+        fmtUSD0.format(includeLegacy ? stats.total_all_eras : stats.total_generative),
+        (includeLegacy ? "all eras" : "generative-era vendors only") + " -- toggle above to include legacy-era vendors"
+      )
+    );
+    statRow.appendChild(
+      statTile(
+        "Candidate committees using AI",
+        fmtInt.format(includeLegacy ? stats.filers_with_ai_spend : stats.filers_with_ai_spend_ex_legacy),
+        "across all covered states"
+      )
+    );
+    statRow.appendChild(
+      statTile(
+        "Distinct AI vendors identified",
+        fmtInt.format(includeLegacy ? stats.distinct_vendors_all_eras : stats.distinct_vendors_generative),
+        "across all covered states"
+      )
+    );
+    view.appendChild(statRow);
+
+    view.appendChild(el("div", { className: "card-grid single", children: [renderStatesVendorsCard()] }));
+    view.appendChild(el("div", { className: "card-grid single", children: [renderStatesTrendCard()] }));
+    view.appendChild(el("div", { className: "card-grid single", children: [renderStatesLeaderboardCard()] }));
+    view.appendChild(el("div", { className: "card-grid single", children: [renderStatesPartyCard()] }));
+    view.appendChild(renderStatesMethodologyCard());
+
+    view.appendChild(
+      el("p", {
+        className: "lede",
+        text:
+          "Full pipeline code and the shared vendor/category taxonomy (pipeline/config/vendors.yaml) are in the GitHub repository. Dataset generated " +
+          new Date(meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) +
+          " UTC.",
+      })
+    );
+  }
+
   function renderCompareView() {
     const view = document.getElementById("compare-view");
     view.innerHTML = "";
@@ -3515,6 +3905,10 @@
       activateDataset("compare");
       return;
     }
+    if (raw === "states") {
+      activateDataset("states");
+      return;
+    }
     activateDataset("federal");
     federalRouter();
   }
@@ -3561,6 +3955,7 @@
         renderAll();
         if (STATE_IDS.indexOf(currentDataset) !== -1 && STATE_DATA[currentDataset]) renderStateView(currentDataset);
         if (currentDataset === "compare" && STATE_DATA.ma) renderCompareView();
+        if (currentDataset === "states" && STATES_DATA) renderStatesView();
       });
     })
     .catch((err) => {

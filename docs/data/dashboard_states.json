@@ -1,0 +1,1110 @@
+{
+  "meta": {
+    "generated_at": "2026-09-20T21:58:13+00:00",
+    "covered_states": [
+      "ma",
+      "wa",
+      "co",
+      "ca"
+    ],
+    "state_labels": {
+      "ma": "Massachusetts",
+      "wa": "Washington",
+      "co": "Colorado",
+      "ca": "California"
+    },
+    "state_source_labels": {
+      "ma": "OCPF",
+      "wa": "Washington PDC",
+      "co": "Colorado TRACER",
+      "ca": "California CAL-ACCESS"
+    },
+    "sources": [
+      "Every record here is a real disclosed expenditure from one of the four states' own systems -- Massachusetts OCPF, Washington PDC, Colorado TRACER, California CAL-ACCESS -- unioned together, not estimated or projected. See each state's own tab for its full sourcing and methodology.",
+      "Same AI vendor/category taxonomy as every other tab on this site (pipeline/config/vendors.yaml), applied by each state's own pipeline before this build step only sums what they already matched."
+    ],
+    "methodology_notes": [
+      "This combines four disclosure systems with different itemization thresholds, different date windows (Massachusetts' data runs through a recent date; Washington/Colorado/California start 2023-01-01 with no fixed end), and, for Colorado and California, no party field at all -- summing across them answers 'how much shows up across the states this site covers,' not a apples-to-apples comparison of four equivalent systems.",
+      "For a rough order-of-magnitude estimate of what these same four states' findings would imply nationally, scaled by population, see the projection on the Compare tab -- that is a separate, explicitly-labeled estimate; every number on this States tab, by contrast, is a real sum of actually-disclosed records from the four states covered so far.",
+      "The vendor table's per-state $ columns link to that vendor's own detail page on that state's own tab, where every individual disbursement is listed -- there is no separate combined-states vendor detail page."
+    ]
+  },
+  "stats": {
+    "total_all_eras": 2094278.9,
+    "total_generative": 92401.02,
+    "filers_with_ai_spend": 211,
+    "filers_with_ai_spend_ex_legacy": 108,
+    "distinct_vendors_all_eras": 28,
+    "distinct_vendors_generative": 18
+  },
+  "vendors": [
+    {
+      "id": "prompt_io",
+      "name": "Prompt.io",
+      "group": "political_specific",
+      "era": "legacy",
+      "homepage": "https://prompt.io",
+      "description": "Political peer-to-peer texting platform used for voter outreach and fundraising text campaigns.",
+      "tags": [
+        "communications_copy",
+        "fundraising"
+      ],
+      "total": 1729416.74,
+      "amount_high": 1729416.74,
+      "amount_medium": 0.0,
+      "records": 146,
+      "filers": 49,
+      "dem_amount": 4437.85,
+      "rep_amount": 16701.79,
+      "by_state": {
+        "wa": {
+          "amount_high": 36693.67,
+          "amount_medium": 0.0,
+          "records": 14,
+          "filers": 9
+        },
+        "ca": {
+          "amount_high": 1692723.07,
+          "amount_medium": 0.0,
+          "records": 132,
+          "filers": 40
+        }
+      },
+      "dem_rep_ratio": 0.266
+    },
+    {
+      "id": "eyesover",
+      "name": "EyesOver",
+      "group": "political_specific",
+      "era": "legacy",
+      "homepage": "https://www.eyesover.us",
+      "description": "Social-media monitoring/listening tool (legacy \"AI\" branding) used to track press and social sentiment.",
+      "tags": [
+        "research_strategy"
+      ],
+      "total": 148500.0,
+      "amount_high": 148500.0,
+      "amount_medium": 0.0,
+      "records": 11,
+      "filers": 2,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ca": {
+          "amount_high": 148500.0,
+          "amount_medium": 0.0,
+          "records": 11,
+          "filers": 2
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "numero_ai",
+      "name": "Numero (donor database / call time)",
+      "group": "political_specific",
+      "era": "legacy",
+      "homepage": "https://www.numero.ai",
+      "description": "Donor-database and call-time tool used to organize fundraising calls and donor records.",
+      "tags": [
+        "fundraising",
+        "administrative_productivity"
+      ],
+      "total": 34018.46,
+      "amount_high": 34018.46,
+      "amount_medium": 0.0,
+      "records": 121,
+      "filers": 6,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "by_state": {
+        "co": {
+          "amount_high": 11810.0,
+          "amount_medium": 0.0,
+          "records": 29,
+          "filers": 2
+        },
+        "ca": {
+          "amount_high": 22208.46,
+          "amount_medium": 0.0,
+          "records": 92,
+          "filers": 4
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "campaign_nucleus",
+      "name": "Campaign Nucleus",
+      "group": "political_specific",
+      "era": "legacy",
+      "homepage": "https://campaignnucleus.com",
+      "description": "Campaign CRM/command-center platform (data parsing, sentiment, targeting) used to manage voter and donor data.",
+      "tags": [
+        "data_targeting",
+        "administrative_productivity"
+      ],
+      "total": 30630.9,
+      "amount_high": 30630.9,
+      "amount_medium": 0.0,
+      "records": 68,
+      "filers": 10,
+      "dem_amount": 0.0,
+      "rep_amount": 2129.03,
+      "by_state": {
+        "ma": {
+          "amount_high": 2698.28,
+          "amount_medium": 0.0,
+          "records": 6,
+          "filers": 2
+        },
+        "co": {
+          "amount_high": 12153.75,
+          "amount_medium": 0.0,
+          "records": 34,
+          "filers": 6
+        },
+        "ca": {
+          "amount_high": 15778.87,
+          "amount_medium": 0.0,
+          "records": 28,
+          "filers": 2
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "calltime_ai",
+      "name": "CallTime.AI",
+      "group": "political_specific",
+      "era": "legacy",
+      "homepage": "https://www.calltime.ai",
+      "description": "Donor call-time scheduling and CRM tool used to organize and prioritize fundraising calls.",
+      "tags": [
+        "fundraising",
+        "administrative_productivity"
+      ],
+      "total": 25800.81,
+      "amount_high": 25800.81,
+      "amount_medium": 0.0,
+      "records": 56,
+      "filers": 6,
+      "dem_amount": 15524.89,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ma": {
+          "amount_high": 3600.0,
+          "amount_medium": 0.0,
+          "records": 14,
+          "filers": 2
+        },
+        "wa": {
+          "amount_high": 11924.89,
+          "amount_medium": 0.0,
+          "records": 20,
+          "filers": 1
+        },
+        "co": {
+          "amount_high": 5875.92,
+          "amount_medium": 0.0,
+          "records": 11,
+          "filers": 2
+        },
+        "ca": {
+          "amount_high": 4400.0,
+          "amount_medium": 0.0,
+          "records": 11,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "amplify_ai",
+      "name": "Amplify.ai (TruVerse)",
+      "group": "political_specific",
+      "era": "legacy",
+      "homepage": "https://truverse.net",
+      "description": "Rule-based political chatbot/voter-outreach platform (formerly TruVerse) used for automated voter texting and Q&A.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
+      "total": 19184.21,
+      "amount_high": 19184.21,
+      "amount_medium": 0.0,
+      "records": 6,
+      "filers": 2,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ca": {
+          "amount_high": 19184.21,
+          "amount_medium": 0.0,
+          "records": 6,
+          "filers": 2
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "daisychain",
+      "name": "Daisychain",
+      "group": "political_specific",
+      "era": "generative",
+      "homepage": "https://www.daisychain.app",
+      "description": "AI-assisted political texting platform used for voter outreach and mobilization campaigns.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
+      "total": 18114.5,
+      "amount_high": 18114.5,
+      "amount_medium": 0.0,
+      "records": 2,
+      "filers": 2,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ma": {
+          "amount_high": 14.5,
+          "amount_medium": 0.0,
+          "records": 1,
+          "filers": 1
+        },
+        "ca": {
+          "amount_high": 18100.0,
+          "amount_medium": 0.0,
+          "records": 1,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI (ChatGPT)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://openai.com",
+      "description": "General-purpose AI chatbot campaigns use to draft emails, speeches, social media copy, and other written content.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
+      "total": 11463.44,
+      "amount_high": 11463.44,
+      "amount_medium": 0.0,
+      "records": 338,
+      "filers": 54,
+      "dem_amount": 5231.77,
+      "rep_amount": 1367.02,
+      "by_state": {
+        "ma": {
+          "amount_high": 6917.54,
+          "amount_medium": 0.0,
+          "records": 175,
+          "filers": 27
+        },
+        "wa": {
+          "amount_high": 854.26,
+          "amount_medium": 0.0,
+          "records": 14,
+          "filers": 6
+        },
+        "co": {
+          "amount_high": 2829.64,
+          "amount_medium": 0.0,
+          "records": 134,
+          "filers": 18
+        },
+        "ca": {
+          "amount_high": 862.0,
+          "amount_medium": 0.0,
+          "records": 15,
+          "filers": 3
+        }
+      },
+      "dem_rep_ratio": 3.827
+    },
+    {
+      "id": "donoratlas",
+      "name": "DonorAtlas",
+      "group": "political_specific",
+      "era": "generative",
+      "homepage": "https://donoratlas.com",
+      "description": "AI-powered donor-prospecting and research platform used to identify and target potential donors.",
+      "tags": [
+        "fundraising",
+        "data_targeting"
+      ],
+      "total": 6870.0,
+      "amount_high": 6870.0,
+      "amount_medium": 0.0,
+      "records": 27,
+      "filers": 7,
+      "dem_amount": 1500.0,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ma": {
+          "amount_high": 2100.0,
+          "amount_medium": 0.0,
+          "records": 7,
+          "filers": 3
+        },
+        "co": {
+          "amount_high": 600.0,
+          "amount_medium": 0.0,
+          "records": 4,
+          "filers": 2
+        },
+        "ca": {
+          "amount_high": 4170.0,
+          "amount_medium": 0.0,
+          "records": 16,
+          "filers": 2
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://grammarly.com",
+      "description": "AI writing-assistant used to proofread and edit campaign emails, press releases, and other copy.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
+      "total": 6295.16,
+      "amount_high": 6295.16,
+      "amount_medium": 0.0,
+      "records": 63,
+      "filers": 20,
+      "dem_amount": 2182.2,
+      "rep_amount": 1090.2,
+      "by_state": {
+        "ma": {
+          "amount_high": 3272.4,
+          "amount_medium": 0.0,
+          "records": 35,
+          "filers": 10
+        },
+        "wa": {
+          "amount_high": 139.95,
+          "amount_medium": 0.0,
+          "records": 1,
+          "filers": 1
+        },
+        "co": {
+          "amount_high": 2220.29,
+          "amount_medium": 0.0,
+          "records": 21,
+          "filers": 6
+        },
+        "ca": {
+          "amount_high": 662.52,
+          "amount_medium": 0.0,
+          "records": 6,
+          "filers": 3
+        }
+      },
+      "dem_rep_ratio": 2.002
+    },
+    {
+      "id": "otter_ai",
+      "name": "Otter.ai",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://otter.ai",
+      "description": "AI transcription tool used to transcribe meetings, calls, and events into searchable notes.",
+      "tags": [
+        "administrative_productivity",
+        "research_strategy"
+      ],
+      "total": 5902.27,
+      "amount_high": 5902.27,
+      "amount_medium": 0.0,
+      "records": 53,
+      "filers": 11,
+      "dem_amount": 2116.48,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ma": {
+          "amount_high": 1526.17,
+          "amount_medium": 0.0,
+          "records": 25,
+          "filers": 4
+        },
+        "wa": {
+          "amount_high": 1180.31,
+          "amount_medium": 0.0,
+          "records": 4,
+          "filers": 2
+        },
+        "co": {
+          "amount_high": 99.99,
+          "amount_medium": 0.0,
+          "records": 3,
+          "filers": 2
+        },
+        "ca": {
+          "amount_high": 3095.8,
+          "amount_medium": 0.0,
+          "records": 21,
+          "filers": 3
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic (Claude)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://anthropic.com",
+      "description": "General-purpose AI chatbot (Claude) used for drafting communications, research memos, and policy analysis.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
+      "total": 4283.87,
+      "amount_high": 4259.57,
+      "amount_medium": 24.3,
+      "records": 49,
+      "filers": 19,
+      "dem_amount": 2058.8,
+      "rep_amount": 348.78,
+      "by_state": {
+        "ma": {
+          "amount_high": 1534.91,
+          "amount_medium": 0.0,
+          "records": 25,
+          "filers": 8
+        },
+        "wa": {
+          "amount_high": 1320.22,
+          "amount_medium": 0.0,
+          "records": 12,
+          "filers": 5
+        },
+        "co": {
+          "amount_high": 407.72,
+          "amount_medium": 24.3,
+          "records": 4,
+          "filers": 4
+        },
+        "ca": {
+          "amount_high": 996.72,
+          "amount_medium": 0.0,
+          "records": 8,
+          "filers": 2
+        }
+      },
+      "dem_rep_ratio": 5.903
+    },
+    {
+      "id": "sosha",
+      "name": "SoSha (Speechifai)",
+      "group": "political_specific",
+      "era": "generative",
+      "homepage": "https://www.sosha.ai",
+      "description": "AI speech-to-text/content tool (Speechifai) used to turn spoken remarks into written campaign content.",
+      "tags": [
+        "communications_copy"
+      ],
+      "total": 3100.0,
+      "amount_high": 3100.0,
+      "amount_medium": 0.0,
+      "records": 2,
+      "filers": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ca": {
+          "amount_high": 3100.0,
+          "amount_medium": 0.0,
+          "records": 2,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "descript",
+      "name": "Descript",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://descript.com",
+      "description": "AI-powered audio/video editing tool used to edit podcasts, ads, and other campaign video/audio content.",
+      "tags": [
+        "advertising_creative"
+      ],
+      "total": 1627.26,
+      "amount_high": 1627.26,
+      "amount_medium": 0.0,
+      "records": 24,
+      "filers": 6,
+      "dem_amount": 983.9,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ma": {
+          "amount_high": 1035.32,
+          "amount_medium": 0.0,
+          "records": 14,
+          "filers": 3
+        },
+        "wa": {
+          "amount_high": 317.66,
+          "amount_medium": 0.0,
+          "records": 1,
+          "filers": 1
+        },
+        "co": {
+          "amount_high": 274.28,
+          "amount_medium": 0.0,
+          "records": 9,
+          "filers": 2
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "google_ai",
+      "name": "Google (Gemini / Vertex AI)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://ai.google",
+      "description": "Google's general-purpose AI assistant and cloud AI platform (Gemini/Vertex AI), used for drafting content and data analysis.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
+      "total": 43449.56,
+      "amount_high": 1570.95,
+      "amount_medium": 41878.61,
+      "records": 35,
+      "filers": 13,
+      "dem_amount": 0.0,
+      "rep_amount": 7.01,
+      "by_state": {
+        "ma": {
+          "amount_high": 7.01,
+          "amount_medium": 0.0,
+          "records": 1,
+          "filers": 1
+        },
+        "co": {
+          "amount_high": 1563.94,
+          "amount_medium": 1150.94,
+          "records": 14,
+          "filers": 4
+        },
+        "ca": {
+          "amount_high": 0.0,
+          "amount_medium": 40727.67,
+          "records": 20,
+          "filers": 8
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "synthesia",
+      "name": "Synthesia",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://synthesia.io",
+      "description": "AI video-generation platform used to create avatar-narrated videos for ads and voter outreach without filming.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
+      "total": 810.0,
+      "amount_high": 810.0,
+      "amount_medium": 0.0,
+      "records": 5,
+      "filers": 3,
+      "dem_amount": 270.0,
+      "rep_amount": 0.0,
+      "by_state": {
+        "wa": {
+          "amount_high": 270.0,
+          "amount_medium": 0.0,
+          "records": 3,
+          "filers": 2
+        },
+        "ca": {
+          "amount_high": 540.0,
+          "amount_medium": 0.0,
+          "records": 2,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "perplexity",
+      "name": "Perplexity AI",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://perplexity.ai",
+      "description": "AI-powered search/research assistant used for opposition research and rapid fact-checking.",
+      "tags": [
+        "research_strategy"
+      ],
+      "total": 634.5,
+      "amount_high": 634.5,
+      "amount_medium": 0.0,
+      "records": 22,
+      "filers": 3,
+      "dem_amount": 120.0,
+      "rep_amount": 232.5,
+      "by_state": {
+        "ma": {
+          "amount_high": 352.5,
+          "amount_medium": 0.0,
+          "records": 8,
+          "filers": 2
+        },
+        "co": {
+          "amount_high": 282.0,
+          "amount_medium": 0.0,
+          "records": 14,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": 0.516
+    },
+    {
+      "id": "canva_ai",
+      "name": "Canva (Magic Studio / AI Photo)",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://canva.com",
+      "description": "Canva's AI design features (Magic Studio, AI Photo) used to create graphics, flyers, and social media visuals.",
+      "tags": [
+        "advertising_creative"
+      ],
+      "total": 502.07,
+      "amount_high": 502.07,
+      "amount_medium": 0.0,
+      "records": 17,
+      "filers": 3,
+      "dem_amount": 358.07,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ma": {
+          "amount_high": 358.07,
+          "amount_medium": 0.0,
+          "records": 16,
+          "filers": 2
+        },
+        "co": {
+          "amount_high": 144.0,
+          "amount_medium": 0.0,
+          "records": 1,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "read_ai",
+      "name": "Read.ai",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://read.ai",
+      "description": "AI meeting assistant used to transcribe, summarize, and surface insights from calls and meetings.",
+      "tags": [
+        "administrative_productivity",
+        "research_strategy"
+      ],
+      "total": 371.25,
+      "amount_high": 371.25,
+      "amount_medium": 0.0,
+      "records": 2,
+      "filers": 1,
+      "dem_amount": 371.25,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ma": {
+          "amount_high": 371.25,
+          "amount_medium": 0.0,
+          "records": 2,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "runwayml",
+      "name": "Runway",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://runwayml.com",
+      "description": "AI video-generation and editing tool used to produce and edit ad creative and social video.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
+      "total": 346.32,
+      "amount_high": 346.32,
+      "amount_medium": 0.0,
+      "records": 1,
+      "filers": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "by_state": {
+        "co": {
+          "amount_high": 346.32,
+          "amount_medium": 0.0,
+          "records": 1,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "captions_ai",
+      "name": "Captions",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://captions.ai",
+      "description": "AI video-editing tool (auto-captions, AI avatars) used to produce short-form social video content.",
+      "tags": [
+        "advertising_creative",
+        "synthetic_media"
+      ],
+      "total": 263.45,
+      "amount_high": 263.45,
+      "amount_medium": 0.0,
+      "records": 11,
+      "filers": 2,
+      "dem_amount": 238.46,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ma": {
+          "amount_high": 238.46,
+          "amount_medium": 0.0,
+          "records": 10,
+          "filers": 1
+        },
+        "wa": {
+          "amount_high": 24.99,
+          "amount_medium": 0.0,
+          "records": 1,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "xai_grok",
+      "name": "xAI (Grok)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://x.ai",
+      "description": "xAI's general-purpose chatbot, used for drafting content and quick research the way other AI chatbots are.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
+      "total": 220.0,
+      "amount_high": 160.0,
+      "amount_medium": 60.0,
+      "records": 4,
+      "filers": 3,
+      "dem_amount": 0.0,
+      "rep_amount": 100.0,
+      "by_state": {
+        "ma": {
+          "amount_high": 100.0,
+          "amount_medium": 0.0,
+          "records": 1,
+          "filers": 1
+        },
+        "co": {
+          "amount_high": 60.0,
+          "amount_medium": 60.0,
+          "records": 3,
+          "filers": 2
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://elevenlabs.io",
+      "description": "AI voice-generation and cloning tool used to produce narration, robocall, and ad audio without a studio recording.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
+      "total": 88.0,
+      "amount_high": 88.0,
+      "amount_medium": 0.0,
+      "records": 4,
+      "filers": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ca": {
+          "amount_high": 88.0,
+          "amount_medium": 0.0,
+          "records": 4,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "quiller",
+      "name": "Quiller",
+      "group": "political_specific",
+      "era": "generative",
+      "homepage": "https://quiller.ai",
+      "description": "AI-assisted fundraising-email copywriting platform built specifically for political campaigns.",
+      "tags": [
+        "fundraising",
+        "communications_copy"
+      ],
+      "total": 80.96,
+      "amount_high": 80.96,
+      "amount_medium": 0.0,
+      "records": 4,
+      "filers": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "by_state": {
+        "co": {
+          "amount_high": 80.96,
+          "amount_medium": 0.0,
+          "records": 4,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "campaign_brain",
+      "name": "Campaign Brain",
+      "group": "political_specific",
+      "era": "generative",
+      "homepage": "https://www.campaign-brain.com",
+      "description": "AI-assisted campaign strategy and communications platform used to draft plans and messaging.",
+      "tags": [
+        "research_strategy",
+        "communications_copy"
+      ],
+      "total": 50.0,
+      "amount_high": 50.0,
+      "amount_medium": 0.0,
+      "records": 1,
+      "filers": 1,
+      "dem_amount": 50.0,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ma": {
+          "amount_high": 50.0,
+          "amount_medium": 0.0,
+          "records": 1,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "heygen",
+      "name": "HeyGen",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://heygen.com",
+      "description": "AI avatar-video generator used to produce spokesperson-style videos for ads and social content.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
+      "total": 29.0,
+      "amount_high": 29.0,
+      "amount_medium": 0.0,
+      "records": 1,
+      "filers": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ca": {
+          "amount_high": 29.0,
+          "amount_medium": 0.0,
+          "records": 1,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "midjourney",
+      "name": "Midjourney",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://midjourney.com",
+      "description": "AI image-generation tool used to create graphics and visuals for ads and social media posts.",
+      "tags": [
+        "advertising_creative",
+        "synthetic_media"
+      ],
+      "total": 10.63,
+      "amount_high": 10.63,
+      "amount_medium": 0.0,
+      "records": 1,
+      "filers": 1,
+      "dem_amount": 10.63,
+      "rep_amount": 0.0,
+      "by_state": {
+        "ma": {
+          "amount_high": 10.63,
+          "amount_medium": 0.0,
+          "records": 1,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "convos",
+      "name": "Convos (PubSent)",
+      "group": "political_specific",
+      "era": "generative",
+      "homepage": "https://convos.ai",
+      "description": "AI-agent political texting platform (formerly PubSent) used for automated voter outreach conversations.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
+      "total": 2215.54,
+      "amount_high": 0.0,
+      "amount_medium": 2215.54,
+      "records": 2,
+      "filers": 1,
+      "dem_amount": 2215.54,
+      "rep_amount": 0.0,
+      "by_state": {
+        "wa": {
+          "amount_high": 0.0,
+          "amount_medium": 2215.54,
+          "records": 2,
+          "filers": 1
+        }
+      },
+      "dem_rep_ratio": null
+    }
+  ],
+  "time_series": [
+    {
+      "year": 2022,
+      "total": 150.0,
+      "total_ex_legacy": 0.0,
+      "records": 3,
+      "records_ex_legacy": 0
+    },
+    {
+      "year": 2023,
+      "total": 43524.46,
+      "total_ex_legacy": 5300.8,
+      "records": 95,
+      "records_ex_legacy": 22
+    },
+    {
+      "year": 2024,
+      "total": 407300.02,
+      "total_ex_legacy": 7578.95,
+      "records": 232,
+      "records_ex_legacy": 53
+    },
+    {
+      "year": 2025,
+      "total": 203659.87,
+      "total_ex_legacy": 10395.44,
+      "records": 299,
+      "records_ex_legacy": 164
+    },
+    {
+      "year": 2026,
+      "total": 1439644.55,
+      "total_ex_legacy": 69125.83,
+      "records": 447,
+      "records_ex_legacy": 272
+    }
+  ],
+  "party_split": {
+    "dem_amount": 37669.84,
+    "rep_amount": 21976.33,
+    "dem_count": 301,
+    "rep_count": 61,
+    "dem_rep_ratio": 1.714,
+    "filers_with_known_party": 65
+  },
+  "party_split_ex_legacy": {
+    "dem_amount": 12066.45,
+    "rep_amount": 2055.31,
+    "dem_count": 198,
+    "rep_count": 30,
+    "dem_rep_ratio": 5.871,
+    "filers_with_known_party": 44
+  },
+  "states_leaderboard": [
+    {
+      "id": "ma",
+      "label": "Massachusetts",
+      "source_label": "OCPF",
+      "spend_all_eras": 24187.04,
+      "spend_generative": 11696.8,
+      "filers_all_eras": 59,
+      "filers_generative": 42,
+      "distinct_vendors_all_eras": 17,
+      "distinct_vendors_generative": 11,
+      "pct_ai_overall": 0.101
+    },
+    {
+      "id": "wa",
+      "label": "Washington",
+      "source_label": "Washington PDC",
+      "spend_all_eras": 54941.49,
+      "spend_generative": 4685.01,
+      "filers_all_eras": 28,
+      "filers_generative": 15,
+      "distinct_vendors_all_eras": 10,
+      "distinct_vendors_generative": 5,
+      "pct_ai_overall": 0.557
+    },
+    {
+      "id": "co",
+      "label": "Colorado",
+      "source_label": "Colorado TRACER",
+      "spend_all_eras": 39984.05,
+      "spend_generative": 7405.82,
+      "filers_all_eras": 51,
+      "filers_generative": 31,
+      "distinct_vendors_all_eras": 15,
+      "distinct_vendors_generative": 8,
+      "pct_ai_overall": 0.763
+    },
+    {
+      "id": "ca",
+      "label": "California",
+      "source_label": "California CAL-ACCESS",
+      "spend_all_eras": 1975166.32,
+      "spend_generative": 68613.39,
+      "filers_all_eras": 73,
+      "filers_generative": 20,
+      "distinct_vendors_all_eras": 17,
+      "distinct_vendors_generative": 9,
+      "pct_ai_overall": 0.237
+    }
+  ]
+}

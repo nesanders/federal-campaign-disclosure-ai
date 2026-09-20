@@ -31,6 +31,10 @@
         <span class="dataset-tab-title">California</span>
         <span class="dataset-tab-sub">State races &middot; CAL-ACCESS</span>
       </button>
+      <button type="button" class="dataset-tab" data-dataset="states" role="tab" aria-selected="false" aria-controls="states-view" style="--accent:var(--states-accent);--accent-soft:var(--states-accent-soft)">
+        <span class="dataset-tab-title">States</span>
+        <span class="dataset-tab-sub">All covered states, combined</span>
+      </button>
       <button type="button" class="dataset-tab" data-dataset="compare" role="tab" aria-selected="false" aria-controls="compare-view" style="--accent:var(--compare-accent);--accent-soft:var(--compare-accent-soft)">
         <span class="dataset-tab-title">Compare</span>
         <span class="dataset-tab-sub">Federal vs. state, by vendor</span>
@@ -309,6 +313,8 @@
   <div id="state-view" hidden></div>
   <div id="state-detail-view" hidden></div>
 
+  <div id="states-view" hidden></div>
+
   <div id="compare-view" hidden></div>
 
 </main>
@@ -318,6 +324,7 @@
     <p id="footer-generated"></p>
     <p id="footer-source-federal">Source data: Federal Election Commission bulk downloads (fec.gov) and the unitedstates/congress-legislators project. This is an independent analysis and is not affiliated with the FEC or any campaign or vendor named here.</p>
     <p id="footer-source-state" hidden></p>
+    <p id="footer-source-states" hidden>Source data: every state this site covers, combined &mdash; Massachusetts OCPF, Washington PDC, Colorado TRACER, and California CAL-ACCESS. This is an independent analysis and is not affiliated with any of those agencies or any campaign or vendor named here.</p>
     <p id="footer-source-compare" hidden>Source data: both of the above &mdash; Federal Election Commission bulk downloads (fec.gov) and Massachusetts Office of Campaign and Political Finance (ocpf.us). This is an independent analysis and is not affiliated with the FEC, OCPF, or any campaign or vendor named here.</p>
   </div>
 </footer>
