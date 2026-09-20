@@ -44,13 +44,20 @@ RAW_DIR = Path(__file__).resolve().parent.parent / "data" / "raw" / "ca"
 HEADERS = {"User-Agent": "federal-campaign-disclosure-ai/1.0 (research pipeline)"}
 
 
+MIN_FETCH = 8 * 1024 * 1024  # 8 MB per HTTP request, regardless of how
+# small a read zipfile's own DEFLATE decompressor asks for -- its
+# ZipExtFile reads in small chunks internally (tens of KB at a time),
+# which without this read-ahead buffer turns into one HTTP round trip
+# per chunk: tens of thousands of requests to pull ~400 MB, each paying
+# full request latency for a few KB of payload. A local buffer answers
+# most read() calls for free and only refills over the network every
+# 8 MB, cutting the request count by roughly two orders of magnitude.
+
+
 class HttpRangeFile:
-    """A minimal seekable file-like object over HTTP range requests, so
-    zipfile can read a remote zip's central directory and then decompress
-    one entry without downloading the whole archive. Each read() issues
-    exactly the byte range requested -- zipfile's own DEFLATE reader asks
-    for chunks sequentially, so this ends up fetching close to the
-    entry's actual compressed size, not the full file.
+    """A minimal seekable, buffered file-like object over HTTP range
+    requests, so zipfile can read a remote zip's central directory and
+    then decompress one entry without downloading the whole archive.
     """
 
     def __init__(self, url: str):
@@ -60,6 +67,8 @@ class HttpRangeFile:
         resp.raise_for_status()
         self.size = int(resp.headers["content-length"])
         self.pos = 0
+        self._buf = b""
+        self._buf_start = 0  # absolute file offset of self._buf[0]
 
     def seekable(self) -> bool:
         return True
@@ -76,18 +85,39 @@ class HttpRangeFile:
     def tell(self) -> int:
         return self.pos
 
-    def read(self, n: int = -1) -> bytes:
-        if n is None or n < 0:
-            end = self.size - 1
-        else:
-            end = min(self.pos + n - 1, self.size - 1)
-        if end < self.pos:
-            return b""
+    def _fill_buffer(self, min_len: int) -> None:
+        end = min(self.pos + max(min_len, MIN_FETCH) - 1, self.size - 1)
         resp = self.session.get(self.url, headers={**HEADERS, "Range": f"bytes={self.pos}-{end}"}, timeout=60)
         resp.raise_for_status()
-        data = resp.content
-        self.pos += len(data)
-        return data
+        self._buf = resp.content
+        self._buf_start = self.pos
+
+    def read(self, n: int = -1) -> bytes:
+        if n is None or n < 0:
+            n = self.size - self.pos
+
+        buf_end = self._buf_start + len(self._buf)
+        # Buffer doesn't cover the current position (a seek jumped
+        # elsewhere, or it's empty) -- refetch from here.
+        if self.pos < self._buf_start or self.pos >= buf_end:
+            self._fill_buffer(n)
+            buf_end = self._buf_start + len(self._buf)
+
+        start_in_buf = self.pos - self._buf_start
+        available = self._buf[start_in_buf : start_in_buf + n]
+        # Buffer had enough left to satisfy this read in full.
+        if len(available) >= n or buf_end >= self.size:
+            self.pos += len(available)
+            return available
+
+        # Buffer ran out mid-read (near its end, asked for more than
+        # remained) -- top up and concatenate rather than returning a
+        # short read, since zipfile expects read(n) to return exactly n
+        # bytes except at true EOF.
+        self.pos += len(available)
+        self._fill_buffer(n - len(available))
+        rest = self.read(n - len(available))
+        return available + rest
 
 
 def main() -> None:

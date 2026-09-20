@@ -372,3 +372,154 @@ data.texas.gov
   state-parameterized) is real, scoped work that should land with the
   first new state, not be deferred as tech debt across three more
   states' worth of copy-paste.
+
+## Round 3 (2026-09-20): WA and CO built and verified; CA built; TX confirmed dead
+
+### Washington — built, verified, shipped to backend
+
+`pipeline/fetch_wa.py` pages Socrata's documented SODA API
+(`data.wa.gov/resource/tijg-9zyp.json`, the PDC's expenditures dataset)
+in 50k-row pages, validated against the API's own `count(*)`. Fetched
+240,645 records from 2023-01-01 forward. `pipeline/parse_wa.py` matches
+against `description`/`code`/`recipient_name` and maps WA's two-value
+party field to `Democratic`/`Republican`. `pipeline/build_dataset_wa.py`
+runs the new shared `pipeline/lib/build_state_dataset.py` aggregator
+(extracted from `build_dataset_ma.py`'s core rollup logic, without the
+OCPF-only subvendor/weekly-histogram extras that have no WA/CO/CA
+equivalent).
+
+Final: **72 matched records, $54,941.49 total, 28 filers with AI spend**
+-> `docs/data/dashboard_wa.json`.
+
+Two false positives found and fixed by spot-checking every unfamiliar
+vendor match (same discipline used throughout this project), both
+added to `pipeline/config/vendors.yaml`'s exclude lists:
+- "GetThru" (a real texting vendor) matched Google Gemini because a
+  free-text description embedded GetThru's own address, "9450 SW
+  Gemini Dr" — `gemini dr` and `getthru` added to `google_ai`'s excludes.
+- A $10 refund to payee "Claude Sansaricq" matched Anthropic's bare
+  `\bclaude\b` pattern on the payee's own first name — same collision
+  class as MA's "Jean Claude Sanon" false positive. `claude.?sansaricq`
+  added to `anthropic`'s excludes.
+
+### Colorado — built, verified, shipped to backend
+
+`pipeline/fetch_co.py` downloads TRACER's plain annual
+`{year}_ExpenditureData.csv.zip` bulk files (2023-2026, no auth, no
+API). `pipeline/parse_co.py` combines `FirstName`/`LastName` or
+business name into a payee string and matches against `Explanation` +
+payee. Colorado's bulk export carries **no party field at all** —
+every CO record is written with `party=""` (-> "Unknown" in the
+aggregator), a real, documented gap, not worked around.
+
+Final: **286 matched records, $39,984.05 total, 51 filers with AI
+spend** -> `docs/data/dashboard_co.json`.
+
+One false positive found and fixed: two Colorado print shops, "GEMINI
+IMPRINTS" and "GEMINI PRINTING" (real vendors for flyers/signs/
+t-shirts), matched Google Gemini's bare pattern — `gemini imprints`
+and `gemini printing` added to `google_ai`'s excludes.
+
+Spot-checked and confirmed genuine (no fix needed): CO's 3 xAI/Grok
+matches (payee "XAI, LLC" + two App Store Grok-subscription charges),
+134 OpenAI + 14 Perplexity matches (recurring $20/mo subscriptions,
+payee literally "CHATGPT"/"OPENAI"/"PERPLEXITY"), and CO's Numero.ai
+and Campaign Nucleus matches (already-vetted political-tech vendors).
+
+### California — built, verified, shipped to backend
+
+CAL-ACCESS ships one daily bulk export
+(`campaignfinance.cdn.sos.ca.gov/dbwebexport.zip`) containing the
+entire legacy database — 1.5GB+ zipped, 130 tables — with no API and
+no server-side date filter. Only one table is relevant
+(`CalAccess/DATA/EXPN_CD.TSV`, itemized expenditures, ~3GB
+uncompressed / ~400MB compressed). `pipeline/fetch_ca.py` avoids
+downloading the full archive by reading the zip's central directory
+and streaming just that one entry via HTTP range requests (a custom
+buffered seekable `HttpRangeFile`, refilling in 8MB chunks so
+`zipfile`'s internal small reads don't turn into tens of thousands of
+individual HTTP round trips), filtering to 2023-01-01+ during the same
+sequential pass.
+
+Result: 15,756,620 EXPN rows scanned since 2000, **3,267,798 kept**
+from 2023 onward — spot-checked against real payees (Uber, Amazon,
+Stripe, ActBlue, Southwest Airlines) and real CAL-ACCESS form-type
+codes (D/E/G/F461P5), not corrupted data. California's $100
+itemization threshold (much lower than other states) plus its sheer
+number of active committees explains the volume: roughly a fifth of
+every EXPN record CAL-ACCESS has ever carried since 2000 was filed in
+the last ~3.5 years.
+
+`pipeline/parse_ca.py` matches against `EXPN_DSCR` + payee name
+(`PAYEE_NAML`/`PAYEE_NAMF`). One real, documented gap because of what
+the raw EXPN table doesn't carry (not a bug): no party field (same as
+Colorado, `party=""` throughout).
+
+**Filer identity bug found and fixed during verification**: EXPN_CD's
+own `CMTE_ID` column, which looked like the obvious filer-ID field, is
+blank on essentially every row — confirmed empirically (0 of 640
+initial matched rows had a non-empty `CMTE_ID`, vs. ~8.6% of all rows
+sampled). CAL-ACCESS records an expenditure's filer on the *filing's
+cover page*, not the line item. Fixed by adding
+`pipeline/fetch_ca_filers.py`, which fetches the much smaller
+`CVR_CAMPAIGN_DISCLOSURE_CD.TSV` (~222MB uncompressed vs. EXPN's
+~3GB, same range-request technique) and builds a
+`FILING_ID -> {filer_id, filer_name}` lookup (636,057 filings
+resolved) that `parse_ca.py` now joins against. Before the fix, the
+dashboard collapsed to "1 filer" (every blank-`CMTE_ID` row bucketing
+together); after, 73 real, named filers.
+
+**False-positive pass** (same discipline as WA/CO, spot-checking every
+unfamiliar/high-volume vendor match): found the largest false-positive
+source of any state built so far. 68.6% of all CA EXPN rows are
+ActBlue's "Earmarked Contribution from: LASTNAME, FIRSTNAME"
+passthrough-donation boilerplate, where FIRSTNAME is a real donor's
+own name — and donor names collide with bare vendor patterns by pure
+coincidence at real volume: 257 of an initial 266 "Anthropic" matches
+were donors literally named Claude; also caught "XAI" (a Hmong given
+name), "GEMINIGURL" (contains "gemini"), and "QUILLER"/"VAN HEYGEN"
+(surnames containing "quiller"/"heygen"). Fixed structurally in
+`parse_ca.py` — earmark-attribution text is excluded from vendor
+matching entirely (it can never legitimately reference a vendor),
+dropping matches from 640 to 377. One further individual false
+positive found after that: "Claude Parrish", a real California
+slate-mailer political consultant, paid for a "VOTER GUIDE SLATE
+MAILER" — same collision class as WA's Claude Sansaricq — fixed via a
+`claude.?parrish` exclude in `vendors.yaml`, dropping the final count
+to 376.
+
+Final: **376 matched records, $1,975,166.32 total, 73 filers with AI
+spend** -> `docs/data/dashboard_ca.json`. Top vendors: Prompt.io
+(legacy-era, $1.69M — excluded from the generative-only default view),
+Numero, Campaign Nucleus, Otter.ai, Google Gemini, DonorAtlas, OpenAI,
+CallTime.AI, EyesOver (legacy-era), Anthropic ($2,746.72 once cleaned
+of the ActBlue donor-name false positives).
+
+### Texas — confirmed dead end (no domain unblocks it)
+
+All three candidate domains checked; none work:
+- `ethics.texas.gov` (bare) 301-redirects to `www.ethics.texas.gov`,
+  which returns a genuine **server-side 401** with
+  `WWW-Authenticate: Basic realm="Restricted Area"` — this is the
+  target site's own access control, not a proxy/safelist issue, so no
+  amount of domain-list editing unblocks it.
+- `txethics.org` (the legacy TEC domain) times out over HTTPS
+  (connection reset) and returns 403 over plain HTTP.
+- `data.texas.gov` (the state's real, reachable Socrata open-data
+  portal) has no TEC data mirrored on it — catalog search for
+  "ethics"/"TEC" returns zero results, and "campaign"/"political"
+  return only unrelated datasets (local government debt reports,
+  emergency services billing, etc).
+
+Texas stays out of scope for this round. Revisit only if TEC publishes
+a public bulk-download path or opens its API without auth.
+
+### Not yet done
+
+Frontend integration (per-state WA/CA/CO tabs + the combined "States"
+tab this plan calls for) has not started — the three backends above
+only produce `docs/data/dashboard_{wa,co,ca}.json`; nothing in
+`docs/js/app.js` reads them yet. Also outstanding: wiring
+`fetch_wa.py`/`fetch_co.py`/`fetch_ca.py` + their parse/build steps
+into `.github/workflows/refresh-data.yml`, and README updates for the
+three new states.

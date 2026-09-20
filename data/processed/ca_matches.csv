@@ -1,0 +1,377 @@
+record_id,filer_id,filer_name,party,date,amount,payee_display,purpose_display,office,source_link,vendor_ids,vendor_names,vendor_groups,vendor_eras,confidences
+2834446-91-EXP5119,1414018,Gavin Newsom,,2023-01-09,3000.49,"TruVerse, Inc. dba Amplify.ai",Text Messages,,,amplify_ai,Amplify.ai (TruVerse),political_specific,legacy,high
+2834446-92-EXP5285,1414018,Gavin Newsom,,2023-04-12,3000.81,"TruVerse, Inc. dba Amplify.ai",Text Messages,,,amplify_ai,Amplify.ai (TruVerse),political_specific,legacy,high
+2834446-93-EXP5312,1414018,Gavin Newsom,,2023-06-07,38.79,"TruVerse, Inc. dba Amplify.ai",Text Messages,,,amplify_ai,Amplify.ai (TruVerse),political_specific,legacy,high
+2831336-15-EXP73,1457684,Todd Gloria,,2023-02-25,301.98,The Gemini Group /  Jennifer Tierney,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+2831336-72-EXP288,1457684,Todd Gloria,,2023-05-23,2892.88,The Gemini Group /  Jennifer Tierney,See Sch. G,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+2831336-99-EXP462,1457684,Todd Gloria,,2023-06-25,1225.0,The Gemini Group /  Jennifer Tierney,See Sch. G,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+2835850-226-G-118479,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY- STATE ACCOUNT,,2023-02-06,59.16,GRAMMARLY.COM,SOFTWARE,,,grammarly,Grammarly,general_purpose,legacy,high
+2880568-74-EXP5329,1414018,Gavin Newsom,,2023-07-06,2208.97,"TruVerse, Inc. dba Amplify.ai",Text Messages,,,amplify_ai,Amplify.ai (TruVerse),political_specific,legacy,high
+2880568-75-EXP5334,1414018,Gavin Newsom,,2023-07-07,3435.15,"TruVerse, Inc. dba Amplify.ai",Text Messages,,,amplify_ai,Amplify.ai (TruVerse),political_specific,legacy,high
+2874130-10-EXP189,1460549,Tenessa Audette,,2023-09-20,58.0,Campaign Nucleus LLC,,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+2874130-15-EXP243,1460549,Tenessa Audette,,2023-10-12,58.57,Campaign Nucleus LLC,,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+2874130-25-EXP294,1460549,Tenessa Audette,,2023-11-06,61.23,Campaign Nucleus LLC,,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+2874130-35-EXP342,1460549,Tenessa Audette,,2023-12-06,52.28,Campaign Nucleus LLC,,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+2894485-30-EDT135,1387303,PEOPLE FOR BETTER GOVERNMENT COMMITTEE OF THE SAN MANUEL BAND OF MISSION INDIANS,,2024-02-09,3855.19,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+2894485-31-EDT136,1387303,PEOPLE FOR BETTER GOVERNMENT COMMITTEE OF THE SAN MANUEL BAND OF MISSION INDIANS,,2024-02-09,2626.23,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+2895488-20-E-437585,1268914,Reform California with Carl DeMaio - Ballot Measure Committee,,2024-02-05,1652.5,Prompt.io Inc,TEXT MESSAGING,,,prompt_io,Prompt.io,political_specific,legacy,high
+2895488-21-E-452757,1268914,Reform California with Carl DeMaio - Ballot Measure Committee,,2024-02-10,1500.0,Prompt.io Inc,TEXT MESSAGING,,,prompt_io,Prompt.io,political_specific,legacy,high
+2895027-64-PDT111,1458873,Catherine Stefani,,2024-02-06,12500.0,Prompt.io Inc.,Text Messaging Campaign,,,prompt_io,Prompt.io,political_specific,legacy,high
+2920550-4-E-5332,1464298,Jodi Cleesattle,,2024-06-26,4000.0,The Gemini Group,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+2867596-23-EDT3,1460602,Children's Educational Opportunity Act,,2023-07-30,270.0,Synthesia Limited,,,,synthesia,Synthesia,general_purpose,generative,high
+2879410-4-E1732358,1463444,Jimmy Pham,,2023-10-23,25.0,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2879410-6-E1732362,1463444,Jimmy Pham,,2023-10-24,3.95,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2879410-7-E1732360,1463444,Jimmy Pham,,2023-10-31,3.95,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2872290-225-G-26862,1458770,Suzette Martinez Valladares,,2023-10-13,1100.55,"Prompt.IO, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+2872290-227-G-26980,1458770,Suzette Martinez Valladares,,2023-11-07,1365.53,"Prompt.IO, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+2879410-15-E1732366,1463444,Jimmy Pham,,2023-12-05,41.48,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2879410-16-E1732368,1463444,Jimmy Pham,,2023-12-12,19.75,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2879410-19-E1732516,1463444,Jimmy Pham,,2023-12-18,23.7,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2879410-20-E1732908,1463444,Jimmy Pham,,2023-12-25,23.7,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2894972-4-PDT14,1304253,Personal Insurance Federation Committee,,2024-02-07,2465.0,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2894670-35-EDT168,1399192,Building a Healthy Future for CA Facilitated by Agricultural Council of CA,,2024-02-08,1536.0,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2895117-3-EXP132,1435800,Project SuperBloom,,2024-02-14,400.0,CallTime.ai,,,,calltime_ai,CallTime.AI,political_specific,legacy,high
+2895394-30-G-232688,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY- STATE ACCOUNT,,2024-01-31,92.16,GRAMMARLY.COM,SOFTWARE,,,grammarly,Grammarly,general_purpose,legacy,high
+2956632-1-EXP613,1460549,Tenessa Audette,,2024-07-01,74.0,Campaign Nucleus LLC,,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+2956632-20-EXP659,1460549,Tenessa Audette,,2024-07-31,74.0,Campaign Nucleus LLC,,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+2956632-39-EXP714,1460549,Tenessa Audette,,2024-09-03,66.0,Campaign Nucleus LLC,,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+2956634-7-EXP1105,1458131,Kristie Bruce-Lane,,2024-07-10,2000.0,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2956634-21-EXP1181,1458131,Kristie Bruce-Lane,,2024-08-07,5000.0,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2956634-43-EXP1287,1458131,Kristie Bruce-Lane,,2024-09-04,8500.0,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2937072-20-EXP132,1435800,Project SuperBloom,,2024-02-14,400.0,CallTime.ai,,,,calltime_ai,CallTime.AI,political_specific,legacy,high
+2937072-21-EXP168,1435800,Project SuperBloom,,2024-05-15,400.0,CallTime.ai,,,,calltime_ai,CallTime.AI,political_specific,legacy,high
+2956456-37-E1740170,1461897,Marisol Rubio,,2024-09-05,300.0,DonorAtlas,,,,donoratlas,DonorAtlas,political_specific,generative,high
+2931758-19-EDT530,1281772,GOLDEN STATE LEADERSHIP FUND PAC,,2024-03-06,12068.88,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+2935257-130-G-10710,1459950,Patrick Gipson,,2024-03-13,1179.04,Prompt.IO Inc.,PHO and Digital Advertising,,,prompt_io,Prompt.io,political_specific,legacy,high
+2937072-17-EXP168,1435800,Project SuperBloom,,2024-05-15,400.0,CallTime.ai,,,,calltime_ai,CallTime.AI,political_specific,legacy,high
+2956550-13-EXP244,1435800,Project SuperBloom,,2024-08-20,400.0,CallTime.ai,,,,calltime_ai,CallTime.AI,political_specific,legacy,high
+2957368-10-EXP945,1464981,Jerry McNerney,,2024-07-01,22.0,Eleven Labs,,,,elevenlabs,ElevenLabs,general_purpose,generative,high
+2957368-105-EXP1197,1464981,Jerry McNerney,,2024-08-01,22.0,Eleven Labs,,,,elevenlabs,ElevenLabs,general_purpose,generative,high
+2957257-173-G-845501,1268914,Reform California with Carl DeMaio - Ballot Measure Committee,,2024-09-21,1394.8,Prompt.io Inc,TEXT MESSAGING,,,prompt_io,Prompt.io,political_specific,legacy,high
+2957368-218-EXP1317,1464981,Jerry McNerney,,2024-09-03,22.0,Eleven Labs,,,,elevenlabs,ElevenLabs,general_purpose,generative,high
+2936027-9-E1735940,1463444,Jimmy Pham,,2024-02-27,1.98,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-10-E1736213,1463444,Jimmy Pham,,2024-02-29,171.84,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-13-E1736215,1463444,Jimmy Pham,,2024-03-03,5.93,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-19-E1736460,1463444,Jimmy Pham,,2024-03-18,3.95,Numero.ai,Online contribution processing fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-25-E1737089,1463444,Jimmy Pham,,2024-04-30,3.96,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-26-E1737205,1463444,Jimmy Pham,,2024-05-06,50.14,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-27-E1737336,1463444,Jimmy Pham,,2024-05-13,23.7,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-28-E1737338,1463444,Jimmy Pham,,2024-05-20,9.09,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-30-E1737544,1463444,Jimmy Pham,,2024-06-03,17.78,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-32-E1737610,1463444,Jimmy Pham,,2024-06-10,107.26,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-34-E1737772,1463444,Jimmy Pham,,2024-06-17,58.27,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-37-E1737996,1463444,Jimmy Pham,,2024-06-24,74.09,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-38-E1738115,1463444,Jimmy Pham,,2024-06-27,9.88,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-39-E1738119,1463444,Jimmy Pham,,2024-06-30,39.5,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2936027-40-E1738117,1463444,Jimmy Pham,,2024-06-30,25.68,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2956462-2-E1738334,1463444,Jimmy Pham,,2024-07-02,90.62,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2956462-6-E1738914,1463444,Jimmy Pham,,2024-07-08,0.99,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2956462-8-E1738916,1463444,Jimmy Pham,,2024-07-22,13.83,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2956462-19-E1739432,1463444,Jimmy Pham,,2024-08-05,5.14,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2956462-22-E1739481,1463444,Jimmy Pham,,2024-08-12,7.12,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2956462-25-E1739753,1463444,Jimmy Pham,,2024-08-19,79.0,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2956462-30-E1739845,1463444,Jimmy Pham,,2024-08-26,2.97,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2956462-32-E1739938,1463444,Jimmy Pham,,2024-09-02,2.18,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2956462-35-E1740104,1463444,Jimmy Pham,,2024-09-09,40.49,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2956462-41-E1740228,1463444,Jimmy Pham,,2024-09-16,40.49,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2925759-7-EXP515,1460549,Tenessa Audette,,2024-03-06,174.0,Campaign Nucleus LLC,,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+2925759-14-EXP530,1460549,Tenessa Audette,,2024-04-04,50.0,Campaign Nucleus LLC,,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+2925759-21-EXP559,1460549,Tenessa Audette,,2024-05-08,50.0,Campaign Nucleus LLC,,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+2929641-42-PDT9,1463417,Jessica S Self,,2024-02-23,2183.0,Prompt.io Inc,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2929641-43-PDT10,1463417,Jessica S Self,,2024-03-05,1802.9,Prompt.io Inc,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2933938-1672-EDT47901,741666,California Democratic Party,,2024-04-10,705.0,"Otter.ai, Inc.",research,,,otter_ai,Otter.ai,general_purpose,legacy,high
+2932387-10-EDT146,1387303,PEOPLE FOR BETTER GOVERNMENT COMMITTEE OF THE SAN MANUEL BAND OF MISSION INDIANS,,2024-02-18,2519.55,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+2932156-106-EDT2389,911819,"JOBSPAC, A BI-PARTISAN COALITION OF CALIFORNIA EMPLOYERS, SPONSORED BY THE CALIFORNIA CHAMBER OF COMMERCE",,2024-02-28,11078.45,PROMPT.IO INC.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2932156-108-EDT2385,911819,"JOBSPAC, A BI-PARTISAN COALITION OF CALIFORNIA EMPLOYERS, SPONSORED BY THE CALIFORNIA CHAMBER OF COMMERCE",,2024-06-30,6431.48,PROMPT.IO INC.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2954269-143-G-275773,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY,,2024-08-15,960.0,PROMPT.IO,TEXTING,,,prompt_io,Prompt.io,political_specific,legacy,high
+2956595-192-G-34502,1458770,Suzette Martinez Valladares,,2024-09-05,2254.38,"Prompt.IO, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+2935448-164-G-27481,1458770,Suzette Martinez Valladares,,2024-02-22,2974.07,"Prompt.IO, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+2972562-21-EDT163,1387303,PEOPLE FOR BETTER GOVERNMENT COMMITTEE OF THE SAN MANUEL BAND OF MISSION INDIANS,,2024-10-02,3156.02,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+2972562-22-EDT167,1387303,PEOPLE FOR BETTER GOVERNMENT COMMITTEE OF THE SAN MANUEL BAND OF MISSION INDIANS,,2024-10-09,2563.69,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+2972481-183-E-276104,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY,,2024-09-26,3000.0,PROMPT.IO,MRB - TEXTING IN SUPPORT OF KEVIN FAULCONER FOR SUPERVISOR,,,prompt_io,Prompt.io,political_specific,legacy,high
+2972481-201-E-276198,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY,,2024-10-03,2000.0,PROMPT.IO,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2996218-5-EXP874,1460549,Tenessa Audette,,2024-10-31,50.0,Campaign Nucleus LLC,,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+2996218-13-EXP897,1460549,Tenessa Audette,,2024-12-01,50.0,Campaign Nucleus LLC,,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3002203-11-EXP1458,1458131,Kristie Bruce-Lane,,2024-11-01,1000.0,Prompt.io Inc.,Database & Voter Messaging Costs,,,prompt_io,Prompt.io,political_specific,legacy,high
+2972594-75-PDT252,1458873,Catherine Stefani,,2024-09-25,7500.0,Prompt.io Inc.,Texting Campaign,,,prompt_io,Prompt.io,political_specific,legacy,high
+2972488-112-G-34951,1458770,Suzette Martinez Valladares,,2024-10-17,5019.11,"Prompt.IO, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+2991791-5-E1741990,1463444,Jimmy Pham,,2024-10-21,92.05,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2991791-20-E1742415,1463444,Jimmy Pham,,2024-10-28,18.98,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2991791-25-E1742575,1463444,Jimmy Pham,,2024-10-31,41.48,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2991791-34-E1742736,1463444,Jimmy Pham,,2024-11-03,0.2,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2991791-40-E1742738,1463444,Jimmy Pham,,2024-11-04,1.98,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2991791-45-E1742917,1463444,Jimmy Pham,,2024-11-05,19.75,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2991791-52-E1742919,1463444,Jimmy Pham,,2024-11-07,0.99,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+2991791-67-E1743333,1463444,Jimmy Pham,,2024-11-18,19.75,Numero.ai,,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3011098-19-EDT15,1460602,Children's Educational Opportunity Act,,2024-07-19,270.0,Synthesia Limited,,,,synthesia,Synthesia,general_purpose,generative,high
+3011734-87-EDT314,1456955,Greg Wallis,,2024-10-21,12267.28,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3011734-88-EDT315,1456955,Greg Wallis,,2024-10-21,26426.72,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2993972-10-EDT10,1466082,Elisabeth Lawler,,2024-11-05,1531.15,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2993972-11-EDT11,1466082,Elisabeth Lawler,,2024-11-05,7109.69,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2986469-12-EDT44,1475621,"Safe and Affordable Riverside County, supporting Greg Wallis for Assembly 2024, a coalition of business organizations",,2024-10-26,2321.17,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3012085-144-EDT174,1456632,Esmeralda Soria,,2024-12-02,3657.29,"Prompt.IO, Inc.",Text Blasts,,,prompt_io,Prompt.io,political_specific,legacy,high
+2972692-38-EXP1523,1464981,Jerry McNerney,,2024-10-01,22.0,Eleven Labs,,,,elevenlabs,ElevenLabs,general_purpose,generative,high
+3009074-22-EDT1,1466023,Statewide California Coalition Solutions Committee,,2024-10-23,54560.0,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2971407-144-PDT1259,911819,"JOBSPAC, A BI-PARTISAN COALITION OF CALIFORNIA EMPLOYERS, SPONSORED BY THE CALIFORNIA CHAMBER OF COMMERCE",,2024-10-15,7370.69,PROMPT.IO INC.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2972206-78-EDT311,1456955,Greg Wallis,,2024-10-16,12770.96,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2971166-17-EXP1457,1458131,Kristie Bruce-Lane,,2024-10-04,8500.0,Prompt.io Inc.,Database & Voter Messaging Costs,,,prompt_io,Prompt.io,political_specific,legacy,high
+2971501-27-PDT12,1463417,Jessica S Self,,2024-10-08,1188.66,Prompt.io Inc,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3009544-13-EDT172,1387303,PEOPLE FOR BETTER GOVERNMENT COMMITTEE OF THE SAN MANUEL BAND OF MISSION INDIANS,,2024-11-06,6163.79,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+3011337-39-PDT15,1463417,Jessica S Self,,2024-10-28,3293.84,Prompt.io Inc,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3011337-40-EDT27,1463417,Jessica S Self,,2024-11-01,6106.01,Prompt.io Inc,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3011337-41-EDT32,1463417,Jessica S Self,,2024-11-05,560.0,Prompt.io Inc,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2989545-17-EDT80,1474913,Neighbors for Safe and Affordable Communities opposing Kipp Mueller for Senate 2024 (See memo for full name),,2024-10-22,5995.4,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+2972432-45-G-11447,1459950,Patrick Gipson,,2024-10-02,885.19,Prompt.IO Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3013048-135-G-35075,1458770,Suzette Martinez Valladares,,2024-10-25,1582.95,"Prompt.IO, Inc.",Text Messages,,,prompt_io,Prompt.io,political_specific,legacy,high
+3013048-155-G-35270,1458770,Suzette Martinez Valladares,,2024-11-05,2571.63,"Prompt.IO, Inc.",Text Messages,,,prompt_io,Prompt.io,political_specific,legacy,high
+2972485-104-G-924050,1268914,Reform California with Carl DeMaio - Ballot Measure Committee,,2024-09-30,5400.0,Prompt.io Inc,TEXT MESSAGING,,,prompt_io,Prompt.io,political_specific,legacy,high
+2972485-116-G-924015,1268914,Reform California with Carl DeMaio - Ballot Measure Committee,,2024-10-19,4500.0,Prompt.io Inc,TEXT MESSAGING,,,prompt_io,Prompt.io,political_specific,legacy,high
+3009586-66-PDT1277,911819,"JOBSPAC, A BI-PARTISAN COALITION OF CALIFORNIA EMPLOYERS, SPONSORED BY THE CALIFORNIA CHAMBER OF COMMERCE",,2024-10-28,23288.35,PROMPT.IO INC.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3009586-67-PDT1282,911819,"JOBSPAC, A BI-PARTISAN COALITION OF CALIFORNIA EMPLOYERS, SPONSORED BY THE CALIFORNIA CHAMBER OF COMMERCE",,2024-10-28,20094.07,PROMPT.IO INC.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3011349-126-EDT162,1457655,Darshana R Patel,,2024-10-31,7236.47,Prompt.io Inc,Field Program Costs,,,prompt_io,Prompt.io,political_specific,legacy,high
+3009586-71-EDT2502,911819,"JOBSPAC, A BI-PARTISAN COALITION OF CALIFORNIA EMPLOYERS, SPONSORED BY THE CALIFORNIA CHAMBER OF COMMERCE",,2024-10-31,15381.31,PROMPT.IO INC.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3013444-141-G-277110,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY,,2024-11-15,960.0,PROMPT.IO,GOTV TEXTS,,,prompt_io,Prompt.io,political_specific,legacy,high
+3013444-142-G-277111,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY,,2024-11-15,960.0,PROMPT.IO,GOTV TEXTS,,,prompt_io,Prompt.io,political_specific,legacy,high
+3013444-143-G-277112,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY,,2024-11-15,960.0,PROMPT.IO,GOTV TEXTS,,,prompt_io,Prompt.io,political_specific,legacy,high
+3013444-198-G-277386,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY,,2024-12-27,640.0,PROMPT.IO,GOTV TEXTS,,,prompt_io,Prompt.io,political_specific,legacy,high
+3013444-199-G-277387,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY,,2024-12-27,640.0,PROMPT.IO,GOTV TEXTS,,,prompt_io,Prompt.io,political_specific,legacy,high
+3013444-200-G-277388,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY,,2024-12-27,1280.0,PROMPT.IO,GOTV TEXTS,,,prompt_io,Prompt.io,political_specific,legacy,high
+3013444-201-G-277389,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY,,2024-12-27,640.0,PROMPT.IO,GOTV TEXTS,,,prompt_io,Prompt.io,political_specific,legacy,high
+3013444-202-G-277390,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY,,2024-12-27,1280.0,PROMPT.IO,GOTV TEXTS,,,prompt_io,Prompt.io,political_specific,legacy,high
+3013444-203-G-277391,741949,REPUBLICAN PARTY OF SAN DIEGO COUNTY,,2024-12-27,1920.0,PROMPT.IO,GOTV TEXTS,,,prompt_io,Prompt.io,political_specific,legacy,high
+2971407-143-PDT1259,911819,"JOBSPAC, A BI-PARTISAN COALITION OF CALIFORNIA EMPLOYERS, SPONSORED BY THE CALIFORNIA CHAMBER OF COMMERCE",,2024-10-15,7370.69,PROMPT.IO INC.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3059097-363-NON110508,741666,California Democratic Party,,2025-06-30,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3085787-85-EXP44020,810163,California Republican Party - State,,2025-10-17,41.02,Prompt.io Inc.,Digital Ads,,,prompt_io,Prompt.io,political_specific,legacy,high
+3085787-86-EXP44018,810163,California Republican Party - State,,2025-10-17,4500.0,Prompt.io Inc.,Digital Ads,,,prompt_io,Prompt.io,political_specific,legacy,high
+3071362-4-EXP609,1461592,Janelle Kellman,,2025-01-04,258.0,NUMERO.AI,Donor lists,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3071362-5-EXP596,1461592,Janelle Kellman,,2025-01-05,1000.0,NUMERO.AI,Donor lists,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3071362-17-EXP595,1461592,Janelle Kellman,,2025-02-06,1000.0,NUMERO.AI,Donor lists,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3071362-32-EXP597,1461592,Janelle Kellman,,2025-03-24,1000.0,NUMERO.AI,Donor lists,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3080088-453-NON111205,741666,California Democratic Party,,2025-08-29,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3080088-454-NON111273,741666,California Democratic Party,,2025-08-29,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3052254-490-NON109910,741666,California Democratic Party,,2025-05-23,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3085567-196-EDT51,1483178,No on Prop 50 - Stop Sacramento's Power Grab,,2025-09-22,23500.0,"EyesOver, LLC",,,,eyesover,EyesOver,political_specific,legacy,high
+3059097-364-NON110508,741666,California Democratic Party,,2025-06-30,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3064941-19-EXP503,1435800,Project SuperBloom,,2025-01-10,400.0,CallTime.ai,,,,calltime_ai,CallTime.AI,political_specific,legacy,high
+3064941-20-EXP517,1435800,Project SuperBloom,,2025-04-10,400.0,CallTime.ai,,,,calltime_ai,CallTime.AI,political_specific,legacy,high
+3071494-248-PDT26,1479597,Katie Porter,,2025-04-04,101.94,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3071494-249-PDT65,1479597,Katie Porter,,2025-05-04,101.94,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3071494-250-PDT77,1479597,Katie Porter,,2025-05-13,12.61,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3071494-251-PDT104,1479597,Katie Porter,,2025-06-04,126.07,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3071494-313-PDT154,1479597,Katie Porter,,2025-06-30,7500.0,"TruVerse, Inc. dba Amplify.ai",Text Messages,,,amplify_ai,Amplify.ai (TruVerse),political_specific,legacy,high
+3064551-35-PDT346,1290973,Californians For Responsible Healthcare,,2025-02-16,144.0,Grammarly.com,,,,grammarly,Grammarly,general_purpose,legacy,high
+3047196-897-NON108729,741666,California Democratic Party,,2025-02-27,122.4,Grammarly,subscription,,,grammarly,Grammarly,general_purpose,legacy,high
+3047196-994-NON109614,741666,California Democratic Party,,2025-04-29,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3069300-141-PDT41,1475408,"A BETTER BAY AREA, SPONSORED BY CALIFORNIA ALLIANCE OF FAMILY OWNED BUSINESSES",,2025-03-31,1183.88,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+3069300-142-PDT42,1475408,"A BETTER BAY AREA, SPONSORED BY CALIFORNIA ALLIANCE OF FAMILY OWNED BUSINESSES",,2025-03-31,787.61,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+3069300-145-PDT51,1475408,"A BETTER BAY AREA, SPONSORED BY CALIFORNIA ALLIANCE OF FAMILY OWNED BUSINESSES",,2025-04-01,787.61,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+3069300-146-EDT64,1475408,"A BETTER BAY AREA, SPONSORED BY CALIFORNIA ALLIANCE OF FAMILY OWNED BUSINESSES",,2025-04-02,787.61,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+3069300-147-PDT59,1475408,"A BETTER BAY AREA, SPONSORED BY CALIFORNIA ALLIANCE OF FAMILY OWNED BUSINESSES",,2025-04-02,5914.81,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+3069300-148-PDT60,1475408,"A BETTER BAY AREA, SPONSORED BY CALIFORNIA ALLIANCE OF FAMILY OWNED BUSINESSES",,2025-04-02,1183.88,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+3069300-149-EDT69,1475408,"A BETTER BAY AREA, SPONSORED BY CALIFORNIA ALLIANCE OF FAMILY OWNED BUSINESSES",,2025-04-04,5914.81,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+3069300-150-PDT67,1475408,"A BETTER BAY AREA, SPONSORED BY CALIFORNIA ALLIANCE OF FAMILY OWNED BUSINESSES",,2025-04-04,787.61,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+3052254-488-NON109910,741666,California Democratic Party,,2025-05-23,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3047196-899-NON108729,741666,California Democratic Party,,2025-02-27,122.4,Grammarly,subscription,,,grammarly,Grammarly,general_purpose,legacy,high
+3071362-21-EXP597,1461592,Janelle Kellman,,2025-03-24,1000.0,NUMERO.AI,Donor lists,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3071362-26-EXP609,1461592,Janelle Kellman,,2025-04-01,258.0,NUMERO.AI,Donor lists,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3071362-51-EXP596,1461592,Janelle Kellman,,2025-05-01,1000.0,NUMERO.AI,Donor lists,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3071362-83-EXP595,1461592,Janelle Kellman,,2025-06-02,1000.0,NUMERO.AI,Donor lists,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3047196-996-NON109614,741666,California Democratic Party,,2025-04-29,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3092205-98-PDT1456,1456613,Susan Rubio,,2025-07-29,20.0,OpenAI,,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3092205-99-PDT1502,1456613,Susan Rubio,,2025-08-28,20.0,OpenAI,,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3092205-100-PDT1543,1456613,Susan Rubio,,2025-09-28,20.0,OpenAI,,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3109531-955-NON112189,741666,California Democratic Party,,2025-10-31,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3109531-956-NON112259,741666,California Democratic Party,,2025-10-31,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3112581-87-E-434,1482695,Don Wagner,,2025-12-30,1340.0,"Prompt.io, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3113033-27-EXP543,1435800,Project SuperBloom,,2025-07-10,400.0,CallTime.ai,,,,calltime_ai,CallTime.AI,political_specific,legacy,high
+3113033-28-EXP579,1435800,Project SuperBloom,,2025-10-09,400.0,CallTime.ai,,,,calltime_ai,CallTime.AI,political_specific,legacy,high
+3113920-53-PDT1577,1456613,Susan Rubio,,2025-10-28,20.0,OpenAI,,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3113920-54-PDT1604,1456613,Susan Rubio,,2025-11-28,20.0,OpenAI,,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3113920-55-PDT1639,1456613,Susan Rubio,,2025-12-28,20.0,OpenAI,,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3114644-24-G-36121,1483280,Californians RISE - Senator Valladares' Ballot Measure Committee,,2025-10-18,1263.76,"Prompt.IO, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3103290-26-G-26647,742344,Monterey County Republican Central Committee (State),,2025-10-20,17.0,Chatgpt,Web Inquiries,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3112588-445-PDT143,1479597,Katie Porter,,2025-07-04,126.07,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3112588-446-PDT198,1479597,Katie Porter,,2025-08-04,126.07,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3112588-447-PDT230,1479597,Katie Porter,,2025-09-02,1.74,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3112588-448-PDT235,1479597,Katie Porter,,2025-09-04,144.08,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3112588-449-PDT281,1479597,Katie Porter,,2025-10-04,144.08,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3112588-450-PDT311,1479597,Katie Porter,,2025-11-04,144.08,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3112588-451-PDT358,1479597,Katie Porter,,2025-12-04,144.08,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3111485-3-EXP994,1461592,Janelle Kellman,,2025-07-01,1000.0,NUMERO.AI,Applications,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3111485-12-EXP995,1461592,Janelle Kellman,,2025-08-01,1000.0,NUMERO.AI,Applications,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3111485-24-EXP996,1461592,Janelle Kellman,,2025-09-02,1000.0,NUMERO.AI,Applications,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3111485-41-EXP997,1461592,Janelle Kellman,,2025-10-01,1000.0,NUMERO.AI,Applications,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3111485-66-EXP998,1461592,Janelle Kellman,,2025-11-03,1000.0,NUMERO.AI,Applications,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3115100-50-EXP327,1476883,Josh Hoover,,2025-09-23,3000.0,"Prompt.io, Inc.",Text Program,,,prompt_io,Prompt.io,political_specific,legacy,high
+3115100-66-EXP387,1476883,Josh Hoover,,2025-10-05,4788.92,"Prompt.io, Inc.",Text Messages  (9/24/25),,,prompt_io,Prompt.io,political_specific,legacy,high
+3115100-67-EXP389,1476883,Josh Hoover,,2025-10-05,1211.08,"Prompt.io, Inc.",Text Messages  (9/29/25),,,prompt_io,Prompt.io,political_specific,legacy,high
+3115121-13-EXP63,1467849,Joe Patterson,,2025-10-10,3000.0,"Prompt.io, Inc.",Text Messages  (10/10/25),,,prompt_io,Prompt.io,political_specific,legacy,high
+3115121-14-EXP65,1467849,Joe Patterson,,2025-10-20,500.0,"Prompt.io, Inc.",Text Messages (10/20/25),,,prompt_io,Prompt.io,political_specific,legacy,high
+3112181-32-G-12473,742080,Ventura County Republican Party,,2025-11-28,169.98,"Otter.ai, Inc.",Software Subscription,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3112666-164-EDT263,1476944,Matt Haney,,2025-11-07,600.0,OpenAI ChatGPT,,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3138061-3-E1751008,1487620,Irene Lee,,2026-02-23,52.5,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138061-8-E1751163,1487620,Irene Lee,,2026-03-02,579.6,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138061-11-E1751314,1487620,Irene Lee,,2026-03-09,48.77,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138061-12-E1751855,1487620,Irene Lee,,2026-03-16,491.27,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138061-16-E1751857,1487620,Irene Lee,,2026-03-23,112.52,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138061-17-E1751859,1487620,Irene Lee,,2026-03-30,110.64,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138061-24-E1751861,1487620,Irene Lee,,2026-04-06,414.36,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138061-37-E1752200,1487620,Irene Lee,,2026-04-13,585.05,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138814-106-E-632,1482695,Don Wagner,,2026-01-23,7000.0,"Prompt.io, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3138814-107-E-674,1482695,Don Wagner,,2026-02-10,2000.0,"Prompt.io, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3138814-108-E-740,1482695,Don Wagner,,2026-03-04,1000.0,"Prompt.io, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3138815-41-E-270,1481181,Gracey Van Der Mark,,2026-03-05,1340.0,"Prompt.IO, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3138305-2-EXP19,1487467,Leon A. Dixson,,2026-02-12,490.5,The Gemini Group / Jennifer Tierney,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3138305-38-EXP193,1487467,Leon A. Dixson,,2026-03-19,329.43,The Gemini Group / Jennifer Tierney,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3138305-62-EXP256,1487467,Leon A. Dixson,,2026-04-15,41.98,The Gemini Group / Jennifer Tierney,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3136893-20-E-424,1482383,Laurie Hauf,,2026-03-19,1000.0,The Gemini Group / Jennifer Tierney,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3138045-3-E1750886,1477625,Sergio Farias,,2026-01-05,2.07,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138045-4-E1750890,1477625,Sergio Farias,,2026-01-12,1.88,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3137558-27-E-115,1484832,Leah Boucek,,2026-01-30,258.0,The Gemini Group / Jennifer Tierney,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3137558-28-E-159,1484832,Leah Boucek,,2026-03-19,2500.0,The Gemini Group / Jennifer Tierney,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3138045-9-E1750892,1477625,Sergio Farias,,2026-02-02,9.38,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138045-10-E1750894,1477625,Sergio Farias,,2026-02-09,13.32,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138045-12-E1750896,1477625,Sergio Farias,,2026-02-16,1.88,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138045-19-E1751486,1477625,Sergio Farias,,2026-03-09,0.19,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138045-20-E1751488,1477625,Sergio Farias,,2026-03-16,22.47,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138045-21-E1751490,1477625,Sergio Farias,,2026-03-23,26.27,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138045-23-E1751915,1477625,Sergio Farias,,2026-04-06,11.26,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138045-25-E1752196,1477625,Sergio Farias,,2026-04-13,24.38,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138000-1131-NON114183,741666,California Democratic Party,,2026-02-26,122.4,Grammarly,subscription,,,grammarly,Grammarly,general_purpose,legacy,high
+3138000-1216-NON113152,741666,California Democratic Party,,2026-01-05,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3138000-1217-NON113742,741666,California Democratic Party,,2026-01-30,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3138000-1218-NON114174,741666,California Democratic Party,,2026-02-26,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3138825-70-G-4152,1477458,Ted Nordblum,,2026-03-16,196.72,Anthropic,,,,anthropic,Anthropic (Claude),general_purpose,generative,high
+3137757-2-EXP1135,1461592,Janelle Kellman,,2026-01-02,1000.0,NUMERO.AI,Numero monthly donor support subscription,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3137757-27-EXP1136,1461592,Janelle Kellman,,2026-02-02,1000.0,NUMERO.AI,Numero subscription,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3137757-55-EXP1137,1461592,Janelle Kellman,,2026-03-02,1000.0,NUMERO.AI,Numero subscription,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3137748-21-EXP672,1435800,Project SuperBloom,,2026-01-12,400.0,CallTime.ai,,,,calltime_ai,CallTime.AI,political_specific,legacy,high
+3137748-22-EXP731,1435800,Project SuperBloom,,2026-04-09,400.0,CallTime.ai,,,,calltime_ai,CallTime.AI,political_specific,legacy,high
+3137757-97-EXP1211,1461592,Janelle Kellman,,2026-04-02,1000.0,NUMERO.AI,Numero donor support monthly subscription,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3128786-25-E-68,1484438,Heath Langle,,2026-01-30,504.02,The Gemini Group / Jennifer Tierney,See Sch. G,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3128786-26-E-110,1484438,Heath Langle,,2026-03-11,2500.0,The Gemini Group / Jennifer Tierney,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3136705-43-E-523,1484374,Tracy Prior,,2026-01-30,496.38,The Gemini Group / Jennifer Tierney,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3136705-44-E-568,1484374,Tracy Prior,,2026-03-19,2500.0,The Gemini Group / Jennifer Tierney,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3138146-61-E-1502,1481651,Che Ahn,,2026-01-07,1951.61,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3138146-62-E-1795,1481651,Che Ahn,,2026-02-04,1575.0,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3138146-63-E-2148,1481651,Che Ahn,,2026-03-03,275.99,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3138146-64-E-2246,1481651,Che Ahn,,2026-03-30,2101.08,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3138146-65-E-2300,1481651,Che Ahn,,2026-04-03,3274.07,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3115750-319-E-24868,1480425,Stephen Hilton,,2025-10-03,12500.0,EyesOver LLC,,,,eyesover,EyesOver,political_specific,legacy,high
+3115750-320-E-29248,1480425,Stephen Hilton,,2025-10-14,12500.0,EyesOver LLC,,,,eyesover,EyesOver,political_specific,legacy,high
+3115750-321-E-37976,1480425,Stephen Hilton,,2025-10-30,12500.0,EyesOver LLC,,,,eyesover,EyesOver,political_specific,legacy,high
+3115750-322-E-45074,1480425,Stephen Hilton,,2025-11-18,12500.0,EyesOver LLC,,,,eyesover,EyesOver,political_specific,legacy,high
+3115750-323-E-49946,1480425,Stephen Hilton,,2025-12-04,12500.0,EyesOver LLC,,,,eyesover,EyesOver,political_specific,legacy,high
+3115750-324-E-58398,1480425,Stephen Hilton,,2025-12-30,12500.0,EyesOver LLC,,,,eyesover,EyesOver,political_specific,legacy,high
+3139022-37-EXP2593,1486858,Matt Mahan,,2026-04-03,100.0,Anthropic,,,,anthropic,Anthropic (Claude),general_purpose,generative,high
+3135275-48-G-27151,742344,Monterey County Republican Central Committee (State),,2026-02-18,17.0,Chatgpt,Web Inquiries,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3135275-49-G-27155,742344,Monterey County Republican Central Committee (State),,2026-03-19,17.0,Chatgpt,Web Inquiries,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3138953-33-EXP1023,1477103,Dom Belza,,2026-01-31,1340.0,"Prompt.io, Inc.",Texting Platform,,,prompt_io,Prompt.io,political_specific,legacy,high
+3155626-10-E-2595,1481651,Che Ahn,,2026-05-04,2607.29,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3155626-11-E-2596,1481651,Che Ahn,,2026-05-04,16.94,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3155626-12-E-2598,1481651,Che Ahn,,2026-05-05,121.28,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3155626-13-E-2599,1481651,Che Ahn,,2026-05-08,119.88,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3155626-14-E-2600,1481651,Che Ahn,,2026-05-11,121.51,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3155677-19-E-5543,1488088,Dave Bass,,2026-05-07,1340.0,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3139212-373-PDT389,1479597,Katie Porter,,2026-01-04,144.08,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3139212-374-PDT466,1479597,Katie Porter,,2026-02-04,144.08,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3139212-375-PDT531,1479597,Katie Porter,,2026-03-04,144.08,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3139212-376-PDT595,1479597,Katie Porter,,2026-04-04,144.08,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3155495-42-EXP1416,1461592,Janelle Kellman,,2026-05-04,1000.0,NUMERO.AI,Numero monthly subscription,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3147741-53-EXP183,1485203,"Alliance Against Corporate Abuse, sponsored by Consumer Attorneys of California",,2026-03-24,1550.0,SoSha,,,,sosha,SoSha (Speechifai),political_specific,generative,high
+3156484-15-E-174,1486535,Tia Ramirez,,2026-05-06,1012.5,Gemini Group Consulting,Reimbursement. See Sched. G,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3156484-16-E-206,1486535,Tia Ramirez,,2026-05-11,12000.0,Gemini Group Consulting,Reimbursement. See Sched. G,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3156019-25-EXP6657,742006,DEMOCRATIC PARTY OF ORANGE COUNTY,,2026-05-01,750.0,Prompt.io Inc.,June Member to Member,,,prompt_io,Prompt.io,political_specific,legacy,high
+3155637-15-EDT20,1491150,"Advocates for safe schools, affordable housing and health care, and jobs opposing Sara Deen for Assembly 2026",,2026-05-15,1852.54,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3155709-3-E1753205,1487620,Irene Lee,,2026-04-20,556.95,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3155709-8-E1753241,1487620,Irene Lee,,2026-04-27,292.52,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3155709-15-E1753243,1487620,Irene Lee,,2026-05-04,157.51,Numero.ai,Online Contibution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3155709-19-E1753245,1487620,Irene Lee,,2026-05-11,156.58,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3139373-223-E-75193,1480425,Stephen Hilton,,2026-01-30,12500.0,EyesOver LLC,,,,eyesover,EyesOver,political_specific,legacy,high
+3139373-224-E-91755,1480425,Stephen Hilton,,2026-03-03,12500.0,EyesOver LLC,,,,eyesover,EyesOver,political_specific,legacy,high
+3139373-225-E-122900,1480425,Stephen Hilton,,2026-04-16,12500.0,EyesOver LLC,,,,eyesover,EyesOver,political_specific,legacy,high
+3155621-78-EDT175,1474269,DaVita Patient Protection Committee,,2026-05-15,6274.44,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3157055-1-EXP73,1467849,Joe Patterson,,2026-04-22,1282.0,"Prompt.io, Inc.",Text Messages (10/20/25),,,prompt_io,Prompt.io,political_specific,legacy,high
+3157055-2-EXP75,1467849,Joe Patterson,,2026-04-22,2218.0,"Prompt.io, Inc.",Text Program,,,prompt_io,Prompt.io,political_specific,legacy,high
+3138814-105-E-632,1482695,Don Wagner,,2026-01-23,7000.0,"Prompt.io, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3138814-106-E-674,1482695,Don Wagner,,2026-02-10,2000.0,"Prompt.io, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3138814-107-E-740,1482695,Don Wagner,,2026-03-04,1000.0,"Prompt.io, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3157071-27-EXP5243,1486858,Matt Mahan,,2026-05-04,100.0,Anthropic,,,,anthropic,Anthropic (Claude),general_purpose,generative,high
+3156577-128-PDT663,1479597,Katie Porter,,2026-05-04,144.08,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3138045-20-E1751486,1477625,Sergio Farias,,2026-03-09,0.19,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138045-21-E1751488,1477625,Sergio Farias,,2026-03-16,22.47,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138045-22-E1751490,1477625,Sergio Farias,,2026-03-23,26.27,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138045-24-E1751915,1477625,Sergio Farias,,2026-04-06,11.26,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3138045-26-E1752196,1477625,Sergio Farias,,2026-04-13,24.38,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3156919-16-E-13226,1478940,Edward Gaines,,2026-05-13,1340.0,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3156945-18-G-637,1488406,Legislative Action PAC in support of Ed Musgrove for Senate 2026,,2026-05-14,31525.74,Prompt.io Inc.,Text Messages,,,prompt_io,Prompt.io,political_specific,legacy,high
+3156576-28-EDT3,1487740,Phoebe H Maffei,,2026-05-04,18100.0,DAISYCHAIN,,,,daisychain,Daisychain,political_specific,generative,high
+3163998-13-EDT6,1491490,"Supporting Susan Rubio for Senate 2026, sponsored by Personal Insurance Federation of California and Pharmaceutical Research and Manufacturers of America",,2026-05-27,4219.74,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3163998-14-PDT5,1491490,"Supporting Susan Rubio for Senate 2026, sponsored by Personal Insurance Federation of California and Pharmaceutical Research and Manufacturers of America",,2026-05-27,4219.74,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3165686-2-E1754224,1487620,Irene Lee,,2026-05-18,293.45,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3165686-3-E1754226,1487620,Irene Lee,,2026-05-25,180.01,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3165686-8-E1754228,1487620,Irene Lee,,2026-06-01,52.49,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3165686-15-E1754453,1487620,Irene Lee,,2026-06-08,1.88,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3165686-18-E1754641,1487620,Irene Lee,,2026-06-16,0.38,Numero.ai,Accounting and Reporting Purposes,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3165686-22-E1754935,1487620,Irene Lee,,2026-06-29,19.05,Numero.ai,Online Contribution Processing Fee,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3156820-42-G-18048,1457661,Marie Alvarado-Gil,,2026-05-12,1596.99,Prompt.io,Text Messages,,,prompt_io,Prompt.io,political_specific,legacy,high
+3181591-23-EXP8493,1486858,Matt Mahan,,2026-06-03,100.0,Anthropic,,,,anthropic,Anthropic (Claude),general_purpose,generative,high
+3171877-4-E-1224,743530,Mendocino County Republican Central Committee (State),,2026-05-28,700.0,"Prompt.io, Inc",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3177882-9-E-5653,1488088,Dave Bass,,2026-05-29,1000.0,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3139022-38-EXP2593,1486858,Matt Mahan,,2026-04-03,100.0,Anthropic,,,,anthropic,Anthropic (Claude),general_purpose,generative,high
+3173404-12-EDT41,1479474,"Working Families and Small Businesses Against Briceno in the Assembly 2026, a project of California Hotel + Lodging Association",,2026-05-19,4855.58,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3173404-16-PDT9,1479474,"Working Families and Small Businesses Against Briceno in the Assembly 2026, a project of California Hotel + Lodging Association",,2026-05-26,4855.58,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3173404-17-PDT11,1479474,"Working Families and Small Businesses Against Briceno in the Assembly 2026, a project of California Hotel + Lodging Association",,2026-05-26,4855.58,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3174427-20-PDT192,1387303,PEOPLE FOR BETTER GOVERNMENT COMMITTEE OF THE YUHAAVIATAM OF SAN MANUEL NATION,,2026-05-13,4851.36,PROMPT.IO INC.,TEXT MESSAGES,,,prompt_io,Prompt.io,political_specific,legacy,high
+3171839-37-G-27342,742344,Monterey County Republican Central Committee (State),,2026-04-20,17.0,Chatgpt,Web services,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3171839-38-G-27460,742344,Monterey County Republican Central Committee (State),,2026-05-19,17.0,Chatgpt,Web services,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3171839-39-G-27601,742344,Monterey County Republican Central Committee (State),,2026-06-22,17.0,Chatgpt,Web services,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3181321-88-EDT156,1485203,"Alliance Against Corporate Abuse, sponsored by Consumer Attorneys of California",,2026-06-01,1550.0,"SpeechifAI, Inc. dba SoSha",,,,sosha,SoSha (Speechifai),political_specific,generative,high
+3176195-42-EDT190,1474269,DaVita Patient Protection Committee,,2026-05-20,8489.32,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3176195-44-EDT195,1474269,DaVita Patient Protection Committee,,2026-05-21,8489.32,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3176195-52-EDT196,1474269,DaVita Patient Protection Committee,,2026-05-22,8489.32,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3176195-54-EDT197,1474269,DaVita Patient Protection Committee,,2026-05-26,8489.32,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3176195-55-EDT198,1474269,DaVita Patient Protection Committee,,2026-05-26,8489.32,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3180481-44-EXP1437,1477103,Dom Belza,,2026-05-27,6000.0,"Prompt.io, Inc.",Texting Platform,,,prompt_io,Prompt.io,political_specific,legacy,high
+3180481-45-EXP1438,1477103,Dom Belza,,2026-05-27,2000.0,"Prompt.io, Inc.",Texting Platform,,,prompt_io,Prompt.io,political_specific,legacy,high
+3180481-65-EXP1477,1477103,Dom Belza,,2026-06-15,2000.0,"Prompt.io, Inc.",Texting Platform,,,prompt_io,Prompt.io,political_specific,legacy,high
+3179329-4-G-18138,1462971,"Fairs, Farms, and Family Fund, Senator Alvarado-Gil's Ballot Measure Committee",,2026-05-29,3161.97,Prompt.io,Text Messages,,,prompt_io,Prompt.io,political_specific,legacy,high
+3173400-28-EDT43,1491150,"Advocates for safe schools, affordable housing and health care, and jobs supporting Paul Seo and opposing Sara Deen for Assembly 2026",,2026-05-18,14087.7,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3181068-618-PDT127,1484835,"A MORE AFFORDABLE CALIFORNIA, SPONSORED BY UBER",,2026-04-20,698952.76,PROMPT.IO,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3181068-623-PDT509,1484835,"A MORE AFFORDABLE CALIFORNIA, SPONSORED BY UBER",,2026-06-15,362036.25,PROMPT.IO,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3156945-18-PDT7,1488406,Legislative Action PAC in support of Ed Musgrove for Senate 2026,,2026-05-14,31525.74,Prompt.io Inc.,Text Messages,,,prompt_io,Prompt.io,political_specific,legacy,high
+3180280-51-PDT1846,1456613,Susan Rubio,,2026-05-28,20.0,OpenAI,,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3180280-52-PDT1885,1456613,Susan Rubio,,2026-06-28,20.0,OpenAI,,,,openai,OpenAI (ChatGPT),general_purpose,generative,high
+3181572-15-E-522,1481181,Gracey Van Der Mark,,2026-05-25,5000.0,"Prompt.IO, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3181572-16-E-542,1481181,Gracey Van Der Mark,,2026-05-29,2000.0,"Prompt.IO, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3181572-17-E-555,1481181,Gracey Van Der Mark,,2026-06-09,4000.0,"Prompt.IO, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3181572-18-E-556,1481181,Gracey Van Der Mark,,2026-06-09,4000.0,"Prompt.IO, Inc.",,,,prompt_io,Prompt.io,political_specific,legacy,high
+3179630-127-PDT711,1479597,Katie Porter,,2026-06-02,3.49,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3179630-128-PDT715,1479597,Katie Porter,,2026-06-04,180.09,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3178526-32-EXP1507,1461592,Janelle Kellman,,2026-06-02,166.67,NUMERO.AI,Numero donation management monthly subscription,,,numero_ai,Numero (donor database / call time),political_specific,legacy,high
+3173412-23-EDT21,1488779,"Working Families and Small Businesses for Mark Pulido in the Assembly 2026, a project of California Hotel + Lodging Association",,2026-05-28,758.85,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3173412-24-EDT22,1488779,"Working Families and Small Businesses for Mark Pulido in the Assembly 2026, a project of California Hotel + Lodging Association",,2026-05-28,599.63,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3173412-25-EDT25,1488779,"Working Families and Small Businesses for Mark Pulido in the Assembly 2026, a project of California Hotel + Lodging Association",,2026-05-28,892.76,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3173412-29-EDT30,1488779,"Working Families and Small Businesses for Mark Pulido in the Assembly 2026, a project of California Hotel + Lodging Association",,2026-05-29,599.63,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3173412-30-EDT31,1488779,"Working Families and Small Businesses for Mark Pulido in the Assembly 2026, a project of California Hotel + Lodging Association",,2026-05-29,758.85,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3173412-31-EDT34,1488779,"Working Families and Small Businesses for Mark Pulido in the Assembly 2026, a project of California Hotel + Lodging Association",,2026-05-29,892.76,Prompt.io Inc.,,,,prompt_io,Prompt.io,political_specific,legacy,high
+3156577-132-PDT663,1479597,Katie Porter,,2026-05-04,144.08,Otter.ai,,,,otter_ai,Otter.ai,general_purpose,legacy,high
+3187391-3-EXP469,1487467,Leon A. Dixson,,2026-07-16,175.0,The Gemini Group / Jennifer Tierney,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3187391-7-EXP474,1487467,Leon A. Dixson,,2026-08-14,1000.0,The Gemini Group / Jennifer Tierney,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3181829-141-E-231620,1480425,Stephen Hilton,,2026-06-29,12500.0,EyesOver LLC,,,,eyesover,EyesOver,political_specific,legacy,high
+3181023-11-EXP880,1476883,Josh Hoover,,2026-05-29,2700.64,"Prompt.io, Inc.",Text Program,,,prompt_io,Prompt.io,political_specific,legacy,high
+3181023-12-EXP878,1476883,Josh Hoover,,2026-05-29,299.36,"Prompt.io, Inc.",Text Messages  (9/29/25),,,prompt_io,Prompt.io,political_specific,legacy,high
+3173655-574-NON115264,741666,California Democratic Party,,2026-05-21,255.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3173655-575-NON115534,741666,California Democratic Party,,2026-06-01,300.0,DonorAtlas,subscription,,,donoratlas,DonorAtlas,political_specific,generative,high
+3176394-15-E-2659,1481651,Che Ahn,,2026-05-26,128.09,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3176394-16-E-2660,1481651,Che Ahn,,2026-05-28,120.12,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3176394-17-E-2684,1481651,Che Ahn,,2026-06-01,118.03,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3176394-18-E-2686,1481651,Che Ahn,,2026-06-03,12.42,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3176394-19-E-2704,1481651,Che Ahn,,2026-06-04,2300.0,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3176394-20-E-2726,1481651,Che Ahn,,2026-06-05,117.48,"Campaign Nucleus, LLC",,,,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high
+3168821-3-EXP409,1487467,Leon A. Dixson,,2026-05-19,2500.0,The Gemini Group / Jennifer Tierney,See Sch. G,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3168821-30-EXP434,1487467,Leon A. Dixson,,2026-06-17,5000.0,The Gemini Group / Jennifer Tierney,,,,google_ai,Google (Gemini / Vertex AI),general_purpose,generative,medium
+3157071-507-PDT583,1486858,Matt Mahan,,2026-04-27,200.0,Anthropic,,,,anthropic,Anthropic (Claude),general_purpose,generative,high
+3157071-508-PDT584,1486858,Matt Mahan,,2026-04-29,100.0,Anthropic,,,,anthropic,Anthropic (Claude),general_purpose,generative,high
+3157071-28-EXP5243,1486858,Matt Mahan,,2026-05-04,100.0,Anthropic,,,,anthropic,Anthropic (Claude),general_purpose,generative,high
+3171096-26-PDT605,1456912,Catherine Blakespear,,2026-06-11,29.0,HeyGen,,,,heygen,HeyGen,general_purpose,generative,high

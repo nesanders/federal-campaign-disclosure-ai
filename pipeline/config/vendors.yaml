@@ -172,13 +172,21 @@ general_purpose:
     # confirmed via a vendor detail page's per-disbursement records.
     # "Claude" alone collides with people actually named Claude -- confirmed
     # in Massachusetts OCPF data against candidates Jean Claude Sanon and
-    # Laverne Claude-Bruce, and in Washington PDC data against a payee
-    # named Claude Sansaricq (a $10 refund with no purpose text at all --
-    # the payee's own first name was the only thing that matched).
+    # Laverne Claude-Bruce, in Washington PDC data against a payee named
+    # Claude Sansaricq (a $10 refund with no purpose text at all -- the
+    # payee's own first name was the only thing that matched), and in
+    # California CAL-ACCESS data against Claude Parrish, a real slate-mailer
+    # political consultant (payee on a "VOTER GUIDE SLATE MAILER" payment).
+    # California also surfaced this collision at much greater scale via
+    # ActBlue's own "Earmarked Contribution from: LASTNAME, CLAUDE"
+    # passthrough-donation boilerplate (donors' own first names) -- handled
+    # structurally in pipeline/parse_ca.py by excluding that text from
+    # matching entirely, rather than chasing individual donor names here.
     exclude:
       - "jean.{0,3}claude"
       - "claude.?bruce"
       - "claude.?sansaricq"
+      - "claude.?parrish"
   - id: google_ai
     name: Google (Gemini / Vertex AI)
     homepage: https://ai.google
