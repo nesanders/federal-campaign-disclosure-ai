@@ -3450,6 +3450,35 @@
     );
     view.appendChild(el("div", { className: "card-grid single", children: [breakdownCard] }));
 
+    const entityCard = el("div", { className: "card" });
+    entityCard.appendChild(el("h3", { text: "Breakdown by entity type" }));
+    entityCard.appendChild(
+      el("p", {
+        className: "note",
+        text:
+          "The party totals above mix fundamentally different kinds of evidence: a posting from a specific candidate's own committee is a much stronger AI-hiring signal than one from a source that won't say who's hiring. RepublicanJobs.gop -- 150 of this dataset's 195 postings -- anonymizes every employer to a generic category (\"Law Firm,\" \"Political Consulting Firm,\" literally \"Campaign\"); none of its postings name an actual candidate, committee, or organization. DCCC's and DLCC's postings, by contrast, mostly do. This table separates them out so the party comparison isn't read as apples to apples.",
+      })
+    );
+    entityCard.appendChild(
+      buildTable(
+        [
+          { label: "Entity type", render: (r) => r.label },
+          { label: "Postings", num: true, render: (r) => fmtInt.format(r.total) },
+          { label: "AI-titled", num: true, render: (r) => fmtInt.format(r.ai_title) },
+          { label: "AI skill mentioned", num: true, render: (r) => fmtInt.format(r.ai_skill_mention) },
+          {
+            label: "Party composition",
+            render: (r) =>
+              Object.keys(r.by_party)
+                .map((p) => fmtInt.format(r.by_party[p]) + " " + p)
+                .join(", "),
+          },
+        ],
+        Object.values(stats.by_entity_type)
+      )
+    );
+    view.appendChild(el("div", { className: "card-grid single", children: [entityCard] }));
+
     const tableCard = el("div", { className: "card" });
     tableCard.appendChild(el("h3", { text: "All postings scraped" }));
     tableCard.appendChild(

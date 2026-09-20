@@ -17,6 +17,7 @@ pipeline/config/vendors.yaml the way every other dataset here does.
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -35,6 +36,58 @@ SOURCE_LABELS = {
     "democracyjobs": "Democracy Jobs",
     "emilyslist": "EMILY's List (Lever)",
 }
+
+ENTITY_TYPE_LABELS = {
+    "candidate_committee": "Named candidate committee",
+    "party_committee": "Party/caucus committee",
+    "pac": "PAC (own organizational hiring)",
+    "anonymized": "Anonymized employer (source withholds identity)",
+    "other": "Other org (vendor, nonprofit, media, etc.)",
+}
+
+_CANDIDATE_ORG_RE = re.compile(r"\bfor (Congress|Senate|State Senate|State House|Governor|Mayor|President)\b", re.I)
+
+
+def classify_entity_type(source: str, org: str | None) -> str:
+    """Whether a posting's employer is a specific, named candidate's own
+    committee -- as opposed to a party/caucus committee, a PAC hiring for
+    its own operations (not a candidate), or something else entirely. This
+    matters because the site's raw party-total comparison (e.g. 150
+    Republican vs. 33 Democratic postings) mixes fundamentally different
+    kinds of evidence: DCCC's postings each name a specific House
+    candidate's campaign, while RepublicanJobs.gop -- which alone accounts
+    for the large majority of postings in this dataset -- anonymizes every
+    employer to a generic category ("Law Firm", "Political Consulting
+    Firm", literally "Campaign") with no candidate, committee, or even
+    organization name attached to any of its 150 postings (confirmed by
+    inspecting all of its unique org values). Rather than guess at intent
+    behind that anonymization, this just classifies what's actually
+    determinable from the data each source provides.
+    """
+    if source == "republicanjobs_gop":
+        # Every org value on this source is a generic category label, not
+        # an identifiable employer -- confirmed across all 63 unique
+        # values seen (e.g. "Law Firm", "Political Consulting Firm",
+        # "Campaign", "Independent Expenditure (IE) Committee"). None can
+        # be tied to a specific candidate, committee, or organization.
+        return "anonymized"
+    if source == "dccc":
+        # The DCCC's own board is scoped to individual House campaigns by
+        # definition -- every org here is a specific candidate committee.
+        return "candidate_committee"
+    if source == "emilyslist":
+        # EMILY's List is itself a PAC; these are its own staff postings
+        # (development, comms), not a specific candidate's committee.
+        return "pac"
+    if source == "dlcc" and org and _CANDIDATE_ORG_RE.search(org):
+        return "candidate_committee"
+    if source == "dlcc":
+        # The rest of DLCC's postings are state party organs and
+        # legislative caucus committees (e.g. "Virginia House Democratic
+        # Caucus", "Michigan Senate Democrats") -- real, but not an
+        # individual candidate's own committee.
+        return "party_committee"
+    return "other"
 
 
 def load_all_postings() -> list[dict]:
@@ -57,12 +110,15 @@ def main() -> None:
     out_postings = []
     for p in postings:
         match = classify(p.get("title") or "", p.get("body_text"))
+        entity_type = classify_entity_type(p["source"], p.get("org"))
         out_postings.append(
             {
                 "id": p["id"],
                 "source": p["source"],
                 "source_label": SOURCE_LABELS.get(p["source"], p["source"]),
                 "party": p.get("party"),
+                "entity_type": entity_type,
+                "entity_type_label": ENTITY_TYPE_LABELS[entity_type],
                 "title": p.get("title"),
                 "org": p.get("org"),
                 "office": p.get("office"),
@@ -106,6 +162,23 @@ def main() -> None:
             "ai_skill_mention": sum(1 for r in rows if r["ai_confidence"] == "skill_mention"),
         }
 
+    by_entity_type = {}
+    for etype, label in ENTITY_TYPE_LABELS.items():
+        rows = [r for r in out_postings if r["entity_type"] == etype]
+        if not rows:
+            continue
+        by_entity_type[etype] = {
+            "label": label,
+            "total": len(rows),
+            "ai_title": sum(1 for r in rows if r["ai_confidence"] == "title"),
+            "ai_skill_mention": sum(1 for r in rows if r["ai_confidence"] == "skill_mention"),
+            "by_party": {
+                party: sum(1 for r in rows if (r["party"] or "Unknown") == party)
+                for party in ("Democratic", "Republican", "Nonpartisan", "Unknown")
+                if any((r["party"] or "Unknown") == party for r in rows)
+            },
+        }
+
     dashboard = {
         "meta": {
             "generated_at": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat(),
@@ -123,6 +196,7 @@ def main() -> None:
                 "A posting is tagged “title” confidence when an AI-related term (“AI”, “ChatGPT”, “LLM”, “machine learning”, “generative AI”, “artificial intelligence”, or a GPT-N model name) appears in the job title itself -- unambiguous evidence a campaign is hiring specifically for AI capability. It's tagged “skill_mention” confidence when the same terms appear only in the body/description of an otherwise ordinary role (e.g. a field organizer listing that asks for “familiarity with ChatGPT”) -- this is the ground-level signal, distinct from AI leadership hiring, and is exactly as significant a finding as the title-level one.",
                 "Body text is not available for every posting: Campaigns & Elections' individual posting pages are Cloudflare-protected, and one DLCC posting links to a Cloudflare-protected ATS (jobs.gusto.com), so those postings can only ever be tagged “title” confidence -- a real absence of skill-mention data for them, not evidence they don't mention AI skills.",
                 "Coverage is intentionally partial and skews toward larger/national- or state-committee-curated races (DCCC and DLCC only feature the races they choose to list) rather than the full universe of campaign job postings; see \"Recommended additional sources\" for what isn't covered yet.",
+                "The raw party totals above mix fundamentally different kinds of evidence, and reading them as \"Republican campaigns post more AI-relevant jobs\" would overstate what's actually shown: RepublicanJobs.gop alone supplies 150 of this dataset's 195 postings (77%), and every one of its employer names is anonymized to a generic category (\"Law Firm\", \"Political Consulting Firm\", \"501c3 AI Think Tank\", literally \"Campaign\") -- none are attributable to a specific candidate, committee, or even a named organization, confirmed by inspecting all 63 unique values it uses. DCCC's and DLCC's postings, by contrast, mostly name a specific candidate's own committee or a specific party/caucus committee. See the \"Breakdown by entity type\" table, which separates named-candidate-committee postings from party/caucus-committee, PAC, and anonymized/other postings so the party comparison isn't read as apples to apples.",
                 "Several broad, high-traffic boards were investigated and found not scrapable with a plain fetch: LinkedIn serves a reCAPTCHA challenge page instead of content; Indeed, DSCC, ZipRecruiter, Arena Careers, and GAIN Power's career center all return a Cloudflare bot-block response even though the domain itself is reachable; NRCC's \"campaign jobs\" page is a general resume-submission form with no individual postings to list; RSLC and NRSC don't appear to publish a public jobs page at all; Sujata Strategies' and Matt Lockshin's Progressive Job Board are both lead-capture/email-digest pages with no public web listing of individual postings to scrape (Matt Lockshin's \"Job Board\" page is itself a newsletter signup form). These are genuine access limits, not gaps left unaddressed.",
                 "Matching is simple keyword detection, not a curated vendor taxonomy like the rest of this site -- a term match does not distinguish marketing filler (\"AI tools a plus\") from a substantive requirement, though the snippet shown alongside each match lets a reader judge that for themselves.",
             ],
@@ -138,6 +212,7 @@ def main() -> None:
             "ai_any_postings": ai_title + ai_skill,
             "by_source": by_source,
             "by_party": by_party,
+            "by_entity_type": by_entity_type,
         },
         "postings": out_postings,
     }
