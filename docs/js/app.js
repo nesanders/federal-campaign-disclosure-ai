@@ -1600,6 +1600,7 @@
     document.getElementById("state-detail-view").hidden = true;
     document.getElementById("compare-view").hidden = !isCompare;
     document.getElementById("states-view").hidden = !isStatesCombined;
+    document.getElementById("states-detail-view").hidden = true;
 
     if (isState) {
       document.getElementById("meta-line").textContent = STATE_DATA[tab] ? metaLineTextState(tab) : "Loading " + stateCfg.label + " dataset…";
@@ -2398,17 +2399,28 @@
     return statesLoadPromise;
   }
 
+  // Which States sub-route to show once both datasets finish loading --
+  // set by route() right before activateDataset("states"), mirroring
+  // pendingStateSubroute for the individual state tabs.
+  let pendingStatesSubroute = "";
+
+  // The States tab's own vendor detail page (see renderStatesVendorDetail)
+  // shows a population-scaled national projection alongside each vendor's
+  // real combined-states total, so it needs PROJECTION_DATA loaded too --
+  // fetched in parallel with the states dataset itself, the same pattern
+  // ensureCompareData() already uses for Massachusetts + the projection.
   function ensureStatesData() {
-    if (STATES_DATA) {
-      renderStatesView();
+    if (STATES_DATA && PROJECTION_DATA) {
+      statesRouter(pendingStatesSubroute);
       return;
     }
     const view = document.getElementById("states-view");
+    document.getElementById("states-detail-view").hidden = true;
     view.hidden = false;
     view.innerHTML = "";
     view.appendChild(el("p", { className: "lede", text: "Loading combined states dataset…" }));
-    loadStatesData()
-      .then(() => renderStatesView())
+    Promise.all([loadStatesData(), loadProjectionData()])
+      .then(() => statesRouter(pendingStatesSubroute))
       .catch((err) => {
         view.innerHTML = "";
         view.appendChild(el("p", { className: "lede", text: "Could not load combined states dataset (" + err.message + ")." }));
@@ -3488,7 +3500,7 @@
       el("p", {
         className: "note",
         text:
-          "Every covered state's own matched records, summed by vendor. Click a state's own dollar column to open that vendor's detail page on that state's tab." +
+          "Every covered state's own matched records, summed by vendor. Click a vendor's name (or a bar) to compare it against Federal and a population-scaled national estimate; click a state's own dollar column to open that vendor's detail page on that state's tab." +
           (includeLegacy ? " Legacy-era vendors are currently included, via the toggle above." : " " + nLegacyHidden + " legacy-era vendor" + (nLegacyHidden === 1 ? "" : "s") + " with disclosed spending are hidden by default (toggle above to include them)."),
       })
     );
@@ -3518,7 +3530,7 @@
     tableHolder.appendChild(
       buildTable(
         [
-          { label: "Vendor", render: (r) => r.name },
+          { label: "Vendor", link: (r) => "#/states/vendor/" + r.id, render: (r) => r.name },
           { label: "Type", render: (r) => VENDOR_GROUP_LABEL[r.group] || r.group },
           { label: "Era", render: (r) => r.era },
           ...stateColumns,
@@ -3537,6 +3549,13 @@
           indexAxis: "y",
           responsive: true,
           maintainAspectRatio: false,
+          onClick: (evt, elements, chart) => {
+            const pts = chart.getElementsAtEventForMode(evt, "nearest", { intersect: true }, false);
+            if (pts.length) location.hash = "#/states/vendor/" + rows[pts[0].index].id;
+          },
+          onHover: (evt, elements) => {
+            evt.native.target.style.cursor = elements.length ? "pointer" : "default";
+          },
           plugins: {
             legend: { display: false },
             tooltip: Object.assign(tooltipBase(), {
@@ -3697,6 +3716,167 @@
     }, 0);
 
     return card;
+  }
+
+  function statesBackLink() {
+    return el("a", { href: "#/states", className: "back-link", text: "← Back to States dashboard" });
+  }
+
+  // Mirrors stateRouter(): "" shows the combined States overview,
+  // "vendor/<id>" shows one vendor's cross-comparison page in
+  // #states-detail-view instead. No "candidate" sub-route here --
+  // candidate/committee drill-down always happens on a specific state's
+  // own tab, since a filer only ever exists in one state's own system.
+  function statesRouter(sub) {
+    const mainView = document.getElementById("states-view");
+    const detailView = document.getElementById("states-detail-view");
+    if (!sub) {
+      detailView.hidden = true;
+      mainView.hidden = false;
+      renderStatesView();
+      window.scrollTo(0, 0);
+      return;
+    }
+    mainView.hidden = true;
+    detailView.hidden = false;
+    const parts = sub.split("/");
+    const type = parts[0];
+    const id = decodeURIComponent(parts.slice(1).join("/"));
+    if (type === "vendor") renderStatesVendorDetail(id);
+    else {
+      detailView.innerHTML = "";
+      detailView.appendChild(statesBackLink());
+      detailView.appendChild(el("p", { text: "Page not found." }));
+    }
+    window.scrollTo(0, 0);
+  }
+
+  // A vendor's cross-comparison page: how much it shows up in disclosed
+  // spend on Federal and each covered state, plus a population-scaled
+  // national estimate built from the covered states alone (see
+  // pipeline/build_projection.py's scale_factor) -- there is no
+  // projection for Federal itself, which is already national in scope by
+  // construction, only for the four-state sample being scaled up to it.
+  function renderStatesVendorDetail(id) {
+    const view = document.getElementById("states-detail-view");
+    view.innerHTML = "";
+    view.appendChild(statesBackLink());
+    const v = STATES_DATA.vendors.find((r) => r.id === id);
+    if (!v) {
+      view.appendChild(el("p", { text: "Vendor not found in the combined states dataset." }));
+      return;
+    }
+    const c = colors();
+
+    const header = el("div", { className: "detail-header" });
+    const h2 = el("h2", { text: v.name });
+    h2.appendChild(el("span", { className: "pill", text: VENDOR_GROUP_LABEL[v.group] || v.group }));
+    if (v.era === "legacy") h2.appendChild(el("span", { className: "pill pill-legacy", text: "Legacy (pre-generative AI)" }));
+    header.appendChild(h2);
+    if (v.homepage) {
+      header.appendChild(el("a", { className: "entity-link", href: v.homepage, text: "Vendor website ↗", attrs: { target: "_blank", rel: "noopener" } }));
+    }
+    view.appendChild(header);
+    view.appendChild(
+      el("p", {
+        className: "lede",
+        text:
+          "How much " +
+          v.name +
+          " shows up in disclosed AI-vendor spend across every dataset this site tracks: federal House/Senate races, each covered state, and a population-scaled national estimate built from the states alone (not from Federal, which is already national in scope).",
+      })
+    );
+
+    const fedVendor = (DATA.vendors_overall || []).find((r) => r.id === id);
+    const fedAmount = fedVendor ? fedVendor.amount_high : 0;
+    const statesCombined = v.amount_high;
+    const scaleFactor = PROJECTION_DATA.meta.scale_factor;
+    const projectedAmount = statesCombined * scaleFactor;
+    const nStatesWithSpend = Object.keys(v.by_state).length;
+
+    const stats = el("div", { className: "detail-stat-row" });
+    stats.appendChild(statTile("Federal spend", fmtUSD0.format(fedAmount), fedVendor ? "high-confidence House/Senate matches" : "no disclosed federal match"));
+    stats.appendChild(statTile("Combined states spend", fmtUSD0.format(statesCombined), nStatesWithSpend + " of " + STATES_DATA.meta.covered_states.length + " covered states"));
+    stats.appendChild(statTile("Projected national spend (states, population-scaled)", fmtUSD0.format(projectedAmount), scaleFactor.toFixed(2) + "x scale-up -- an estimate, not a disclosed figure"));
+    view.appendChild(stats);
+
+    const sourceRows = [{ label: "Federal", amount: fedAmount, href: fedAmount > 0 ? "#/vendor/" + id : null, isProjection: false }];
+    STATES_DATA.meta.covered_states.forEach((stateId) => {
+      const amt = (v.by_state[stateId] || {}).amount_high || 0;
+      sourceRows.push({ label: STATE_CONFIG_BY_ID[stateId].label, amount: amt, href: amt > 0 ? "#/" + stateId + "/vendor/" + id : null, isProjection: false });
+    });
+    sourceRows.push({ label: "Combined states (real)", amount: statesCombined, href: null, isProjection: false });
+    sourceRows.push({ label: "Projected national (population-scaled)", amount: projectedAmount, href: null, isProjection: true });
+
+    const chartCard = el("div", { className: "card" });
+    chartCard.appendChild(el("h3", { text: "Spend by source" }));
+    chartCard.appendChild(
+      el("p", {
+        className: "note",
+        text: "The last bar (muted gray) is the population-scaled estimate, not a disclosed dollar figure -- see the notes below for why it's a rough scale-up, not a statistical estimate.",
+      })
+    );
+    chartCard.appendChild(el("div", { className: "chart-holder", children: [el("canvas", { id: "states-vendor-detail-chart" })] }));
+    view.appendChild(el("div", { className: "card-grid single", children: [chartCard] }));
+
+    const tableCard = el("div", { className: "card" });
+    tableCard.appendChild(el("h3", { text: "Every source, side by side" }));
+    tableCard.appendChild(
+      el("p", {
+        className: "note",
+        text: "Click a source's own $ figure to open its own detail page, where every individual matched record for this vendor is listed. \"Combined states\" and \"Projected national\" have no page of their own -- both are totals computed here, not links to a filing.",
+      })
+    );
+    tableCard.appendChild(
+      buildTable(
+        [
+          { label: "Source", render: (r) => r.label },
+          { label: "Amount", num: true, link: (r) => r.href, render: (r) => fmtUSD0.format(r.amount) },
+        ],
+        sourceRows
+      )
+    );
+    view.appendChild(el("div", { className: "card-grid single", children: [tableCard] }));
+
+    const notesCard = el("div", { className: "card" });
+    notesCard.appendChild(el("h3", { text: "Why the projection is a rough scale-up, not an estimate" }));
+    const notesList = el("ul", { className: "notes" });
+    (PROJECTION_DATA.meta.methodology_notes || []).forEach((s) => notesList.appendChild(el("li", { text: s })));
+    notesCard.appendChild(notesList);
+    view.appendChild(el("div", { className: "card-grid single", children: [notesCard] }));
+
+    const chartLabels = sourceRows.map((r) => r.label);
+    const chartAmounts = sourceRows.map((r) => r.amount);
+    const chartColors = [
+      cssVar("--series-1"),
+      ...STATES_DATA.meta.covered_states.map((sid) => cssVar("--" + sid + "-accent")),
+      cssVar("--states-accent"),
+      cssVar("--text-muted"),
+    ];
+    makeChart("states-vendor-detail-chart", {
+      type: "bar",
+      data: { labels: chartLabels, datasets: [{ label: "Disclosed / projected spend", data: chartAmounts, backgroundColor: chartColors, borderRadius: 4 }] },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        indexAxis: "y",
+        plugins: {
+          legend: { display: false },
+          tooltip: Object.assign(tooltipBase(), {
+            callbacks: {
+              label: (ctx) => {
+                const r = sourceRows[ctx.dataIndex];
+                return fmtUSD0.format(r.amount) + (r.isProjection ? " (estimate, not disclosed)" : "");
+              },
+            },
+          }),
+        },
+        scales: {
+          x: { grid: { color: c.grid }, ticks: { color: c.text, callback: (v) => fmtUSD0.format(v) }, border: { display: false } },
+          y: { grid: { display: false }, ticks: { color: c.text, autoSkip: false }, border: { display: false } },
+        },
+      },
+    });
   }
 
   function renderStatesMethodologyCard() {
@@ -3964,7 +4144,8 @@
       activateDataset("compare");
       return;
     }
-    if (raw === "states") {
+    if (raw === "states" || raw.indexOf("states/") === 0) {
+      pendingStatesSubroute = raw === "states" ? "" : raw.slice("states/".length);
       activateDataset("states");
       return;
     }
