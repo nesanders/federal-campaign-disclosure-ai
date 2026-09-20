@@ -53,11 +53,47 @@ jobs:
       - name: Build Massachusetts dashboard dataset
         run: python pipeline/build_dataset_ma.py
 
+      - name: Fetch Washington PDC data
+        run: python pipeline/fetch_wa.py
+
+      - name: Parse Washington records for AI-vendor matches
+        run: python pipeline/parse_wa.py
+
+      - name: Build Washington dashboard dataset
+        run: python pipeline/build_dataset_wa.py
+
+      - name: Fetch Colorado TRACER data
+        run: python pipeline/fetch_co.py
+
+      - name: Parse Colorado records for AI-vendor matches
+        run: python pipeline/parse_co.py
+
+      - name: Build Colorado dashboard dataset
+        run: python pipeline/build_dataset_co.py
+
+      - name: Fetch California CAL-ACCESS expenditure data
+        run: python pipeline/fetch_ca.py
+
+      - name: Fetch California CAL-ACCESS filer identity data
+        run: python pipeline/fetch_ca_filers.py
+
+      - name: Parse California records for AI-vendor matches
+        run: python pipeline/parse_ca.py
+
+      - name: Build California dashboard dataset
+        run: python pipeline/build_dataset_ca.py
+
+      - name: Build combined States dashboard dataset
+        run: python pipeline/build_dataset_states.py
+
+      - name: Build population-based national projection
+        run: python pipeline/build_projection.py
+
       - name: Commit updated dataset
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data/dashboard.json docs/data/dashboard_ma.json data/processed/
+          git add docs/data/dashboard.json docs/data/dashboard_ma.json docs/data/dashboard_wa.json docs/data/dashboard_co.json docs/data/dashboard_ca.json docs/data/dashboard_states.json docs/data/dashboard_projection.json data/processed/
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

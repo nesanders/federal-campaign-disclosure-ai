@@ -71,71 +71,100 @@ AI-indicative language and researching the payee names that turned up.
 **Live site:** enable GitHub Pages for this repo (Settings -> Pages -> Deploy
 from branch -> `main` / `/docs`) and it will serve `docs/index.html`.
 
-## Massachusetts tab
+## State tabs (Massachusetts, Washington, Colorado, California)
 
-The site has a second, fully separate dataset: a **Massachusetts** tab
-(switcher at the top of the page, defaulting to **Federal**) reading itemized
-expenditure and subvendor records from OCPF, the Massachusetts Office of
-Campaign and Political Finance, via its public API (`api.ocpf.us`) --
-Massachusetts has no bulk-file distribution comparable to the FEC's. It uses
-the same vendor taxonomy as the federal side, applied unmodified, over a
-fixed date window covering the 2024 and 2026 cycles (OCPF filers report
-continuously rather than in discrete federal-style two-year cycles).
+Beyond Federal, the site has four fully separate state datasets, one tab
+each (switcher at the top of the page, defaulting to **Federal**), each
+reading a different state disclosure system and rendered by the same
+shared, state-parameterized code in `docs/js/app.js`:
 
-The two datasets are never merged and are not directly comparable
-dollar-for-dollar -- different disclosure regime, different itemization
-floor ($50 per item at OCPF vs. FEC's effective $200/payee/cycle), vastly
-different scale. Every card on the Massachusetts tab carries its own
-"Massachusetts &middot; OCPF" pill (and every federal card a matching
-"Federal &middot; FEC" one) so which dataset a given chart belongs to is
-never ambiguous.
+| State | Source | Bulk/API access |
+| --- | --- | --- |
+| Massachusetts | OCPF (Office of Campaign and Political Finance) | Public API, `api.ocpf.us` -- no bulk-file distribution |
+| Washington | PDC (Public Disclosure Commission) | Public Socrata API, `data.wa.gov` |
+| Colorado | TRACER (Secretary of State) | Plain annual bulk CSV.zip downloads, no auth |
+| California | CAL-ACCESS (Secretary of State) | Daily bulk database export (a single ~1.5GB zip covering the entire legacy system); this pipeline reads only the one table it needs via HTTP range requests rather than downloading the whole archive |
 
-Like the Federal tab, every vendor name and filer name on the Massachusetts
-tab is a link to its own detail page (`#/ma/vendor/<id>` /
-`#/ma/candidate/<id>` -- OCPF calls the entity a "filer," almost always a
+Every state tab uses the same vendor taxonomy as the Federal tab, applied
+unmodified, over each state's own date window (Massachusetts covers a
+fixed window through the 2026 cycle; Washington/Colorado/California start
+2023-01-01 with no fixed end, since none of the three uses federal-style
+two-year cycles). None of the five datasets (Federal + 4 states) are ever
+merged, and none are directly comparable dollar-for-dollar to each other --
+different disclosure regime, different itemization floor, vastly different
+scale. Every card carries its own "\<Dataset\> &middot; \<Source\>" pill so
+which dataset a given chart belongs to is never ambiguous.
+
+Two real, state-specific gaps, both documented on that state's own tab
+(and in each `pipeline/build_dataset_<state>.py`'s methodology notes) rather
+than worked around: Colorado's and California's bulk sources carry **no
+party-affiliation field at all**, so every record on those two tabs shows
+as "Unknown" party; and only Massachusetts's OCPF exposes a real per-report
+filed date and a subcontractor-disclosure ("subvendor") layer, so the
+weekly disclosure timeline and the "Subvendor payments tested" stat are
+Massachusetts-only -- the other three tabs simply don't render those
+cards/tiles rather than faking equivalents.
+
+Like the Federal tab, every vendor name and filer name on a state tab is a
+link to its own detail page (`#/<state>/vendor/<id>` /
+`#/<state>/candidate/<id>`, e.g. `#/wa/vendor/openai` -- each state's
+disclosure system calls the payer entity a "filer," almost always a
 candidate committee, so it's labeled "candidate" here for consistency with
-the Federal tab): spend over time, a Democratic-vs-Republican party split,
-and every individual matched disbursement, sortable, with a one-click link
-back to that record's own OCPF filing.
+the Federal tab): spend over time, a Democratic-vs-Republican party split
+(where the state has one), and every individual matched disbursement,
+sortable, with a one-click link back to that record's own state filing.
 
-The search bar at the top of the page is shared by both tabs: on
-Massachusetts it searches MA candidates and vendors (no "Races" filter,
-since MA candidates aren't grouped into races here) and its results link to
-the MA detail pages above instead of the Federal ones.
+The search bar at the top of the page is shared across all five datasets:
+on a state tab it searches that state's own candidates and vendors only
+(no "Races" filter, since state candidates aren't grouped into races here)
+and its results link to that state's own detail pages instead of the
+Federal ones.
 
-Like the Federal tab's breakdown/trend charts, the Massachusetts yearly
-trend chart has a `$` / `% of total spend` toggle. The denominator is each
-filer's own total reported OCPF expenditure that year -- every itemized
-record, not just AI-vendor matches (`ocpf_filer_year_totals.csv`, the same
-role `parse_disbursements.py`'s committee totals play for the federal
-dashboard) -- summed, per year, across the filers who show at least one
-AI-vendor disbursement that year specifically, matching the federal
-dashboard's "relative to AI-using campaigns" framing. A filer's own detail
-page shows the same "AI as % of total spend" stat the federal candidate
-page does.
+Like the Federal tab's breakdown/trend charts, each state's yearly trend
+chart has a `$` / `% of total spend` toggle. The denominator is each
+filer's own total reported expenditure that year on that state's own
+system -- every itemized record, not just AI-vendor matches -- summed, per
+year, across the filers who show at least one AI-vendor disbursement that
+year specifically, matching the Federal dashboard's "relative to AI-using
+campaigns" framing. A filer's own detail page shows the same "AI as % of
+total spend" stat the Federal candidate page does.
 
-The legacy-vendor toggle (top of the page) is shared by both tabs too: off
+The legacy-vendor toggle (top of the page) is shared across every tab: off
 by default, it hides legacy-era vendors (e.g. CallTime.AI, Grammarly,
-Otter.ai) from every Massachusetts aggregate view the same way it does on
-Federal -- the vendor chart and table, the yearly spending trend, the
-party split pie, and the party-spending-over-time chart. As on Federal, it
-does *not* filter the weekly disclosure timeline or the "Individual
-disclosed payments" table (both always show every matched record, all
-eras and confidence tiers -- see "Notes & limitations" on the page itself),
-nor a vendor's or candidate's own detail page, which always shows its full
+Otter.ai) from each state's aggregate views the same way it does on
+Federal -- the vendor chart and table, the yearly spending trend, and (on
+Massachusetts) the party split pie and party-spending-over-time chart. As
+on Federal, it does *not* filter the "Individual disclosed payments" table
+(always shows every matched record, all eras and confidence tiers) nor a
+vendor's or candidate's own detail page, which always shows its full
 history regardless of the toggle.
 
-Every record-level table on both tabs (a vendor's or candidate's own
+Every record-level table on every tab (a vendor's or candidate's own
 disbursement history, and the overview's notable-payments table) carries a
 Confidence column alongside any legacy-vendor pill, so a reader can always
 tell whether a given row is a high-confidence vendor-name match or a
-lower-confidence match on an ambiguous word. The main vendor table and
-chart on both tabs also split each vendor's total into "High-confidence $"
-and "Lower-confidence $" rather than blending them into one figure.
+lower-confidence match on an ambiguous word.
+
+## States tab (combined)
+
+A sixth tab unions all four state datasets into one view -- the state-level
+analog of how the Federal tab already unions House and Senate races into
+one view. Every figure on this tab is a **real sum of each state's own
+already-disclosed records**, built by `pipeline/build_dataset_states.py`
+from the four states' own dashboard JSON files, not an estimate: a combined
+vendor table (each vendor's dollar total broken out by state, with each
+state's own $ column linking to that vendor's detail page on that state's
+tab), a combined year-over-year trend, a combined Democratic-vs-Republican
+party split (Colorado and California contribute entirely to "Unknown,"
+since neither discloses a party field), and a state-by-state leaderboard
+(which state discloses the most AI-vendor spend, in total and as a share
+of that state's own reported spend). There is no separate combined-states
+vendor or candidate detail page -- drill-down always happens on the
+relevant state's own tab.
 
 ## Compare tab
 
-A third tab puts every AI vendor found on either the Federal or
+A seventh tab puts every AI vendor found on either the Federal or
 Massachusetts tab into one sortable table: high-confidence dollars on each
 dataset side by side, a "Combined volume" column (the two summed -- the
 only place the two datasets' dollars are added together, since they cover
@@ -149,7 +178,10 @@ once growth passes 3x, since a five- or six-digit percentage off a small
 real base stops being a readable number. A vendor whose earlier half had
 under $25 to compare against is labeled "New" instead, since a rate isn't
 meaningfully computable that close to zero. Each row's `$` figures link to
-that vendor's own Federal or Massachusetts detail page.
+that vendor's own Federal or Massachusetts detail page. (Compare stays
+pinned to Federal vs. Massachusetts specifically, unlike the States tab
+above -- it predates the other three states and was never generalized to
+an N-way comparison.)
 
 The table also carries two fields that exist only for this tab: a
 `description` (one line, present tense, on how a campaign actually uses
@@ -161,7 +193,23 @@ stated purpose. Clicking a category tag filters the table to every vendor
 carrying that tag (click it again, or the "Clear filter" button that
 appears, to undo); every column header carries hover text spelling out
 exactly what that column measures. Respects the same legacy-vendor toggle
-as the other two tabs.
+as every other tab.
+
+Below the vendor table, a **population-based national projection**
+(`pipeline/build_projection.py`) scales this project's combined findings
+across the four states it covers up to the full U.S. population, using
+U.S. Census Bureau Vintage 2024 state population estimates
+(`pipeline/config/state_population.py`): projected national AI-vendor
+spend, projected candidate committees using AI, and a "vendor-adoption
+instances" figure, each shown alongside the real covered-state numbers
+they're scaled from. This is explicitly **not** a statistical estimate --
+the four covered states skew toward itemization-rich disclosure systems
+and Democratic-leaning delegations, California concentrates a
+disproportionate share of the AI industry itself, and the vendor-count
+figure in particular assumes linear growth with population rather than
+the saturation a real 50-state count would show. The section's own
+methodology notes (rendered in full on the page) spell out each caveat;
+see them before citing any of these numbers.
 
 ## Job Postings tab (retired)
 
@@ -233,9 +281,65 @@ pipeline/fetch_ocpf_filer_party.py   fetches each matched filer's major-party
 pipeline/build_dataset_ma.py         aggregates OCPF matches and writes
                                       docs/data/dashboard_ma.json (a separate
                                       file/schema from the federal dataset)
+pipeline/fetch_wa.py                 downloads Washington PDC expenditure
+                                      records via data.wa.gov's Socrata API
+pipeline/parse_wa.py                 scans those records for AI-vendor
+                                      matches; totals each filer's own total
+                                      spend by year
+pipeline/build_dataset_wa.py         aggregates WA matches (via the shared
+                                      pipeline/lib/build_state_dataset.py,
+                                      below) and writes
+                                      docs/data/dashboard_wa.json
+pipeline/fetch_co.py                 downloads Colorado TRACER's plain
+                                      annual bulk expenditure CSV.zip files
+pipeline/parse_co.py                 scans those records for AI-vendor
+                                      matches; totals each filer's own total
+                                      spend by year
+pipeline/build_dataset_co.py         aggregates CO matches (shared
+                                      aggregator) and writes
+                                      docs/data/dashboard_co.json
+pipeline/fetch_ca.py                 downloads just the EXPN (itemized
+                                      expenditure) table out of California
+                                      CAL-ACCESS's daily bulk export, via
+                                      HTTP range requests against the zip's
+                                      central directory -- avoids
+                                      downloading the ~1.5GB full archive
+pipeline/fetch_ca_filers.py          downloads CAL-ACCESS's much smaller
+                                      per-filing cover-page table (needed
+                                      because EXPN's own filer-id column is
+                                      blank on nearly every row) to resolve
+                                      each record's real filer identity
+pipeline/parse_ca.py                 scans EXPN records for AI-vendor
+                                      matches (joined against the filer
+                                      lookup above); totals each filer's own
+                                      total spend by year
+pipeline/build_dataset_ca.py         aggregates CA matches (shared
+                                      aggregator) and writes
+                                      docs/data/dashboard_ca.json
+pipeline/lib/build_state_dataset.py  shared vendor/filer/time-series rollup
+                                      logic used by WA/CO/CA's own
+                                      build_dataset_<state>.py (Massachusetts
+                                      predates this and has its own OCPF-only
+                                      extras -- subvendor payments, the
+                                      weekly report-filed histogram -- with
+                                      no equivalent elsewhere, so it isn't
+                                      rebuilt on top of this shared function)
+pipeline/build_dataset_states.py     unions all four state dashboards into
+                                      docs/data/dashboard_states.json (a real
+                                      sum of each state's own records, for
+                                      the combined States tab)
+pipeline/build_projection.py         scales the four states' combined
+                                      findings up to the full U.S. population
+                                      (pipeline/config/state_population.py,
+                                      Census Bureau Vintage 2024 estimates)
+                                      and writes
+                                      docs/data/dashboard_projection.json,
+                                      for the Compare tab's population
+                                      projection section
 docs/                                the static site (GitHub Pages source);
                                       reads docs/data/dashboard.json and
-                                      docs/data/dashboard_ma.json client-side
+                                      each docs/data/dashboard_<id>.json
+                                      client-side
 ```
 
 (`pipeline/fetch_job_postings.py` and `pipeline/build_dataset_jobs.py`
@@ -256,11 +360,28 @@ python pipeline/parse_ocpf.py
 python pipeline/fetch_ocpf_report_dates.py
 python pipeline/fetch_ocpf_filer_party.py
 python pipeline/build_dataset_ma.py
+python pipeline/fetch_wa.py
+python pipeline/parse_wa.py
+python pipeline/build_dataset_wa.py
+python pipeline/fetch_co.py
+python pipeline/parse_co.py
+python pipeline/build_dataset_co.py
+python pipeline/fetch_ca.py
+python pipeline/fetch_ca_filers.py
+python pipeline/parse_ca.py
+python pipeline/build_dataset_ca.py
+python pipeline/build_dataset_states.py
+python pipeline/build_projection.py
 ```
 
-`.github/workflows/refresh-data.yml` runs this weekly and commits the updated
-`docs/data/dashboard.json` and `docs/data/dashboard_ma.json`, so the site
-stays current as new filings land.
+(California's `fetch_ca.py` is the slowest step by far -- it streams
+through CAL-ACCESS's full ~15M-row itemized-expenditure history to filter
+down to 2023 onward, which takes several minutes even with the
+range-request optimization that avoids downloading the full archive.)
+
+`.github/workflows/refresh-data.yml` runs this weekly and commits every
+updated `docs/data/dashboard*.json` file, so the site stays current as new
+filings land.
 
 ## Data sources
 
@@ -285,6 +406,24 @@ stays current as new filings land.
   are used for matched records only: `report/{reportId}` (each report's
   real filed date) and `filer/payload/{cpfId}` (each filer's major-party
   affiliation).
+- Washington PDC's documented Socrata SODA API (`data.wa.gov`, dataset
+  `tijg-9zyp`, no key required) -- itemized expenditure records, paginated.
+- Colorado TRACER's plain annual bulk downloads
+  (`tracer.sos.colorado.gov/PublicSite/Docs/BulkDataDownloads/`), one
+  `{year}_ExpenditureData.csv.zip` per year, no API or auth.
+- California CAL-ACCESS's daily bulk database export
+  (`campaignfinance.cdn.sos.ca.gov/dbwebexport.zip`) -- the entire legacy
+  system in one ~1.5GB zip, 130+ tables. This pipeline fetches only two of
+  them, both via HTTP range requests against the zip's central directory
+  rather than downloading the whole archive: `EXPN_CD.TSV` (itemized
+  expenditures) and the much smaller `CVR_CAMPAIGN_DISCLOSURE_CD.TSV`
+  (each filing's cover page, needed to resolve filer identity -- see
+  `pipeline/fetch_ca_filers.py`'s own docstring for why EXPN's own
+  filer-id column can't be used directly).
+- U.S. Census Bureau Vintage 2024 national and state population estimates
+  (`census.gov/newsroom/press-kits/2024/national-state-population-estimates.html`)
+  -- static reference data in `pipeline/config/state_population.py`, used
+  only to build the Compare tab's population projection.
 
 ## Methodology, in brief
 
@@ -367,30 +506,76 @@ stays current as new filings land.
   high-confidence payment across four cycles -- coordinated party spending
   is capped by statute and, in what we found, goes overwhelmingly to
   traditional media buyers rather than named AI vendors.
+- Colorado's and California's bulk sources carry no party field at all
+  (unlike Massachusetts and Washington, which do), so every record on
+  those two tabs -- and every Colorado/California contribution to the
+  States and Compare tabs' combined party splits -- shows as "Unknown."
+- California's EXPN table's own filer-id column (`CMTE_ID`) is blank on
+  nearly every row; `pipeline/parse_ca.py` resolves real filer identity by
+  joining each record's `FILING_ID` against a separate cover-page table
+  (`pipeline/fetch_ca_filers.py`). A small number of filings without a
+  resolvable cover page fall back to "Committee \<FILING_ID\>" with no
+  real name.
+- California's data surfaced the largest false-positive source found on
+  this site: ActBlue-style "Earmarked Contribution from: LASTNAME,
+  FIRSTNAME" passthrough-donation boilerplate makes up 68.6% of all raw
+  California expenditure records, and donors' own first/last names
+  routinely collide with bare vendor patterns purely by coincidence (e.g.
+  257 of an initial 266 "Anthropic" matches were donors literally named
+  Claude). `parse_ca.py` excludes that boilerplate from vendor matching
+  entirely rather than chasing individual name collisions.
+- The population-based national projection on the Compare tab is a
+  simple population-weighted scale-up of the four states this site
+  covers, not a statistical estimate -- see that section's own rendered
+  methodology notes (or `pipeline/build_projection.py`'s docstring) for
+  the specific ways the four covered states aren't a representative
+  sample of the country.
 
 ## Repo layout
 
 ```
 pipeline/                 the data pipeline (Python)
   config/vendors.yaml      AI vendor + use-case taxonomy, with sourcing notes
+  config/state_population.py
+                          Census Bureau Vintage 2024 population estimates,
+                          used only by build_projection.py
   config/battleground_candidates_2026.json
                           roster of competitive-race candidates + campaign
                           website domains, built for the now-retired job-
                           postings feature (see "Job Postings tab (retired)")
-  lib/                     shared helpers (FEC schema, vendor matching, reference data)
-data/raw/                 downloaded FEC/legislators source files (gitignored, large)
+  lib/                     shared helpers (FEC schema, vendor matching,
+                          reference data, and build_state_dataset.py -- the
+                          shared WA/CO/CA aggregator)
+data/raw/                 downloaded FEC/legislators/state source files
+                          (gitignored, large); wa/, co/, ca/ subdirectories
+                          hold each state's own raw fetch output
 data/processed/           filtered AI-vendor-match CSVs and per-committee/
                           per-spender total-expenditure CSVs, per cycle
                           (committed, small); ocpf_*.csv are the Massachusetts
                           equivalents (not split by cycle), including
                           ocpf_report_dates.csv, ocpf_filer_party.csv, and
-                          ocpf_filer_year_totals.csv
+                          ocpf_filer_year_totals.csv; wa_*.csv/co_*.csv/
+                          ca_*.csv are the Washington/Colorado/California
+                          equivalents
   job_postings/*.jsonl     scraped job postings from the retired job-postings
                           feature (kept for reference; no longer rebuilt)
 docs/                     GitHub Pages site
-  index.html, css/, js/    static dashboard (vanilla JS + a vendored Chart.js build)
+  index.html, css/, js/    static dashboard (vanilla JS + a vendored Chart.js
+                          build); app.js's state-tab rendering is shared/
+                          parameterized across all four state dashboards,
+                          not one module per state
   data/dashboard.json      aggregated federal data the site reads
   data/dashboard_ma.json   aggregated Massachusetts data (separate file/schema)
+  data/dashboard_wa.json, dashboard_co.json, dashboard_ca.json
+                          aggregated Washington/Colorado/California data
+                          (same shared schema as each other, produced by
+                          pipeline/lib/build_state_dataset.py)
+  data/dashboard_states.json
+                          the four state dashboards above, unioned into one
+                          combined view (States tab)
+  data/dashboard_projection.json
+                          the population-based national projection shown on
+                          the Compare tab
 planning/                 scoping docs for signals not yet (or partially)
                           built, or built and retired -- state expansion,
                           job postings, vendor-directory mining
