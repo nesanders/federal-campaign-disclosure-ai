@@ -146,3 +146,229 @@ All domains below were safelisted and re-tested live from this container.
 | `tracer.sos.colorado.gov` | ✅ Reachable | Confirmed this is the real Colorado TRACER system (the domain guessed in the original plan was correct). Page references a "Download Data" resource but the exact URL/format wasn't confirmed in this pass. |
 
 **Updated recommendation:** California just became the more promising near-term target, not Washington — `dbwebexport.zip` is a concrete, already-found, daily-updated bulk file, versus Washington's open-data structure still needing one more layer of discovery (the GitLab wiki). **Next step: safelist `campaignfinance.cdn.sos.ca.gov`**, then confirm the zip's actual internal file/table structure (likely needs `calaccess-documentation.zip` read alongside it to map which table holds itemized expenditures with payee name + purpose, analogous to OCPF's `clarifiedName`/`clarifiedPurpose` fields) before writing `fetch_ca.py`.
+
+## Round 2 (2026-09-20): all four states scoped, integration plan
+
+`campaignfinance.cdn.sos.ca.gov` is now reachable (safelisted since Round
+1). This round pushed discovery to completion for all four states —
+three turned out to have real, directly buildable data, no further
+domains needed for those three at all.
+
+### California — confirmed buildable
+
+`www.sos.ca.gov`'s raw-data page links two files, both live on
+`campaignfinance.cdn.sos.ca.gov`:
+- `calaccess-documentation.zip` (4.2 MB) — schema docs. The
+  `DBInfo/CalAccessTablesWeb.pdf` inside it documents every table.
+- `dbwebexport.zip` (**1.58 GB**, updated daily — `last-modified` was
+  today when checked) — the full CAL-ACCESS database as tab-delimited
+  files, one per table, 130 entries total.
+
+The table that matters, `CalAccess/DATA/EXPN_CD.TSV`, is itself **3.07
+GB uncompressed / 393 MB compressed** — a large single table, but its
+schema is exactly what's needed: `CMTE_ID` (filer), `PAYEE_NAML`/
+`PAYEE_NAMF` (payee name), `EXPN_DSCR` (purpose/description, CAL-
+ACCESS's answer to OCPF's `clarifiedPurpose`), `EXPN_DATE`, `AMOUNT`,
+`CAND_NAML`/`OFFICE_CD`/`OFFIC_DSCR`/`DIST_NO` (candidate/office/
+district, for candidate-detail pages), `JURIS_CD`/`JURIS_DSCR`. Sample
+rows confirmed real data back to at least January 2000.
+
+The zip's host (`campaignfinance.cdn.sos.ca.gov`) supports HTTP range
+requests (`accept-ranges: bytes`), which matters a lot here: Python's
+`zipfile` module can read a remote zip's central directory and then
+decompress just the one entry it needs, fetching only the bytes that
+entry's compressed stream requires — confirmed by pulling the first 130
+rows of `EXPN_CD.TSV` using **35 KB of network transfer**, not 1.58 GB.
+`fetch_ca.py` should use this pattern (a small `HttpFile`-style
+seekable wrapper around `requests`, feeding `zipfile.ZipFile`) rather
+than downloading the full archive, both to avoid an unnecessary
+~1.2 GB extra download (everything in the zip except `EXPN_CD.TSV`) and
+because GitHub Actions runners have finite disk. The 393 MB compressed
+entry itself still needs a full sequential read once decompression
+starts, so the actual fetch is closer to "download ~400 MB," comparable
+to the FEC's own largest per-cycle Schedule B files this pipeline
+already handles.
+
+**No further domains needed for California.**
+
+### Washington — confirmed buildable, cleanest of the four
+
+The GitLab wiki (`gitlab.com/wapdc/OpenData-Program/-/wikis/home`,
+fetched via its raw-markdown endpoint since the rendered page is a JS
+SPA) just points back to `pdc.wa.gov`'s catalog and confirms "5 million
+records published to the Washington State Open Data Portal" —
+`data.wa.gov`, a standard Socrata deployment.
+
+Socrata's own catalog API, correctly scoped with `domains=data.wa.gov`
+(an unscoped query returns federated cross-domain results from every
+Socrata-hosted portal — caught this after an unscoped search returned
+Austin TX, New York State, Hawaii, and Oakland CA results mixed in),
+finds **`tijg-9zyp`: "Expenditures by Candidates and Political
+Committees"** — exactly the target dataset. It's queryable directly:
+
+```
+GET https://data.wa.gov/resource/tijg-9zyp.json?$limit=...&$offset=...
+GET https://data.wa.gov/resource/tijg-9zyp.json?$select=count(*)
+```
+
+**1,091,350 total rows**, "last 10 years" per the dataset's own
+description. Fields: `filer_name`, `office`, `legislative_district`,
+`party`, `jurisdiction`, `description` (real purpose text — sample rows
+include things like "Snowball is an online payment processor..."),
+`code` (a expense-category field — one observed value was literally
+"Computers, printers, software, phones, etc.", a strong pre-filter for
+AI-vendor matching), `recipient_name`/`recipient_address`/`recipient_city`
+etc., `amount`, `expenditure_date`. This is a standard, well-documented
+Socrata SODA API — the same query pattern (`$limit`/`$offset`
+pagination, `$select=count(*)` for an integrity check) this pipeline
+already uses conceptually for OCPF, and arguably better-documented than
+OCPF's own undocumented API was when that one was built.
+
+**No further domains needed for Washington.**
+
+### Colorado — confirmed buildable
+
+`tracer.sos.colorado.gov/PublicSite/DataDownload.aspx` lists plain CSV-
+in-zip bulk downloads, one file per (data type × year), for
+Contributions, Expenditures, and Loans, paginated 10-per-page across at
+least 9 pages of results (so likely back to the system's start, not
+just recent years). Direct links, no auth, no API needed:
+
+```
+https://Tracer.sos.colorado.gov/PublicSite/Docs/BulkDataDownloads/<YEAR>_ExpenditureData.csv.zip
+```
+
+Downloaded and inspected 2025's file (1.9 MB zipped, 11.8 MB CSV):
+columns include `LastName`/`FirstName`/`CommitteeName` (payee is
+person-or-business, split across name fields the way FEC's own
+`payee_organization_name` vs `payee_last_name/first_name` pair already
+requires similar handling for), `Explanation` (purpose text),
+`CandidateName`, `CommitteeName`, `CommitteeType`, `ExpenditureType`
+(category), `Jurisdiction`, `ExpenditureAmount`, `ExpenditureDate`. This
+is the most FEC-bulk-file-like of the three confirmed states — flat
+annual CSVs, no pagination or rate limits to manage, just N files to
+download and concatenate (mirroring `fetch_fec_bulk.py`'s own per-cycle
+file loop).
+
+**No further domains needed for Colorado.**
+
+### Texas — still blocked, not a domain problem
+
+`www.ethics.texas.gov` returns a real, server-side `401 Unauthorized`
+with `WWW-Authenticate: Basic realm="Restricted Area"` on **every path
+tested, including robots.txt** — confirmed twice, roughly a day apart,
+so this isn't a transient blip. This is the Texas Ethics Commission's
+own Apache server gating its entire public site behind HTTP Basic Auth,
+for reasons unknown (maintenance? an unannounced access change?
+bot-mitigation gone wrong?) — nothing on the domain-safelist side fixes
+this. Three more candidate domains are worth trying, all currently
+proxy-blocked and unverified: the bare `ethics.texas.gov` (no `www`,
+in case only the `www` vhost is gated), `txethics.org` (TEC's legacy
+pre-rebrand domain, might still serve old bulk downloads or redirect),
+and `data.texas.gov` (Texas's own state open-data portal, on the
+chance TEC's data is mirrored there the way PDC's is on `data.wa.gov`).
+**If none of those work either, Texas should be shelved** rather than
+kept as an open item — there's no fourth path to try after that beyond
+periodically re-checking whether TEC's site comes back.
+
+### Integration plan: five state tabs (MA existing + WA/CA/CO new, TX pending) + one combined tab
+
+**Per-state build** (repeats the existing MA pattern exactly, one state
+at a time in this priority order — **Washington first** (cleanest API,
+lowest implementation risk), **then Colorado** (also low-risk, flat
+files), **then California** (real but larger/slower: a ~400 MB fetch
+and the most complex schema of the three) — Texas only if unblocked):
+
+1. `fetch_<state>.py` → `data/raw/<state>/*.jsonl` or `.csv`, mirroring
+   `fetch_ocpf.py`'s integrity discipline (refuse to write a result
+   that doesn't match the source's own reported total — Washington's
+   `$select=count(*)` and Colorado's per-file row counts both support
+   this the same way OCPF's `summary.count` does; California's
+   `EXPN_CD.TSV` has no external count to check against, so its
+   integrity check has to be "did the decompression finish without
+   error" instead).
+2. `parse_<state>.py` → match payee name + purpose/description text
+   against the *same* `pipeline/config/vendors.yaml` taxonomy via
+   `pipeline/lib/vendor_match.py`. No new taxonomy work. Each state
+   also gets its own filer-level total-expenditure denominator (for a
+   "% of total spend" stat), computed from whichever field the state
+   provides (Washington and Colorado both look to have enough
+   structure to sum all itemized expenditures per filer directly).
+3. `build_dataset_<state>.py` → `docs/data/dashboard_<state>.json`,
+   same shape as `dashboard_ma.json` (`vendors`, `vendors_detail`,
+   `filers_detail`, `time_series`, `party_split`, era/confidence
+   splits) so the existing MA-tab frontend code can be generalized
+   rather than rewritten per state.
+4. **Frontend**: a new dataset tab per state (`data-dataset="wa"`,
+   `"ca"`, `"co"`), following the Massachusetts tab's own markup/JS
+   pattern in `docs/index.html` and `docs/js/app.js`. Given three (soon
+   four) tabs will share near-identical rendering logic, this is the
+   point to factor the MA-tab rendering functions into a
+   state-parameterized version rather than copy-pasting three more
+   times — a real refactor, not just an addition, and should happen
+   when Washington (the first new state) is built, not deferred.
+5. Each state also gets added to `.github/workflows/refresh-data.yml`
+   and the "How it works" / repo-layout sections of `README.md`.
+
+**Combined-states tab (new, distinct from the existing Compare tab):**
+a tab that unions *all* state-level datasets (MA + WA + CA + CO, and TX
+if it ever unblocks) into one dataset — the state-level analog of how
+the Federal tab already unions every House and Senate race into one
+view, not a side-by-side comparison of two specific sources the way
+Compare is. Concretely: `build_dataset_states.py` reads every
+`dashboard_<state>.json` and produces `dashboard_states.json` with a
+combined `vendors_overall` (summed across states, with a per-state
+breakdown available on click-through, the same shape decision already
+made for the Federal tab's own vendor detail pages), a combined time
+series, and a state-by-state leaderboard (which state spends the most
+on AI vendors, in total and as a share of that state's own spend).
+
+This is a **new tab, not a change to Compare.** Compare's own code
+(`buildCompareRows()` in `docs/js/app.js`) is hardcoded to exactly two
+sources (`fed_amount`/`ma_amount` fields, two hardcoded columns) — it
+was never built to generalize to N sources, and bolting a 3rd, 4th, 5th
+state onto it would need the same kind of rework either way. Building
+a separate, purpose-made "States" tab (state-level union, no federal
+column) avoids conflating two different questions Compare and this new
+tab actually answer — "how does federal compare to one state" vs. "how
+much AI-vendor spend shows up across state races generally" — rather
+than trying to force both into one increasingly overloaded table.
+**Open question for the user**: once there are 4-5 state tabs plus
+Federal, Compare, and States, that's 7-8 top-level tabs — worth
+deciding whether the tab bar needs a grouping/overflow treatment (e.g.
+a "States ▾" dropdown revealing MA/WA/CA/CO/TX, collapsing the bar back
+down to Federal / States ▾ / Compare / States-combined) before or after
+the first new state ships, rather than after all of them do.
+
+### Revised domain list
+
+Washington, California, and Colorado need **no further domains** — all
+three are fully reachable and their real data-download paths are
+confirmed. Only Texas has open candidates:
+
+```
+ethics.texas.gov
+txethics.org
+data.texas.gov
+```
+
+### Effort/risk, updated
+
+- **Washington**: lowest risk. Real, documented Socrata API; closest
+  analog to the OCPF build that's already proven out.
+- **Colorado**: also low risk. Flat annual CSVs, closest analog to the
+  FEC bulk-file pattern already proven out. Payee-name handling needs
+  a touch more logic (split across `LastName`/`FirstName` vs.
+  `CommitteeName`/business fields) but nothing new conceptually.
+- **California**: real but the biggest lift — largest raw data volume
+  (~400 MB fetch even with the range-request optimization), a single
+  denormalized table needing careful parsing (`EXPN_CD.TSV`'s 50-plus
+  columns cover several different form types in one table), and a
+  daily-changing source with no external row-count to validate against.
+  Also the highest expected AI-vendor dollar yield given California's
+  size, so worth the extra effort.
+- **Texas**: unknown until (if) unblocked.
+- **Frontend refactor** (generalizing the MA-tab rendering code to be
+  state-parameterized) is real, scoped work that should land with the
+  first new state, not be deferred as tech debt across three more
+  states' worth of copy-paste.
