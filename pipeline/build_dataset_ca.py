@@ -64,6 +64,11 @@ def main() -> None:
             "Vendor and filer detail pages (click a vendor or filer name) draw on every matched record "
             "for that vendor/filer, not just the top 20 shown in the overview table below -- capped at "
             "300 records per page, largest first, the same cap the other dashboards use.",
+            "Unlike Colorado, every record's 'Source' link here is real and clickable -- CAL-ACCESS "
+            "serves a PDF of a filing at a documented URL keyed by FILING_ID and AMEND_ID, both already "
+            "on every EXPN row (see pipeline/parse_ca.py's _source_link()). It links to the whole "
+            "filing (every schedule/page of it), not a page scrolled to this specific line item, since "
+            "CAL-ACCESS's PDFs aren't deep-linkable below the filing level.",
             "The $ / % of total spend toggle divides AI-vendor spend by each filer's own total reported "
             "CAL-ACCESS expenditure that year (every itemized EXPN record, not just AI-vendor matches).",
             "The legacy-vendor toggle (top of page, off by default) filters the vendor chart/table, the "

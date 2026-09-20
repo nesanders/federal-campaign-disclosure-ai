@@ -20,6 +20,14 @@ is left blank here, which the shared aggregator treats as "Unknown" the
 same way it does for OCPF filers with no major-party affiliation. This
 means Colorado's party-split chart/table will show no data until a
 lookup is built; see build_dataset_co.py's methodology notes.
+
+`source_link` is always left empty for the same reason: TRACER's public
+per-transaction deep link (ExpenditureDetail.aspx) needs both a SeqID and
+a filingid, and this bulk export carries only a RecordID -- plausibly the
+same value as SeqID given similar magnitudes in spot checks, but with no
+filingid alongside it to pair with, there's no way to build a working
+link from this file alone (compare California's parse_ca.py, whose bulk
+source does carry the FILING_ID CAL-ACCESS's own PDF endpoint needs).
 """
 from __future__ import annotations
 

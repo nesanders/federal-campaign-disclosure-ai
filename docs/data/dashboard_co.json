@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-20T20:30:34+00:00",
+    "generated_at": "2026-09-20T22:30:07+00:00",
     "records_scanned": 214669,
     "source_label": "Colorado TRACER (Secretary of State)",
     "date_range": {
@@ -16,6 +16,7 @@
       "TRACER's bulk expenditure file has no party-affiliation field at all, and (unlike OCPF) this dashboard does not do a separate per-filer party lookup for Colorado -- every record here is 'Unknown' party. The party-split chart/table will show no data for Colorado until that lookup is built (TRACER's own CandidateSearch/CommitteeSearch pages likely expose it; not yet attempted). Every other feature -- vendor totals, filer detail, time series, the legacy-vendor toggle -- works normally.",
       "As with the other dashboards, this dataset only sees a payment if its payee name or purpose text names a vendor on this project's taxonomy -- disclosed AI spend is a floor on real usage, not a ceiling.",
       "Vendor and filer detail pages (click a vendor or filer name) draw on every matched record for that vendor/filer, not just the top 20 shown in the overview table below -- capped at 300 records per page, largest first, the same cap the other dashboards use.",
+      "Individual records have no 'Source' link (shown as '\u2014' rather than a dead or fake link): TRACER's public per-transaction page needs both a SeqID and a filingid, and this bulk export carries only a RecordID with no filingid alongside it to pair with -- unlike California, whose bulk source does carry the ID CAL-ACCESS's own filing-PDF endpoint needs (see pipeline/parse_co.py's docstring for the specifics).",
       "The $ / % of total spend toggle divides AI-vendor spend by each filer's own total reported TRACER expenditure that year (every itemized record, not just AI-vendor matches).",
       "The legacy-vendor toggle (top of page, off by default) filters the vendor chart/table, the yearly trend chart, and the party split, same as the other dashboards: a record counts toward the generative-only figures if AT LEAST ONE of its matched vendors is generative-era. The 'Individual disclosed payments' table below is NOT filtered by this toggle -- it always shows every confidence tier and era."
     ]

@@ -2828,7 +2828,7 @@
           { label: "Confidence", cell: (r) => confidencePill(r.confidences.indexOf("medium") !== -1 ? "medium" : "high") },
           { label: "Amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
           { label: "Purpose", render: (r) => r.purpose || "—" },
-          { label: "Source", link: (r) => r.source_link, external: true, render: () => "View ↗" },
+          { label: "Source", link: (r) => r.source_link, external: true, render: (r) => (r.source_link ? "View ↗" : "—") },
         ],
         data.notable_records
       )
@@ -2913,7 +2913,7 @@
           { label: "Confidence", sortKey: "confidence", cell: (r) => confidencePill(r.confidence) },
           { label: "Amount", sortKey: "amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
           { label: "Purpose", sortKey: "purpose", render: (r) => r.purpose || "—" },
-          { label: "Source", sortKey: null, link: (r) => r.source_link, external: true, render: () => "View ↗" },
+          { label: "Source", sortKey: null, link: (r) => r.source_link, external: true, render: (r) => (r.source_link ? "View ↗" : "—") },
         ],
         () => renderStateVendorDetail(stateId, id)
       );
@@ -3064,7 +3064,7 @@
           { label: "Confidence", sortKey: null, cell: (r) => confidencePill(r.confidences.indexOf("medium") !== -1 ? "medium" : "high") },
           { label: "Amount", sortKey: "amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
           { label: "Purpose", sortKey: "purpose", render: (r) => r.purpose || "—" },
-          { label: "Source", sortKey: null, link: (r) => r.source_link, external: true, render: () => "View ↗" },
+          { label: "Source", sortKey: null, link: (r) => r.source_link, external: true, render: (r) => (r.source_link ? "View ↗" : "—") },
         ],
         () => renderStateCandidateDetail(stateId, id)
       );

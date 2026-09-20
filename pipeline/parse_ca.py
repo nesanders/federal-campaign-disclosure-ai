@@ -86,6 +86,23 @@ def _payee_name(row: dict) -> str:
     return last or first
 
 
+# CAL-ACCESS serves a PDF of a filing (every schedule/page of it, not just
+# this one expenditure line) at this documented URL pattern -- confirmed
+# against a real filing (filingid=3107695&amendid=0) rather than guessed.
+# Uses the row's own AMEND_ID (defaulting to 0, the original filing, if
+# somehow missing) rather than always linking to amendid=0: EXPN_CD's
+# AMEND_ID reflects exactly which version of the filing this specific
+# line item's own data came from, and a later amendment can add, remove,
+# or change line items, so always linking to the original could point a
+# reader at a PDF that doesn't contain the row they clicked through from.
+def _source_link(row: dict) -> str | None:
+    filing_id = (row.get("FILING_ID") or "").strip()
+    if not filing_id:
+        return None
+    amend_id = (row.get("AMEND_ID") or "0").strip() or "0"
+    return f"https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid={filing_id}&amendid={amend_id}"
+
+
 def _fallback_filer_name(row: dict, filing_id: str) -> str:
     first = (row.get("CAND_NAMF") or "").strip()
     last = (row.get("CAND_NAML") or "").strip()
@@ -190,7 +207,7 @@ def main() -> None:
                     "payee_display": payee,
                     "purpose_display": purpose,
                     "office": office,
-                    "source_link": None,
+                    "source_link": _source_link(row),
                     "vendor_ids": ";".join(v.id for v, _ in vendor_hits),
                     "vendor_names": ";".join(v.name for v, _ in vendor_hits),
                     "vendor_groups": ";".join(v.group for v, _ in vendor_hits),

@@ -57,6 +57,11 @@ def main() -> None:
             "Vendor and filer detail pages (click a vendor or filer name) draw on every matched "
             "record for that vendor/filer, not just the top 20 shown in the overview table below -- "
             "capped at 300 records per page, largest first, the same cap the other dashboards use.",
+            "Individual records have no 'Source' link (shown as '—' rather than a dead or fake "
+            "link): TRACER's public per-transaction page needs both a SeqID and a filingid, and this "
+            "bulk export carries only a RecordID with no filingid alongside it to pair with -- unlike "
+            "California, whose bulk source does carry the ID CAL-ACCESS's own filing-PDF endpoint "
+            "needs (see pipeline/parse_co.py's docstring for the specifics).",
             "The $ / % of total spend toggle divides AI-vendor spend by each filer's own total "
             "reported TRACER expenditure that year (every itemized record, not just AI-vendor "
             "matches).",
