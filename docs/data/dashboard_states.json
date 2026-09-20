@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-20T21:58:13+00:00",
+    "generated_at": "2026-09-20T23:03:58+00:00",
     "covered_states": [
       "ma",
       "wa",
@@ -70,7 +70,29 @@
           "filers": 40
         }
       },
-      "dem_rep_ratio": 0.266
+      "dem_rep_ratio": 0.266,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 17513.04,
+          "count": 8
+        },
+        {
+          "year": 2024,
+          "amount": 374226.28,
+          "count": 66
+        },
+        {
+          "year": 2025,
+          "amount": 52546.63,
+          "count": 22
+        },
+        {
+          "year": 2026,
+          "amount": 1285130.79,
+          "count": 50
+        }
+      ]
     },
     {
       "id": "eyesover",
@@ -97,7 +119,19 @@
           "filers": 2
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 98500.0,
+          "count": 7
+        },
+        {
+          "year": 2026,
+          "amount": 50000.0,
+          "count": 4
+        }
+      ]
     },
     {
       "id": "numero_ai",
@@ -131,7 +165,34 @@
           "filers": 4
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2022,
+          "amount": 150.0,
+          "count": 3
+        },
+        {
+          "year": 2023,
+          "amount": 741.53,
+          "count": 19
+        },
+        {
+          "year": 2024,
+          "amount": 9641.06,
+          "count": 45
+        },
+        {
+          "year": 2025,
+          "amount": 14016.0,
+          "count": 15
+        },
+        {
+          "year": 2026,
+          "amount": 9469.87,
+          "count": 39
+        }
+      ]
     },
     {
       "id": "campaign_nucleus",
@@ -171,7 +232,29 @@
           "filers": 2
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 799.33,
+          "count": 6
+        },
+        {
+          "year": 2024,
+          "amount": 1354.77,
+          "count": 13
+        },
+        {
+          "year": 2025,
+          "amount": 13032.14,
+          "count": 32
+        },
+        {
+          "year": 2026,
+          "amount": 15444.66,
+          "count": 17
+        }
+      ]
     },
     {
       "id": "calltime_ai",
@@ -217,7 +300,29 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 6300.0,
+          "count": 18
+        },
+        {
+          "year": 2024,
+          "amount": 11224.89,
+          "count": 21
+        },
+        {
+          "year": 2025,
+          "amount": 2100.0,
+          "count": 5
+        },
+        {
+          "year": 2026,
+          "amount": 6175.92,
+          "count": 12
+        }
+      ]
     },
     {
       "id": "amplify_ai",
@@ -245,7 +350,19 @@
           "filers": 2
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 11684.21,
+          "count": 5
+        },
+        {
+          "year": 2025,
+          "amount": 7500.0,
+          "count": 1
+        }
+      ]
     },
     {
       "id": "daisychain",
@@ -279,7 +396,14 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 18114.5,
+          "count": 2
+        }
+      ]
     },
     {
       "id": "openai",
@@ -325,7 +449,29 @@
           "filers": 3
         }
       },
-      "dem_rep_ratio": 3.827
+      "dem_rep_ratio": 3.827,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 260.0,
+          "count": 13
+        },
+        {
+          "year": 2024,
+          "amount": 619.99,
+          "count": 27
+        },
+        {
+          "year": 2025,
+          "amount": 4530.04,
+          "count": 126
+        },
+        {
+          "year": 2026,
+          "amount": 6053.41,
+          "count": 172
+        }
+      ]
     },
     {
       "id": "donoratlas",
@@ -365,7 +511,24 @@
           "filers": 2
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2024,
+          "amount": 2400.0,
+          "count": 10
+        },
+        {
+          "year": 2025,
+          "amount": 3150.0,
+          "count": 12
+        },
+        {
+          "year": 2026,
+          "amount": 1320.0,
+          "count": 5
+        }
+      ]
     },
     {
       "id": "grammarly",
@@ -411,7 +574,29 @@
           "filers": 3
         }
       },
-      "dem_rep_ratio": 2.002
+      "dem_rep_ratio": 2.002,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 985.56,
+          "count": 11
+        },
+        {
+          "year": 2024,
+          "amount": 2084.59,
+          "count": 29
+        },
+        {
+          "year": 2025,
+          "amount": 2355.24,
+          "count": 17
+        },
+        {
+          "year": 2026,
+          "amount": 869.77,
+          "count": 6
+        }
+      ]
     },
     {
       "id": "otter_ai",
@@ -457,7 +642,29 @@
           "filers": 3
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 199.99,
+          "count": 6
+        },
+        {
+          "year": 2024,
+          "amount": 814.99,
+          "count": 2
+        },
+        {
+          "year": 2025,
+          "amount": 2658.55,
+          "count": 26
+        },
+        {
+          "year": 2026,
+          "amount": 2228.74,
+          "count": 19
+        }
+      ]
     },
     {
       "id": "anthropic",
@@ -503,7 +710,19 @@
           "filers": 2
         }
       },
-      "dem_rep_ratio": 5.903
+      "dem_rep_ratio": 5.903,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 216.8,
+          "count": 2
+        },
+        {
+          "year": 2026,
+          "amount": 4067.07,
+          "count": 47
+        }
+      ]
     },
     {
       "id": "sosha",
@@ -530,7 +749,14 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 3100.0,
+          "count": 2
+        }
+      ]
     },
     {
       "id": "descript",
@@ -569,7 +795,24 @@
           "filers": 2
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2024,
+          "amount": 374.49,
+          "count": 3
+        },
+        {
+          "year": 2025,
+          "amount": 477.12,
+          "count": 7
+        },
+        {
+          "year": 2026,
+          "amount": 775.65,
+          "count": 14
+        }
+      ]
     },
     {
       "id": "google_ai",
@@ -609,7 +852,29 @@
           "filers": 8
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 4450.8,
+          "count": 4
+        },
+        {
+          "year": 2024,
+          "amount": 4000.0,
+          "count": 1
+        },
+        {
+          "year": 2025,
+          "amount": 1924.0,
+          "count": 5
+        },
+        {
+          "year": 2026,
+          "amount": 33074.76,
+          "count": 25
+        }
+      ]
     },
     {
       "id": "synthesia",
@@ -643,7 +908,19 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 540.0,
+          "count": 4
+        },
+        {
+          "year": 2024,
+          "amount": 270.0,
+          "count": 1
+        }
+      ]
     },
     {
       "id": "perplexity",
@@ -676,7 +953,24 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": 0.516
+      "dem_rep_ratio": 0.516,
+      "time_series": [
+        {
+          "year": 2024,
+          "amount": 120.0,
+          "count": 6
+        },
+        {
+          "year": 2025,
+          "amount": 262.0,
+          "count": 13
+        },
+        {
+          "year": 2026,
+          "amount": 252.5,
+          "count": 3
+        }
+      ]
     },
     {
       "id": "canva_ai",
@@ -709,7 +1003,19 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 78.75,
+          "count": 3
+        },
+        {
+          "year": 2026,
+          "amount": 423.32,
+          "count": 14
+        }
+      ]
     },
     {
       "id": "read_ai",
@@ -737,7 +1043,19 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 180.0,
+          "count": 1
+        },
+        {
+          "year": 2026,
+          "amount": 191.25,
+          "count": 1
+        }
+      ]
     },
     {
       "id": "runwayml",
@@ -765,7 +1083,14 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 346.32,
+          "count": 1
+        }
+      ]
     },
     {
       "id": "captions_ai",
@@ -799,7 +1124,19 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 61.97,
+          "count": 3
+        },
+        {
+          "year": 2026,
+          "amount": 201.48,
+          "count": 8
+        }
+      ]
     },
     {
       "id": "xai_grok",
@@ -833,7 +1170,19 @@
           "filers": 2
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 60.0,
+          "count": 1
+        },
+        {
+          "year": 2026,
+          "amount": 160.0,
+          "count": 3
+        }
+      ]
     },
     {
       "id": "elevenlabs",
@@ -861,7 +1210,14 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2024,
+          "amount": 88.0,
+          "count": 4
+        }
+      ]
     },
     {
       "id": "quiller",
@@ -889,7 +1245,14 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2024,
+          "amount": 80.96,
+          "count": 4
+        }
+      ]
     },
     {
       "id": "campaign_brain",
@@ -917,7 +1280,14 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 50.0,
+          "count": 1
+        }
+      ]
     },
     {
       "id": "heygen",
@@ -945,7 +1315,14 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 29.0,
+          "count": 1
+        }
+      ]
     },
     {
       "id": "midjourney",
@@ -973,7 +1350,14 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 10.63,
+          "count": 1
+        }
+      ]
     },
     {
       "id": "convos",
@@ -1001,7 +1385,14 @@
           "filers": 1
         }
       },
-      "dem_rep_ratio": null
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 2215.54,
+          "count": 2
+        }
+      ]
     }
   ],
   "time_series": [

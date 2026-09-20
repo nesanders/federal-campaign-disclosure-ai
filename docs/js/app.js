@@ -379,7 +379,7 @@
       // active state has live DOM in the shared #state-view container --
       // a different state's cached data, if any, has nothing to re-render.)
       if (STATE_IDS.indexOf(currentDataset) !== -1 && STATE_DATA[currentDataset]) renderStateView(currentDataset);
-      if (currentDataset === "compare" && STATE_DATA.ma) renderCompareView();
+      if (currentDataset === "compare" && STATES_DATA) renderCompareView();
       if (currentDataset === "states" && STATES_DATA) renderStatesView();
     });
   }
@@ -419,9 +419,9 @@
   }
   function metaLineTextCompare() {
     const fedStr = "Federal: generated " + new Date(DATA.meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC";
-    if (!STATE_DATA.ma) return fedStr + " · Massachusetts: loading…";
-    const maStr = "Massachusetts: generated " + new Date(STATE_DATA.ma.meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC";
-    return fedStr + " · " + maStr;
+    if (!STATES_DATA) return fedStr + " · States: loading…";
+    const statesStr = "States: generated " + new Date(STATES_DATA.meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC";
+    return fedStr + " · " + statesStr;
   }
   function renderStats() {
     const meta = DATA.meta;
@@ -1438,9 +1438,9 @@
   const FEDERAL_TITLE = "AI Use in Federal Campaign Disclosures";
   const FEDERAL_SUBTITLE_1 =
     "A read of federal campaign-finance disclosures for U.S. House and Senate candidates, looking for payments to AI vendors and how that spending breaks down by vendor, stated purpose, party, incumbency, candidate age, and chamber — and how each of those has changed across recent election cycles.";
-  const COMPARE_TITLE = "AI Vendors: Federal vs. Massachusetts";
+  const COMPARE_TITLE = "AI Vendors: Federal vs. States";
   const COMPARE_SUBTITLE_1 =
-    "Every AI vendor found on either the Federal or Massachusetts tab, side by side: what each is disclosed to have spent on federal House/Senate races vs. Massachusetts state races, combined spend volume, and a recent-momentum signal — plus what campaigns actually use each tool for.";
+    "Every AI vendor found on Federal or any covered state tab, side by side: what each is disclosed to have spent on federal House/Senate races vs. each of Massachusetts, Washington, Colorado, and California's state races, combined spend volume, and a recent-momentum signal — plus what campaigns actually use each tool for, and a population-scaled national projection built from the four states.";
   const STATES_TITLE = "AI Use in State Campaign Disclosures, Combined";
   const STATES_SUBTITLE_1 =
     "Every state this site covers — Massachusetts, Washington, Colorado, and California — unioned into one view: combined AI-vendor spend by vendor, a combined year-over-year trend, and a state-by-state leaderboard. Every figure here is a real sum of each state's own disclosed records, not an estimate (for a population-scaled national projection built from these same four states, see the Compare tab).";
@@ -1609,12 +1609,12 @@
     } else if (isCompare) {
       document.getElementById("meta-line").textContent = metaLineTextCompare();
       window.scrollTo(0, 0);
-      if (STATE_DATA.ma && PROJECTION_DATA) {
+      if (STATES_DATA && PROJECTION_DATA) {
         renderCompareView();
       } else {
         const view = document.getElementById("compare-view");
         view.innerHTML = "";
-        view.appendChild(el("p", { className: "lede", text: "Loading Massachusetts dataset…" }));
+        view.appendChild(el("p", { className: "lede", text: "Loading states dataset…" }));
         ensureCompareData();
       }
     } else if (isStatesCombined) {
@@ -2350,15 +2350,15 @@
     return projectionLoadPromise;
   }
 
-  // The Compare tab is pinned to Federal vs. Massachusetts specifically
-  // (see buildCompareRows() below) -- it doesn't generalize to "Federal
-  // vs. whichever state tab is active," so this always loads "ma"
-  // regardless of currentDataset. The population projection below it
-  // draws on all four covered states regardless, since it's built from
-  // their own dashboard JSON files ahead of time by
-  // pipeline/build_projection.py, not fetched live here.
+  // The Compare tab is Federal vs. every covered state at once (see
+  // buildCompareRows() below), so it loads the same combined
+  // dashboard_states.json the States tab uses rather than any single
+  // state's own dataset. The population projection below it draws on all
+  // four covered states regardless, since it's built from their own
+  // dashboard JSON files ahead of time by pipeline/build_projection.py,
+  // not fetched live here.
   function ensureCompareData() {
-    Promise.all([loadStateData("ma"), loadProjectionData()])
+    Promise.all([loadStatesData(), loadProjectionData()])
       .then(() => {
         if (currentDataset === "compare") renderCompareView();
       })
@@ -2366,7 +2366,7 @@
         if (currentDataset !== "compare") return;
         const view = document.getElementById("compare-view");
         view.innerHTML = "";
-        view.appendChild(el("p", { className: "lede", text: "Could not load Massachusetts dataset (" + err.message + ")." }));
+        view.appendChild(el("p", { className: "lede", text: "Could not load states dataset (" + err.message + ")." }));
       });
   }
 
@@ -2389,6 +2389,7 @@
         .then((json) => {
           STATES_DATA = json;
           if (currentDataset === "states") document.getElementById("meta-line").textContent = metaLineTextStates();
+          if (currentDataset === "compare") document.getElementById("meta-line").textContent = metaLineTextCompare();
           return STATES_DATA;
         })
         .catch((err) => {
@@ -3315,9 +3316,13 @@
   }
 
   // One row per vendor id found on either tab -- a vendor matched only on
-  // Federal (or only on Massachusetts) still gets a row, with "—" for the
+  // Federal (or only in the states) still gets a row, with "—" for the
   // side it has no data on, so the table also shows which tools are
-  // federal-only or state-only, not just the ones that overlap.
+  // federal-only or state-only, not just the ones that overlap. The
+  // "states" side reads STATES_DATA (the four-state union built by
+  // pipeline/build_dataset_states.py), whose vendor rows already carry a
+  // per-state by_state breakdown and a combined time_series, so this
+  // doesn't need to merge four separate state datasets itself.
   function buildCompareRows() {
     const byId = {};
     DATA.vendors_overall.forEach((v) => {
@@ -3331,7 +3336,7 @@
         fed_amount_medium: v.amount_medium,
       });
     });
-    STATE_DATA.ma.vendors.forEach((v) => {
+    STATES_DATA.vendors.forEach((v) => {
       const existing = byId[v.id];
       byId[v.id] = Object.assign({ id: v.id }, existing, {
         name: (existing && existing.name) || v.name,
@@ -3339,23 +3344,26 @@
         era: (existing && existing.era) || v.era,
         tags: (existing && existing.tags && existing.tags.length ? existing.tags : v.tags) || [],
         description: (existing && existing.description) || v.description,
-        ma_amount: v.amount_high,
-        ma_amount_medium: v.amount_medium,
+        states_amount: v.amount_high,
+        states_amount_medium: v.amount_medium,
+        by_state: v.by_state || {},
+        states_series: v.time_series || [],
       });
     });
 
     return Object.values(byId).map((r) => {
       const fed_amount = r.fed_amount || 0;
-      const ma_amount = r.ma_amount || 0;
+      const states_amount = r.states_amount || 0;
       const fedSeries = (DATA.vendors_detail[r.id] || {}).time_series || [];
-      const maSeries = (STATE_DATA.ma.vendors_detail[r.id] || {}).time_series || [];
+      const statesSeries = r.states_series || [];
       const fedM = computeMomentum(fedSeries, "cycle");
-      const maM = computeMomentum(maSeries, "year");
-      const momentum = blendMomentum(fedM, fed_amount, maM, ma_amount);
+      const statesM = computeMomentum(statesSeries, "year");
+      const momentum = blendMomentum(fedM, fed_amount, statesM, states_amount);
       return Object.assign({}, r, {
         fed_amount,
-        ma_amount,
-        volume: fed_amount + ma_amount,
+        states_amount,
+        by_state: r.by_state || {},
+        volume: fed_amount + states_amount,
         momentum_value: momentum.value,
         momentum_is_new: momentum.isNew,
         // A capped finite stand-in for "new" so it sorts above every real
@@ -3980,15 +3988,15 @@
           el("strong", { text: "Compare" }),
           el("span", {
             text:
-              " tab — every AI vendor found on either the Federal (FEC) or Massachusetts (OCPF) tab, in one table. The two source datasets cover different offices, timeframes, and itemization rules, so their dollar figures are shown side by side rather than added into one number, other than the Combined volume column below.",
+              " tab — every AI vendor found on Federal (FEC) or any covered state tab (Massachusetts OCPF, Washington PDC, Colorado TRACER, California CAL-ACCESS), in one table. The federal dataset and the four-state union cover different offices, timeframes, and itemization rules, so their dollar figures are shown side by side rather than added into one number, other than the Combined volume column below.",
           }),
         ],
       })
     );
 
     const nFederal = rows.filter((r) => r.fed_amount > 0).length;
-    const nMa = rows.filter((r) => r.ma_amount > 0).length;
-    const nBoth = rows.filter((r) => r.fed_amount > 0 && r.ma_amount > 0).length;
+    const nStates = rows.filter((r) => r.states_amount > 0).length;
+    const nBoth = rows.filter((r) => r.fed_amount > 0 && r.states_amount > 0).length;
     const totalVolume = rows.reduce((a, r) => a + r.volume, 0);
 
     const statRow = el("div", { className: "stat-row" });
@@ -3996,19 +4004,19 @@
       statTile(
         "AI vendors compared",
         fmtInt.format(rows.length),
-        nFederal + " on Federal · " + nMa + " on Massachusetts · " + nBoth + " on both" + (includeLegacy ? "" : " · " + nLegacyHidden + " legacy vendor" + (nLegacyHidden === 1 ? "" : "s") + " hidden")
+        nFederal + " on Federal · " + nStates + " on a covered state · " + nBoth + " on both" + (includeLegacy ? "" : " · " + nLegacyHidden + " legacy vendor" + (nLegacyHidden === 1 ? "" : "s") + " hidden")
       )
     );
-    statRow.appendChild(statTile("Combined high-confidence spend", fmtUSD0.format(totalVolume), "Federal + Massachusetts high-confidence vendor totals, summed"));
+    statRow.appendChild(statTile("Combined high-confidence spend", fmtUSD0.format(totalVolume), "Federal + all covered states' high-confidence vendor totals, summed"));
     view.appendChild(statRow);
 
     const card = el("div", { className: "card" });
-    card.appendChild(el("h3", { text: "AI vendors: Federal vs. Massachusetts" }));
+    card.appendChild(el("h3", { text: "AI vendors: Federal vs. States" }));
     card.appendChild(
       el("p", {
         className: "note",
         text:
-          "High-confidence text matches only, on each tab's own dataset (see each tab's methodology for what that means there). Combined volume sums the two. Momentum compares each vendor's own more-recent half of its time series (Federal: election cycles; Massachusetts: calendar years) against its earlier half, weighted toward whichever dataset carries more of its spend, shown as a multiplier (e.g. “14.2x”) once growth passes 3x since a percentage that large stops being readable; “New” means its earlier half had little or no spend (under $25) to compare against, so no rate is computable at all. Click a category tag to filter the table to it; hover any column header for details. " +
+          "High-confidence text matches only, on each tab's own dataset (see each tab's methodology for what that means there). Combined volume sums Federal and all covered states. Momentum compares each vendor's own more-recent half of its time series (Federal: election cycles; states: calendar years, summed across whichever states carry the vendor) against its earlier half, weighted toward whichever side carries more of its spend, shown as a multiplier (e.g. “14.2x”) once growth passes 3x since a percentage that large stops being readable; “New” means its earlier half had little or no spend (under $25) to compare against, so no rate is computable at all. Click a vendor's name to see it compared against a population-scaled national estimate; click a category tag to filter the table to it; hover any column header for details. " +
           (includeLegacy
             ? "Legacy-era vendors are currently included, via the toggle above."
             : nLegacyHidden + " legacy-era vendor" + (nLegacyHidden === 1 ? "" : "s") + " with disclosed spending " + (nLegacyHidden === 1 ? "is" : "are") + " hidden by default (toggle above to include them)."),
@@ -4032,10 +4040,23 @@
       card.appendChild(el("p", { className: "note", text: "No vendors match this filter." }));
     } else {
       const tableRows = sortRows(rows, sortState.compare);
+      const stateColumns = STATES_DATA.meta.covered_states.map((stateId) => ({
+        label: STATE_CONFIG_BY_ID[stateId].label + " $",
+        num: true,
+        title: "High-confidence text matches to this vendor on the " + STATE_CONFIG_BY_ID[stateId].label + " tab. Click to open its detail page there.",
+        link: (r) => (r.by_state[stateId] && r.by_state[stateId].amount_high > 0 ? "#/" + stateId + "/vendor/" + r.id : null),
+        render: (r) => (r.by_state[stateId] && r.by_state[stateId].amount_high > 0 ? fmtUSD0.format(r.by_state[stateId].amount_high) : "—"),
+      }));
       const headers = withSort(
         "compare",
         [
-          { label: "Vendor", sortKey: "name", render: (r) => r.name },
+          {
+            label: "Vendor",
+            sortKey: "name",
+            title: "Click to compare this vendor across Federal, every covered state, and a population-scaled national estimate.",
+            link: (r) => "#/states/vendor/" + r.id,
+            render: (r) => r.name,
+          },
           {
             label: "Category",
             sortKey: null,
@@ -4056,25 +4077,18 @@
             link: (r) => (r.fed_amount > 0 ? "#/vendor/" + r.id : null),
             render: (r) => (r.fed_amount > 0 ? fmtUSD0.format(r.fed_amount) : "—"),
           },
-          {
-            label: "Massachusetts $",
-            sortKey: "ma_amount",
-            num: true,
-            title: "High-confidence text matches to this vendor on the Massachusetts (OCPF) tab. Click the amount to open its Massachusetts vendor page.",
-            link: (r) => (r.ma_amount > 0 ? "#/ma/vendor/" + r.id : null),
-            render: (r) => (r.ma_amount > 0 ? fmtUSD0.format(r.ma_amount) : "—"),
-          },
+          ...stateColumns,
           {
             label: "Combined volume",
             sortKey: "volume",
             num: true,
-            title: "Federal $ + Massachusetts $ added together -- the only column on this page that combines the two datasets into one number.",
+            title: "Federal $ + every covered state's $ added together -- the only column on this page that combines Federal and the states into one number.",
             render: (r) => fmtUSD0.format(r.volume),
           },
           {
             label: "Momentum",
             sortKey: "momentum_sort",
-            title: "The vendor's more-recent half of its own time series vs. its earlier half (Federal: election cycles; Massachusetts: calendar years), weighted toward whichever dataset carries more of its spend. Shown as +/-% normally, or as a multiplier (\"14.2x\") once growth passes 3x; \"New\" means the earlier half had too little spend (under $25) to compute a rate.",
+            title: "The vendor's more-recent half of its own time series vs. its earlier half (Federal: election cycles; states: calendar years, summed across whichever states carry the vendor), weighted toward whichever side carries more of its spend. Shown as +/-% normally, or as a multiplier (\"14.2x\") once growth passes 3x; \"New\" means the earlier half had too little spend (under $25) to compute a rate.",
             cell: (r) => momentumBadge(r),
           },
           {
@@ -4097,7 +4111,7 @@
     view.appendChild(
       el("p", {
         className: "lede",
-        text: "Full pipeline code and the shared vendor/category taxonomy (pipeline/config/vendors.yaml) are in the GitHub repository. See the Federal and Massachusetts tabs' own methodology notes for what each dataset does and doesn't cover.",
+        text: "Full pipeline code and the shared vendor/category taxonomy (pipeline/config/vendors.yaml) are in the GitHub repository. See the Federal tab and each state tab's own methodology notes for what each dataset does and doesn't cover.",
       })
     );
   }
@@ -4195,7 +4209,7 @@
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
         renderAll();
         if (STATE_IDS.indexOf(currentDataset) !== -1 && STATE_DATA[currentDataset]) renderStateView(currentDataset);
-        if (currentDataset === "compare" && STATE_DATA.ma) renderCompareView();
+        if (currentDataset === "compare" && STATES_DATA) renderCompareView();
         if (currentDataset === "states" && STATES_DATA) renderStatesView();
       });
     })

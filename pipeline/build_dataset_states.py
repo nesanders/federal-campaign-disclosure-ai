@@ -11,11 +11,12 @@ up to the whole country) -- every dollar and every filer counted here
 comes from one of the four states' own dashboard_<state>.json, produced by
 that state's own fetch/parse/build_dataset_<state>.py pipeline.
 
-Deliberately a separate tab/dataset from Compare (which stays pinned to
-Federal vs. Massachusetts specifically -- see docs/js/app.js's own
-comment on buildCompareRows()): this answers "how much AI-vendor spend
-shows up across state races in total," not "how does federal compare to
-one particular state."
+Deliberately a separate tab/dataset from Compare: this answers "how much
+AI-vendor spend shows up across state races in total, and which state
+leads," not "how does each individual vendor compare across Federal and
+every state" (Compare's own question -- it reads this same file's vendor
+rows, including the per-vendor time_series below, to build its own
+Federal-vs-states table; see docs/js/app.js's buildCompareRows()).
 """
 from __future__ import annotations
 
@@ -56,7 +57,15 @@ def main() -> None:
     # straight to that state's own vendor detail page (the same pattern
     # the Compare tab already uses for Federal $ / Massachusetts $).
     vendor_rows: dict[str, dict] = {}
+    # Per-vendor combined year-over-year total, summed across whichever
+    # states have this vendor's own vendors_detail entry -- lets the
+    # Compare tab compute a "states" momentum figure for each vendor the
+    # same way it already does for Federal, without re-deriving anything
+    # from raw records (each state's own build_dataset_<state>.py already
+    # computed this per-vendor time series; this just sums it across states).
+    vendor_year_totals: dict[str, dict[int, dict]] = defaultdict(lambda: defaultdict(lambda: {"amount": 0.0, "count": 0}))
     for state_id, data in state_data.items():
+        vendors_detail = data.get("vendors_detail", {})
         for v in data["vendors"]:
             if v["total"] <= 0:
                 continue
@@ -93,6 +102,10 @@ def main() -> None:
                 "records": v["records"],
                 "filers": v["filers"],
             }
+            for point in vendors_detail.get(v["id"], {}).get("time_series", []):
+                bucket = vendor_year_totals[v["id"]][point["year"]]
+                bucket["amount"] += point["amount"]
+                bucket["count"] += point["count"]
 
     def dem_rep_ratio(dem_amount: float, rep_amount: float) -> float | None:
         return round(dem_amount / rep_amount, 3) if dem_amount > 0 and rep_amount > 0 else None
@@ -108,6 +121,10 @@ def main() -> None:
         for s in row["by_state"].values():
             s["amount_high"] = round(s["amount_high"], 2)
             s["amount_medium"] = round(s["amount_medium"], 2)
+        row["time_series"] = [
+            {"year": year, "amount": round(pt["amount"], 2), "count": pt["count"]}
+            for year, pt in sorted(vendor_year_totals[row["id"]].items())
+        ]
         vendors_out.append(row)
     vendors_out.sort(key=lambda r: -r["amount_high"])
 
