@@ -341,3 +341,61 @@ future progress on the Republican/Democratic gap would need either a
 genuinely new source (not yet identified) or a different approach to the
 Cloudflare-walled boards (headless browser + real fingerprint), which
 raises its own ToS questions this project has chosen not to pursue.
+
+## Round 5 (2026-09-20): targeted competitive-race candidate sites
+
+Prompted by two findings from the entity-type breakdown added this
+round (see below): (1) only 19 of 195 postings are tied to a specific,
+named candidate committee -- everything else is a party/caucus
+committee, a PAC's own hiring, or (for RepublicanJobs.gop specifically)
+anonymized entirely -- and (2) that gap is structural, not a gap in
+source-hunting: individual campaigns mostly don't run their own
+scrapable job boards, and the one place their hiring probably *does*
+show up in volume, LinkedIn, is CAPTCHA-walled. A targeted sweep of
+competitive races' own campaign websites was proposed as the next
+concrete step, rather than more general job-board hunting.
+
+**Methodology**: `ballotpedia.org` was safelisted. Ballotpedia's own
+"U.S. House battlegrounds, 2026" and "U.S. Senate battlegrounds, 2026"
+pages list this cycle's competitive races -- 50 House districts + 12
+Senate seats (13 listed, one a special election), current as of the
+scrape date, not a static list carried over from a prior cycle. For
+each of the 62 individual race pages, the major-party (Democratic/
+Republican) candidates were pulled from that page's own FEC-sourced
+fundraising table (`table.sortable` with `Name`/`Party` columns) --
+186 unique candidates. For each candidate, their own Ballotpedia bio
+page was fetched and its infobox "Campaign website" link extracted.
+
+One real wrinkle worth recording: a plain sequential fetch loop (one
+`requests.Session` reused across all ~186 bio-page requests) returned
+wildly inconsistent results between runs on the *identical* set of
+URLs -- 57 websites found in one full run, 0 in a same-code rerun
+restricted to the House half, 37 in a same-code rerun restricted to
+the Senate half -- while a single one-off fetch of any specific
+"failing" URL, run in isolation immediately after, reliably found the
+link every time. The cause wasn't pinned down (a connection-reuse or
+edge-cache interaction is suspected, not proven), but the fix was:
+open a **fresh `requests.Session` per attempt** and retry up to 3
+times before concluding a candidate genuinely has no listed website.
+That took the result from unreliable/near-zero to a stable **167 of
+186 candidates (90%)** with a campaign website on file, consistent
+across the two chambers (111 of ~124 House, 56 of ~62 Senate) and
+roughly balanced by party (88 Democratic, 79 Republican). Full roster
+saved to `planning/research/2026_battleground_candidate_sites.json`.
+
+**Result**: 167 unique campaign-website domains, one per candidate.
+None of these have been checked for an actual jobs/careers page yet --
+that requires each domain to be individually safelisted first (this
+sandbox's egress proxy blocks any domain not explicitly approved, and
+there's no way to peek at a site's structure before that happens).
+Given the volume, the realistic expectation is a **low hit rate**:
+most single-candidate campaign sites are small, template-based
+(Squarespace/NationBuilder/WordPress), and built around donate/volunteer
+CTAs, not a dedicated careers page -- but at 167 sites, even a modest
+percentage would meaningfully close the individual-candidate-committee
+gap the entity-type breakdown surfaced. Domain list requested from the
+user next; once safelisted, the plan is to check each site's homepage
+for a careers/jobs/"join our team" link before attempting to scrape
+anything, and only build a per-site scraper for ones that actually have
+listings (there is no common platform/structure to assume across 167
+independent campaign sites the way there was for the aggregators).

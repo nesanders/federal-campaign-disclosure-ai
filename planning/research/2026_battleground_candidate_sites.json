@@ -1,0 +1,1657 @@
+[
+  {
+    "race_url": "https://ballotpedia.org/Arizona%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Amish Shah",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Amish_Shah",
+    "campaign_website": "https://www.amishforarizona.com",
+    "domain": "www.amishforarizona.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Arizona%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Jay Feely",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Jay_Feely",
+    "campaign_website": "https://www.jayfeelyforcongress.com",
+    "domain": "www.jayfeelyforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Arizona%27s_6th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Juan Ciscomani",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Juan_Ciscomani",
+    "campaign_website": "https://juanciscomani.com",
+    "domain": "juanciscomani.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Arizona%27s_6th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "JoAnna Mendoza",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/JoAnna_Mendoza",
+    "campaign_website": "https://www.joannamendoza.com/",
+    "domain": "www.joannamendoza.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_11th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Connie Chan",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Connie_Chan",
+    "campaign_website": "https://www.conniechansf.com/",
+    "domain": "www.conniechansf.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_11th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Scott Wiener",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Scott_Wiener",
+    "campaign_website": "https://www.scottwiener.com/",
+    "domain": "www.scottwiener.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_13th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Adam Gray",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Adam_Gray",
+    "campaign_website": "https://www.adamgrayforcongress.com/",
+    "domain": "www.adamgrayforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_13th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Kevin Lincoln II",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Kevin_Lincoln_II",
+    "campaign_website": "https://www.kevinlincolnforcongress.com",
+    "domain": "www.kevinlincolnforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_22nd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "David G. Valadao",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/David_Valadao",
+    "campaign_website": "https://valadaoforcongress.com",
+    "domain": "valadaoforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_22nd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Randy Villegas",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Randy_Villegas_(California)",
+    "campaign_website": "https://www.villegasforcongress.com/",
+    "domain": "www.villegasforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_34th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Jimmy Gomez",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Jimmy_Gomez",
+    "campaign_website": "https://jimmygomezforcongress.com",
+    "domain": "jimmygomezforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_34th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Angela Gonzales-Torres",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Angela_Gonzales-Torres",
+    "campaign_website": "https://www.angela4congress.com/",
+    "domain": "www.angela4congress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_40th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Ken Calvert",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Ken_Calvert",
+    "campaign_website": "https://calvertforcongress.com/",
+    "domain": "calvertforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_40th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Young Kim",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Young_Kim_(California)",
+    "campaign_website": "https://youngkimforcongress.com",
+    "domain": "youngkimforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_41st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Linda S\u00e1nchez",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Linda_S\u00e1nchez",
+    "campaign_website": "https://voteforlinda.com",
+    "domain": "voteforlinda.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_41st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Mitch Clemmons",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Mitch_Clemmons",
+    "campaign_website": "https://electmitchclemmons.com",
+    "domain": "electmitchclemmons.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_45th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Derek Tran",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Derek_Tran",
+    "campaign_website": "https://www.derektranforcongress.com",
+    "domain": "www.derektranforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_45th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Chuong Vo",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Chuong_Vo",
+    "campaign_website": "https://www.vo4congress.com/",
+    "domain": "www.vo4congress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_48th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Marni von Wilpert",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Marni_von_Wilpert",
+    "campaign_website": "https://www.marnivonwilpert.com/",
+    "domain": "www.marnivonwilpert.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_48th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Jim Desmond",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Jim_Desmond",
+    "campaign_website": "https://www.desmondforcongress.com/",
+    "domain": "www.desmondforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_4th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Mike Thompson",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Mike_Thompson_(California)",
+    "campaign_website": "https://www.mikethompsonforcongress.com",
+    "domain": "www.mikethompsonforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/California%27s_4th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Eric Jones",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Eric_Jones_(California)",
+    "campaign_website": "https://www.ericjones.us/",
+    "domain": "www.ericjones.us"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Colorado%27s_5th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Jeff Crank",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Jeff_Crank",
+    "campaign_website": "https://jeffcrankforcongress.com/",
+    "domain": "jeffcrankforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Colorado%27s_5th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Jessica Killin",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Jessica_Killin",
+    "campaign_website": "https://killinforcolorado.com",
+    "domain": "killinforcolorado.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Colorado%27s_8th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Gabe Evans",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Gabe_Evans",
+    "campaign_website": "https://electgabeevans.com/",
+    "domain": "electgabeevans.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Colorado%27s_8th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Manny Rutinel",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Manny_Rutinel",
+    "campaign_website": "https://www.mannyforcolorado.com/",
+    "domain": "www.mannyforcolorado.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Florida%27s_14th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Kathy Castor",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Kathy_Castor",
+    "campaign_website": "https://www.castorforcongress.com/",
+    "domain": "www.castorforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Florida%27s_14th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Mike Beltran",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Mike_Beltran",
+    "campaign_website": "https://beltranforcongress.com",
+    "domain": "beltranforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Florida%27s_22nd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Pia Dandiya",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Pia_Dandiya",
+    "campaign_website": "https://piaforcongress.com/",
+    "domain": "piaforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Florida%27s_22nd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Casey Askar",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Casey_Askar",
+    "campaign_website": "https://www.caseyaskar.com/",
+    "domain": "www.caseyaskar.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Florida%27s_23rd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Lois Frankel",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Lois_Frankel",
+    "campaign_website": "https://loisfrankelforcongress.com",
+    "domain": "loisfrankelforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Florida%27s_23rd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Deborah Adeimy",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Deborah_Adeimy",
+    "campaign_website": "https://debadeimy4congress.com/",
+    "domain": "debadeimy4congress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Florida%27s_25th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Jared Evan Moskowitz",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Jared_Moskowitz",
+    "campaign_website": "https://jaredforflorida.com",
+    "domain": "jaredforflorida.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Florida%27s_25th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Scott Singer",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Scott_Singer",
+    "campaign_website": "https://www.scottsingerusa.com/",
+    "domain": "www.scottsingerusa.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Illinois%27_4th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Patty Garcia",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Patty_Garcia",
+    "campaign_website": "https://pattyforillinois.com/",
+    "domain": "pattyforillinois.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Illinois%27_4th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Lupe Castillo",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Lupe_Castillo",
+    "campaign_website": "https://castillolupe.com/",
+    "domain": "castillolupe.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Iowa%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Mariannette Miller-Meeks",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Mariannette_Miller-Meeks",
+    "campaign_website": "https://drmillermeeks.com",
+    "domain": "drmillermeeks.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Iowa%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Christina Bohannan",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Christina_Bohannan",
+    "campaign_website": "https://bohannanforcongress.com/",
+    "domain": "bohannanforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Iowa%27s_3rd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Zach Nunn",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Zach_Nunn",
+    "campaign_website": "https://zachnunn.com",
+    "domain": "zachnunn.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Iowa%27s_3rd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Sarah Trone Garriott",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Sarah_Trone_Garriott",
+    "campaign_website": "https://sarahforiowa.com/",
+    "domain": "sarahforiowa.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Maine%27s_2nd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Matthew Dunlap",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Matthew_Dunlap",
+    "campaign_website": "https://www.mattdunlapforuscongress.com/",
+    "domain": "www.mattdunlapforuscongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Maine%27s_2nd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Paul LePage",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Paul_LePage",
+    "campaign_website": "https://lepageforcongress.com/",
+    "domain": "lepageforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Michigan%27s_10th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Christina Hines",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Christina_Hines",
+    "campaign_website": "https://www.christinahinesforcongress.com/",
+    "domain": "www.christinahinesforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Michigan%27s_10th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Michael Bouchard",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Michael_Bouchard_(Michigan_congressional_candidate)",
+    "campaign_website": "http://www.bouchardforcongress.com/",
+    "domain": "www.bouchardforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Michigan%27s_7th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Tom Barrett",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Tom_Barrett_(Michigan)",
+    "campaign_website": "https://tombarrettforcongress.com/",
+    "domain": "tombarrettforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Michigan%27s_7th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "William Lawrence",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/William_Lawrence_(Michigan)",
+    "campaign_website": "http://www.wewill2026.com/",
+    "domain": "www.wewill2026.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Michigan%27s_8th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Kristen McDonald Rivet",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Kristen_McDonald_Rivet",
+    "campaign_website": "https://kristenmcdonaldrivet.com/",
+    "domain": "kristenmcdonaldrivet.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Michigan%27s_8th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Thomas J. Smith",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Thomas_J._Smith_(Michigan)",
+    "campaign_website": "https://tomsmithformi.com/",
+    "domain": "tomsmithformi.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Montana%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Sam Forstag",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Sam_Forstag",
+    "campaign_website": "https://www.samformontana.com",
+    "domain": "www.samformontana.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Montana%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Aaron Flint",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Aaron_Flint_(Montana)",
+    "campaign_website": "https://flintformontana.com/",
+    "domain": "flintformontana.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Nebraska%27s_2nd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Denise Powell",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Denise_Powell",
+    "campaign_website": "https://deniseforcongress.org",
+    "domain": "deniseforcongress.org"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Nebraska%27s_2nd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Brinker Harding",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Brinker_Harding",
+    "campaign_website": "https://www.brinkerharding.com/",
+    "domain": "www.brinkerharding.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Nevada%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Dina Titus",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Dina_Titus",
+    "campaign_website": "https://www.dinatitus.com/",
+    "domain": "www.dinatitus.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Nevada%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Carrie Buck",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Carrie_Buck_(Nevada)",
+    "campaign_website": "https://carriebuckforcongress.com",
+    "domain": "carriebuckforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Nevada%27s_3rd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Susie Lee",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Susie_Lee",
+    "campaign_website": "https://susieleeforcongress.com/",
+    "domain": "susieleeforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Nevada%27s_3rd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Marty O'Donnell",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Marty_O'Donnell_(Nevada)",
+    "campaign_website": "https://martyforcongress.vote",
+    "domain": "martyforcongress.vote"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Carleigh Beriont",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Carleigh_Beriont",
+    "campaign_website": "https://www.carleighberiont.com/",
+    "domain": "www.carleighberiont.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Sarah E. Chadzynski",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Sarah_Chadzynski",
+    "campaign_website": "https://sarahc603.com",
+    "domain": "sarahc603.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Bill Conlin",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Bill_Conlin",
+    "campaign_website": "https://www.billconlin4.us/",
+    "domain": "www.billconlin4.us"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Matthew Emerson",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Matthew_Emerson",
+    "campaign_website": "https://electemerson.com",
+    "domain": "electemerson.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Heath Howard",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Heath_Howard",
+    "campaign_website": "https://www.heathhowardnh.com",
+    "domain": "www.heathhowardnh.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Stefany Shaheen",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Stefany_Shaheen",
+    "campaign_website": "https://stefanyshaheen.com",
+    "domain": "stefanyshaheen.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Sarah Bella Spinosa",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Sarah_Bella_Spinosa",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Maura Sullivan",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Maura_Sullivan",
+    "campaign_website": "https://maurafornh.com/",
+    "domain": "maurafornh.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Christian Urrutia",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Christian_Urrutia",
+    "campaign_website": "https://urrutiafornh.com/",
+    "domain": "urrutiafornh.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Lindsey Anderson",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Lindsey_Anderson_(New_Hampshire)",
+    "campaign_website": "https://www.lindseyforcongress.com/",
+    "domain": "www.lindseyforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Melissa Bailey",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Melissa_Bailey_(New_Hampshire)",
+    "campaign_website": "https://www.melissabailey4nh.com",
+    "domain": "www.melissabailey4nh.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Brian Cole",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Brian_D._Cole",
+    "campaign_website": "https://cole4nh.com",
+    "domain": "cole4nh.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Anthony DiLorenzo",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Anthony_DiLorenzo",
+    "campaign_website": "https://dilorenzoforcongress.com/",
+    "domain": "dilorenzoforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Hampshire%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Hollie Noveletsky",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Hollie_Noveletsky",
+    "campaign_website": "https://www.holliefornewhampshire.com/",
+    "domain": "www.holliefornewhampshire.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Jersey%27s_7th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Thomas Kean Jr.",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Thomas_Kean_Jr.",
+    "campaign_website": "https://tomkean.com/",
+    "domain": "tomkean.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Jersey%27s_7th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Rebecca Bennett",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Rebecca_Bennett_(New_Jersey)",
+    "campaign_website": "https://rebeccabennettforcongress.com",
+    "domain": "rebeccabennettforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Jersey%27s_9th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Nellie Pou",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Nellie_Pou",
+    "campaign_website": "https://www.nelliepoufornewjersey.com",
+    "domain": "www.nelliepoufornewjersey.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Jersey%27s_9th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Rosemary Pino",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Rosemary_Pino",
+    "campaign_website": "https://rosiepinofornj.com/",
+    "domain": "rosiepinofornj.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Mexico%27s_2nd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Gabriel Vasquez",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Gabriel_Vasquez",
+    "campaign_website": "https://gabeforcongress.com",
+    "domain": "gabeforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_Mexico%27s_2nd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Greg Cunningham",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Greg_Cunningham",
+    "campaign_website": "http://www.cunninghamfornm.com/",
+    "domain": "www.cunninghamfornm.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_York%27s_17th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Michael Lawler",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Michael_Lawler_(New_York)",
+    "campaign_website": "https://www.lawlerforcongress.com",
+    "domain": "www.lawlerforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_York%27s_17th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Cait Conley",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Cait_Conley",
+    "campaign_website": "https://caitconley.com/",
+    "domain": "caitconley.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_York%27s_19th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Josh Riley",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Josh_Riley",
+    "campaign_website": "https://joshrileyforcongress.com",
+    "domain": "joshrileyforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_York%27s_19th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Peter Oberacker",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Peter_Oberacker",
+    "campaign_website": "https://www.peterforny19.com/",
+    "domain": "www.peterforny19.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_York%27s_3rd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Tom Suozzi",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Tom_Suozzi",
+    "campaign_website": "https://suozziforcongress.com/",
+    "domain": "suozziforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_York%27s_3rd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Michael LiPetri Jr.",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Michael_LiPetri_Jr.",
+    "campaign_website": "https://www.mikelipetriforcongress.com/",
+    "domain": "www.mikelipetriforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_York%27s_4th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Laura Gillen",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Laura_Gillen",
+    "campaign_website": "https://lauragillen.com/",
+    "domain": "lauragillen.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/New_York%27s_4th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Jeanine Driscoll",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Jeanine_Driscoll",
+    "campaign_website": "https://driscoll4congress.com/",
+    "domain": "driscoll4congress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/North_Carolina%27s_11th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Jamie Ager",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Jamie_Ager",
+    "campaign_website": "https://agerforcongress.com/",
+    "domain": "agerforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/North_Carolina%27s_11th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Jennifer Balkcom",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Jennifer_Balkcom",
+    "campaign_website": "https://www.jenniferbalkcom.com/",
+    "domain": "www.jenniferbalkcom.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/North_Carolina%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Donald Davis",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Donald_Davis",
+    "campaign_website": "https://votedondavis.com",
+    "domain": "votedondavis.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/North_Carolina%27s_1st_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Laurie Buckhout",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Laurie_Buckhout",
+    "campaign_website": "https://www.lauriebuckhoutforcongress.com/",
+    "domain": "www.lauriebuckhoutforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Ohio%27s_7th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Max Miller",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Max_Miller",
+    "campaign_website": "https://www.votemaxmiller.com",
+    "domain": "www.votemaxmiller.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Ohio%27s_7th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Brian Poindexter",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Brian_Poindexter",
+    "campaign_website": "https://poindexterforcongress.com/",
+    "domain": "poindexterforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Ohio%27s_9th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Marcy Kaptur",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Marcy_Kaptur",
+    "campaign_website": "https://marcykaptur.com",
+    "domain": "marcykaptur.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Ohio%27s_9th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Derek Merrin",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Derek_Merrin",
+    "campaign_website": "https://www.derekmerrin.com",
+    "domain": "www.derekmerrin.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Pennsylvania%27s_10th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Scott Perry",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Scott_Perry",
+    "campaign_website": "https://patriotsforperry.com",
+    "domain": "patriotsforperry.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Pennsylvania%27s_10th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Janelle Stelson",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Janelle_Stelson",
+    "campaign_website": "https://janellestelson.com",
+    "domain": "janellestelson.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Pennsylvania%27s_7th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Ryan Mackenzie",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Ryan_Mackenzie",
+    "campaign_website": "https://www.mackenzieforcongress.com",
+    "domain": "www.mackenzieforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Pennsylvania%27s_7th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Bob Brooks",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Bob_Brooks_(Pennsylvania)",
+    "campaign_website": "https://brooksforcongress.com/",
+    "domain": "brooksforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Pennsylvania%27s_8th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Rob Bresnahan Jr.",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Rob_Bresnahan_Jr.",
+    "campaign_website": "https://robforpa.com",
+    "domain": "robforpa.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Pennsylvania%27s_8th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Paige Cognetti",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Paige_Cognetti",
+    "campaign_website": "https://paigeforpa.com/",
+    "domain": "paigeforpa.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Texas%27_15th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Monica De La Cruz",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Monica_De_La_Cruz",
+    "campaign_website": "https://www.monicaforcongress.us",
+    "domain": "www.monicaforcongress.us"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Texas%27_15th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Bobby Pulido",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Bobby_Pulido",
+    "campaign_website": "https://bobbypulidofortexas.com/",
+    "domain": "bobbypulidofortexas.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Texas%27_28th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Henry Cuellar",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Henry_Cuellar",
+    "campaign_website": "https://henrycuellar.com",
+    "domain": "henrycuellar.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Texas%27_28th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Tano Tijerina",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Tano_Tijerina",
+    "campaign_website": "https://www.tanoforcongress.com/",
+    "domain": "www.tanoforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Texas%27_34th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Vicente Gonzalez Jr.",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Vicente_Gonzalez_Jr.",
+    "campaign_website": "https://www.vicentegonzalez.com",
+    "domain": "www.vicentegonzalez.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Texas%27_34th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Eric Flores",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Eric_Flores",
+    "campaign_website": "https://www.ericflores.com/",
+    "domain": "www.ericflores.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Virginia%27s_2nd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Jennifer Kiggans",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Jennifer_Kiggans",
+    "campaign_website": "https://jenforcongress.com",
+    "domain": "jenforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Virginia%27s_2nd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Elaine Luria",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Elaine_Luria",
+    "campaign_website": "https://elaineforcongress.com/",
+    "domain": "elaineforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Virginia%27s_7th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Eugene Vindman",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Eugene_Vindman",
+    "campaign_website": "https://vindmanforcongress.com",
+    "domain": "vindmanforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Virginia%27s_7th_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Douglas Ollivant",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Douglas_Ollivant",
+    "campaign_website": "https://www.dougforvirginia.com/",
+    "domain": "www.dougforvirginia.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Washington%27s_3rd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Marie Gluesenkamp Perez",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Marie_Gluesenkamp_Perez",
+    "campaign_website": "https://marieforcongress.com",
+    "domain": "marieforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Washington%27s_3rd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "John Braun",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/John_Braun",
+    "campaign_website": "https://www.votebraun.com/",
+    "domain": "www.votebraun.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Wisconsin%27s_3rd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Derrick Van Orden",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Derrick_Van_Orden",
+    "campaign_website": "https://www.vanordenforcongress.com",
+    "domain": "www.vanordenforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/Wisconsin%27s_3rd_Congressional_District_election,_2026",
+    "chamber": "house",
+    "name": "Rebecca Cooke",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Rebecca_Cooke",
+    "campaign_website": "https://www.CookeForWisconsin.com",
+    "domain": "www.CookeForWisconsin.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Alaska,_2026",
+    "chamber": "senate",
+    "name": "Daniel S. Sullivan",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Daniel_S._Sullivan_(United_States_Senator_from_Alaska)",
+    "campaign_website": "https://dansullivanforalaska.com/",
+    "domain": "dansullivanforalaska.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Alaska,_2026",
+    "chamber": "senate",
+    "name": "Carol Hafner",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Carol_Hafner",
+    "campaign_website": "https://carolhafner.com/",
+    "domain": "carolhafner.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Alaska,_2026",
+    "chamber": "senate",
+    "name": "David Leslie",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/David_Leslie",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Alaska,_2026",
+    "chamber": "senate",
+    "name": "Mary Peltola",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Mary_Peltola",
+    "campaign_website": "https://marypeltola.com/",
+    "domain": "marypeltola.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Alaska,_2026",
+    "chamber": "senate",
+    "name": "Dustin Darden",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Dustin_Darden",
+    "campaign_website": "https://lawhelpak.com/",
+    "domain": "lawhelpak.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Alaska,_2026",
+    "chamber": "senate",
+    "name": "Fred Grauberger",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Fred_Grauberger",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Alaska,_2026",
+    "chamber": "senate",
+    "name": "Gerald Heikes",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Gerald_Heikes",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Alaska,_2026",
+    "chamber": "senate",
+    "name": "Richard Mayers",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Richard_Mayers",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Alaska,_2026",
+    "chamber": "senate",
+    "name": "Heather McElwain",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Heather_McElwain",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Alaska,_2026",
+    "chamber": "senate",
+    "name": "Dan Sullivan",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Dan_Sullivan_(Alaska_U.S._Senate_candidate)",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_special_election_in_Florida,_2026",
+    "chamber": "senate",
+    "name": "Ashley B. Moody",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Ashley_B._Moody",
+    "campaign_website": "https://ashleymoody.com",
+    "domain": "ashleymoody.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_special_election_in_Florida,_2026",
+    "chamber": "senate",
+    "name": "Angela Nixon",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Angela_Nixon",
+    "campaign_website": "https://angienixon.com/",
+    "domain": "angienixon.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Georgia,_2026",
+    "chamber": "senate",
+    "name": "Jon Ossoff",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Jon_Ossoff",
+    "campaign_website": "https://electjon.com/",
+    "domain": "electjon.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Georgia,_2026",
+    "chamber": "senate",
+    "name": "Earl Carter",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Earl_\"Buddy\"_Carter",
+    "campaign_website": "https://buddycarterforcongress.com",
+    "domain": "buddycarterforcongress.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Georgia,_2026",
+    "chamber": "senate",
+    "name": "Christina Loren Clement",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Christina_Loren_Clement",
+    "campaign_website": "https://stateoflocnation.com/usblack-code-house-gov",
+    "domain": "stateoflocnation.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Georgia,_2026",
+    "chamber": "senate",
+    "name": "Mike Collins",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Mike_Collins_(Georgia)",
+    "campaign_website": "https://mikecollinsga.com",
+    "domain": "mikecollinsga.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Georgia,_2026",
+    "chamber": "senate",
+    "name": "John Coyne",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/John_Coyne",
+    "campaign_website": "http://www.johncoyneforussenate.com/",
+    "domain": "www.johncoyneforussenate.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Georgia,_2026",
+    "chamber": "senate",
+    "name": "Derek Dooley",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Derek_Dooley",
+    "campaign_website": "https://www.dooleyforgeorgia.com",
+    "domain": "www.dooleyforgeorgia.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Georgia,_2026",
+    "chamber": "senate",
+    "name": "Jonathan McColumn",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Jonathan_McColumn",
+    "campaign_website": "https://www.jonathanmccolumn.com",
+    "domain": "www.jonathanmccolumn.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Iowa,_2026",
+    "chamber": "senate",
+    "name": "Josh Turek",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Josh_Turek",
+    "campaign_website": "https://turek4iowa.com",
+    "domain": "turek4iowa.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Iowa,_2026",
+    "chamber": "senate",
+    "name": "Zach Wahls",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Zach_Wahls",
+    "campaign_website": "https://zachwahls.com",
+    "domain": "zachwahls.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Iowa,_2026",
+    "chamber": "senate",
+    "name": "Jim Carlin",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Jim_Carlin",
+    "campaign_website": "https://carlinforussenate.com/",
+    "domain": "carlinforussenate.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Iowa,_2026",
+    "chamber": "senate",
+    "name": "Ashley Hinson",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Ashley_Hinson",
+    "campaign_website": "https://ashleyhinson.com",
+    "domain": "ashleyhinson.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "chamber": "senate",
+    "name": "Susan Collins",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Susan_Collins_(Maine)",
+    "campaign_website": "https://susancollins.com",
+    "domain": "susancollins.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "chamber": "senate",
+    "name": "David Costello",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/David_Costello",
+    "campaign_website": "https://www.costelloforsenate.com/",
+    "domain": "www.costelloforsenate.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "chamber": "senate",
+    "name": "Elizabeth Cote",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Elizabeth_Cote",
+    "campaign_website": "https://coteforsenate.com/",
+    "domain": "coteforsenate.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "chamber": "senate",
+    "name": "Elizabeth Dickerson",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Elizabeth_Dickerson",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "chamber": "senate",
+    "name": "Troy Dale Jackson",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Troy_Dale_Jackson",
+    "campaign_website": "https://www.jacksonformaine.com/",
+    "domain": "www.jacksonformaine.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "chamber": "senate",
+    "name": "Andrea LaFlamme",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Andrea_LaFlamme",
+    "campaign_website": "https://www.andreaformaine.com",
+    "domain": "www.andreaformaine.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "chamber": "senate",
+    "name": "Joseph Leveille",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Joseph_Leveille",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "chamber": "senate",
+    "name": "Kristina Libby",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Kristina_Libby",
+    "campaign_website": "https://www.kristinalibby.com/kristina-libby-for-senate",
+    "domain": "www.kristinalibby.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "chamber": "senate",
+    "name": "Janet T. Mills",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Janet_T._Mills",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "chamber": "senate",
+    "name": "Sigrid Ann Olson",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Sigrid_Ann_Olson",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "chamber": "senate",
+    "name": "Saundra Pelletier",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Saundra_Pelletier",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "chamber": "senate",
+    "name": "Graham Platner",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Graham_Platner",
+    "campaign_website": "https://www.grahamforsenate.com",
+    "domain": "www.grahamforsenate.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Maine,_2026",
+    "chamber": "senate",
+    "name": "Ashley Webb",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Ashley_Webb",
+    "campaign_website": "https://www.truthpointusa.com/",
+    "domain": "www.truthpointusa.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Michigan,_2026",
+    "chamber": "senate",
+    "name": "Abdul El-Sayed",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Abdul_El-Sayed",
+    "campaign_website": "https://abdulforsenate.com/",
+    "domain": "abdulforsenate.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Michigan,_2026",
+    "chamber": "senate",
+    "name": "Mallory McMorrow",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Mallory_McMorrow",
+    "campaign_website": "https://mcmorrowformichigan.com",
+    "domain": "mcmorrowformichigan.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Michigan,_2026",
+    "chamber": "senate",
+    "name": "Haley Stevens",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Haley_Stevens",
+    "campaign_website": "https://haleyformi.com",
+    "domain": "haleyformi.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Michigan,_2026",
+    "chamber": "senate",
+    "name": "Mike Rogers",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Mike_Rogers_(Michigan)",
+    "campaign_website": "https://rogersforsenate.com",
+    "domain": "rogersforsenate.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Montana,_2026",
+    "chamber": "senate",
+    "name": "Alani Bankhead",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Alani_Bankhead",
+    "campaign_website": "https://alaniformt.com",
+    "domain": "alaniformt.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Montana,_2026",
+    "chamber": "senate",
+    "name": "Michael Black Wolf",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Michael_Black_Wolf",
+    "campaign_website": "https://blackwolfformontana.com",
+    "domain": "blackwolfformontana.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Montana,_2026",
+    "chamber": "senate",
+    "name": "Michael Hummert",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Michael_Hummert",
+    "campaign_website": "https://www.mikeformt.com",
+    "domain": "www.mikeformt.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Montana,_2026",
+    "chamber": "senate",
+    "name": "Christopher Kehoe",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Christopher_Kehoe_(Montana)",
+    "campaign_website": "https://christopherkehoe.com",
+    "domain": "christopherkehoe.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Montana,_2026",
+    "chamber": "senate",
+    "name": "Reilly Neill",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Reilly_Neill",
+    "campaign_website": "https://reillyformontana.com",
+    "domain": "reillyformontana.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Montana,_2026",
+    "chamber": "senate",
+    "name": "Kurt Alme",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Kurt_Alme",
+    "campaign_website": "https://almeforsenate.com/",
+    "domain": "almeforsenate.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Montana,_2026",
+    "chamber": "senate",
+    "name": "Lee Calhoun",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Lee_Calhoun",
+    "campaign_website": "https://www.calhounformt.com",
+    "domain": "www.calhounformt.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Montana,_2026",
+    "chamber": "senate",
+    "name": "Charles A. Walking Child",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Charles_A._Walking_Child",
+    "campaign_website": "https://www.charleswalkingchildforussenate.com/",
+    "domain": "www.charleswalkingchildforussenate.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Nebraska,_2026",
+    "chamber": "senate",
+    "name": "Pete Ricketts",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Pete_Ricketts",
+    "campaign_website": "https://petericketts.com",
+    "domain": "petericketts.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Nebraska,_2026",
+    "chamber": "senate",
+    "name": "Cindy Burbank",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Cindy_Burbank",
+    "campaign_website": "https://cindyburbank.com/",
+    "domain": "cindyburbank.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Nebraska,_2026",
+    "chamber": "senate",
+    "name": "William Forbes",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/William_Forbes",
+    "campaign_website": "https://forbesfornebraska.com/",
+    "domain": "forbesfornebraska.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Nebraska,_2026",
+    "chamber": "senate",
+    "name": "Todd Knobel",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Todd_Knobel",
+    "campaign_website": "http://toddknobel.org/",
+    "domain": "toddknobel.org"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Nebraska,_2026",
+    "chamber": "senate",
+    "name": "Eric Mortimore",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Eric_Mortimore",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Nebraska,_2026",
+    "chamber": "senate",
+    "name": "Debb Axtell Schultz",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Debb_Axtell_Schultz",
+    "campaign_website": "https://debschultz4ne.com/",
+    "domain": "debschultz4ne.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Nebraska,_2026",
+    "chamber": "senate",
+    "name": "Mac Stevens",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Mac_Stevens",
+    "campaign_website": "https://www.mac4nebraska.com/",
+    "domain": "www.mac4nebraska.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "chamber": "senate",
+    "name": "David Jarvis",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/David_Jarvis",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "chamber": "senate",
+    "name": "Karishma Manzur",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Karishma_Manzur",
+    "campaign_website": "https://www.karishmaforsenate.com/",
+    "domain": "www.karishmaforsenate.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "chamber": "senate",
+    "name": "Chris Pappas",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Chris_Pappas",
+    "campaign_website": "https://chrispappas.org",
+    "domain": "chrispappas.org"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "chamber": "senate",
+    "name": "Maxwell Saal",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Maxwell_Saal",
+    "campaign_website": "https://maxfornh.com",
+    "domain": "maxfornh.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "chamber": "senate",
+    "name": "John Vail",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/John_Vail",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "chamber": "senate",
+    "name": "Tom Alciere",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Tom_Alciere",
+    "campaign_website": "https://tomalciere.us",
+    "domain": "tomalciere.us"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "chamber": "senate",
+    "name": "Scott Brown",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Scott_Brown_(New_Hampshire)",
+    "campaign_website": "https://scottbrown.com/",
+    "domain": "scottbrown.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "chamber": "senate",
+    "name": "Sky Danley",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Sky_Danley",
+    "campaign_website": "https://www.skydanley2026.com",
+    "domain": "www.skydanley2026.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "chamber": "senate",
+    "name": "Andy Martin",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Andy_Martin_(New_Hampshire)",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "chamber": "senate",
+    "name": "Mary Maxwell",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Mary_Maxwell_(New_Hampshire)",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "chamber": "senate",
+    "name": "Richard McMenamon II",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Richard_McMenamon_II",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "chamber": "senate",
+    "name": "Sabrina Smith",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Sabrina_Smith",
+    "campaign_website": null
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_New_Hampshire,_2026",
+    "chamber": "senate",
+    "name": "John Sununu",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/John_E._Sununu",
+    "campaign_website": "https://www.sununusenator.com/",
+    "domain": "www.sununusenator.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_North_Carolina,_2026",
+    "chamber": "senate",
+    "name": "Roy Cooper",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Roy_Cooper",
+    "campaign_website": "https://roycooper.com",
+    "domain": "roycooper.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_North_Carolina,_2026",
+    "chamber": "senate",
+    "name": "Michael Whatley",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Michael_Whatley",
+    "campaign_website": "https://www.michaelwhatley.com",
+    "domain": "www.michaelwhatley.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_special_election_in_Ohio,_2026",
+    "chamber": "senate",
+    "name": "Jon Husted",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Jon_Husted",
+    "campaign_website": "https://www.jonhustedforsenate.com",
+    "domain": "www.jonhustedforsenate.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_special_election_in_Ohio,_2026",
+    "chamber": "senate",
+    "name": "Sherrod Brown",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/Sherrod_Brown",
+    "campaign_website": "https://www.sherrodbrown.com",
+    "domain": "www.sherrodbrown.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026",
+    "chamber": "senate",
+    "name": "James Talarico",
+    "party": "Democratic",
+    "bio_url": "https://ballotpedia.org/James_Talarico",
+    "campaign_website": "https://jamestalarico.com/",
+    "domain": "jamestalarico.com"
+  },
+  {
+    "race_url": "https://ballotpedia.org/United_States_Senate_election_in_Texas,_2026",
+    "chamber": "senate",
+    "name": "Ken Paxton",
+    "party": "Republican",
+    "bio_url": "https://ballotpedia.org/Ken_Paxton",
+    "campaign_website": "https://www.kenpaxton.com",
+    "domain": "www.kenpaxton.com"
+  }
+]
