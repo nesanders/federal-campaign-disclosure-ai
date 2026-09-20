@@ -1,11 +1,15 @@
 # Plan: AI-related campaign job postings as a signal
 
-**Status: implemented (2026-09-19).** A live "Job Postings" tab now ships
-on the site, built on this plan's own re-prioritized source order
-(RepublicanJobs.gop, DCCC, Campaigns & Elections). See "Implementation
-notes" at the bottom of this file for what was actually built and how it
-differs from the original plan below, which is otherwise left intact for
-the record.
+**Status: implemented, then retired (2026-09-20).** A live "Job Postings"
+tab shipped on the site (2026-09-19), was extended across four more
+rounds of source-hunting and a fifth round of targeted candidate-site
+scraping, and was then removed from the site (2026-09-20) once the
+findings themselves (see "Retired" at the very bottom of this file) made
+clear the signal couldn't support the kind of reading a dashboard
+implies. The pipeline code and scraped data remain in the repository.
+See "Implementation notes" further down for what was actually built and
+how it differs from the original plan below, which is otherwise left
+intact for the record.
 
 ## Objective
 
@@ -447,3 +451,83 @@ to `docs/data/job_snapshots/campaign_sites/` (committed, alongside its
 live URL) since, unlike DCCC or RepublicanJobs.gop, a single candidate's
 website has no institutional permanence and can vanish entirely once a
 race ends.
+
+## Retired (2026-09-20)
+
+The Job Postings tab was removed from the live site. The decision came
+out of a direct conversation about what the dataset could and couldn't
+support, prompted by the user asking whether it was enough to conclude
+anything about (1) what fraction of posted campaign roles require AI
+skills, (2) what roles typically require them, or (3) trends over time,
+across parties, or across campaign types. Working through those
+questions surfaced problems serious enough that continuing to present
+the tab as a dashboard -- something a reader skims for a number or a
+trend -- would have been misleading, even with methodology notes
+attached:
+
+1. **The sample isn't a sample of "campaign roles."** 150 of ~196
+   postings (77%) came from one board, RepublicanJobs.gop, that mixes
+   actual campaigns with political consulting firms, law firms, 501(c)
+   advocacy orgs, and think tanks. DCCC and DLCC only list races those
+   committees choose to feature. The one source built specifically to
+   escape this bias -- a targeted scrape of 166 individual competitive-
+   race campaign sites (Round 5, above) -- found exactly **one** real
+   posting. Individual campaigns, it turns out, overwhelmingly don't run
+   a public job board at all; the aggregators exist because of that gap,
+   not in spite of it.
+
+2. **The party comparison was apples-to-oranges by construction.**
+   RepublicanJobs.gop anonymizes every employer to a generic category
+   ("Law Firm," "Political Consulting Firm," literally "Campaign") --
+   none of its 150 postings name an actual candidate, committee, or
+   organization. The Democratic-tagged postings, by contrast, mostly
+   came from DCCC and DLCC and mostly did name one. The entity-type
+   breakdown added to the tab (`classify_entity_type()`) was an attempt
+   to fix this in place; it helped, but it couldn't fix the underlying
+   sample-size and source-mix problem, and a reader who skipped the
+   methodology notes would still walk away with "Republicans post 4-5x
+   more" as the takeaway, which the data doesn't actually support.
+
+3. **A large share of the "AI-relevant" hits were tautological.**
+   Checking the org field on all AI-relevant postings found that 15 of
+   26 (58%) came from just seven organizations whose name or category is
+   literally about AI ("501c3 AI Think Tank," "AI Policy Organization,"
+   "Political AI & Research Technology," "AI-Focused 501c3," "AI-Powered
+   Advocacy Tech," "Political Technology Platform (Campaign Data & AI
+   Infrastructure Company)," "LockedIn AI"). An AI think tank's social
+   media internship mentioning AI isn't evidence campaigns are adopting
+   AI -- it's an AI org hiring, a different phenomenon the site's
+   title/skill-mention framing had no way to separate out. Net of that
+   and a couple of other weak hits (a vendor-brand-name coincidence,
+   one line of generic HR boilerplate), the real "ordinary political
+   employer wants an AI skill" signal was about 7-8 postings out of
+   ~196 -- enough to sketch a qualitative shape (AI shows up in digital/
+   content roles first, not field/finance/ops), nowhere near enough to
+   support a rate, a trend, or a "typical role" claim.
+
+4. **No time-series is possible at all.** This was always a single-
+   snapshot dataset by design (postings vanish once filled), so "trends
+   over time" was never answerable and the site said so -- but it's
+   worth restating here as part of why the feature's remaining value
+   (a cross-sectional snapshot) wasn't enough to justify keeping it live
+   once 1-3 above were accounted for.
+
+None of this means the underlying question -- do campaigns' own hiring
+decisions show AI adoption the disclosure data can't see -- is a bad one.
+It means public job-board data, at least the sources reachable from this
+environment, can't answer it at a scale or specificity worth publishing.
+The code, the scraped data, and this document all stay in the repository
+in case a better source (LinkedIn access, a much larger and more
+diverse candidate-site sweep, a multi-cycle collection window) makes
+this worth revisiting.
+
+**What was removed from the site**: the "Job Postings" tab button, view,
+and all its rendering code in `docs/js/app.js` and `docs/css/style.css`;
+`docs/data/dashboard_jobs.json` and `docs/data/job_snapshots/` (both
+regenerable from the pipeline); the two GitHub Actions workflow steps
+that fetched and rebuilt this data. **What was kept**: every pipeline
+script (`pipeline/fetch_job_postings.py`, `pipeline/build_dataset_jobs.py`,
+`pipeline/lib/job_ai_match.py`), the scraped data
+(`data/processed/job_postings/*.jsonl`), the candidate roster
+(`pipeline/config/battleground_candidates_2026.json`), and this entire
+planning document.

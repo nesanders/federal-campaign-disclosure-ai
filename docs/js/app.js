@@ -219,7 +219,6 @@
     maVendorRecords: { key: "amount", dir: "desc" },
     maCandidateRecords: { key: "amount", dir: "desc" },
     compare: { key: "volume", dir: "desc" },
-    jobs: { key: "ai_rank", dir: "asc" },
   };
   // Off by default site-wide (persists across vendor pages, like the legacy
   // toggle): the "Top committees" and "Individual disbursements" tables on
@@ -421,11 +420,6 @@
     const maStr = "Massachusetts: generated " + new Date(MA_DATA.meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC";
     return fedStr + " · " + maStr;
   }
-  function metaLineTextJobs() {
-    if (!JOBS_DATA) return "Loading job postings dataset…";
-    return "Scraped " + new Date(JOBS_DATA.meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC · single snapshot, not a historical time series";
-  }
-
   function renderStats() {
     const meta = DATA.meta;
     const totalMatchedRows = Object.values(meta.matched_row_counts_by_cycle || {}).reduce((a, b) => a + b, 0);
@@ -1443,9 +1437,6 @@
   const COMPARE_TITLE = "AI Vendors: Federal vs. Massachusetts";
   const COMPARE_SUBTITLE_1 =
     "Every AI vendor found on either the Federal or Massachusetts tab, side by side: what each is disclosed to have spent on federal House/Senate races vs. Massachusetts state races, combined spend volume, and a recent-momentum signal — plus what campaigns actually use each tool for.";
-  const JOBS_TITLE = "AI Signal in Campaign Job Postings";
-  const JOBS_SUBTITLE_1 =
-    "A different kind of evidence from the rest of this site: not disclosed spending, but what campaigns say they're hiring for. Scraped from public campaign job boards, then scanned for AI-related terms — both in the job title itself (e.g. an “AI Director” role) and, just as significant, mentioned as a desired skill for an otherwise ordinary ground-level role (e.g. a field organizer listing asking for “familiarity with ChatGPT”).";
 
   let currentDataset = "federal";
 
@@ -1473,8 +1464,7 @@
     currentDataset = tab;
     const isMa = tab === "ma";
     const isCompare = tab === "compare";
-    const isJobs = tab === "jobs";
-    const isOffMain = isMa || isCompare || isJobs;
+    const isOffMain = isMa || isCompare;
     updateLegacyToggleText(tab);
 
     document.body.setAttribute("data-active-dataset", tab);
@@ -1488,22 +1478,19 @@
     document.getElementById("footer-source-federal").hidden = isOffMain;
     document.getElementById("footer-source-ma").hidden = !isMa;
     document.getElementById("footer-source-compare").hidden = !isCompare;
-    document.getElementById("footer-source-jobs").hidden = !isJobs;
 
-    document.title = isMa ? MA_TITLE : isCompare ? COMPARE_TITLE : isJobs ? JOBS_TITLE : FEDERAL_TITLE;
-    document.getElementById("page-h1").textContent = isMa ? MA_TITLE : isCompare ? COMPARE_TITLE : isJobs ? JOBS_TITLE : FEDERAL_TITLE;
-    document.getElementById("page-subtitle-1").textContent = isMa ? MA_SUBTITLE_1 : isCompare ? COMPARE_SUBTITLE_1 : isJobs ? JOBS_SUBTITLE_1 : FEDERAL_SUBTITLE_1;
+    document.title = isMa ? MA_TITLE : isCompare ? COMPARE_TITLE : FEDERAL_TITLE;
+    document.getElementById("page-h1").textContent = isMa ? MA_TITLE : isCompare ? COMPARE_TITLE : FEDERAL_TITLE;
+    document.getElementById("page-subtitle-1").textContent = isMa ? MA_SUBTITLE_1 : isCompare ? COMPARE_SUBTITLE_1 : FEDERAL_SUBTITLE_1;
     document.getElementById("page-subtitle-2").hidden = isOffMain;
 
     // The search bar covers Federal and MA candidates/vendors (see
     // runSearch(), which picks searchIndex vs. maSearchIndex off
-    // currentDataset); the Compare and Job Postings tabs have no entity
-    // pages of their own (Compare only links out to Federal/MA vendor
-    // pages; Job Postings links out to external job listings), so it's
-    // simplest to hide the bar on both rather than pick one dataset's
-    // index for it.
-    document.getElementById("search-bar-wrap").hidden = isCompare || isJobs;
-    if (!isCompare && !isJobs) {
+    // currentDataset); the Compare tab has no entity pages of its own
+    // (it only links out to Federal/MA vendor pages), so it's simplest
+    // to hide the bar there rather than pick one dataset's index for it.
+    document.getElementById("search-bar-wrap").hidden = isCompare;
+    if (!isCompare) {
       const raceChip = document.querySelector('.search-filter-chips .chip[data-filter="race"]');
       if (raceChip) raceChip.hidden = isMa;
       document.getElementById("global-search-input").placeholder = isMa ? "Search candidates, vendors…" : "Search candidates, vendors, races…";
@@ -1520,11 +1507,6 @@
     document.getElementById("ma-view").hidden = !isMa;
     document.getElementById("ma-detail-view").hidden = true;
     document.getElementById("compare-view").hidden = !isCompare;
-    document.getElementById("jobs-view").hidden = !isJobs;
-    // No legacy-vendor toggle applies to Job Postings (it isn't a
-    // spend/vendor-taxonomy dataset at all), so hide that bar there the
-    // same way the search bar is hidden.
-    document.getElementById("legacy-toggle-bar").hidden = isJobs;
 
     if (isMa) {
       document.getElementById("meta-line").textContent = MA_DATA ? metaLineTextMa() : "Loading Massachusetts dataset…";
@@ -1540,18 +1522,6 @@
         view.innerHTML = "";
         view.appendChild(el("p", { className: "lede", text: "Loading Massachusetts dataset…" }));
         ensureCompareData();
-      }
-    } else if (isJobs) {
-      window.scrollTo(0, 0);
-      if (JOBS_DATA) {
-        document.getElementById("meta-line").textContent = metaLineTextJobs();
-        renderJobsView();
-      } else {
-        document.getElementById("meta-line").textContent = "Loading job postings dataset…";
-        const view = document.getElementById("jobs-view");
-        view.innerHTML = "";
-        view.appendChild(el("p", { className: "lede", text: "Loading job postings dataset…" }));
-        ensureJobsData();
       }
     } else {
       document.getElementById("meta-line").textContent = metaLineTextFederal();
@@ -2163,47 +2133,6 @@
         const view = document.getElementById("compare-view");
         view.innerHTML = "";
         view.appendChild(el("p", { className: "lede", text: "Could not load Massachusetts dataset (" + err.message + ")." }));
-      });
-  }
-
-  // ---- Job Postings tab: its own standalone dataset, no dependency on
-  // DATA or MA_DATA ----
-  let JOBS_DATA = null;
-  let jobsLoadPromise = null;
-  const jobsFilterState = { q: "", party: "all", source: "all", signal: "all" };
-
-  function loadJobsData() {
-    if (JOBS_DATA) return Promise.resolve(JOBS_DATA);
-    if (!jobsLoadPromise) {
-      jobsLoadPromise = fetch("data/dashboard_jobs.json")
-        .then((r) => {
-          if (!r.ok) throw new Error("HTTP " + r.status);
-          return r.json();
-        })
-        .then((json) => {
-          JOBS_DATA = json;
-          return JOBS_DATA;
-        })
-        .catch((err) => {
-          console.error(err);
-          throw err;
-        });
-    }
-    return jobsLoadPromise;
-  }
-
-  function ensureJobsData() {
-    loadJobsData()
-      .then(() => {
-        if (currentDataset !== "jobs") return;
-        document.getElementById("meta-line").textContent = metaLineTextJobs();
-        renderJobsView();
-      })
-      .catch((err) => {
-        if (currentDataset !== "jobs") return;
-        const view = document.getElementById("jobs-view");
-        view.innerHTML = "";
-        view.appendChild(el("p", { className: "lede", text: "Could not load job postings dataset (" + err.message + ")." }));
       });
   }
 
@@ -3237,292 +3166,6 @@
     );
   }
 
-  // ---- Job Postings tab ----
-
-  function partyPill(party) {
-    const label = party || "Unknown";
-    const key = label.toLowerCase();
-    return el("span", { className: "party-pill party-pill-" + key, text: label });
-  }
-
-  function jobAiBadge(p) {
-    if (p.ai_confidence === "title") return el("span", { className: "pill pill-ai-title", text: "AI role title" });
-    if (p.ai_confidence === "skill_mention") return el("span", { className: "pill pill-ai-skill", text: "AI skill mentioned" });
-    return el("span", { className: "text-muted", text: "—" });
-  }
-
-  function jobsAllRows() {
-    return JOBS_DATA.postings.map((p) => Object.assign({}, p, { ai_rank: p.ai_confidence === "title" ? 0 : p.ai_confidence === "skill_mention" ? 1 : 2 }));
-  }
-
-  function jobsFilteredRows() {
-    const s = jobsFilterState;
-    const q = s.q.trim().toLowerCase();
-    return jobsAllRows().filter((r) => {
-      if (s.party !== "all" && (r.party || "Unknown") !== s.party) return false;
-      if (s.source !== "all" && r.source !== s.source) return false;
-      if (s.signal === "title" && r.ai_confidence !== "title") return false;
-      if (s.signal === "skill_mention" && r.ai_confidence !== "skill_mention") return false;
-      if (s.signal === "any" && !r.ai_confidence) return false;
-      if (s.signal === "none" && r.ai_confidence) return false;
-      if (q) {
-        const hay = [r.title, r.org, r.location, r.ai_snippet].filter(Boolean).join(" ").toLowerCase();
-        if (hay.indexOf(q) === -1) return false;
-      }
-      return true;
-    });
-  }
-
-  // Filter controls live outside the table so re-filtering only rebuilds
-  // renderJobsTableSection's own container -- rebuilding the whole view
-  // on every keystroke would drop focus out of the search input.
-  function buildJobsFilterBar(tableContainer, stats) {
-    const bar = el("div", { className: "filter-bar jobs-filter-bar" });
-
-    const searchWrap = el("label", { className: "filter-field" });
-    searchWrap.appendChild(el("span", { className: "filter-field-label", text: "Search" }));
-    const searchInput = el("input", {
-      attrs: { type: "text", placeholder: "Title, org, or location…", value: jobsFilterState.q },
-    });
-    searchInput.addEventListener("input", () => {
-      jobsFilterState.q = searchInput.value;
-      renderJobsTableSection(tableContainer);
-    });
-    searchWrap.appendChild(searchInput);
-    bar.appendChild(searchWrap);
-
-    const partyWrap = el("label", { className: "filter-field" });
-    partyWrap.appendChild(el("span", { className: "filter-field-label", text: "Party" }));
-    const partySel = el("select");
-    partySel.appendChild(el("option", { text: "All parties", attrs: { value: "all" } }));
-    Object.keys(stats.by_party).forEach((p) => partySel.appendChild(el("option", { text: p, attrs: { value: p } })));
-    partySel.value = jobsFilterState.party;
-    partySel.addEventListener("change", () => {
-      jobsFilterState.party = partySel.value;
-      renderJobsTableSection(tableContainer);
-    });
-    partyWrap.appendChild(partySel);
-    bar.appendChild(partyWrap);
-
-    const sourceWrap = el("label", { className: "filter-field" });
-    sourceWrap.appendChild(el("span", { className: "filter-field-label", text: "Source" }));
-    const sourceSel = el("select");
-    sourceSel.appendChild(el("option", { text: "All sources", attrs: { value: "all" } }));
-    Object.keys(stats.by_source).forEach((src) => sourceSel.appendChild(el("option", { text: stats.by_source[src].label, attrs: { value: src } })));
-    sourceSel.value = jobsFilterState.source;
-    sourceSel.addEventListener("change", () => {
-      jobsFilterState.source = sourceSel.value;
-      renderJobsTableSection(tableContainer);
-    });
-    sourceWrap.appendChild(sourceSel);
-    bar.appendChild(sourceWrap);
-
-    const signalWrap = el("label", { className: "filter-field" });
-    signalWrap.appendChild(el("span", { className: "filter-field-label", text: "AI signal" }));
-    const signalSel = el("select");
-    [
-      ["all", "Any"],
-      ["any", "AI-relevant only"],
-      ["title", "AI role title"],
-      ["skill_mention", "AI skill mentioned"],
-      ["none", "No AI signal"],
-    ].forEach(([value, label]) => signalSel.appendChild(el("option", { text: label, attrs: { value } })));
-    signalSel.value = jobsFilterState.signal;
-    signalSel.addEventListener("change", () => {
-      jobsFilterState.signal = signalSel.value;
-      renderJobsTableSection(tableContainer);
-    });
-    signalWrap.appendChild(signalSel);
-    bar.appendChild(signalWrap);
-
-    const clearBtn = el("button", { className: "filter-clear-btn", text: "Clear filters ✕", attrs: { type: "button" } });
-    clearBtn.addEventListener("click", () => {
-      jobsFilterState.q = "";
-      jobsFilterState.party = "all";
-      jobsFilterState.source = "all";
-      jobsFilterState.signal = "all";
-      renderJobsView();
-    });
-    bar.appendChild(clearBtn);
-
-    return bar;
-  }
-
-  function renderJobsTableSection(tableContainer) {
-    tableContainer.innerHTML = "";
-    const allRows = jobsAllRows();
-    const filtered = jobsFilteredRows();
-    const tableRows = sortRows(filtered, sortState.jobs);
-    const headers = withSort(
-      "jobs",
-      [
-        {
-          label: "Title",
-          sortKey: "title",
-          cell: (r) => {
-            const frag = document.createDocumentFragment();
-            const cell = el("span", { className: "job-title-cell" });
-            if (r.listing_only && r.snapshot_path) {
-              cell.appendChild(el("span", { text: r.title || "(untitled)" }));
-              cell.appendChild(
-                el("a", {
-                  className: "entity-link job-snapshot-link",
-                  href: r.snapshot_path,
-                  text: "View source snapshot (captured " + (r.snapshot_captured_at || "?") + ") →",
-                  attrs: { target: "_blank", rel: "noopener" },
-                })
-              );
-            } else if (r.url) {
-              cell.appendChild(el("a", { className: "entity-link", href: r.url, text: r.title || "(untitled)", attrs: { target: "_blank", rel: "noopener" } }));
-            } else {
-              cell.appendChild(document.createTextNode(r.title || "(untitled)"));
-            }
-            if (r.ai_snippet) cell.appendChild(el("span", { className: "job-snippet", text: "“" + r.ai_snippet + "”" }));
-            frag.appendChild(cell);
-            return frag;
-          },
-        },
-        { label: "Org / Campaign", sortKey: "org", render: (r) => r.org || "—" },
-        { label: "Party", sortKey: "party", cell: (r) => partyPill(r.party) },
-        { label: "Source", sortKey: "source_label", render: (r) => r.source_label },
-        { label: "Location", sortKey: "location", render: (r) => r.location || "—" },
-        { label: "AI signal", sortKey: "ai_rank", cell: (r) => jobAiBadge(r) },
-      ],
-      () => renderJobsTableSection(tableContainer)
-    );
-    tableContainer.appendChild(
-      el("p", { className: "note", text: "Showing " + fmtInt.format(filtered.length) + " of " + fmtInt.format(allRows.length) + " postings." })
-    );
-    tableContainer.appendChild(buildTable(headers, tableRows, { sort: sortState.jobs }));
-  }
-
-  function renderJobsView() {
-    const view = document.getElementById("jobs-view");
-    view.innerHTML = "";
-    const meta = JOBS_DATA.meta;
-    const stats = JOBS_DATA.stats;
-
-    view.appendChild(
-      el("div", {
-        className: "jobs-banner",
-        children: [
-          el("span", { text: "You're viewing the " }),
-          el("strong", { text: "Job Postings" }),
-          el("span", {
-            text:
-              " tab — a different kind of evidence from the rest of this site: not disclosed spending, but what campaigns say they're hiring for, scraped from public campaign job boards. This is a single-snapshot scrape (postings are removed once filled, so there's no way to backfill history) — see methodology below for what that means and what isn't covered yet.",
-          }),
-        ],
-      })
-    );
-
-    const statRow = el("div", { className: "stat-row" });
-    statRow.appendChild(statTile("Postings scraped", fmtInt.format(stats.total_postings), "current snapshot across " + Object.keys(stats.by_source).length + " sources, not a historical count"));
-    statRow.appendChild(statTile("AI-titled roles", fmtInt.format(stats.ai_title_postings), "AI/ChatGPT/LLM/etc. named directly in the job title"));
-    statRow.appendChild(statTile("AI skill mentioned", fmtInt.format(stats.ai_skill_mention_postings), "ground-level: an otherwise ordinary role listing AI fluency as a desired skill"));
-    statRow.appendChild(statTile("Any AI signal", fmtInt.format(stats.ai_any_postings), fmtPct((stats.ai_any_postings / stats.total_postings) * 100, 1) + " of postings scraped"));
-    view.appendChild(statRow);
-
-    const breakdownCard = el("div", { className: "card" });
-    breakdownCard.appendChild(el("h3", { text: "Breakdown by source and party" }));
-    breakdownCard.appendChild(
-      buildTable(
-        [
-          { label: "Source", render: (r) => r.label },
-          { label: "Postings", num: true, render: (r) => fmtInt.format(r.total) },
-          { label: "AI-titled", num: true, render: (r) => fmtInt.format(r.ai_title) },
-          { label: "AI skill mentioned", num: true, render: (r) => fmtInt.format(r.ai_skill_mention) },
-          { label: "Body text available?", render: (r) => (r.body_text_available ? "Yes" : "No (title only)") },
-        ],
-        Object.values(stats.by_source)
-      )
-    );
-    breakdownCard.appendChild(
-      buildTable(
-        [
-          { label: "Party", cell: (r) => partyPill(r.party) },
-          { label: "Postings", num: true, render: (r) => fmtInt.format(r.total) },
-          { label: "AI-titled", num: true, render: (r) => fmtInt.format(r.ai_title) },
-          { label: "AI skill mentioned", num: true, render: (r) => fmtInt.format(r.ai_skill_mention) },
-        ],
-        Object.keys(stats.by_party).map((party) => Object.assign({ party }, stats.by_party[party]))
-      )
-    );
-    view.appendChild(el("div", { className: "card-grid single", children: [breakdownCard] }));
-
-    const entityCard = el("div", { className: "card" });
-    entityCard.appendChild(el("h3", { text: "Breakdown by entity type" }));
-    entityCard.appendChild(
-      el("p", {
-        className: "note",
-        text:
-          "The party totals above mix fundamentally different kinds of evidence: a posting from a specific candidate's own committee is a much stronger AI-hiring signal than one from a source that won't say who's hiring. RepublicanJobs.gop -- 150 of this dataset's 195 postings -- anonymizes every employer to a generic category (\"Law Firm,\" \"Political Consulting Firm,\" literally \"Campaign\"); none of its postings name an actual candidate, committee, or organization. DCCC's and DLCC's postings, by contrast, mostly do. This table separates them out so the party comparison isn't read as apples to apples.",
-      })
-    );
-    entityCard.appendChild(
-      buildTable(
-        [
-          { label: "Entity type", render: (r) => r.label },
-          { label: "Postings", num: true, render: (r) => fmtInt.format(r.total) },
-          { label: "AI-titled", num: true, render: (r) => fmtInt.format(r.ai_title) },
-          { label: "AI skill mentioned", num: true, render: (r) => fmtInt.format(r.ai_skill_mention) },
-          {
-            label: "Party composition",
-            render: (r) =>
-              Object.keys(r.by_party)
-                .map((p) => fmtInt.format(r.by_party[p]) + " " + p)
-                .join(", "),
-          },
-        ],
-        Object.values(stats.by_entity_type)
-      )
-    );
-    view.appendChild(el("div", { className: "card-grid single", children: [entityCard] }));
-
-    const tableCard = el("div", { className: "card" });
-    tableCard.appendChild(el("h3", { text: "All postings scraped" }));
-    tableCard.appendChild(
-      el("p", {
-        className: "note",
-        text:
-          "Every posting found across all sources this run, AI-relevant ones sorted first by default. Click through a title to the original listing (or, for DCCC, its linked job-description PDF). Where a source has no stable link to an individual posting (RepublicanJobs.gop), the title instead links to a snapshot of the full listing page as scraped, with the capture date, so the posting's exact wording stays verifiable after the live page moves on. The quoted snippet under a title is the exact text that triggered an AI-signal match.",
-      })
-    );
-    const tableContainer = el("div", { className: "jobs-table-container" });
-    tableCard.appendChild(buildJobsFilterBar(tableContainer, stats));
-    tableCard.appendChild(tableContainer);
-    renderJobsTableSection(tableContainer);
-    view.appendChild(el("div", { className: "card-grid single", children: [tableCard] }));
-
-    const sourcesCard = el("div", { className: "card" });
-    sourcesCard.appendChild(el("h3", { text: "Sources" }));
-    const sourcesList = el("ul", { className: "notes" });
-    meta.sources.forEach((s) => sourcesList.appendChild(el("li", { text: s })));
-    sourcesCard.appendChild(sourcesList);
-
-    const notesCard = el("div", { className: "card" });
-    notesCard.appendChild(el("h3", { text: "Methodology & limitations" }));
-    const notesList = el("ul", { className: "notes" });
-    meta.methodology_notes.forEach((s) => notesList.appendChild(el("li", { text: s })));
-    notesCard.appendChild(notesList);
-
-    const recCard = el("div", { className: "card" });
-    recCard.appendChild(el("h3", { text: "Recommended additional sources" }));
-    recCard.appendChild(el("p", { className: "note", text: "Not yet scraped -- candidates for expanding coverage, particularly down to more county/local-level postings." }));
-    const recList = el("ul", { className: "notes" });
-    meta.recommended_additional_sources.forEach((s) => recList.appendChild(el("li", { text: s })));
-    recCard.appendChild(recList);
-
-    view.appendChild(el("div", { className: "card-grid", children: [sourcesCard, notesCard, recCard] }));
-
-    view.appendChild(
-      el("p", {
-        className: "lede",
-        text: "Full pipeline code (pipeline/fetch_job_postings.py, pipeline/build_dataset_jobs.py) is in the GitHub repository. Data scraped " + new Date(meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC.",
-      })
-    );
-  }
-
   function parseHash() {
     const h = location.hash.replace(/^#\/?/, "");
     if (!h) return null;
@@ -3561,10 +3204,6 @@
     }
     if (raw === "compare") {
       activateDataset("compare");
-      return;
-    }
-    if (raw === "jobs") {
-      activateDataset("jobs");
       return;
     }
     activateDataset("federal");

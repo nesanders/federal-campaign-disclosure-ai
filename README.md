@@ -163,88 +163,32 @@ appears, to undo); every column header carries hover text spelling out
 exactly what that column measures. Respects the same legacy-vendor toggle
 as the other two tabs.
 
-## Job Postings tab
+## Job Postings tab (retired)
 
-A fourth tab tracks a fundamentally different kind of evidence: not
-disclosed spending, but what campaigns say they're hiring for. Every
-other tab can only see AI use that shows up as a named, billed vendor in
-a disclosure filing -- a staffer using a personal ChatGPT account, or a
-campaign's own decision to invest in AI capability before any tool
-purchase appears in a filing, is invisible to that method entirely. This
-tab scrapes public campaign job boards instead and scans each posting
-for AI-related terms in two tiers: **title-level** (an AI term appears in
-the job title itself, e.g. "AI Director" -- unambiguous evidence of
-hiring specifically for AI capability) and **skill-mention** (the same
-terms appear only in the body of an otherwise ordinary role's
-description, e.g. a field organizer listing asking for "familiarity with
-ChatGPT") -- the ground-level signal, just as significant as a
-leadership hire, and shown separately rather than folded into one count.
+A fourth tab, scraping public campaign job boards for AI-related hiring
+signal, was built and shipped, then retired: it's no longer on the live
+site, and the GitHub Actions workflow no longer fetches or rebuilds its
+data. The pipeline code (`pipeline/fetch_job_postings.py`,
+`pipeline/build_dataset_jobs.py`, `pipeline/lib/job_ai_match.py`), the
+scraped data (`data/processed/job_postings/*.jsonl`), and the full
+methodology and findings (`planning/job-postings-plan.md`, including a
+closing "Retired" section) all remain in the repository if anyone wants
+to pick this back up.
 
-Sources (see `pipeline/fetch_job_postings.py`): the DCCC's House Campaign
-Job Board, Campaigns & Elections' jobs archive, RepublicanJobs.gop, the
-DLCC's "Work in the States" careers page, Democracy Jobs, EMILY's List's
-Lever-hosted board, and a targeted sweep of individual campaign sites for
-this cycle's competitive House/Senate races. Each source's actual data
-shape differs and is handled accordingly -- RepublicanJobs.gop has full
-descriptions inline; DCCC's descriptions are linked PDFs, fetched and
-text-extracted separately; Democracy Jobs and EMILY's List have their own
-per-posting detail pages, fetched directly; DLCC's postings link out to
-other organizations' own sites (actionnetwork.org and individual state
-party pages are fetched; a Cloudflare-blocked ATS one posting links to is
-not) for their full descriptions. Campaigns & Elections' individual job
-pages are Cloudflare-protected entirely, so postings from that source are
-classified on title only. A posting's fields (including body text)
-refresh on later scrape runs if a previously-unreachable linked domain
-becomes fetchable -- only its first-seen date stays pinned to when it was
-originally found. RepublicanJobs.gop is a single accordion page with no
-per-posting URL to link to, so its postings instead link to a full-page
-HTML snapshot (`docs/data/job_snapshots/republicanjobs_gop.html`,
-overwritten each run but recoverable from git history) with a capture
-date, so a posting's exact wording stays verifiable even after the live
-page moves on. The tab's postings table is filterable by free-text search
-(title/org/location/AI-snippet), party, source, and AI-signal tier. A
-dozen-plus other candidate sources (LinkedIn, Indeed,
-DSCC, ZipRecruiter, Arena Careers, GAIN Power's career center, NRCC,
-NRSC, RSLC, Sujata Strategies, Matt Lockshin's Progressive Job Board)
-were investigated and found to be genuine dead ends -- CAPTCHA- or
-Cloudflare-walled, a resume-collection form rather than a job list, or an
-email-only digest / newsletter-signup page with no public web
-listing -- see `planning/job-postings-plan.md` for the specifics of each.
-
-**Individual campaign sites**: prompted by an entity-type breakdown
-(`classify_entity_type()` in `pipeline/build_dataset_jobs.py`, shown as
-its own table on the tab) showing that most postings from the other
-sources aren't actually tied to a named candidate -- RepublicanJobs.gop
-in particular anonymizes every employer to a generic category with no
-candidate, committee, or organization name attached to any of its 150
-postings. `pipeline/config/battleground_candidates_2026.json` (built
-from Ballotpedia's current House/Senate battleground lists -- see
-`planning/job-postings-plan.md`'s Round 5 for the methodology) lists 166
-major-party candidates in this cycle's competitive races with a campaign
-website on file. Each one's homepage is checked for a careers/jobs link;
-a Lever-hosted board reuses the same parser as EMILY's List, and a custom
-page is kept only if its own text reads like a real posting (not a nav
-stub or a "submit your resume for later" intake form). Because a single
-candidate's site has no institutional permanence -- it can vanish
-entirely once a race ends -- every posting found this way gets its own
-durable HTML snapshot saved to `docs/data/job_snapshots/campaign_sites/`
-alongside its live URL. Workable-hosted boards (used by at least two
-Senate candidates) are a known, documented gap: their pages are a
-JS-rendered single-page app with no content in a plain fetch, and even
-Workable's own `llms.txt` endpoint -- meant for exactly this kind of
-machine access -- returned a persistent Cloudflare rate-limit from this
-pipeline's IP.
-
-This is a **single-snapshot dataset, not a time series**: job postings
-are removed once filled, so unlike every other dataset on this site there
-is no way to backfill history -- there's no equivalent of "download every
-filing since 2020." Because of that, the underlying scrape
-(`data/processed/job_postings/*.jsonl`, refreshed by the same weekly
-GitHub Actions workflow as everything else) is append-only: each run adds
-newly-seen postings to a running, committed log rather than replacing it,
-so history accumulates from whenever this feature started running. The
-tab's own "Recommended additional sources" card lists what isn't covered
-yet for anyone looking to extend it further.
+Short version of why: across ~200 postings scraped, the signal was too
+thin and too confounded to support the kind of claims a reader would
+naturally draw from a dashboard. The large majority of postings came
+from one source (RepublicanJobs.gop) that anonymizes every employer, so
+its "Republican" tag couldn't be compared against the mostly-named
+Democratic-side postings without comparing different kinds of evidence.
+Within the AI-relevant postings themselves, most turned up at
+organizations whose name or mission is literally about AI (an "AI think
+tank," an "AI policy organization") rather than at ordinary campaigns
+adopting AI as a tool -- a tautology that inflated the headline rate. And
+a dedicated sweep of 166 individual competitive-race campaign sites,
+built specifically to get past the aggregators' selection bias, turned
+up exactly one real posting. See `planning/job-postings-plan.md` for the
+full detail on all of the above.
 
 ## How it works
 
@@ -289,20 +233,14 @@ pipeline/fetch_ocpf_filer_party.py   fetches each matched filer's major-party
 pipeline/build_dataset_ma.py         aggregates OCPF matches and writes
                                       docs/data/dashboard_ma.json (a separate
                                       file/schema from the federal dataset)
-pipeline/fetch_job_postings.py       scrapes AI-relevant campaign job postings
-                                      from DCCC, Campaigns & Elections, and
-                                      RepublicanJobs.gop; append-only merges
-                                      into data/processed/job_postings/*.jsonl
-                                      (not data/raw/ -- this state must survive
-                                      between runs, unlike every other fetch)
-pipeline/build_dataset_jobs.py       classifies each posting for AI relevance
-                                      (pipeline/lib/job_ai_match.py) and writes
-                                      docs/data/dashboard_jobs.json
 docs/                                the static site (GitHub Pages source);
-                                      reads docs/data/dashboard.json,
-                                      docs/data/dashboard_ma.json, and
-                                      docs/data/dashboard_jobs.json client-side
+                                      reads docs/data/dashboard.json and
+                                      docs/data/dashboard_ma.json client-side
 ```
+
+(`pipeline/fetch_job_postings.py` and `pipeline/build_dataset_jobs.py`
+also exist but are no longer run by the workflow -- see "Job Postings
+tab (retired)" above.)
 
 Run the whole pipeline locally:
 
@@ -318,8 +256,6 @@ python pipeline/parse_ocpf.py
 python pipeline/fetch_ocpf_report_dates.py
 python pipeline/fetch_ocpf_filer_party.py
 python pipeline/build_dataset_ma.py
-python pipeline/fetch_job_postings.py
-python pipeline/build_dataset_jobs.py
 ```
 
 `.github/workflows/refresh-data.yml` runs this weekly and commits the updated
@@ -439,8 +375,8 @@ pipeline/                 the data pipeline (Python)
   config/vendors.yaml      AI vendor + use-case taxonomy, with sourcing notes
   config/battleground_candidates_2026.json
                           roster of competitive-race candidates + campaign
-                          website domains for the campaign_sites job-postings
-                          source (see the Job Postings tab section above)
+                          website domains, built for the now-retired job-
+                          postings feature (see "Job Postings tab (retired)")
   lib/                     shared helpers (FEC schema, vendor matching, reference data)
 data/raw/                 downloaded FEC/legislators source files (gitignored, large)
 data/processed/           filtered AI-vendor-match CSVs and per-committee/
@@ -449,22 +385,13 @@ data/processed/           filtered AI-vendor-match CSVs and per-committee/
                           equivalents (not split by cycle), including
                           ocpf_report_dates.csv, ocpf_filer_party.csv, and
                           ocpf_filer_year_totals.csv
-  job_postings/*.jsonl     append-only scraped job postings (committed --
-                          unlike data/raw/, this state must persist between
-                          runs; see the Job Postings tab section above)
+  job_postings/*.jsonl     scraped job postings from the retired job-postings
+                          feature (kept for reference; no longer rebuilt)
 docs/                     GitHub Pages site
   index.html, css/, js/    static dashboard (vanilla JS + a vendored Chart.js build)
   data/dashboard.json      aggregated federal data the site reads
   data/dashboard_ma.json   aggregated Massachusetts data (separate file/schema)
-  data/dashboard_jobs.json aggregated job-postings data (separate file/schema)
-  data/job_snapshots/      full-page HTML snapshots for sources with no
-                          per-posting URL to link to (committed, overwritten
-                          each run; see the Job Postings tab section above)
-  data/job_snapshots/campaign_sites/
-                          durable per-candidate snapshots for postings found
-                          on individual campaign sites, which (unlike every
-                          other source) have no institutional permanence
 planning/                 scoping docs for signals not yet (or partially)
-                          built -- state expansion, job postings, vendor-
-                          directory mining
+                          built, or built and retired -- state expansion,
+                          job postings, vendor-directory mining
 ```
