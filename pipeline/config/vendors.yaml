@@ -172,10 +172,13 @@ general_purpose:
     # confirmed via a vendor detail page's per-disbursement records.
     # "Claude" alone collides with people actually named Claude -- confirmed
     # in Massachusetts OCPF data against candidates Jean Claude Sanon and
-    # Laverne Claude-Bruce.
+    # Laverne Claude-Bruce, and in Washington PDC data against a payee
+    # named Claude Sansaricq (a $10 refund with no purpose text at all --
+    # the payee's own first name was the only thing that matched).
     exclude:
       - "jean.{0,3}claude"
       - "claude.?bruce"
+      - "claude.?sansaricq"
   - id: google_ai
     name: Google (Gemini / Vertex AI)
     homepage: https://ai.google
@@ -205,12 +208,20 @@ general_purpose:
       - "gemini earn"
       - "gemini sign"
       - "gemini productions"
+      - "gemini imprints"
+      - "gemini printing"
       - "toskr"
       - "exchange fee"
       - "merchant fee"
       - "processing fee"
       - "credit card processing"
       - "bitcoin"
+      # GetThru (a real texting/organizing vendor, unrelated to Google) is
+      # headquartered on "Gemini Dr" in Beaverton, OR -- found in
+      # Washington PDC data, where committees often write their vendor's
+      # street address inline in the expenditure description text.
+      - "getthru"
+      - "gemini dr"
   - id: aws_ai
     name: AWS AI services (Bedrock, SageMaker, Q)
     homepage: https://aws.amazon.com/ai/

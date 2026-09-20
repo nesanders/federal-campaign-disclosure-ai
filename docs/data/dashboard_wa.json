@@ -1,0 +1,3826 @@
+{
+  "meta": {
+    "generated_at": "2026-09-20T20:28:05+00:00",
+    "records_scanned": 240645,
+    "source_label": "Washington Public Disclosure Commission (PDC)",
+    "date_range": {
+      "start": "2023-01-01",
+      "end": null
+    },
+    "sources": [
+      "Washington PDC open data (data.wa.gov, dataset tijg-9zyp, \"Expenditures by Candidates and Political Committees\"), a standard Socrata SODA API -- every itemized expenditure record PDC has on file for the window below, not a sample.",
+      "Same AI vendor/category taxonomy as the federal and Massachusetts dashboards (pipeline/config/vendors.yaml), applied unmodified against each record's payee name (recipient_name), PDC's own expense-category label (code), and free-text purpose (description)."
+    ],
+    "methodology_notes": [
+      "This dashboard covers 2023-01-01 onward (the 2024 and 2026 cycles), the same window convention as the federal and Massachusetts dashboards, not this dataset's full ~10-year history (which PDC's own open-data catalog separately makes available).",
+      "PDC's dataset spans every level of Washington campaign finance in one table -- statewide, legislative, and local (county, city, school board) races and committees -- not just state-legislative races the way this dashboard's name might suggest. A record's own `office`/`jurisdiction` fields (shown on candidate detail pages) are the way to tell them apart; there is no separate federal-style itemization threshold cutting off small-dollar local races.",
+      "As with the federal and Massachusetts dashboards, this dataset only sees a payment if its payee name, PDC's own expense-category label, or purpose text names a vendor on this project's taxonomy -- disclosed AI spend is a floor on real usage, not a ceiling.",
+      "Democratic-vs-Republican spending uses PDC's own `party` field, present directly on each expenditure record (no separate per-filer lookup needed, unlike OCPF). Minor-party filers, nonpartisan local races, and PAC/committee-type filers with no party at all are excluded from the party split entirely, not counted as a third category -- see the filers_with_known_party figure alongside the split.",
+      "Vendor and filer detail pages (click a vendor or filer name) draw on every matched record for that vendor/filer, not just the top 20 shown in the overview table below -- capped at 300 records per page, largest first, the same cap the other dashboards use.",
+      "The $ / % of total spend toggle divides AI-vendor spend by each filer's own total reported PDC expenditure that year (every itemized record, not just AI-vendor matches).",
+      "The legacy-vendor toggle (top of page, off by default) filters the vendor chart/table, the yearly trend chart, and the party split (pie + over-time), same as the other dashboards: a record counts toward the generative-only figures if AT LEAST ONE of its matched vendors is generative-era. The 'Individual disclosed payments' table below is NOT filtered by this toggle -- it always shows every confidence tier and era, so every disclosed payment stays auditable; each row there is tagged with its confidence and era instead."
+    ]
+  },
+  "stats": {
+    "total_all_eras": 54941.49,
+    "total_generative": 4685.01,
+    "matched_records": 72,
+    "filers_with_ai_spend": 28,
+    "filers_with_ai_spend_ex_legacy": 15,
+    "total_filers_with_activity": 3689,
+    "total_expenditure_ai_filers": 9865250.85,
+    "pct_ai_overall": 0.557
+  },
+  "vendors": [
+    {
+      "id": "prompt_io",
+      "name": "Prompt.io",
+      "group": "political_specific",
+      "era": "legacy",
+      "homepage": "https://prompt.io",
+      "lean_context": null,
+      "description": "Political peer-to-peer texting platform used for voter outreach and fundraising text campaigns.",
+      "tags": [
+        "communications_copy",
+        "fundraising"
+      ],
+      "total": 36693.67,
+      "amount_high": 36693.67,
+      "amount_medium": 0.0,
+      "records": 14,
+      "records_high": 14,
+      "records_medium": 0,
+      "filers": 9,
+      "dem_amount": 4437.85,
+      "rep_amount": 16701.79,
+      "dem_rep_ratio": 0.266
+    },
+    {
+      "id": "calltime_ai",
+      "name": "CallTime.AI",
+      "group": "political_specific",
+      "era": "legacy",
+      "homepage": "https://www.calltime.ai",
+      "lean_context": "progressive-aligned (per public reporting)",
+      "description": "Donor call-time scheduling and CRM tool used to organize and prioritize fundraising calls.",
+      "tags": [
+        "fundraising",
+        "administrative_productivity"
+      ],
+      "total": 11924.89,
+      "amount_high": 11924.89,
+      "amount_medium": 0.0,
+      "records": 20,
+      "records_high": 20,
+      "records_medium": 0,
+      "filers": 1,
+      "dem_amount": 11924.89,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic (Claude)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://anthropic.com",
+      "lean_context": null,
+      "description": "General-purpose AI chatbot (Claude) used for drafting communications, research memos, and policy analysis.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
+      "total": 1320.22,
+      "amount_high": 1320.22,
+      "amount_medium": 0.0,
+      "records": 12,
+      "records_high": 12,
+      "records_medium": 0,
+      "filers": 5,
+      "dem_amount": 736.39,
+      "rep_amount": 136.28,
+      "dem_rep_ratio": 5.404
+    },
+    {
+      "id": "otter_ai",
+      "name": "Otter.ai",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://otter.ai",
+      "lean_context": null,
+      "description": "AI transcription tool used to transcribe meetings, calls, and events into searchable notes.",
+      "tags": [
+        "administrative_productivity",
+        "research_strategy"
+      ],
+      "total": 1180.31,
+      "amount_high": 1180.31,
+      "amount_medium": 0.0,
+      "records": 4,
+      "records_high": 4,
+      "records_medium": 0,
+      "filers": 2,
+      "dem_amount": 1180.31,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI (ChatGPT)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://openai.com",
+      "lean_context": null,
+      "description": "General-purpose AI chatbot campaigns use to draft emails, speeches, social media copy, and other written content.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
+      "total": 854.26,
+      "amount_high": 854.26,
+      "amount_medium": 0.0,
+      "records": 14,
+      "records_high": 14,
+      "records_medium": 0,
+      "filers": 6,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "descript",
+      "name": "Descript",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://descript.com",
+      "lean_context": null,
+      "description": "AI-powered audio/video editing tool used to edit podcasts, ads, and other campaign video/audio content.",
+      "tags": [
+        "advertising_creative"
+      ],
+      "total": 317.66,
+      "amount_high": 317.66,
+      "amount_medium": 0.0,
+      "records": 1,
+      "records_high": 1,
+      "records_medium": 0,
+      "filers": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "synthesia",
+      "name": "Synthesia",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://synthesia.io",
+      "lean_context": null,
+      "description": "AI video-generation platform used to create avatar-narrated videos for ads and voter outreach without filming.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
+      "total": 270.0,
+      "amount_high": 270.0,
+      "amount_medium": 0.0,
+      "records": 3,
+      "records_high": 3,
+      "records_medium": 0,
+      "filers": 2,
+      "dem_amount": 270.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://grammarly.com",
+      "lean_context": null,
+      "description": "AI writing-assistant used to proofread and edit campaign emails, press releases, and other copy.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
+      "total": 139.95,
+      "amount_high": 139.95,
+      "amount_medium": 0.0,
+      "records": 1,
+      "records_high": 1,
+      "records_medium": 0,
+      "filers": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "captions_ai",
+      "name": "Captions",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://captions.ai",
+      "lean_context": null,
+      "description": "AI video-editing tool (auto-captions, AI avatars) used to produce short-form social video content.",
+      "tags": [
+        "advertising_creative",
+        "synthetic_media"
+      ],
+      "total": 24.99,
+      "amount_high": 24.99,
+      "amount_medium": 0.0,
+      "records": 1,
+      "records_high": 1,
+      "records_medium": 0,
+      "filers": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "convos",
+      "name": "Convos (PubSent)",
+      "group": "political_specific",
+      "era": "generative",
+      "homepage": "https://convos.ai",
+      "lean_context": null,
+      "description": "AI-agent political texting platform (formerly PubSent) used for automated voter outreach conversations.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
+      "total": 2215.54,
+      "amount_high": 0.0,
+      "amount_medium": 2215.54,
+      "records": 2,
+      "records_high": 0,
+      "records_medium": 2,
+      "filers": 1,
+      "dem_amount": 2215.54,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
+    }
+  ],
+  "vendors_detail": {
+    "prompt_io": {
+      "id": "prompt_io",
+      "name": "Prompt.io",
+      "group": "political_specific",
+      "era": "legacy",
+      "homepage": "https://prompt.io",
+      "lean_context": null,
+      "description": "Political peer-to-peer texting platform used for voter outreach and fundraising text campaigns.",
+      "tags": [
+        "communications_copy",
+        "fundraising"
+      ],
+      "total": 36693.67,
+      "records_count": 14,
+      "filers_count": 9,
+      "dem_amount": 4437.85,
+      "rep_amount": 16701.79,
+      "dem_rep_ratio": 0.266,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 15046.96,
+          "count": 6
+        },
+        {
+          "year": 2024,
+          "amount": 6092.68,
+          "count": 3
+        },
+        {
+          "year": 2025,
+          "amount": 15554.03,
+          "count": 5
+        }
+      ],
+      "time_series_by_party": [
+        {
+          "year": 2023,
+          "party": "Republican",
+          "amount": 15046.96
+        },
+        {
+          "year": 2024,
+          "party": "Democratic",
+          "amount": 4437.85
+        },
+        {
+          "year": 2024,
+          "party": "Republican",
+          "amount": 1654.83
+        }
+      ],
+      "by_filer": [
+        {
+          "filer_id": "WASTRPE188",
+          "filer_name": "WA ST REPUB PARTY EXEMPT",
+          "filer_party": "Republican",
+          "amount": 9909.0,
+          "count": 1
+        },
+        {
+          "filer_id": "KINGRC 109",
+          "filer_name": "King County Republican Central Committee Non-Exempt",
+          "filer_party": "Republican",
+          "amount": 5137.96,
+          "count": 5
+        },
+        {
+          "filer_id": "CITIZ--210",
+          "filer_name": "Citizens for Spokane Schools (CFSS)",
+          "filer_party": "Unknown",
+          "amount": 4909.5,
+          "count": 1
+        },
+        {
+          "filer_id": "PARKC--366",
+          "filer_name": "Citizen Advocates for Parks (CAP)",
+          "filer_party": "Unknown",
+          "amount": 4909.5,
+          "count": 1
+        },
+        {
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 4437.85,
+          "count": 1
+        },
+        {
+          "filer_id": "BETTT--640",
+          "filer_name": "Tacoma Deserves Better",
+          "filer_party": "Unknown",
+          "amount": 3971.83,
+          "count": 2
+        },
+        {
+          "filer_id": "JRD00--373",
+          "filer_name": "Dennis A. King, Jr. (Dennis King)",
+          "filer_party": "Unknown",
+          "amount": 1763.2,
+          "count": 1
+        },
+        {
+          "filer_id": "JOY-H--244",
+          "filer_name": "HANNAH JOY (HANNAH DANAE THURLOW JOY)",
+          "filer_party": "Republican",
+          "amount": 1495.61,
+          "count": 1
+        },
+        {
+          "filer_id": "WASTRPN188",
+          "filer_name": "WA ST REPUB PARTY NON EXEMPT",
+          "filer_party": "Republican",
+          "amount": 159.22,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2023-04-19",
+          "filer_id": "WASTRPE188",
+          "filer_name": "WA ST REPUB PARTY EXEMPT",
+          "filer_party": "Republican",
+          "amount": 9909.0,
+          "purpose": "Text messages on legislative bills",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110145934"
+        },
+        {
+          "date": "2025-10-20",
+          "filer_id": "CITIZ--210",
+          "filer_name": "Citizens for Spokane Schools (CFSS)",
+          "filer_party": "Unknown",
+          "amount": 4909.5,
+          "purpose": "text messaging: 80,000 plus messages October 20 - November 4",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110334058"
+        },
+        {
+          "date": "2025-10-20",
+          "filer_id": "PARKC--366",
+          "filer_name": "Citizen Advocates for Parks (CAP)",
+          "filer_party": "Unknown",
+          "amount": 4909.5,
+          "purpose": "texting services:  October 20 - Nov 4, 80,000 plus text messages",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110326690"
+        },
+        {
+          "date": "2024-01-31",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 4437.85,
+          "purpose": "Prompt.io (14419 Greenwood Ave N A-373 Seattle, WA 98133: Text Messaging (51453 Segments)",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110205046"
+        },
+        {
+          "date": "2025-11-06",
+          "filer_id": "BETTT--640",
+          "filer_name": "Tacoma Deserves Better",
+          "filer_party": "Unknown",
+          "amount": 2207.03,
+          "purpose": "Text messages: Support John Hines",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110332522"
+        },
+        {
+          "date": "2025-10-21",
+          "filer_id": "BETTT--640",
+          "filer_name": "Tacoma Deserves Better",
+          "filer_party": "Unknown",
+          "amount": 1764.8,
+          "purpose": "Text messages: Support John Hines/Oppose Anders Ibsen",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110332521"
+        },
+        {
+          "date": "2025-10-15",
+          "filer_id": "JRD00--373",
+          "filer_name": "Dennis A. King, Jr. (Dennis King)",
+          "filer_party": "Unknown",
+          "amount": 1763.2,
+          "purpose": "Text Message Initial Subscription Fee",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110326613"
+        },
+        {
+          "date": "2024-07-22",
+          "filer_id": "JOY-H--244",
+          "filer_name": "HANNAH JOY (HANNAH DANAE THURLOW JOY)",
+          "filer_party": "Republican",
+          "amount": 1495.61,
+          "purpose": "Texting Service",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110244655"
+        },
+        {
+          "date": "2023-06-23",
+          "filer_id": "KINGRC 109",
+          "filer_name": "King County Republican Central Committee Non-Exempt",
+          "filer_party": "Republican",
+          "amount": 1284.49,
+          "purpose": "Text messages",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110158952"
+        },
+        {
+          "date": "2023-04-18",
+          "filer_id": "KINGRC 109",
+          "filer_name": "King County Republican Central Committee Non-Exempt",
+          "filer_party": "Republican",
+          "amount": 1284.49,
+          "purpose": "Text messages",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110158931"
+        },
+        {
+          "date": "2023-03-02",
+          "filer_id": "KINGRC 109",
+          "filer_name": "King County Republican Central Committee Non-Exempt",
+          "filer_party": "Republican",
+          "amount": 1284.49,
+          "purpose": "Text messages",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110222581"
+        },
+        {
+          "date": "2023-05-16",
+          "filer_id": "KINGRC 109",
+          "filer_name": "King County Republican Central Committee Non-Exempt",
+          "filer_party": "Republican",
+          "amount": 934.8,
+          "purpose": "Text messages",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110158934"
+        },
+        {
+          "date": "2023-05-16",
+          "filer_id": "KINGRC 109",
+          "filer_name": "King County Republican Central Committee Non-Exempt",
+          "filer_party": "Republican",
+          "amount": 349.69,
+          "purpose": "Text messages",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110158934"
+        },
+        {
+          "date": "2024-01-26",
+          "filer_id": "WASTRPN188",
+          "filer_name": "WA ST REPUB PARTY NON EXEMPT",
+          "filer_party": "Republican",
+          "amount": 159.22,
+          "purpose": "14,459 GOTV text messages - Myriam Jurtiz Northshore School Dis. Dir. Pos. 3",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110244564"
+        }
+      ]
+    },
+    "calltime_ai": {
+      "id": "calltime_ai",
+      "name": "CallTime.AI",
+      "group": "political_specific",
+      "era": "legacy",
+      "homepage": "https://www.calltime.ai",
+      "lean_context": "progressive-aligned (per public reporting)",
+      "description": "Donor call-time scheduling and CRM tool used to organize and prioritize fundraising calls.",
+      "tags": [
+        "fundraising",
+        "administrative_productivity"
+      ],
+      "total": 11924.89,
+      "records_count": 20,
+      "filers_count": 1,
+      "dem_amount": 11924.89,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 4200.0,
+          "count": 6
+        },
+        {
+          "year": 2024,
+          "amount": 7724.89,
+          "count": 14
+        }
+      ],
+      "time_series_by_party": [
+        {
+          "year": 2023,
+          "party": "Democratic",
+          "amount": 4200.0
+        },
+        {
+          "year": 2024,
+          "party": "Democratic",
+          "amount": 7724.89
+        }
+      ],
+      "by_filer": [
+        {
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 11924.89,
+          "count": 20
+        }
+      ],
+      "records": [
+        {
+          "date": "2024-08-19",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 900.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110244436"
+        },
+        {
+          "date": "2024-09-18",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 900.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110250335"
+        },
+        {
+          "date": "2024-06-18",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 900.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110233567"
+        },
+        {
+          "date": "2024-11-21",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 900.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110263992"
+        },
+        {
+          "date": "2024-10-21",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 900.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110263933"
+        },
+        {
+          "date": "2024-07-17",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 900.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110244431"
+        },
+        {
+          "date": "2024-02-20",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110205049"
+        },
+        {
+          "date": "2024-01-18",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110205046"
+        },
+        {
+          "date": "2023-08-18",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110172443"
+        },
+        {
+          "date": "2023-08-01",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 700.0,
+          "purpose": "Call Time AI: Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110172443"
+        },
+        {
+          "date": "2023-09-18",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110181765"
+        },
+        {
+          "date": "2023-11-20",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 700.0,
+          "purpose": "Software Expense",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110192980"
+        },
+        {
+          "date": "2024-05-20",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110224544"
+        },
+        {
+          "date": "2023-12-18",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110197172"
+        },
+        {
+          "date": "2024-04-18",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110214537"
+        },
+        {
+          "date": "2023-10-18",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110188854"
+        },
+        {
+          "date": "2024-03-18",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110209664"
+        },
+        {
+          "date": "2024-05-22",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": 174.89,
+          "purpose": "Software Rental",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110224544"
+        },
+        {
+          "date": "2024-12-16",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": -450.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110267928"
+        },
+        {
+          "date": "2024-12-16",
+          "filer_id": "MULLM2 027",
+          "filer_name": "Mark Mullet",
+          "filer_party": "Democratic",
+          "amount": -900.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110267928"
+        }
+      ]
+    },
+    "otter_ai": {
+      "id": "otter_ai",
+      "name": "Otter.ai",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://otter.ai",
+      "lean_context": null,
+      "description": "AI transcription tool used to transcribe meetings, calls, and events into searchable notes.",
+      "tags": [
+        "administrative_productivity",
+        "research_strategy"
+      ],
+      "total": 1180.31,
+      "records_count": 4,
+      "filers_count": 2,
+      "dem_amount": 1180.31,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 119.99,
+          "count": 1
+        },
+        {
+          "year": 2025,
+          "amount": 529.68,
+          "count": 2
+        },
+        {
+          "year": 2026,
+          "amount": 530.64,
+          "count": 1
+        }
+      ],
+      "time_series_by_party": [
+        {
+          "year": 2023,
+          "party": "Democratic",
+          "amount": 119.99
+        },
+        {
+          "year": 2025,
+          "party": "Democratic",
+          "amount": 529.68
+        },
+        {
+          "year": 2026,
+          "party": "Democratic",
+          "amount": 530.64
+        }
+      ],
+      "by_filer": [
+        {
+          "filer_id": "23RDDD 370",
+          "filer_name": "23RD LD DEMOCRATS",
+          "filer_party": "Democratic",
+          "amount": 1060.32,
+          "count": 3
+        },
+        {
+          "filer_id": "FERGR *115",
+          "filer_name": "Robert W. Ferguson (Bob Ferguson)",
+          "filer_party": "Democratic",
+          "amount": 119.99,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-02-21",
+          "filer_id": "23RDDD 370",
+          "filer_name": "23RD LD DEMOCRATS",
+          "filer_party": "Democratic",
+          "amount": 530.64,
+          "purpose": "web services",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110344502"
+        },
+        {
+          "date": "2025-02-20",
+          "filer_id": "23RDDD 370",
+          "filer_name": "23RD LD DEMOCRATS",
+          "filer_party": "Democratic",
+          "amount": 264.84,
+          "purpose": "Video Notetaking service",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110274067"
+        },
+        {
+          "date": "2025-02-21",
+          "filer_id": "23RDDD 370",
+          "filer_name": "23RD LD DEMOCRATS",
+          "filer_party": "Democratic",
+          "amount": 264.84,
+          "purpose": "Possible duplicate bill",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110274067"
+        },
+        {
+          "date": "2023-11-11",
+          "filer_id": "FERGR *115",
+          "filer_name": "Robert W. Ferguson (Bob Ferguson)",
+          "filer_party": "Democratic",
+          "amount": 119.99,
+          "purpose": "Otter.ai - Subscription",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110199081"
+        }
+      ]
+    },
+    "openai": {
+      "id": "openai",
+      "name": "OpenAI (ChatGPT)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://openai.com",
+      "lean_context": null,
+      "description": "General-purpose AI chatbot campaigns use to draft emails, speeches, social media copy, and other written content.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
+      "total": 854.26,
+      "records_count": 14,
+      "filers_count": 6,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 810.54,
+          "count": 12
+        },
+        {
+          "year": 2026,
+          "amount": 43.72,
+          "count": 2
+        }
+      ],
+      "time_series_by_party": [],
+      "by_filer": [
+        {
+          "filer_id": "ESHGM--921",
+          "filer_name": "Mahsa Eshghi",
+          "filer_party": "Unknown",
+          "amount": 389.84,
+          "count": 1
+        },
+        {
+          "filer_id": "CAMEM--966",
+          "filer_name": "Marwan Cameron",
+          "filer_party": "Unknown",
+          "amount": 200.0,
+          "count": 1
+        },
+        {
+          "filer_id": "BALDC  007",
+          "filer_name": "Claudia Balducci",
+          "filer_party": "Unknown",
+          "amount": 132.42,
+          "count": 6
+        },
+        {
+          "filer_id": "MOLLJ--081",
+          "filer_name": "Joseph Molloy (Joe Molloy)",
+          "filer_party": "Unknown",
+          "amount": 88.28,
+          "count": 4
+        },
+        {
+          "filer_id": "NOGUP  577",
+          "filer_name": "Pamella Nogueira (Pam Nogueira)",
+          "filer_party": "Unknown",
+          "amount": 22.1,
+          "count": 1
+        },
+        {
+          "filer_id": "HEYWL--535",
+          "filer_name": "Let's Go Washington (Sponsored by Brian Heywood)",
+          "filer_party": "Unknown",
+          "amount": 21.62,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2025-11-30",
+          "filer_id": "ESHGM--921",
+          "filer_name": "Mahsa Eshghi",
+          "filer_party": "Unknown",
+          "amount": 389.84,
+          "purpose": "Canva for graphic design, CapCut for video production, ChatGPT",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110334415"
+        },
+        {
+          "date": "2025-06-02",
+          "filer_id": "CAMEM--966",
+          "filer_name": "Marwan Cameron",
+          "filer_party": "Unknown",
+          "amount": 200.0,
+          "purpose": "Chat GPT Pro\n3180 18th Street, San Francisco, California, 94110,",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110330432"
+        },
+        {
+          "date": "2026-07-14",
+          "filer_id": "NOGUP  577",
+          "filer_name": "Pamella Nogueira (Pam Nogueira)",
+          "filer_party": "Unknown",
+          "amount": 22.1,
+          "purpose": "OpenAI OpCO",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110377509"
+        },
+        {
+          "date": "2025-10-29",
+          "filer_id": "BALDC  007",
+          "filer_name": "Claudia Balducci",
+          "filer_party": "Unknown",
+          "amount": 22.07,
+          "purpose": "OpenAI (San Francisco, CA) - Subscription",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110333494"
+        },
+        {
+          "date": "2025-05-13",
+          "filer_id": "BALDC  007",
+          "filer_name": "Claudia Balducci",
+          "filer_party": "Unknown",
+          "amount": 22.07,
+          "purpose": "OpenAI (San Francisco, CA) - Subscription",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110290672"
+        },
+        {
+          "date": "2025-09-11",
+          "filer_id": "BALDC  007",
+          "filer_name": "Claudia Balducci",
+          "filer_party": "Unknown",
+          "amount": 22.07,
+          "purpose": "OpenAI (San Francisco, CA) - Subscription",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110324353"
+        },
+        {
+          "date": "2025-09-26",
+          "filer_id": "BALDC  007",
+          "filer_name": "Claudia Balducci",
+          "filer_party": "Unknown",
+          "amount": 22.07,
+          "purpose": "OpenAI (San Francisco, CA) - Subscription",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110324353"
+        },
+        {
+          "date": "2025-07-11",
+          "filer_id": "BALDC  007",
+          "filer_name": "Claudia Balducci",
+          "filer_party": "Unknown",
+          "amount": 22.07,
+          "purpose": "OpenAI (San Francisco, CA) - Subscription",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110324356"
+        },
+        {
+          "date": "2025-06-11",
+          "filer_id": "BALDC  007",
+          "filer_name": "Claudia Balducci",
+          "filer_party": "Unknown",
+          "amount": 22.07,
+          "purpose": "OpenAI (San Francisco, CA) - Subscription",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110324356"
+        },
+        {
+          "date": "2025-07-27",
+          "filer_id": "MOLLJ--081",
+          "filer_name": "Joseph Molloy (Joe Molloy)",
+          "filer_party": "Unknown",
+          "amount": 22.07,
+          "purpose": "Software",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110303066"
+        },
+        {
+          "date": "2025-04-27",
+          "filer_id": "MOLLJ--081",
+          "filer_name": "Joseph Molloy (Joe Molloy)",
+          "filer_party": "Unknown",
+          "amount": 22.07,
+          "purpose": "Subscription",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110284348"
+        },
+        {
+          "date": "2025-06-27",
+          "filer_id": "MOLLJ--081",
+          "filer_name": "Joseph Molloy (Joe Molloy)",
+          "filer_party": "Unknown",
+          "amount": 22.07,
+          "purpose": "Software Subscription",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110299954"
+        },
+        {
+          "date": "2025-03-27",
+          "filer_id": "MOLLJ--081",
+          "filer_name": "Joseph Molloy (Joe Molloy)",
+          "filer_party": "Unknown",
+          "amount": 22.07,
+          "purpose": "Subscription",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110279506"
+        },
+        {
+          "date": "2026-06-15",
+          "filer_id": "HEYWL--535",
+          "filer_name": "Let's Go Washington (Sponsored by Brian Heywood)",
+          "filer_party": "Unknown",
+          "amount": 21.62,
+          "purpose": "OpenAI (San Francisco, CA): Software",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110371676"
+        }
+      ]
+    },
+    "synthesia": {
+      "id": "synthesia",
+      "name": "Synthesia",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://synthesia.io",
+      "lean_context": null,
+      "description": "AI video-generation platform used to create avatar-narrated videos for ads and voter outreach without filming.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
+      "total": 270.0,
+      "records_count": 3,
+      "filers_count": 2,
+      "dem_amount": 270.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 270.0,
+          "count": 3
+        }
+      ],
+      "time_series_by_party": [
+        {
+          "year": 2023,
+          "party": "Democratic",
+          "amount": 270.0
+        }
+      ],
+      "by_filer": [
+        {
+          "filer_id": "DOUGDC 858",
+          "filer_name": "DOUGLAS COUNTY DEMOCRATS",
+          "filer_party": "Democratic",
+          "amount": 135.0,
+          "count": 2
+        },
+        {
+          "filer_id": "DEMOCC 826",
+          "filer_name": "DEMOCRATS OF CHELAN COUNTY",
+          "filer_party": "Democratic",
+          "amount": 135.0,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2023-05-16",
+          "filer_id": "DEMOCC 826",
+          "filer_name": "DEMOCRATS OF CHELAN COUNTY",
+          "filer_party": "Democratic",
+          "amount": 135.0,
+          "purpose": "Synthesia Annual Personal Plan for digital presentations",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110149504"
+        },
+        {
+          "date": "2023-05-16",
+          "filer_id": "DOUGDC 858",
+          "filer_name": "DOUGLAS COUNTY DEMOCRATS",
+          "filer_party": "Democratic",
+          "amount": 67.5,
+          "purpose": "Subscription for Synthesia Annual Personal Plan",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110151021"
+        },
+        {
+          "date": "2023-05-16",
+          "filer_id": "DOUGDC 858",
+          "filer_name": "DOUGLAS COUNTY DEMOCRATS",
+          "filer_party": "Democratic",
+          "amount": 67.5,
+          "purpose": "Subscription for Synthesia Annual Personal Plan",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110151021"
+        }
+      ]
+    },
+    "anthropic": {
+      "id": "anthropic",
+      "name": "Anthropic (Claude)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://anthropic.com",
+      "lean_context": null,
+      "description": "General-purpose AI chatbot (Claude) used for drafting communications, research memos, and policy analysis.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
+      "total": 1320.22,
+      "records_count": 12,
+      "filers_count": 5,
+      "dem_amount": 736.39,
+      "rep_amount": 136.28,
+      "dem_rep_ratio": 5.404,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 1320.22,
+          "count": 12
+        }
+      ],
+      "time_series_by_party": [
+        {
+          "year": 2026,
+          "party": "Democratic",
+          "amount": 736.39
+        },
+        {
+          "year": 2026,
+          "party": "Republican",
+          "amount": 136.28
+        }
+      ],
+      "by_filer": [
+        {
+          "filer_id": "SZCZS--401",
+          "filer_name": "Stephen R Szczurko-Walton (Stephen Szczurko-Walton)",
+          "filer_party": "Democratic",
+          "amount": 736.39,
+          "count": 4
+        },
+        {
+          "filer_id": "LYONJ--322",
+          "filer_name": "Jeffrey A. Lyon (Jeff Lyon)",
+          "filer_party": "Unknown",
+          "amount": 271.07,
+          "count": 2
+        },
+        {
+          "filer_id": "HORIN--956",
+          "filer_name": "Neil Horibe",
+          "filer_party": "Unknown",
+          "amount": 176.48,
+          "count": 1
+        },
+        {
+          "filer_id": "PRATE--004",
+          "filer_name": "eric william pratt (Eric W.Pratt)",
+          "filer_party": "Republican",
+          "amount": 71.18,
+          "count": 2
+        },
+        {
+          "filer_id": "GONZG--373",
+          "filer_name": "GISBERTH GONZALEZ (Gisberth (Giz) Gonzalez)",
+          "filer_party": "Republican",
+          "amount": 65.1,
+          "count": 3
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-07-12",
+          "filer_id": "SZCZS--401",
+          "filer_name": "Stephen R Szczurko-Walton (Stephen Szczurko-Walton)",
+          "filer_party": "Democratic",
+          "amount": 220.8,
+          "purpose": "Anthropic (Claude) 7/12-8/12/26",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110377177"
+        },
+        {
+          "date": "2026-08-31",
+          "filer_id": "SZCZS--401",
+          "filer_name": "Stephen R Szczurko-Walton (Stephen Szczurko-Walton)",
+          "filer_party": "Democratic",
+          "amount": 220.8,
+          "purpose": "Anthropic - Max plan 20x Aug 12-Sep 12, 2026",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110386708"
+        },
+        {
+          "date": "2026-06-12",
+          "filer_id": "SZCZS--401",
+          "filer_name": "Stephen R Szczurko-Walton (Stephen Szczurko-Walton)",
+          "filer_party": "Democratic",
+          "amount": 184.59,
+          "purpose": "Anthropic (Claude) 6/12-7/12/26",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110377177"
+        },
+        {
+          "date": "2026-03-25",
+          "filer_id": "HORIN--956",
+          "filer_name": "Neil Horibe",
+          "filer_party": "Unknown",
+          "amount": 176.48,
+          "purpose": "ANTHROPIC (SAN FRANCISCO, CA) - CLAUDE SUBSCRIPTION USE FOR CAMPAIGN",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110354740"
+        },
+        {
+          "date": "2026-06-07",
+          "filer_id": "LYONJ--322",
+          "filer_name": "Jeffrey A. Lyon (Jeff Lyon)",
+          "filer_party": "Unknown",
+          "amount": 160.77,
+          "purpose": "Generative compute",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110371703"
+        },
+        {
+          "date": "2026-05-23",
+          "filer_id": "LYONJ--322",
+          "filer_name": "Jeffrey A. Lyon (Jeff Lyon)",
+          "filer_party": "Unknown",
+          "amount": 110.3,
+          "purpose": "Generative compute",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110366973"
+        },
+        {
+          "date": "2026-05-22",
+          "filer_id": "SZCZS--401",
+          "filer_name": "Stephen R Szczurko-Walton (Stephen Szczurko-Walton)",
+          "filer_party": "Democratic",
+          "amount": 110.2,
+          "purpose": "1 month of Anthropic (Claude) 5/22/26-6/22/26",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110363740"
+        },
+        {
+          "date": "2026-05-27",
+          "filer_id": "PRATE--004",
+          "filer_name": "eric william pratt (Eric W.Pratt)",
+          "filer_party": "Republican",
+          "amount": 49.28,
+          "purpose": "Anthropic design credits",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110363029"
+        },
+        {
+          "date": "2026-05-27",
+          "filer_id": "PRATE--004",
+          "filer_name": "eric william pratt (Eric W.Pratt)",
+          "filer_party": "Republican",
+          "amount": 21.9,
+          "purpose": "Anthropic design tools",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110363029"
+        },
+        {
+          "date": "2026-05-25",
+          "filer_id": "GONZG--373",
+          "filer_name": "GISBERTH GONZALEZ (Gisberth (Giz) Gonzalez)",
+          "filer_party": "Republican",
+          "amount": 21.7,
+          "purpose": "MONTHLY FEE FOR WEB PAGE\nAnthropic PBC \n548 Market street\nPMB 90375\nSan Francisco CA 94104",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110382435"
+        },
+        {
+          "date": "2026-07-01",
+          "filer_id": "GONZG--373",
+          "filer_name": "GISBERTH GONZALEZ (Gisberth (Giz) Gonzalez)",
+          "filer_party": "Republican",
+          "amount": 21.7,
+          "purpose": "monthly fee for web page\nAnthropic PBC \n548 market street \nPMB 90375\nSan Francisco CA 94104",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110382437"
+        },
+        {
+          "date": "2026-08-20",
+          "filer_id": "GONZG--373",
+          "filer_name": "GISBERTH GONZALEZ (Gisberth (Giz) Gonzalez)",
+          "filer_party": "Republican",
+          "amount": 21.7,
+          "purpose": "FEE FOR WEB PAGE \nANTHROPIC PBC \n548 MARKET STREET \nPMB\nSAN FRANCISCO CA 94104",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110387705"
+        }
+      ]
+    },
+    "descript": {
+      "id": "descript",
+      "name": "Descript",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://descript.com",
+      "lean_context": null,
+      "description": "AI-powered audio/video editing tool used to edit podcasts, ads, and other campaign video/audio content.",
+      "tags": [
+        "advertising_creative"
+      ],
+      "total": 317.66,
+      "records_count": 1,
+      "filers_count": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 317.66,
+          "count": 1
+        }
+      ],
+      "time_series_by_party": [],
+      "by_filer": [
+        {
+          "filer_id": "ROSEM--487",
+          "filer_name": "Michael Rosen",
+          "filer_party": "Unknown",
+          "amount": 317.66,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-04-30",
+          "filer_id": "ROSEM--487",
+          "filer_name": "Michael Rosen",
+          "filer_party": "Unknown",
+          "amount": 317.66,
+          "purpose": "Software",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110354671"
+        }
+      ]
+    },
+    "captions_ai": {
+      "id": "captions_ai",
+      "name": "Captions",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://captions.ai",
+      "lean_context": null,
+      "description": "AI video-editing tool (auto-captions, AI avatars) used to produce short-form social video content.",
+      "tags": [
+        "advertising_creative",
+        "synthetic_media"
+      ],
+      "total": 24.99,
+      "records_count": 1,
+      "filers_count": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 24.99,
+          "count": 1
+        }
+      ],
+      "time_series_by_party": [],
+      "by_filer": [
+        {
+          "filer_id": "NAGAC--511",
+          "filer_name": "Chinmay Nagarkar",
+          "filer_party": "Unknown",
+          "amount": 24.99,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2025-10-14",
+          "filer_id": "NAGAC--511",
+          "filer_name": "Chinmay Nagarkar",
+          "filer_party": "Unknown",
+          "amount": 24.99,
+          "purpose": "App for Creating Campaign Videos - posted on instagram, facebook, and youtube\n\nMirage (Captions)\n169 Madison Ave\nSTE 11185\nNew York, New York 11185\nUnited States\nhello@mirage.app",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110325794"
+        }
+      ]
+    },
+    "grammarly": {
+      "id": "grammarly",
+      "name": "Grammarly",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://grammarly.com",
+      "lean_context": null,
+      "description": "AI writing-assistant used to proofread and edit campaign emails, press releases, and other copy.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
+      "total": 139.95,
+      "records_count": 1,
+      "filers_count": 1,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 139.95,
+          "count": 1
+        }
+      ],
+      "time_series_by_party": [],
+      "by_filer": [
+        {
+          "filer_id": "BYRDT  226",
+          "filer_name": "Tyler Byrd",
+          "filer_party": "Unknown",
+          "amount": 139.95,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2023-06-05",
+          "filer_id": "BYRDT  226",
+          "filer_name": "Tyler Byrd",
+          "filer_party": "Unknown",
+          "amount": 139.95,
+          "purpose": "Subscription for Writing & Editing Software",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110282322"
+        }
+      ]
+    },
+    "convos": {
+      "id": "convos",
+      "name": "Convos (PubSent)",
+      "group": "political_specific",
+      "era": "generative",
+      "homepage": "https://convos.ai",
+      "lean_context": null,
+      "description": "AI-agent political texting platform (formerly PubSent) used for automated voter outreach conversations.",
+      "tags": [
+        "communications_copy",
+        "data_targeting"
+      ],
+      "total": 2215.54,
+      "records_count": 2,
+      "filers_count": 1,
+      "dem_amount": 2215.54,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 2215.54,
+          "count": 2
+        }
+      ],
+      "time_series_by_party": [
+        {
+          "year": 2026,
+          "party": "Democratic",
+          "amount": 2215.54
+        }
+      ],
+      "by_filer": [
+        {
+          "filer_id": "WETHT--429",
+          "filer_name": "WETHERBEE, TEDD (Tedd Wetherbee)",
+          "filer_party": "Democratic",
+          "amount": 2215.54,
+          "count": 2
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-06-29",
+          "filer_id": "WETHT--429",
+          "filer_name": "WETHERBEE, TEDD (Tedd Wetherbee)",
+          "filer_party": "Democratic",
+          "amount": 1526.18,
+          "purpose": "893 TEXT MESSAGES ON 6/29\n882 TEXT MESSAGES ON 6/30\n871 TEXT MESSAGES ON 7/1\n20299 TEXT MESSSAGES ON 7/2\n20670 TEXT MESSAGES ON 7/12\nCAMPAIGN TEXT MESSAGES FOR TEDD WETHERBEE",
+          "confidence": "medium",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110375342"
+        },
+        {
+          "date": "2026-07-16",
+          "filer_id": "WETHT--429",
+          "filer_name": "WETHERBEE, TEDD (Tedd Wetherbee)",
+          "filer_party": "Democratic",
+          "amount": 689.36,
+          "purpose": "TEXT MESSAGING\n19,696 TEXTS",
+          "confidence": "medium",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110377837"
+        }
+      ]
+    }
+  },
+  "filers_detail": {
+    "BETTT--640": {
+      "id": "BETTT--640",
+      "name": "Tacoma Deserves Better",
+      "party": "Unknown",
+      "total": 3971.83,
+      "records_count": 2,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 10887.69,
+      "pct_ai": 36.48,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 3971.83,
+          "count": 2
+        }
+      ],
+      "records": [
+        {
+          "date": "2025-11-06",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 2207.03,
+          "purpose": "Text messages: Support John Hines",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110332522"
+        },
+        {
+          "date": "2025-10-21",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 1764.8,
+          "purpose": "Text messages: Support John Hines/Oppose Anders Ibsen",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110332521"
+        }
+      ]
+    },
+    "MULLM2 027": {
+      "id": "MULLM2 027",
+      "name": "Mark Mullet",
+      "party": "Democratic",
+      "total": 16362.74,
+      "records_count": 21,
+      "vendor_ids": [
+        "calltime_ai",
+        "prompt_io"
+      ],
+      "total_expenditure": 1019066.86,
+      "pct_ai": 1.606,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 4200.0,
+          "count": 6
+        },
+        {
+          "year": 2024,
+          "amount": 12162.74,
+          "count": 15
+        }
+      ],
+      "records": [
+        {
+          "date": "2024-01-31",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 4437.85,
+          "purpose": "Prompt.io (14419 Greenwood Ave N A-373 Seattle, WA 98133: Text Messaging (51453 Segments)",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110205046"
+        },
+        {
+          "date": "2024-08-19",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 900.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110244436"
+        },
+        {
+          "date": "2024-09-18",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 900.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110250335"
+        },
+        {
+          "date": "2024-06-18",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 900.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110233567"
+        },
+        {
+          "date": "2024-11-21",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 900.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110263992"
+        },
+        {
+          "date": "2024-10-21",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 900.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110263933"
+        },
+        {
+          "date": "2024-07-17",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 900.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110244431"
+        },
+        {
+          "date": "2024-02-20",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110205049"
+        },
+        {
+          "date": "2024-01-18",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110205046"
+        },
+        {
+          "date": "2023-08-18",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110172443"
+        },
+        {
+          "date": "2023-08-01",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 700.0,
+          "purpose": "Call Time AI: Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110172443"
+        },
+        {
+          "date": "2023-09-18",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110181765"
+        },
+        {
+          "date": "2023-11-20",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 700.0,
+          "purpose": "Software Expense",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110192980"
+        },
+        {
+          "date": "2024-05-20",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110224544"
+        },
+        {
+          "date": "2023-12-18",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110197172"
+        },
+        {
+          "date": "2024-04-18",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110214537"
+        },
+        {
+          "date": "2023-10-18",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110188854"
+        },
+        {
+          "date": "2024-03-18",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 700.0,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110209664"
+        },
+        {
+          "date": "2024-05-22",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 174.89,
+          "purpose": "Software Rental",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110224544"
+        },
+        {
+          "date": "2024-12-16",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": -450.0,
+          "purpose": "",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110267928"
+        },
+        {
+          "date": "2024-12-16",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": -900.0,
+          "purpose": "",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110267928"
+        }
+      ]
+    },
+    "23RDDD 370": {
+      "id": "23RDDD 370",
+      "name": "23RD LD DEMOCRATS",
+      "party": "Democratic",
+      "total": 1060.32,
+      "records_count": 3,
+      "vendor_ids": [
+        "otter_ai"
+      ],
+      "total_expenditure": 133366.23,
+      "pct_ai": 0.795,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 529.68,
+          "count": 2
+        },
+        {
+          "year": 2026,
+          "amount": 530.64,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-02-21",
+          "vendor_ids": [
+            "otter_ai"
+          ],
+          "vendor_names": [
+            "Otter.ai"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 530.64,
+          "purpose": "web services",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110344502"
+        },
+        {
+          "date": "2025-02-20",
+          "vendor_ids": [
+            "otter_ai"
+          ],
+          "vendor_names": [
+            "Otter.ai"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 264.84,
+          "purpose": "Video Notetaking service",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110274067"
+        },
+        {
+          "date": "2025-02-21",
+          "vendor_ids": [
+            "otter_ai"
+          ],
+          "vendor_names": [
+            "Otter.ai"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 264.84,
+          "purpose": "Possible duplicate bill",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110274067"
+        }
+      ]
+    },
+    "BALDC  007": {
+      "id": "BALDC  007",
+      "name": "Claudia Balducci",
+      "party": "Unknown",
+      "total": 132.42,
+      "records_count": 6,
+      "vendor_ids": [
+        "openai"
+      ],
+      "total_expenditure": 1379550.48,
+      "pct_ai": 0.01,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 132.42,
+          "count": 6
+        }
+      ],
+      "records": [
+        {
+          "date": "2025-10-29",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 22.07,
+          "purpose": "OpenAI (San Francisco, CA) - Subscription",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110333494"
+        },
+        {
+          "date": "2025-05-13",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 22.07,
+          "purpose": "OpenAI (San Francisco, CA) - Subscription",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110290672"
+        },
+        {
+          "date": "2025-09-11",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 22.07,
+          "purpose": "OpenAI (San Francisco, CA) - Subscription",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110324353"
+        },
+        {
+          "date": "2025-09-26",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 22.07,
+          "purpose": "OpenAI (San Francisco, CA) - Subscription",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110324353"
+        },
+        {
+          "date": "2025-07-11",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 22.07,
+          "purpose": "OpenAI (San Francisco, CA) - Subscription",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110324356"
+        },
+        {
+          "date": "2025-06-11",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 22.07,
+          "purpose": "OpenAI (San Francisco, CA) - Subscription",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110324356"
+        }
+      ]
+    },
+    "MOLLJ--081": {
+      "id": "MOLLJ--081",
+      "name": "Joseph Molloy (Joe Molloy)",
+      "party": "Unknown",
+      "total": 88.28,
+      "records_count": 4,
+      "vendor_ids": [
+        "openai"
+      ],
+      "total_expenditure": 3386.45,
+      "pct_ai": 2.607,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 88.28,
+          "count": 4
+        }
+      ],
+      "records": [
+        {
+          "date": "2025-07-27",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 22.07,
+          "purpose": "Software",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110303066"
+        },
+        {
+          "date": "2025-04-27",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 22.07,
+          "purpose": "Subscription",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110284348"
+        },
+        {
+          "date": "2025-06-27",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 22.07,
+          "purpose": "Software Subscription",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110299954"
+        },
+        {
+          "date": "2025-03-27",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 22.07,
+          "purpose": "Subscription",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110279506"
+        }
+      ]
+    },
+    "ESHGM--921": {
+      "id": "ESHGM--921",
+      "name": "Mahsa Eshghi",
+      "party": "Unknown",
+      "total": 389.84,
+      "records_count": 1,
+      "vendor_ids": [
+        "openai"
+      ],
+      "total_expenditure": 27551.6,
+      "pct_ai": 1.415,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 389.84,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2025-11-30",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 389.84,
+          "purpose": "Canva for graphic design, CapCut for video production, ChatGPT",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110334415"
+        }
+      ]
+    },
+    "WASTRPE188": {
+      "id": "WASTRPE188",
+      "name": "WA ST REPUB PARTY EXEMPT",
+      "party": "Republican",
+      "total": 9909.0,
+      "records_count": 1,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 1677158.09,
+      "pct_ai": 0.591,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 9909.0,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2023-04-19",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 9909.0,
+          "purpose": "Text messages on legislative bills",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110145934"
+        }
+      ]
+    },
+    "CAMEM--966": {
+      "id": "CAMEM--966",
+      "name": "Marwan Cameron",
+      "party": "Unknown",
+      "total": 200.0,
+      "records_count": 1,
+      "vendor_ids": [
+        "openai"
+      ],
+      "total_expenditure": 19560.1,
+      "pct_ai": 1.022,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 200.0,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2025-06-02",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 200.0,
+          "purpose": "Chat GPT Pro\n3180 18th Street, San Francisco, California, 94110,",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110330432"
+        }
+      ]
+    },
+    "DOUGDC 858": {
+      "id": "DOUGDC 858",
+      "name": "DOUGLAS COUNTY DEMOCRATS",
+      "party": "Democratic",
+      "total": 135.0,
+      "records_count": 2,
+      "vendor_ids": [
+        "synthesia"
+      ],
+      "total_expenditure": 119924.82,
+      "pct_ai": 0.113,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 135.0,
+          "count": 2
+        }
+      ],
+      "records": [
+        {
+          "date": "2023-05-16",
+          "vendor_ids": [
+            "synthesia"
+          ],
+          "vendor_names": [
+            "Synthesia"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 67.5,
+          "purpose": "Subscription for Synthesia Annual Personal Plan",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110151021"
+        },
+        {
+          "date": "2023-05-16",
+          "vendor_ids": [
+            "synthesia"
+          ],
+          "vendor_names": [
+            "Synthesia"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 67.5,
+          "purpose": "Subscription for Synthesia Annual Personal Plan",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110151021"
+        }
+      ]
+    },
+    "CITIZ--210": {
+      "id": "CITIZ--210",
+      "name": "Citizens for Spokane Schools (CFSS)",
+      "party": "Unknown",
+      "total": 4909.5,
+      "records_count": 1,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 316324.8,
+      "pct_ai": 1.552,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 4909.5,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2025-10-20",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 4909.5,
+          "purpose": "text messaging: 80,000 plus messages October 20 - November 4",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110334058"
+        }
+      ]
+    },
+    "HORIN--956": {
+      "id": "HORIN--956",
+      "name": "Neil Horibe",
+      "party": "Unknown",
+      "total": 176.48,
+      "records_count": 1,
+      "vendor_ids": [
+        "anthropic"
+      ],
+      "total_expenditure": 20754.52,
+      "pct_ai": 0.85,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 176.48,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-03-25",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 176.48,
+          "purpose": "ANTHROPIC (SAN FRANCISCO, CA) - CLAUDE SUBSCRIPTION USE FOR CAMPAIGN",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110354740"
+        }
+      ]
+    },
+    "PRATE--004": {
+      "id": "PRATE--004",
+      "name": "eric william pratt (Eric W.Pratt)",
+      "party": "Republican",
+      "total": 71.18,
+      "records_count": 2,
+      "vendor_ids": [
+        "anthropic"
+      ],
+      "total_expenditure": 7226.74,
+      "pct_ai": 0.985,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 71.18,
+          "count": 2
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-05-27",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 49.28,
+          "purpose": "Anthropic design credits",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110363029"
+        },
+        {
+          "date": "2026-05-27",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 21.9,
+          "purpose": "Anthropic design tools",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110363029"
+        }
+      ]
+    },
+    "HEYWL--535": {
+      "id": "HEYWL--535",
+      "name": "Let's Go Washington (Sponsored by Brian Heywood)",
+      "party": "Unknown",
+      "total": 21.62,
+      "records_count": 1,
+      "vendor_ids": [
+        "openai"
+      ],
+      "total_expenditure": 25021054.79,
+      "pct_ai": 0.0,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 21.62,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-06-15",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 21.62,
+          "purpose": "OpenAI (San Francisco, CA): Software",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110371676"
+        }
+      ]
+    },
+    "ROSEM--487": {
+      "id": "ROSEM--487",
+      "name": "Michael Rosen",
+      "party": "Unknown",
+      "total": 317.66,
+      "records_count": 1,
+      "vendor_ids": [
+        "descript"
+      ],
+      "total_expenditure": 19444.21,
+      "pct_ai": 1.634,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 317.66,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-04-30",
+          "vendor_ids": [
+            "descript"
+          ],
+          "vendor_names": [
+            "Descript"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 317.66,
+          "purpose": "Software",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110354671"
+        }
+      ]
+    },
+    "SZCZS--401": {
+      "id": "SZCZS--401",
+      "name": "Stephen R Szczurko-Walton (Stephen Szczurko-Walton)",
+      "party": "Democratic",
+      "total": 736.39,
+      "records_count": 4,
+      "vendor_ids": [
+        "anthropic"
+      ],
+      "total_expenditure": 7057.82,
+      "pct_ai": 10.434,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 736.39,
+          "count": 4
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-07-12",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 220.8,
+          "purpose": "Anthropic (Claude) 7/12-8/12/26",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110377177"
+        },
+        {
+          "date": "2026-08-31",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 220.8,
+          "purpose": "Anthropic - Max plan 20x Aug 12-Sep 12, 2026",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110386708"
+        },
+        {
+          "date": "2026-06-12",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 184.59,
+          "purpose": "Anthropic (Claude) 6/12-7/12/26",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110377177"
+        },
+        {
+          "date": "2026-05-22",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 110.2,
+          "purpose": "1 month of Anthropic (Claude) 5/22/26-6/22/26",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110363740"
+        }
+      ]
+    },
+    "DEMOCC 826": {
+      "id": "DEMOCC 826",
+      "name": "DEMOCRATS OF CHELAN COUNTY",
+      "party": "Democratic",
+      "total": 135.0,
+      "records_count": 1,
+      "vendor_ids": [
+        "synthesia"
+      ],
+      "total_expenditure": 114962.16,
+      "pct_ai": 0.117,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 135.0,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2023-05-16",
+          "vendor_ids": [
+            "synthesia"
+          ],
+          "vendor_names": [
+            "Synthesia"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 135.0,
+          "purpose": "Synthesia Annual Personal Plan for digital presentations",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110149504"
+        }
+      ]
+    },
+    "WASTRPN188": {
+      "id": "WASTRPN188",
+      "name": "WA ST REPUB PARTY NON EXEMPT",
+      "party": "Republican",
+      "total": 159.22,
+      "records_count": 1,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 2751666.24,
+      "pct_ai": 0.006,
+      "time_series": [
+        {
+          "year": 2024,
+          "amount": 159.22,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2024-01-26",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 159.22,
+          "purpose": "14,459 GOTV text messages - Myriam Jurtiz Northshore School Dis. Dir. Pos. 3",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110244564"
+        }
+      ]
+    },
+    "LYONJ--322": {
+      "id": "LYONJ--322",
+      "name": "Jeffrey A. Lyon (Jeff Lyon)",
+      "party": "Unknown",
+      "total": 271.07,
+      "records_count": 2,
+      "vendor_ids": [
+        "anthropic"
+      ],
+      "total_expenditure": 69449.74,
+      "pct_ai": 0.39,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 271.07,
+          "count": 2
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-06-07",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 160.77,
+          "purpose": "Generative compute",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110371703"
+        },
+        {
+          "date": "2026-05-23",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 110.3,
+          "purpose": "Generative compute",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110366973"
+        }
+      ]
+    },
+    "JOY-H--244": {
+      "id": "JOY-H--244",
+      "name": "HANNAH JOY (HANNAH DANAE THURLOW JOY)",
+      "party": "Republican",
+      "total": 1495.61,
+      "records_count": 1,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 21237.2,
+      "pct_ai": 7.042,
+      "time_series": [
+        {
+          "year": 2024,
+          "amount": 1495.61,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2024-07-22",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 1495.61,
+          "purpose": "Texting Service",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110244655"
+        }
+      ]
+    },
+    "FERGR *115": {
+      "id": "FERGR *115",
+      "name": "Robert W. Ferguson (Bob Ferguson)",
+      "party": "Democratic",
+      "total": 119.99,
+      "records_count": 1,
+      "vendor_ids": [
+        "otter_ai"
+      ],
+      "total_expenditure": 14537971.9,
+      "pct_ai": 0.001,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 119.99,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2023-11-11",
+          "vendor_ids": [
+            "otter_ai"
+          ],
+          "vendor_names": [
+            "Otter.ai"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 119.99,
+          "purpose": "Otter.ai - Subscription",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110199081"
+        }
+      ]
+    },
+    "NAGAC--511": {
+      "id": "NAGAC--511",
+      "name": "Chinmay Nagarkar",
+      "party": "Unknown",
+      "total": 24.99,
+      "records_count": 1,
+      "vendor_ids": [
+        "captions_ai"
+      ],
+      "total_expenditure": 7201.54,
+      "pct_ai": 0.347,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 24.99,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2025-10-14",
+          "vendor_ids": [
+            "captions_ai"
+          ],
+          "vendor_names": [
+            "Captions"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 24.99,
+          "purpose": "App for Creating Campaign Videos - posted on instagram, facebook, and youtube\n\nMirage (Captions)\n169 Madison Ave\nSTE 11185\nNew York, New York 11185\nUnited States\nhello@mirage.app",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110325794"
+        }
+      ]
+    },
+    "JRD00--373": {
+      "id": "JRD00--373",
+      "name": "Dennis A. King, Jr. (Dennis King)",
+      "party": "Unknown",
+      "total": 1763.2,
+      "records_count": 1,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 49940.96,
+      "pct_ai": 3.531,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 1763.2,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2025-10-15",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 1763.2,
+          "purpose": "Text Message Initial Subscription Fee",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110326613"
+        }
+      ]
+    },
+    "BYRDT  226": {
+      "id": "BYRDT  226",
+      "name": "Tyler Byrd",
+      "party": "Unknown",
+      "total": 139.95,
+      "records_count": 1,
+      "vendor_ids": [
+        "grammarly"
+      ],
+      "total_expenditure": 27996.27,
+      "pct_ai": 0.5,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 139.95,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2023-06-05",
+          "vendor_ids": [
+            "grammarly"
+          ],
+          "vendor_names": [
+            "Grammarly"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 139.95,
+          "purpose": "Subscription for Writing & Editing Software",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110282322"
+        }
+      ]
+    },
+    "PARKC--366": {
+      "id": "PARKC--366",
+      "name": "Citizen Advocates for Parks (CAP)",
+      "party": "Unknown",
+      "total": 4909.5,
+      "records_count": 1,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 138754.06,
+      "pct_ai": 3.538,
+      "time_series": [
+        {
+          "year": 2025,
+          "amount": 4909.5,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2025-10-20",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 4909.5,
+          "purpose": "texting services:  October 20 - Nov 4, 80,000 plus text messages",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110326690"
+        }
+      ]
+    },
+    "KINGRC 109": {
+      "id": "KINGRC 109",
+      "name": "King County Republican Central Committee Non-Exempt",
+      "party": "Republican",
+      "total": 5137.96,
+      "records_count": 5,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 989832.83,
+      "pct_ai": 0.519,
+      "time_series": [
+        {
+          "year": 2023,
+          "amount": 5137.96,
+          "count": 5
+        }
+      ],
+      "records": [
+        {
+          "date": "2023-06-23",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 1284.49,
+          "purpose": "Text messages",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110158952"
+        },
+        {
+          "date": "2023-04-18",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 1284.49,
+          "purpose": "Text messages",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110158931"
+        },
+        {
+          "date": "2023-03-02",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 1284.49,
+          "purpose": "Text messages",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110222581"
+        },
+        {
+          "date": "2023-05-16",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 934.8,
+          "purpose": "Text messages",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110158934"
+        },
+        {
+          "date": "2023-05-16",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 349.69,
+          "purpose": "Text messages",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110158934"
+        }
+      ]
+    },
+    "WETHT--429": {
+      "id": "WETHT--429",
+      "name": "WETHERBEE, TEDD (Tedd Wetherbee)",
+      "party": "Democratic",
+      "total": 2215.54,
+      "records_count": 2,
+      "vendor_ids": [
+        "convos"
+      ],
+      "total_expenditure": 108959.38,
+      "pct_ai": 2.033,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 2215.54,
+          "count": 2
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-06-29",
+          "vendor_ids": [
+            "convos"
+          ],
+          "vendor_names": [
+            "Convos (PubSent)"
+          ],
+          "confidences": [
+            "medium"
+          ],
+          "amount": 1526.18,
+          "purpose": "893 TEXT MESSAGES ON 6/29\n882 TEXT MESSAGES ON 6/30\n871 TEXT MESSAGES ON 7/1\n20299 TEXT MESSSAGES ON 7/2\n20670 TEXT MESSAGES ON 7/12\nCAMPAIGN TEXT MESSAGES FOR TEDD WETHERBEE",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110375342"
+        },
+        {
+          "date": "2026-07-16",
+          "vendor_ids": [
+            "convos"
+          ],
+          "vendor_names": [
+            "Convos (PubSent)"
+          ],
+          "confidences": [
+            "medium"
+          ],
+          "amount": 689.36,
+          "purpose": "TEXT MESSAGING\n19,696 TEXTS",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110377837"
+        }
+      ]
+    },
+    "NOGUP  577": {
+      "id": "NOGUP  577",
+      "name": "Pamella Nogueira (Pam Nogueira)",
+      "party": "Unknown",
+      "total": 22.1,
+      "records_count": 1,
+      "vendor_ids": [
+        "openai"
+      ],
+      "total_expenditure": 7136.38,
+      "pct_ai": 0.31,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 22.1,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-07-14",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 22.1,
+          "purpose": "OpenAI OpCO",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110377509"
+        }
+      ]
+    },
+    "GONZG--373": {
+      "id": "GONZG--373",
+      "name": "GISBERTH GONZALEZ (Gisberth (Giz) Gonzalez)",
+      "party": "Republican",
+      "total": 65.1,
+      "records_count": 3,
+      "vendor_ids": [
+        "anthropic"
+      ],
+      "total_expenditure": 5091.64,
+      "pct_ai": 1.279,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 65.1,
+          "count": 3
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-05-25",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 21.7,
+          "purpose": "MONTHLY FEE FOR WEB PAGE\nAnthropic PBC \n548 Market street\nPMB 90375\nSan Francisco CA 94104",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110382435"
+        },
+        {
+          "date": "2026-07-01",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 21.7,
+          "purpose": "monthly fee for web page\nAnthropic PBC \n548 market street \nPMB 90375\nSan Francisco CA 94104",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110382437"
+        },
+        {
+          "date": "2026-08-20",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 21.7,
+          "purpose": "FEE FOR WEB PAGE \nANTHROPIC PBC \n548 MARKET STREET \nPMB\nSAN FRANCISCO CA 94104",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110387705"
+        }
+      ]
+    }
+  },
+  "time_series": [
+    {
+      "year": 2023,
+      "total": 19776.9,
+      "records": 17,
+      "total_expenditure": 2510789.65,
+      "total_ex_legacy": 270.0,
+      "records_ex_legacy": 3,
+      "total_expenditure_ex_legacy": 36697.1
+    },
+    {
+      "year": 2024,
+      "total": 13817.57,
+      "records": 17,
+      "total_expenditure": 2065863.17,
+      "total_ex_legacy": 0.0,
+      "records_ex_legacy": 0,
+      "total_expenditure_ex_legacy": 0
+    },
+    {
+      "year": 2025,
+      "total": 16919.24,
+      "records": 20,
+      "total_expenditure": 1484486.66,
+      "total_ex_legacy": 835.53,
+      "records_ex_legacy": 13,
+      "total_expenditure_ex_legacy": 1039362.65
+    },
+    {
+      "year": 2026,
+      "total": 4427.78,
+      "records": 18,
+      "total_expenditure": 3804111.37,
+      "total_ex_legacy": 3579.48,
+      "records_ex_legacy": 16,
+      "total_expenditure_ex_legacy": 3774371.99
+    }
+  ],
+  "time_series_by_party": [
+    {
+      "year": 2023,
+      "party": "Democratic",
+      "amount": 4589.99
+    },
+    {
+      "year": 2023,
+      "party": "Republican",
+      "amount": 15046.96
+    },
+    {
+      "year": 2024,
+      "party": "Democratic",
+      "amount": 12162.74
+    },
+    {
+      "year": 2024,
+      "party": "Republican",
+      "amount": 1654.83
+    },
+    {
+      "year": 2025,
+      "party": "Democratic",
+      "amount": 529.68
+    },
+    {
+      "year": 2026,
+      "party": "Democratic",
+      "amount": 3482.57
+    },
+    {
+      "year": 2026,
+      "party": "Republican",
+      "amount": 136.28
+    }
+  ],
+  "time_series_by_party_ex_legacy": [
+    {
+      "year": 2023,
+      "party": "Democratic",
+      "amount": 270.0
+    },
+    {
+      "year": 2026,
+      "party": "Democratic",
+      "amount": 2951.93
+    },
+    {
+      "year": 2026,
+      "party": "Republican",
+      "amount": 136.28
+    }
+  ],
+  "party_split": {
+    "dem_amount": 20764.98,
+    "rep_amount": 16838.07,
+    "dem_count": 34,
+    "rep_count": 13,
+    "dem_rep_ratio": 1.233,
+    "filers_with_known_party": 13
+  },
+  "party_split_ex_legacy": {
+    "dem_amount": 3221.93,
+    "rep_amount": 136.28,
+    "dem_count": 9,
+    "rep_count": 5,
+    "dem_rep_ratio": 23.642,
+    "filers_with_known_party": 6
+  },
+  "notable_records": [
+    {
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "vendor_names": [
+        "Prompt.io"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "WA ST REPUB PARTY EXEMPT",
+      "filer_id": "WASTRPE188",
+      "filer_party": "Republican",
+      "date": "2023-04-19",
+      "amount": 9909.0,
+      "purpose": "Text messages on legislative bills",
+      "vendor_display": "Prompt.io Inc.",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110145934"
+    },
+    {
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "vendor_names": [
+        "Prompt.io"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Citizens for Spokane Schools (CFSS)",
+      "filer_id": "CITIZ--210",
+      "filer_party": "Unknown",
+      "date": "2025-10-20",
+      "amount": 4909.5,
+      "purpose": "text messaging: 80,000 plus messages October 20 - November 4",
+      "vendor_display": "Prompt.IO",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110334058"
+    },
+    {
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "vendor_names": [
+        "Prompt.io"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Citizen Advocates for Parks (CAP)",
+      "filer_id": "PARKC--366",
+      "filer_party": "Unknown",
+      "date": "2025-10-20",
+      "amount": 4909.5,
+      "purpose": "texting services:  October 20 - Nov 4, 80,000 plus text messages",
+      "vendor_display": "Prompt.IO",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110326690"
+    },
+    {
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "vendor_names": [
+        "Prompt.io"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Mark Mullet",
+      "filer_id": "MULLM2 027",
+      "filer_party": "Democratic",
+      "date": "2024-01-31",
+      "amount": 4437.85,
+      "purpose": "Prompt.io (14419 Greenwood Ave N A-373 Seattle, WA 98133: Text Messaging (51453 Segments)",
+      "vendor_display": "Blue Wave Political Partners LLC",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110205046"
+    },
+    {
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "vendor_names": [
+        "Prompt.io"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Tacoma Deserves Better",
+      "filer_id": "BETTT--640",
+      "filer_party": "Unknown",
+      "date": "2025-11-06",
+      "amount": 2207.03,
+      "purpose": "Text messages: Support John Hines",
+      "vendor_display": "Prompt.io, Inc.",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110332522"
+    },
+    {
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "vendor_names": [
+        "Prompt.io"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Tacoma Deserves Better",
+      "filer_id": "BETTT--640",
+      "filer_party": "Unknown",
+      "date": "2025-10-21",
+      "amount": 1764.8,
+      "purpose": "Text messages: Support John Hines/Oppose Anders Ibsen",
+      "vendor_display": "Prompt.io, Inc.",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110332521"
+    },
+    {
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "vendor_names": [
+        "Prompt.io"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Dennis A. King, Jr. (Dennis King)",
+      "filer_id": "JRD00--373",
+      "filer_party": "Unknown",
+      "date": "2025-10-15",
+      "amount": 1763.2,
+      "purpose": "Text Message Initial Subscription Fee",
+      "vendor_display": "Prompt.io inc.",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110326613"
+    },
+    {
+      "vendor_ids": [
+        "convos"
+      ],
+      "vendor_names": [
+        "Convos (PubSent)"
+      ],
+      "vendor_eras": [
+        "generative"
+      ],
+      "confidences": [
+        "medium"
+      ],
+      "filer_name": "WETHERBEE, TEDD (Tedd Wetherbee)",
+      "filer_id": "WETHT--429",
+      "filer_party": "Democratic",
+      "date": "2026-06-29",
+      "amount": 1526.18,
+      "purpose": "893 TEXT MESSAGES ON 6/29\n882 TEXT MESSAGES ON 6/30\n871 TEXT MESSAGES ON 7/1\n20299 TEXT MESSSAGES ON 7/2\n20670 TEXT MESSAGES ON 7/12\nCAMPAIGN TEXT MESSAGES FOR TEDD WETHERBEE",
+      "vendor_display": "CONVOS",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110375342"
+    },
+    {
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "vendor_names": [
+        "Prompt.io"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "HANNAH JOY (HANNAH DANAE THURLOW JOY)",
+      "filer_id": "JOY-H--244",
+      "filer_party": "Republican",
+      "date": "2024-07-22",
+      "amount": 1495.61,
+      "purpose": "Texting Service",
+      "vendor_display": "Prompt.io Inc",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110244655"
+    },
+    {
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "vendor_names": [
+        "Prompt.io"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "King County Republican Central Committee Non-Exempt",
+      "filer_id": "KINGRC 109",
+      "filer_party": "Republican",
+      "date": "2023-06-23",
+      "amount": 1284.49,
+      "purpose": "Text messages",
+      "vendor_display": "Prompt.io, Inc.",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110158952"
+    },
+    {
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "vendor_names": [
+        "Prompt.io"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "King County Republican Central Committee Non-Exempt",
+      "filer_id": "KINGRC 109",
+      "filer_party": "Republican",
+      "date": "2023-04-18",
+      "amount": 1284.49,
+      "purpose": "Text messages",
+      "vendor_display": "Prompt.io, Inc.",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110158931"
+    },
+    {
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "vendor_names": [
+        "Prompt.io"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "King County Republican Central Committee Non-Exempt",
+      "filer_id": "KINGRC 109",
+      "filer_party": "Republican",
+      "date": "2023-03-02",
+      "amount": 1284.49,
+      "purpose": "Text messages",
+      "vendor_display": "Prompt.io, Inc.",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110222581"
+    },
+    {
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "vendor_names": [
+        "Prompt.io"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "King County Republican Central Committee Non-Exempt",
+      "filer_id": "KINGRC 109",
+      "filer_party": "Republican",
+      "date": "2023-05-16",
+      "amount": 934.8,
+      "purpose": "Text messages",
+      "vendor_display": "Prompt.io, Inc.",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110158934"
+    },
+    {
+      "vendor_ids": [
+        "calltime_ai"
+      ],
+      "vendor_names": [
+        "CallTime.AI"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Mark Mullet",
+      "filer_id": "MULLM2 027",
+      "filer_party": "Democratic",
+      "date": "2024-08-19",
+      "amount": 900.0,
+      "purpose": "Software Rental",
+      "vendor_display": "Call Time.ai",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110244436"
+    },
+    {
+      "vendor_ids": [
+        "calltime_ai"
+      ],
+      "vendor_names": [
+        "CallTime.AI"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Mark Mullet",
+      "filer_id": "MULLM2 027",
+      "filer_party": "Democratic",
+      "date": "2024-09-18",
+      "amount": 900.0,
+      "purpose": "Software Rental",
+      "vendor_display": "Call Time.ai",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110250335"
+    },
+    {
+      "vendor_ids": [
+        "calltime_ai"
+      ],
+      "vendor_names": [
+        "CallTime.AI"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Mark Mullet",
+      "filer_id": "MULLM2 027",
+      "filer_party": "Democratic",
+      "date": "2024-06-18",
+      "amount": 900.0,
+      "purpose": "Software Rental",
+      "vendor_display": "Call Time.ai",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110233567"
+    },
+    {
+      "vendor_ids": [
+        "calltime_ai"
+      ],
+      "vendor_names": [
+        "CallTime.AI"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Mark Mullet",
+      "filer_id": "MULLM2 027",
+      "filer_party": "Democratic",
+      "date": "2024-11-21",
+      "amount": 900.0,
+      "purpose": "Software Rental",
+      "vendor_display": "Call Time.ai",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110263992"
+    },
+    {
+      "vendor_ids": [
+        "calltime_ai"
+      ],
+      "vendor_names": [
+        "CallTime.AI"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Mark Mullet",
+      "filer_id": "MULLM2 027",
+      "filer_party": "Democratic",
+      "date": "2024-10-21",
+      "amount": 900.0,
+      "purpose": "Software Rental",
+      "vendor_display": "Call Time.ai",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110263933"
+    },
+    {
+      "vendor_ids": [
+        "calltime_ai"
+      ],
+      "vendor_names": [
+        "CallTime.AI"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Mark Mullet",
+      "filer_id": "MULLM2 027",
+      "filer_party": "Democratic",
+      "date": "2024-07-17",
+      "amount": 900.0,
+      "purpose": "Software Rental",
+      "vendor_display": "Call Time.ai",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110244431"
+    },
+    {
+      "vendor_ids": [
+        "calltime_ai"
+      ],
+      "vendor_names": [
+        "CallTime.AI"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Mark Mullet",
+      "filer_id": "MULLM2 027",
+      "filer_party": "Democratic",
+      "date": "2024-02-20",
+      "amount": 700.0,
+      "purpose": "Software Rental",
+      "vendor_display": "Call Time.ai",
+      "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110205049"
+    }
+  ]
+}
