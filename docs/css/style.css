@@ -26,6 +26,12 @@
 
   --ma-accent:      #7d3c98;
   --ma-accent-soft: #f1e6f5;
+  --wa-accent:      #0e7c93;
+  --wa-accent-soft: #e1f2f5;
+  --co-accent:      #b5651d;
+  --co-accent-soft: #f7ecdf;
+  --ca-accent:      #a3315a;
+  --ca-accent-soft: #f8e6ee;
   --fed-accent-soft: #e3edfa;
   --compare-accent:      #1baf7a;
   --compare-accent-soft: #e1f5ee;
@@ -54,6 +60,12 @@
 
     --ma-accent:      #c48fdb;
     --ma-accent-soft: #2f2035;
+    --wa-accent:      #5fc9dd;
+    --wa-accent-soft: #123239;
+    --co-accent:      #e2934f;
+    --co-accent-soft: #3a2a14;
+    --ca-accent:      #e18aab;
+    --ca-accent-soft: #3a1f2a;
     --fed-accent-soft: #16233a;
     --compare-accent:      #199e70;
     --compare-accent-soft: #14332a;
@@ -81,6 +93,12 @@
 
   --ma-accent:      #c48fdb;
   --ma-accent-soft: #2f2035;
+  --wa-accent:      #5fc9dd;
+  --wa-accent-soft: #123239;
+  --co-accent:      #e2934f;
+  --co-accent-soft: #3a2a14;
+  --ca-accent:      #e18aab;
+  --ca-accent-soft: #3a1f2a;
   --fed-accent-soft: #16233a;
   --compare-accent:      #199e70;
   --compare-accent-soft: #14332a;
@@ -336,32 +354,35 @@ tr.row-medium-confidence { background: color-mix(in srgb, var(--series-2) 7%, tr
 .dataset-tab:hover { background: var(--page-plane); color: var(--text-primary); }
 .dataset-tab-title { font-weight: 700; font-size: 0.98rem; }
 .dataset-tab-sub { font-size: 0.74rem; color: var(--text-muted); }
-.dataset-tab.is-active { background: var(--fed-accent-soft); }
-.dataset-tab.is-active .dataset-tab-title { color: var(--series-1); }
-.dataset-tab[data-dataset="ma"].is-active { background: var(--ma-accent-soft); }
-.dataset-tab[data-dataset="ma"].is-active .dataset-tab-title { color: var(--ma-accent); }
-.dataset-tab[data-dataset="compare"].is-active { background: var(--compare-accent-soft); }
-.dataset-tab[data-dataset="compare"].is-active .dataset-tab-title { color: var(--compare-accent); }
+/* Every non-Federal tab (each state, plus Compare) sets its own --accent /
+   --accent-soft custom properties inline (see docs/index.html) so one
+   generic rule covers all of them -- adding a state tab needs a new
+   --<id>-accent[-soft] pair above and a tab button with the matching
+   inline style, not a new CSS selector here. */
+.dataset-tab.is-active { background: var(--accent-soft, var(--fed-accent-soft)); }
+.dataset-tab.is-active .dataset-tab-title { color: var(--accent, var(--series-1)); }
 
 /* Context pill: stamped on every card's title row so which dataset a given
-   chart or table belongs to is never ambiguous, even mid-scroll. */
+   chart or table belongs to is never ambiguous, even mid-scroll. Federal
+   cards get the dataset-pill-federal modifier (a static class, never
+   rebuilt); every state's cards set --accent/--accent-soft inline instead
+   (built fresh per state, see stateCardTitle() in app.js). */
 .dataset-pill {
   display: inline-flex; align-items: center; gap: 5px; font-size: 0.68rem; font-weight: 700;
   letter-spacing: 0.02em; padding: 2px 9px; border-radius: 999px; margin-left: 10px;
   vertical-align: middle; white-space: nowrap;
+  background: var(--accent-soft, var(--fed-accent-soft)); color: var(--accent, var(--series-1));
 }
-.dataset-pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; }
+.dataset-pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--accent, var(--series-1)); }
 .dataset-pill-federal { background: var(--fed-accent-soft); color: var(--series-1); }
 .dataset-pill-federal::before { background: var(--series-1); }
-.dataset-pill-ma { background: var(--ma-accent-soft); color: var(--ma-accent); }
-.dataset-pill-ma::before { background: var(--ma-accent); }
 
-.ma-banner {
+.state-banner {
   display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
-  background: var(--ma-accent-soft); border: 1px solid var(--ma-accent);
+  background: var(--accent-soft); border: 1px solid var(--accent);
   border-radius: 10px; padding: 12px 18px; margin-bottom: 28px; font-size: 0.9rem; color: var(--text-secondary);
 }
-.ma-banner strong { color: var(--ma-accent); }
+.state-banner strong { color: var(--accent); }
 
 .compare-banner {
   display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;

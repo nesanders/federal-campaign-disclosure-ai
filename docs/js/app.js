@@ -146,11 +146,11 @@
   let vendorNameById = {};
   let vendorHomepageById = {};
   let vendorEraById = {};
-  let maVendorEraById = {};
-  const MAX_DETAIL_RECORDS_MA = 300; // must match MAX_DETAIL_RECORDS_MA in pipeline/build_dataset_ma.py
+  const stateVendorEraById = {}; // stateId -> {vendorId: era}
+  const MAX_DETAIL_RECORDS_MA = 300; // must match MAX_DETAIL_RECORDS in pipeline/build_dataset_ma.py and pipeline/lib/build_state_dataset.py
   let includeLegacy = false;
   let searchIndex = [];
-  let maSearchIndex = [];
+  const stateSearchIndex = {}; // stateId -> []
   let searchFilterType = "all";
 
   function eraFilterList() {
@@ -188,23 +188,24 @@
     }
     return frag;
   }
-  // Same idea as vendorLinksCell, but always links internally to the MA
-  // vendor detail page (#/ma/vendor/<id>) rather than preferring an
-  // external homepage -- these are the parallel arrays a matched MA
-  // record carries (vendor_ids/vendor_names), not a single id.
-  function maVendorLinksCell(vendorIds, vendorNames) {
+  // Same idea as vendorLinksCell, but always links internally to a state
+  // tab's own vendor detail page (#/<stateId>/vendor/<id>) rather than
+  // preferring an external homepage -- these are the parallel arrays a
+  // matched state record carries (vendor_ids/vendor_names), not a single id.
+  function stateVendorLinksCell(stateId, vendorIds, vendorNames) {
     const frag = document.createDocumentFragment();
+    const eraById = stateVendorEraById[stateId] || {};
     vendorIds.forEach((vid, i) => {
       if (i > 0) frag.appendChild(document.createTextNode(", "));
-      frag.appendChild(el("a", { className: "entity-link", href: "#/ma/vendor/" + vid, text: vendorNames[i] || vid }));
-      if (maVendorEraById[vid] === "legacy") {
+      frag.appendChild(el("a", { className: "entity-link", href: "#/" + stateId + "/vendor/" + vid, text: vendorNames[i] || vid }));
+      if (eraById[vid] === "legacy") {
         frag.appendChild(el("span", { className: "pill pill-legacy", text: "legacy" }));
       }
     });
     return frag;
   }
   const chartInstances = {};
-  const viewModes = { breakdowns: "dollar", trends: "dollar", maTrends: "dollar" };
+  const viewModes = { breakdowns: "dollar", trends: "dollar", stateTrends: "dollar" };
   const sortState = {
     vendors: { key: "amount_high", dir: "desc" },
     dollar: { key: "ai_amount_high", dir: "desc" },
@@ -215,9 +216,9 @@
     vendorCommittees: { key: "amount_high", dir: "desc" },
     vendorRecords: { key: "amount", dir: "desc" },
     candidateRecords: { key: "amount", dir: "desc" },
-    maVendorFilers: { key: "amount", dir: "desc" },
-    maVendorRecords: { key: "amount", dir: "desc" },
-    maCandidateRecords: { key: "amount", dir: "desc" },
+    stateVendorFilers: { key: "amount", dir: "desc" },
+    stateVendorRecords: { key: "amount", dir: "desc" },
+    stateCandidateRecords: { key: "amount", dir: "desc" },
     compare: { key: "volume", dir: "desc" },
   };
   // Off by default site-wide (persists across vendor pages, like the legacy
@@ -372,12 +373,13 @@
     input.addEventListener("change", () => {
       includeLegacy = input.checked;
       renderAll();
-      // Shared toggle, all three tabs: re-render Massachusetts and/or
-      // Compare too if their data is already loaded, so switching tabs
-      // afterward shows the new setting immediately rather than stale
-      // content from before the toggle changed.
-      if (MA_DATA) renderMaView();
-      if (MA_DATA && currentDataset === "compare") renderCompareView();
+      // Shared toggle, every tab: re-render whichever state or Compare is
+      // currently on screen so it shows the new setting immediately rather
+      // than stale content from before the toggle changed. (Only the
+      // active state has live DOM in the shared #state-view container --
+      // a different state's cached data, if any, has nothing to re-render.)
+      if (STATE_IDS.indexOf(currentDataset) !== -1 && STATE_DATA[currentDataset]) renderStateView(currentDataset);
+      if (currentDataset === "compare" && STATE_DATA.ma) renderCompareView();
     });
   }
 
@@ -403,21 +405,21 @@
     const meta = DATA.meta;
     return "Data generated " + new Date(meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC · cycles: " + meta.cycles.join(", ");
   }
-  function metaLineTextMa() {
-    const meta = MA_DATA.meta;
+  function metaLineTextState(stateId) {
+    const meta = STATE_DATA[stateId].meta;
     return (
       "Data generated " +
       new Date(meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) +
       " UTC · covers " +
       meta.date_range.start +
       " through " +
-      meta.date_range.end
+      (meta.date_range.end || "present")
     );
   }
   function metaLineTextCompare() {
     const fedStr = "Federal: generated " + new Date(DATA.meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC";
-    if (!MA_DATA) return fedStr + " · Massachusetts: loading…";
-    const maStr = "Massachusetts: generated " + new Date(MA_DATA.meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC";
+    if (!STATE_DATA.ma) return fedStr + " · Massachusetts: loading…";
+    const maStr = "Massachusetts: generated " + new Date(STATE_DATA.ma.meta.generated_at).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" }) + " UTC";
     return fedStr + " · " + maStr;
   }
   function renderStats() {
@@ -1170,30 +1172,33 @@
     });
   }
 
-  // Same shape as buildSearchIndex(), for the Massachusetts tab: OCPF
-  // "filers" (almost always candidate committees) indexed as "candidate"
-  // for consistency with the Federal tab's labeling, plus MA vendors.
-  // No "race" type -- MA candidates aren't grouped into races here.
-  function buildMaSearchIndex() {
-    maSearchIndex = [];
-    Object.values(MA_DATA.filers_detail || {}).forEach((f) => {
-      maSearchIndex.push({
+  // Same shape as buildSearchIndex(), for a state tab: its "filers"
+  // (almost always candidate committees) indexed as "candidate" for
+  // consistency with the Federal tab's labeling, plus that state's
+  // vendors. No "race" type -- state candidates aren't grouped into
+  // races here.
+  function buildStateSearchIndex(stateId) {
+    const data = STATE_DATA[stateId];
+    const index = [];
+    Object.values(data.filers_detail || {}).forEach((f) => {
+      index.push({
         type: "candidate",
         label: f.name,
         sub: f.party,
         searchText: [f.name, f.party].filter(Boolean).join(" ").toLowerCase(),
-        href: "#/ma/candidate/" + f.id,
+        href: "#/" + stateId + "/candidate/" + f.id,
       });
     });
-    (MA_DATA.vendors || []).forEach((v) => {
-      maSearchIndex.push({
+    (data.vendors || []).forEach((v) => {
+      index.push({
         type: "vendor",
         label: v.name,
         sub: (VENDOR_GROUP_LABEL[v.group] || v.group) + (v.era === "legacy" ? " · legacy" : ""),
         searchText: [v.name, v.group, v.era].filter(Boolean).join(" ").toLowerCase(),
-        href: "#/ma/vendor/" + v.id,
+        href: "#/" + stateId + "/vendor/" + v.id,
       });
     });
+    stateSearchIndex[stateId] = index;
   }
 
   const SEARCH_TYPE_ORDER = ["candidate", "vendor", "race"];
@@ -1206,7 +1211,7 @@
       results.innerHTML = "";
       return;
     }
-    const activeIndex = currentDataset === "ma" ? maSearchIndex : searchIndex;
+    const activeIndex = STATE_IDS.indexOf(currentDataset) !== -1 ? stateSearchIndex[currentDataset] || [] : searchIndex;
     const byType = { candidate: [], vendor: [], race: [] };
     activeIndex.forEach((item) => {
       if (searchFilterType !== "all" && item.type !== searchFilterType) return;
@@ -1424,33 +1429,108 @@
     window.scrollTo(0, 0);
   }
 
-  // ---- dataset tabs: Federal (FEC) and Massachusetts (OCPF) are two
-  // separate datasets, never merged. Exactly one is visible at a time;
-  // every card in each carries its own context pill (see tagCardsWithPill)
-  // so which dataset a given chart belongs to is never ambiguous. ----
+  // ---- dataset tabs: Federal (FEC) and each state (a separate disclosure
+  // system) are all separate datasets, never merged. Exactly one is
+  // visible at a time; every card in each carries its own context pill
+  // (see tagCardsWithPill) so which dataset a given chart belongs to is
+  // never ambiguous. ----
   const FEDERAL_TITLE = "AI Use in Federal Campaign Disclosures";
   const FEDERAL_SUBTITLE_1 =
     "A read of federal campaign-finance disclosures for U.S. House and Senate candidates, looking for payments to AI vendors and how that spending breaks down by vendor, stated purpose, party, incumbency, candidate age, and chamber — and how each of those has changed across recent election cycles.";
-  const MA_TITLE = "AI Use in Massachusetts Campaign Disclosures";
-  const MA_SUBTITLE_1 =
-    "A read of Massachusetts OCPF campaign-finance disclosures for state candidates, looking for payments to the same AI-vendor taxonomy tracked on the Federal tab. This is a separate dataset from a different disclosure system — smaller in scale, with its own itemization rules — and is not directly comparable dollar-for-dollar with the federal figures.";
   const COMPARE_TITLE = "AI Vendors: Federal vs. Massachusetts";
   const COMPARE_SUBTITLE_1 =
     "Every AI vendor found on either the Federal or Massachusetts tab, side by side: what each is disclosed to have spent on federal House/Senate races vs. Massachusetts state races, combined spend volume, and a recent-momentum signal — plus what campaigns actually use each tool for.";
 
+  // One entry per state tab. Each state's dashboard JSON is built by its
+  // own pipeline (build_dataset_ma.py, or the shared
+  // pipeline/lib/build_state_dataset.py for wa/co/ca) but rendered by the
+  // same generic functions below -- adding a 5th state means adding one
+  // entry here (plus its own fetch/parse/build_dataset_<id>.py and a tab
+  // button + CSS accent-color pair), not writing a new render module.
+  const STATE_CONFIGS = [
+    {
+      id: "ma",
+      label: "Massachusetts",
+      tabSub: "State races · OCPF",
+      sourceShort: "OCPF",
+      dataFile: "data/dashboard_ma.json",
+      title: "AI Use in Massachusetts Campaign Disclosures",
+      subtitle1:
+        "A read of Massachusetts OCPF campaign-finance disclosures for state candidates, looking for payments to the same AI-vendor taxonomy tracked on the Federal tab. This is a separate dataset from a different disclosure system — smaller in scale, with its own itemization rules — and is not directly comparable dollar-for-dollar with the federal figures.",
+      bannerSourceLabel: "OCPF, the state's own campaign-finance disclosure system",
+      cycleWindowNote: " (the 2024 and 2026 cycles)",
+      footerSource:
+        "Source data: Massachusetts Office of Campaign and Political Finance (ocpf.us), via its public API. This is an independent analysis and is not affiliated with OCPF or any campaign or vendor named here.",
+      legacyToggleSub:
+        "Off by default: companies founded before generative AI existed but still branded “AI” (e.g. CallTime.AI, Grammarly, Otter.ai) are excluded from the vendor chart and table below by default. Their own vendor pages are always visible.",
+    },
+    {
+      id: "wa",
+      label: "Washington",
+      tabSub: "State races · PDC",
+      sourceShort: "PDC",
+      dataFile: "data/dashboard_wa.json",
+      title: "AI Use in Washington Campaign Disclosures",
+      subtitle1:
+        "A read of Washington Public Disclosure Commission (PDC) campaign-finance disclosures for state candidates and committees, looking for payments to the same AI-vendor taxonomy tracked on the Federal tab. This is a separate dataset from a different disclosure system, with its own itemization rules, and is not directly comparable dollar-for-dollar with the federal figures.",
+      bannerSourceLabel: "the Washington Public Disclosure Commission (PDC), the state's own campaign-finance disclosure system",
+      cycleWindowNote: "",
+      footerSource:
+        "Source data: Washington Public Disclosure Commission (data.wa.gov), via its public Socrata API. This is an independent analysis and is not affiliated with the PDC or any campaign or vendor named here.",
+      legacyToggleSub:
+        "Off by default: companies founded before generative AI existed but still branded “AI” are excluded from the vendor chart and table below by default. Their own vendor pages are always visible.",
+    },
+    {
+      id: "co",
+      label: "Colorado",
+      tabSub: "State races · TRACER",
+      sourceShort: "TRACER",
+      dataFile: "data/dashboard_co.json",
+      title: "AI Use in Colorado Campaign Disclosures",
+      subtitle1:
+        "A read of Colorado TRACER (Secretary of State) campaign-finance disclosures for state candidates and committees, looking for payments to the same AI-vendor taxonomy tracked on the Federal tab. Colorado's bulk export carries no party-affiliation field, so every record here shows as Unknown party. This is a separate dataset and is not directly comparable dollar-for-dollar with the federal figures.",
+      bannerSourceLabel: "TRACER, the Colorado Secretary of State's campaign-finance disclosure system",
+      cycleWindowNote: "",
+      footerSource:
+        "Source data: Colorado TRACER (tracer.sos.colorado.gov), via its public bulk data downloads. This is an independent analysis and is not affiliated with the Colorado Secretary of State or any campaign or vendor named here.",
+      legacyToggleSub:
+        "Off by default: companies founded before generative AI existed but still branded “AI” are excluded from the vendor chart and table below by default. Their own vendor pages are always visible.",
+    },
+    {
+      id: "ca",
+      label: "California",
+      tabSub: "State races · CAL-ACCESS",
+      sourceShort: "CAL-ACCESS",
+      dataFile: "data/dashboard_ca.json",
+      title: "AI Use in California Campaign Disclosures",
+      subtitle1:
+        "A read of California CAL-ACCESS (Secretary of State) campaign-finance disclosures for state candidates and committees, looking for payments to the same AI-vendor taxonomy tracked on the Federal tab. CAL-ACCESS's raw data carries no party-affiliation field, so every record here shows as Unknown party. This is a separate dataset and is not directly comparable dollar-for-dollar with the federal figures.",
+      bannerSourceLabel: "CAL-ACCESS, the California Secretary of State's campaign-finance disclosure system",
+      cycleWindowNote: "",
+      footerSource:
+        "Source data: California Secretary of State (CAL-ACCESS), via its daily bulk database export. This is an independent analysis and is not affiliated with the California Secretary of State or any campaign or vendor named here.",
+      legacyToggleSub:
+        "Off by default: companies founded before generative AI existed but still branded “AI” are excluded from the vendor chart and table below by default. Their own vendor pages are always visible.",
+    },
+  ];
+  const STATE_CONFIG_BY_ID = {};
+  STATE_CONFIGS.forEach((c) => (STATE_CONFIG_BY_ID[c.id] = c));
+  const STATE_IDS = STATE_CONFIGS.map((c) => c.id);
+
   let currentDataset = "federal";
 
   // Federal excludes legacy vendors from every chart/table below the
-  // toggle; MA only has one such vendor-listing card (renderMaVendorsCard)
-  // to filter, so its wording says so rather than overclaiming "every
-  // chart and table" -- MA has no #methodology anchor to link to, and the
-  // Compare tab's single table is the only thing its own toggle affects.
+  // toggle; each state tab only has one such vendor-listing card
+  // (renderStateVendorsCard) to filter, so its wording says so rather than
+  // overclaiming "every chart and table" -- a state tab has no
+  // #methodology anchor to link to, and the Compare tab's single table is
+  // the only thing its own toggle affects.
   function updateLegacyToggleText(tab) {
     const sub = document.querySelector(".legacy-toggle-sub");
     if (!sub) return;
-    if (tab === "ma") {
-      sub.innerHTML =
-        "Off by default: companies founded before generative AI existed but still branded “AI” (e.g. CallTime.AI, Grammarly, Otter.ai) are excluded from the vendor chart and table below by default. Their own vendor pages are always visible.";
+    const stateCfg = STATE_CONFIG_BY_ID[tab];
+    if (stateCfg) {
+      sub.innerHTML = stateCfg.legacyToggleSub;
     } else if (tab === "compare") {
       sub.innerHTML =
         "Off by default: companies founded before generative AI existed but still branded “AI” (e.g. Amplify.ai, Grammarly, Otter.ai) are excluded from the table below by default.";
@@ -1462,9 +1542,10 @@
 
   function activateDataset(tab) {
     currentDataset = tab;
-    const isMa = tab === "ma";
+    const stateCfg = STATE_CONFIG_BY_ID[tab];
+    const isState = !!stateCfg;
     const isCompare = tab === "compare";
-    const isOffMain = isMa || isCompare;
+    const isOffMain = isState || isCompare;
     updateLegacyToggleText(tab);
 
     document.body.setAttribute("data-active-dataset", tab);
@@ -1476,25 +1557,28 @@
 
     document.getElementById("page-toc").hidden = isOffMain;
     document.getElementById("footer-source-federal").hidden = isOffMain;
-    document.getElementById("footer-source-ma").hidden = !isMa;
+    const footerState = document.getElementById("footer-source-state");
+    footerState.hidden = !isState;
+    if (isState) footerState.textContent = stateCfg.footerSource;
     document.getElementById("footer-source-compare").hidden = !isCompare;
 
-    document.title = isMa ? MA_TITLE : isCompare ? COMPARE_TITLE : FEDERAL_TITLE;
-    document.getElementById("page-h1").textContent = isMa ? MA_TITLE : isCompare ? COMPARE_TITLE : FEDERAL_TITLE;
-    document.getElementById("page-subtitle-1").textContent = isMa ? MA_SUBTITLE_1 : isCompare ? COMPARE_SUBTITLE_1 : FEDERAL_SUBTITLE_1;
+    document.title = isState ? stateCfg.title : isCompare ? COMPARE_TITLE : FEDERAL_TITLE;
+    document.getElementById("page-h1").textContent = isState ? stateCfg.title : isCompare ? COMPARE_TITLE : FEDERAL_TITLE;
+    document.getElementById("page-subtitle-1").textContent = isState ? stateCfg.subtitle1 : isCompare ? COMPARE_SUBTITLE_1 : FEDERAL_SUBTITLE_1;
     document.getElementById("page-subtitle-2").hidden = isOffMain;
 
-    // The search bar covers Federal and MA candidates/vendors (see
-    // runSearch(), which picks searchIndex vs. maSearchIndex off
-    // currentDataset); the Compare tab has no entity pages of its own
-    // (it only links out to Federal/MA vendor pages), so it's simplest
-    // to hide the bar there rather than pick one dataset's index for it.
+    // The search bar covers Federal and each state's candidates/vendors
+    // (see runSearch(), which picks searchIndex vs. stateSearchIndex off
+    // currentDataset); the Compare tab has no entity pages of its own (it
+    // only links out to Federal/Massachusetts vendor pages), so it's
+    // simplest to hide the bar there rather than pick one dataset's index
+    // for it.
     document.getElementById("search-bar-wrap").hidden = isCompare;
     if (!isCompare) {
       const raceChip = document.querySelector('.search-filter-chips .chip[data-filter="race"]');
-      if (raceChip) raceChip.hidden = isMa;
-      document.getElementById("global-search-input").placeholder = isMa ? "Search candidates, vendors…" : "Search candidates, vendors, races…";
-      if (isMa && searchFilterType === "race") {
+      if (raceChip) raceChip.hidden = isState;
+      document.getElementById("global-search-input").placeholder = isState ? "Search candidates, vendors…" : "Search candidates, vendors, races…";
+      if (isState && searchFilterType === "race") {
         searchFilterType = "all";
         document.querySelectorAll(".search-filter-chips .chip").forEach((b) => b.classList.toggle("is-active", b.getAttribute("data-filter") === "all"));
       }
@@ -1504,18 +1588,18 @@
 
     document.getElementById("main-view").hidden = isOffMain;
     document.getElementById("detail-view").hidden = isOffMain;
-    document.getElementById("ma-view").hidden = !isMa;
-    document.getElementById("ma-detail-view").hidden = true;
+    document.getElementById("state-view").hidden = !isState;
+    document.getElementById("state-detail-view").hidden = true;
     document.getElementById("compare-view").hidden = !isCompare;
 
-    if (isMa) {
-      document.getElementById("meta-line").textContent = MA_DATA ? metaLineTextMa() : "Loading Massachusetts dataset…";
+    if (isState) {
+      document.getElementById("meta-line").textContent = STATE_DATA[tab] ? metaLineTextState(tab) : "Loading " + stateCfg.label + " dataset…";
       window.scrollTo(0, 0);
-      ensureMaData();
+      ensureStateData(tab);
     } else if (isCompare) {
       document.getElementById("meta-line").textContent = metaLineTextCompare();
       window.scrollTo(0, 0);
-      if (MA_DATA) {
+      if (STATE_DATA.ma) {
         renderCompareView();
       } else {
         const view = document.getElementById("compare-view");
@@ -1539,8 +1623,8 @@
 
   // One-time pass: stamp every federal card's <h3> with a context pill.
   // The federal card markup is static (never rebuilt), so this only needs
-  // to run once; MA cards are built fresh by renderMaView() each time and
-  // include their pill directly.
+  // to run once; state cards are built fresh by renderStateView() each
+  // time and include their pill directly.
   function tagFederalCardsWithPill() {
     document.querySelectorAll("#main-view .card > h3").forEach((h3) => {
       h3.appendChild(el("span", { className: "dataset-pill dataset-pill-federal", text: "Federal · FEC" }));
@@ -2059,72 +2143,119 @@
   }
 
   // ---- Massachusetts (OCPF) tab ----
-  let MA_DATA = null;
-  let maLoadPromise = null;
+  const STATE_DATA = {}; // stateId -> dataset json, null until loaded
+  const stateLoadPromises = {}; // stateId -> in-flight fetch Promise
 
-  function maCardTitle(text) {
+  // MA's own pipeline (build_dataset_ma.py) predates the shared
+  // pipeline/lib/build_state_dataset.py aggregator and names a filer's id
+  // "filer_cpf_id" (OCPF's own term); every other state's shared
+  // aggregator calls the same field "filer_id". Normalized once here, at
+  // load time, so every render function below only ever reads "filer_id"
+  // regardless of which state's data it's looking at.
+  function normalizeStateData(stateId, data) {
+    if (stateId !== "ma") return data;
+    (data.notable_records || []).forEach((r) => {
+      if (r.filer_id === undefined) r.filer_id = r.filer_cpf_id;
+    });
+    Object.values(data.vendors_detail || {}).forEach((v) => {
+      (v.by_filer || []).forEach((r) => {
+        if (r.filer_id === undefined) r.filer_id = r.filer_cpf_id;
+      });
+    });
+    return data;
+  }
+
+  // MA's meta.records_scanned is {expenditures, subvendor} (OCPF's own
+  // subcontractor-disclosure layer has no equivalent elsewhere); every
+  // other state's shared aggregator writes a plain total instead.
+  function totalRecordsScanned(meta) {
+    const rs = meta.records_scanned;
+    return typeof rs === "object" ? rs.expenditures + rs.subvendor : rs;
+  }
+
+  function stateYearRangeLabel(meta) {
+    const startYear = meta.date_range.start.slice(0, 4);
+    const endYear = meta.date_range.end ? meta.date_range.end.slice(0, 4) : "present";
+    return startYear === endYear ? startYear : startYear + "–" + endYear;
+  }
+
+  function stateCardTitle(stateId, text) {
+    const cfg = STATE_CONFIG_BY_ID[stateId];
     return el("h3", {
-      children: [document.createTextNode(text), el("span", { className: "dataset-pill dataset-pill-ma", text: "Massachusetts · OCPF" })],
+      children: [
+        document.createTextNode(text),
+        el("span", {
+          className: "dataset-pill",
+          text: cfg.label + " · " + cfg.sourceShort,
+          attrs: { style: "--accent:var(--" + stateId + "-accent);--accent-soft:var(--" + stateId + "-accent-soft)" },
+        }),
+      ],
     });
   }
 
-  // Which MA sub-route to show once the dataset finishes loading -- set by
-  // route() right before activateDataset("ma") triggers ensureMaData(),
-  // since the fetch is async and the hash could point straight at a detail
-  // page on a cold load (a shared link to a MA vendor/candidate page).
-  let pendingMaSubroute = "";
+  // Which state sub-route to show once the dataset finishes loading -- set
+  // by route() right before activateDataset(stateId) triggers
+  // ensureStateData(), since the fetch is async and the hash could point
+  // straight at a detail page on a cold load (a shared link to a state
+  // vendor/candidate page).
+  let pendingStateSubroute = "";
 
-  // Fetches (or awaits an in-flight fetch of) the MA dataset with no
-  // router/view side effects, so both the MA tab (ensureMaData, below) and
-  // the Compare tab (ensureCompareData) -- which also needs MA_DATA, since
-  // its table sits on top of both datasets at once -- can share one
-  // in-flight request instead of racing two fetches if a user switches
-  // tabs before the first one lands.
-  function loadMaData() {
-    if (MA_DATA) return Promise.resolve(MA_DATA);
-    if (!maLoadPromise) {
-      maLoadPromise = fetch("data/dashboard_ma.json")
+  // Fetches (or awaits an in-flight fetch of) one state's dataset with no
+  // router/view side effects, so both that state's own tab (ensureStateData,
+  // below) and the Compare tab (ensureCompareData, which pins to "ma" --
+  // see its own comment) can share one in-flight request instead of racing
+  // two fetches if a user switches tabs before the first one lands.
+  function loadStateData(stateId) {
+    if (STATE_DATA[stateId]) return Promise.resolve(STATE_DATA[stateId]);
+    if (!stateLoadPromises[stateId]) {
+      const cfg = STATE_CONFIG_BY_ID[stateId];
+      stateLoadPromises[stateId] = fetch(cfg.dataFile)
         .then((r) => {
           if (!r.ok) throw new Error("HTTP " + r.status);
           return r.json();
         })
         .then((json) => {
-          MA_DATA = json;
-          maVendorEraById = {};
-          MA_DATA.vendors.forEach((v) => (maVendorEraById[v.id] = v.era));
-          buildMaSearchIndex();
-          if (currentDataset === "ma") document.getElementById("meta-line").textContent = metaLineTextMa();
+          STATE_DATA[stateId] = normalizeStateData(stateId, json);
+          stateVendorEraById[stateId] = {};
+          json.vendors.forEach((v) => (stateVendorEraById[stateId][v.id] = v.era));
+          buildStateSearchIndex(stateId);
+          if (currentDataset === stateId) document.getElementById("meta-line").textContent = metaLineTextState(stateId);
           if (currentDataset === "compare") document.getElementById("meta-line").textContent = metaLineTextCompare();
-          return MA_DATA;
+          return STATE_DATA[stateId];
         })
         .catch((err) => {
           console.error(err);
           throw err;
         });
     }
-    return maLoadPromise;
+    return stateLoadPromises[stateId];
   }
 
-  function ensureMaData() {
-    if (MA_DATA) {
-      maRouter(pendingMaSubroute);
+  function ensureStateData(stateId) {
+    if (STATE_DATA[stateId]) {
+      stateRouter(stateId, pendingStateSubroute);
       return;
     }
-    const view = document.getElementById("ma-view");
-    document.getElementById("ma-detail-view").hidden = true;
+    const cfg = STATE_CONFIG_BY_ID[stateId];
+    const view = document.getElementById("state-view");
+    document.getElementById("state-detail-view").hidden = true;
     view.hidden = false;
     view.innerHTML = "";
-    view.appendChild(el("p", { className: "lede", text: "Loading Massachusetts dataset…" }));
-    loadMaData()
-      .then(() => maRouter(pendingMaSubroute))
+    view.appendChild(el("p", { className: "lede", text: "Loading " + cfg.label + " dataset…" }));
+    loadStateData(stateId)
+      .then(() => stateRouter(stateId, pendingStateSubroute))
       .catch((err) => {
         view.innerHTML = "";
-        view.appendChild(el("p", { className: "lede", text: "Could not load Massachusetts dataset (" + err.message + ")." }));
+        view.appendChild(el("p", { className: "lede", text: "Could not load " + cfg.label + " dataset (" + err.message + ")." }));
       });
   }
 
+  // The Compare tab is pinned to Federal vs. Massachusetts specifically
+  // (see buildCompareRows() below) -- it doesn't generalize to "Federal
+  // vs. whichever state tab is active," so this always loads "ma"
+  // regardless of currentDataset.
   function ensureCompareData() {
-    loadMaData()
+    loadStateData("ma")
       .then(() => {
         if (currentDataset === "compare") renderCompareView();
       })
@@ -2136,20 +2267,23 @@
       });
   }
 
-  function maBackLink() {
-    return el("a", { href: "#/ma", className: "back-link", text: "← Back to Massachusetts dashboard" });
+  function stateBackLink(stateId) {
+    const cfg = STATE_CONFIG_BY_ID[stateId];
+    return el("a", { href: "#/" + stateId, className: "back-link", text: "← Back to " + cfg.label + " dashboard" });
   }
 
-  // Mirrors federalRouter(): "" shows the main MA dashboard, "vendor/<id>"
-  // and "candidate/<id>" (an OCPF filer -- almost always a candidate
-  // committee) show a detail page in #ma-detail-view instead.
-  function maRouter(sub) {
-    const mainView = document.getElementById("ma-view");
-    const detailView = document.getElementById("ma-detail-view");
+  // Mirrors federalRouter(): "" shows the main state dashboard,
+  // "vendor/<id>" and "candidate/<id>" (that state's filer -- almost
+  // always a candidate committee) show a detail page in #state-detail-view
+  // instead. Only one state's markup is ever mounted in the shared
+  // #state-view/#state-detail-view containers at a time.
+  function stateRouter(stateId, sub) {
+    const mainView = document.getElementById("state-view");
+    const detailView = document.getElementById("state-detail-view");
     if (!sub) {
       detailView.hidden = true;
       mainView.hidden = false;
-      renderMaView();
+      renderStateView(stateId);
       window.scrollTo(0, 0);
       return;
     }
@@ -2158,43 +2292,45 @@
     const parts = sub.split("/");
     const type = parts[0];
     const id = decodeURIComponent(parts.slice(1).join("/"));
-    if (type === "vendor") renderMaVendorDetail(id);
-    else if (type === "candidate") renderMaCandidateDetail(id);
+    if (type === "vendor") renderStateVendorDetail(stateId, id);
+    else if (type === "candidate") renderStateCandidateDetail(stateId, id);
     else {
       detailView.innerHTML = "";
-      detailView.appendChild(maBackLink());
+      detailView.appendChild(stateBackLink(stateId));
       detailView.appendChild(el("p", { text: "Page not found." }));
     }
     window.scrollTo(0, 0);
   }
 
-  function renderMaVendorsCard() {
+  function renderStateVendorsCard(stateId) {
+    const cfg = STATE_CONFIG_BY_ID[stateId];
+    const data = STATE_DATA[stateId];
     const c = colors();
     const eraFilter = eraFilterList();
-    const shownVendors = MA_DATA.vendors.filter((v) => eraFilter.includes(v.era));
-    const nLegacyHidden = MA_DATA.vendors.filter((v) => v.era === "legacy" && v.amount_high > 0).length;
+    const shownVendors = data.vendors.filter((v) => eraFilter.includes(v.era));
+    const nLegacyHidden = data.vendors.filter((v) => v.era === "legacy" && v.amount_high > 0).length;
     const rows = shownVendors.slice(0, 20);
     const labels = rows.map((r) => r.name + (r.era === "legacy" ? " (legacy)" : ""));
-    const data = rows.map((r) => r.amount_high);
+    const chartData = rows.map((r) => r.amount_high);
 
     const card = el("div", { className: "card" });
     const toolbar = el("div", { className: "card-toolbar" });
     const toggleBtn = el("button", { className: "btn-table-toggle", text: "View as table" });
     toolbar.appendChild(toggleBtn);
     card.appendChild(toolbar);
-    card.appendChild(maCardTitle("AI-related expenditures by vendor, 2024 & 2026 cycles"));
+    card.appendChild(stateCardTitle(stateId, "AI-related expenditures by vendor, " + stateYearRangeLabel(data.meta)));
     card.appendChild(
       el("p", {
         className: "note",
         text:
-          "Every OCPF expenditure record statewide for the window, matched against the same taxonomy used on the Federal tab." +
+          "Every " + cfg.sourceShort + " expenditure record statewide for the window, matched against the same taxonomy used on the Federal tab." +
           (includeLegacy ? " Legacy-era vendors are currently included, via the toggle above." : " " + nLegacyHidden + " legacy-era vendor" + (nLegacyHidden === 1 ? "" : "s") + " with disclosed spending are hidden by default (toggle above to include them)."),
       })
     );
 
     const chartHolder = el("div", { className: "chart-holder tall" });
     chartHolder.style.height = Math.max(320, rows.length * 26) + "px";
-    const canvas = el("canvas", { id: "chart-ma-vendors" });
+    const canvas = el("canvas", { id: "chart-state-vendors" });
     chartHolder.appendChild(canvas);
     const tableHolder = el("div", { className: "table-holder", attrs: { hidden: "" } });
     card.appendChild(chartHolder);
@@ -2210,7 +2346,7 @@
     tableHolder.appendChild(
       buildTable(
         [
-          { label: "Vendor", link: (r) => "#/ma/vendor/" + r.id, render: (r) => r.name },
+          { label: "Vendor", link: (r) => "#/" + stateId + "/vendor/" + r.id, render: (r) => r.name },
           { label: "Type", render: (r) => VENDOR_GROUP_LABEL[r.group] || r.group },
           { label: "Era", render: (r) => r.era },
           { label: "High-confidence $", num: true, render: (r) => fmtUSD2.format(r.amount_high) },
@@ -2224,16 +2360,16 @@
     );
 
     setTimeout(() => {
-      makeChart("chart-ma-vendors", {
+      makeChart("chart-state-vendors", {
         type: "bar",
-        data: { labels, datasets: [{ label: "Disclosed spend", data, backgroundColor: c.ma || cssVar("--ma-accent"), borderRadius: 4, barThickness: 16 }] },
+        data: { labels, datasets: [{ label: "Disclosed spend", data: chartData, backgroundColor: cssVar("--" + stateId + "-accent"), borderRadius: 4, barThickness: 16 }] },
         options: {
           indexAxis: "y",
           responsive: true,
           maintainAspectRatio: false,
           onClick: (evt, elements, chart) => {
             const pts = chart.getElementsAtEventForMode(evt, "nearest", { intersect: true }, false);
-            if (pts.length) location.hash = "#/ma/vendor/" + rows[pts[0].index].id;
+            if (pts.length) location.hash = "#/" + stateId + "/vendor/" + rows[pts[0].index].id;
           },
           onHover: (evt, elements) => {
             evt.native.target.style.cursor = elements.length ? "pointer" : "default";
@@ -2263,7 +2399,8 @@
     return card;
   }
 
-  function renderMaTrendCard() {
+  function renderStateTrendCard(stateId) {
+    const data = STATE_DATA[stateId];
     const card = el("div", { className: "card" });
 
     function renderContent() {
@@ -2273,40 +2410,40 @@
       // its "_ex_legacy" (generative-only) ones -- same rule as every other
       // era-filtered Federal chart: a record counts as generative if at
       // least one of its matched vendors is generative-era.
-      const rows = MA_DATA.time_series.map((r) =>
+      const rows = data.time_series.map((r) =>
         includeLegacy
           ? r
           : { year: r.year, total: r.total_ex_legacy, records: r.records_ex_legacy, total_expenditure: r.total_expenditure_ex_legacy }
       );
-      const mode = viewModes.maTrends;
+      const mode = viewModes.stateTrends;
 
-      const toolbar = el("div", { className: "view-toggle", attrs: { "data-toggle-group": "ma-trends" } });
+      const toolbar = el("div", { className: "view-toggle", attrs: { "data-toggle-group": "state-trends" } });
       const dollarBtn = el("button", { className: "btn-view-mode" + (mode === "dollar" ? " is-active" : ""), text: "$ amount" });
       const pctBtn = el("button", { className: "btn-view-mode" + (mode === "pct" ? " is-active" : ""), text: "% of total spend" });
       dollarBtn.addEventListener("click", () => {
-        viewModes.maTrends = "dollar";
+        viewModes.stateTrends = "dollar";
         renderContent();
       });
       pctBtn.addEventListener("click", () => {
-        viewModes.maTrends = "pct";
+        viewModes.stateTrends = "pct";
         renderContent();
       });
       toolbar.appendChild(dollarBtn);
       toolbar.appendChild(pctBtn);
       card.appendChild(toolbar);
 
-      card.appendChild(maCardTitle("Disclosed AI-vendor spending by year"));
+      card.appendChild(stateCardTitle(stateId, "Disclosed AI-vendor spending by year"));
       card.appendChild(
         el("p", {
           className: "note",
           text:
             (mode === "pct"
-              ? "AI-vendor spend as a share of that year's total reported OCPF spend by the filers who used an AI vendor that year. 2026 is still filing."
-              : "2026 is still filing.") + (includeLegacy ? " All eras, all matched vendors." : " Generative-era vendors only -- toggle above to include legacy-era vendors."),
+              ? "AI-vendor spend as a share of that year's total reported spend by the filers who used an AI vendor that year."
+              : "") + (includeLegacy ? " All eras, all matched vendors." : " Generative-era vendors only -- toggle above to include legacy-era vendors."),
         })
       );
       const chartHolder = el("div", { className: "chart-holder" });
-      chartHolder.appendChild(el("canvas", { id: "chart-ma-trend" }));
+      chartHolder.appendChild(el("canvas", { id: "chart-state-trend" }));
       card.appendChild(chartHolder);
 
       const values = rows.map((r) => (mode === "pct" ? (r.total_expenditure > 0 ? (r.total / r.total_expenditure) * 100 : 0) : r.total));
@@ -2315,7 +2452,7 @@
       const fmtVal = mode === "pct" ? (v) => fmtPct(v, pctDigits) : fmtUSD0.format;
 
       setTimeout(() => {
-        makeChart("chart-ma-trend", {
+        makeChart("chart-state-trend", {
           type: "line",
           data: {
             labels: rows.map((r) => String(r.year)),
@@ -2323,8 +2460,8 @@
               {
                 label: "Disclosed AI-vendor spend",
                 data: values,
-                borderColor: cssVar("--ma-accent"),
-                backgroundColor: cssVar("--ma-accent"),
+                borderColor: cssVar("--" + stateId + "-accent"),
+                backgroundColor: cssVar("--" + stateId + "-accent"),
                 tension: 0.25,
                 pointRadius: 4,
               },
@@ -2359,20 +2496,22 @@
   }
 
   // A vendor's own detail page has its own party split (see
-  // renderMaVendorDetail); this page-level pie/line pair covers overall
+  // renderStateVendorDetail); this page-level pie/line pair covers overall
   // Democratic-vs-Republican AI-vendor spend across every matched record,
   // not broken out per vendor.
-  function renderMaPartyPieCard() {
+  function renderStatePartyPieCard(stateId) {
+    const cfg = STATE_CONFIG_BY_ID[stateId];
+    const data = STATE_DATA[stateId];
     const c = colors();
-    const ps = includeLegacy ? MA_DATA.party_split : MA_DATA.party_split_ex_legacy;
-    const filersShown = includeLegacy ? MA_DATA.stats.filers_with_ai_spend : MA_DATA.stats.filers_with_ai_spend_ex_legacy;
+    const ps = includeLegacy ? data.party_split : data.party_split_ex_legacy;
+    const filersShown = includeLegacy ? data.stats.filers_with_ai_spend : data.stats.filers_with_ai_spend_ex_legacy;
     const card = el("div", { className: "card" });
-    card.appendChild(maCardTitle("Party split"));
+    card.appendChild(stateCardTitle(stateId, "Party split"));
     card.appendChild(
       el("p", {
         className: "note",
         text:
-          "Democratic vs. Republican, by filer party (OCPF's own filer record, not a text match): " +
+          "Democratic vs. Republican, by filer party (" + cfg.sourceShort + "'s own filer record, not a text match): " +
           fmtPartyRatio({ dem_amount: ps.dem_amount, rep_amount: ps.rep_amount, dem_rep_ratio: ps.dem_rep_ratio }) +
           (ps.dem_rep_ratio !== null ? " ratio of Democratic to Republican spending." : ".") +
           " " +
@@ -2385,7 +2524,7 @@
       })
     );
     const chartHolder = el("div", { className: "chart-holder" });
-    chartHolder.appendChild(el("canvas", { id: "chart-ma-party-pie" }));
+    chartHolder.appendChild(el("canvas", { id: "chart-state-party-pie" }));
     card.appendChild(chartHolder);
 
     setTimeout(() => {
@@ -2393,7 +2532,7 @@
         { party: "Democratic", amount: ps.dem_amount },
         { party: "Republican", amount: ps.rep_amount },
       ].filter((s) => s.amount > 0);
-      makeChart("chart-ma-party-pie", {
+      makeChart("chart-state-party-pie", {
         type: "pie",
         data: {
           labels: slices.map((s) => s.party),
@@ -2420,11 +2559,12 @@
     return card;
   }
 
-  function renderMaPartyTrendCard() {
+  function renderStatePartyTrendCard(stateId) {
+    const data = STATE_DATA[stateId];
     const c = colors();
-    const rows = (includeLegacy ? MA_DATA.time_series_by_party : MA_DATA.time_series_by_party_ex_legacy) || [];
+    const rows = (includeLegacy ? data.time_series_by_party : data.time_series_by_party_ex_legacy) || [];
     const card = el("div", { className: "card" });
-    card.appendChild(maCardTitle("Party spending over time"));
+    card.appendChild(stateCardTitle(stateId, "Party spending over time"));
     card.appendChild(
       el("p", {
         className: "note",
@@ -2434,14 +2574,14 @@
       })
     );
     const chartHolder = el("div", { className: "chart-holder" });
-    chartHolder.appendChild(el("canvas", { id: "chart-ma-party-trend" }));
+    chartHolder.appendChild(el("canvas", { id: "chart-state-party-trend" }));
     card.appendChild(chartHolder);
 
     setTimeout(() => {
       const years = Array.from(new Set(rows.map((r) => r.year))).sort((a, b) => a - b);
       const seriesByParty = {};
       ["Democratic", "Republican"].forEach((p) => (seriesByParty[p] = rows.filter((r) => r.party === p)));
-      makeChart("chart-ma-party-trend", {
+      makeChart("chart-state-party-trend", {
         type: "line",
         data: {
           labels: years.map(String),
@@ -2475,22 +2615,27 @@
     return card;
   }
 
-  function renderMaWeeklyCard() {
+  // OCPF-only: no other state's disclosure system carries a real filed
+  // date on each report the way OCPF does, so this card only ever renders
+  // for stateId === "ma" (gated by data.weekly_histogram existing at all
+  // -- see renderStateView).
+  function renderStateWeeklyCard(stateId) {
+    const data = STATE_DATA[stateId];
     const card = el("div", { className: "card" });
     const toolbar = el("div", { className: "card-toolbar" });
     const toggleBtn = el("button", { className: "btn-table-toggle", text: "View as table" });
     toolbar.appendChild(toggleBtn);
     card.appendChild(toolbar);
-    card.appendChild(maCardTitle("Weekly disclosure timeline"));
+    card.appendChild(stateCardTitle(stateId, "Weekly disclosure timeline"));
     card.appendChild(
       el("p", {
         className: "note",
         text: "Every matched expenditure, all confidence tiers and eras (not filtered by the legacy-vendor toggle), binned by week: when the expenditure itself happened vs. when OCPF's own record shows the covering report was filed (a real filed date from OCPF, not an approximation).",
       })
     );
-    const chartHolder = el("div", { className: "chart-holder", attrs: { "data-panel": "ma-weekly" } });
-    chartHolder.appendChild(el("canvas", { id: "chart-ma-weekly" }));
-    const tableHolder = el("div", { className: "table-holder", attrs: { "data-panel": "ma-weekly", hidden: "" } });
+    const chartHolder = el("div", { className: "chart-holder", attrs: { "data-panel": "state-weekly" } });
+    chartHolder.appendChild(el("canvas", { id: "chart-state-weekly" }));
+    const tableHolder = el("div", { className: "table-holder", attrs: { "data-panel": "state-weekly", hidden: "" } });
     card.appendChild(chartHolder);
     card.appendChild(tableHolder);
 
@@ -2502,41 +2647,43 @@
     });
 
     setTimeout(() => {
-      renderWeeklyHistogram("chart-ma-weekly", "ma-weekly", MA_DATA.weekly_histogram, cssVar("--ma-accent"), cssVar("--text-muted"));
+      renderWeeklyHistogram("chart-state-weekly", "state-weekly", data.weekly_histogram, cssVar("--" + stateId + "-accent"), cssVar("--text-muted"));
     }, 0);
 
     return card;
   }
 
-  function renderMaNotableCard() {
+  function renderStateNotableCard(stateId) {
+    const cfg = STATE_CONFIG_BY_ID[stateId];
+    const data = STATE_DATA[stateId];
     const card = el("div", { className: "card" });
-    card.appendChild(maCardTitle("Individual disclosed payments, largest first"));
+    card.appendChild(stateCardTitle(stateId, "Individual disclosed payments, largest first"));
     card.appendChild(
       el("p", {
         className: "note",
         text:
-          "Every matched record's own OCPF filing is one click away via the source link. Unlike the charts above, this table is NOT filtered by the legacy-vendor toggle -- it always shows every confidence tier and era (see the Vendor and Confidence columns), so every disclosed payment stays auditable.",
+          "Every matched record's own " + cfg.sourceShort + " filing is one click away via the source link. Unlike the charts above, this table is NOT filtered by the legacy-vendor toggle -- it always shows every confidence tier and era (see the Vendor and Confidence columns), so every disclosed payment stays auditable.",
       })
     );
     card.appendChild(
       buildTable(
         [
           { label: "Date", render: (r) => r.date },
-          { label: "Filer", link: (r) => "#/ma/candidate/" + r.filer_cpf_id, render: (r) => r.filer_name },
+          { label: "Filer", link: (r) => "#/" + stateId + "/candidate/" + r.filer_id, render: (r) => r.filer_name },
           { label: "Party", render: (r) => r.filer_party },
-          { label: "Vendor", cell: (r) => maVendorLinksCell(r.vendor_ids, r.vendor_names) },
+          { label: "Vendor", cell: (r) => stateVendorLinksCell(stateId, r.vendor_ids, r.vendor_names) },
           { label: "Confidence", cell: (r) => confidencePill(r.confidences.indexOf("medium") !== -1 ? "medium" : "high") },
           { label: "Amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
           { label: "Purpose", render: (r) => r.purpose || "—" },
           { label: "Source", link: (r) => r.source_link, external: true, render: () => "View ↗" },
         ],
-        MA_DATA.notable_records
+        data.notable_records
       )
     );
     return card;
   }
 
-  function maDetailCard(titleText, canvasId, noteText) {
+  function stateDetailCard(titleText, canvasId, noteText) {
     const card = el("div", { className: "card" });
     card.appendChild(el("h3", { text: titleText }));
     if (noteText) card.appendChild(el("p", { className: "note", text: noteText }));
@@ -2544,16 +2691,18 @@
     return card;
   }
 
-  function renderMaVendorDetail(id) {
-    const view = document.getElementById("ma-detail-view");
+  function renderStateVendorDetail(stateId, id) {
+    const cfg = STATE_CONFIG_BY_ID[stateId];
+    const view = document.getElementById("state-detail-view");
     view.innerHTML = "";
-    const v = MA_DATA.vendors_detail[id];
-    view.appendChild(maBackLink());
+    const v = STATE_DATA[stateId].vendors_detail[id];
+    view.appendChild(stateBackLink(stateId));
     if (!v) {
-      view.appendChild(el("p", { text: "Vendor not found in the Massachusetts AI-spend dataset." }));
+      view.appendChild(el("p", { text: "Vendor not found in the " + cfg.label + " AI-spend dataset." }));
       return;
     }
     const c = colors();
+    const accent = cssVar("--" + stateId + "-accent");
 
     const header = el("div", { className: "detail-header" });
     const h2 = el("h2", { text: v.name });
@@ -2565,7 +2714,7 @@
     }
     view.appendChild(header);
     view.appendChild(
-      el("p", { className: "lede", text: "Every OCPF expenditure record naming this vendor, statewide, for the 2024 & 2026 cycle window. See methodology for what counts as a match." })
+      el("p", { className: "lede", text: "Every " + cfg.sourceShort + " expenditure record naming this vendor, statewide, for the " + stateYearRangeLabel(STATE_DATA[stateId].meta) + " window. See methodology for what counts as a match." })
     );
 
     const stats = el("div", { className: "detail-stat-row" });
@@ -2574,62 +2723,62 @@
     view.appendChild(stats);
 
     const grid = el("div", { className: "card-grid" });
-    grid.appendChild(maDetailCard("Spending over time", "ma-detail-chart-ts"));
-    grid.appendChild(maDetailCard("Party split", "ma-detail-chart-party", "Democratic vs. Republican, by filer party. “Unknown” is filers OCPF doesn't mark with a major-party affiliation, so the slices add up to this vendor's full total."));
+    grid.appendChild(stateDetailCard("Spending over time", "state-detail-chart-ts"));
+    grid.appendChild(stateDetailCard("Party split", "state-detail-chart-party", "Democratic vs. Republican, by filer party. “Unknown” is filers " + cfg.sourceShort + " doesn't mark with a major-party affiliation, so the slices add up to this vendor's full total."));
     view.appendChild(grid);
 
     if (v.time_series_by_party && v.time_series_by_party.length) {
-      view.appendChild(el("div", { className: "card-grid single", children: [maDetailCard("Party spending over time", "ma-detail-chart-party-trend")] }));
+      view.appendChild(el("div", { className: "card-grid single", children: [stateDetailCard("Party spending over time", "state-detail-chart-party-trend")] }));
     }
 
     const filerRowsAll = v.by_filer.map((r) => Object.assign({}, r));
-    const filerRows = sortRows(filerRowsAll, sortState.maVendorFilers);
+    const filerRows = sortRows(filerRowsAll, sortState.stateVendorFilers);
     const filerHeaders = withSort(
-      "maVendorFilers",
+      "stateVendorFilers",
       [
-        { label: "Filer", sortKey: "filer_name", link: (r) => "#/ma/candidate/" + r.filer_cpf_id, render: (r) => r.filer_name },
+        { label: "Filer", sortKey: "filer_name", link: (r) => "#/" + stateId + "/candidate/" + r.filer_id, render: (r) => r.filer_name },
         { label: "Party", sortKey: "filer_party", render: (r) => r.filer_party },
         { label: "Amount", sortKey: "amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
         { label: "Records", sortKey: "count", num: true, render: (r) => fmtInt.format(r.count) },
       ],
-      () => renderMaVendorDetail(id)
+      () => renderStateVendorDetail(stateId, id)
     );
     const filerCard = el("div", { className: "card" });
     filerCard.appendChild(el("h3", { text: "Filers paying " + v.name }));
-    filerCard.appendChild(buildTable(filerHeaders, filerRows, { sort: sortState.maVendorFilers }));
+    filerCard.appendChild(buildTable(filerHeaders, filerRows, { sort: sortState.stateVendorFilers }));
     view.appendChild(el("div", { className: "card-grid single", children: [filerCard] }));
 
     if (v.records && v.records.length) {
       const recRowsAll = v.records.map((r) => Object.assign({}, r, { date_sort: mdySortValue(r.date) }));
-      const recRows = sortRows(recRowsAll, sortState.maVendorRecords);
+      const recRows = sortRows(recRowsAll, sortState.stateVendorRecords);
       const recHeaders = withSort(
-        "maVendorRecords",
+        "stateVendorRecords",
         [
           { label: "Date", sortKey: "date_sort", render: (r) => r.date },
-          { label: "Filer", sortKey: "filer_name", link: (r) => "#/ma/candidate/" + r.filer_cpf_id, render: (r) => r.filer_name },
+          { label: "Filer", sortKey: "filer_name", link: (r) => "#/" + stateId + "/candidate/" + r.filer_id, render: (r) => r.filer_name },
           { label: "Party", sortKey: "filer_party", render: (r) => r.filer_party },
           { label: "Confidence", sortKey: "confidence", cell: (r) => confidencePill(r.confidence) },
           { label: "Amount", sortKey: "amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
           { label: "Purpose", sortKey: "purpose", render: (r) => r.purpose || "—" },
           { label: "Source", sortKey: null, link: (r) => r.source_link, external: true, render: () => "View ↗" },
         ],
-        () => renderMaVendorDetail(id)
+        () => renderStateVendorDetail(stateId, id)
       );
       const recordsCard = el("div", { className: "card" });
       recordsCard.appendChild(el("h3", { text: "Individual disbursements" }));
       recordsCard.appendChild(
         el("p", {
           className: "note",
-          text: "Every matched record's own OCPF filing is one click away via the source link, largest first" + (v.records.length >= MAX_DETAIL_RECORDS_MA ? " (capped at " + fmtInt.format(MAX_DETAIL_RECORDS_MA) + " records)" : "") + ".",
+          text: "Every matched record's own " + cfg.sourceShort + " filing is one click away via the source link, largest first" + (v.records.length >= MAX_DETAIL_RECORDS_MA ? " (capped at " + fmtInt.format(MAX_DETAIL_RECORDS_MA) + " records)" : "") + ".",
         })
       );
-      recordsCard.appendChild(buildTable(recHeaders, recRows, { sort: sortState.maVendorRecords }));
+      recordsCard.appendChild(buildTable(recHeaders, recRows, { sort: sortState.stateVendorRecords }));
       view.appendChild(el("div", { className: "card-grid single", children: [recordsCard] }));
     }
 
     // charts
     const years = v.time_series.map((r) => r.year).sort((a, b) => a - b);
-    makeChart("ma-detail-chart-ts", {
+    makeChart("state-detail-chart-ts", {
       type: "line",
       data: {
         labels: years.map(String),
@@ -2637,8 +2786,8 @@
           {
             label: v.name,
             data: years.map((y) => (v.time_series.find((r) => r.year === y) || {}).amount || 0),
-            borderColor: cssVar("--ma-accent"),
-            backgroundColor: cssVar("--ma-accent"),
+            borderColor: accent,
+            backgroundColor: accent,
             borderWidth: 2,
             pointRadius: 4,
             tension: 0.15,
@@ -2662,7 +2811,7 @@
       { label: "Republican", amount: v.rep_amount, color: c.party.Republican },
       { label: "Unknown", amount: otherAmount, color: c.muted },
     ].filter((s) => s.amount > 0);
-    makeChart("ma-detail-chart-party", {
+    makeChart("state-detail-chart-party", {
       type: "pie",
       data: { labels: partySlices.map((s) => s.label), datasets: [{ data: partySlices.map((s) => s.amount), backgroundColor: partySlices.map((s) => s.color) }] },
       options: {
@@ -2686,7 +2835,7 @@
       const partyYears = Array.from(new Set(v.time_series_by_party.map((r) => r.year))).sort((a, b) => a - b);
       const seriesByParty = {};
       ["Democratic", "Republican"].forEach((p) => (seriesByParty[p] = v.time_series_by_party.filter((r) => r.party === p)));
-      makeChart("ma-detail-chart-party-trend", {
+      makeChart("state-detail-chart-party-trend", {
         type: "line",
         data: {
           labels: partyYears.map(String),
@@ -2718,16 +2867,18 @@
     }
   }
 
-  function renderMaCandidateDetail(id) {
-    const view = document.getElementById("ma-detail-view");
+  function renderStateCandidateDetail(stateId, id) {
+    const cfg = STATE_CONFIG_BY_ID[stateId];
+    const view = document.getElementById("state-detail-view");
     view.innerHTML = "";
-    const f = MA_DATA.filers_detail[id];
-    view.appendChild(maBackLink());
+    const f = STATE_DATA[stateId].filers_detail[id];
+    view.appendChild(stateBackLink(stateId));
     if (!f) {
-      view.appendChild(el("p", { text: "Filer not found in the Massachusetts AI-spend dataset." }));
+      view.appendChild(el("p", { text: "Filer not found in the " + cfg.label + " AI-spend dataset." }));
       return;
     }
     const c = colors();
+    const accent = cssVar("--" + stateId + "-accent");
 
     const header = el("div", { className: "detail-header" });
     const h2 = el("h2", { text: f.name });
@@ -2735,7 +2886,7 @@
     header.appendChild(h2);
     view.appendChild(header);
     view.appendChild(
-      el("p", { className: "lede", text: "Every OCPF expenditure record naming an AI vendor from this filer, statewide, for the 2024 & 2026 cycle window." })
+      el("p", { className: "lede", text: "Every " + cfg.sourceShort + " expenditure record naming an AI vendor from this filer, statewide, for the " + stateYearRangeLabel(STATE_DATA[stateId].meta) + " window." })
     );
 
     const stats = el("div", { className: "detail-stat-row" });
@@ -2745,39 +2896,39 @@
     stats.appendChild(statTile("Distinct AI vendors used", fmtInt.format(f.vendor_ids.length)));
     view.appendChild(stats);
 
-    view.appendChild(el("div", { className: "card-grid single", children: [maDetailCard("Spending over time", "ma-cand-chart-ts")] }));
+    view.appendChild(el("div", { className: "card-grid single", children: [stateDetailCard("Spending over time", "state-cand-chart-ts")] }));
 
     if (f.records && f.records.length) {
       const recRowsAll = f.records.map((r) =>
         Object.assign({}, r, { display_vendor: r.vendor_names.join(", "), date_sort: mdySortValue(r.date) })
       );
-      const recRows = sortRows(recRowsAll, sortState.maCandidateRecords);
+      const recRows = sortRows(recRowsAll, sortState.stateCandidateRecords);
       const recHeaders = withSort(
-        "maCandidateRecords",
+        "stateCandidateRecords",
         [
           { label: "Date", sortKey: "date_sort", render: (r) => r.date },
-          { label: "Vendor", sortKey: "display_vendor", cell: (r) => maVendorLinksCell(r.vendor_ids, r.vendor_names) },
+          { label: "Vendor", sortKey: "display_vendor", cell: (r) => stateVendorLinksCell(stateId, r.vendor_ids, r.vendor_names) },
           { label: "Confidence", sortKey: null, cell: (r) => confidencePill(r.confidences.indexOf("medium") !== -1 ? "medium" : "high") },
           { label: "Amount", sortKey: "amount", num: true, render: (r) => fmtUSD2.format(r.amount) },
           { label: "Purpose", sortKey: "purpose", render: (r) => r.purpose || "—" },
           { label: "Source", sortKey: null, link: (r) => r.source_link, external: true, render: () => "View ↗" },
         ],
-        () => renderMaCandidateDetail(id)
+        () => renderStateCandidateDetail(stateId, id)
       );
       const recordsCard = el("div", { className: "card" });
       recordsCard.appendChild(el("h3", { text: "Individual disbursements" }));
       recordsCard.appendChild(
         el("p", {
           className: "note",
-          text: "Every matched record's own OCPF filing is one click away via the source link, largest first" + (f.records.length >= MAX_DETAIL_RECORDS_MA ? " (capped at " + fmtInt.format(MAX_DETAIL_RECORDS_MA) + " records)" : "") + ".",
+          text: "Every matched record's own " + cfg.sourceShort + " filing is one click away via the source link, largest first" + (f.records.length >= MAX_DETAIL_RECORDS_MA ? " (capped at " + fmtInt.format(MAX_DETAIL_RECORDS_MA) + " records)" : "") + ".",
         })
       );
-      recordsCard.appendChild(buildTable(recHeaders, recRows, { sort: sortState.maCandidateRecords }));
+      recordsCard.appendChild(buildTable(recHeaders, recRows, { sort: sortState.stateCandidateRecords }));
       view.appendChild(el("div", { className: "card-grid single", children: [recordsCard] }));
     }
 
     const years = f.time_series.map((r) => r.year).sort((a, b) => a - b);
-    makeChart("ma-cand-chart-ts", {
+    makeChart("state-cand-chart-ts", {
       type: "line",
       data: {
         labels: years.map(String),
@@ -2785,8 +2936,8 @@
           {
             label: f.name,
             data: years.map((y) => (f.time_series.find((r) => r.year === y) || {}).amount || 0),
-            borderColor: cssVar("--ma-accent"),
-            backgroundColor: cssVar("--ma-accent"),
+            borderColor: accent,
+            backgroundColor: accent,
             borderWidth: 2,
             pointRadius: 4,
             tension: 0.15,
@@ -2805,16 +2956,16 @@
     });
   }
 
-  function renderMaMethodologyCard() {
-    const meta = MA_DATA.meta;
+  function renderStateMethodologyCard(stateId) {
+    const meta = STATE_DATA[stateId].meta;
     const sourcesCard = el("div", { className: "card" });
-    sourcesCard.appendChild(maCardTitle("Data sources"));
+    sourcesCard.appendChild(stateCardTitle(stateId, "Data sources"));
     const sourcesList = el("ul", { className: "notes" });
     meta.sources.forEach((s) => sourcesList.appendChild(el("li", { text: s })));
     sourcesCard.appendChild(sourcesList);
 
     const notesCard = el("div", { className: "card" });
-    notesCard.appendChild(maCardTitle("Notes & limitations"));
+    notesCard.appendChild(stateCardTitle(stateId, "Notes & limitations"));
     const notesList = el("ul", { className: "notes" });
     meta.methodology_notes.forEach((s) => notesList.appendChild(el("li", { text: s })));
     notesCard.appendChild(notesList);
@@ -2822,32 +2973,43 @@
     return el("div", { className: "card-grid", children: [sourcesCard, notesCard] });
   }
 
-  function renderMaView() {
-    const view = document.getElementById("ma-view");
+  function renderStateView(stateId) {
+    const cfg = STATE_CONFIG_BY_ID[stateId];
+    const view = document.getElementById("state-view");
     view.innerHTML = "";
-    const meta = MA_DATA.meta;
-    const stats = MA_DATA.stats;
+    const data = STATE_DATA[stateId];
+    const meta = data.meta;
+    const stats = data.stats;
 
     view.appendChild(
       el("div", {
-        className: "ma-banner",
+        className: "state-banner",
+        attrs: { style: "--accent:var(--" + stateId + "-accent);--accent-soft:var(--" + stateId + "-accent-soft)" },
         children: [
           el("span", { text: "You're viewing the " }),
-          el("strong", { text: "Massachusetts" }),
+          el("strong", { text: cfg.label }),
           el("span", {
             text:
-              " tab — a separate dataset drawn from OCPF, the state's own campaign-finance disclosure system, covering the " +
+              " tab — a separate dataset drawn from " +
+              cfg.bannerSourceLabel +
+              ", covering the " +
               meta.date_range.start +
               " through " +
-              meta.date_range.end +
-              " window (the 2024 and 2026 cycles). Not merged with, and not directly comparable dollar-for-dollar to, the Federal tab.",
+              (meta.date_range.end || "present") +
+              " window" +
+              cfg.cycleWindowNote +
+              ". Not merged with, and not directly comparable dollar-for-dollar to, the Federal tab.",
           }),
         ],
       })
     );
 
     const statRow = el("div", { className: "stat-row" });
-    statRow.appendChild(statTile("Records scanned statewide", fmtInt.format(meta.records_scanned.expenditures + meta.records_scanned.subvendor), fmtInt.format(meta.records_scanned.expenditures) + " expenditures + " + fmtInt.format(meta.records_scanned.subvendor) + " subvendor payments"));
+    const recordsScannedSub =
+      typeof meta.records_scanned === "object"
+        ? fmtInt.format(meta.records_scanned.expenditures) + " expenditures + " + fmtInt.format(meta.records_scanned.subvendor) + " subvendor payments"
+        : null;
+    statRow.appendChild(statTile("Records scanned statewide", fmtInt.format(totalRecordsScanned(meta)), recordsScannedSub));
     statRow.appendChild(
       statTile(
         "Disclosed AI-vendor spend",
@@ -2862,17 +3024,25 @@
         "out of " + fmtInt.format(stats.total_filers_with_activity) + " filers with any expenditure activity"
       )
     );
-    statRow.appendChild(statTile("Subvendor payments tested", fmtInt.format(MA_DATA.subvendor.records_scanned), "OCPF's $5,000/$500 subcontractor-disclosure layer, no federal equivalent"));
+    // OCPF-only extra: its $5,000/$500 subcontractor-disclosure layer has
+    // no equivalent in the other states' disclosure data (see
+    // pipeline/lib/build_state_dataset.py's own module docstring), so
+    // `subvendor` only ever exists on the Massachusetts dataset.
+    if (data.subvendor) {
+      statRow.appendChild(statTile("Subvendor payments tested", fmtInt.format(data.subvendor.records_scanned), "OCPF's $5,000/$500 subcontractor-disclosure layer, no federal equivalent"));
+    }
     view.appendChild(statRow);
 
-    view.appendChild(el("div", { className: "card-grid single", children: [renderMaVendorsCard()] }));
-    view.appendChild(el("div", { className: "card-grid single", children: [renderMaTrendCard()] }));
-    if (MA_DATA.party_split) {
-      view.appendChild(el("div", { className: "card-grid", children: [renderMaPartyPieCard(), renderMaPartyTrendCard()] }));
+    view.appendChild(el("div", { className: "card-grid single", children: [renderStateVendorsCard(stateId)] }));
+    view.appendChild(el("div", { className: "card-grid single", children: [renderStateTrendCard(stateId)] }));
+    if (data.party_split) {
+      view.appendChild(el("div", { className: "card-grid", children: [renderStatePartyPieCard(stateId), renderStatePartyTrendCard(stateId)] }));
     }
-    view.appendChild(el("div", { className: "card-grid single", children: [renderMaWeeklyCard()] }));
-    view.appendChild(el("div", { className: "card-grid single", children: [renderMaNotableCard()] }));
-    view.appendChild(renderMaMethodologyCard());
+    if (data.weekly_histogram) {
+      view.appendChild(el("div", { className: "card-grid single", children: [renderStateWeeklyCard(stateId)] }));
+    }
+    view.appendChild(el("div", { className: "card-grid single", children: [renderStateNotableCard(stateId)] }));
+    view.appendChild(renderStateMethodologyCard(stateId));
 
     view.appendChild(
       el("p", {
@@ -2996,7 +3166,7 @@
         fed_amount_medium: v.amount_medium,
       });
     });
-    MA_DATA.vendors.forEach((v) => {
+    STATE_DATA.ma.vendors.forEach((v) => {
       const existing = byId[v.id];
       byId[v.id] = Object.assign({ id: v.id }, existing, {
         name: (existing && existing.name) || v.name,
@@ -3013,7 +3183,7 @@
       const fed_amount = r.fed_amount || 0;
       const ma_amount = r.ma_amount || 0;
       const fedSeries = (DATA.vendors_detail[r.id] || {}).time_series || [];
-      const maSeries = (MA_DATA.vendors_detail[r.id] || {}).time_series || [];
+      const maSeries = (STATE_DATA.ma.vendors_detail[r.id] || {}).time_series || [];
       const fedM = computeMomentum(fedSeries, "cycle");
       const maM = computeMomentum(maSeries, "year");
       const momentum = blendMomentum(fedM, fed_amount, maM, ma_amount);
@@ -3191,15 +3361,17 @@
   }
 
   // Top-level dispatcher: the URL hash decides both which dataset tab is
-  // active ("#/ma" for Massachusetts, anything else for Federal) and, on
-  // the Federal tab, which drill-down page (if any) to show. Keeping the
-  // tab itself in the hash means the browser's back/forward buttons and
-  // shared links both restore the right dataset, not just the right page.
+  // active ("#/wa" for Washington, etc., anything else for Federal) and,
+  // on the Federal tab, which drill-down page (if any) to show. Keeping
+  // the tab itself in the hash means the browser's back/forward buttons
+  // and shared links both restore the right dataset, not just the right
+  // page.
   function route() {
     const raw = location.hash.replace(/^#\/?/, "");
-    if (raw === "ma" || raw.indexOf("ma/") === 0) {
-      pendingMaSubroute = raw === "ma" ? "" : raw.slice(3);
-      activateDataset("ma");
+    const stateMatch = STATE_IDS.filter((id) => raw === id || raw.indexOf(id + "/") === 0)[0];
+    if (stateMatch) {
+      pendingStateSubroute = raw === stateMatch ? "" : raw.slice(stateMatch.length + 1);
+      activateDataset(stateMatch);
       return;
     }
     if (raw === "compare") {
@@ -3250,8 +3422,8 @@
       window.addEventListener("hashchange", route);
       window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
         renderAll();
-        if (MA_DATA) renderMaView();
-        if (MA_DATA && currentDataset === "compare") renderCompareView();
+        if (STATE_IDS.indexOf(currentDataset) !== -1 && STATE_DATA[currentDataset]) renderStateView(currentDataset);
+        if (currentDataset === "compare" && STATE_DATA.ma) renderCompareView();
       });
     })
     .catch((err) => {

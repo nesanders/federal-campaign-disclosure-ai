@@ -15,11 +15,23 @@
         <span class="dataset-tab-title">Federal</span>
         <span class="dataset-tab-sub">U.S. House &amp; Senate &middot; FEC</span>
       </button>
-      <button type="button" class="dataset-tab" data-dataset="ma" role="tab" aria-selected="false" aria-controls="ma-view">
+      <button type="button" class="dataset-tab" data-dataset="ma" role="tab" aria-selected="false" aria-controls="state-view" style="--accent:var(--ma-accent);--accent-soft:var(--ma-accent-soft)">
         <span class="dataset-tab-title">Massachusetts</span>
         <span class="dataset-tab-sub">State races &middot; OCPF</span>
       </button>
-      <button type="button" class="dataset-tab" data-dataset="compare" role="tab" aria-selected="false" aria-controls="compare-view">
+      <button type="button" class="dataset-tab" data-dataset="wa" role="tab" aria-selected="false" aria-controls="state-view" style="--accent:var(--wa-accent);--accent-soft:var(--wa-accent-soft)">
+        <span class="dataset-tab-title">Washington</span>
+        <span class="dataset-tab-sub">State races &middot; PDC</span>
+      </button>
+      <button type="button" class="dataset-tab" data-dataset="co" role="tab" aria-selected="false" aria-controls="state-view" style="--accent:var(--co-accent);--accent-soft:var(--co-accent-soft)">
+        <span class="dataset-tab-title">Colorado</span>
+        <span class="dataset-tab-sub">State races &middot; TRACER</span>
+      </button>
+      <button type="button" class="dataset-tab" data-dataset="ca" role="tab" aria-selected="false" aria-controls="state-view" style="--accent:var(--ca-accent);--accent-soft:var(--ca-accent-soft)">
+        <span class="dataset-tab-title">California</span>
+        <span class="dataset-tab-sub">State races &middot; CAL-ACCESS</span>
+      </button>
+      <button type="button" class="dataset-tab" data-dataset="compare" role="tab" aria-selected="false" aria-controls="compare-view" style="--accent:var(--compare-accent);--accent-soft:var(--compare-accent-soft)">
         <span class="dataset-tab-title">Compare</span>
         <span class="dataset-tab-sub">Federal vs. state, by vendor</span>
       </button>
@@ -294,8 +306,8 @@
 
   </div><!-- #main-view -->
 
-  <div id="ma-view" hidden></div>
-  <div id="ma-detail-view" hidden></div>
+  <div id="state-view" hidden></div>
+  <div id="state-detail-view" hidden></div>
 
   <div id="compare-view" hidden></div>
 
@@ -305,7 +317,7 @@
   <div class="wrap">
     <p id="footer-generated"></p>
     <p id="footer-source-federal">Source data: Federal Election Commission bulk downloads (fec.gov) and the unitedstates/congress-legislators project. This is an independent analysis and is not affiliated with the FEC or any campaign or vendor named here.</p>
-    <p id="footer-source-ma" hidden>Source data: Massachusetts Office of Campaign and Political Finance (ocpf.us), via its public API. This is an independent analysis and is not affiliated with OCPF or any campaign or vendor named here.</p>
+    <p id="footer-source-state" hidden></p>
     <p id="footer-source-compare" hidden>Source data: both of the above &mdash; Federal Election Commission bulk downloads (fec.gov) and Massachusetts Office of Campaign and Political Finance (ocpf.us). This is an independent analysis and is not affiliated with the FEC, OCPF, or any campaign or vendor named here.</p>
   </div>
 </footer>
