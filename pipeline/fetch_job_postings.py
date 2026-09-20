@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Scrape AI-relevant signal from campaign job postings on six boards:
+"""Scrape AI-relevant signal from campaign job postings on seven sources:
 the DCCC's House Campaign Job Board, Campaigns & Elections' jobs archive,
 RepublicanJobs.gop's opportunities page, the DLCC's careers page,
-Democracy Jobs, and EMILY's List's Lever-hosted board.
+Democracy Jobs, EMILY's List's Lever-hosted board, and a targeted sweep
+of individual candidate campaign sites for this cycle's competitive
+House/Senate races.
 
 This is a different kind of signal from every other fetch_*.py in this
 pipeline: it isn't itemized disclosure data with a stable historical
@@ -67,6 +69,30 @@ fetched HTML, not assumed):
     (development, comms, internships), not a feed of individual campaign
     postings the way DLCC's page is -- included for the same
     genuine-volume reason as Democracy Jobs.
+  - Campaign sites (pipeline/config/battleground_candidates_2026.json):
+    a targeted sweep of the 166 major-party candidates in this cycle's
+    50 House + 12 Senate Ballotpedia-listed battleground races who have
+    a campaign website on file, prompted by the entity-type breakdown
+    showing only 19 of 195 postings tied to a *named candidate
+    committee* -- everything else was a party/caucus committee, a PAC's
+    own hiring, or (RepublicanJobs.gop) anonymized entirely. Each
+    candidate's homepage is checked for a careers/jobs nav link; if
+    found and it's Lever-hosted, the same structured parser as EMILY's
+    List is reused; otherwise the linked page is kept only if its own
+    text has real job-posting content (a "Location:", "Compensation",
+    "Reports to" etc.), not just a nav stub or a policy page that
+    happens to say "jobs." A handful of candidates (Jon Ossoff, James
+    Talarico) link to a Workable-hosted board -- Workable's board pages
+    are a JS-rendered SPA with no content in a plain HTTP fetch, and its
+    llms.txt endpoint (meant for exactly this use case) returned a
+    persistent Cloudflare rate-limit (error 1015) from this pipeline's
+    IP even after backing off, so Workable-hosted boards are a known,
+    documented gap here, not silently skipped. Because these are
+    single-candidate sites with no institutional permanence -- unlike
+    DCCC's or RepublicanJobs.gop's own hosting, a losing or withdrawn
+    candidate's site can vanish entirely -- every posting found this way
+    gets its own durable HTML snapshot saved alongside the live URL (see
+    `_save_campaign_site_snapshot`), not just a link that may 404 later.
 """
 from __future__ import annotations
 
@@ -76,6 +102,7 @@ import re
 import sys
 import time
 from pathlib import Path
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -83,6 +110,8 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parent.parent
 STATE_DIR = ROOT / "data" / "processed" / "job_postings"
 SNAPSHOT_DIR = ROOT / "docs" / "data" / "job_snapshots"
+CAMPAIGN_SITE_SNAPSHOT_DIR = SNAPSHOT_DIR / "campaign_sites"
+CANDIDATE_ROSTER_PATH = ROOT / "pipeline" / "config" / "battleground_candidates_2026.json"
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
@@ -492,6 +521,215 @@ def fetch_emilyslist(session: requests.Session, fetch_details: bool = True) -> l
     return records
 
 
+CAREER_NAV_RE = re.compile(
+    r"^(careers?|jobs?(\s+openings?)?|current openings?|employment|work with us|we'?re hiring|now hiring|hiring)$",
+    re.I,
+)
+CAREER_HREF_RE = re.compile(r"/(careers?|jobs?|employment)(/|$|\?)", re.I)
+# A found "careers"-labeled link is often just a nav stub, a generic
+# "tell us about yourself for future openings" intake form, or (rarely) a
+# volunteer/organizing signup that happens to share nav wording -- none
+# of those are an actual open posting. STRONG indicators are phrases
+# specific to a real, individual role write-up; WEAK ones are supportive
+# but appear in intake forms too (a "Full-time/Part-time" role-type
+# dropdown, for instance), so several are required together. NEGATIVE
+# phrases are a hard veto regardless of indicator count -- caught after
+# an early version of this scraper mistook a real campaign's "submit
+# your resume, we'll keep you in mind" page for an open posting purely
+# because its dropdown menu contained "Full-time" and "Part-time".
+STRONG_JOB_INDICATOR_RE = re.compile(
+    r"\b(reports to|responsibilities|role summary|key responsibilities|job description|qualifications|what you'?ll do|about the role)\b",
+    re.I,
+)
+WEAK_JOB_INDICATOR_RE = re.compile(
+    r"\b(location:|compensation|salary|employment type|job type|full-time|part-time|apply by|how to apply)\b",
+    re.I,
+)
+NO_OPEN_POSTING_RE = re.compile(
+    r"\b(describe your ideal position|role classification|keep you in the loop|posted as soon as they'?re available|join our talent pool|express interest|stay informed about|notify (you |me )?when|let us know your interest|no (current |open )?(positions|openings|postings))\b",
+    re.I,
+)
+KNOWN_ATS_DOMAINS = {"jobs.lever.co", "apply.workable.com"}
+
+
+def _slugify(name: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+
+
+def _find_career_link(url: str) -> str | None:
+    """Best-effort: fetch a candidate's own homepage and look for a
+    careers/jobs nav link. A fresh, one-off session per site (this
+    function is called once per candidate, never reused) -- observed
+    elsewhere in this pipeline that a long-lived session making many
+    sequential requests to varied domains can intermittently return
+    pages missing widget/dynamic content; a new connection per site
+    avoids that.
+    """
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+    except Exception:
+        return None
+    soup = BeautifulSoup(resp.text, "lxml")
+    for a in soup.find_all("a", href=True):
+        text = a.get_text(" ", strip=True)
+        href = a["href"]
+        if CAREER_NAV_RE.match(text) or CAREER_HREF_RE.search(urlparse(href).path):
+            return urljoin(resp.url, href)
+    return None
+
+
+def _save_campaign_site_snapshot(slug: str, html_text: str) -> str:
+    """Durable evidence for a campaign-site posting: unlike DCCC or
+    RepublicanJobs.gop, a single candidate's own site has no
+    institutional permanence -- it can vanish entirely once a race ends
+    or a candidate drops out, taking the only record of the posting with
+    it. Saved to docs/data/job_snapshots/campaign_sites/ (committed,
+    overwritten each run but recoverable from git history), same pattern
+    as RepublicanJobs.gop's listing-page snapshot.
+    """
+    CAMPAIGN_SITE_SNAPSHOT_DIR.mkdir(parents=True, exist_ok=True)
+    (CAMPAIGN_SITE_SNAPSHOT_DIR / f"{slug}.html").write_text(html_text, encoding="utf-8")
+    return f"data/job_snapshots/campaign_sites/{slug}.html"
+
+
+def _fetch_lever_postings(career_url: str, cand: dict, slug: str, today: str) -> list[dict]:
+    """A candidate's own Lever-hosted board -- same structured markup as
+    EMILY's List's (see fetch_emilyslist): `.posting` divs with a
+    data-qa="posting-name" title. Lever is a real hiring ATS, so an empty
+    result here (a candidate with a Lever board but zero open postings,
+    e.g. observed for one Senate candidate) is trusted as a true "no
+    openings right now," not treated as a parse failure.
+    """
+    try:
+        resp = requests.get(career_url, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+    except Exception as exc:
+        print(f"  [campaign_sites] could not fetch Lever board for {cand['name']!r}: {exc}", file=sys.stderr)
+        return []
+    snapshot_path = _save_campaign_site_snapshot(slug, resp.text)
+    soup = BeautifulSoup(resp.text, "lxml")
+    records = []
+    for posting in soup.find_all(class_="posting"):
+        title_el = posting.find(attrs={"data-qa": "posting-name"})
+        title = title_el.get_text(strip=True) if title_el else None
+        link = posting.find(class_="posting-title")
+        href = link.get("href") if link else None
+        cats = [c.get_text(strip=True) for c in posting.find_all(class_="posting-category")]
+        location = next((c for c in cats if c and c not in ("Full Time", "Part Time", "Intern")), None)
+        if not title:
+            continue
+        body_text = _fetch_external_body_text(requests.Session(), href, "campaign_sites") if href else None
+        records.append(
+            {
+                "id": _posting_id("campaign_sites", cand["name"], title),
+                "source": "campaign_sites",
+                "party": cand["party"],
+                "title": title,
+                "org": f"{cand['name']} for {'Senate' if cand['chamber'] == 'senate' else 'Congress'}",
+                "office": None,
+                "location": location,
+                "posted_date": None,
+                "url": href,
+                "snapshot_path": snapshot_path,
+                "snapshot_captured_at": today,
+                "body_text": body_text,
+                "first_seen": today,
+            }
+        )
+    return records
+
+
+def _fetch_generic_career_page(career_url: str, cand: dict, slug: str, today: str) -> dict | None:
+    """A candidate's own custom careers/jobs page -- no common structure
+    to assume across ~150 independent campaign sites, so the whole page
+    is treated as a single posting record (title from the page's own
+    <title>/<h1>, body from its full text) rather than trying to segment
+    individual listings. Discarded (returns None) unless the page's own
+    text has real job-posting content -- otherwise a "Careers" nav link
+    that's actually an empty stub page, or a volunteer/organizing signup
+    that happens to share nav wording with a jobs link, would be
+    misreported as an open posting.
+    """
+    try:
+        resp = requests.get(career_url, headers=HEADERS, timeout=20)
+        resp.raise_for_status()
+    except Exception as exc:
+        print(f"  [campaign_sites] could not fetch careers page for {cand['name']!r}: {exc}", file=sys.stderr)
+        return None
+    soup = BeautifulSoup(resp.text, "lxml")
+    body_text = soup.get_text(" ", strip=True)
+    if NO_OPEN_POSTING_RE.search(body_text):
+        return None
+    has_strong = bool(STRONG_JOB_INDICATOR_RE.search(body_text))
+    weak_hits = len(set(WEAK_JOB_INDICATOR_RE.findall(body_text)))
+    if not has_strong and weak_hits < 3:
+        return None
+    snapshot_path = _save_campaign_site_snapshot(slug, resp.text)
+    title_el = soup.find("h1") or soup.find("title")
+    title = title_el.get_text(strip=True) if title_el else "Campaign job posting"
+    return {
+        "id": _posting_id("campaign_sites", cand["name"], career_url),
+        "source": "campaign_sites",
+        "party": cand["party"],
+        "title": title,
+        "org": f"{cand['name']} for {'Senate' if cand['chamber'] == 'senate' else 'Congress'}",
+        "office": None,
+        "location": None,
+        "posted_date": None,
+        "url": resp.url,
+        "snapshot_path": snapshot_path,
+        "snapshot_captured_at": today,
+        "body_text": body_text,
+        "first_seen": today,
+    }
+
+
+def fetch_campaign_sites(session: requests.Session, fetch_details: bool = True) -> list[dict]:
+    """See the module docstring's "Campaign sites" entry. `session` is
+    accepted only to match every other fetch_* signature -- each request
+    here uses its own fresh connection (see _find_career_link)."""
+    if not CANDIDATE_ROSTER_PATH.exists():
+        print(f"  [campaign_sites] roster not found at {CANDIDATE_ROSTER_PATH}, skipping", file=sys.stderr)
+        return []
+    with open(CANDIDATE_ROSTER_PATH, encoding="utf-8") as f:
+        roster = json.load(f)
+
+    today = time.strftime("%Y-%m-%d")
+    records = []
+    n_checked = 0
+    n_with_career_link = 0
+    for cand in roster:
+        homepage = cand.get("campaign_website")
+        if not homepage:
+            continue
+        n_checked += 1
+        career_url = _find_career_link(homepage)
+        if not career_url:
+            continue
+        n_with_career_link += 1
+        slug = _slugify(cand["name"])
+        netloc = urlparse(career_url).netloc
+        if netloc == "jobs.lever.co":
+            records.extend(_fetch_lever_postings(career_url, cand, slug, today))
+        elif netloc == "apply.workable.com":
+            # Workable's board pages are a JS-rendered SPA (empty <div
+            # id="app"> in the raw HTML) and its llms.txt endpoint --
+            # meant for exactly this kind of machine access -- returned a
+            # persistent Cloudflare rate-limit (error 1015) from this
+            # pipeline's IP. Documented gap, not silently dropped.
+            print(f"  [campaign_sites] {cand['name']!r} uses Workable ({career_url}) -- not scraped, see module docstring", file=sys.stderr)
+            continue
+        else:
+            rec = _fetch_generic_career_page(career_url, cand, slug, today)
+            if rec:
+                records.append(rec)
+        time.sleep(0.2)
+
+    print(f"  [campaign_sites] checked {n_checked} candidate sites, {n_with_career_link} had a careers/jobs link, {len(records)} real posting(s) found", file=sys.stderr)
+    return records
+
+
 def main() -> None:
     STATE_DIR.mkdir(parents=True, exist_ok=True)
     session = requests.Session()
@@ -504,6 +742,7 @@ def main() -> None:
         ("dlcc", fetch_dlcc),
         ("democracyjobs", fetch_democracyjobs),
         ("emilyslist", fetch_emilyslist),
+        ("campaign_sites", fetch_campaign_sites),
     ):
         try:
             records = fetch_fn(session)

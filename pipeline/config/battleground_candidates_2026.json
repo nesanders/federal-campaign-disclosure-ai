@@ -1,0 +1,1164 @@
+[
+  {
+    "chamber": "house",
+    "name": "Amish Shah",
+    "party": "Democratic",
+    "campaign_website": "https://www.amishforarizona.com",
+    "domain": "www.amishforarizona.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Jay Feely",
+    "party": "Republican",
+    "campaign_website": "https://www.jayfeelyforcongress.com",
+    "domain": "www.jayfeelyforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Juan Ciscomani",
+    "party": "Republican",
+    "campaign_website": "https://juanciscomani.com",
+    "domain": "juanciscomani.com"
+  },
+  {
+    "chamber": "house",
+    "name": "JoAnna Mendoza",
+    "party": "Democratic",
+    "campaign_website": "https://www.joannamendoza.com/",
+    "domain": "www.joannamendoza.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Connie Chan",
+    "party": "Democratic",
+    "campaign_website": "https://www.conniechansf.com/",
+    "domain": "www.conniechansf.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Scott Wiener",
+    "party": "Democratic",
+    "campaign_website": "https://www.scottwiener.com/",
+    "domain": "www.scottwiener.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Adam Gray",
+    "party": "Democratic",
+    "campaign_website": "https://www.adamgrayforcongress.com/",
+    "domain": "www.adamgrayforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Kevin Lincoln II",
+    "party": "Republican",
+    "campaign_website": "https://www.kevinlincolnforcongress.com",
+    "domain": "www.kevinlincolnforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "David G. Valadao",
+    "party": "Republican",
+    "campaign_website": "https://valadaoforcongress.com",
+    "domain": "valadaoforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Randy Villegas",
+    "party": "Democratic",
+    "campaign_website": "https://www.villegasforcongress.com/",
+    "domain": "www.villegasforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Jimmy Gomez",
+    "party": "Democratic",
+    "campaign_website": "https://jimmygomezforcongress.com",
+    "domain": "jimmygomezforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Angela Gonzales-Torres",
+    "party": "Democratic",
+    "campaign_website": "https://www.angela4congress.com/",
+    "domain": "www.angela4congress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Ken Calvert",
+    "party": "Republican",
+    "campaign_website": "https://calvertforcongress.com/",
+    "domain": "calvertforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Young Kim",
+    "party": "Republican",
+    "campaign_website": "https://youngkimforcongress.com",
+    "domain": "youngkimforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Linda S\u00e1nchez",
+    "party": "Democratic",
+    "campaign_website": "https://voteforlinda.com",
+    "domain": "voteforlinda.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Mitch Clemmons",
+    "party": "Republican",
+    "campaign_website": "https://electmitchclemmons.com",
+    "domain": "electmitchclemmons.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Derek Tran",
+    "party": "Democratic",
+    "campaign_website": "https://www.derektranforcongress.com",
+    "domain": "www.derektranforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Chuong Vo",
+    "party": "Republican",
+    "campaign_website": "https://www.vo4congress.com/",
+    "domain": "www.vo4congress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Marni von Wilpert",
+    "party": "Democratic",
+    "campaign_website": "https://www.marnivonwilpert.com/",
+    "domain": "www.marnivonwilpert.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Jim Desmond",
+    "party": "Republican",
+    "campaign_website": "https://www.desmondforcongress.com/",
+    "domain": "www.desmondforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Mike Thompson",
+    "party": "Democratic",
+    "campaign_website": "https://www.mikethompsonforcongress.com",
+    "domain": "www.mikethompsonforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Eric Jones",
+    "party": "Democratic",
+    "campaign_website": "https://www.ericjones.us/",
+    "domain": "www.ericjones.us"
+  },
+  {
+    "chamber": "house",
+    "name": "Jeff Crank",
+    "party": "Republican",
+    "campaign_website": "https://jeffcrankforcongress.com/",
+    "domain": "jeffcrankforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Jessica Killin",
+    "party": "Democratic",
+    "campaign_website": "https://killinforcolorado.com",
+    "domain": "killinforcolorado.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Gabe Evans",
+    "party": "Republican",
+    "campaign_website": "https://electgabeevans.com/",
+    "domain": "electgabeevans.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Manny Rutinel",
+    "party": "Democratic",
+    "campaign_website": "https://www.mannyforcolorado.com/",
+    "domain": "www.mannyforcolorado.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Kathy Castor",
+    "party": "Democratic",
+    "campaign_website": "https://www.castorforcongress.com/",
+    "domain": "www.castorforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Mike Beltran",
+    "party": "Republican",
+    "campaign_website": "https://beltranforcongress.com",
+    "domain": "beltranforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Pia Dandiya",
+    "party": "Democratic",
+    "campaign_website": "https://piaforcongress.com/",
+    "domain": "piaforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Casey Askar",
+    "party": "Republican",
+    "campaign_website": "https://www.caseyaskar.com/",
+    "domain": "www.caseyaskar.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Lois Frankel",
+    "party": "Democratic",
+    "campaign_website": "https://loisfrankelforcongress.com",
+    "domain": "loisfrankelforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Deborah Adeimy",
+    "party": "Republican",
+    "campaign_website": "https://debadeimy4congress.com/",
+    "domain": "debadeimy4congress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Jared Evan Moskowitz",
+    "party": "Democratic",
+    "campaign_website": "https://jaredforflorida.com",
+    "domain": "jaredforflorida.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Scott Singer",
+    "party": "Republican",
+    "campaign_website": "https://www.scottsingerusa.com/",
+    "domain": "www.scottsingerusa.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Patty Garcia",
+    "party": "Democratic",
+    "campaign_website": "https://pattyforillinois.com/",
+    "domain": "pattyforillinois.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Lupe Castillo",
+    "party": "Republican",
+    "campaign_website": "https://castillolupe.com/",
+    "domain": "castillolupe.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Mariannette Miller-Meeks",
+    "party": "Republican",
+    "campaign_website": "https://drmillermeeks.com",
+    "domain": "drmillermeeks.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Christina Bohannan",
+    "party": "Democratic",
+    "campaign_website": "https://bohannanforcongress.com/",
+    "domain": "bohannanforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Zach Nunn",
+    "party": "Republican",
+    "campaign_website": "https://zachnunn.com",
+    "domain": "zachnunn.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Sarah Trone Garriott",
+    "party": "Democratic",
+    "campaign_website": "https://sarahforiowa.com/",
+    "domain": "sarahforiowa.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Matthew Dunlap",
+    "party": "Democratic",
+    "campaign_website": "https://www.mattdunlapforuscongress.com/",
+    "domain": "www.mattdunlapforuscongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Paul LePage",
+    "party": "Republican",
+    "campaign_website": "https://lepageforcongress.com/",
+    "domain": "lepageforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Christina Hines",
+    "party": "Democratic",
+    "campaign_website": "https://www.christinahinesforcongress.com/",
+    "domain": "www.christinahinesforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Michael Bouchard",
+    "party": "Republican",
+    "campaign_website": "http://www.bouchardforcongress.com/",
+    "domain": "www.bouchardforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Tom Barrett",
+    "party": "Republican",
+    "campaign_website": "https://tombarrettforcongress.com/",
+    "domain": "tombarrettforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "William Lawrence",
+    "party": "Democratic",
+    "campaign_website": "http://www.wewill2026.com/",
+    "domain": "www.wewill2026.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Kristen McDonald Rivet",
+    "party": "Democratic",
+    "campaign_website": "https://kristenmcdonaldrivet.com/",
+    "domain": "kristenmcdonaldrivet.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Thomas J. Smith",
+    "party": "Republican",
+    "campaign_website": "https://tomsmithformi.com/",
+    "domain": "tomsmithformi.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Sam Forstag",
+    "party": "Democratic",
+    "campaign_website": "https://www.samformontana.com",
+    "domain": "www.samformontana.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Aaron Flint",
+    "party": "Republican",
+    "campaign_website": "https://flintformontana.com/",
+    "domain": "flintformontana.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Denise Powell",
+    "party": "Democratic",
+    "campaign_website": "https://deniseforcongress.org",
+    "domain": "deniseforcongress.org"
+  },
+  {
+    "chamber": "house",
+    "name": "Brinker Harding",
+    "party": "Republican",
+    "campaign_website": "https://www.brinkerharding.com/",
+    "domain": "www.brinkerharding.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Dina Titus",
+    "party": "Democratic",
+    "campaign_website": "https://www.dinatitus.com/",
+    "domain": "www.dinatitus.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Carrie Buck",
+    "party": "Republican",
+    "campaign_website": "https://carriebuckforcongress.com",
+    "domain": "carriebuckforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Susie Lee",
+    "party": "Democratic",
+    "campaign_website": "https://susieleeforcongress.com/",
+    "domain": "susieleeforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Marty O'Donnell",
+    "party": "Republican",
+    "campaign_website": "https://martyforcongress.vote",
+    "domain": "martyforcongress.vote"
+  },
+  {
+    "chamber": "house",
+    "name": "Carleigh Beriont",
+    "party": "Democratic",
+    "campaign_website": "https://www.carleighberiont.com/",
+    "domain": "www.carleighberiont.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Sarah E. Chadzynski",
+    "party": "Democratic",
+    "campaign_website": "https://sarahc603.com",
+    "domain": "sarahc603.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Bill Conlin",
+    "party": "Democratic",
+    "campaign_website": "https://www.billconlin4.us/",
+    "domain": "www.billconlin4.us"
+  },
+  {
+    "chamber": "house",
+    "name": "Matthew Emerson",
+    "party": "Democratic",
+    "campaign_website": "https://electemerson.com",
+    "domain": "electemerson.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Heath Howard",
+    "party": "Democratic",
+    "campaign_website": "https://www.heathhowardnh.com",
+    "domain": "www.heathhowardnh.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Stefany Shaheen",
+    "party": "Democratic",
+    "campaign_website": "https://stefanyshaheen.com",
+    "domain": "stefanyshaheen.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Maura Sullivan",
+    "party": "Democratic",
+    "campaign_website": "https://maurafornh.com/",
+    "domain": "maurafornh.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Christian Urrutia",
+    "party": "Democratic",
+    "campaign_website": "https://urrutiafornh.com/",
+    "domain": "urrutiafornh.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Lindsey Anderson",
+    "party": "Republican",
+    "campaign_website": "https://www.lindseyforcongress.com/",
+    "domain": "www.lindseyforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Melissa Bailey",
+    "party": "Republican",
+    "campaign_website": "https://www.melissabailey4nh.com",
+    "domain": "www.melissabailey4nh.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Brian Cole",
+    "party": "Republican",
+    "campaign_website": "https://cole4nh.com",
+    "domain": "cole4nh.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Anthony DiLorenzo",
+    "party": "Republican",
+    "campaign_website": "https://dilorenzoforcongress.com/",
+    "domain": "dilorenzoforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Hollie Noveletsky",
+    "party": "Republican",
+    "campaign_website": "https://www.holliefornewhampshire.com/",
+    "domain": "www.holliefornewhampshire.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Thomas Kean Jr.",
+    "party": "Republican",
+    "campaign_website": "https://tomkean.com/",
+    "domain": "tomkean.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Rebecca Bennett",
+    "party": "Democratic",
+    "campaign_website": "https://rebeccabennettforcongress.com",
+    "domain": "rebeccabennettforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Nellie Pou",
+    "party": "Democratic",
+    "campaign_website": "https://www.nelliepoufornewjersey.com",
+    "domain": "www.nelliepoufornewjersey.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Rosemary Pino",
+    "party": "Republican",
+    "campaign_website": "https://rosiepinofornj.com/",
+    "domain": "rosiepinofornj.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Gabriel Vasquez",
+    "party": "Democratic",
+    "campaign_website": "https://gabeforcongress.com",
+    "domain": "gabeforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Greg Cunningham",
+    "party": "Republican",
+    "campaign_website": "http://www.cunninghamfornm.com/",
+    "domain": "www.cunninghamfornm.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Michael Lawler",
+    "party": "Republican",
+    "campaign_website": "https://www.lawlerforcongress.com",
+    "domain": "www.lawlerforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Cait Conley",
+    "party": "Democratic",
+    "campaign_website": "https://caitconley.com/",
+    "domain": "caitconley.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Josh Riley",
+    "party": "Democratic",
+    "campaign_website": "https://joshrileyforcongress.com",
+    "domain": "joshrileyforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Peter Oberacker",
+    "party": "Republican",
+    "campaign_website": "https://www.peterforny19.com/",
+    "domain": "www.peterforny19.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Tom Suozzi",
+    "party": "Democratic",
+    "campaign_website": "https://suozziforcongress.com/",
+    "domain": "suozziforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Michael LiPetri Jr.",
+    "party": "Republican",
+    "campaign_website": "https://www.mikelipetriforcongress.com/",
+    "domain": "www.mikelipetriforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Laura Gillen",
+    "party": "Democratic",
+    "campaign_website": "https://lauragillen.com/",
+    "domain": "lauragillen.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Jeanine Driscoll",
+    "party": "Republican",
+    "campaign_website": "https://driscoll4congress.com/",
+    "domain": "driscoll4congress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Jamie Ager",
+    "party": "Democratic",
+    "campaign_website": "https://agerforcongress.com/",
+    "domain": "agerforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Jennifer Balkcom",
+    "party": "Republican",
+    "campaign_website": "https://www.jenniferbalkcom.com/",
+    "domain": "www.jenniferbalkcom.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Donald Davis",
+    "party": "Democratic",
+    "campaign_website": "https://votedondavis.com",
+    "domain": "votedondavis.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Laurie Buckhout",
+    "party": "Republican",
+    "campaign_website": "https://www.lauriebuckhoutforcongress.com/",
+    "domain": "www.lauriebuckhoutforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Max Miller",
+    "party": "Republican",
+    "campaign_website": "https://www.votemaxmiller.com",
+    "domain": "www.votemaxmiller.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Brian Poindexter",
+    "party": "Democratic",
+    "campaign_website": "https://poindexterforcongress.com/",
+    "domain": "poindexterforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Marcy Kaptur",
+    "party": "Democratic",
+    "campaign_website": "https://marcykaptur.com",
+    "domain": "marcykaptur.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Derek Merrin",
+    "party": "Republican",
+    "campaign_website": "https://www.derekmerrin.com",
+    "domain": "www.derekmerrin.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Scott Perry",
+    "party": "Republican",
+    "campaign_website": "https://patriotsforperry.com",
+    "domain": "patriotsforperry.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Janelle Stelson",
+    "party": "Democratic",
+    "campaign_website": "https://janellestelson.com",
+    "domain": "janellestelson.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Ryan Mackenzie",
+    "party": "Republican",
+    "campaign_website": "https://www.mackenzieforcongress.com",
+    "domain": "www.mackenzieforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Bob Brooks",
+    "party": "Democratic",
+    "campaign_website": "https://brooksforcongress.com/",
+    "domain": "brooksforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Rob Bresnahan Jr.",
+    "party": "Republican",
+    "campaign_website": "https://robforpa.com",
+    "domain": "robforpa.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Paige Cognetti",
+    "party": "Democratic",
+    "campaign_website": "https://paigeforpa.com/",
+    "domain": "paigeforpa.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Monica De La Cruz",
+    "party": "Republican",
+    "campaign_website": "https://www.monicaforcongress.us",
+    "domain": "www.monicaforcongress.us"
+  },
+  {
+    "chamber": "house",
+    "name": "Bobby Pulido",
+    "party": "Democratic",
+    "campaign_website": "https://bobbypulidofortexas.com/",
+    "domain": "bobbypulidofortexas.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Henry Cuellar",
+    "party": "Democratic",
+    "campaign_website": "https://henrycuellar.com",
+    "domain": "henrycuellar.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Tano Tijerina",
+    "party": "Republican",
+    "campaign_website": "https://www.tanoforcongress.com/",
+    "domain": "www.tanoforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Vicente Gonzalez Jr.",
+    "party": "Democratic",
+    "campaign_website": "https://www.vicentegonzalez.com",
+    "domain": "www.vicentegonzalez.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Eric Flores",
+    "party": "Republican",
+    "campaign_website": "https://www.ericflores.com/",
+    "domain": "www.ericflores.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Jennifer Kiggans",
+    "party": "Republican",
+    "campaign_website": "https://jenforcongress.com",
+    "domain": "jenforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Elaine Luria",
+    "party": "Democratic",
+    "campaign_website": "https://elaineforcongress.com/",
+    "domain": "elaineforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Eugene Vindman",
+    "party": "Democratic",
+    "campaign_website": "https://vindmanforcongress.com",
+    "domain": "vindmanforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Douglas Ollivant",
+    "party": "Republican",
+    "campaign_website": "https://www.dougforvirginia.com/",
+    "domain": "www.dougforvirginia.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Marie Gluesenkamp Perez",
+    "party": "Democratic",
+    "campaign_website": "https://marieforcongress.com",
+    "domain": "marieforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "John Braun",
+    "party": "Republican",
+    "campaign_website": "https://www.votebraun.com/",
+    "domain": "www.votebraun.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Derrick Van Orden",
+    "party": "Republican",
+    "campaign_website": "https://www.vanordenforcongress.com",
+    "domain": "www.vanordenforcongress.com"
+  },
+  {
+    "chamber": "house",
+    "name": "Rebecca Cooke",
+    "party": "Democratic",
+    "campaign_website": "https://www.CookeForWisconsin.com",
+    "domain": "www.CookeForWisconsin.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Daniel S. Sullivan",
+    "party": "Republican",
+    "campaign_website": "https://dansullivanforalaska.com/",
+    "domain": "dansullivanforalaska.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Carol Hafner",
+    "party": "Democratic",
+    "campaign_website": "https://carolhafner.com/",
+    "domain": "carolhafner.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Mary Peltola",
+    "party": "Democratic",
+    "campaign_website": "https://marypeltola.com/",
+    "domain": "marypeltola.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Ashley B. Moody",
+    "party": "Republican",
+    "campaign_website": "https://ashleymoody.com",
+    "domain": "ashleymoody.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Angela Nixon",
+    "party": "Democratic",
+    "campaign_website": "https://angienixon.com/",
+    "domain": "angienixon.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Jon Ossoff",
+    "party": "Democratic",
+    "campaign_website": "https://electjon.com/",
+    "domain": "electjon.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Earl Carter",
+    "party": "Republican",
+    "campaign_website": "https://buddycarterforcongress.com",
+    "domain": "buddycarterforcongress.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Christina Loren Clement",
+    "party": "Republican",
+    "campaign_website": "https://stateoflocnation.com/usblack-code-house-gov",
+    "domain": "stateoflocnation.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Mike Collins",
+    "party": "Republican",
+    "campaign_website": "https://mikecollinsga.com",
+    "domain": "mikecollinsga.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "John Coyne",
+    "party": "Republican",
+    "campaign_website": "http://www.johncoyneforussenate.com/",
+    "domain": "www.johncoyneforussenate.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Derek Dooley",
+    "party": "Republican",
+    "campaign_website": "https://www.dooleyforgeorgia.com",
+    "domain": "www.dooleyforgeorgia.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Jonathan McColumn",
+    "party": "Republican",
+    "campaign_website": "https://www.jonathanmccolumn.com",
+    "domain": "www.jonathanmccolumn.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Josh Turek",
+    "party": "Democratic",
+    "campaign_website": "https://turek4iowa.com",
+    "domain": "turek4iowa.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Zach Wahls",
+    "party": "Democratic",
+    "campaign_website": "https://zachwahls.com",
+    "domain": "zachwahls.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Jim Carlin",
+    "party": "Republican",
+    "campaign_website": "https://carlinforussenate.com/",
+    "domain": "carlinforussenate.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Ashley Hinson",
+    "party": "Republican",
+    "campaign_website": "https://ashleyhinson.com",
+    "domain": "ashleyhinson.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Susan Collins",
+    "party": "Republican",
+    "campaign_website": "https://susancollins.com",
+    "domain": "susancollins.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "David Costello",
+    "party": "Democratic",
+    "campaign_website": "https://www.costelloforsenate.com/",
+    "domain": "www.costelloforsenate.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Elizabeth Cote",
+    "party": "Democratic",
+    "campaign_website": "https://coteforsenate.com/",
+    "domain": "coteforsenate.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Troy Dale Jackson",
+    "party": "Democratic",
+    "campaign_website": "https://www.jacksonformaine.com/",
+    "domain": "www.jacksonformaine.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Andrea LaFlamme",
+    "party": "Democratic",
+    "campaign_website": "https://www.andreaformaine.com",
+    "domain": "www.andreaformaine.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Kristina Libby",
+    "party": "Democratic",
+    "campaign_website": "https://www.kristinalibby.com/kristina-libby-for-senate",
+    "domain": "www.kristinalibby.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Graham Platner",
+    "party": "Democratic",
+    "campaign_website": "https://www.grahamforsenate.com",
+    "domain": "www.grahamforsenate.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Ashley Webb",
+    "party": "Democratic",
+    "campaign_website": "https://www.truthpointusa.com/",
+    "domain": "www.truthpointusa.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Abdul El-Sayed",
+    "party": "Democratic",
+    "campaign_website": "https://abdulforsenate.com/",
+    "domain": "abdulforsenate.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Mallory McMorrow",
+    "party": "Democratic",
+    "campaign_website": "https://mcmorrowformichigan.com",
+    "domain": "mcmorrowformichigan.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Haley Stevens",
+    "party": "Democratic",
+    "campaign_website": "https://haleyformi.com",
+    "domain": "haleyformi.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Mike Rogers",
+    "party": "Republican",
+    "campaign_website": "https://rogersforsenate.com",
+    "domain": "rogersforsenate.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Alani Bankhead",
+    "party": "Democratic",
+    "campaign_website": "https://alaniformt.com",
+    "domain": "alaniformt.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Michael Black Wolf",
+    "party": "Democratic",
+    "campaign_website": "https://blackwolfformontana.com",
+    "domain": "blackwolfformontana.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Michael Hummert",
+    "party": "Democratic",
+    "campaign_website": "https://www.mikeformt.com",
+    "domain": "www.mikeformt.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Christopher Kehoe",
+    "party": "Democratic",
+    "campaign_website": "https://christopherkehoe.com",
+    "domain": "christopherkehoe.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Reilly Neill",
+    "party": "Democratic",
+    "campaign_website": "https://reillyformontana.com",
+    "domain": "reillyformontana.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Kurt Alme",
+    "party": "Republican",
+    "campaign_website": "https://almeforsenate.com/",
+    "domain": "almeforsenate.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Lee Calhoun",
+    "party": "Republican",
+    "campaign_website": "https://www.calhounformt.com",
+    "domain": "www.calhounformt.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Charles A. Walking Child",
+    "party": "Republican",
+    "campaign_website": "https://www.charleswalkingchildforussenate.com/",
+    "domain": "www.charleswalkingchildforussenate.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Pete Ricketts",
+    "party": "Republican",
+    "campaign_website": "https://petericketts.com",
+    "domain": "petericketts.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Cindy Burbank",
+    "party": "Democratic",
+    "campaign_website": "https://cindyburbank.com/",
+    "domain": "cindyburbank.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "William Forbes",
+    "party": "Democratic",
+    "campaign_website": "https://forbesfornebraska.com/",
+    "domain": "forbesfornebraska.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Todd Knobel",
+    "party": "Republican",
+    "campaign_website": "http://toddknobel.org/",
+    "domain": "toddknobel.org"
+  },
+  {
+    "chamber": "senate",
+    "name": "Debb Axtell Schultz",
+    "party": "Republican",
+    "campaign_website": "https://debschultz4ne.com/",
+    "domain": "debschultz4ne.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Mac Stevens",
+    "party": "Republican",
+    "campaign_website": "https://www.mac4nebraska.com/",
+    "domain": "www.mac4nebraska.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Karishma Manzur",
+    "party": "Democratic",
+    "campaign_website": "https://www.karishmaforsenate.com/",
+    "domain": "www.karishmaforsenate.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Chris Pappas",
+    "party": "Democratic",
+    "campaign_website": "https://chrispappas.org",
+    "domain": "chrispappas.org"
+  },
+  {
+    "chamber": "senate",
+    "name": "Maxwell Saal",
+    "party": "Democratic",
+    "campaign_website": "https://maxfornh.com",
+    "domain": "maxfornh.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Tom Alciere",
+    "party": "Republican",
+    "campaign_website": "https://tomalciere.us",
+    "domain": "tomalciere.us"
+  },
+  {
+    "chamber": "senate",
+    "name": "Scott Brown",
+    "party": "Republican",
+    "campaign_website": "https://scottbrown.com/",
+    "domain": "scottbrown.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Sky Danley",
+    "party": "Republican",
+    "campaign_website": "https://www.skydanley2026.com",
+    "domain": "www.skydanley2026.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "John Sununu",
+    "party": "Republican",
+    "campaign_website": "https://www.sununusenator.com/",
+    "domain": "www.sununusenator.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Roy Cooper",
+    "party": "Democratic",
+    "campaign_website": "https://roycooper.com",
+    "domain": "roycooper.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Michael Whatley",
+    "party": "Republican",
+    "campaign_website": "https://www.michaelwhatley.com",
+    "domain": "www.michaelwhatley.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Jon Husted",
+    "party": "Republican",
+    "campaign_website": "https://www.jonhustedforsenate.com",
+    "domain": "www.jonhustedforsenate.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Sherrod Brown",
+    "party": "Democratic",
+    "campaign_website": "https://www.sherrodbrown.com",
+    "domain": "www.sherrodbrown.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "James Talarico",
+    "party": "Democratic",
+    "campaign_website": "https://jamestalarico.com/",
+    "domain": "jamestalarico.com"
+  },
+  {
+    "chamber": "senate",
+    "name": "Ken Paxton",
+    "party": "Republican",
+    "campaign_website": "https://www.kenpaxton.com",
+    "domain": "www.kenpaxton.com"
+  }
+]
