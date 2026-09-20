@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "generated_at": "2026-09-20T21:54:27+00:00",
+    "population_source": "U.S. Census Bureau, Vintage 2024 national and state population estimates (as of July 1, 2024): https://www.census.gov/newsroom/press-kits/2024/national-state-population-estimates.html",
+    "covered_states": [
+      "ma",
+      "wa",
+      "co",
+      "ca"
+    ],
+    "us_total_population": 340110988,
+    "covered_population": 60483107,
+    "covered_population_share": 0.1778,
+    "scale_factor": 5.623,
+    "methodology_notes": [
+      "This is a simple population-weighted scale-up, NOT a statistical estimate. It takes this project's combined disclosed AI-vendor spend, candidate-committee count, and vendor-adoption count across the four states this site currently covers (Massachusetts, Washington, Colorado, California), divides by those four states' combined population, and multiplies by the U.S. total (50 states + DC) to get an order-of-magnitude national figure.",
+      "The four covered states are not a random or representative sample of the country. All four have among the more itemization-rich state disclosure systems (a low or no itemization threshold, as opposed to a state that only discloses large expenditures), and, over the window this site covers, elect Democratic-leaning federal and statewide delegations (Colorado's is the most competitive of the four). California in particular concentrates a disproportionate share of the AI industry itself, which may inflate observed AI-vendor adoption relative to a typical state. A projection built from a different set of four states could look very different, and this site covers zero states won by Republican presidential or gubernatorial candidates.",
+      "Each covered state's own disclosure-completeness gaps (documented on that state's own tab) carry through unchanged into this projection: Colorado and California disclose no party field at all; disclosed AI spend is a floor on real usage everywhere on this site, since a campaign paying via a corporate card, staffer, or consultant is invisible to this pipeline regardless of state; and each state's own itemization threshold and disclosure cadence differs from the others.",
+      "The vendor-count projection is the least reliable of the three figures above: it sums each covered state's own distinct-vendor count and scales that sum by population, which implicitly assumes vendor variety keeps growing linearly with population the way total spend roughly might. In reality, national vendor diversity would saturate well before 50 states' worth of population -- most additional states would independently rediscover the same handful of major tools (OpenAI, Anthropic, Google) rather than each contributing entirely new ones. The number of distinct vendors actually identified across the four covered states so far ('covered' below) is a more honest floor than the scaled projection figure, which is better read as 'expected state-by-vendor adoption pairs' than as a distinct-vendor count."
+    ]
+  },
+  "states": {
+    "ma": {
+      "label": "Massachusetts",
+      "population": 7136171,
+      "spend_all_eras": 24187.04,
+      "spend_generative": 11696.8,
+      "filers_all_eras": 59,
+      "filers_generative": 42,
+      "distinct_vendors_all_eras": 17,
+      "distinct_vendors_generative": 11
+    },
+    "wa": {
+      "label": "Washington",
+      "population": 7958180,
+      "spend_all_eras": 54941.49,
+      "spend_generative": 4685.01,
+      "filers_all_eras": 28,
+      "filers_generative": 15,
+      "distinct_vendors_all_eras": 10,
+      "distinct_vendors_generative": 5
+    },
+    "co": {
+      "label": "Colorado",
+      "population": 5957493,
+      "spend_all_eras": 39984.05,
+      "spend_generative": 7405.82,
+      "filers_all_eras": 51,
+      "filers_generative": 31,
+      "distinct_vendors_all_eras": 15,
+      "distinct_vendors_generative": 8
+    },
+    "ca": {
+      "label": "California",
+      "population": 39431263,
+      "spend_all_eras": 1975166.32,
+      "spend_generative": 68613.39,
+      "filers_all_eras": 73,
+      "filers_generative": 20,
+      "distinct_vendors_all_eras": 17,
+      "distinct_vendors_generative": 9
+    }
+  },
+  "covered": {
+    "population": 60483107,
+    "spend_all_eras": 2094278.9,
+    "spend_generative": 92401.02,
+    "filers_all_eras": 211,
+    "filers_generative": 108,
+    "vendor_instances_all_eras": 59,
+    "vendor_instances_generative": 33,
+    "distinct_vendors_all_eras": 28,
+    "distinct_vendors_generative": 18
+  },
+  "projection": {
+    "spend_all_eras": 11776631.54,
+    "spend_generative": 519593.05,
+    "filers_all_eras": 1187,
+    "filers_generative": 607,
+    "vendor_instances_all_eras": 332,
+    "vendor_instances_generative": 186
+  }
+}

@@ -1599,7 +1599,7 @@
     } else if (isCompare) {
       document.getElementById("meta-line").textContent = metaLineTextCompare();
       window.scrollTo(0, 0);
-      if (STATE_DATA.ma) {
+      if (STATE_DATA.ma && PROJECTION_DATA) {
         renderCompareView();
       } else {
         const view = document.getElementById("compare-view");
@@ -2250,12 +2250,43 @@
       });
   }
 
+  // Population-based national projection (see pipeline/build_projection.py)
+  // -- scales this project's four covered states' spend/candidate/vendor
+  // counts up to the full U.S. population. Shown only on the Compare tab,
+  // so it's fetched alongside the Massachusetts dataset in
+  // ensureCompareData(), not on page load.
+  let PROJECTION_DATA = null;
+  let projectionLoadPromise = null;
+
+  function loadProjectionData() {
+    if (PROJECTION_DATA) return Promise.resolve(PROJECTION_DATA);
+    if (!projectionLoadPromise) {
+      projectionLoadPromise = fetch("data/dashboard_projection.json")
+        .then((r) => {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        })
+        .then((json) => {
+          PROJECTION_DATA = json;
+          return PROJECTION_DATA;
+        })
+        .catch((err) => {
+          console.error(err);
+          throw err;
+        });
+    }
+    return projectionLoadPromise;
+  }
+
   // The Compare tab is pinned to Federal vs. Massachusetts specifically
   // (see buildCompareRows() below) -- it doesn't generalize to "Federal
   // vs. whichever state tab is active," so this always loads "ma"
-  // regardless of currentDataset.
+  // regardless of currentDataset. The population projection below it
+  // draws on all four covered states regardless, since it's built from
+  // their own dashboard JSON files ahead of time by
+  // pipeline/build_projection.py, not fetched live here.
   function ensureCompareData() {
-    loadStateData("ma")
+    Promise.all([loadStateData("ma"), loadProjectionData()])
       .then(() => {
         if (currentDataset === "compare") renderCompareView();
       })
@@ -3201,6 +3232,108 @@
     });
   }
 
+  // Population-based national projection: a simple population-weighted
+  // scale-up of the four states this site covers (Massachusetts,
+  // Washington, Colorado, California) to the full U.S. population, built
+  // ahead of time by pipeline/build_projection.py from Census Bureau
+  // Vintage 2024 state population estimates. Explicitly NOT a statistical
+  // estimate -- see PROJECTION_DATA.meta.methodology_notes, rendered in
+  // full below, for why the four covered states aren't a representative
+  // sample and why the vendor-count figure in particular should be read
+  // as an upper-bound-ish illustration rather than a real forecast.
+  function renderProjectionSection() {
+    const proj = PROJECTION_DATA;
+    const meta = proj.meta;
+    const covered = proj.covered;
+    const projection = proj.projection;
+
+    const spend = includeLegacy ? projection.spend_all_eras : projection.spend_generative;
+    const coveredSpend = includeLegacy ? covered.spend_all_eras : covered.spend_generative;
+    const filers = includeLegacy ? projection.filers_all_eras : projection.filers_generative;
+    const coveredFilers = includeLegacy ? covered.filers_all_eras : covered.filers_generative;
+    const vendorInstances = includeLegacy ? projection.vendor_instances_all_eras : projection.vendor_instances_generative;
+    const coveredVendorInstances = includeLegacy ? covered.vendor_instances_all_eras : covered.vendor_instances_generative;
+    const distinctVendors = includeLegacy ? covered.distinct_vendors_all_eras : covered.distinct_vendors_generative;
+
+    const mainCard = el("div", { className: "card" });
+    mainCard.appendChild(el("h3", { text: "National projection, scaled by population" }));
+    mainCard.appendChild(
+      el("p", {
+        className: "note",
+        text:
+          "A simple population-weighted scale-up, not a statistical estimate -- see the caveats below the table. Based on the " +
+          fmtInt.format(meta.covered_population) +
+          " people (" +
+          (meta.covered_population_share * 100).toFixed(1) +
+          "% of the U.S. population) in the four states this site currently covers -- Massachusetts, Washington, Colorado, and California -- scaled " +
+          meta.scale_factor.toFixed(2) +
+          "x up to the full " +
+          fmtInt.format(meta.us_total_population) +
+          "-person U.S. population (50 states + DC, U.S. Census Bureau Vintage 2024 estimates)." +
+          (includeLegacy ? " All eras, all matched vendors." : " Generative-era vendors only -- toggle above to include legacy-era vendors."),
+      })
+    );
+    const statRow = el("div", { className: "stat-row" });
+    statRow.appendChild(
+      statTile(
+        "Projected national AI-vendor spend",
+        fmtUSD0.format(spend),
+        fmtUSD0.format(coveredSpend) + " disclosed across the 4 covered states"
+      )
+    );
+    statRow.appendChild(
+      statTile(
+        "Projected candidate committees using AI",
+        fmtInt.format(filers),
+        fmtInt.format(coveredFilers) + " identified across the 4 covered states"
+      )
+    );
+    statRow.appendChild(
+      statTile(
+        "Projected vendor-adoption instances",
+        fmtInt.format(vendorInstances),
+        fmtInt.format(coveredVendorInstances) + " state-by-vendor pairs across the 4 covered states -- see note below"
+      )
+    );
+    mainCard.appendChild(statRow);
+    mainCard.appendChild(
+      el("p", {
+        className: "note",
+        text:
+          "“Vendor-adoption instances” is NOT a projected count of distinct vendors -- it sums each covered state's own distinct-vendor count and scales that sum by population, which overstates how many genuinely new AI tools a full 50-state count would actually turn up (most additional states would rediscover the same handful of major vendors rather than each contributing new ones). " +
+          fmtInt.format(distinctVendors) +
+          " distinct vendors have actually been identified across the 4 covered states so far -- a floor on the true national count, not this scaled figure.",
+      })
+    );
+    const projCardGrid = el("div", { className: "card-grid single", children: [mainCard] });
+
+    const stateHeaders = [
+      { label: "State", render: (r) => r.label },
+      { label: "Population", num: true, render: (r) => fmtInt.format(r.population) },
+      { label: "Disclosed AI-vendor spend", num: true, render: (r) => fmtUSD0.format(includeLegacy ? r.spend_all_eras : r.spend_generative) },
+      { label: "Candidate committees using AI", num: true, render: (r) => fmtInt.format(includeLegacy ? r.filers_all_eras : r.filers_generative) },
+      { label: "Distinct vendors identified", num: true, render: (r) => fmtInt.format(includeLegacy ? r.distinct_vendors_all_eras : r.distinct_vendors_generative) },
+    ];
+    const stateRows = meta.covered_states.map((id) => Object.assign({ id }, proj.states[id]));
+    const stateCard = el("div", { className: "card" });
+    stateCard.appendChild(el("h3", { text: "The underlying numbers, by covered state" }));
+    stateCard.appendChild(
+      el("p", {
+        className: "note",
+        text: "Every figure above is built from these four rows -- summed, then divided by their combined population, then multiplied by the U.S. total. Each state's own tab has its own full methodology and record-level detail.",
+      })
+    );
+    stateCard.appendChild(buildTable(stateHeaders, stateRows));
+
+    const notesCard = el("div", { className: "card" });
+    notesCard.appendChild(el("h3", { text: "Why this is a rough projection, not an estimate" }));
+    const notesList = el("ul", { className: "notes" });
+    meta.methodology_notes.forEach((s) => notesList.appendChild(el("li", { text: s })));
+    notesCard.appendChild(notesList);
+
+    return [projCardGrid, el("div", { className: "card-grid", children: [stateCard, notesCard] })];
+  }
+
   function renderCompareView() {
     const view = document.getElementById("compare-view");
     view.innerHTML = "";
@@ -3327,6 +3460,10 @@
       card.appendChild(buildTable(headers, tableRows, { sort: sortState.compare }));
     }
     view.appendChild(el("div", { className: "card-grid single", children: [card] }));
+
+    if (PROJECTION_DATA) {
+      renderProjectionSection().forEach((node) => view.appendChild(node));
+    }
 
     view.appendChild(
       el("p", {
