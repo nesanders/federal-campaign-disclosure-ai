@@ -15,22 +15,30 @@
         <span class="dataset-tab-title">Federal</span>
         <span class="dataset-tab-sub">U.S. House &amp; Senate &middot; FEC</span>
       </button>
-      <button type="button" class="dataset-tab" data-dataset="ma" role="tab" aria-selected="false" aria-controls="state-view" style="--accent:var(--ma-accent);--accent-soft:var(--ma-accent-soft)">
-        <span class="dataset-tab-title">Massachusetts</span>
-        <span class="dataset-tab-sub">State races &middot; OCPF</span>
-      </button>
-      <button type="button" class="dataset-tab" data-dataset="wa" role="tab" aria-selected="false" aria-controls="state-view" style="--accent:var(--wa-accent);--accent-soft:var(--wa-accent-soft)">
-        <span class="dataset-tab-title">Washington</span>
-        <span class="dataset-tab-sub">State races &middot; PDC</span>
-      </button>
-      <button type="button" class="dataset-tab" data-dataset="co" role="tab" aria-selected="false" aria-controls="state-view" style="--accent:var(--co-accent);--accent-soft:var(--co-accent-soft)">
-        <span class="dataset-tab-title">Colorado</span>
-        <span class="dataset-tab-sub">State races &middot; TRACER</span>
-      </button>
-      <button type="button" class="dataset-tab" data-dataset="ca" role="tab" aria-selected="false" aria-controls="state-view" style="--accent:var(--ca-accent);--accent-soft:var(--ca-accent-soft)">
-        <span class="dataset-tab-title">California</span>
-        <span class="dataset-tab-sub">State races &middot; CAL-ACCESS</span>
-      </button>
+      <div class="dataset-tab-dropdown" id="state-dropdown">
+        <button type="button" class="dataset-tab dataset-tab-dropdown-trigger" id="state-dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="state-dropdown-menu">
+          <span class="dataset-tab-title"><span id="state-dropdown-trigger-label">State</span> <span class="dropdown-caret" aria-hidden="true">&#9662;</span></span>
+          <span class="dataset-tab-sub" id="state-dropdown-trigger-sub">Pick a state</span>
+        </button>
+        <div class="dataset-tab-dropdown-menu" id="state-dropdown-menu" role="menu" aria-label="Choose a state" hidden>
+          <button type="button" class="dataset-tab" data-dataset="ma" role="menuitem" aria-controls="state-view" style="--accent:var(--ma-accent);--accent-soft:var(--ma-accent-soft)">
+            <span class="dataset-tab-title">Massachusetts</span>
+            <span class="dataset-tab-sub">State races &middot; OCPF</span>
+          </button>
+          <button type="button" class="dataset-tab" data-dataset="wa" role="menuitem" aria-controls="state-view" style="--accent:var(--wa-accent);--accent-soft:var(--wa-accent-soft)">
+            <span class="dataset-tab-title">Washington</span>
+            <span class="dataset-tab-sub">State races &middot; PDC</span>
+          </button>
+          <button type="button" class="dataset-tab" data-dataset="co" role="menuitem" aria-controls="state-view" style="--accent:var(--co-accent);--accent-soft:var(--co-accent-soft)">
+            <span class="dataset-tab-title">Colorado</span>
+            <span class="dataset-tab-sub">State races &middot; TRACER</span>
+          </button>
+          <button type="button" class="dataset-tab" data-dataset="ca" role="menuitem" aria-controls="state-view" style="--accent:var(--ca-accent);--accent-soft:var(--ca-accent-soft)">
+            <span class="dataset-tab-title">California</span>
+            <span class="dataset-tab-sub">State races &middot; CAL-ACCESS</span>
+          </button>
+        </div>
+      </div>
       <button type="button" class="dataset-tab" data-dataset="states" role="tab" aria-selected="false" aria-controls="states-view" style="--accent:var(--states-accent);--accent-soft:var(--states-accent-soft)">
         <span class="dataset-tab-title">States</span>
         <span class="dataset-tab-sub">All covered states, combined</span>

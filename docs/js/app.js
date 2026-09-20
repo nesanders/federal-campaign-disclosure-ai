@@ -1554,11 +1554,12 @@
     updateLegacyToggleText(tab);
 
     document.body.setAttribute("data-active-dataset", tab);
-    document.querySelectorAll(".dataset-tab").forEach((btn) => {
+    document.querySelectorAll(".dataset-tab[data-dataset]").forEach((btn) => {
       const active = btn.getAttribute("data-dataset") === tab;
       btn.classList.toggle("is-active", active);
       btn.setAttribute("aria-selected", active ? "true" : "false");
     });
+    updateStateDropdownTrigger(stateCfg);
 
     document.getElementById("page-toc").hidden = isOffMain;
     document.getElementById("footer-source-federal").hidden = isOffMain;
@@ -1625,11 +1626,69 @@
   }
 
   function wireDatasetTabs() {
-    document.querySelectorAll(".dataset-tab").forEach((btn) => {
+    // [data-dataset] excludes the "State" dropdown trigger itself (see
+    // wireStateDropdown), which opens/closes the menu below it rather than
+    // navigating anywhere on its own.
+    document.querySelectorAll(".dataset-tab[data-dataset]").forEach((btn) => {
       btn.addEventListener("click", () => {
         const tab = btn.getAttribute("data-dataset");
         location.hash = tab === "federal" ? "#/" : "#/" + tab;
       });
+    });
+  }
+
+  // The trigger shows which state is active (label, sub-label, and accent
+  // color, the same --accent/--accent-soft convention every other tab
+  // uses) when one of the four is selected, and resets to a generic
+  // "State ▾ / Pick a state" prompt otherwise -- called from
+  // activateDataset() with that tab's STATE_CONFIGS entry, or null.
+  function updateStateDropdownTrigger(stateCfg) {
+    const trigger = document.getElementById("state-dropdown-trigger");
+    if (!trigger) return;
+    const label = document.getElementById("state-dropdown-trigger-label");
+    const sub = document.getElementById("state-dropdown-trigger-sub");
+    trigger.classList.toggle("is-active", !!stateCfg);
+    trigger.setAttribute("aria-selected", stateCfg ? "true" : "false");
+    if (stateCfg) {
+      trigger.style.setProperty("--accent", "var(--" + stateCfg.id + "-accent)");
+      trigger.style.setProperty("--accent-soft", "var(--" + stateCfg.id + "-accent-soft)");
+      label.textContent = stateCfg.label;
+      sub.textContent = stateCfg.tabSub;
+    } else {
+      trigger.style.removeProperty("--accent");
+      trigger.style.removeProperty("--accent-soft");
+      label.textContent = "State";
+      sub.textContent = "Pick a state";
+    }
+  }
+
+  // Toggle-on-click, close on an outside click, Escape, or picking a
+  // state (that last case via each menu button's own click, which also
+  // triggers wireDatasetTabs()'s navigation listener on the same button --
+  // both listeners fire independently, no conflict).
+  function wireStateDropdown() {
+    const trigger = document.getElementById("state-dropdown-trigger");
+    const menu = document.getElementById("state-dropdown-menu");
+    if (!trigger || !menu) return;
+    const closeMenu = () => {
+      menu.hidden = true;
+      trigger.setAttribute("aria-expanded", "false");
+    };
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const willOpen = menu.hidden;
+      menu.hidden = !willOpen;
+      trigger.setAttribute("aria-expanded", willOpen ? "true" : "false");
+    });
+    menu.querySelectorAll(".dataset-tab").forEach((btn) => btn.addEventListener("click", closeMenu));
+    document.addEventListener("click", (e) => {
+      if (!menu.hidden && !menu.contains(e.target) && e.target !== trigger) closeMenu();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !menu.hidden) {
+        closeMenu();
+        trigger.focus();
+      }
     });
   }
 
@@ -3948,6 +4007,7 @@
       buildSearchIndex();
       wireSearch();
       wireDatasetTabs();
+      wireStateDropdown();
       tagFederalCardsWithPill();
       renderAll();
       window.addEventListener("hashchange", route);

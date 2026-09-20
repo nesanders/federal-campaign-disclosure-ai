@@ -368,6 +368,24 @@ tr.row-medium-confidence { background: color-mix(in srgb, var(--series-2) 7%, tr
 .dataset-tab.is-active { background: var(--accent-soft, var(--fed-accent-soft)); }
 .dataset-tab.is-active .dataset-tab-title { color: var(--accent, var(--series-1)); }
 
+/* State dropdown: the four individual state tabs (Massachusetts,
+   Washington, Colorado, California) nest under one "State" trigger rather
+   than sitting as four separate top-level tabs -- keeps the bar to five
+   entries (Federal / State / States / Compare, the last two full tabs of
+   their own) as more states get added, rather than growing one slot per
+   state. The trigger reuses .dataset-tab's own styling and the same
+   --accent/--accent-soft convention (app.js sets it to whichever state is
+   currently active, or clears it), so it needs no color rules of its own. */
+.dataset-tab-dropdown { position: relative; }
+.dropdown-caret { font-size: 0.7em; color: var(--text-muted); }
+.dataset-tab-dropdown-menu {
+  position: absolute; top: calc(100% + 6px); left: 0; z-index: 20;
+  display: flex; flex-direction: column; gap: 2px; min-width: 210px;
+  background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+  padding: 4px; box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+}
+.dataset-tab-dropdown-menu .dataset-tab { width: 100%; }
+
 /* Context pill: stamped on every card's title row so which dataset a given
    chart or table belongs to is never ambiguous, even mid-scroll. Federal
    cards get the dataset-pill-federal modifier (a static class, never
