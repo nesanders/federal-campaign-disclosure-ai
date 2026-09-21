@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-20T23:03:58+00:00",
+    "generated_at": "2026-09-21T15:45:51+00:00",
     "covered_states": [
       "ma",
       "wa",
@@ -1483,7 +1483,7 @@
       "filers_generative": 31,
       "distinct_vendors_all_eras": 15,
       "distinct_vendors_generative": 8,
-      "pct_ai_overall": 0.763
+      "pct_ai_overall": 0.762
     },
     {
       "id": "ca",

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-09-20T22:30:07+00:00",
-    "records_scanned": 214669,
+    "generated_at": "2026-09-21T15:41:00+00:00",
+    "records_scanned": 214819,
     "source_label": "Colorado TRACER (Secretary of State)",
     "date_range": {
       "start": "2023-01-01",
@@ -27,9 +27,9 @@
     "matched_records": 286,
     "filers_with_ai_spend": 51,
     "filers_with_ai_spend_ex_legacy": 31,
-    "total_filers_with_activity": 3318,
-    "total_expenditure_ai_filers": 5237279.97,
-    "pct_ai_overall": 0.763
+    "total_filers_with_activity": 3320,
+    "total_expenditure_ai_filers": 5245500.11,
+    "pct_ai_overall": 0.762
   },
   "vendors": [
     {
@@ -8180,8 +8180,8 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 155663.69,
-      "pct_ai": 0.064,
+      "total_expenditure": 163883.83,
+      "pct_ai": 0.061,
       "time_series": [
         {
           "year": 2025,
@@ -9669,10 +9669,10 @@
       "year": 2026,
       "total": 8441.01,
       "records": 77,
-      "total_expenditure": 2195013.25,
+      "total_expenditure": 2203233.39,
       "total_ex_legacy": 2663.62,
       "records_ex_legacy": 62,
-      "total_expenditure_ex_legacy": 419541.26
+      "total_expenditure_ex_legacy": 427761.4
     }
   ],
   "time_series_by_party": [],

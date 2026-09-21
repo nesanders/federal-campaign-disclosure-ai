@@ -1,14 +1,14 @@
 {
   "meta": {
-    "generated_at": "2026-09-18T15:14:22+00:00",
+    "generated_at": "2026-09-21T15:39:54+00:00",
     "source_label": "Massachusetts Office of Campaign and Political Finance (OCPF)",
     "date_range": {
       "start": "2023-01-01",
-      "end": "2026-09-18"
+      "end": "2026-09-21"
     },
     "records_scanned": {
-      "expenditures": 325289,
-      "subvendor": 2711
+      "expenditures": 325673,
+      "subvendor": 2746
     },
     "sources": [
       "OCPF public API (api.ocpf.us/search/items), SearchTypeCategory=B (expenditures) and S (subvendor payments) -- every itemized record OCPF has on file for the window below, not a sample.",
@@ -33,8 +33,8 @@
     "matched_records": 342,
     "filers_with_ai_spend": 59,
     "filers_with_ai_spend_ex_legacy": 42,
-    "total_filers_with_activity": 2516,
-    "total_expenditure_ai_filers": 24058206.94,
+    "total_filers_with_activity": 2518,
+    "total_expenditure_ai_filers": 23983769.83,
     "pct_ai_overall": 0.101
   },
   "vendors": [
@@ -2022,7 +2022,7 @@
           "filer_name": "Worrell, Brian",
           "filer_party": "Democratic",
           "amount": 53.13,
-          "purpose": "DBT PURCHASE",
+          "purpose": "software subscription",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1041407"
         },
@@ -2422,7 +2422,7 @@
           "filer_name": "Fattman, Ryan",
           "filer_party": "Republican",
           "amount": 21.25,
-          "purpose": "PURCHASE0701",
+          "purpose": "Online subscription for senate office ",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1036828"
         },
@@ -2432,7 +2432,7 @@
           "filer_name": "Fattman, Ryan",
           "filer_party": "Republican",
           "amount": 21.25,
-          "purpose": "PURCHASE0801",
+          "purpose": "Monthly subscription ",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1042159"
         },
@@ -2722,7 +2722,7 @@
           "filer_name": "Miranda, Elizabeth",
           "filer_party": "Democratic",
           "amount": 21.25,
-          "purpose": "DBT PURCHASE",
+          "purpose": "Subscription",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1041004"
         },
@@ -2852,7 +2852,7 @@
           "filer_name": "Saunders, Aaron",
           "filer_party": "Democratic",
           "amount": 21.25,
-          "purpose": "Productivity software",
+          "purpose": "Productivity software subscription",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=992979"
         },
@@ -2862,7 +2862,7 @@
           "filer_name": "Saunders, Aaron",
           "filer_party": "Democratic",
           "amount": 21.25,
-          "purpose": "DBT PURCHASE          ",
+          "purpose": "Productivity software subscription",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=998099"
         },
@@ -2872,7 +2872,7 @@
           "filer_name": "Saunders, Aaron",
           "filer_party": "Democratic",
           "amount": 21.25,
-          "purpose": "Productivity software",
+          "purpose": "Productivity software subscription",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1002412"
         },
@@ -2882,7 +2882,7 @@
           "filer_name": "Saunders, Aaron",
           "filer_party": "Democratic",
           "amount": 21.25,
-          "purpose": "DBT PURCHASE          ",
+          "purpose": "Productivity software subscription",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1006020"
         },
@@ -2892,7 +2892,7 @@
           "filer_name": "Saunders, Aaron",
           "filer_party": "Democratic",
           "amount": 21.25,
-          "purpose": "DBT PURCHASE          ",
+          "purpose": "Productivity software subscription",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1012272"
         },
@@ -2902,7 +2902,7 @@
           "filer_name": "Saunders, Aaron",
           "filer_party": "Democratic",
           "amount": 21.25,
-          "purpose": "DBT PURCHASE          ",
+          "purpose": "Productivity software subscription",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1015962"
         },
@@ -2942,7 +2942,7 @@
           "filer_name": "Saunders, Aaron",
           "filer_party": "Democratic",
           "amount": 21.25,
-          "purpose": "DBT PURCHASE",
+          "purpose": "Productivity software subscription",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1041329"
         },
@@ -3302,7 +3302,7 @@
           "filer_name": "Saunders, Aaron",
           "filer_party": "Democratic",
           "amount": 20.0,
-          "purpose": "Productivity software",
+          "purpose": "Productivity software subscription",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=983824"
         },
@@ -3312,7 +3312,7 @@
           "filer_name": "Saunders, Aaron",
           "filer_party": "Democratic",
           "amount": 20.0,
-          "purpose": "Productivity software",
+          "purpose": "Productivity software subscription",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=988017"
         },
@@ -5239,8 +5239,8 @@
         "anthropic",
         "read_ai"
       ],
-      "total_expenditure": 150727.11,
-      "pct_ai": 0.391,
+      "total_expenditure": 150932.61,
+      "pct_ai": 0.39,
       "time_series": [
         {
           "year": 2025,
@@ -6121,7 +6121,7 @@
       "vendor_ids": [
         "grammarly"
       ],
-      "total_expenditure": 591894.21,
+      "total_expenditure": 591896.19,
       "pct_ai": 0.071,
       "time_series": [
         {
@@ -6198,7 +6198,7 @@
         "grammarly",
         "openai"
       ],
-      "total_expenditure": 143432.42,
+      "total_expenditure": 143475.89,
       "pct_ai": 0.484,
       "time_series": [
         {
@@ -6554,7 +6554,7 @@
       "vendor_ids": [
         "grammarly"
       ],
-      "total_expenditure": 625207.39,
+      "total_expenditure": 626178.49,
       "pct_ai": 0.098,
       "time_series": [
         {
@@ -6701,7 +6701,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 237021.28,
+      "total_expenditure": 237029.88,
       "pct_ai": 0.045,
       "time_series": [
         {
@@ -6737,7 +6737,7 @@
       "vendor_ids": [
         "canva_ai"
       ],
-      "total_expenditure": 327564.42,
+      "total_expenditure": 327584.17,
       "pct_ai": 0.041,
       "time_series": [
         {
@@ -7095,7 +7095,7 @@
       "vendor_ids": [
         "captions_ai"
       ],
-      "total_expenditure": 316886.71,
+      "total_expenditure": 317089.31,
       "pct_ai": 0.075,
       "time_series": [
         {
@@ -7343,7 +7343,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 198072.66,
+      "total_expenditure": 198197.83,
       "pct_ai": 0.054,
       "time_series": [
         {
@@ -7410,7 +7410,7 @@
             "high"
           ],
           "amount": 21.25,
-          "purpose": "PURCHASE0701",
+          "purpose": "Online subscription for senate office ",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1036828"
         },
         {
@@ -7425,7 +7425,7 @@
             "high"
           ],
           "amount": 21.25,
-          "purpose": "PURCHASE0801",
+          "purpose": "Monthly subscription ",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1042159"
         }
       ]
@@ -7439,7 +7439,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 561771.16,
+      "total_expenditure": 561927.16,
       "pct_ai": 0.048,
       "time_series": [
         {
@@ -7798,7 +7798,7 @@
       "vendor_ids": [
         "google_ai"
       ],
-      "total_expenditure": 46905.8,
+      "total_expenditure": 46907.77,
       "pct_ai": 0.015,
       "time_series": [
         {
@@ -8554,8 +8554,8 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 34690.96,
-      "pct_ai": 0.123,
+      "total_expenditure": 34694.91,
+      "pct_ai": 0.122,
       "time_series": [
         {
           "year": 2026,
@@ -8828,7 +8828,7 @@
       "vendor_ids": [
         "campaign_nucleus"
       ],
-      "total_expenditure": 12102854.81,
+      "total_expenditure": 12026646.54,
       "pct_ai": 0.018,
       "time_series": [
         {
@@ -8914,7 +8914,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 366069.59,
+      "total_expenditure": 366079.91,
       "pct_ai": 0.012,
       "time_series": [
         {
@@ -8951,7 +8951,7 @@
             "high"
           ],
           "amount": 21.25,
-          "purpose": "DBT PURCHASE",
+          "purpose": "Subscription",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1041004"
         }
       ]
@@ -10009,7 +10009,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 93536.93,
+      "total_expenditure": 93546.81,
       "pct_ai": 0.27,
       "time_series": [
         {
@@ -10036,7 +10036,7 @@
             "high"
           ],
           "amount": 21.25,
-          "purpose": "Productivity software",
+          "purpose": "Productivity software subscription",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=992979"
         },
         {
@@ -10051,7 +10051,7 @@
             "high"
           ],
           "amount": 21.25,
-          "purpose": "DBT PURCHASE          ",
+          "purpose": "Productivity software subscription",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=998099"
         },
         {
@@ -10066,7 +10066,7 @@
             "high"
           ],
           "amount": 21.25,
-          "purpose": "Productivity software",
+          "purpose": "Productivity software subscription",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1002412"
         },
         {
@@ -10081,7 +10081,7 @@
             "high"
           ],
           "amount": 21.25,
-          "purpose": "DBT PURCHASE          ",
+          "purpose": "Productivity software subscription",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1006020"
         },
         {
@@ -10096,7 +10096,7 @@
             "high"
           ],
           "amount": 21.25,
-          "purpose": "DBT PURCHASE          ",
+          "purpose": "Productivity software subscription",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1012272"
         },
         {
@@ -10111,7 +10111,7 @@
             "high"
           ],
           "amount": 21.25,
-          "purpose": "DBT PURCHASE          ",
+          "purpose": "Productivity software subscription",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1015962"
         },
         {
@@ -10171,7 +10171,7 @@
             "high"
           ],
           "amount": 21.25,
-          "purpose": "DBT PURCHASE",
+          "purpose": "Productivity software subscription",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1041329"
         },
         {
@@ -10186,7 +10186,7 @@
             "high"
           ],
           "amount": 20.0,
-          "purpose": "Productivity software",
+          "purpose": "Productivity software subscription",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=983824"
         },
         {
@@ -10201,7 +10201,7 @@
             "high"
           ],
           "amount": 20.0,
-          "purpose": "Productivity software",
+          "purpose": "Productivity software subscription",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=988017"
         }
       ]
@@ -10362,7 +10362,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 22564.24,
+      "total_expenditure": 22565.23,
       "pct_ai": 0.094,
       "time_series": [
         {
@@ -11057,7 +11057,7 @@
         "openai",
         "otter_ai"
       ],
-      "total_expenditure": 187901.82,
+      "total_expenditure": 187909.72,
       "pct_ai": 0.328,
       "time_series": [
         {
@@ -11188,7 +11188,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 319234.64,
+      "total_expenditure": 319236.62,
       "pct_ai": 0.22,
       "time_series": [
         {
@@ -11365,7 +11365,7 @@
             "high"
           ],
           "amount": 53.13,
-          "purpose": "DBT PURCHASE",
+          "purpose": "software subscription",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1041407"
         }
       ]
@@ -11684,10 +11684,10 @@
       "year": 2026,
       "total": 9265.32,
       "records": 192,
-      "total_expenditure": 14647258.75,
+      "total_expenditure": 14572821.64,
       "total_ex_legacy": 6904.2,
       "records_ex_legacy": 154,
-      "total_expenditure_ex_legacy": 4337482.65
+      "total_expenditure_ex_legacy": 4338260.98
     }
   ],
   "time_series_by_party": [
@@ -12596,7 +12596,7 @@
     ]
   },
   "subvendor": {
-    "records_scanned": 2711,
+    "records_scanned": 2746,
     "matched_records": 0,
     "total": 0
   },
