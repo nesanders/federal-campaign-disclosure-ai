@@ -473,7 +473,7 @@
 
     makeChart("chart-vendors", {
       type: "bar",
-      data: { labels, datasets: [{ label: "High-confidence spending", data, backgroundColor: bg, borderRadius: 4, barThickness: 16 }] },
+      data: { labels, datasets: [{ label: "High-confidence spending", data, backgroundColor: bg, borderRadius: 1, barThickness: 16 }] },
       options: {
         indexAxis: "y",
         responsive: true,
@@ -635,7 +635,7 @@
 
     makeChart("chart-usecases", {
       type: "bar",
-      data: { labels, datasets: [{ label: "Spending", data, backgroundColor: c.general_purpose, borderRadius: 4, barThickness: 18 }] },
+      data: { labels, datasets: [{ label: "Spending", data, backgroundColor: c.general_purpose, borderRadius: 1, barThickness: 18 }] },
       options: {
         indexAxis: "y",
         responsive: true,
@@ -680,8 +680,8 @@
       data: {
         labels: catIds.map(catLabel),
         datasets: [
-          { label: VENDOR_GROUP_LABEL.general_purpose, data: gp, backgroundColor: c.general_purpose, borderRadius: 4, barThickness: 14 },
-          { label: VENDOR_GROUP_LABEL.political_specific, data: ps, backgroundColor: c.political_specific, borderRadius: 4, barThickness: 14 },
+          { label: VENDOR_GROUP_LABEL.general_purpose, data: gp, backgroundColor: c.general_purpose, borderRadius: 1, barThickness: 14 },
+          { label: VENDOR_GROUP_LABEL.political_specific, data: ps, backgroundColor: c.political_specific, borderRadius: 1, barThickness: 14 },
         ],
       },
       options: {
@@ -740,8 +740,8 @@
       data: {
         labels: displayLabels,
         datasets: [
-          { label: VENDOR_GROUP_LABEL.general_purpose, data: gp, backgroundColor: c.general_purpose, borderRadius: 4, barThickness: 28 },
-          { label: VENDOR_GROUP_LABEL.political_specific, data: ps, backgroundColor: c.political_specific, borderRadius: 4, barThickness: 28 },
+          { label: VENDOR_GROUP_LABEL.general_purpose, data: gp, backgroundColor: c.general_purpose, borderRadius: 1, barThickness: 28 },
+          { label: VENDOR_GROUP_LABEL.political_specific, data: ps, backgroundColor: c.political_specific, borderRadius: 1, barThickness: 28 },
         ],
       },
       options: {
@@ -907,13 +907,13 @@
             label: "Expenditures",
             data: weeks.map((wk) => (expByWeek[wk] ? expByWeek[wk].count : 0)),
             backgroundColor: expColor,
-            borderRadius: 2,
+            borderRadius: 1,
           },
           {
             label: "Reports filed",
             data: weeks.map((wk) => (repByWeek[wk] ? repByWeek[wk].count : 0)),
             backgroundColor: repColor,
-            borderRadius: 2,
+            borderRadius: 1,
           },
         ],
       },
@@ -1019,7 +1019,7 @@
 
     makeChart("chart-ie-vendors", {
       type: "bar",
-      data: { labels, datasets: [{ label: "AI-related independent expenditures", data, backgroundColor: bg, borderRadius: 4, barThickness: 18 }] },
+      data: { labels, datasets: [{ label: "AI-related independent expenditures", data, backgroundColor: bg, borderRadius: 1, barThickness: 18 }] },
       options: {
         indexAxis: "y",
         responsive: true,
@@ -1925,7 +1925,7 @@
     const byCand = v.by_candidate.slice(0, 15);
     makeChart("detail-chart-cand", {
       type: "bar",
-      data: { labels: byCand.map((r) => r.cand_name), datasets: [{ data: byCand.map((r) => r.amount), backgroundColor: c.general_purpose, borderRadius: 4, barThickness: 14 }] },
+      data: { labels: byCand.map((r) => r.cand_name), datasets: [{ data: byCand.map((r) => r.amount), backgroundColor: c.general_purpose, borderRadius: 1, barThickness: 14 }] },
       options: {
         indexAxis: "y",
         responsive: true,
@@ -2014,7 +2014,7 @@
       type: "bar",
       data: {
         labels: v.by_incumbency.map((r) => r.ici),
-        datasets: [{ data: v.by_incumbency.map((r) => r.amount), backgroundColor: v.by_incumbency.map((r) => c.incumbency[r.ici] || c.muted), borderRadius: 4, barThickness: 24 }],
+        datasets: [{ data: v.by_incumbency.map((r) => r.amount), backgroundColor: v.by_incumbency.map((r) => c.incumbency[r.ici] || c.muted), borderRadius: 1, barThickness: 24 }],
       },
       options: {
         responsive: true,
@@ -2164,7 +2164,7 @@
       type: "bar",
       data: {
         labels: cd.by_vendor.map((r) => r.vendor_name + (r.era === "legacy" ? " (legacy)" : "")),
-        datasets: [{ data: cd.by_vendor.map((r) => r.amount), backgroundColor: c.general_purpose, borderRadius: 4, barThickness: 16 }],
+        datasets: [{ data: cd.by_vendor.map((r) => r.amount), backgroundColor: c.general_purpose, borderRadius: 1, barThickness: 16 }],
       },
       options: {
         indexAxis: "y",
@@ -2528,7 +2528,7 @@
     setTimeout(() => {
       makeChart("chart-state-vendors", {
         type: "bar",
-        data: { labels, datasets: [{ label: "Disclosed spend", data: chartData, backgroundColor: cssVar("--" + stateId + "-accent"), borderRadius: 4, barThickness: 16 }] },
+        data: { labels, datasets: [{ label: "Disclosed spend", data: chartData, backgroundColor: cssVar("--" + stateId + "-accent"), borderRadius: 1, barThickness: 16 }] },
         options: {
           indexAxis: "y",
           responsive: true,
@@ -3552,7 +3552,7 @@
     setTimeout(() => {
       makeChart("chart-states-vendors", {
         type: "bar",
-        data: { labels, datasets: [{ label: "Disclosed spend", data: chartData, backgroundColor: cssVar("--states-accent"), borderRadius: 4, barThickness: 16 }] },
+        data: { labels, datasets: [{ label: "Disclosed spend", data: chartData, backgroundColor: cssVar("--states-accent"), borderRadius: 1, barThickness: 16 }] },
         options: {
           indexAxis: "y",
           responsive: true,
@@ -3863,7 +3863,7 @@
     ];
     makeChart("states-vendor-detail-chart", {
       type: "bar",
-      data: { labels: chartLabels, datasets: [{ label: "Disclosed / projected spend", data: chartAmounts, backgroundColor: chartColors, borderRadius: 4 }] },
+      data: { labels: chartLabels, datasets: [{ label: "Disclosed / projected spend", data: chartAmounts, backgroundColor: chartColors, borderRadius: 1 }] },
       options: {
         responsive: true,
         maintainAspectRatio: false,
