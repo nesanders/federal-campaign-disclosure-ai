@@ -449,8 +449,8 @@
       meta.cycles.join(", ") +
       " two-year cycles, matches payee/purpose/memo text against a curated AI-vendor taxonomy, and joins matches to candidate party, chamber, incumbency status, and (where available) age. Disclosed spending likely understates actual AI use, since campaigns can pay through corporate cards, staff, or consultants without the vendor name ever appearing in a filing." +
       (includeLegacy
-        ? " Legacy-era vendors (pre-generative-AI companies branded “AI”) are currently included, via the toggle above."
-        : " " + nLegacyHidden + " legacy-era vendor" + (nLegacyHidden === 1 ? "" : "s") + " with disclosed spending are hidden by default (toggle above to include them) &mdash; see methodology.");
+        ? " Legacy-era vendors (pre-generative-AI companies) are currently included, via the toggle above."
+        : " " + nLegacyHidden + " legacy-era vendor" + (nLegacyHidden === 1 ? "" : "s") + " with disclosed spending are hidden by default (toggle above to include them). See methodology for details.");
 
     if (currentDataset !== "ma") document.getElementById("meta-line").textContent = metaLineTextFederal();
     document.getElementById("footer-generated").textContent = "Dataset last built " + meta.generated_at + ".";

@@ -52,8 +52,7 @@
       </button>
     </div>
     <h1 id="page-h1">AI Use in Federal Campaign Disclosures</h1>
-    <p class="subtitle" id="page-subtitle-1">A read of federal campaign-finance disclosures for U.S. House and Senate candidates, looking for payments to AI vendors and how that spending breaks down by vendor, stated purpose, party, incumbency, candidate age, and chamber &mdash; and how each of those has changed across recent election cycles.</p>
-    <p class="subtitle" id="page-subtitle-2">Built from the same public FEC disclosure data campaigns themselves file, covering a broad set of AI vendors &mdash; general-purpose chatbots and campaign-specific tools alike &mdash; across the 2020&ndash;2026 election cycles.</p>
+    <p class="subtitle" id="page-subtitle-1">A dashboard compiling federal campaign-finance disclosures for U.S. House and Senate candidates, focusing on payments to AI vendors and how that spending breaks down by vendor, stated purpose, party, incumbency, candidate age, and chamber, and how each of those has changed across recent election cycles.</p>
     <nav class="toc" id="page-toc">
       <a href="#overview">Overview</a>
       <a href="#vendors">Vendors</a>
@@ -108,7 +107,7 @@
 
   <section id="vendors" class="block">
     <h2>1. Which AI vendors are campaigns paying?</h2>
-    <p class="lede">Every disbursement's payee name, stated purpose, category description, and memo text is matched against a taxonomy of both general-purpose AI vendors (OpenAI, Anthropic, Google, Microsoft, xAI, Perplexity, and AI-native creative tools) and vendors built specifically for campaigns. The taxonomy started from vendors named in press coverage (Quiller, BattlegroundAI, Chorus AI, DonorAtlas, RivalMind, Aaru), then was expanded by scanning the disclosures themselves for AI-indicative language and researching the payee names that kept turning up. That second pass is what found the biggest vendors on this page by dollar volume &mdash; AI-driven texting and call-time platforms like Amplify.ai, CallTime.AI, Prompt.io, and Numero &mdash; which is why the ranking below looks different from what most coverage of "AI in campaigns" would lead you to expect. See <a href="#methodology">methodology</a> for the full list, its confidence tiers, and the vendors we considered and rejected. Several of the biggest names by dollar volume &mdash; Amplify.ai, Prompt.io, CallTime.AI &mdash; are companies founded years before ChatGPT existed and market themselves as &ldquo;AI&rdquo; the way that word was used before the current generative-AI wave; they're tagged as legacy vendors and hidden from every chart and table below by default (toggle at the top of the page to include them).</p>
+    <p class="lede">Every disbursement's payee name, stated purpose, category description, and memo text is matched against a taxonomy of both general-purpose AI vendors (OpenAI, Anthropic, Google, Microsoft, xAI, Perplexity, and AI-native creative tools) and vendors built specifically for campaigns. The taxonomy started from vendors named in press coverage (Quiller, BattlegroundAI, Chorus AI, DonorAtlas, RivalMind, Aaru), then was expanded by scanning the disclosures themselves for AI-indicative language and researching the payee names that kept turning up. See <a href="#methodology">methodology</a> for the full list, its confidence tiers, and the vendors we considered and rejected. Several of the biggest names by dollar volume &mdash; Amplify.ai, Prompt.io, CallTime.AI &mdash; are companies founded years before ChatGPT existed and market themselves as &ldquo;AI&rdquo; the way that word was used before the current generative-AI wave; they're tagged as legacy vendors and hidden from charts and tables below by default (toggle at the top of the page to include them).</p>
     <div class="card-grid single">
       <div class="card">
         <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="vendors">View as table</button></div>
@@ -189,7 +188,7 @@
 
   <section id="trends" class="block">
     <h2>4. What's changed across cycles?</h2>
-    <p class="lede">The same candidate-committee, high-confidence disbursements, tracked across the 2020, 2022, 2024, and 2026 two-year cycles. Note that mainstream generative-AI tools (ChatGPT and peers) were not publicly available for most of the 2020 and 2022 cycles, so growth here partly reflects the technology's availability, not only its political adoption.</p>
+    <p class="lede">The same candidate-committee, high-confidence disbursements, tracked across the 2020, 2022, 2024, and 2026 two-year cycles.(Mainstream generative-AI tools (ChatGPT and peers) were not publicly available for most of the 2020 and 2022 cycles.)</p>
     <div class="view-toggle" data-toggle-group="trends">
       <button class="btn-view-mode is-active" data-mode="dollar">$ amount</button>
       <button class="btn-view-mode" data-mode="pct">% of total spend</button>
@@ -225,7 +224,7 @@
       <div class="card">
         <div class="card-toolbar"><button class="btn-table-toggle" data-toggle="trend-weekly">View as table</button></div>
         <h3>Weekly disclosure timeline</h3>
-        <p class="note">Every matched disbursement, all confidence tiers and eras, binned by week: when the expenditure itself happened vs. when the disclosing report was filed (for report types tied to a fixed calendar -- quarterly, monthly, mid-year, year-end, pre/post-general -- an approximate deadline; for primary/special-election and other state-specific report types, no per-record filed date exists in this bulk source, so the expenditure's own date is used as a fallback -- see <a href="#methodology">methodology</a>).</p>
+        <p class="note">Every matched disbursement, all confidence tiers and eras, binned by week. See <a href="#methodology">methodology</a> for details.</p>
         <div class="chart-holder tall" data-panel="trend-weekly"><canvas id="chart-trend-weekly"></canvas></div>
         <div class="table-holder" data-panel="trend-weekly" hidden></div>
       </div>
@@ -244,7 +243,7 @@
 
   <section id="leaderboards" class="block">
     <h2>5. Who's spending the most &mdash; in dollars, and as a share of their budget?</h2>
-    <p class="lede">Every candidate committee or PAC/party committee with at least one high-confidence AI-vendor disbursement, across all cycles. "% of total spend" divides AI spend by that committee's total reported operating expenditure that cycle (memo entries excluded to avoid double-counting &mdash; see <a href="#methodology">methodology</a>); the share-of-budget table is limited to committees spending at least $5,000 in total that cycle, so a $50 total-spend committee with one $40 AI purchase doesn't read as an 80% AI budget. Click a candidate's name to open their page.</p>
+    <p class="lede">Every candidate committee or PAC/party committee with at least one high-confidence AI-vendor disbursement, across all cycles. "% of total spend" divides AI spend by that committee's total reported operating expenditure that cycle (memo entries excluded to avoid double-counting &mdash; see <a href="#methodology">methodology</a>); the share-of-budget table is limited to committees spending at least $5,000 in total that cycle. Click a candidate's name to open their page.</p>
     <div class="filter-row" id="leaderboard-filters">
       <label>Cycle
         <select id="filter-cycle"><option value="all">All cycles</option></select>
