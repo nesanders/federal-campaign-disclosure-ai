@@ -4054,7 +4054,7 @@
           {
             label: "How campaigns use it",
             sortKey: null,
-            title: "A one-line, hand-written summary of what the product is and how a campaign typically uses it.",
+            title: "A one-line, AI-generated summary of what the product is and how a campaign typically uses it.",
             cell: (r) => el("span", { className: "desc-cell", text: r.description || "—" }),
           },
           {
