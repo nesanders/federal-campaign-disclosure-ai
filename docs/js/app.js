@@ -2677,7 +2677,7 @@
       el("p", {
         className: "note",
         text:
-          "Democratic vs. Republican, by filer party (" + cfg.sourceShort + "'s own filer record, not a text match): " +
+          "Democratic vs. Republican, by filer party (" + cfg.sourceShort + "": " +
           fmtPartyRatio({ dem_amount: ps.dem_amount, rep_amount: ps.rep_amount, dem_rep_ratio: ps.dem_rep_ratio }) +
           (ps.dem_rep_ratio !== null ? " ratio of Democratic to Republican spending." : ".") +
           " " +
@@ -2735,7 +2735,7 @@
       el("p", {
         className: "note",
         text:
-          "Democratic vs. Republican AI-vendor spend by year, same filer-party lookup as the pie chart." +
+          "Democratic vs. Republican AI-vendor spend by year." +
           (includeLegacy ? "" : " Generative-era vendors only."),
       })
     );
@@ -2796,7 +2796,7 @@
     card.appendChild(
       el("p", {
         className: "note",
-        text: "Every matched expenditure, all confidence tiers and eras (not filtered by the legacy-vendor toggle), binned by week: when the expenditure itself happened vs. when OCPF's own record shows the covering report was filed (a real filed date from OCPF, not an approximation).",
+        text: "Every matched expenditure, all confidence tiers and eras (not filtered by the legacy-vendor toggle), binned by week: when the expenditure itself happened vs. when OCPF's own record shows the covering report was filed.",
       })
     );
     const chartHolder = el("div", { className: "chart-holder", attrs: { "data-panel": "state-weekly" } });
