@@ -3154,18 +3154,7 @@
         children: [
           el("span", { text: "You're viewing the " }),
           el("strong", { text: cfg.label }),
-          el("span", {
-            text:
-              " tab — a separate dataset drawn from " +
-              cfg.bannerSourceLabel +
-              ", covering the " +
-              meta.date_range.start +
-              " through " +
-              (meta.date_range.end || "present") +
-              " window" +
-              cfg.cycleWindowNote +
-              ". Not merged with, and not directly comparable dollar-for-dollar to, the Federal tab.",
-          }),
+          el("span", { text: " disclosure data" }),
         ],
       })
     );
