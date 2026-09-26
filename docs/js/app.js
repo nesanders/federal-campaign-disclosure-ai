@@ -1437,7 +1437,7 @@
   // never ambiguous. ----
   const FEDERAL_TITLE = "AI Use in Federal Campaign Disclosures";
   const FEDERAL_SUBTITLE_1 =
-    "A read of federal campaign-finance disclosures for U.S. House and Senate candidates, looking for payments to AI vendors and how that spending breaks down by vendor, stated purpose, party, incumbency, candidate age, and chamber — and how each of those has changed across recent election cycles.";
+    "A dashboard compiling federal campaign-finance disclosures for U.S. House and Senate candidates, focusing on payments to AI vendors and how that spending breaks down by vendor, stated purpose, party, incumbency, candidate age, and chamber, and how each of those has changed across recent election cycles.";
   const COMPARE_TITLE = "AI Vendors: Federal vs. States";
   const COMPARE_SUBTITLE_1 =
     "Every AI vendor found on Federal or any covered state tab, side by side: what each is disclosed to have spent on federal House/Senate races vs. each of Massachusetts, Washington, Colorado, and California's state races, combined spend volume, and a recent-momentum signal — plus what campaigns actually use each tool for, and a population-scaled national projection built from the four states.";
@@ -1572,7 +1572,6 @@
     document.title = isState ? stateCfg.title : isCompare ? COMPARE_TITLE : isStatesCombined ? STATES_TITLE : FEDERAL_TITLE;
     document.getElementById("page-h1").textContent = isState ? stateCfg.title : isCompare ? COMPARE_TITLE : isStatesCombined ? STATES_TITLE : FEDERAL_TITLE;
     document.getElementById("page-subtitle-1").textContent = isState ? stateCfg.subtitle1 : isCompare ? COMPARE_SUBTITLE_1 : isStatesCombined ? STATES_SUBTITLE_1 : FEDERAL_SUBTITLE_1;
-    document.getElementById("page-subtitle-2").hidden = isOffMain;
 
     // The search bar covers Federal and each state's candidates/vendors
     // (see runSearch(), which picks searchIndex vs. stateSearchIndex off
@@ -3154,18 +3153,7 @@
         children: [
           el("span", { text: "You're viewing the " }),
           el("strong", { text: cfg.label }),
-          el("span", {
-            text:
-              " tab — a separate dataset drawn from " +
-              cfg.bannerSourceLabel +
-              ", covering the " +
-              meta.date_range.start +
-              " through " +
-              (meta.date_range.end || "present") +
-              " window" +
-              cfg.cycleWindowNote +
-              ". Not merged with, and not directly comparable dollar-for-dollar to, the Federal tab.",
-          }),
+          el("span", { text: " disclosure data" }),
         ],
       })
     );
