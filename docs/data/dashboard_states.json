@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-21T15:45:51+00:00",
+    "generated_at": "2026-09-26T15:35:57+00:00",
     "covered_states": [
       "ma",
       "wa",
@@ -20,7 +20,7 @@
       "ca": "California CAL-ACCESS"
     },
     "sources": [
-      "Every record here is a real disclosed expenditure from one of the four states' own systems -- Massachusetts OCPF, Washington PDC, Colorado TRACER, California CAL-ACCESS -- unioned together, not estimated or projected. See each state's own tab for its full sourcing and methodology.",
+      "Every record here is a real disclosed expenditure from one of the four states' own systems -- Massachusetts OCPF, Washington PDC, Colorado TRACER, California CAL-ACCESS -- unioned together. See each state's own tab for its full sourcing and methodology.",
       "Same AI vendor/category taxonomy as every other tab on this site (pipeline/config/vendors.yaml), applied by each state's own pipeline before this build step only sums what they already matched."
     ],
     "methodology_notes": [

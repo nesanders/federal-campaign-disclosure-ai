@@ -1443,7 +1443,7 @@
     "Every AI vendor found on Federal or any covered state tab, side by side: what each is disclosed to have spent on federal House/Senate races vs. each of Massachusetts, Washington, Colorado, and California's state races, combined spend volume, and a recent-momentum signal — plus what campaigns actually use each tool for, and a population-scaled national projection built from the four states.";
   const STATES_TITLE = "AI Use in State Campaign Disclosures, Combined";
   const STATES_SUBTITLE_1 =
-    "Every state this site covers — Massachusetts, Washington, Colorado, and California — unioned into one view: combined AI-vendor spend by vendor, a combined year-over-year trend, and a state-by-state leaderboard. Every figure here is a real sum of each state's own disclosed records, not an estimate (for a population-scaled national projection built from these same four states, see the Compare tab).";
+    "Every state this site covers — Massachusetts, Washington, Colorado, and California — unioned into one view: combined AI-vendor spend by vendor, a combined year-over-year trend, and a state-by-state leaderboard. Every figure here is a real sum of each state's own disclosed records (for a population-scaled national projection built from these same four states, see the Compare tab).";
 
   // One entry per state tab. Each state's dashboard JSON is built by its
   // own pipeline (build_dataset_ma.py, or the shared
@@ -2676,7 +2676,7 @@
       el("p", {
         className: "note",
         text:
-          "Democratic vs. Republican, by filer party (" + cfg.sourceShort + "": " +
+          "Democratic vs. Republican, by filer party (" + cfg.sourceShort + "'s own filer record): " +
           fmtPartyRatio({ dem_amount: ps.dem_amount, rep_amount: ps.rep_amount, dem_rep_ratio: ps.dem_rep_ratio }) +
           (ps.dem_rep_ratio !== null ? " ratio of Democratic to Republican spending." : ".") +
           " " +
@@ -3391,7 +3391,7 @@
       el("p", {
         className: "note",
         text:
-          "A simple population-weighted scale-up, not a statistical estimate -- see the caveats below the table. Based on the " +
+          "A simple population-weighted scale-up -- see the caveats below the table. Based on the " +
           fmtInt.format(meta.covered_population) +
           " people (" +
           (meta.covered_population_share * 100).toFixed(1) +
@@ -3432,7 +3432,7 @@
         text:
           "“Vendor-adoption instances” is NOT a projected count of distinct vendors -- it sums each covered state's own distinct-vendor count and scales that sum by population, which overstates how many genuinely new AI tools a full 50-state count would actually turn up (most additional states would rediscover the same handful of major vendors rather than each contributing new ones). " +
           fmtInt.format(distinctVendors) +
-          " distinct vendors have actually been identified across the 4 covered states so far -- a floor on the true national count, not this scaled figure.",
+          " distinct vendors have actually been identified across the 4 covered states so far -- a floor on the true national count.",
       })
     );
     const projCardGrid = el("div", { className: "card-grid single", children: [mainCard] });
@@ -3456,7 +3456,7 @@
     stateCard.appendChild(buildTable(stateHeaders, stateRows));
 
     const notesCard = el("div", { className: "card" });
-    notesCard.appendChild(el("h3", { text: "Why this is a rough projection, not an estimate" }));
+    notesCard.appendChild(el("h3", { text: "Why this is a rough projection" }));
     const notesList = el("ul", { className: "notes" });
     meta.methodology_notes.forEach((s) => notesList.appendChild(el("li", { text: s })));
     notesCard.appendChild(notesList);
@@ -3793,7 +3793,7 @@
     const stats = el("div", { className: "detail-stat-row" });
     stats.appendChild(statTile("Federal spend", fmtUSD0.format(fedAmount), fedVendor ? "high-confidence House/Senate matches" : "no disclosed federal match"));
     stats.appendChild(statTile("Combined states spend", fmtUSD0.format(statesCombined), nStatesWithSpend + " of " + STATES_DATA.meta.covered_states.length + " covered states"));
-    stats.appendChild(statTile("Projected national spend (states, population-scaled)", fmtUSD0.format(projectedAmount), scaleFactor.toFixed(2) + "x scale-up -- an estimate, not a disclosed figure"));
+    stats.appendChild(statTile("Projected national spend (states, population-scaled)", fmtUSD0.format(projectedAmount), scaleFactor.toFixed(2) + "x scale-up -- an estimate"));
     view.appendChild(stats);
 
     const sourceRows = [{ label: "Federal", amount: fedAmount, href: fedAmount > 0 ? "#/vendor/" + id : null, isProjection: false }];
@@ -3809,7 +3809,7 @@
     chartCard.appendChild(
       el("p", {
         className: "note",
-        text: "The last bar (muted gray) is the population-scaled estimate, not a disclosed dollar figure -- see the notes below for why it's a rough scale-up, not a statistical estimate.",
+        text: "The last bar (muted gray) is the population-scaled estimate -- see the notes below for why it's a rough scale-up.",
       })
     );
     chartCard.appendChild(el("div", { className: "chart-holder", children: [el("canvas", { id: "states-vendor-detail-chart" })] }));
@@ -3820,7 +3820,7 @@
     tableCard.appendChild(
       el("p", {
         className: "note",
-        text: "Click a source's own $ figure to open its own detail page, where every individual matched record for this vendor is listed. \"Combined states\" and \"Projected national\" have no page of their own -- both are totals computed here, not links to a filing.",
+        text: "Click a source's own $ figure to open its own detail page, where every individual matched record for this vendor is listed. \"Combined states\" and \"Projected national\" have no page of their own -- both are totals computed here.",
       })
     );
     tableCard.appendChild(
@@ -3835,7 +3835,7 @@
     view.appendChild(el("div", { className: "card-grid single", children: [tableCard] }));
 
     const notesCard = el("div", { className: "card" });
-    notesCard.appendChild(el("h3", { text: "Why the projection is a rough scale-up, not an estimate" }));
+    notesCard.appendChild(el("h3", { text: "Why the projection is a rough scale-up" }));
     const notesList = el("ul", { className: "notes" });
     (PROJECTION_DATA.meta.methodology_notes || []).forEach((s) => notesList.appendChild(el("li", { text: s })));
     notesCard.appendChild(notesList);
@@ -3862,7 +3862,7 @@
             callbacks: {
               label: (ctx) => {
                 const r = sourceRows[ctx.dataIndex];
-                return fmtUSD0.format(r.amount) + (r.isProjection ? " (estimate, not disclosed)" : "");
+                return fmtUSD0.format(r.amount) + (r.isProjection ? " (estimate)" : "");
               },
             },
           }),
@@ -4054,7 +4054,7 @@
           {
             label: "How campaigns use it",
             sortKey: null,
-            title: "A one-line, hand-written summary of what the product is and how a campaign typically uses it -- not derived from any single disbursement's stated purpose.",
+            title: "A one-line, hand-written summary of what the product is and how a campaign typically uses it.",
             cell: (r) => el("span", { className: "desc-cell", text: r.description || "—" }),
           },
           {

@@ -34,7 +34,7 @@ def main() -> None:
             "California CAL-ACCESS's daily bulk database export "
             "(campaignfinance.cdn.sos.ca.gov/dbwebexport.zip), specifically its EXPN table -- itemized "
             "expenditure records for Form 460 Schedules D/E/G, Form 450 Part 5, Form 461 Part 5, and "
-            "Form 465 Part 3. Every EXPN row from 2023 onward, not a sample; fetched by decompressing "
+            "Form 465 Part 3. Every EXPN row from 2023 onward; fetched by decompressing "
             "just that one ~3GB table via HTTP range requests rather than the full 1.5GB+ archive (see "
             "pipeline/fetch_ca.py).",
             "Same AI vendor/category taxonomy as the federal, Massachusetts, Washington, and Colorado "
@@ -49,7 +49,7 @@ def main() -> None:
             "party-affiliation field at all -- every record here is 'Unknown' party, same limitation "
             "as Colorado. (EXPN_CD's own CMTE_ID column, which would seem to carry filer identity, is "
             "blank on nearly all rows -- CAL-ACCESS records an expenditure's filer on the filing's "
-            "cover page, not the line item, so filer_id/filer_name here are resolved by joining each "
+            "cover page, so filer_id/filer_name here are resolved by joining each "
             "record's FILING_ID against CVR_CAMPAIGN_DISCLOSURE_CD.TSV, fetched separately by "
             "pipeline/fetch_ca_filers.py. A small number of filings -- short forms (F450/F465) or a "
             "cover page CAL-ACCESS never received -- fall back to the expenditure record's own "
@@ -57,20 +57,20 @@ def main() -> None:
             "series, and the legacy-vendor toggle are unaffected by this gap.",
             "As with the other dashboards, this dataset only sees a payment if its payee name or "
             "purpose text names a vendor on this project's taxonomy -- disclosed AI spend is a floor "
-            "on real usage, not a ceiling. California in particular has the richest purpose text of "
+            "on real usage. California in particular has the richest purpose text of "
             "any source on this site for some record types and none at all for others (many EXPN rows "
             "have an empty EXPN_DSCR), which likely understates real AI use here more unevenly than "
             "elsewhere.",
             "Vendor and filer detail pages (click a vendor or filer name) draw on every matched record "
-            "for that vendor/filer, not just the top 20 shown in the overview table below -- capped at "
+            "for that vendor/filer -- capped at "
             "300 records per page, largest first, the same cap the other dashboards use.",
             "Unlike Colorado, every record's 'Source' link here is real and clickable -- CAL-ACCESS "
             "serves a PDF of a filing at a documented URL keyed by FILING_ID and AMEND_ID, both already "
             "on every EXPN row (see pipeline/parse_ca.py's _source_link()). It links to the whole "
-            "filing (every schedule/page of it), not a page scrolled to this specific line item, since "
+            "filing (every schedule/page of it), since "
             "CAL-ACCESS's PDFs aren't deep-linkable below the filing level.",
             "The $ / % of total spend toggle divides AI-vendor spend by each filer's own total reported "
-            "CAL-ACCESS expenditure that year (every itemized EXPN record, not just AI-vendor matches).",
+            "CAL-ACCESS expenditure that year (every itemized EXPN record).",
             "The legacy-vendor toggle (top of page, off by default) filters the vendor chart/table, the "
             "yearly trend chart, and the party split, same as the other dashboards: a record counts "
             "toward the generative-only figures if AT LEAST ONE of its matched vendors is "

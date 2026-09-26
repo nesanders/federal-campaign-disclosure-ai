@@ -33,8 +33,8 @@ def main() -> None:
         "sources": [
             "Colorado TRACER's own bulk data downloads "
             "(tracer.sos.colorado.gov/PublicSite/Docs/BulkDataDownloads/, one CSV-in-zip file per "
-            "year) -- every itemized expenditure record TRACER has on file for 2023 through 2026, "
-            "not a sample. No API or pagination involved: plain annual files, the flattest of this "
+            "year) -- every itemized expenditure record TRACER has on file for 2023 through 2026. "
+            "No API or pagination involved: plain annual files, the flattest of this "
             "site's three newest state sources.",
             "Same AI vendor/category taxonomy as the federal, Massachusetts, and Washington "
             "dashboards (pipeline/config/vendors.yaml), applied unmodified against each record's "
@@ -53,9 +53,9 @@ def main() -> None:
             "filer detail, time series, the legacy-vendor toggle -- works normally.",
             "As with the other dashboards, this dataset only sees a payment if its payee name or "
             "purpose text names a vendor on this project's taxonomy -- disclosed AI spend is a "
-            "floor on real usage, not a ceiling.",
+            "floor on real usage.",
             "Vendor and filer detail pages (click a vendor or filer name) draw on every matched "
-            "record for that vendor/filer, not just the top 20 shown in the overview table below -- "
+            "record for that vendor/filer -- "
             "capped at 300 records per page, largest first, the same cap the other dashboards use.",
             "Individual records have no 'Source' link (shown as '—' rather than a dead or fake "
             "link): TRACER's public per-transaction page needs both a SeqID and a filingid, and this "
@@ -63,8 +63,7 @@ def main() -> None:
             "California, whose bulk source does carry the ID CAL-ACCESS's own filing-PDF endpoint "
             "needs (see pipeline/parse_co.py's docstring for the specifics).",
             "The $ / % of total spend toggle divides AI-vendor spend by each filer's own total "
-            "reported TRACER expenditure that year (every itemized record, not just AI-vendor "
-            "matches).",
+            "reported TRACER expenditure that year (every itemized record).",
             "The legacy-vendor toggle (top of page, off by default) filters the vendor chart/table, "
             "the yearly trend chart, and the party split, same as the other dashboards: a record "
             "counts toward the generative-only figures if AT LEAST ONE of its matched vendors is "

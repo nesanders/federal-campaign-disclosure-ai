@@ -492,8 +492,7 @@ def main() -> None:
             },
             "sources": [
                 "OCPF public API (api.ocpf.us/search/items), SearchTypeCategory=B (expenditures) and S "
-                "(subvendor payments) -- every itemized record OCPF has on file for the window below, "
-                "not a sample.",
+                "(subvendor payments) -- every itemized record OCPF has on file for the window below.",
                 "Same AI vendor/category taxonomy as the federal dashboard (pipeline/config/vendors.yaml), "
                 "applied unmodified against each record's payee name, OCPF's own clarified payee name, "
                 "stated purpose, and OCPF's own clarified purpose.",
@@ -511,33 +510,33 @@ def main() -> None:
                 "category (see below).",
                 "As with the federal dashboard, this dataset only sees a payment if its payee name or "
                 "purpose text names a vendor on this project's taxonomy -- disclosed AI spend is a floor "
-                "on real usage, not a ceiling.",
+                "on real usage.",
                 "The weekly disclosure timeline's 'Reports filed' series uses OCPF's own dateFiled field "
                 "from its report/{reportId} endpoint -- a real filed date, unlike the federal dashboard's "
                 "approximated report dates -- counted once per distinct report (a single report can "
                 "disclose many expenditure line items in one filing).",
                 "Democratic-vs-Republican spending uses each filer's partyAffiliation from OCPF's own "
-                "filer/payload/{cpfId} endpoint -- fetched per distinct filer (a few dozen, not per "
-                "record), since OCPF's expenditure records themselves carry no party field. Filers OCPF "
+                "filer/payload/{cpfId} endpoint -- fetched per distinct filer (a few dozen), since OCPF's "
+                "expenditure records themselves carry no party field. Filers OCPF "
                 "does not mark with a major-party affiliation (ballot-question committees, PACs, and a "
-                "handful of others) are excluded from the party split entirely, not counted as a third "
-                "category -- see the filers_with_known_party figure alongside the split.",
-                "This taxonomy was empirically mined against Massachusetts payee/purpose text directly "
-                "(not only inherited from the federal side): every distinct OCPF payee was scanned for "
+                "handful of others) are excluded from the party split entirely -- see the "
+                "filers_with_known_party figure alongside the split.",
+                "This taxonomy was empirically mined against Massachusetts payee/purpose text directly: "
+                "every distinct OCPF payee was scanned for "
                 "AI-indicative language, plus a manual read of the highest-dollar unmatched payees, which "
                 "is how Read.ai, Captions, and Canva's AI photo feature were found and verified as real "
                 "payees before being added -- see pipeline/config/vendors.yaml for what was found, "
                 "checked, and rejected.",
                 "Vendor and filer detail pages (click a vendor or filer name) draw on every matched "
-                "record for that vendor/filer, not just the top 20 shown in the overview table below -- "
-                "capped at 300 records per page, largest first, the same cap the federal dashboard uses.",
+                "record for that vendor/filer -- capped at 300 records per page, largest first, the "
+                "same cap the federal dashboard uses.",
                 "The $ / % of total spend toggle divides AI-vendor spend by each filer's own total "
-                "reported OCPF expenditure that year (every itemized record, not just AI-vendor "
-                "matches -- the same role parse_disbursements.py's committee totals play for the "
+                "reported OCPF expenditure that year (every itemized record -- the same role "
+                "parse_disbursements.py's committee totals play for the "
                 "federal dashboard). For the yearly trend chart, the denominator is the combined total "
-                "spend of the filers who show at least one AI-vendor disbursement THAT year, not of "
-                "every filer with any activity -- the same 'relative to AI-using campaigns' framing "
-                "the federal dashboard uses for its own percentages.",
+                "spend of the filers who show at least one AI-vendor disbursement THAT year -- the same "
+                "'relative to AI-using campaigns' framing the federal dashboard uses for its own "
+                "percentages.",
                 "The legacy-vendor toggle (top of page, off by default) filters the vendor chart/table, "
                 "the yearly trend chart, and the party split (pie + over-time), same as the equivalent "
                 "Federal charts: a record counts toward the generative-only figures if AT LEAST ONE of "

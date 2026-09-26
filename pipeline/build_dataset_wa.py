@@ -32,7 +32,7 @@ def main() -> None:
         "sources": [
             "Washington PDC open data (data.wa.gov, dataset tijg-9zyp, \"Expenditures by Candidates and "
             "Political Committees\"), a standard Socrata SODA API -- every itemized expenditure record "
-            "PDC has on file for the window below, not a sample.",
+            "PDC has on file for the window below.",
             "Same AI vendor/category taxonomy as the federal and Massachusetts dashboards "
             "(pipeline/config/vendors.yaml), applied unmodified against each record's payee name "
             "(recipient_name), PDC's own expense-category label (code), and free-text purpose "
@@ -40,27 +40,26 @@ def main() -> None:
         ],
         "methodology_notes": [
             "This dashboard covers 2023-01-01 onward (the 2024 and 2026 cycles), the same window "
-            "convention as the federal and Massachusetts dashboards, not this dataset's full ~10-year "
-            "history (which PDC's own open-data catalog separately makes available).",
+            "convention as the federal and Massachusetts dashboards (PDC's own open-data catalog "
+            "separately makes its full ~10-year history available).",
             "PDC's dataset spans every level of Washington campaign finance in one table -- statewide, "
-            "legislative, and local (county, city, school board) races and committees -- not just "
-            "state-legislative races the way this dashboard's name might suggest. A record's own "
+            "legislative, and local (county, city, school board) races and committees. A record's own "
             "`office`/`jurisdiction` fields (shown on candidate detail pages) are the way to tell them "
             "apart; there is no separate federal-style itemization threshold cutting off small-dollar "
             "local races.",
             "As with the federal and Massachusetts dashboards, this dataset only sees a payment if its "
             "payee name, PDC's own expense-category label, or purpose text names a vendor on this "
-            "project's taxonomy -- disclosed AI spend is a floor on real usage, not a ceiling.",
+            "project's taxonomy -- disclosed AI spend is a floor on real usage.",
             "Democratic-vs-Republican spending uses PDC's own `party` field, present directly on each "
             "expenditure record (no separate per-filer lookup needed, unlike OCPF). Minor-party filers, "
             "nonpartisan local races, and PAC/committee-type filers with no party at all are excluded "
-            "from the party split entirely, not counted as a third category -- see the "
+            "from the party split entirely -- see the "
             "filers_with_known_party figure alongside the split.",
             "Vendor and filer detail pages (click a vendor or filer name) draw on every matched record "
-            "for that vendor/filer, not just the top 20 shown in the overview table below -- capped at "
+            "for that vendor/filer -- capped at "
             "300 records per page, largest first, the same cap the other dashboards use.",
             "The $ / % of total spend toggle divides AI-vendor spend by each filer's own total reported "
-            "PDC expenditure that year (every itemized record, not just AI-vendor matches).",
+            "PDC expenditure that year (every itemized record).",
             "The legacy-vendor toggle (top of page, off by default) filters the vendor chart/table, the "
             "yearly trend chart, and the party split (pie + over-time), same as the other dashboards: a "
             "record counts toward the generative-only figures if AT LEAST ONE of its matched vendors is "

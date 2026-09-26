@@ -223,7 +223,7 @@ def main() -> None:
             "sources": [
                 "Every record here is a real disclosed expenditure from one of the four states' own "
                 "systems -- Massachusetts OCPF, Washington PDC, Colorado TRACER, California CAL-ACCESS -- "
-                "unioned together, not estimated or projected. See each state's own tab for its full "
+                "unioned together. See each state's own tab for its full "
                 "sourcing and methodology.",
                 "Same AI vendor/category taxonomy as every other tab on this site "
                 "(pipeline/config/vendors.yaml), applied by each state's own pipeline before this build "
