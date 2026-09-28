@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-09-21T15:45:52+00:00",
+    "generated_at": "2026-09-28T17:31:23+00:00",
     "population_source": "U.S. Census Bureau, Vintage 2024 national and state population estimates (as of July 1, 2024): https://www.census.gov/newsroom/press-kits/2024/national-state-population-estimates.html",
     "covered_states": [
       "ma",
@@ -23,10 +23,10 @@
     "ma": {
       "label": "Massachusetts",
       "population": 7136171,
-      "spend_all_eras": 24187.04,
-      "spend_generative": 11696.8,
+      "spend_all_eras": 24281.8,
+      "spend_generative": 11791.56,
       "filers_all_eras": 59,
-      "filers_generative": 42,
+      "filers_generative": 43,
       "distinct_vendors_all_eras": 17,
       "distinct_vendors_generative": 11
     },
@@ -43,8 +43,8 @@
     "co": {
       "label": "Colorado",
       "population": 5957493,
-      "spend_all_eras": 39984.05,
-      "spend_generative": 7405.82,
+      "spend_all_eras": 41194.65,
+      "spend_generative": 7466.42,
       "filers_all_eras": 51,
       "filers_generative": 31,
       "distinct_vendors_all_eras": 15,
@@ -53,30 +53,30 @@
     "ca": {
       "label": "California",
       "population": 39431263,
-      "spend_all_eras": 1975166.32,
-      "spend_generative": 68613.39,
-      "filers_all_eras": 73,
-      "filers_generative": 20,
+      "spend_all_eras": 2023462.76,
+      "spend_generative": 69557.39,
+      "filers_all_eras": 81,
+      "filers_generative": 21,
       "distinct_vendors_all_eras": 17,
       "distinct_vendors_generative": 9
     }
   },
   "covered": {
     "population": 60483107,
-    "spend_all_eras": 2094278.9,
-    "spend_generative": 92401.02,
-    "filers_all_eras": 211,
-    "filers_generative": 108,
+    "spend_all_eras": 2143880.7,
+    "spend_generative": 93500.38,
+    "filers_all_eras": 219,
+    "filers_generative": 110,
     "vendor_instances_all_eras": 59,
     "vendor_instances_generative": 33,
     "distinct_vendors_all_eras": 28,
     "distinct_vendors_generative": 18
   },
   "projection": {
-    "spend_all_eras": 11776631.54,
-    "spend_generative": 519593.05,
-    "filers_all_eras": 1187,
-    "filers_generative": 607,
+    "spend_all_eras": 12055554.34,
+    "spend_generative": 525775.02,
+    "filers_all_eras": 1231,
+    "filers_generative": 619,
     "vendor_instances_all_eras": 332,
     "vendor_instances_generative": 186
   }

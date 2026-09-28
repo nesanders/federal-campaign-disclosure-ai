@@ -1,14 +1,14 @@
 {
   "meta": {
-    "generated_at": "2026-09-26T15:35:56+00:00",
+    "generated_at": "2026-09-28T17:24:08+00:00",
     "source_label": "Massachusetts Office of Campaign and Political Finance (OCPF)",
     "date_range": {
       "start": "2023-01-01",
-      "end": "2026-09-26"
+      "end": "2026-09-28"
     },
     "records_scanned": {
-      "expenditures": 325673,
-      "subvendor": 2746
+      "expenditures": 326474,
+      "subvendor": 2766
     },
     "sources": [
       "OCPF public API (api.ocpf.us/search/items), SearchTypeCategory=B (expenditures) and S (subvendor payments) -- every itemized record OCPF has on file for the window below.",
@@ -28,13 +28,13 @@
     ]
   },
   "stats": {
-    "total_all_eras": 24187.04,
-    "total_generative": 11696.8,
-    "matched_records": 342,
+    "total_all_eras": 24281.8,
+    "total_generative": 11791.56,
+    "matched_records": 343,
     "filers_with_ai_spend": 59,
-    "filers_with_ai_spend_ex_legacy": 42,
+    "filers_with_ai_spend_ex_legacy": 43,
     "total_filers_with_activity": 2518,
-    "total_expenditure_ai_filers": 23983769.83,
+    "total_expenditure_ai_filers": 24138743.51,
     "pct_ai_overall": 0.101
   },
   "vendors": [
@@ -165,16 +165,16 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 1534.91,
-      "amount_high": 1534.91,
+      "total": 1629.67,
+      "amount_high": 1629.67,
       "amount_medium": 0.0,
-      "records": 25,
-      "records_high": 25,
+      "records": 26,
+      "records_high": 26,
       "records_medium": 0,
-      "filers": 8,
+      "filers": 9,
       "dem_amount": 1322.41,
-      "rep_amount": 212.5,
-      "dem_rep_ratio": 6.223
+      "rep_amount": 307.26,
+      "dem_rep_ratio": 4.304
     },
     {
       "id": "otter_ai",
@@ -942,12 +942,12 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 1534.91,
-      "records_count": 25,
-      "filers_count": 8,
+      "total": 1629.67,
+      "records_count": 26,
+      "filers_count": 9,
       "dem_amount": 1322.41,
-      "rep_amount": 212.5,
-      "dem_rep_ratio": 6.223,
+      "rep_amount": 307.26,
+      "dem_rep_ratio": 4.304,
       "time_series": [
         {
           "year": 2025,
@@ -956,8 +956,8 @@
         },
         {
           "year": 2026,
-          "amount": 1322.41,
-          "count": 24
+          "amount": 1417.17,
+          "count": 25
         }
       ],
       "time_series_by_party": [
@@ -974,7 +974,7 @@
         {
           "year": 2026,
           "party": "Republican",
-          "amount": 212.5
+          "amount": 307.26
         }
       ],
       "by_filer": [
@@ -1033,6 +1033,13 @@
           "filer_party": "Democratic",
           "amount": 106.25,
           "count": 5
+        },
+        {
+          "filer_cpf_id": "19431",
+          "filer_name": "Minogue, Michael",
+          "filer_party": "Republican",
+          "amount": 94.76,
+          "count": 1
         }
       ],
       "records": [
@@ -1095,6 +1102,16 @@
           "purpose": "software subscription monthly",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1037037"
+        },
+        {
+          "date": "8/20/2026",
+          "filer_cpf_id": "19431",
+          "filer_name": "Minogue, Michael",
+          "filer_party": "Republican",
+          "amount": 94.76,
+          "purpose": "Software",
+          "confidence": "high",
+          "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1044101"
         },
         {
           "date": "5/26/2026",
@@ -2152,7 +2169,7 @@
           "filer_name": "Cruz, Manny",
           "filer_party": "Democratic",
           "amount": 21.25,
-          "purpose": "",
+          "purpose": "Digital office tools",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1035060"
         },
@@ -3102,7 +3119,7 @@
           "filer_name": "Tyler, Chynah",
           "filer_party": "Democratic",
           "amount": 21.24,
-          "purpose": "CHECKCARD",
+          "purpose": "AI Software, pending resolution vendor error",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1042220"
         },
@@ -4490,7 +4507,7 @@
           "filer_name": "Durkan, Sharon",
           "filer_party": "Democratic",
           "amount": 14.99,
-          "purpose": "POS Purchase",
+          "purpose": "Design Subscription",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1041546"
         },
@@ -5239,7 +5256,7 @@
         "anthropic",
         "read_ai"
       ],
-      "total_expenditure": 150932.61,
+      "total_expenditure": 150944.31,
       "pct_ai": 0.39,
       "time_series": [
         {
@@ -5326,8 +5343,8 @@
         "openai",
         "xai_grok"
       ],
-      "total_expenditure": 17008.62,
-      "pct_ai": 3.586,
+      "total_expenditure": 15065.95,
+      "pct_ai": 4.049,
       "time_series": [
         {
           "year": 2026,
@@ -5787,8 +5804,8 @@
         "daisychain",
         "donoratlas"
       ],
-      "total_expenditure": 4788983.33,
-      "pct_ai": 0.013,
+      "total_expenditure": 4944360.61,
+      "pct_ai": 0.012,
       "time_series": [
         {
           "year": 2025,
@@ -6092,7 +6109,7 @@
             "high"
           ],
           "amount": 21.25,
-          "purpose": "",
+          "purpose": "Digital office tools",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1035060"
         },
         {
@@ -6121,7 +6138,7 @@
       "vendor_ids": [
         "grammarly"
       ],
-      "total_expenditure": 591896.19,
+      "total_expenditure": 591910.33,
       "pct_ai": 0.071,
       "time_series": [
         {
@@ -6701,7 +6718,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 237029.88,
+      "total_expenditure": 237034.18,
       "pct_ai": 0.045,
       "time_series": [
         {
@@ -6737,7 +6754,7 @@
       "vendor_ids": [
         "canva_ai"
       ],
-      "total_expenditure": 327584.17,
+      "total_expenditure": 327588.12,
       "pct_ai": 0.041,
       "time_series": [
         {
@@ -6869,7 +6886,7 @@
             "high"
           ],
           "amount": 14.99,
-          "purpose": "POS Purchase",
+          "purpose": "Design Subscription",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1041546"
         },
         {
@@ -7095,7 +7112,7 @@
       "vendor_ids": [
         "captions_ai"
       ],
-      "total_expenditure": 317089.31,
+      "total_expenditure": 317243.21,
       "pct_ai": 0.075,
       "time_series": [
         {
@@ -7307,8 +7324,8 @@
       "vendor_ids": [
         "anthropic"
       ],
-      "total_expenditure": 33916.75,
-      "pct_ai": 0.627,
+      "total_expenditure": 33968.6,
+      "pct_ai": 0.626,
       "time_series": [
         {
           "year": 2025,
@@ -7711,7 +7728,7 @@
       "vendor_ids": [
         "anthropic"
       ],
-      "total_expenditure": 148621.44,
+      "total_expenditure": 148631.32,
       "pct_ai": 0.143,
       "time_series": [
         {
@@ -7900,7 +7917,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 126881.94,
+      "total_expenditure": 126890.63,
       "pct_ai": 0.291,
       "time_series": [
         {
@@ -8792,8 +8809,8 @@
       "vendor_ids": [
         "anthropic"
       ],
-      "total_expenditure": 33965.0,
-      "pct_ai": 0.626,
+      "total_expenditure": 33983.4,
+      "pct_ai": 0.625,
       "time_series": [
         {
           "year": 2026,
@@ -8823,12 +8840,13 @@
       "id": "19431",
       "name": "Minogue, Michael",
       "party": "Republican",
-      "total": 2129.03,
-      "records_count": 4,
+      "total": 2223.79,
+      "records_count": 5,
       "vendor_ids": [
+        "anthropic",
         "campaign_nucleus"
       ],
-      "total_expenditure": 12026646.54,
+      "total_expenditure": 12027923.11,
       "pct_ai": 0.018,
       "time_series": [
         {
@@ -8838,8 +8856,8 @@
         },
         {
           "year": 2026,
-          "amount": 483.87,
-          "count": 1
+          "amount": 578.63,
+          "count": 2
         }
       ],
       "records": [
@@ -8902,6 +8920,21 @@
           "amount": 483.87,
           "purpose": "SOFTWARE",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1016472"
+        },
+        {
+          "date": "8/20/2026",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 94.76,
+          "purpose": "Software",
+          "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1044101"
         }
       ]
     },
@@ -8914,7 +8947,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 366079.91,
+      "total_expenditure": 366115.48,
       "pct_ai": 0.012,
       "time_series": [
         {
@@ -10362,7 +10395,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 22565.23,
+      "total_expenditure": 22567.2,
       "pct_ai": 0.094,
       "time_series": [
         {
@@ -10642,7 +10675,7 @@
             "high"
           ],
           "amount": 21.24,
-          "purpose": "CHECKCARD",
+          "purpose": "AI Software, pending resolution vendor error",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1042220"
         }
       ]
@@ -11682,12 +11715,12 @@
     },
     {
       "year": 2026,
-      "total": 9265.32,
-      "records": 192,
-      "total_expenditure": 14572821.64,
-      "total_ex_legacy": 6904.2,
-      "records_ex_legacy": 154,
-      "total_expenditure_ex_legacy": 4338260.98
+      "total": 9360.08,
+      "records": 193,
+      "total_expenditure": 14727795.32,
+      "total_ex_legacy": 6998.96,
+      "records_ex_legacy": 155,
+      "total_expenditure_ex_legacy": 13995042.16
     }
   ],
   "time_series_by_party": [
@@ -11724,7 +11757,7 @@
     {
       "year": 2026,
       "party": "Republican",
-      "amount": 2535.9
+      "amount": 2630.66
     }
   ],
   "time_series_by_party_ex_legacy": [
@@ -11756,24 +11789,24 @@
     {
       "year": 2026,
       "party": "Republican",
-      "amount": 1899.03
+      "amount": 1993.79
     }
   ],
   "party_split": {
     "dem_amount": 16904.86,
-    "rep_amount": 5138.26,
+    "rep_amount": 5233.02,
     "dem_count": 267,
-    "rep_count": 48,
-    "dem_rep_ratio": 3.29,
+    "rep_count": 49,
+    "dem_rep_ratio": 3.23,
     "filers_with_known_party": 52
   },
   "party_split_ex_legacy": {
     "dem_amount": 8844.52,
-    "rep_amount": 1919.03,
+    "rep_amount": 2013.79,
     "dem_count": 189,
-    "rep_count": 25,
-    "dem_rep_ratio": 4.609,
-    "filers_with_known_party": 38
+    "rep_count": 26,
+    "dem_rep_ratio": 4.392,
+    "filers_with_known_party": 39
   },
   "weekly_histogram": {
     "expenditures": [
@@ -12354,8 +12387,8 @@
       },
       {
         "week": "2026-08-17",
-        "count": 5,
-        "amount": 199.85
+        "count": 6,
+        "amount": 294.61
       },
       {
         "week": "2026-08-24",
@@ -12592,11 +12625,15 @@
       {
         "week": "2026-09-07",
         "count": 1
+      },
+      {
+        "week": "2026-09-21",
+        "count": 1
       }
     ]
   },
   "subvendor": {
-    "records_scanned": 2746,
+    "records_scanned": 2766,
     "matched_records": 0,
     "total": 0
   },

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-09-26T15:34:06+00:00",
-    "records_scanned": 3267910,
+    "generated_at": "2026-09-28T17:31:23+00:00",
+    "records_scanned": 3440980,
     "source_label": "California Secretary of State (CAL-ACCESS)",
     "date_range": {
       "start": "2023-01-01",
@@ -22,14 +22,14 @@
     ]
   },
   "stats": {
-    "total_all_eras": 1975166.32,
-    "total_generative": 68613.39,
-    "matched_records": 376,
-    "filers_with_ai_spend": 73,
-    "filers_with_ai_spend_ex_legacy": 20,
-    "total_filers_with_activity": 6271,
-    "total_expenditure_ai_filers": 832765393.0,
-    "pct_ai_overall": 0.237
+    "total_all_eras": 2023462.76,
+    "total_generative": 69557.39,
+    "matched_records": 410,
+    "filers_with_ai_spend": 81,
+    "filers_with_ai_spend_ex_legacy": 21,
+    "total_filers_with_activity": 6323,
+    "total_expenditure_ai_filers": 875523384.81,
+    "pct_ai_overall": 0.231
   },
   "vendors": [
     {
@@ -44,13 +44,13 @@
         "communications_copy",
         "fundraising"
       ],
-      "total": 1692723.07,
-      "amount_high": 1692723.07,
+      "total": 1701343.01,
+      "amount_high": 1701343.01,
       "amount_medium": 0.0,
-      "records": 132,
-      "records_high": 132,
+      "records": 140,
+      "records_high": 140,
       "records_medium": 0,
-      "filers": 40,
+      "filers": 46,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
       "dem_rep_ratio": null
@@ -66,11 +66,11 @@
       "tags": [
         "research_strategy"
       ],
-      "total": 148500.0,
-      "amount_high": 148500.0,
+      "total": 186025.0,
+      "amount_high": 186025.0,
       "amount_medium": 0.0,
-      "records": 11,
-      "records_high": 11,
+      "records": 14,
+      "records_high": 14,
       "records_medium": 0,
       "filers": 2,
       "dem_amount": 0.0,
@@ -89,11 +89,11 @@
         "fundraising",
         "administrative_productivity"
       ],
-      "total": 22208.46,
-      "amount_high": 22208.46,
+      "total": 22415.96,
+      "amount_high": 22415.96,
       "amount_medium": 0.0,
-      "records": 92,
-      "records_high": 92,
+      "records": 104,
+      "records_high": 104,
       "records_medium": 0,
       "filers": 4,
       "dem_amount": 0.0,
@@ -181,13 +181,13 @@
         "fundraising",
         "administrative_productivity"
       ],
-      "total": 4400.0,
-      "amount_high": 4400.0,
+      "total": 5400.0,
+      "amount_high": 5400.0,
       "amount_medium": 0.0,
-      "records": 11,
-      "records_high": 11,
+      "records": 14,
+      "records_high": 14,
       "records_medium": 0,
-      "filers": 1,
+      "filers": 2,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
       "dem_rep_ratio": null
@@ -204,11 +204,11 @@
         "fundraising",
         "data_targeting"
       ],
-      "total": 4170.0,
-      "amount_high": 4170.0,
+      "total": 4680.0,
+      "amount_high": 4680.0,
       "amount_medium": 0.0,
-      "records": 16,
-      "records_high": 16,
+      "records": 18,
+      "records_high": 18,
       "records_medium": 0,
       "filers": 2,
       "dem_amount": 0.0,
@@ -261,6 +261,29 @@
       "dem_rep_ratio": null
     },
     {
+      "id": "openai",
+      "name": "OpenAI (ChatGPT)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://openai.com",
+      "lean_context": null,
+      "description": "General-purpose AI chatbot campaigns use to draft emails, speeches, social media copy, and other written content.",
+      "tags": [
+        "communications_copy",
+        "administrative_productivity"
+      ],
+      "total": 1296.0,
+      "amount_high": 1296.0,
+      "amount_medium": 0.0,
+      "records": 21,
+      "records_high": 21,
+      "records_medium": 0,
+      "filers": 4,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
+    },
+    {
       "id": "anthropic",
       "name": "Anthropic (Claude)",
       "group": "general_purpose",
@@ -279,29 +302,6 @@
       "records_high": 8,
       "records_medium": 0,
       "filers": 2,
-      "dem_amount": 0.0,
-      "rep_amount": 0.0,
-      "dem_rep_ratio": null
-    },
-    {
-      "id": "openai",
-      "name": "OpenAI (ChatGPT)",
-      "group": "general_purpose",
-      "era": "generative",
-      "homepage": "https://openai.com",
-      "lean_context": null,
-      "description": "General-purpose AI chatbot campaigns use to draft emails, speeches, social media copy, and other written content.",
-      "tags": [
-        "communications_copy",
-        "administrative_productivity"
-      ],
-      "total": 862.0,
-      "amount_high": 862.0,
-      "amount_medium": 0.0,
-      "records": 15,
-      "records_high": 15,
-      "records_medium": 0,
-      "filers": 3,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
       "dem_rep_ratio": null
@@ -1304,9 +1304,9 @@
         "communications_copy",
         "fundraising"
       ],
-      "total": 1692723.07,
-      "records_count": 132,
-      "filers_count": 40,
+      "total": 1701343.01,
+      "records_count": 140,
+      "filers_count": 46,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
       "dem_rep_ratio": null,
@@ -1328,8 +1328,8 @@
         },
         {
           "year": 2026,
-          "amount": 1285130.79,
-          "count": 50
+          "amount": 1293750.73,
+          "count": 58
         }
       ],
       "time_series_by_party": [],
@@ -2257,6 +2257,16 @@
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3181572&amendid=0"
         },
         {
+          "date": "2026-09-13",
+          "filer_id": "741452",
+          "filer_name": "Sutter County Republican Central Committee",
+          "filer_party": "Unknown",
+          "amount": 2000.0,
+          "purpose": "Texting",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199661&amendid=0"
+        },
+        {
           "date": "2024-12-27",
           "filer_id": "741949",
           "filer_name": "REPUBLICAN PARTY OF SAN DIEGO COUNTY",
@@ -2285,6 +2295,16 @@
           "purpose": "",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=2929641&amendid=0"
+        },
+        {
+          "date": "2026-07-06",
+          "filer_id": "741452",
+          "filer_name": "Sutter County Republican Central Committee",
+          "filer_party": "Unknown",
+          "amount": 1700.0,
+          "purpose": "Texting",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199661&amendid=0"
         },
         {
           "date": "2024-02-05",
@@ -2557,6 +2577,36 @@
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3177882&amendid=0"
         },
         {
+          "date": "2026-09-10",
+          "filer_id": "1485838",
+          "filer_name": "Guillermo Gonzalez",
+          "filer_party": "Unknown",
+          "amount": 1000.0,
+          "purpose": "Voter Messaging Software",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3198827&amendid=0"
+        },
+        {
+          "date": "2026-08-20",
+          "filer_id": "1302564",
+          "filer_name": "California Homeowners Association",
+          "filer_party": "Unknown",
+          "amount": 1000.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199688&amendid=0"
+        },
+        {
+          "date": "2026-09-15",
+          "filer_id": "1487645",
+          "filer_name": "Darin DuPont",
+          "filer_party": "Unknown",
+          "amount": 1000.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199460&amendid=0"
+        },
+        {
           "date": "2024-08-15",
           "filer_id": "741949",
           "filer_name": "REPUBLICAN PARTY OF SAN DIEGO COUNTY",
@@ -2667,6 +2717,16 @@
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3069300&amendid=0"
         },
         {
+          "date": "2026-08-21",
+          "filer_id": "1477088",
+          "filer_name": "Suzette Martinez Valladares",
+          "filer_party": "Unknown",
+          "amount": 780.79,
+          "purpose": "Text Messages",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199671&amendid=0"
+        },
+        {
           "date": "2026-05-28",
           "filer_id": "1488779",
           "filer_name": "Working Families and Small Businesses for Mark Pulido in the Assembly 2026, a project of California Hotel + Lodging Association",
@@ -2705,6 +2765,16 @@
           "purpose": "",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3171877&amendid=0"
+        },
+        {
+          "date": "2026-08-11",
+          "filer_id": "1483280",
+          "filer_name": "Californians RISE - Senator Valladares' Ballot Measure Committee",
+          "filer_party": "Unknown",
+          "amount": 656.15,
+          "purpose": "Text Messages",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199412&amendid=0"
         },
         {
           "date": "2024-12-27",
@@ -2775,6 +2845,16 @@
           "purpose": "Text Messages (10/20/25)",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3115121&amendid=0"
+        },
+        {
+          "date": "2026-09-03",
+          "filer_id": "1467958",
+          "filer_name": "Tony Strickland",
+          "filer_party": "Unknown",
+          "amount": 483.0,
+          "purpose": "Voter Messaging Platform",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199501&amendid=0"
         },
         {
           "date": "2026-05-29",
@@ -2873,8 +2953,8 @@
         "fundraising",
         "administrative_productivity"
       ],
-      "total": 22208.46,
-      "records_count": 92,
+      "total": 22415.96,
+      "records_count": 104,
       "filers_count": 4,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -2897,8 +2977,8 @@
         },
         {
           "year": 2026,
-          "amount": 9469.87,
-          "count": 39
+          "amount": 9677.37,
+          "count": 51
         }
       ],
       "time_series_by_party": [],
@@ -2928,8 +3008,8 @@
           "filer_id": "1477625",
           "filer_name": "Sergio Farias",
           "filer_party": "Unknown",
-          "amount": 197.67,
-          "count": 15
+          "amount": 405.17,
+          "count": 27
         }
       ],
       "records": [
@@ -3284,6 +3364,16 @@
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=2956462&amendid=0"
         },
         {
+          "date": "2026-09-19",
+          "filer_id": "1477625",
+          "filer_name": "Sergio Farias",
+          "filer_party": "Unknown",
+          "amount": 87.13,
+          "purpose": "Online Contribution Processin Fee",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
           "date": "2024-08-19",
           "filer_id": "1463444",
           "filer_name": "Jimmy Pham",
@@ -3424,6 +3514,16 @@
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3138045&amendid=1"
         },
         {
+          "date": "2026-08-31",
+          "filer_id": "1477625",
+          "filer_name": "Sergio Farias",
+          "filer_party": "Unknown",
+          "amount": 26.27,
+          "purpose": "Online Contribution Processing Fee",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
           "date": "2024-06-30",
           "filer_id": "1463444",
           "filer_name": "Jimmy Pham",
@@ -3514,6 +3614,16 @@
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3138045&amendid=1"
         },
         {
+          "date": "2026-08-03",
+          "filer_id": "1477625",
+          "filer_name": "Sergio Farias",
+          "filer_party": "Unknown",
+          "amount": 20.21,
+          "purpose": "Onlien Contribution Processing Fee",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
           "date": "2023-12-12",
           "filer_id": "1463444",
           "filer_name": "Jimmy Pham",
@@ -3574,6 +3684,26 @@
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=2936027&amendid=0"
         },
         {
+          "date": "2026-09-14",
+          "filer_id": "1477625",
+          "filer_name": "Sergio Farias",
+          "filer_party": "Unknown",
+          "amount": 14.97,
+          "purpose": "Online Contribution Processing Fee",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
+          "date": "2026-07-27",
+          "filer_id": "1477625",
+          "filer_name": "Sergio Farias",
+          "filer_party": "Unknown",
+          "amount": 14.04,
+          "purpose": "Online Contribution Processing Fee",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
           "date": "2024-07-22",
           "filer_id": "1463444",
           "filer_name": "Jimmy Pham",
@@ -3614,6 +3744,16 @@
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3138045&amendid=1"
         },
         {
+          "date": "2026-08-24",
+          "filer_id": "1477625",
+          "filer_name": "Sergio Farias",
+          "filer_party": "Unknown",
+          "amount": 10.28,
+          "purpose": "Online Contribution Processing Fee",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
           "date": "2024-06-27",
           "filer_id": "1463444",
           "filer_name": "Jimmy Pham",
@@ -3622,6 +3762,16 @@
           "purpose": "",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=2936027&amendid=0"
+        },
+        {
+          "date": "2026-07-06",
+          "filer_id": "1477625",
+          "filer_name": "Sergio Farias",
+          "filer_party": "Unknown",
+          "amount": 9.68,
+          "purpose": "Online Contribution Processing Fee",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
         },
         {
           "date": "2026-02-02",
@@ -3642,6 +3792,16 @@
           "purpose": "",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=2936027&amendid=0"
+        },
+        {
+          "date": "2026-08-17",
+          "filer_id": "1477625",
+          "filer_name": "Sergio Farias",
+          "filer_party": "Unknown",
+          "amount": 8.41,
+          "purpose": "Online Contribution Processing Fee",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
         },
         {
           "date": "2024-08-12",
@@ -3672,6 +3832,46 @@
           "purpose": "",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=2956462&amendid=0"
+        },
+        {
+          "date": "2026-09-07",
+          "filer_id": "1477625",
+          "filer_name": "Sergio Farias",
+          "filer_party": "Unknown",
+          "amount": 4.36,
+          "purpose": "Online Contribution Processing Fee",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
+          "date": "2026-07-13",
+          "filer_id": "1477625",
+          "filer_name": "Sergio Farias",
+          "filer_party": "Unknown",
+          "amount": 4.05,
+          "purpose": "Online Contribution Processing Fee",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
+          "date": "2026-07-20",
+          "filer_id": "1477625",
+          "filer_name": "Sergio Farias",
+          "filer_party": "Unknown",
+          "amount": 4.05,
+          "purpose": "Online Contribution Processing Fee",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
+          "date": "2026-08-10",
+          "filer_id": "1477625",
+          "filer_name": "Sergio Farias",
+          "filer_party": "Unknown",
+          "amount": 4.05,
+          "purpose": "Online Contribution Processing Fee",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
         },
         {
           "date": "2024-04-30",
@@ -3867,9 +4067,9 @@
         "fundraising",
         "administrative_productivity"
       ],
-      "total": 4400.0,
-      "records_count": 11,
-      "filers_count": 1,
+      "total": 5400.0,
+      "records_count": 14,
+      "filers_count": 2,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
       "dem_rep_ratio": null,
@@ -3886,8 +4086,8 @@
         },
         {
           "year": 2026,
-          "amount": 800.0,
-          "count": 2
+          "amount": 1800.0,
+          "count": 5
         }
       ],
       "time_series_by_party": [],
@@ -3896,8 +4096,15 @@
           "filer_id": "1435800",
           "filer_name": "Project SuperBloom",
           "filer_party": "Unknown",
-          "amount": 4400.0,
-          "count": 11
+          "amount": 4800.0,
+          "count": 12
+        },
+        {
+          "filer_id": "1486040",
+          "filer_name": "Scott Sakakihara",
+          "filer_party": "Unknown",
+          "amount": 600.0,
+          "count": 2
         }
       ],
       "records": [
@@ -4010,6 +4217,36 @@
           "purpose": "",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3137748&amendid=0"
+        },
+        {
+          "date": "2026-07-10",
+          "filer_id": "1435800",
+          "filer_name": "Project SuperBloom",
+          "filer_party": "Unknown",
+          "amount": 400.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199177&amendid=0"
+        },
+        {
+          "date": "2026-07-21",
+          "filer_id": "1486040",
+          "filer_name": "Scott Sakakihara",
+          "filer_party": "Unknown",
+          "amount": 300.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199369&amendid=0"
+        },
+        {
+          "date": "2026-08-21",
+          "filer_id": "1486040",
+          "filer_name": "Scott Sakakihara",
+          "filer_party": "Unknown",
+          "amount": 300.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199369&amendid=0"
         }
       ]
     },
@@ -4025,8 +4262,8 @@
         "fundraising",
         "data_targeting"
       ],
-      "total": 4170.0,
-      "records_count": 16,
+      "total": 4680.0,
+      "records_count": 18,
       "filers_count": 2,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -4044,8 +4281,8 @@
         },
         {
           "year": 2026,
-          "amount": 1320.0,
-          "count": 5
+          "amount": 1830.0,
+          "count": 7
         }
       ],
       "time_series_by_party": [],
@@ -4054,8 +4291,8 @@
           "filer_id": "741666",
           "filer_name": "California Democratic Party",
           "filer_party": "Unknown",
-          "amount": 3870.0,
-          "count": 15
+          "amount": 4380.0,
+          "count": 17
         },
         {
           "filer_id": "1461897",
@@ -4215,6 +4452,26 @@
           "purpose": "subscription",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3138000&amendid=0"
+        },
+        {
+          "date": "2026-08-24",
+          "filer_id": "741666",
+          "filer_name": "California Democratic Party",
+          "filer_party": "Unknown",
+          "amount": 255.0,
+          "purpose": "subscription",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3198722&amendid=0"
+        },
+        {
+          "date": "2026-09-09",
+          "filer_id": "741666",
+          "filer_name": "California Democratic Party",
+          "filer_party": "Unknown",
+          "amount": 255.0,
+          "purpose": "subscription",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3198722&amendid=0"
         },
         {
           "date": "2026-05-21",
@@ -4589,8 +4846,8 @@
       "tags": [
         "research_strategy"
       ],
-      "total": 148500.0,
-      "records_count": 11,
+      "total": 186025.0,
+      "records_count": 14,
       "filers_count": 2,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -4603,8 +4860,8 @@
         },
         {
           "year": 2026,
-          "amount": 50000.0,
-          "count": 4
+          "amount": 87525.0,
+          "count": 7
         }
       ],
       "time_series_by_party": [],
@@ -4613,8 +4870,8 @@
           "filer_id": "1480425",
           "filer_name": "Stephen Hilton",
           "filer_party": "Unknown",
-          "amount": 125000.0,
-          "count": 10
+          "amount": 162525.0,
+          "count": 13
         },
         {
           "filer_id": "1483178",
@@ -4634,6 +4891,16 @@
           "purpose": "",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3085567&amendid=0"
+        },
+        {
+          "date": "2026-07-09",
+          "filer_id": "1480425",
+          "filer_name": "Stephen Hilton",
+          "filer_party": "Unknown",
+          "amount": 12525.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3200253&amendid=0"
         },
         {
           "date": "2025-10-03",
@@ -4734,6 +5001,26 @@
           "purpose": "",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3181829&amendid=0"
+        },
+        {
+          "date": "2026-07-22",
+          "filer_id": "1480425",
+          "filer_name": "Stephen Hilton",
+          "filer_party": "Unknown",
+          "amount": 12500.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3200253&amendid=0"
+        },
+        {
+          "date": "2026-08-03",
+          "filer_id": "1480425",
+          "filer_name": "Stephen Hilton",
+          "filer_party": "Unknown",
+          "amount": 12500.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3200253&amendid=0"
         }
       ]
     },
@@ -4749,9 +5036,9 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 862.0,
-      "records_count": 15,
-      "filers_count": 3,
+      "total": 1296.0,
+      "records_count": 21,
+      "filers_count": 4,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
       "dem_rep_ratio": null,
@@ -4763,8 +5050,8 @@
         },
         {
           "year": 2026,
-          "amount": 125.0,
-          "count": 7
+          "amount": 559.0,
+          "count": 13
         }
       ],
       "time_series_by_party": [],
@@ -4777,18 +5064,25 @@
           "count": 1
         },
         {
+          "filer_id": "1480103",
+          "filer_name": "Herbert Morgan",
+          "filer_party": "Unknown",
+          "amount": 360.0,
+          "count": 2
+        },
+        {
           "filer_id": "1456613",
           "filer_name": "Susan Rubio",
           "filer_party": "Unknown",
-          "amount": 160.0,
-          "count": 8
+          "amount": 200.0,
+          "count": 10
         },
         {
           "filer_id": "742344",
           "filer_name": "Monterey County Republican Central Committee (State)",
           "filer_party": "Unknown",
-          "amount": 102.0,
-          "count": 6
+          "amount": 136.0,
+          "count": 8
         }
       ],
       "records": [
@@ -4801,6 +5095,26 @@
           "purpose": "",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3112666&amendid=0"
+        },
+        {
+          "date": "2026-08-18",
+          "filer_id": "1480103",
+          "filer_name": "Herbert Morgan",
+          "filer_party": "Unknown",
+          "amount": 200.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199834&amendid=0"
+        },
+        {
+          "date": "2026-08-22",
+          "filer_id": "1480103",
+          "filer_name": "Herbert Morgan",
+          "filer_party": "Unknown",
+          "amount": 160.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199834&amendid=0"
         },
         {
           "date": "2025-07-29",
@@ -4883,6 +5197,26 @@
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3180280&amendid=0"
         },
         {
+          "date": "2026-07-28",
+          "filer_id": "1456613",
+          "filer_name": "Susan Rubio",
+          "filer_party": "Unknown",
+          "amount": 20.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199294&amendid=0"
+        },
+        {
+          "date": "2026-08-28",
+          "filer_id": "1456613",
+          "filer_name": "Susan Rubio",
+          "filer_party": "Unknown",
+          "amount": 20.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199294&amendid=0"
+        },
+        {
           "date": "2025-10-20",
           "filer_id": "742344",
           "filer_name": "Monterey County Republican Central Committee (State)",
@@ -4941,6 +5275,26 @@
           "purpose": "Web services",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3171839&amendid=0"
+        },
+        {
+          "date": "2026-07-20",
+          "filer_id": "742344",
+          "filer_name": "Monterey County Republican Central Committee (State)",
+          "filer_party": "Unknown",
+          "amount": 17.0,
+          "purpose": "Web services",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3197084&amendid=0"
+        },
+        {
+          "date": "2026-08-19",
+          "filer_id": "742344",
+          "filer_name": "Monterey County Republican Central Committee (State)",
+          "filer_party": "Unknown",
+          "amount": 17.0,
+          "purpose": "Web services",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3197084&amendid=0"
         }
       ]
     },
@@ -5396,8 +5750,8 @@
         "grammarly",
         "prompt_io"
       ],
-      "total_expenditure": 7440979.04,
-      "pct_ai": 0.207,
+      "total_expenditure": 7807335.01,
+      "pct_ai": 0.197,
       "time_series": [
         {
           "year": 2023,
@@ -5969,8 +6323,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 32434622.03,
-      "pct_ai": 0.045,
+      "total_expenditure": 35422079.57,
+      "pct_ai": 0.041,
       "time_series": [
         {
           "year": 2024,
@@ -7032,13 +7386,13 @@
       "id": "1435800",
       "name": "Project SuperBloom",
       "party": "Unknown",
-      "total": 4400.0,
-      "records_count": 11,
+      "total": 4800.0,
+      "records_count": 12,
       "vendor_ids": [
         "calltime_ai"
       ],
-      "total_expenditure": 437192.75,
-      "pct_ai": 1.006,
+      "total_expenditure": 448383.2,
+      "pct_ai": 1.071,
       "time_series": [
         {
           "year": 2024,
@@ -7052,8 +7406,8 @@
         },
         {
           "year": 2026,
-          "amount": 800.0,
-          "count": 2
+          "amount": 1200.0,
+          "count": 3
         }
       ],
       "records": [
@@ -7221,6 +7575,21 @@
           "amount": 400.0,
           "purpose": "",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3137748&amendid=0"
+        },
+        {
+          "date": "2026-07-10",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 400.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199177&amendid=0"
         }
       ]
     },
@@ -7365,8 +7734,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 2521288.96,
-      "pct_ai": 0.479,
+      "total_expenditure": 2630510.14,
+      "pct_ai": 0.459,
       "time_series": [
         {
           "year": 2024,
@@ -7639,14 +8008,14 @@
       "id": "741666",
       "name": "California Democratic Party",
       "party": "Unknown",
-      "total": 4942.2,
-      "records_count": 19,
+      "total": 5452.2,
+      "records_count": 21,
       "vendor_ids": [
         "donoratlas",
         "grammarly",
         "otter_ai"
       ],
-      "total_expenditure": 239735307.08,
+      "total_expenditure": 257566726.32,
       "pct_ai": 0.002,
       "time_series": [
         {
@@ -7661,8 +8030,8 @@
         },
         {
           "year": 2026,
-          "amount": 1442.4,
-          "count": 6
+          "amount": 1952.4,
+          "count": 8
         }
       ],
       "records": [
@@ -7892,6 +8261,36 @@
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3138000&amendid=0"
         },
         {
+          "date": "2026-08-24",
+          "vendor_ids": [
+            "donoratlas"
+          ],
+          "vendor_names": [
+            "DonorAtlas"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 255.0,
+          "purpose": "subscription",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3198722&amendid=0"
+        },
+        {
+          "date": "2026-09-09",
+          "vendor_ids": [
+            "donoratlas"
+          ],
+          "vendor_names": [
+            "DonorAtlas"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 255.0,
+          "purpose": "subscription",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3198722&amendid=0"
+        },
+        {
           "date": "2026-05-21",
           "vendor_ids": [
             "donoratlas"
@@ -7962,8 +8361,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 116529140.97,
-      "pct_ai": 0.078,
+      "total_expenditure": 117559500.28,
+      "pct_ai": 0.077,
       "time_series": [
         {
           "year": 2024,
@@ -8088,8 +8487,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 4079675.12,
-      "pct_ai": 1.261,
+      "total_expenditure": 4121669.87,
+      "pct_ai": 1.249,
       "time_series": [
         {
           "year": 2024,
@@ -8385,7 +8784,7 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 151828460.77,
+      "total_expenditure": 152736204.27,
       "pct_ai": 0.003,
       "time_series": [
         {
@@ -9282,13 +9681,13 @@
       "id": "1456613",
       "name": "Susan Rubio",
       "party": "Unknown",
-      "total": 160.0,
-      "records_count": 8,
+      "total": 200.0,
+      "records_count": 10,
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 5199947.87,
-      "pct_ai": 0.003,
+      "total_expenditure": 5325365.91,
+      "pct_ai": 0.004,
       "time_series": [
         {
           "year": 2025,
@@ -9297,8 +9696,8 @@
         },
         {
           "year": 2026,
-          "amount": 40.0,
-          "count": 2
+          "amount": 80.0,
+          "count": 4
         }
       ],
       "records": [
@@ -9421,6 +9820,36 @@
           "amount": 20.0,
           "purpose": "",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3180280&amendid=0"
+        },
+        {
+          "date": "2026-07-28",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 20.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199294&amendid=0"
+        },
+        {
+          "date": "2026-08-28",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 20.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199294&amendid=0"
         }
       ]
     },
@@ -9433,8 +9862,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 751742.75,
-      "pct_ai": 2.839,
+      "total_expenditure": 976640.15,
+      "pct_ai": 2.185,
       "time_series": [
         {
           "year": 2025,
@@ -9559,17 +9988,22 @@
       "id": "1483280",
       "name": "Californians RISE - Senator Valladares' Ballot Measure Committee",
       "party": "Unknown",
-      "total": 1263.76,
-      "records_count": 1,
+      "total": 1919.91,
+      "records_count": 2,
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 23430.72,
-      "pct_ai": 5.394,
+      "total_expenditure": 42754.0,
+      "pct_ai": 4.491,
       "time_series": [
         {
           "year": 2025,
           "amount": 1263.76,
+          "count": 1
+        },
+        {
+          "year": 2026,
+          "amount": 656.15,
           "count": 1
         }
       ],
@@ -9588,6 +10022,21 @@
           "amount": 1263.76,
           "purpose": "",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3114644&amendid=0"
+        },
+        {
+          "date": "2026-08-11",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 656.15,
+          "purpose": "Text Messages",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199412&amendid=0"
         }
       ]
     },
@@ -9595,13 +10044,13 @@
       "id": "742344",
       "name": "Monterey County Republican Central Committee (State)",
       "party": "Unknown",
-      "total": 102.0,
-      "records_count": 6,
+      "total": 136.0,
+      "records_count": 8,
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 159013.6,
-      "pct_ai": 0.064,
+      "total_expenditure": 172068.76,
+      "pct_ai": 0.079,
       "time_series": [
         {
           "year": 2025,
@@ -9610,8 +10059,8 @@
         },
         {
           "year": 2026,
-          "amount": 85.0,
-          "count": 5
+          "amount": 119.0,
+          "count": 7
         }
       ],
       "records": [
@@ -9704,6 +10153,36 @@
           "amount": 17.0,
           "purpose": "Web services",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3171839&amendid=0"
+        },
+        {
+          "date": "2026-07-20",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 17.0,
+          "purpose": "Web services",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3197084&amendid=0"
+        },
+        {
+          "date": "2026-08-19",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 17.0,
+          "purpose": "Web services",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3197084&amendid=0"
         }
       ]
     },
@@ -9716,8 +10195,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 801615.78,
-      "pct_ai": 1.497,
+      "total_expenditure": 1261222.09,
+      "pct_ai": 0.951,
       "time_series": [
         {
           "year": 2025,
@@ -9817,8 +10296,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 32076.22,
-      "pct_ai": 21.823,
+      "total_expenditure": 41076.22,
+      "pct_ai": 17.041,
       "time_series": [
         {
           "year": 2025,
@@ -9903,8 +10382,8 @@
       "vendor_ids": [
         "otter_ai"
       ],
-      "total_expenditure": 217301.65,
-      "pct_ai": 0.078,
+      "total_expenditure": 235179.61,
+      "pct_ai": 0.072,
       "time_series": [
         {
           "year": 2025,
@@ -9939,8 +10418,8 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 1488455.51,
-      "pct_ai": 0.04,
+      "total_expenditure": 1645369.81,
+      "pct_ai": 0.036,
       "time_series": [
         {
           "year": 2025,
@@ -10266,8 +10745,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 291226.06,
-      "pct_ai": 5.611,
+      "total_expenditure": 364317.02,
+      "pct_ai": 4.485,
       "time_series": [
         {
           "year": 2026,
@@ -10519,22 +10998,37 @@
       "id": "1477625",
       "name": "Sergio Farias",
       "party": "Unknown",
-      "total": 197.67,
-      "records_count": 15,
+      "total": 405.17,
+      "records_count": 27,
       "vendor_ids": [
         "numero_ai"
       ],
-      "total_expenditure": 142570.4,
-      "pct_ai": 0.139,
+      "total_expenditure": 179751.78,
+      "pct_ai": 0.225,
       "time_series": [
         {
           "year": 2026,
-          "amount": 197.67,
-          "count": 15
+          "amount": 405.17,
+          "count": 27
         }
       ],
       "records": [
         {
+          "date": "2026-09-19",
+          "vendor_ids": [
+            "numero_ai"
+          ],
+          "vendor_names": [
+            "Numero (donor database / call time)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 87.13,
+          "purpose": "Online Contribution Processin Fee",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
           "date": "2026-03-23",
           "vendor_ids": [
             "numero_ai"
@@ -10563,6 +11057,21 @@
           "amount": 26.27,
           "purpose": "Online Contribution Processing Fee",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3138045&amendid=1"
+        },
+        {
+          "date": "2026-08-31",
+          "vendor_ids": [
+            "numero_ai"
+          ],
+          "vendor_names": [
+            "Numero (donor database / call time)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 26.27,
+          "purpose": "Online Contribution Processing Fee",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
         },
         {
           "date": "2026-04-13",
@@ -10623,6 +11132,51 @@
           "amount": 22.47,
           "purpose": "Online Contribution Processing Fee",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3138045&amendid=1"
+        },
+        {
+          "date": "2026-08-03",
+          "vendor_ids": [
+            "numero_ai"
+          ],
+          "vendor_names": [
+            "Numero (donor database / call time)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 20.21,
+          "purpose": "Onlien Contribution Processing Fee",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
+          "date": "2026-09-14",
+          "vendor_ids": [
+            "numero_ai"
+          ],
+          "vendor_names": [
+            "Numero (donor database / call time)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 14.97,
+          "purpose": "Online Contribution Processing Fee",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
+          "date": "2026-07-27",
+          "vendor_ids": [
+            "numero_ai"
+          ],
+          "vendor_names": [
+            "Numero (donor database / call time)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 14.04,
+          "purpose": "Online Contribution Processing Fee",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
         },
         {
           "date": "2026-02-09",
@@ -10670,6 +11224,36 @@
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3138045&amendid=1"
         },
         {
+          "date": "2026-08-24",
+          "vendor_ids": [
+            "numero_ai"
+          ],
+          "vendor_names": [
+            "Numero (donor database / call time)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 10.28,
+          "purpose": "Online Contribution Processing Fee",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
+          "date": "2026-07-06",
+          "vendor_ids": [
+            "numero_ai"
+          ],
+          "vendor_names": [
+            "Numero (donor database / call time)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 9.68,
+          "purpose": "Online Contribution Processing Fee",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
           "date": "2026-02-02",
           "vendor_ids": [
             "numero_ai"
@@ -10683,6 +11267,81 @@
           "amount": 9.38,
           "purpose": "Online Contribution Processing Fee",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3138045&amendid=0"
+        },
+        {
+          "date": "2026-08-17",
+          "vendor_ids": [
+            "numero_ai"
+          ],
+          "vendor_names": [
+            "Numero (donor database / call time)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 8.41,
+          "purpose": "Online Contribution Processing Fee",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
+          "date": "2026-09-07",
+          "vendor_ids": [
+            "numero_ai"
+          ],
+          "vendor_names": [
+            "Numero (donor database / call time)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 4.36,
+          "purpose": "Online Contribution Processing Fee",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
+          "date": "2026-07-13",
+          "vendor_ids": [
+            "numero_ai"
+          ],
+          "vendor_names": [
+            "Numero (donor database / call time)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 4.05,
+          "purpose": "Online Contribution Processing Fee",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
+          "date": "2026-07-20",
+          "vendor_ids": [
+            "numero_ai"
+          ],
+          "vendor_names": [
+            "Numero (donor database / call time)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 4.05,
+          "purpose": "Online Contribution Processing Fee",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
+        },
+        {
+          "date": "2026-08-10",
+          "vendor_ids": [
+            "numero_ai"
+          ],
+          "vendor_names": [
+            "Numero (donor database / call time)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 4.05,
+          "purpose": "Online Contribution Processing Fee",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199939&amendid=0"
         },
         {
           "date": "2026-01-05",
@@ -10821,8 +11480,8 @@
       "vendor_ids": [
         "anthropic"
       ],
-      "total_expenditure": 324576.9,
-      "pct_ai": 0.061,
+      "total_expenditure": 381859.2,
+      "pct_ai": 0.052,
       "time_series": [
         {
           "year": 2026,
@@ -11215,13 +11874,13 @@
       "id": "1480425",
       "name": "Stephen Hilton",
       "party": "Unknown",
-      "total": 125000.0,
-      "records_count": 10,
+      "total": 162525.0,
+      "records_count": 13,
       "vendor_ids": [
         "eyesover"
       ],
-      "total_expenditure": 20616376.87,
-      "pct_ai": 0.606,
+      "total_expenditure": 31847565.75,
+      "pct_ai": 0.51,
       "time_series": [
         {
           "year": 2025,
@@ -11230,11 +11889,26 @@
         },
         {
           "year": 2026,
-          "amount": 50000.0,
-          "count": 4
+          "amount": 87525.0,
+          "count": 7
         }
       ],
       "records": [
+        {
+          "date": "2026-07-09",
+          "vendor_ids": [
+            "eyesover"
+          ],
+          "vendor_names": [
+            "EyesOver"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 12525.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3200253&amendid=0"
+        },
         {
           "date": "2025-10-03",
           "vendor_ids": [
@@ -11384,6 +12058,36 @@
           "amount": 12500.0,
           "purpose": "",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3181829&amendid=0"
+        },
+        {
+          "date": "2026-07-22",
+          "vendor_ids": [
+            "eyesover"
+          ],
+          "vendor_names": [
+            "EyesOver"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 12500.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3200253&amendid=0"
+        },
+        {
+          "date": "2026-08-03",
+          "vendor_ids": [
+            "eyesover"
+          ],
+          "vendor_names": [
+            "EyesOver"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 12500.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3200253&amendid=0"
         }
       ]
     },
@@ -11522,8 +12226,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 1090944.23,
-      "pct_ai": 1.039,
+      "total_expenditure": 1538326.2,
+      "pct_ai": 0.737,
       "time_series": [
         {
           "year": 2026,
@@ -11756,8 +12460,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 6803882.35,
-      "pct_ai": 0.011,
+      "total_expenditure": 7192968.16,
+      "pct_ai": 0.01,
       "time_series": [
         {
           "year": 2026,
@@ -11954,8 +12658,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 119041.99,
-      "pct_ai": 1.126,
+      "total_expenditure": 154678.42,
+      "pct_ai": 0.866,
       "time_series": [
         {
           "year": 2026,
@@ -12164,8 +12868,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 49662.2,
-      "pct_ai": 1.41,
+      "total_expenditure": 52019.09,
+      "pct_ai": 1.346,
       "time_series": [
         {
           "year": 2026,
@@ -12254,6 +12958,42 @@
           "amount": 4855.58,
           "purpose": "",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3173404&amendid=0"
+        }
+      ]
+    },
+    "1485838": {
+      "id": "1485838",
+      "name": "Guillermo Gonzalez",
+      "party": "Unknown",
+      "total": 1000.0,
+      "records_count": 1,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 264827.33,
+      "pct_ai": 0.378,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 1000.0,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-09-10",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 1000.0,
+          "purpose": "Voter Messaging Software",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3198827&amendid=0"
         }
       ]
     },
@@ -12464,8 +13204,8 @@
       "vendor_ids": [
         "heygen"
       ],
-      "total_expenditure": 1514522.12,
-      "pct_ai": 0.002,
+      "total_expenditure": 2398520.4,
+      "pct_ai": 0.001,
       "time_series": [
         {
           "year": 2026,
@@ -12488,6 +13228,303 @@
           "amount": 29.0,
           "purpose": "",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3171096&amendid=0"
+        }
+      ]
+    },
+    "1467958": {
+      "id": "1467958",
+      "name": "Tony Strickland",
+      "party": "Unknown",
+      "total": 483.0,
+      "records_count": 1,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 2428918.65,
+      "pct_ai": 0.02,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 483.0,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-09-03",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 483.0,
+          "purpose": "Voter Messaging Platform",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199501&amendid=0"
+        }
+      ]
+    },
+    "1302564": {
+      "id": "1302564",
+      "name": "California Homeowners Association",
+      "party": "Unknown",
+      "total": 1000.0,
+      "records_count": 1,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 596472.89,
+      "pct_ai": 0.168,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 1000.0,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-08-20",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 1000.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199688&amendid=0"
+        }
+      ]
+    },
+    "1477088": {
+      "id": "1477088",
+      "name": "Suzette Martinez Valladares",
+      "party": "Unknown",
+      "total": 780.79,
+      "records_count": 1,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 548113.74,
+      "pct_ai": 0.142,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 780.79,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-08-21",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 780.79,
+          "purpose": "Text Messages",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199671&amendid=0"
+        }
+      ]
+    },
+    "741452": {
+      "id": "741452",
+      "name": "Sutter County Republican Central Committee",
+      "party": "Unknown",
+      "total": 3700.0,
+      "records_count": 2,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 2249827.78,
+      "pct_ai": 0.164,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 3700.0,
+          "count": 2
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-09-13",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 2000.0,
+          "purpose": "Texting",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199661&amendid=0"
+        },
+        {
+          "date": "2026-07-06",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 1700.0,
+          "purpose": "Texting",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199661&amendid=0"
+        }
+      ]
+    },
+    "1486040": {
+      "id": "1486040",
+      "name": "Scott Sakakihara",
+      "party": "Unknown",
+      "total": 600.0,
+      "records_count": 2,
+      "vendor_ids": [
+        "calltime_ai"
+      ],
+      "total_expenditure": 6510376.1,
+      "pct_ai": 0.009,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 600.0,
+          "count": 2
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-07-21",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 300.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199369&amendid=0"
+        },
+        {
+          "date": "2026-08-21",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 300.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199369&amendid=0"
+        }
+      ]
+    },
+    "1487645": {
+      "id": "1487645",
+      "name": "Darin DuPont",
+      "party": "Unknown",
+      "total": 1000.0,
+      "records_count": 1,
+      "vendor_ids": [
+        "prompt_io"
+      ],
+      "total_expenditure": 132719.34,
+      "pct_ai": 0.753,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 1000.0,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-09-15",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 1000.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199460&amendid=0"
+        }
+      ]
+    },
+    "1480103": {
+      "id": "1480103",
+      "name": "Herbert Morgan",
+      "party": "Unknown",
+      "total": 360.0,
+      "records_count": 2,
+      "vendor_ids": [
+        "openai"
+      ],
+      "total_expenditure": 833765.92,
+      "pct_ai": 0.043,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 360.0,
+          "count": 2
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-08-18",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 200.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199834&amendid=0"
+        },
+        {
+          "date": "2026-08-22",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 160.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199834&amendid=0"
         }
       ]
     }
@@ -12522,12 +13559,12 @@
     },
     {
       "year": 2026,
-      "total": 1417510.44,
-      "records": 160,
-      "total_expenditure": 444140482.79,
-      "total_ex_legacy": 55978.53,
-      "records_ex_legacy": 40,
-      "total_expenditure_ex_legacy": 261934510.32
+      "total": 1465806.88,
+      "records": 194,
+      "total_expenditure": 486898474.6,
+      "total_ex_legacy": 56922.53,
+      "records_ex_legacy": 48,
+      "total_expenditure_ex_legacy": 281394397.65
     }
   ],
   "time_series_by_party": [],
@@ -12837,6 +13874,28 @@
     },
     {
       "vendor_ids": [
+        "eyesover"
+      ],
+      "vendor_names": [
+        "EyesOver"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "Stephen Hilton",
+      "filer_id": "1480425",
+      "filer_party": "Unknown",
+      "date": "2026-07-09",
+      "amount": 12525.0,
+      "purpose": "",
+      "vendor_display": "EyesOver LLC",
+      "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3200253&amendid=0"
+    },
+    {
+      "vendor_ids": [
         "prompt_io"
       ],
       "vendor_names": [
@@ -12962,28 +14021,6 @@
       "filer_id": "1480425",
       "filer_party": "Unknown",
       "date": "2025-12-04",
-      "amount": 12500.0,
-      "purpose": "",
-      "vendor_display": "EyesOver LLC",
-      "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3115750&amendid=0"
-    },
-    {
-      "vendor_ids": [
-        "eyesover"
-      ],
-      "vendor_names": [
-        "EyesOver"
-      ],
-      "vendor_eras": [
-        "legacy"
-      ],
-      "confidences": [
-        "high"
-      ],
-      "filer_name": "Stephen Hilton",
-      "filer_id": "1480425",
-      "filer_party": "Unknown",
-      "date": "2025-12-30",
       "amount": 12500.0,
       "purpose": "",
       "vendor_display": "EyesOver LLC",

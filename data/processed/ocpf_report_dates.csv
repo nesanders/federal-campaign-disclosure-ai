@@ -291,3 +291,4 @@ report_id,date_filed,report_type,is_amendment
 1042325,9/4/2026,Bank Report,False
 1042383,9/5/2026,Credit Card Report,False
 1042475,9/8/2026,60th Day Preceding Election Report,True
+1044101,9/24/2026,Reimbursement Report,False
