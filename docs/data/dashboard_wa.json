@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-09-28T17:25:15+00:00",
-    "records_scanned": 240774,
+    "generated_at": "2026-10-05T17:45:11+00:00",
+    "records_scanned": 241016,
     "source_label": "Washington Public Disclosure Commission (PDC)",
     "date_range": {
       "start": "2023-01-01",
@@ -27,7 +27,7 @@
     "matched_records": 72,
     "filers_with_ai_spend": 28,
     "filers_with_ai_spend_ex_legacy": 15,
-    "total_filers_with_activity": 3694,
+    "total_filers_with_activity": 3697,
     "total_expenditure_ai_filers": 9865250.85,
     "pct_ai_overall": 0.557
   },

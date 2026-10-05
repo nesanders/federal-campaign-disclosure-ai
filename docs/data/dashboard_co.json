@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-09-28T17:25:32+00:00",
-    "records_scanned": 217555,
+    "generated_at": "2026-10-05T17:45:23+00:00",
+    "records_scanned": 218515,
     "source_label": "Colorado TRACER (Secretary of State)",
     "date_range": {
       "start": "2023-01-01",
@@ -22,14 +22,14 @@
     ]
   },
   "stats": {
-    "total_all_eras": 41194.65,
-    "total_generative": 7466.42,
-    "matched_records": 292,
-    "filers_with_ai_spend": 51,
-    "filers_with_ai_spend_ex_legacy": 31,
-    "total_filers_with_activity": 3326,
-    "total_expenditure_ai_filers": 5306024.97,
-    "pct_ai_overall": 0.776
+    "total_all_eras": 41324.53,
+    "total_generative": 7596.3,
+    "matched_records": 296,
+    "filers_with_ai_spend": 52,
+    "filers_with_ai_spend_ex_legacy": 32,
+    "total_filers_with_activity": 3332,
+    "total_expenditure_ai_filers": 5418964.94,
+    "pct_ai_overall": 0.763
   },
   "vendors": [
     {
@@ -113,11 +113,11 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 2870.25,
-      "amount_high": 2870.25,
+      "total": 2891.1,
+      "amount_high": 2891.1,
       "amount_medium": 0.0,
-      "records": 138,
-      "records_high": 138,
+      "records": 139,
+      "records_high": 139,
       "records_medium": 0,
       "filers": 18,
       "dem_amount": 0.0,
@@ -205,13 +205,13 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 432.02,
-      "amount_high": 407.72,
+      "total": 541.05,
+      "amount_high": 516.75,
       "amount_medium": 24.3,
-      "records": 4,
-      "records_high": 2,
+      "records": 7,
+      "records_high": 5,
       "records_medium": 2,
-      "filers": 4,
+      "filers": 5,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
       "dem_rep_ratio": null
@@ -818,8 +818,8 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 2870.25,
-      "records_count": 138,
+      "total": 2891.1,
+      "records_count": 139,
       "filers_count": 18,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -842,8 +842,8 @@
         },
         {
           "year": 2026,
-          "amount": 1070.25,
-          "count": 50
+          "amount": 1091.1,
+          "count": 51
         }
       ],
       "time_series_by_party": [],
@@ -919,6 +919,13 @@
           "count": 4
         },
         {
+          "filer_id": "20265051828",
+          "filer_name": "KRISTINE IRELAND FOR COMMON SENSE",
+          "filer_party": "Unknown",
+          "amount": 62.55,
+          "count": 3
+        },
+        {
           "filer_id": "20255050189",
           "filer_name": "HADLEY FOR ST VRAIN",
           "filer_party": "Unknown",
@@ -938,13 +945,6 @@
           "filer_party": "Unknown",
           "amount": 53.89,
           "count": 1
-        },
-        {
-          "filer_id": "20265051828",
-          "filer_name": "KRISTINE IRELAND FOR COMMON SENSE",
-          "filer_party": "Unknown",
-          "amount": 41.7,
-          "count": 2
         },
         {
           "filer_id": "20255051282",
@@ -1033,6 +1033,16 @@
           "filer_party": "Unknown",
           "amount": 20.85,
           "purpose": "AI WEBSITE",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
+          "date": "2026-09-30",
+          "filer_id": "20265051828",
+          "filer_name": "KRISTINE IRELAND FOR COMMON SENSE",
+          "filer_party": "Unknown",
+          "amount": 20.85,
+          "purpose": "AI",
           "confidence": "high",
           "source_link": ""
         },
@@ -3874,9 +3884,9 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 432.02,
-      "records_count": 4,
-      "filers_count": 4,
+      "total": 541.05,
+      "records_count": 7,
+      "filers_count": 5,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
       "dem_rep_ratio": null,
@@ -3888,8 +3898,8 @@
         },
         {
           "year": 2026,
-          "amount": 427.72,
-          "count": 3
+          "amount": 536.75,
+          "count": 6
         }
       ],
       "time_series_by_party": [],
@@ -3907,6 +3917,13 @@
           "filer_party": "Unknown",
           "amount": 200.0,
           "count": 1
+        },
+        {
+          "filer_id": "20255050453",
+          "filer_name": "JAMES WILEY FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 109.03,
+          "count": 3
         },
         {
           "filer_id": "20205039924",
@@ -3945,6 +3962,26 @@
           "source_link": ""
         },
         {
+          "date": "2026-09-30",
+          "filer_id": "20255050453",
+          "filer_name": "JAMES WILEY FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 83.09,
+          "purpose": "CLAUD AI",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
+          "date": "2026-09-30",
+          "filer_id": "20255050453",
+          "filer_name": "JAMES WILEY FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 20.75,
+          "purpose": "CLAUD AI",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
           "date": "2026-06-24",
           "filer_id": "20205039924",
           "filer_name": "PUTTING COLORADO FIRST",
@@ -3952,6 +3989,16 @@
           "amount": 20.0,
           "purpose": "7218 \ufffd DUES AND SUBSCRIPTIONS",
           "confidence": "medium",
+          "source_link": ""
+        },
+        {
+          "date": "2026-09-30",
+          "filer_id": "20255050453",
+          "filer_name": "JAMES WILEY FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 5.19,
+          "purpose": "CLAUD AI",
+          "confidence": "high",
           "source_link": ""
         },
         {
@@ -6662,8 +6709,8 @@
       "vendor_ids": [
         "campaign_nucleus"
       ],
-      "total_expenditure": 18055.73,
-      "pct_ai": 3.139,
+      "total_expenditure": 18082.94,
+      "pct_ai": 3.134,
       "time_series": [
         {
           "year": 2024,
@@ -8260,8 +8307,8 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 163883.83,
-      "pct_ai": 0.061,
+      "total_expenditure": 199614.39,
+      "pct_ai": 0.05,
       "time_series": [
         {
           "year": 2025,
@@ -8996,7 +9043,7 @@
       "vendor_ids": [
         "descript"
       ],
-      "total_expenditure": 88130.11,
+      "total_expenditure": 88134.56,
       "pct_ai": 0.124,
       "time_series": [
         {
@@ -9668,7 +9715,7 @@
       "vendor_ids": [
         "anthropic"
       ],
-      "total_expenditure": 227494.8,
+      "total_expenditure": 227495.2,
       "pct_ai": 0.091,
       "time_series": [
         {
@@ -9699,18 +9746,18 @@
       "id": "20265051828",
       "name": "KRISTINE IRELAND FOR COMMON SENSE",
       "party": "Unknown",
-      "total": 41.7,
-      "records_count": 2,
+      "total": 62.55,
+      "records_count": 3,
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 3448.29,
-      "pct_ai": 1.209,
+      "total_expenditure": 3565.06,
+      "pct_ai": 1.755,
       "time_series": [
         {
           "year": 2026,
-          "amount": 41.7,
-          "count": 2
+          "amount": 62.55,
+          "count": 3
         }
       ],
       "records": [
@@ -9742,6 +9789,87 @@
           ],
           "amount": 20.85,
           "purpose": "AI WEBSITE",
+          "source_link": ""
+        },
+        {
+          "date": "2026-09-30",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 20.85,
+          "purpose": "AI",
+          "source_link": ""
+        }
+      ]
+    },
+    "20255050453": {
+      "id": "20255050453",
+      "name": "JAMES WILEY FOR COLORADO",
+      "party": "Unknown",
+      "total": 109.03,
+      "records_count": 3,
+      "vendor_ids": [
+        "anthropic"
+      ],
+      "total_expenditure": 77087.79,
+      "pct_ai": 0.141,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 109.03,
+          "count": 3
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-09-30",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 83.09,
+          "purpose": "CLAUD AI",
+          "source_link": ""
+        },
+        {
+          "date": "2026-09-30",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 20.75,
+          "purpose": "CLAUD AI",
+          "source_link": ""
+        },
+        {
+          "date": "2026-09-30",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 5.19,
+          "purpose": "CLAUD AI",
           "source_link": ""
         }
       ]
@@ -9822,12 +9950,12 @@
     },
     {
       "year": 2026,
-      "total": 9651.61,
-      "records": 83,
-      "total_expenditure": 2263758.25,
-      "total_ex_legacy": 2724.22,
-      "records_ex_legacy": 67,
-      "total_expenditure_ex_legacy": 457041.46
+      "total": 9781.49,
+      "records": 87,
+      "total_expenditure": 2376698.22,
+      "total_ex_legacy": 2854.1,
+      "records_ex_legacy": 71,
+      "total_expenditure_ex_legacy": 569976.98
     }
   ],
   "time_series_by_party": [],

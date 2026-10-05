@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-09-28T17:31:23+00:00",
-    "records_scanned": 3440980,
+    "generated_at": "2026-10-05T17:48:40+00:00",
+    "records_scanned": 3441369,
     "source_label": "California Secretary of State (CAL-ACCESS)",
     "date_range": {
       "start": "2023-01-01",
@@ -27,7 +27,7 @@
     "matched_records": 410,
     "filers_with_ai_spend": 81,
     "filers_with_ai_spend_ex_legacy": 21,
-    "total_filers_with_activity": 6323,
+    "total_filers_with_activity": 6327,
     "total_expenditure_ai_filers": 875523384.81,
     "pct_ai_overall": 0.231
   },
