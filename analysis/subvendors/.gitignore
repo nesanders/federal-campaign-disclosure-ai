@@ -1,0 +1,3 @@
+# Large derived files; regenerate with federal_vendors.py + state_subvendors.py.
+out/federal_vendors.csv
+out/subvendor_rows.csv
