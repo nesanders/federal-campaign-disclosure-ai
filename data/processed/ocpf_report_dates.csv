@@ -277,6 +277,7 @@ report_id,date_filed,report_type,is_amendment
 1041329,9/2/2026,Bank Report,False
 1041407,9/2/2026,Bank Report,False
 1041442,9/2/2026,Pre-primary Report,False
+1041464,9/2/2026,Bank Report,False
 1041465,9/2/2026,Bank Report,False
 1041501,9/2/2026,Bank Report,True
 1041546,9/2/2026,Bank Report,False
@@ -315,3 +316,11 @@ report_id,date_filed,report_type,is_amendment
 1046352,10/5/2026,Bank Report,False
 1046418,10/5/2026,Bank Report,False
 1046455,10/5/2026,Bank Report,False
+1046616,10/5/2026,Bank Report,False
+1046630,10/5/2026,Bank Report,False
+1046674,10/5/2026,Bank Report,False
+1046682,10/5/2026,Bank Report,False
+1046732,10/5/2026,Subvendor Report,False
+1046877,10/6/2026,Credit Card Report,False
+1047340,10/10/2026,Credit Card Report,False
+1047341,10/10/2026,Credit Card Report,False

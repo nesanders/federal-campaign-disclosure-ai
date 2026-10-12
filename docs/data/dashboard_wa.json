@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-10-05T17:45:11+00:00",
-    "records_scanned": 241016,
+    "generated_at": "2026-10-12T18:36:52+00:00",
+    "records_scanned": 241791,
     "source_label": "Washington Public Disclosure Commission (PDC)",
     "date_range": {
       "start": "2023-01-01",
@@ -22,13 +22,13 @@
     ]
   },
   "stats": {
-    "total_all_eras": 54941.49,
-    "total_generative": 4685.01,
-    "matched_records": 72,
+    "total_all_eras": 54919.79,
+    "total_generative": 4663.31,
+    "matched_records": 71,
     "filers_with_ai_spend": 28,
     "filers_with_ai_spend_ex_legacy": 15,
-    "total_filers_with_activity": 3697,
-    "total_expenditure_ai_filers": 9865250.85,
+    "total_filers_with_activity": 3699,
+    "total_expenditure_ai_filers": 9866407.86,
     "pct_ai_overall": 0.557
   },
   "vendors": [
@@ -90,16 +90,16 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 1320.22,
-      "amount_high": 1320.22,
+      "total": 1298.52,
+      "amount_high": 1298.52,
       "amount_medium": 0.0,
-      "records": 12,
-      "records_high": 12,
+      "records": 11,
+      "records_high": 11,
       "records_medium": 0,
       "filers": 5,
       "dem_amount": 736.39,
-      "rep_amount": 136.28,
-      "dem_rep_ratio": 5.404
+      "rep_amount": 114.58,
+      "dem_rep_ratio": 6.427
     },
     {
       "id": "otter_ai",
@@ -275,17 +275,17 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 1320.22,
-      "records_count": 12,
+      "total": 1298.52,
+      "records_count": 11,
       "filers_count": 5,
       "dem_amount": 736.39,
-      "rep_amount": 136.28,
-      "dem_rep_ratio": 5.404,
+      "rep_amount": 114.58,
+      "dem_rep_ratio": 6.427,
       "time_series": [
         {
           "year": 2026,
-          "amount": 1320.22,
-          "count": 12
+          "amount": 1298.52,
+          "count": 11
         }
       ],
       "time_series_by_party": [
@@ -297,7 +297,7 @@
         {
           "year": 2026,
           "party": "Republican",
-          "amount": 136.28
+          "amount": 114.58
         }
       ],
       "by_filer": [
@@ -333,8 +333,8 @@
           "filer_id": "GONZG--373",
           "filer_name": "GISBERTH GONZALEZ (Gisberth (Giz) Gonzalez)",
           "filer_party": "Republican",
-          "amount": 65.1,
-          "count": 3
+          "amount": 43.4,
+          "count": 2
         }
       ],
       "records": [
@@ -427,16 +427,6 @@
           "purpose": "Anthropic design tools",
           "confidence": "high",
           "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110363029"
-        },
-        {
-          "date": "2026-08-20",
-          "filer_id": "GONZG--373",
-          "filer_name": "GISBERTH GONZALEZ (Gisberth (Giz) Gonzalez)",
-          "filer_party": "Republican",
-          "amount": 21.7,
-          "purpose": "FEE FOR WEB PAGE \nANTHROPIC PBC \n548 MARKET STREET \nPMB\nSAN FRANCISCO CA 94104",
-          "confidence": "high",
-          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110387705"
         },
         {
           "date": "2026-07-01",
@@ -1684,7 +1674,7 @@
         "calltime_ai",
         "prompt_io"
       ],
-      "total_expenditure": 1019066.86,
+      "total_expenditure": 1019096.86,
       "pct_ai": 1.606,
       "time_series": [
         {
@@ -2013,72 +2003,6 @@
           "amount": -900.0,
           "purpose": "",
           "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110267928"
-        }
-      ]
-    },
-    "GONZG--373": {
-      "id": "GONZG--373",
-      "name": "GISBERTH GONZALEZ (Gisberth (Giz) Gonzalez)",
-      "party": "Republican",
-      "total": 65.1,
-      "records_count": 3,
-      "vendor_ids": [
-        "anthropic"
-      ],
-      "total_expenditure": 5091.64,
-      "pct_ai": 1.279,
-      "time_series": [
-        {
-          "year": 2026,
-          "amount": 65.1,
-          "count": 3
-        }
-      ],
-      "records": [
-        {
-          "date": "2026-08-20",
-          "vendor_ids": [
-            "anthropic"
-          ],
-          "vendor_names": [
-            "Anthropic (Claude)"
-          ],
-          "confidences": [
-            "high"
-          ],
-          "amount": 21.7,
-          "purpose": "FEE FOR WEB PAGE \nANTHROPIC PBC \n548 MARKET STREET \nPMB\nSAN FRANCISCO CA 94104",
-          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110387705"
-        },
-        {
-          "date": "2026-07-01",
-          "vendor_ids": [
-            "anthropic"
-          ],
-          "vendor_names": [
-            "Anthropic (Claude)"
-          ],
-          "confidences": [
-            "high"
-          ],
-          "amount": 21.7,
-          "purpose": "monthly fee for web page\nAnthropic PBC \n548 market street \nPMB 90375\nSan Francisco CA 94104",
-          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110382437"
-        },
-        {
-          "date": "2026-05-25",
-          "vendor_ids": [
-            "anthropic"
-          ],
-          "vendor_names": [
-            "Anthropic (Claude)"
-          ],
-          "confidences": [
-            "high"
-          ],
-          "amount": 21.7,
-          "purpose": "MONTHLY FEE FOR WEB PAGE\nAnthropic PBC \n548 Market street\nPMB 90375\nSan Francisco CA 94104",
-          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110382435"
         }
       ]
     },
@@ -3200,6 +3124,57 @@
         }
       ]
     },
+    "GONZG--373": {
+      "id": "GONZG--373",
+      "name": "GISBERTH GONZALEZ (Gisberth (Giz) Gonzalez)",
+      "party": "Republican",
+      "total": 43.4,
+      "records_count": 2,
+      "vendor_ids": [
+        "anthropic"
+      ],
+      "total_expenditure": 6248.65,
+      "pct_ai": 0.695,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 43.4,
+          "count": 2
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-07-01",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 21.7,
+          "purpose": "monthly fee for web page\nAnthropic PBC \n548 market street \nPMB 90375\nSan Francisco CA 94104",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110382437"
+        },
+        {
+          "date": "2026-05-25",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 21.7,
+          "purpose": "MONTHLY FEE FOR WEB PAGE\nAnthropic PBC \n548 Market street\nPMB 90375\nSan Francisco CA 94104",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110382435"
+        }
+      ]
+    },
     "BYRDT  226": {
       "id": "BYRDT  226",
       "name": "Tyler Byrd",
@@ -3303,12 +3278,12 @@
     },
     {
       "year": 2026,
-      "total": 4427.78,
-      "records": 18,
-      "total_expenditure": 3804111.37,
-      "total_ex_legacy": 3579.48,
-      "records_ex_legacy": 16,
-      "total_expenditure_ex_legacy": 3774371.99
+      "total": 4406.08,
+      "records": 17,
+      "total_expenditure": 3805268.38,
+      "total_ex_legacy": 3557.78,
+      "records_ex_legacy": 15,
+      "total_expenditure_ex_legacy": 3775529.0
     }
   ],
   "time_series_by_party": [
@@ -3345,7 +3320,7 @@
     {
       "year": 2026,
       "party": "Republican",
-      "amount": 136.28
+      "amount": 114.58
     }
   ],
   "time_series_by_party_ex_legacy": [
@@ -3362,23 +3337,23 @@
     {
       "year": 2026,
       "party": "Republican",
-      "amount": 136.28
+      "amount": 114.58
     }
   ],
   "party_split": {
     "dem_amount": 20764.98,
-    "rep_amount": 16838.07,
+    "rep_amount": 16816.37,
     "dem_count": 34,
-    "rep_count": 13,
-    "dem_rep_ratio": 1.233,
+    "rep_count": 12,
+    "dem_rep_ratio": 1.235,
     "filers_with_known_party": 13
   },
   "party_split_ex_legacy": {
     "dem_amount": 3221.93,
-    "rep_amount": 136.28,
+    "rep_amount": 114.58,
     "dem_count": 9,
-    "rep_count": 5,
-    "dem_rep_ratio": 23.642,
+    "rep_count": 4,
+    "dem_rep_ratio": 28.119,
     "filers_with_known_party": 6
   },
   "notable_records": [

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-05T17:48:40+00:00",
+    "generated_at": "2026-10-12T18:43:12+00:00",
     "population_source": "U.S. Census Bureau, Vintage 2024 national and state population estimates (as of July 1, 2024): https://www.census.gov/newsroom/press-kits/2024/national-state-population-estimates.html",
     "covered_states": [
       "ma",
@@ -23,8 +23,8 @@
     "ma": {
       "label": "Massachusetts",
       "population": 7136171,
-      "spend_all_eras": 25209.16,
-      "spend_generative": 12604.72,
+      "spend_all_eras": 25424.2,
+      "spend_generative": 12793.84,
       "filers_all_eras": 61,
       "filers_generative": 46,
       "distinct_vendors_all_eras": 17,
@@ -33,8 +33,8 @@
     "wa": {
       "label": "Washington",
       "population": 7958180,
-      "spend_all_eras": 54941.49,
-      "spend_generative": 4685.01,
+      "spend_all_eras": 54919.79,
+      "spend_generative": 4663.31,
       "filers_all_eras": 28,
       "filers_generative": 15,
       "distinct_vendors_all_eras": 10,
@@ -43,10 +43,10 @@
     "co": {
       "label": "Colorado",
       "population": 5957493,
-      "spend_all_eras": 41324.53,
-      "spend_generative": 7596.3,
-      "filers_all_eras": 52,
-      "filers_generative": 32,
+      "spend_all_eras": 42134.2,
+      "spend_generative": 8362.94,
+      "filers_all_eras": 55,
+      "filers_generative": 35,
       "distinct_vendors_all_eras": 15,
       "distinct_vendors_generative": 8
     },
@@ -63,20 +63,20 @@
   },
   "covered": {
     "population": 60483107,
-    "spend_all_eras": 2144937.94,
-    "spend_generative": 94443.42,
-    "filers_all_eras": 222,
-    "filers_generative": 114,
+    "spend_all_eras": 2145940.95,
+    "spend_generative": 95377.48,
+    "filers_all_eras": 225,
+    "filers_generative": 117,
     "vendor_instances_all_eras": 59,
     "vendor_instances_generative": 33,
     "distinct_vendors_all_eras": 28,
     "distinct_vendors_generative": 18
   },
   "projection": {
-    "spend_all_eras": 12061499.45,
-    "spend_generative": 531077.96,
-    "filers_all_eras": 1248,
-    "filers_generative": 641,
+    "spend_all_eras": 12067139.62,
+    "spend_generative": 536330.4,
+    "filers_all_eras": 1265,
+    "filers_generative": 658,
     "vendor_instances_all_eras": 332,
     "vendor_instances_generative": 186
   }

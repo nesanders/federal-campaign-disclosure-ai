@@ -1,1 +1,2 @@
 record_id,report_id,filer_cpf_id,filer_name,date,amount,vendor_name,subvendor_name,purpose,source_link,vendor_ids,vendor_names,vendor_groups,vendor_eras,confidences
+19020,1046732,19172,"Shortsleeve, Brian",9/9/2026,317.46,Hall LLC,Campaign Nucleus,Software,<a target='_blank' href='https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1046732'>9/9/26 Subvendor Report</a>,campaign_nucleus,Campaign Nucleus,political_specific,legacy,high

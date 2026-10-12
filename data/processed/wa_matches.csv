@@ -1,11 +1,6 @@
 record_id,filer_id,filer_name,party,date,amount,payee_display,purpose_display,office,source_link,vendor_ids,vendor_names,vendor_groups,vendor_eras,confidences
 21551166,SZCZS--401,Stephen R Szczurko-Walton (Stephen Szczurko-Walton),Democratic,2026-08-31,220.8,Stephen R Szczurko-Walton,"Anthropic - Max plan 20x Aug 12-Sep 12, 2026",STATE REPRESENTATIVE,https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110386708,anthropic,Anthropic (Claude),general_purpose,generative,high
 19015973,MULLM2 027,Mark Mullet,Democratic,2024-08-19,900.0,Call Time.ai,Software Rental,GOVERNOR,https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110244436,calltime_ai,CallTime.AI,political_specific,legacy,high
-21577429,GONZG--373,GISBERTH GONZALEZ (Gisberth (Giz) Gonzalez),Republican,2026-08-20,21.7,"JPMorgan Chase Bank, N.A.","FEE FOR WEB PAGE 
-ANTHROPIC PBC 
-548 MARKET STREET 
-PMB
-SAN FRANCISCO CA 94104",COUNTY SHERIFF,https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110387705,anthropic,Anthropic (Claude),general_purpose,generative,high
 18208614,FERGR *115,Robert W. Ferguson (Bob Ferguson),Democratic,2023-11-11,119.99,BILL Spend & Expense,Otter.ai - Subscription,GOVERNOR,https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110199081,otter_ai,Otter.ai,general_purpose,legacy,high
 21306745,HEYWL--535,Let's Go Washington (Sponsored by Brian Heywood),,2026-06-15,21.62,Johnson Josh,"OpenAI (San Francisco, CA): Software",,https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110371676,openai,OpenAI (ChatGPT),general_purpose,generative,high
 18492178,MULLM2 027,Mark Mullet,Democratic,2024-04-18,700.0,Call Time.ai,Software Rental,GOVERNOR,https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110214537,calltime_ai,CallTime.AI,political_specific,legacy,high
