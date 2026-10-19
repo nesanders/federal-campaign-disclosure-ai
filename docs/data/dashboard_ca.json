@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-10-12T18:43:12+00:00",
-    "records_scanned": 3442502,
+    "generated_at": "2026-10-19T16:19:10+00:00",
+    "records_scanned": 3445285,
     "source_label": "California Secretary of State (CAL-ACCESS)",
     "date_range": {
       "start": "2023-01-01",
@@ -22,13 +22,13 @@
     ]
   },
   "stats": {
-    "total_all_eras": 2023462.76,
-    "total_generative": 69557.39,
-    "matched_records": 410,
+    "total_all_eras": 2025202.76,
+    "total_generative": 69597.39,
+    "matched_records": 413,
     "filers_with_ai_spend": 81,
     "filers_with_ai_spend_ex_legacy": 21,
-    "total_filers_with_activity": 6335,
-    "total_expenditure_ai_filers": 875523384.81,
+    "total_filers_with_activity": 6340,
+    "total_expenditure_ai_filers": 876938192.74,
     "pct_ai_overall": 0.231
   },
   "vendors": [
@@ -44,11 +44,11 @@
         "communications_copy",
         "fundraising"
       ],
-      "total": 1701343.01,
-      "amount_high": 1701343.01,
+      "total": 1703043.01,
+      "amount_high": 1703043.01,
       "amount_medium": 0.0,
-      "records": 140,
-      "records_high": 140,
+      "records": 141,
+      "records_high": 141,
       "records_medium": 0,
       "filers": 46,
       "dem_amount": 0.0,
@@ -272,11 +272,11 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 1296.0,
-      "amount_high": 1296.0,
+      "total": 1336.0,
+      "amount_high": 1336.0,
       "amount_medium": 0.0,
-      "records": 21,
-      "records_high": 21,
+      "records": 23,
+      "records_high": 23,
       "records_medium": 0,
       "filers": 4,
       "dem_amount": 0.0,
@@ -1304,8 +1304,8 @@
         "communications_copy",
         "fundraising"
       ],
-      "total": 1701343.01,
-      "records_count": 140,
+      "total": 1703043.01,
+      "records_count": 141,
       "filers_count": 46,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -1328,8 +1328,8 @@
         },
         {
           "year": 2026,
-          "amount": 1293750.73,
-          "count": 58
+          "amount": 1295450.73,
+          "count": 59
         }
       ],
       "time_series_by_party": [],
@@ -2305,6 +2305,16 @@
           "purpose": "Texting",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199661&amendid=0"
+        },
+        {
+          "date": "2026-07-06",
+          "filer_id": "741452",
+          "filer_name": "Sutter County Republican Central Committee",
+          "filer_party": "Unknown",
+          "amount": 1700.0,
+          "purpose": "Texting",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199661&amendid=1"
         },
         {
           "date": "2024-02-05",
@@ -5036,8 +5046,8 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 1296.0,
-      "records_count": 21,
+      "total": 1336.0,
+      "records_count": 23,
       "filers_count": 4,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -5050,8 +5060,8 @@
         },
         {
           "year": 2026,
-          "amount": 559.0,
-          "count": 13
+          "amount": 599.0,
+          "count": 15
         }
       ],
       "time_series_by_party": [],
@@ -5074,8 +5084,8 @@
           "filer_id": "1456613",
           "filer_name": "Susan Rubio",
           "filer_party": "Unknown",
-          "amount": 200.0,
-          "count": 10
+          "amount": 240.0,
+          "count": 12
         },
         {
           "filer_id": "742344",
@@ -5215,6 +5225,26 @@
           "purpose": "",
           "confidence": "high",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199294&amendid=0"
+        },
+        {
+          "date": "2026-07-28",
+          "filer_id": "1456613",
+          "filer_name": "Susan Rubio",
+          "filer_party": "Unknown",
+          "amount": 20.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199294&amendid=1"
+        },
+        {
+          "date": "2026-08-28",
+          "filer_id": "1456613",
+          "filer_name": "Susan Rubio",
+          "filer_party": "Unknown",
+          "amount": 20.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199294&amendid=1"
         },
         {
           "date": "2025-10-20",
@@ -9681,12 +9711,12 @@
       "id": "1456613",
       "name": "Susan Rubio",
       "party": "Unknown",
-      "total": 200.0,
-      "records_count": 10,
+      "total": 240.0,
+      "records_count": 12,
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 5325365.91,
+      "total_expenditure": 5450783.95,
       "pct_ai": 0.004,
       "time_series": [
         {
@@ -9696,8 +9726,8 @@
         },
         {
           "year": 2026,
-          "amount": 80.0,
-          "count": 4
+          "amount": 120.0,
+          "count": 6
         }
       ],
       "records": [
@@ -9850,6 +9880,36 @@
           "amount": 20.0,
           "purpose": "",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199294&amendid=0"
+        },
+        {
+          "date": "2026-07-28",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 20.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199294&amendid=1"
+        },
+        {
+          "date": "2026-08-28",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 20.0,
+          "purpose": "",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199294&amendid=1"
         }
       ]
     },
@@ -13343,18 +13403,18 @@
       "id": "741452",
       "name": "Sutter County Republican Central Committee",
       "party": "Unknown",
-      "total": 3700.0,
-      "records_count": 2,
+      "total": 5400.0,
+      "records_count": 3,
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 2249827.78,
-      "pct_ai": 0.164,
+      "total_expenditure": 3539217.67,
+      "pct_ai": 0.153,
       "time_series": [
         {
           "year": 2026,
-          "amount": 3700.0,
-          "count": 2
+          "amount": 5400.0,
+          "count": 3
         }
       ],
       "records": [
@@ -13387,6 +13447,21 @@
           "amount": 1700.0,
           "purpose": "Texting",
           "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199661&amendid=0"
+        },
+        {
+          "date": "2026-07-06",
+          "vendor_ids": [
+            "prompt_io"
+          ],
+          "vendor_names": [
+            "Prompt.io"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 1700.0,
+          "purpose": "Texting",
+          "source_link": "https://cal-access.sos.ca.gov/PDFGen/pdfgen.prg?filingid=3199661&amendid=1"
         }
       ]
     },
@@ -13559,12 +13634,12 @@
     },
     {
       "year": 2026,
-      "total": 1465806.88,
-      "records": 194,
-      "total_expenditure": 486898474.6,
-      "total_ex_legacy": 56922.53,
-      "records_ex_legacy": 48,
-      "total_expenditure_ex_legacy": 281394397.65
+      "total": 1467546.88,
+      "records": 197,
+      "total_expenditure": 488313282.53,
+      "total_ex_legacy": 56962.53,
+      "records_ex_legacy": 50,
+      "total_expenditure_ex_legacy": 281519815.69
     }
   ],
   "time_series_by_party": [],

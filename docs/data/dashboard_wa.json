@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-10-12T18:36:52+00:00",
-    "records_scanned": 241791,
+    "generated_at": "2026-10-19T16:13:49+00:00",
+    "records_scanned": 253181,
     "source_label": "Washington Public Disclosure Commission (PDC)",
     "date_range": {
       "start": "2023-01-01",
@@ -22,14 +22,14 @@
     ]
   },
   "stats": {
-    "total_all_eras": 54919.79,
-    "total_generative": 4663.31,
-    "matched_records": 71,
+    "total_all_eras": 55581.79,
+    "total_generative": 4884.11,
+    "matched_records": 73,
     "filers_with_ai_spend": 28,
     "filers_with_ai_spend_ex_legacy": 15,
-    "total_filers_with_activity": 3699,
-    "total_expenditure_ai_filers": 9866407.86,
-    "pct_ai_overall": 0.557
+    "total_filers_with_activity": 3715,
+    "total_expenditure_ai_filers": 10255641.87,
+    "pct_ai_overall": 0.542
   },
   "vendors": [
     {
@@ -90,16 +90,16 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 1298.52,
-      "amount_high": 1298.52,
+      "total": 1519.32,
+      "amount_high": 1519.32,
       "amount_medium": 0.0,
-      "records": 11,
-      "records_high": 11,
+      "records": 12,
+      "records_high": 12,
       "records_medium": 0,
       "filers": 5,
-      "dem_amount": 736.39,
+      "dem_amount": 957.19,
       "rep_amount": 114.58,
-      "dem_rep_ratio": 6.427
+      "dem_rep_ratio": 8.354
     },
     {
       "id": "otter_ai",
@@ -158,11 +158,11 @@
       "tags": [
         "advertising_creative"
       ],
-      "total": 317.66,
-      "amount_high": 317.66,
+      "total": 758.86,
+      "amount_high": 758.86,
       "amount_medium": 0.0,
-      "records": 1,
-      "records_high": 1,
+      "records": 2,
+      "records_high": 2,
       "records_medium": 0,
       "filers": 1,
       "dem_amount": 0.0,
@@ -275,24 +275,24 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 1298.52,
-      "records_count": 11,
+      "total": 1519.32,
+      "records_count": 12,
       "filers_count": 5,
-      "dem_amount": 736.39,
+      "dem_amount": 957.19,
       "rep_amount": 114.58,
-      "dem_rep_ratio": 6.427,
+      "dem_rep_ratio": 8.354,
       "time_series": [
         {
           "year": 2026,
-          "amount": 1298.52,
-          "count": 11
+          "amount": 1519.32,
+          "count": 12
         }
       ],
       "time_series_by_party": [
         {
           "year": 2026,
           "party": "Democratic",
-          "amount": 736.39
+          "amount": 957.19
         },
         {
           "year": 2026,
@@ -305,8 +305,8 @@
           "filer_id": "SZCZS--401",
           "filer_name": "Stephen R Szczurko-Walton (Stephen Szczurko-Walton)",
           "filer_party": "Democratic",
-          "amount": 736.39,
-          "count": 4
+          "amount": 957.19,
+          "count": 5
         },
         {
           "filer_id": "LYONJ--322",
@@ -357,6 +357,16 @@
           "purpose": "Anthropic (Claude) 7/12-8/12/26",
           "confidence": "high",
           "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110377177"
+        },
+        {
+          "date": "2026-09-12",
+          "filer_id": "SZCZS--401",
+          "filer_name": "Stephen R Szczurko-Walton (Stephen Szczurko-Walton)",
+          "filer_party": "Democratic",
+          "amount": 220.8,
+          "purpose": "Anthropic Max Plan 20x Sep 12-Oct 12",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110395952"
         },
         {
           "date": "2026-06-12",
@@ -1304,8 +1314,8 @@
       "tags": [
         "advertising_creative"
       ],
-      "total": 317.66,
-      "records_count": 1,
+      "total": 758.86,
+      "records_count": 2,
       "filers_count": 1,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -1313,8 +1323,8 @@
       "time_series": [
         {
           "year": 2026,
-          "amount": 317.66,
-          "count": 1
+          "amount": 758.86,
+          "count": 2
         }
       ],
       "time_series_by_party": [],
@@ -1323,11 +1333,21 @@
           "filer_id": "ROSEM--487",
           "filer_name": "Michael Rosen",
           "filer_party": "Unknown",
-          "amount": 317.66,
-          "count": 1
+          "amount": 758.86,
+          "count": 2
         }
       ],
       "records": [
+        {
+          "date": "2026-09-02",
+          "filer_id": "ROSEM--487",
+          "filer_name": "Michael Rosen",
+          "filer_party": "Unknown",
+          "amount": 441.2,
+          "purpose": "Design Software",
+          "confidence": "high",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110395241"
+        },
         {
           "date": "2026-04-30",
           "filer_id": "ROSEM--487",
@@ -1587,18 +1607,18 @@
       "id": "SZCZS--401",
       "name": "Stephen R Szczurko-Walton (Stephen Szczurko-Walton)",
       "party": "Democratic",
-      "total": 736.39,
-      "records_count": 4,
+      "total": 957.19,
+      "records_count": 5,
       "vendor_ids": [
         "anthropic"
       ],
-      "total_expenditure": 7057.82,
-      "pct_ai": 10.434,
+      "total_expenditure": 18567.95,
+      "pct_ai": 5.155,
       "time_series": [
         {
           "year": 2026,
-          "amount": 736.39,
-          "count": 4
+          "amount": 957.19,
+          "count": 5
         }
       ],
       "records": [
@@ -1631,6 +1651,21 @@
           "amount": 220.8,
           "purpose": "Anthropic (Claude) 7/12-8/12/26",
           "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110377177"
+        },
+        {
+          "date": "2026-09-12",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 220.8,
+          "purpose": "Anthropic Max Plan 20x Sep 12-Oct 12",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110395952"
         },
         {
           "date": "2026-06-12",
@@ -2051,7 +2086,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 25021054.79,
+      "total_expenditure": 25326018.31,
       "pct_ai": 0.0,
       "time_series": [
         {
@@ -2169,21 +2204,36 @@
       "id": "ROSEM--487",
       "name": "Michael Rosen",
       "party": "Unknown",
-      "total": 317.66,
-      "records_count": 1,
+      "total": 758.86,
+      "records_count": 2,
       "vendor_ids": [
         "descript"
       ],
-      "total_expenditure": 19444.21,
-      "pct_ai": 1.634,
+      "total_expenditure": 72856.39,
+      "pct_ai": 1.042,
       "time_series": [
         {
           "year": 2026,
-          "amount": 317.66,
-          "count": 1
+          "amount": 758.86,
+          "count": 2
         }
       ],
       "records": [
+        {
+          "date": "2026-09-02",
+          "vendor_ids": [
+            "descript"
+          ],
+          "vendor_names": [
+            "Descript"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 441.2,
+          "purpose": "Design Software",
+          "source_link": "https://my.pdc.wa.gov/public/registrations/campaign-finance-report/110395241"
+        },
         {
           "date": "2026-04-30",
           "vendor_ids": [
@@ -2246,8 +2296,8 @@
       "vendor_ids": [
         "synthesia"
       ],
-      "total_expenditure": 119924.82,
-      "pct_ai": 0.113,
+      "total_expenditure": 124258.65,
+      "pct_ai": 0.109,
       "time_series": [
         {
           "year": 2023,
@@ -2378,7 +2428,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 1379550.48,
+      "total_expenditure": 1381135.99,
       "pct_ai": 0.01,
       "time_series": [
         {
@@ -2489,8 +2539,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 989832.83,
-      "pct_ai": 0.519,
+      "total_expenditure": 1009812.81,
+      "pct_ai": 0.509,
       "time_series": [
         {
           "year": 2023,
@@ -2636,8 +2686,8 @@
       "vendor_ids": [
         "otter_ai"
       ],
-      "total_expenditure": 133366.23,
-      "pct_ai": 0.795,
+      "total_expenditure": 144501.51,
+      "pct_ai": 0.734,
       "time_series": [
         {
           "year": 2025,
@@ -2707,8 +2757,8 @@
       "vendor_ids": [
         "anthropic"
       ],
-      "total_expenditure": 7226.74,
-      "pct_ai": 0.985,
+      "total_expenditure": 7269.46,
+      "pct_ai": 0.979,
       "time_series": [
         {
           "year": 2026,
@@ -2866,8 +2916,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 1677158.09,
-      "pct_ai": 0.591,
+      "total_expenditure": 1704603.78,
+      "pct_ai": 0.581,
       "time_series": [
         {
           "year": 2023,
@@ -2938,8 +2988,8 @@
       "vendor_ids": [
         "prompt_io"
       ],
-      "total_expenditure": 2751666.24,
-      "pct_ai": 0.006,
+      "total_expenditure": 3153494.96,
+      "pct_ai": 0.005,
       "time_series": [
         {
           "year": 2024,
@@ -3061,8 +3111,8 @@
       "vendor_ids": [
         "synthesia"
       ],
-      "total_expenditure": 114962.16,
-      "pct_ai": 0.117,
+      "total_expenditure": 125547.71,
+      "pct_ai": 0.108,
       "time_series": [
         {
           "year": 2023,
@@ -3097,8 +3147,8 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 7136.38,
-      "pct_ai": 0.31,
+      "total_expenditure": 14768.96,
+      "pct_ai": 0.15,
       "time_series": [
         {
           "year": 2026,
@@ -3133,8 +3183,8 @@
       "vendor_ids": [
         "anthropic"
       ],
-      "total_expenditure": 6248.65,
-      "pct_ai": 0.695,
+      "total_expenditure": 6786.25,
+      "pct_ai": 0.64,
       "time_series": [
         {
           "year": 2026,
@@ -3278,12 +3328,12 @@
     },
     {
       "year": 2026,
-      "total": 4406.08,
-      "records": 17,
-      "total_expenditure": 3805268.38,
-      "total_ex_legacy": 3557.78,
-      "records_ex_legacy": 15,
-      "total_expenditure_ex_legacy": 3775529.0
+      "total": 5068.08,
+      "records": 19,
+      "total_expenditure": 4194502.39,
+      "total_ex_legacy": 3778.58,
+      "records_ex_legacy": 16,
+      "total_expenditure_ex_legacy": 4100215.55
     }
   ],
   "time_series_by_party": [
@@ -3315,7 +3365,7 @@
     {
       "year": 2026,
       "party": "Democratic",
-      "amount": 3482.57
+      "amount": 3703.37
     },
     {
       "year": 2026,
@@ -3332,7 +3382,7 @@
     {
       "year": 2026,
       "party": "Democratic",
-      "amount": 2951.93
+      "amount": 3172.73
     },
     {
       "year": 2026,
@@ -3341,19 +3391,19 @@
     }
   ],
   "party_split": {
-    "dem_amount": 20764.98,
+    "dem_amount": 20985.78,
     "rep_amount": 16816.37,
-    "dem_count": 34,
+    "dem_count": 35,
     "rep_count": 12,
-    "dem_rep_ratio": 1.235,
+    "dem_rep_ratio": 1.248,
     "filers_with_known_party": 13
   },
   "party_split_ex_legacy": {
-    "dem_amount": 3221.93,
+    "dem_amount": 3442.73,
     "rep_amount": 114.58,
-    "dem_count": 9,
+    "dem_count": 10,
     "rep_count": 4,
-    "dem_rep_ratio": 28.119,
+    "dem_rep_ratio": 30.047,
     "filers_with_known_party": 6
   },
   "notable_records": [

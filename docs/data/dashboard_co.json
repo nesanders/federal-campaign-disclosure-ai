@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-10-12T18:37:12+00:00",
-    "records_scanned": 223622,
+    "generated_at": "2026-10-19T16:14:03+00:00",
+    "records_scanned": 228112,
     "source_label": "Colorado TRACER (Secretary of State)",
     "date_range": {
       "start": "2023-01-01",
@@ -22,14 +22,14 @@
     ]
   },
   "stats": {
-    "total_all_eras": 42134.2,
-    "total_generative": 8362.94,
-    "matched_records": 302,
+    "total_all_eras": 42645.83,
+    "total_generative": 8874.57,
+    "matched_records": 308,
     "filers_with_ai_spend": 55,
     "filers_with_ai_spend_ex_legacy": 35,
-    "total_filers_with_activity": 3361,
-    "total_expenditure_ai_filers": 5474827.21,
-    "pct_ai_overall": 0.77
+    "total_filers_with_activity": 3407,
+    "total_expenditure_ai_filers": 5531585.42,
+    "pct_ai_overall": 0.771
   },
   "vendors": [
     {
@@ -113,11 +113,11 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 2931.09,
-      "amount_high": 2931.09,
+      "total": 2991.09,
+      "amount_high": 2991.09,
       "amount_medium": 0.0,
-      "records": 141,
-      "records_high": 141,
+      "records": 144,
+      "records_high": 144,
       "records_medium": 0,
       "filers": 19,
       "dem_amount": 0.0,
@@ -159,12 +159,12 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 3431.52,
+      "total": 3769.02,
       "amount_high": 1583.93,
-      "amount_medium": 1847.59,
-      "records": 17,
+      "amount_medium": 2185.09,
+      "records": 18,
       "records_high": 12,
-      "records_medium": 5,
+      "records_medium": 6,
       "filers": 5,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -205,11 +205,11 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 541.05,
-      "amount_high": 516.75,
+      "total": 624.14,
+      "amount_high": 599.84,
       "amount_medium": 24.3,
-      "records": 7,
-      "records_high": 5,
+      "records": 8,
+      "records_high": 6,
       "records_medium": 2,
       "filers": 5,
       "dem_amount": 0.0,
@@ -228,13 +228,13 @@
         "synthetic_media",
         "advertising_creative"
       ],
-      "total": 346.32,
-      "amount_high": 346.32,
+      "total": 377.36,
+      "amount_high": 377.36,
       "amount_medium": 0.0,
-      "records": 1,
-      "records_high": 1,
+      "records": 2,
+      "records_high": 2,
       "records_medium": 0,
-      "filers": 1,
+      "filers": 2,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
       "dem_rep_ratio": null
@@ -818,8 +818,8 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 2931.09,
-      "records_count": 141,
+      "total": 2991.09,
+      "records_count": 144,
       "filers_count": 19,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -842,8 +842,8 @@
         },
         {
           "year": 2026,
-          "amount": 1131.09,
-          "count": 53
+          "amount": 1191.09,
+          "count": 56
         }
       ],
       "time_series_by_party": [],
@@ -912,6 +912,13 @@
           "count": 5
         },
         {
+          "filer_id": "20265051786",
+          "filer_name": "DAN4DOUGCO",
+          "filer_party": "Unknown",
+          "amount": 100.0,
+          "count": 5
+        },
+        {
           "filer_id": "20245047151",
           "filer_name": "TYLER LINNEBUR FOR COUNTY COMMISSIONER",
           "filer_party": "Unknown",
@@ -952,13 +959,6 @@
           "filer_party": "Unknown",
           "amount": 41.22,
           "count": 4
-        },
-        {
-          "filer_id": "20265051786",
-          "filer_name": "DAN4DOUGCO",
-          "filer_party": "Unknown",
-          "amount": 40.0,
-          "count": 2
         },
         {
           "filer_id": "20225041872",
@@ -2044,6 +2044,16 @@
           "source_link": ""
         },
         {
+          "date": "2026-08-06",
+          "filer_id": "20265051786",
+          "filer_name": "DAN4DOUGCO",
+          "filer_party": "Unknown",
+          "amount": 20.0,
+          "purpose": "CONSULTING",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
           "date": "2025-08-08",
           "filer_id": "20255047962",
           "filer_name": "SCOTT BOTTOMS FOR GOVERNOR",
@@ -2094,6 +2104,16 @@
           "source_link": ""
         },
         {
+          "date": "2026-09-08",
+          "filer_id": "20265051786",
+          "filer_name": "DAN4DOUGCO",
+          "filer_party": "Unknown",
+          "amount": 20.0,
+          "purpose": "CONSULTING FEES",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
           "date": "2026-09-11",
           "filer_id": "20245047563",
           "filer_name": "TRAVIS FOR COLORADO",
@@ -2130,6 +2150,16 @@
           "filer_party": "Unknown",
           "amount": 20.0,
           "purpose": "7218 \ufffd DUES AND SUBSCRIPTIONS",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-06",
+          "filer_id": "20265051786",
+          "filer_name": "DAN4DOUGCO",
+          "filer_party": "Unknown",
+          "amount": 20.0,
+          "purpose": "CONSULTING FEES",
           "confidence": "high",
           "source_link": ""
         },
@@ -3430,8 +3460,8 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 3431.52,
-      "records_count": 17,
+      "total": 3769.02,
+      "records_count": 18,
       "filers_count": 5,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -3449,8 +3479,8 @@
         },
         {
           "year": 2026,
-          "amount": 1476.58,
-          "count": 11
+          "amount": 1814.08,
+          "count": 12
         }
       ],
       "time_series_by_party": [],
@@ -3463,18 +3493,18 @@
           "count": 5
         },
         {
+          "filer_id": "20265051842",
+          "filer_name": "VANDENBERG FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 957.5,
+          "count": 2
+        },
+        {
           "filer_id": "20265051913",
           "filer_name": "COMMITTEE TO ELECT WILLIAM SWITZER",
           "filer_party": "Unknown",
           "amount": 696.65,
           "count": 2
-        },
-        {
-          "filer_id": "20265051842",
-          "filer_name": "VANDENBERG FOR COLORADO",
-          "filer_party": "Unknown",
-          "amount": 620.0,
-          "count": 1
         },
         {
           "filer_id": "20245047563",
@@ -3529,6 +3559,16 @@
           "filer_party": "Unknown",
           "amount": 459.76,
           "purpose": "BANNERS",
+          "confidence": "medium",
+          "source_link": ""
+        },
+        {
+          "date": "2026-09-28",
+          "filer_id": "20265051842",
+          "filer_name": "VANDENBERG FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 337.5,
+          "purpose": "6615 \ufffd HANG CARDS",
           "confidence": "medium",
           "source_link": ""
         },
@@ -3955,8 +3995,8 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 541.05,
-      "records_count": 7,
+      "total": 624.14,
+      "records_count": 8,
       "filers_count": 5,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -3969,8 +4009,8 @@
         },
         {
           "year": 2026,
-          "amount": 536.75,
-          "count": 6
+          "amount": 619.84,
+          "count": 7
         }
       ],
       "time_series_by_party": [],
@@ -3993,8 +4033,8 @@
           "filer_id": "20255050453",
           "filer_name": "JAMES WILEY FOR COLORADO",
           "filer_party": "Unknown",
-          "amount": 109.03,
-          "count": 3
+          "amount": 192.12,
+          "count": 4
         },
         {
           "filer_id": "20205039924",
@@ -4034,6 +4074,16 @@
         },
         {
           "date": "2026-09-30",
+          "filer_id": "20255050453",
+          "filer_name": "JAMES WILEY FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 83.09,
+          "purpose": "CLAUD AI",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-01",
           "filer_id": "20255050453",
           "filer_name": "JAMES WILEY FOR COLORADO",
           "filer_party": "Unknown",
@@ -4323,17 +4373,17 @@
         "synthetic_media",
         "advertising_creative"
       ],
-      "total": 346.32,
-      "records_count": 1,
-      "filers_count": 1,
+      "total": 377.36,
+      "records_count": 2,
+      "filers_count": 2,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
       "dem_rep_ratio": null,
       "time_series": [
         {
           "year": 2026,
-          "amount": 346.32,
-          "count": 1
+          "amount": 377.36,
+          "count": 2
         }
       ],
       "time_series_by_party": [],
@@ -4343,6 +4393,13 @@
           "filer_name": "THE COMMITTEE TO ELECT STEVE SCHLEIKER",
           "filer_party": "Unknown",
           "amount": 346.32,
+          "count": 1
+        },
+        {
+          "filer_id": "20255050453",
+          "filer_name": "JAMES WILEY FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 31.04,
           "count": 1
         }
       ],
@@ -4354,6 +4411,16 @@
           "filer_party": "Unknown",
           "amount": 346.32,
           "purpose": "",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-01",
+          "filer_id": "20255050453",
+          "filer_name": "JAMES WILEY FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 31.04,
+          "purpose": "AI BOTS",
           "confidence": "high",
           "source_link": ""
         }
@@ -6790,7 +6857,7 @@
       "vendor_ids": [
         "campaign_nucleus"
       ],
-      "total_expenditure": 18082.94,
+      "total_expenditure": 18086.59,
       "pct_ai": 3.134,
       "time_series": [
         {
@@ -7133,8 +7200,8 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 28058.54,
-      "pct_ai": 0.642,
+      "total_expenditure": 28816.99,
+      "pct_ai": 0.625,
       "time_series": [
         {
           "year": 2025,
@@ -7763,8 +7830,8 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 24205.75,
-      "pct_ai": 0.248,
+      "total_expenditure": 24301.35,
+      "pct_ai": 0.247,
       "time_series": [
         {
           "year": 2025,
@@ -8388,8 +8455,8 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 199614.39,
-      "pct_ai": 0.05,
+      "total_expenditure": 215035.52,
+      "pct_ai": 0.047,
       "time_series": [
         {
           "year": 2025,
@@ -9367,8 +9434,8 @@
       "vendor_ids": [
         "canva_ai"
       ],
-      "total_expenditure": 167686.84,
-      "pct_ai": 0.086,
+      "total_expenditure": 190643.63,
+      "pct_ai": 0.076,
       "time_series": [
         {
           "year": 2026,
@@ -9545,18 +9612,18 @@
       "id": "20265051842",
       "name": "VANDENBERG FOR COLORADO",
       "party": "Unknown",
-      "total": 620.0,
-      "records_count": 1,
+      "total": 957.5,
+      "records_count": 2,
       "vendor_ids": [
         "google_ai"
       ],
-      "total_expenditure": 5541.31,
-      "pct_ai": 11.189,
+      "total_expenditure": 7281.5,
+      "pct_ai": 13.15,
       "time_series": [
         {
           "year": 2026,
-          "amount": 620.0,
-          "count": 1
+          "amount": 957.5,
+          "count": 2
         }
       ],
       "records": [
@@ -9574,6 +9641,21 @@
           "amount": 620.0,
           "purpose": "6615 \ufffd HANG CARDS",
           "source_link": ""
+        },
+        {
+          "date": "2026-09-28",
+          "vendor_ids": [
+            "google_ai"
+          ],
+          "vendor_names": [
+            "Google (Gemini / Vertex AI)"
+          ],
+          "confidences": [
+            "medium"
+          ],
+          "amount": 337.5,
+          "purpose": "6615 \ufffd HANG CARDS",
+          "source_link": ""
         }
       ]
     },
@@ -9581,18 +9663,18 @@
       "id": "20265051786",
       "name": "DAN4DOUGCO",
       "party": "Unknown",
-      "total": 40.0,
-      "records_count": 2,
+      "total": 100.0,
+      "records_count": 5,
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 4545.05,
-      "pct_ai": 0.88,
+      "total_expenditure": 8733.85,
+      "pct_ai": 1.145,
       "time_series": [
         {
           "year": 2026,
-          "amount": 40.0,
-          "count": 2
+          "amount": 100.0,
+          "count": 5
         }
       ],
       "records": [
@@ -9624,6 +9706,51 @@
           ],
           "amount": 20.0,
           "purpose": "CHATGPT",
+          "source_link": ""
+        },
+        {
+          "date": "2026-08-06",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 20.0,
+          "purpose": "CONSULTING",
+          "source_link": ""
+        },
+        {
+          "date": "2026-09-08",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 20.0,
+          "purpose": "CONSULTING FEES",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-06",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 20.0,
+          "purpose": "CONSULTING FEES",
           "source_link": ""
         }
       ]
@@ -9688,8 +9815,8 @@
       "vendor_ids": [
         "runwayml"
       ],
-      "total_expenditure": 28294.54,
-      "pct_ai": 1.224,
+      "total_expenditure": 30823.19,
+      "pct_ai": 1.124,
       "time_series": [
         {
           "year": 2026,
@@ -9724,8 +9851,8 @@
       "vendor_ids": [
         "anthropic"
       ],
-      "total_expenditure": 8418.75,
-      "pct_ai": 2.376,
+      "total_expenditure": 8820.04,
+      "pct_ai": 2.268,
       "time_series": [
         {
           "year": 2026,
@@ -9949,8 +10076,8 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 3565.06,
-      "pct_ai": 1.755,
+      "total_expenditure": 3609.86,
+      "pct_ai": 1.733,
       "time_series": [
         {
           "year": 2026,
@@ -10046,18 +10173,19 @@
       "id": "20255050453",
       "name": "JAMES WILEY FOR COLORADO",
       "party": "Unknown",
-      "total": 109.03,
-      "records_count": 3,
+      "total": 223.16,
+      "records_count": 5,
       "vendor_ids": [
-        "anthropic"
+        "anthropic",
+        "runwayml"
       ],
-      "total_expenditure": 77087.79,
-      "pct_ai": 0.141,
+      "total_expenditure": 85805.9,
+      "pct_ai": 0.26,
       "time_series": [
         {
           "year": 2026,
-          "amount": 109.03,
-          "count": 3
+          "amount": 223.16,
+          "count": 5
         }
       ],
       "records": [
@@ -10074,6 +10202,36 @@
           ],
           "amount": 83.09,
           "purpose": "CLAUD AI",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-01",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 83.09,
+          "purpose": "CLAUD AI",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-01",
+          "vendor_ids": [
+            "runwayml"
+          ],
+          "vendor_names": [
+            "Runway"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 31.04,
+          "purpose": "AI BOTS",
           "source_link": ""
         },
         {
@@ -10184,12 +10342,12 @@
     },
     {
       "year": 2026,
-      "total": 10591.16,
-      "records": 93,
-      "total_expenditure": 2432560.49,
-      "total_ex_legacy": 3620.74,
-      "records_ex_legacy": 76,
-      "total_expenditure_ex_legacy": 591097.8
+      "total": 11102.79,
+      "records": 99,
+      "total_expenditure": 2489318.7,
+      "total_ex_legacy": 4132.37,
+      "records_ex_legacy": 82,
+      "total_expenditure_ex_legacy": 624899.22
     }
   ],
   "time_series_by_party": [],

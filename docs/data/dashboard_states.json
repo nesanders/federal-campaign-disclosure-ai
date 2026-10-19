@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-12T18:43:12+00:00",
+    "generated_at": "2026-10-19T16:19:11+00:00",
     "covered_states": [
       "ma",
       "wa",
@@ -30,8 +30,8 @@
     ]
   },
   "stats": {
-    "total_all_eras": 2145940.95,
-    "total_generative": 95377.48,
+    "total_all_eras": 2148854.58,
+    "total_generative": 96149.91,
     "filers_with_ai_spend": 225,
     "filers_with_ai_spend_ex_legacy": 117,
     "distinct_vendors_all_eras": 28,
@@ -49,10 +49,10 @@
         "communications_copy",
         "fundraising"
       ],
-      "total": 1738036.68,
-      "amount_high": 1738036.68,
+      "total": 1739736.68,
+      "amount_high": 1739736.68,
       "amount_medium": 0.0,
-      "records": 154,
+      "records": 155,
       "filers": 55,
       "dem_amount": 4437.85,
       "rep_amount": 16701.79,
@@ -64,9 +64,9 @@
           "filers": 9
         },
         "ca": {
-          "amount_high": 1701343.01,
+          "amount_high": 1703043.01,
           "amount_medium": 0.0,
-          "records": 140,
+          "records": 141,
           "filers": 46
         }
       },
@@ -89,8 +89,8 @@
         },
         {
           "year": 2026,
-          "amount": 1293750.73,
-          "count": 58
+          "amount": 1295450.73,
+          "count": 59
         }
       ]
     },
@@ -416,10 +416,10 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 12704.62,
-      "amount_high": 12704.62,
+      "total": 12804.62,
+      "amount_high": 12804.62,
       "amount_medium": 0.0,
-      "records": 375,
+      "records": 380,
       "filers": 58,
       "dem_amount": 5686.53,
       "rep_amount": 1596.74,
@@ -437,15 +437,15 @@
           "filers": 6
         },
         "co": {
-          "amount_high": 2931.09,
+          "amount_high": 2991.09,
           "amount_medium": 0.0,
-          "records": 141,
+          "records": 144,
           "filers": 19
         },
         "ca": {
-          "amount_high": 1296.0,
+          "amount_high": 1336.0,
           "amount_medium": 0.0,
-          "records": 21,
+          "records": 23,
           "filers": 4
         }
       },
@@ -468,8 +468,8 @@
         },
         {
           "year": 2026,
-          "amount": 7294.59,
-          "count": 209
+          "amount": 7394.59,
+          "count": 214
         }
       ]
     },
@@ -677,12 +677,12 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 4635.96,
-      "amount_high": 4611.66,
+      "total": 4939.85,
+      "amount_high": 4915.55,
       "amount_medium": 24.3,
-      "records": 56,
+      "records": 58,
       "filers": 22,
-      "dem_amount": 2228.8,
+      "dem_amount": 2449.6,
       "rep_amount": 421.84,
       "by_state": {
         "ma": {
@@ -692,15 +692,15 @@
           "filers": 10
         },
         "wa": {
-          "amount_high": 1298.52,
+          "amount_high": 1519.32,
           "amount_medium": 0.0,
-          "records": 11,
+          "records": 12,
           "filers": 5
         },
         "co": {
-          "amount_high": 516.75,
+          "amount_high": 599.84,
           "amount_medium": 24.3,
-          "records": 7,
+          "records": 8,
           "filers": 5
         },
         "ca": {
@@ -710,7 +710,7 @@
           "filers": 2
         }
       },
-      "dem_rep_ratio": 5.284,
+      "dem_rep_ratio": 5.807,
       "time_series": [
         {
           "year": 2025,
@@ -719,8 +719,8 @@
         },
         {
           "year": 2026,
-          "amount": 4419.16,
-          "count": 54
+          "amount": 4723.05,
+          "count": 56
         }
       ]
     },
@@ -768,10 +768,10 @@
       "tags": [
         "advertising_creative"
       ],
-      "total": 1716.29,
-      "amount_high": 1716.29,
+      "total": 2157.49,
+      "amount_high": 2157.49,
       "amount_medium": 0.0,
-      "records": 27,
+      "records": 28,
       "filers": 6,
       "dem_amount": 1021.09,
       "rep_amount": 0.0,
@@ -783,9 +783,9 @@
           "filers": 3
         },
         "wa": {
-          "amount_high": 317.66,
+          "amount_high": 758.86,
           "amount_medium": 0.0,
-          "records": 1,
+          "records": 2,
           "filers": 1
         },
         "co": {
@@ -809,8 +809,8 @@
         },
         {
           "year": 2026,
-          "amount": 864.68,
-          "count": 17
+          "amount": 1305.88,
+          "count": 18
         }
       ]
     },
@@ -825,10 +825,10 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 44166.2,
+      "total": 44503.7,
       "amount_high": 1590.94,
-      "amount_medium": 42575.26,
-      "records": 38,
+      "amount_medium": 42912.76,
+      "records": 39,
       "filers": 14,
       "dem_amount": 0.0,
       "rep_amount": 7.01,
@@ -841,8 +841,8 @@
         },
         "co": {
           "amount_high": 1583.93,
-          "amount_medium": 1847.59,
-          "records": 17,
+          "amount_medium": 2185.09,
+          "records": 18,
           "filers": 5
         },
         "ca": {
@@ -871,8 +871,8 @@
         },
         {
           "year": 2026,
-          "amount": 33791.4,
-          "count": 28
+          "amount": 34128.9,
+          "count": 29
         }
       ]
     },
@@ -1018,6 +1018,41 @@
       ]
     },
     {
+      "id": "runwayml",
+      "name": "Runway",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://runwayml.com",
+      "description": "AI video-generation and editing tool used to produce and edit ad creative and social video.",
+      "tags": [
+        "synthetic_media",
+        "advertising_creative"
+      ],
+      "total": 377.36,
+      "amount_high": 377.36,
+      "amount_medium": 0.0,
+      "records": 2,
+      "filers": 2,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "by_state": {
+        "co": {
+          "amount_high": 377.36,
+          "amount_medium": 0.0,
+          "records": 2,
+          "filers": 2
+        }
+      },
+      "dem_rep_ratio": null,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 377.36,
+          "count": 2
+        }
+      ]
+    },
+    {
       "id": "read_ai",
       "name": "Read.ai",
       "group": "general_purpose",
@@ -1053,41 +1088,6 @@
         {
           "year": 2026,
           "amount": 191.25,
-          "count": 1
-        }
-      ]
-    },
-    {
-      "id": "runwayml",
-      "name": "Runway",
-      "group": "general_purpose",
-      "era": "generative",
-      "homepage": "https://runwayml.com",
-      "description": "AI video-generation and editing tool used to produce and edit ad creative and social video.",
-      "tags": [
-        "synthetic_media",
-        "advertising_creative"
-      ],
-      "total": 346.32,
-      "amount_high": 346.32,
-      "amount_medium": 0.0,
-      "records": 1,
-      "filers": 1,
-      "dem_amount": 0.0,
-      "rep_amount": 0.0,
-      "by_state": {
-        "co": {
-          "amount_high": 346.32,
-          "amount_medium": 0.0,
-          "records": 1,
-          "filers": 1
-        }
-      },
-      "dem_rep_ratio": null,
-      "time_series": [
-        {
-          "year": 2026,
-          "amount": 346.32,
           "count": 1
         }
       ]
@@ -1426,26 +1426,26 @@
     },
     {
       "year": 2026,
-      "total": 1491306.6,
-      "total_ex_legacy": 72102.29,
-      "records": 532,
-      "records_ex_legacy": 324
+      "total": 1494220.23,
+      "total_ex_legacy": 72874.72,
+      "records": 543,
+      "records_ex_legacy": 333
     }
   ],
   "party_split": {
-    "dem_amount": 38409.43,
+    "dem_amount": 38630.23,
     "rep_amount": 22379.11,
-    "dem_count": 325,
+    "dem_count": 326,
     "rep_count": 69,
-    "dem_rep_ratio": 1.716,
+    "dem_rep_ratio": 1.726,
     "filers_with_known_party": 67
   },
   "party_split_ex_legacy": {
-    "dem_amount": 12717.76,
+    "dem_amount": 12938.56,
     "rep_amount": 2458.09,
-    "dem_count": 219,
+    "dem_count": 220,
     "rep_count": 38,
-    "dem_rep_ratio": 5.174,
+    "dem_rep_ratio": 5.264,
     "filers_with_known_party": 48
   },
   "states_leaderboard": [
@@ -1465,32 +1465,32 @@
       "id": "wa",
       "label": "Washington",
       "source_label": "Washington PDC",
-      "spend_all_eras": 54919.79,
-      "spend_generative": 4663.31,
+      "spend_all_eras": 55581.79,
+      "spend_generative": 4884.11,
       "filers_all_eras": 28,
       "filers_generative": 15,
       "distinct_vendors_all_eras": 10,
       "distinct_vendors_generative": 5,
-      "pct_ai_overall": 0.557
+      "pct_ai_overall": 0.542
     },
     {
       "id": "co",
       "label": "Colorado",
       "source_label": "Colorado TRACER",
-      "spend_all_eras": 42134.2,
-      "spend_generative": 8362.94,
+      "spend_all_eras": 42645.83,
+      "spend_generative": 8874.57,
       "filers_all_eras": 55,
       "filers_generative": 35,
       "distinct_vendors_all_eras": 15,
       "distinct_vendors_generative": 8,
-      "pct_ai_overall": 0.77
+      "pct_ai_overall": 0.771
     },
     {
       "id": "ca",
       "label": "California",
       "source_label": "California CAL-ACCESS",
-      "spend_all_eras": 2023462.76,
-      "spend_generative": 69557.39,
+      "spend_all_eras": 2025202.76,
+      "spend_generative": 69597.39,
       "filers_all_eras": 81,
       "filers_generative": 21,
       "distinct_vendors_all_eras": 17,
