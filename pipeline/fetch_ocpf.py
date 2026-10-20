@@ -17,6 +17,10 @@ independent `ocpf` PyPI client's search.py for the pagination hazards this
 avoids) over a date window, and refuses to write a result that doesn't match
 the API's own reported `summary.count` -- a short read would silently
 understate spending, and an inflated one would silently double-count it.
+Filings land while a category is being paged (about 35 pages), which shifts
+page boundaries: a record repeats across two pages or is skipped. Records
+are de-duplicated by their `id`, and a category whose count still doesn't
+match is re-paged from scratch, up to FETCH_ATTEMPTS times, before failing.
 
 Output: one JSON-lines file per category under data/raw/ocpf/ (gitignored,
 like all of data/raw/).
@@ -41,9 +45,34 @@ CATEGORY_SUBVENDOR = "S"
 
 PAGE_SIZE = 10000
 MAX_PAGES = 200
+FETCH_ATTEMPTS = 3
+RETRY_WAIT_SECONDS = 30
 
 
 def fetch_category(category: str, start_date: str, end_date: str, session: requests.Session) -> list[dict]:
+    for attempt in range(1, FETCH_ATTEMPTS + 1):
+        collected, expected = _page_through(category, start_date, end_date, session)
+        unique = list({rec["id"]: rec for rec in collected}.values())
+        if len(unique) < len(collected):
+            print(f"  [{category}] dropped {len(collected) - len(unique)} records repeated across pages")
+        if expected is None or len(unique) == expected:
+            return unique
+        print(
+            f"  [{category}] attempt {attempt}: {len(unique)} unique records but the API reports {expected} "
+            f"(records were filed or removed mid-fetch)"
+        )
+        if attempt < FETCH_ATTEMPTS:
+            time.sleep(RETRY_WAIT_SECONDS)
+
+    raise RuntimeError(
+        f"[{category}] collected {len(unique)} records but the API reports {expected} after "
+        f"{FETCH_ATTEMPTS} attempts -- refusing to write an incomplete or inflated result"
+    )
+
+
+def _page_through(
+    category: str, start_date: str, end_date: str, session: requests.Session
+) -> tuple[list[dict], int | None]:
     collected: list[dict] = []
     expected: int | None = None
     start_index = 1
@@ -82,13 +111,7 @@ def fetch_category(category: str, start_date: str, end_date: str, session: reque
     else:
         raise RuntimeError(f"[{category}] did not finish paging after {MAX_PAGES} pages")
 
-    if expected is not None and len(collected) != expected:
-        raise RuntimeError(
-            f"[{category}] collected {len(collected)} records but the API reports {expected} -- "
-            f"refusing to write an incomplete or inflated result"
-        )
-
-    return collected
+    return collected, expected
 
 
 def main() -> None:
