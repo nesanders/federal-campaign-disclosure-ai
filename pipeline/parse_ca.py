@@ -39,6 +39,18 @@ initial 266 Anthropic matches were donors literally named Claude),
 text can never legitimately reference an AI vendor, so it's excluded
 from matching entirely below rather than chased with more per-vendor
 name excludes.
+
+Amendments: EXPN_CD keeps every version of a filing, each amendment a
+complete refiling under the same FILING_ID with a higher AMEND_ID, so
+summing every row counted an amended filing's line items once per
+version (32% of 2023+ EXPN dollars were superseded versions). Only rows
+from each filing's latest AMEND_ID are read.
+
+Schedule G (FORM_TYPE 'G'): payments an agent or contractor made on the
+committee's behalf, itemizing a payment to that agent already reported on
+Schedule E. G rows are still matched (they name the tool a consultant
+bought) but are left out of filer totals, which would otherwise count
+the same dollars twice.
 """
 from __future__ import annotations
 
@@ -113,6 +125,13 @@ def _fallback_filer_name(row: dict, filing_id: str) -> str:
     return f"Committee {filing_id}" if filing_id else "Unknown committee"
 
 
+def _amend_id(row: dict) -> int:
+    try:
+        return int((row.get("AMEND_ID") or "0").strip() or 0)
+    except ValueError:
+        return 0
+
+
 def _amount(row: dict) -> float:
     try:
         return float(str(row.get("AMOUNT", "0")).replace("$", "").replace(",", "") or 0)
@@ -149,11 +168,21 @@ def main() -> None:
     with open(lookup_path, encoding="utf-8") as f:
         filer_lookup: dict[str, dict] = json.load(f)
 
+    latest_amend: dict[str, int] = {}
+    with open(src, encoding="utf-8") as f_in:
+        for line in f_in:
+            row = json.loads(line)
+            filing_id = (row.get("FILING_ID") or "").strip()
+            amend = _amend_id(row)
+            if amend > latest_amend.get(filing_id, -1):
+                latest_amend[filing_id] = amend
+
     out_path = PROCESSED_DIR / "ca_matches.csv"
     filer_totals_path = PROCESSED_DIR / "ca_filer_totals.csv"
     filer_year_totals_path = PROCESSED_DIR / "ca_filer_year_totals.csv"
 
     total = 0
+    superseded = 0
     matched = 0
     filers_seen: set[str] = set()
     seen_ids: set = set()
@@ -165,8 +194,11 @@ def main() -> None:
 
         for line in f_in:
             row = json.loads(line)
-            total += 1
             filing_id = (row.get("FILING_ID") or "").strip()
+            if _amend_id(row) < latest_amend[filing_id]:
+                superseded += 1
+                continue
+            total += 1
             cover = filer_lookup.get(filing_id)
             filer_id = (cover["filer_id"] if cover else "") or (row.get("CMTE_ID") or "")
             filer_name = cover["filer_name"] if cover else _fallback_filer_name(row, filing_id)
@@ -175,7 +207,7 @@ def main() -> None:
 
             date = _date(row)
             amount = _amount(row)
-            if date:
+            if date and row.get("FORM_TYPE") != "G":
                 try:
                     year = int(date[:4])
                     filer_year_totals[(filer_key, year)] += amount
@@ -228,7 +260,7 @@ def main() -> None:
         for (filer_id, year), amount in sorted(filer_year_totals.items()):
             w.writerow([filer_id, year, round(amount, 2)])
 
-    print(f"CA: {total:,} records scanned, {matched:,} matched, {len(filers_seen):,} distinct filers -> {out_path}")
+    print(f"CA: {superseded:,} superseded-amendment records skipped, {total:,} records scanned, {matched:,} matched, {len(filers_seen):,} distinct filers -> {out_path}")
 
 
 if __name__ == "__main__":

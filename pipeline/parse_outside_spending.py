@@ -29,7 +29,17 @@ removing the originals, so straight totals double-count anything later
 amended. Each filing (identified by FILE_NUM) that has been superseded is
 recorded on its replacement as PREV_FILE_NUM; we drop every row whose
 FILE_NUM shows up as someone else's PREV_FILE_NUM, keeping only the final
-version of each filing. The oth file (Schedule F's source here) carries no
+version of each filing.
+
+Nuisance filings (Schedule E only): the file also carries filings from
+non-committees reporting absurd amounts -- "WARREN BUFFET" reporting
+$1,000,000,000 for "Dow Jones", "THE COMMITTEE OF 300" reporting
+$9,999,999,999 "FOR CASH IN HAND". These made raw spender totals sum to
+$33-48 billion per cycle. The largest genuine single row across 2020-2026
+is about $32M (an FF PAC ad buy), so rows of $100M or more
+(IE_IMPLAUSIBLE_AMOUNT) are dropped.
+
+The oth file (Schedule F's source here) carries no
 equivalent field, so it is treated the same as oppexp elsewhere in this
 pipeline -- no amendment de-duplication, consistent with the rest of the
 pipeline's existing (documented) limitations there.
@@ -76,6 +86,7 @@ IE_OUT_FIELDS = [
     "use_categories",
 ]
 IE_TOTALS_FIELDS = ["spender_id", "total_amount", "total_count"]
+IE_IMPLAUSIBLE_AMOUNT = 100_000_000
 
 PCE_OUT_FIELDS = [
     "cycle",
@@ -131,6 +142,7 @@ def process_independent_expenditures(cycle: int, taxonomy: Taxonomy) -> int:
     total = 0
     matched = 0
     dropped_amended = 0
+    dropped_implausible = 0
     spender_totals: dict[str, list] = defaultdict(lambda: [0.0, 0])
 
     with open(src, encoding="latin-1", errors="replace", newline="") as f_in, open(
@@ -151,6 +163,9 @@ def process_independent_expenditures(cycle: int, taxonomy: Taxonomy) -> int:
                 amt = float(row.get("exp_amo") or 0)
             except ValueError:
                 amt = 0.0
+            if amt >= IE_IMPLAUSIBLE_AMOUNT:
+                dropped_implausible += 1
+                continue
             spender_id = (row.get("spe_id") or "").strip()
             if spender_id:
                 spender_totals[spender_id][0] += amt
@@ -199,7 +214,7 @@ def process_independent_expenditures(cycle: int, taxonomy: Taxonomy) -> int:
 
     print(
         f"IE  cycle {cycle}: {total:,} rows scanned, {dropped_amended:,} dropped as superseded amendments, "
-        f"{matched:,} matched -> {out_path} ; {len(spender_totals):,} spenders totaled -> {totals_path}"
+        f"{dropped_implausible:,} dropped as implausible (>= ${IE_IMPLAUSIBLE_AMOUNT:,}), {matched:,} matched -> {out_path} ; {len(spender_totals):,} spenders totaled -> {totals_path}"
     )
     return matched
 

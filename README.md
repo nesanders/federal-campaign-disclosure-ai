@@ -500,7 +500,11 @@ filings land.
   site -- never summed into a candidate's own totals. Schedule E's bulk file
   explicitly warns it contains both original and amended reports without
   removing the originals; this pipeline drops every filing a later amendment
-  superseded (tracked via `PREV_FILE_NUM`). Schedule F's source file (`oth`)
+  superseded (tracked via `PREV_FILE_NUM`). It also drops rows of $100M or
+  more: the file carries nuisance filings from non-committees ("Warren
+  Buffet" reporting $1 billion for "Dow Jones") that otherwise inflate
+  spender totals to tens of billions per cycle, while the largest genuine
+  row in 2020-2026 is about $32M. Schedule F's source file (`oth`)
   has no purpose field, so its category/use-case labeling is thinner than
   elsewhere on the site, and matching found exactly one qualifying
   high-confidence payment across four cycles -- coordinated party spending
@@ -524,6 +528,12 @@ filings land.
   257 of an initial 266 "Anthropic" matches were donors literally named
   Claude). `parse_ca.py` excludes that boilerplate from vendor matching
   entirely rather than chasing individual name collisions.
+- California's EXPN table keeps every version of an amended filing, so
+  `parse_ca.py` reads only each filing's latest `AMEND_ID` (superseded
+  versions were 32% of 2023+ dollars). Filer totals also leave out
+  Schedule G -- payments a consultant made on the committee's behalf,
+  which itemize a payment already reported on Schedule E -- though those
+  rows are still matched against the vendor taxonomy.
 - The population-based national projection on the Compare tab is a
   simple population-weighted scale-up of the four states this site
   covers, not a statistical estimate -- see that section's own rendered

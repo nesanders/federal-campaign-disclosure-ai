@@ -274,8 +274,10 @@ general_purpose:
     tags: [communications_copy, research_strategy]
     patterns:
       - {pattern: "\\bxai\\b", confidence: high}
-      - {pattern: "x\\.ai", confidence: high}
+      - {pattern: "\\bx\\.ai", confidence: high}
       - {pattern: "\\bgrok\\b", confidence: medium}
+    # "x\\.ai" without a leading boundary matched "SONIX.AI" (an unrelated
+    # transcription service) -- 22 Team Kennedy disbursements in 2024.
     # "Grok Media LLC" is an unrelated political digital-ad/media-buying
     # vendor (found in both Schedule B and independent-expenditure records),
     # not xAI's Grok -- confirmed false positive, excluded by name.
@@ -395,6 +397,17 @@ general_purpose:
     patterns:
       - {pattern: "otter\\.ai", confidence: high}
       - {pattern: "\\botter ai\\b", confidence: high}
+  - id: sonix_ai
+    name: Sonix
+    homepage: https://sonix.ai
+    era: legacy
+    description: "Automated transcription tool used to transcribe and translate audio and video recordings."
+    tags: [administrative_productivity, research_strategy]
+    # Founded 2017 as a speech-to-text transcription service. Matched only on
+    # the domain form: bare "Sonix" also names Sonix Pro Audio, an unrelated
+    # media-production vendor, and appears with "website services" purposes.
+    patterns:
+      - {pattern: "sonix\\.ai", confidence: high}
   - id: read_ai
     name: Read.ai
     homepage: https://read.ai
