@@ -1,14 +1,14 @@
 {
   "meta": {
-    "generated_at": "2026-10-19T16:11:42+00:00",
+    "generated_at": "2026-10-21T00:42:45+00:00",
     "source_label": "Massachusetts Office of Campaign and Political Finance (OCPF)",
     "date_range": {
       "start": "2023-01-01",
-      "end": "2026-10-19"
+      "end": "2026-10-21"
     },
     "records_scanned": {
-      "expenditures": 335132,
-      "subvendor": 2904
+      "expenditures": 335516,
+      "subvendor": 2939
     },
     "sources": [
       "OCPF public API (api.ocpf.us/search/items), SearchTypeCategory=B (expenditures) and S (subvendor payments) -- every itemized record OCPF has on file for the window below.",
@@ -28,14 +28,14 @@
     ]
   },
   "stats": {
-    "total_all_eras": 25424.2,
-    "total_generative": 12793.84,
-    "matched_records": 378,
+    "total_all_eras": 25445.45,
+    "total_generative": 12815.09,
+    "matched_records": 379,
     "filers_with_ai_spend": 61,
     "filers_with_ai_spend_ex_legacy": 46,
     "total_filers_with_activity": 2530,
-    "total_expenditure_ai_filers": 32049989.37,
-    "pct_ai_overall": 0.079
+    "total_expenditure_ai_filers": 32653324.15,
+    "pct_ai_overall": 0.078
   },
   "vendors": [
     {
@@ -50,16 +50,16 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 7623.27,
-      "amount_high": 7623.27,
+      "total": 7644.52,
+      "amount_high": 7644.52,
       "amount_medium": 0.0,
-      "records": 199,
-      "records_high": 199,
+      "records": 200,
+      "records_high": 200,
       "records_medium": 0,
       "filers": 29,
-      "dem_amount": 5686.53,
+      "dem_amount": 5707.78,
       "rep_amount": 1596.74,
-      "dem_rep_ratio": 3.561
+      "dem_rep_ratio": 3.575
     },
     {
       "id": "calltime_ai",
@@ -1502,12 +1502,12 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 7623.27,
-      "records_count": 199,
+      "total": 7644.52,
+      "records_count": 200,
       "filers_count": 29,
-      "dem_amount": 5686.53,
+      "dem_amount": 5707.78,
       "rep_amount": 1596.74,
-      "dem_rep_ratio": 3.561,
+      "dem_rep_ratio": 3.575,
       "time_series": [
         {
           "year": 2024,
@@ -1521,8 +1521,8 @@
         },
         {
           "year": 2026,
-          "amount": 5560.78,
-          "count": 141
+          "amount": 5582.03,
+          "count": 142
         }
       ],
       "time_series_by_party": [
@@ -1539,7 +1539,7 @@
         {
           "year": 2026,
           "party": "Democratic",
-          "amount": 3645.29
+          "amount": 3666.54
         },
         {
           "year": 2026,
@@ -1608,8 +1608,8 @@
           "filer_cpf_id": "16407",
           "filer_name": "Fernandes, Dylan",
           "filer_party": "Democratic",
-          "amount": 313.75,
-          "count": 15
+          "amount": 335.0,
+          "count": 16
         },
         {
           "filer_cpf_id": "15799",
@@ -2719,6 +2719,16 @@
           "purpose": "Internet",
           "confidence": "high",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1047341"
+        },
+        {
+          "date": "8/30/2026",
+          "filer_cpf_id": "16407",
+          "filer_name": "Fernandes, Dylan",
+          "filer_party": "Democratic",
+          "amount": 21.25,
+          "purpose": "Internet",
+          "confidence": "high",
+          "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1048019"
         },
         {
           "date": "7/21/2026",
@@ -6236,8 +6246,8 @@
         "daisychain",
         "donoratlas"
       ],
-      "total_expenditure": 6328097.77,
-      "pct_ai": 0.01,
+      "total_expenditure": 6925722.84,
+      "pct_ai": 0.009,
       "time_series": [
         {
           "year": 2025,
@@ -6606,7 +6616,7 @@
       "vendor_ids": [
         "grammarly"
       ],
-      "total_expenditure": 604616.2,
+      "total_expenditure": 604661.26,
       "pct_ai": 0.07,
       "time_series": [
         {
@@ -7054,7 +7064,7 @@
       "vendor_ids": [
         "grammarly"
       ],
-      "total_expenditure": 671897.06,
+      "total_expenditure": 671901.01,
       "pct_ai": 0.091,
       "time_series": [
         {
@@ -7994,13 +8004,13 @@
       "id": "16407",
       "name": "Fernandes, Dylan",
       "party": "Democratic",
-      "total": 313.75,
-      "records_count": 15,
+      "total": 335.0,
+      "records_count": 16,
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 580610.03,
-      "pct_ai": 0.054,
+      "total_expenditure": 585034.03,
+      "pct_ai": 0.057,
       "time_series": [
         {
           "year": 2025,
@@ -8009,8 +8019,8 @@
         },
         {
           "year": 2026,
-          "amount": 148.75,
-          "count": 7
+          "amount": 170.0,
+          "count": 8
         }
       ],
       "records": [
@@ -8178,6 +8188,21 @@
           "amount": 21.25,
           "purpose": "Internet",
           "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1047341"
+        },
+        {
+          "date": "8/30/2026",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 21.25,
+          "purpose": "Internet",
+          "source_link": "https://www.ocpf.us/Reports/DisplayReport?menuHidden=true&id=1048019"
         },
         {
           "date": "5/30/2025",
@@ -9336,7 +9361,7 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 85633.86,
+      "total_expenditure": 85659.06,
       "pct_ai": 0.604,
       "time_series": [
         {
@@ -9591,7 +9616,7 @@
         "anthropic",
         "campaign_nucleus"
       ],
-      "total_expenditure": 18169865.15,
+      "total_expenditure": 18171076.65,
       "pct_ai": 0.012,
       "time_series": [
         {
@@ -12640,12 +12665,12 @@
     },
     {
       "year": 2026,
-      "total": 10502.48,
-      "records": 228,
-      "total_expenditure": 22639041.18,
-      "total_ex_legacy": 8001.24,
-      "records_ex_legacy": 185,
-      "total_expenditure_ex_legacy": 21807047.46
+      "total": 10523.73,
+      "records": 229,
+      "total_expenditure": 23242375.96,
+      "total_ex_legacy": 8022.49,
+      "records_ex_legacy": 186,
+      "total_expenditure_ex_legacy": 22410333.23
     }
   ],
   "time_series_by_party": [
@@ -12677,7 +12702,7 @@
     {
       "year": 2026,
       "party": "Democratic",
-      "amount": 6850.59
+      "amount": 6871.84
     },
     {
       "year": 2026,
@@ -12709,7 +12734,7 @@
     {
       "year": 2026,
       "party": "Democratic",
-      "amount": 5344.48
+      "amount": 5365.73
     },
     {
       "year": 2026,
@@ -12718,19 +12743,19 @@
     }
   ],
   "party_split": {
-    "dem_amount": 17644.45,
+    "dem_amount": 17665.7,
     "rep_amount": 5562.74,
-    "dem_count": 291,
+    "dem_count": 292,
     "rep_count": 57,
-    "dem_rep_ratio": 3.172,
+    "dem_rep_ratio": 3.176,
     "filers_with_known_party": 54
   },
   "party_split_ex_legacy": {
-    "dem_amount": 9495.83,
+    "dem_amount": 9517.08,
     "rep_amount": 2343.51,
-    "dem_count": 210,
+    "dem_count": 211,
     "rep_count": 34,
-    "dem_rep_ratio": 4.052,
+    "dem_rep_ratio": 4.061,
     "filers_with_known_party": 42
   },
   "weekly_histogram": {
@@ -13317,8 +13342,8 @@
       },
       {
         "week": "2026-08-24",
-        "count": 6,
-        "amount": 125.9
+        "count": 7,
+        "amount": 147.15
       },
       {
         "week": "2026-08-31",
@@ -13582,11 +13607,15 @@
       {
         "week": "2026-10-05",
         "count": 15
+      },
+      {
+        "week": "2026-10-19",
+        "count": 1
       }
     ]
   },
   "subvendor": {
-    "records_scanned": 2904,
+    "records_scanned": 2939,
     "matched_records": 1,
     "total": 317.46
   },

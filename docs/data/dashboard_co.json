@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated_at": "2026-10-19T16:14:03+00:00",
-    "records_scanned": 228112,
+    "generated_at": "2026-10-21T00:44:48+00:00",
+    "records_scanned": 231175,
     "source_label": "Colorado TRACER (Secretary of State)",
     "date_range": {
       "start": "2023-01-01",
@@ -22,14 +22,14 @@
     ]
   },
   "stats": {
-    "total_all_eras": 42645.83,
-    "total_generative": 8874.57,
-    "matched_records": 308,
-    "filers_with_ai_spend": 55,
-    "filers_with_ai_spend_ex_legacy": 35,
-    "total_filers_with_activity": 3407,
-    "total_expenditure_ai_filers": 5531585.42,
-    "pct_ai_overall": 0.771
+    "total_all_eras": 44277.96,
+    "total_generative": 9256.7,
+    "matched_records": 317,
+    "filers_with_ai_spend": 56,
+    "filers_with_ai_spend_ex_legacy": 36,
+    "total_filers_with_activity": 3413,
+    "total_expenditure_ai_filers": 5857344.92,
+    "pct_ai_overall": 0.756
   },
   "vendors": [
     {
@@ -90,11 +90,11 @@
         "fundraising",
         "administrative_productivity"
       ],
-      "total": 7068.95,
-      "amount_high": 7068.95,
+      "total": 8318.95,
+      "amount_high": 8318.95,
       "amount_medium": 0.0,
-      "records": 13,
-      "records_high": 13,
+      "records": 14,
+      "records_high": 14,
       "records_medium": 0,
       "filers": 2,
       "dem_amount": 0.0,
@@ -113,11 +113,11 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 2991.09,
-      "amount_high": 2991.09,
+      "total": 3103.24,
+      "amount_high": 3103.24,
       "amount_medium": 0.0,
-      "records": 144,
-      "records_high": 144,
+      "records": 148,
+      "records_high": 148,
       "records_medium": 0,
       "filers": 19,
       "dem_amount": 0.0,
@@ -159,13 +159,36 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 3769.02,
-      "amount_high": 1583.93,
+      "total": 3809.0,
+      "amount_high": 1623.91,
       "amount_medium": 2185.09,
-      "records": 18,
-      "records_high": 12,
+      "records": 20,
+      "records_high": 14,
       "records_medium": 6,
       "filers": 5,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic (Claude)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://anthropic.com",
+      "lean_context": null,
+      "description": "General-purpose AI chatbot (Claude) used for drafting communications, research memos, and policy analysis.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
+      "total": 824.14,
+      "amount_high": 799.84,
+      "amount_medium": 24.3,
+      "records": 9,
+      "records_high": 7,
+      "records_medium": 2,
+      "filers": 6,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
       "dem_rep_ratio": null
@@ -189,29 +212,6 @@
       "records_high": 4,
       "records_medium": 0,
       "filers": 2,
-      "dem_amount": 0.0,
-      "rep_amount": 0.0,
-      "dem_rep_ratio": null
-    },
-    {
-      "id": "anthropic",
-      "name": "Anthropic (Claude)",
-      "group": "general_purpose",
-      "era": "generative",
-      "homepage": "https://anthropic.com",
-      "lean_context": null,
-      "description": "General-purpose AI chatbot (Claude) used for drafting communications, research memos, and policy analysis.",
-      "tags": [
-        "communications_copy",
-        "research_strategy"
-      ],
-      "total": 624.14,
-      "amount_high": 599.84,
-      "amount_medium": 24.3,
-      "records": 8,
-      "records_high": 6,
-      "records_medium": 2,
-      "filers": 5,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
       "dem_rep_ratio": null
@@ -363,12 +363,12 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 150.0,
+      "total": 180.0,
       "amount_high": 60.0,
-      "amount_medium": 90.0,
-      "records": 4,
+      "amount_medium": 120.0,
+      "records": 5,
       "records_high": 1,
-      "records_medium": 3,
+      "records_medium": 4,
       "filers": 3,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -818,8 +818,8 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 2991.09,
-      "records_count": 144,
+      "total": 3103.24,
+      "records_count": 148,
       "filers_count": 19,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -842,8 +842,8 @@
         },
         {
           "year": 2026,
-          "amount": 1191.09,
-          "count": 56
+          "amount": 1303.24,
+          "count": 60
         }
       ],
       "time_series_by_party": [],
@@ -856,18 +856,18 @@
           "count": 32
         },
         {
+          "filer_id": "20255047962",
+          "filer_name": "SCOTT BOTTOMS FOR GOVERNOR",
+          "filer_party": "Unknown",
+          "amount": 420.99,
+          "count": 16
+        },
+        {
           "filer_id": "20235045587",
           "filer_name": "MANNY FOR COLORADO",
           "filer_party": "Unknown",
           "amount": 400.0,
           "count": 17
-        },
-        {
-          "filer_id": "20255047962",
-          "filer_name": "SCOTT BOTTOMS FOR GOVERNOR",
-          "filer_party": "Unknown",
-          "amount": 369.45,
-          "count": 15
         },
         {
           "filer_id": "20225044063",
@@ -880,8 +880,8 @@
           "filer_id": "20245047563",
           "filer_name": "TRAVIS FOR COLORADO",
           "filer_party": "Unknown",
-          "amount": 219.99,
-          "count": 11
+          "amount": 259.99,
+          "count": 13
         },
         {
           "filer_id": "20245047180",
@@ -933,6 +933,13 @@
           "count": 3
         },
         {
+          "filer_id": "20255051282",
+          "filer_name": "ELECT JILL HAFFLEY",
+          "filer_party": "Unknown",
+          "amount": 61.83,
+          "count": 5
+        },
+        {
           "filer_id": "20255050189",
           "filer_name": "HADLEY FOR ST VRAIN",
           "filer_party": "Unknown",
@@ -952,13 +959,6 @@
           "filer_party": "Unknown",
           "amount": 53.89,
           "count": 1
-        },
-        {
-          "filer_id": "20255051282",
-          "filer_name": "ELECT JILL HAFFLEY",
-          "filer_party": "Unknown",
-          "amount": 41.22,
-          "count": 4
         },
         {
           "filer_id": "20225041872",
@@ -1010,6 +1010,16 @@
           "filer_party": "Unknown",
           "amount": 53.89,
           "purpose": "",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-01",
+          "filer_id": "20255047962",
+          "filer_name": "SCOTT BOTTOMS FOR GOVERNOR",
+          "filer_party": "Unknown",
+          "amount": 51.54,
+          "purpose": "SERVICES",
           "confidence": "high",
           "source_link": ""
         },
@@ -1080,6 +1090,16 @@
           "filer_party": "Unknown",
           "amount": 20.61,
           "purpose": "",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-03",
+          "filer_id": "20255051282",
+          "filer_name": "ELECT JILL HAFFLEY",
+          "filer_party": "Unknown",
+          "amount": 20.61,
+          "purpose": "CHAT GPT",
           "confidence": "high",
           "source_link": ""
         },
@@ -1964,6 +1984,16 @@
           "source_link": ""
         },
         {
+          "date": "2026-06-11",
+          "filer_id": "20245047563",
+          "filer_name": "TRAVIS FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 20.0,
+          "purpose": "CHAT GPT SUBSCRIPTION",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
           "date": "2026-06-29",
           "filer_id": "20235046678",
           "filer_name": "MAX BROOKS FOR COLORADO COMMITTEE",
@@ -2180,6 +2210,16 @@
           "filer_party": "Unknown",
           "amount": 20.0,
           "purpose": "OPEN AI",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-13",
+          "filer_id": "20245047563",
+          "filer_name": "TRAVIS FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 20.0,
+          "purpose": "CHATGPT",
           "confidence": "high",
           "source_link": ""
         },
@@ -3460,8 +3500,8 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 3769.02,
-      "records_count": 18,
+      "total": 3809.0,
+      "records_count": 20,
       "filers_count": 5,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -3479,8 +3519,8 @@
         },
         {
           "year": 2026,
-          "amount": 1814.08,
-          "count": 12
+          "amount": 1854.06,
+          "count": 14
         }
       ],
       "time_series_by_party": [],
@@ -3510,8 +3550,8 @@
           "filer_id": "20245047563",
           "filer_name": "TRAVIS FOR COLORADO",
           "filer_party": "Unknown",
-          "amount": 159.93,
-          "count": 8
+          "amount": 199.91,
+          "count": 10
         },
         {
           "filer_id": "20235045540",
@@ -3673,6 +3713,16 @@
           "source_link": ""
         },
         {
+          "date": "2026-06-12",
+          "filer_id": "20245047563",
+          "filer_name": "TRAVIS FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 19.99,
+          "purpose": "GOOGLE AI SUBSCRIPTION",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
           "date": "2026-07-13",
           "filer_id": "20245047563",
           "filer_name": "TRAVIS FOR COLORADO",
@@ -3699,6 +3749,16 @@
           "filer_party": "Unknown",
           "amount": 19.99,
           "purpose": "GOOGLE GEMINI FEES",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-13",
+          "filer_id": "20245047563",
+          "filer_name": "TRAVIS FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 19.99,
+          "purpose": "GOOGLE",
           "confidence": "high",
           "source_link": ""
         }
@@ -3898,8 +3958,8 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 150.0,
-      "records_count": 4,
+      "total": 180.0,
+      "records_count": 5,
       "filers_count": 3,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -3912,25 +3972,25 @@
         },
         {
           "year": 2026,
-          "amount": 90.0,
-          "count": 3
+          "amount": 120.0,
+          "count": 4
         }
       ],
       "time_series_by_party": [],
       "by_filer": [
+        {
+          "filer_id": "20265051881",
+          "filer_name": "COMMITTEE TO ELECT JOHNSON FOR HD24",
+          "filer_party": "Unknown",
+          "amount": 90.0,
+          "count": 3
+        },
         {
           "filer_id": "20225042763",
           "filer_name": "JULIE ANN COURIM",
           "filer_party": "Unknown",
           "amount": 60.0,
           "count": 1
-        },
-        {
-          "filer_id": "20265051881",
-          "filer_name": "COMMITTEE TO ELECT JOHNSON FOR HD24",
-          "filer_party": "Unknown",
-          "amount": 60.0,
-          "count": 2
         },
         {
           "filer_id": "20265051704",
@@ -3980,6 +4040,16 @@
           "purpose": "AI",
           "confidence": "medium",
           "source_link": ""
+        },
+        {
+          "date": "2026-10-01",
+          "filer_id": "20265051881",
+          "filer_name": "COMMITTEE TO ELECT JOHNSON FOR HD24",
+          "filer_party": "Unknown",
+          "amount": 30.0,
+          "purpose": "FEE FOR GROK.",
+          "confidence": "medium",
+          "source_link": ""
         }
       ]
     },
@@ -3995,9 +4065,9 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 624.14,
-      "records_count": 8,
-      "filers_count": 5,
+      "total": 824.14,
+      "records_count": 9,
+      "filers_count": 6,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
       "dem_rep_ratio": null,
@@ -4009,8 +4079,8 @@
         },
         {
           "year": 2026,
-          "amount": 619.84,
-          "count": 7
+          "amount": 819.84,
+          "count": 8
         }
       ],
       "time_series_by_party": [],
@@ -4025,6 +4095,13 @@
         {
           "filer_id": "20255051243",
           "filer_name": "CHRISTIAN SCHILDER FOR HD39",
+          "filer_party": "Unknown",
+          "amount": 200.0,
+          "count": 1
+        },
+        {
+          "filer_id": "20225041985",
+          "filer_name": "BRANDI BRADLEY FOR COLORADO HOUSE DISTRICT 39",
           "filer_party": "Unknown",
           "amount": 200.0,
           "count": 1
@@ -4069,6 +4146,16 @@
           "filer_party": "Unknown",
           "amount": 200.0,
           "purpose": "AI",
+          "confidence": "high",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-01",
+          "filer_id": "20225041985",
+          "filer_name": "BRANDI BRADLEY FOR COLORADO HOUSE DISTRICT 39",
+          "filer_party": "Unknown",
+          "amount": 200.0,
+          "purpose": "DUES AND SUBSCRIPTION - AI SOFTWARE",
           "confidence": "high",
           "source_link": ""
         },
@@ -4146,8 +4233,8 @@
         "fundraising",
         "administrative_productivity"
       ],
-      "total": 7068.95,
-      "records_count": 13,
+      "total": 8318.95,
+      "records_count": 14,
       "filers_count": 2,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -4160,8 +4247,8 @@
         },
         {
           "year": 2026,
-          "amount": 6568.95,
-          "count": 12
+          "amount": 7818.95,
+          "count": 13
         }
       ],
       "time_series_by_party": [],
@@ -4170,8 +4257,8 @@
           "filer_id": "20255048738",
           "filer_name": "JENA FOR COLORADO",
           "filer_party": "Unknown",
-          "amount": 6568.95,
-          "count": 12
+          "amount": 7818.95,
+          "count": 13
         },
         {
           "filer_id": "20255050831",
@@ -4182,6 +4269,16 @@
         }
       ],
       "records": [
+        {
+          "date": "2026-10-08",
+          "filer_id": "20255048738",
+          "filer_name": "JENA FOR COLORADO",
+          "filer_party": "Unknown",
+          "amount": 1250.0,
+          "purpose": "",
+          "confidence": "high",
+          "source_link": ""
+        },
         {
           "date": "2026-08-08",
           "filer_id": "20255048738",
@@ -4873,7 +4970,7 @@
       "vendor_ids": [
         "otter_ai"
       ],
-      "total_expenditure": 267323.74,
+      "total_expenditure": 270517.74,
       "pct_ai": 0.0,
       "time_series": [
         {
@@ -7164,8 +7261,8 @@
       "vendor_ids": [
         "google_ai"
       ],
-      "total_expenditure": 48797.4,
-      "pct_ai": 0.063,
+      "total_expenditure": 51801.73,
+      "pct_ai": 0.06,
       "time_series": [
         {
           "year": 2023,
@@ -7413,8 +7510,8 @@
       "vendor_ids": [
         "google_ai"
       ],
-      "total_expenditure": 196611.0,
-      "pct_ai": 0.979,
+      "total_expenditure": 198691.0,
+      "pct_ai": 0.968,
       "time_series": [
         {
           "year": 2025,
@@ -7794,7 +7891,7 @@
       "vendor_ids": [
         "otter_ai"
       ],
-      "total_expenditure": 6012459.33,
+      "total_expenditure": 6012287.33,
       "pct_ai": 0.002,
       "time_series": [
         {
@@ -7891,13 +7988,13 @@
       "id": "20255047962",
       "name": "SCOTT BOTTOMS FOR GOVERNOR",
       "party": "Unknown",
-      "total": 369.45,
-      "records_count": 15,
+      "total": 420.99,
+      "records_count": 16,
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 265119.49,
-      "pct_ai": 0.139,
+      "total_expenditure": 265233.35,
+      "pct_ai": 0.159,
       "time_series": [
         {
           "year": 2025,
@@ -7906,8 +8003,8 @@
         },
         {
           "year": 2026,
-          "amount": 229.45,
-          "count": 6
+          "amount": 280.99,
+          "count": 7
         }
       ],
       "records": [
@@ -7924,6 +8021,21 @@
           ],
           "amount": 128.84,
           "purpose": "SUBSCRIPTION",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-01",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 51.54,
+          "purpose": "SERVICES",
           "source_link": ""
         },
         {
@@ -8399,8 +8511,8 @@
       "vendor_ids": [
         "grammarly"
       ],
-      "total_expenditure": 122877.73,
-      "pct_ai": 0.879,
+      "total_expenditure": 127688.37,
+      "pct_ai": 0.846,
       "time_series": [
         {
           "year": 2024,
@@ -8551,21 +8663,36 @@
       "id": "20255048738",
       "name": "JENA FOR COLORADO",
       "party": "Unknown",
-      "total": 6568.95,
-      "records_count": 12,
+      "total": 7818.95,
+      "records_count": 13,
       "vendor_ids": [
         "calltime_ai"
       ],
-      "total_expenditure": 2144101.74,
-      "pct_ai": 0.306,
+      "total_expenditure": 2436101.02,
+      "pct_ai": 0.321,
       "time_series": [
         {
           "year": 2026,
-          "amount": 6568.95,
-          "count": 12
+          "amount": 7818.95,
+          "count": 13
         }
       ],
       "records": [
+        {
+          "date": "2026-10-08",
+          "vendor_ids": [
+            "calltime_ai"
+          ],
+          "vendor_names": [
+            "CallTime.AI"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 1250.0,
+          "purpose": "",
+          "source_link": ""
+        },
         {
           "date": "2026-08-08",
           "vendor_ids": [
@@ -8752,14 +8879,14 @@
       "id": "20245047563",
       "name": "TRAVIS FOR COLORADO",
       "party": "Unknown",
-      "total": 379.92,
-      "records_count": 19,
+      "total": 459.9,
+      "records_count": 23,
       "vendor_ids": [
         "google_ai",
         "openai"
       ],
-      "total_expenditure": 4098.86,
-      "pct_ai": 9.269,
+      "total_expenditure": 4178.84,
+      "pct_ai": 11.005,
       "time_series": [
         {
           "year": 2025,
@@ -8768,8 +8895,8 @@
         },
         {
           "year": 2026,
-          "amount": 319.92,
-          "count": 16
+          "amount": 399.9,
+          "count": 20
         }
       ],
       "records": [
@@ -8849,6 +8976,21 @@
           "source_link": ""
         },
         {
+          "date": "2026-06-11",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 20.0,
+          "purpose": "CHAT GPT SUBSCRIPTION",
+          "source_link": ""
+        },
+        {
           "date": "2026-07-13",
           "vendor_ids": [
             "openai"
@@ -8891,6 +9033,21 @@
           ],
           "amount": 20.0,
           "purpose": "CHAT GPT FEES",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-13",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 20.0,
+          "purpose": "CHATGPT",
           "source_link": ""
         },
         {
@@ -9014,6 +9171,21 @@
           "source_link": ""
         },
         {
+          "date": "2026-06-12",
+          "vendor_ids": [
+            "google_ai"
+          ],
+          "vendor_names": [
+            "Google (Gemini / Vertex AI)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 19.99,
+          "purpose": "GOOGLE AI SUBSCRIPTION",
+          "source_link": ""
+        },
+        {
           "date": "2026-07-13",
           "vendor_ids": [
             "google_ai"
@@ -9057,6 +9229,21 @@
           "amount": 19.99,
           "purpose": "GOOGLE GEMINI FEES",
           "source_link": ""
+        },
+        {
+          "date": "2026-10-13",
+          "vendor_ids": [
+            "google_ai"
+          ],
+          "vendor_names": [
+            "Google (Gemini / Vertex AI)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 19.99,
+          "purpose": "GOOGLE",
+          "source_link": ""
         }
       ]
     },
@@ -9069,8 +9256,8 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 39471.16,
-      "pct_ai": 0.152,
+      "total_expenditure": 52477.67,
+      "pct_ai": 0.114,
       "time_series": [
         {
           "year": 2025,
@@ -9140,8 +9327,8 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 23375.56,
-      "pct_ai": 0.103,
+      "total_expenditure": 23758.95,
+      "pct_ai": 0.101,
       "time_series": [
         {
           "year": 2026,
@@ -9272,8 +9459,8 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 85897.77,
-      "pct_ai": 0.163,
+      "total_expenditure": 86175.42,
+      "pct_ai": 0.162,
       "time_series": [
         {
           "year": 2026,
@@ -9470,8 +9657,8 @@
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 172245.91,
-      "pct_ai": 0.058,
+      "total_expenditure": 179591.58,
+      "pct_ai": 0.056,
       "time_series": [
         {
           "year": 2026,
@@ -9561,18 +9748,18 @@
       "id": "20265051881",
       "name": "COMMITTEE TO ELECT JOHNSON FOR HD24",
       "party": "Unknown",
-      "total": 60.0,
-      "records_count": 2,
+      "total": 90.0,
+      "records_count": 3,
       "vendor_ids": [
         "xai_grok"
       ],
-      "total_expenditure": 5364.56,
-      "pct_ai": 1.118,
+      "total_expenditure": 7906.62,
+      "pct_ai": 1.138,
       "time_series": [
         {
           "year": 2026,
-          "amount": 60.0,
-          "count": 2
+          "amount": 90.0,
+          "count": 3
         }
       ],
       "records": [
@@ -9604,6 +9791,21 @@
           ],
           "amount": 30.0,
           "purpose": "MONTHLY CHARGE FROM APPLE FOR SUBSCRIPTION TO GROK USED FOR REFERENCE AND IMAGERY",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-01",
+          "vendor_ids": [
+            "xai_grok"
+          ],
+          "vendor_names": [
+            "xAI (Grok)"
+          ],
+          "confidences": [
+            "medium"
+          ],
+          "amount": 30.0,
+          "purpose": "FEE FOR GROK.",
           "source_link": ""
         }
       ]
@@ -9764,8 +9966,8 @@
       "vendor_ids": [
         "google_ai"
       ],
-      "total_expenditure": 2750.57,
-      "pct_ai": 25.327,
+      "total_expenditure": 2977.02,
+      "pct_ai": 23.401,
       "time_series": [
         {
           "year": 2026,
@@ -9887,8 +10089,8 @@
       "vendor_ids": [
         "anthropic"
       ],
-      "total_expenditure": 53554.75,
-      "pct_ai": 0.037,
+      "total_expenditure": 56924.71,
+      "pct_ai": 0.035,
       "time_series": [
         {
           "year": 2026,
@@ -9954,18 +10156,18 @@
       "id": "20255051282",
       "name": "ELECT JILL HAFFLEY",
       "party": "Unknown",
-      "total": 41.22,
-      "records_count": 4,
+      "total": 61.83,
+      "records_count": 5,
       "vendor_ids": [
         "openai"
       ],
-      "total_expenditure": 12447.47,
-      "pct_ai": 0.331,
+      "total_expenditure": 12976.22,
+      "pct_ai": 0.476,
       "time_series": [
         {
           "year": 2026,
-          "amount": 41.22,
-          "count": 4
+          "amount": 61.83,
+          "count": 5
         }
       ],
       "records": [
@@ -9997,6 +10199,21 @@
           ],
           "amount": 20.61,
           "purpose": "",
+          "source_link": ""
+        },
+        {
+          "date": "2026-10-03",
+          "vendor_ids": [
+            "openai"
+          ],
+          "vendor_names": [
+            "OpenAI (ChatGPT)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 20.61,
+          "purpose": "CHAT GPT",
           "source_link": ""
         },
         {
@@ -10040,7 +10257,7 @@
       "vendor_ids": [
         "anthropic"
       ],
-      "total_expenditure": 227495.2,
+      "total_expenditure": 228115.45,
       "pct_ai": 0.091,
       "time_series": [
         {
@@ -10266,6 +10483,42 @@
         }
       ]
     },
+    "20225041985": {
+      "id": "20225041985",
+      "name": "BRANDI BRADLEY FOR COLORADO HOUSE DISTRICT 39",
+      "party": "Unknown",
+      "total": 200.0,
+      "records_count": 1,
+      "vendor_ids": [
+        "anthropic"
+      ],
+      "total_expenditure": 54923.71,
+      "pct_ai": 0.364,
+      "time_series": [
+        {
+          "year": 2026,
+          "amount": 200.0,
+          "count": 1
+        }
+      ],
+      "records": [
+        {
+          "date": "2026-10-01",
+          "vendor_ids": [
+            "anthropic"
+          ],
+          "vendor_names": [
+            "Anthropic (Claude)"
+          ],
+          "confidences": [
+            "high"
+          ],
+          "amount": 200.0,
+          "purpose": "DUES AND SUBSCRIPTION - AI SOFTWARE",
+          "source_link": ""
+        }
+      ]
+    },
     "20255050831": {
       "id": "20255050831",
       "name": "RAYNA FOR DENVER",
@@ -10342,12 +10595,12 @@
     },
     {
       "year": 2026,
-      "total": 11102.79,
-      "records": 99,
-      "total_expenditure": 2489318.7,
-      "total_ex_legacy": 4132.37,
-      "records_ex_legacy": 82,
-      "total_expenditure_ex_legacy": 624899.22
+      "total": 12734.92,
+      "records": 108,
+      "total_expenditure": 2815078.2,
+      "total_ex_legacy": 4514.5,
+      "records_ex_legacy": 90,
+      "total_expenditure_ex_legacy": 658659.44
     }
   ],
   "time_series_by_party": [],
@@ -10477,6 +10730,28 @@
       "amount": 1250.0,
       "purpose": "CANDIDATE PAID NUMERO.AI, \nFOR DATABASE & CALL TIME APP LICENSING 09.01.2025\nSEE CORRESPONDING CONTRIBUTION",
       "vendor_display": "NUMERO, INC",
+      "source_link": ""
+    },
+    {
+      "vendor_ids": [
+        "calltime_ai"
+      ],
+      "vendor_names": [
+        "CallTime.AI"
+      ],
+      "vendor_eras": [
+        "legacy"
+      ],
+      "confidences": [
+        "high"
+      ],
+      "filer_name": "JENA FOR COLORADO",
+      "filer_id": "20255048738",
+      "filer_party": "Unknown",
+      "date": "2026-10-08",
+      "amount": 1250.0,
+      "purpose": "",
+      "vendor_display": "CALLTIME AI",
       "source_link": ""
     },
     {
@@ -10784,28 +11059,6 @@
       "date": "2025-06-14",
       "amount": 585.62,
       "purpose": "",
-      "vendor_display": "CAMPAIGN NUCLEUS LLC",
-      "source_link": ""
-    },
-    {
-      "vendor_ids": [
-        "campaign_nucleus"
-      ],
-      "vendor_names": [
-        "Campaign Nucleus"
-      ],
-      "vendor_eras": [
-        "legacy"
-      ],
-      "confidences": [
-        "high"
-      ],
-      "filer_name": "PROTECT COLORADO COUNTIES",
-      "filer_id": "20255049325",
-      "filer_party": "Unknown",
-      "date": "2025-06-15",
-      "amount": 585.62,
-      "purpose": "TO SUPPORT DOUGLAS COUNTY HOME RULE FOR SPECIAL ELECTION\n\nTEXT MESSAGING",
       "vendor_display": "CAMPAIGN NUCLEUS LLC",
       "source_link": ""
     }

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-19T16:19:11+00:00",
+    "generated_at": "2026-10-21T00:51:04+00:00",
     "covered_states": [
       "ma",
       "wa",
@@ -30,10 +30,10 @@
     ]
   },
   "stats": {
-    "total_all_eras": 2148854.58,
-    "total_generative": 96149.91,
-    "filers_with_ai_spend": 225,
-    "filers_with_ai_spend_ex_legacy": 117,
+    "total_all_eras": 2092497.48,
+    "total_generative": 95548.29,
+    "filers_with_ai_spend": 226,
+    "filers_with_ai_spend_ex_legacy": 118,
     "distinct_vendors_all_eras": 28,
     "distinct_vendors_generative": 18
   },
@@ -49,10 +49,10 @@
         "communications_copy",
         "fundraising"
       ],
-      "total": 1739736.68,
-      "amount_high": 1739736.68,
+      "total": 1687140.25,
+      "amount_high": 1687140.25,
       "amount_medium": 0.0,
-      "records": 155,
+      "records": 148,
       "filers": 55,
       "dem_amount": 4437.85,
       "rep_amount": 16701.79,
@@ -64,9 +64,9 @@
           "filers": 9
         },
         "ca": {
-          "amount_high": 1703043.01,
+          "amount_high": 1650446.58,
           "amount_medium": 0.0,
-          "records": 141,
+          "records": 134,
           "filers": 46
         }
       },
@@ -79,8 +79,8 @@
         },
         {
           "year": 2024,
-          "amount": 374226.28,
-          "count": 66
+          "amount": 366855.59,
+          "count": 65
         },
         {
           "year": 2025,
@@ -89,8 +89,8 @@
         },
         {
           "year": 2026,
-          "amount": 1295450.73,
-          "count": 59
+          "amount": 1250224.99,
+          "count": 53
         }
       ]
     },
@@ -144,10 +144,10 @@
         "fundraising",
         "administrative_productivity"
       ],
-      "total": 34225.96,
-      "amount_high": 34225.96,
+      "total": 30883.39,
+      "amount_high": 30883.39,
       "amount_medium": 0.0,
-      "records": 133,
+      "records": 124,
       "filers": 6,
       "dem_amount": 0.0,
       "rep_amount": 0.0,
@@ -159,9 +159,9 @@
           "filers": 2
         },
         "ca": {
-          "amount_high": 22415.96,
+          "amount_high": 19073.39,
           "amount_medium": 0.0,
-          "records": 104,
+          "records": 95,
           "filers": 4
         }
       },
@@ -184,13 +184,13 @@
         },
         {
           "year": 2025,
-          "amount": 14016.0,
-          "count": 15
+          "amount": 10758.0,
+          "count": 11
         },
         {
           "year": 2026,
-          "amount": 9677.37,
-          "count": 51
+          "amount": 9592.8,
+          "count": 46
         }
       ]
     },
@@ -267,10 +267,10 @@
         "fundraising",
         "administrative_productivity"
       ],
-      "total": 27993.84,
-      "amount_high": 27993.84,
+      "total": 28443.84,
+      "amount_high": 28443.84,
       "amount_medium": 0.0,
-      "records": 61,
+      "records": 60,
       "filers": 7,
       "dem_amount": 15524.89,
       "rep_amount": 0.0,
@@ -288,15 +288,15 @@
           "filers": 1
         },
         "co": {
-          "amount_high": 7068.95,
+          "amount_high": 8318.95,
           "amount_medium": 0.0,
-          "records": 13,
+          "records": 14,
           "filers": 2
         },
         "ca": {
-          "amount_high": 5400.0,
+          "amount_high": 4600.0,
           "amount_medium": 0.0,
-          "records": 14,
+          "records": 12,
           "filers": 2
         }
       },
@@ -309,8 +309,8 @@
         },
         {
           "year": 2024,
-          "amount": 11224.89,
-          "count": 21
+          "amount": 10424.89,
+          "count": 19
         },
         {
           "year": 2025,
@@ -319,8 +319,8 @@
         },
         {
           "year": 2026,
-          "amount": 8368.95,
-          "count": 17
+          "amount": 9618.95,
+          "count": 18
         }
       ]
     },
@@ -416,18 +416,18 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 12804.62,
-      "amount_high": 12804.62,
+      "total": 12898.02,
+      "amount_high": 12898.02,
       "amount_medium": 0.0,
-      "records": 380,
+      "records": 383,
       "filers": 58,
-      "dem_amount": 5686.53,
+      "dem_amount": 5707.78,
       "rep_amount": 1596.74,
       "by_state": {
         "ma": {
-          "amount_high": 7623.27,
+          "amount_high": 7644.52,
           "amount_medium": 0.0,
-          "records": 199,
+          "records": 200,
           "filers": 29
         },
         "wa": {
@@ -437,19 +437,19 @@
           "filers": 6
         },
         "co": {
-          "amount_high": 2991.09,
+          "amount_high": 3103.24,
           "amount_medium": 0.0,
-          "records": 144,
+          "records": 148,
           "filers": 19
         },
         "ca": {
-          "amount_high": 1336.0,
+          "amount_high": 1296.0,
           "amount_medium": 0.0,
-          "records": 23,
+          "records": 21,
           "filers": 4
         }
       },
-      "dem_rep_ratio": 3.561,
+      "dem_rep_ratio": 3.575,
       "time_series": [
         {
           "year": 2023,
@@ -468,8 +468,8 @@
         },
         {
           "year": 2026,
-          "amount": 7394.59,
-          "count": 214
+          "amount": 7487.99,
+          "count": 217
         }
       ]
     },
@@ -484,10 +484,10 @@
         "fundraising",
         "data_targeting"
       ],
-      "total": 7380.0,
-      "amount_high": 7380.0,
+      "total": 6615.0,
+      "amount_high": 6615.0,
       "amount_medium": 0.0,
-      "records": 29,
+      "records": 26,
       "filers": 7,
       "dem_amount": 1500.0,
       "rep_amount": 0.0,
@@ -505,9 +505,9 @@
           "filers": 2
         },
         "ca": {
-          "amount_high": 4680.0,
+          "amount_high": 3915.0,
           "amount_medium": 0.0,
-          "records": 18,
+          "records": 15,
           "filers": 2
         }
       },
@@ -520,8 +520,8 @@
         },
         {
           "year": 2025,
-          "amount": 3150.0,
-          "count": 12
+          "amount": 2385.0,
+          "count": 9
         },
         {
           "year": 2026,
@@ -541,10 +541,10 @@
         "communications_copy",
         "administrative_productivity"
       ],
-      "total": 6295.16,
-      "amount_high": 6295.16,
+      "total": 6172.76,
+      "amount_high": 6172.76,
       "amount_medium": 0.0,
-      "records": 63,
+      "records": 62,
       "filers": 20,
       "dem_amount": 2182.2,
       "rep_amount": 1090.2,
@@ -568,9 +568,9 @@
           "filers": 6
         },
         "ca": {
-          "amount_high": 662.52,
+          "amount_high": 540.12,
           "amount_medium": 0.0,
-          "records": 6,
+          "records": 5,
           "filers": 3
         }
       },
@@ -588,8 +588,8 @@
         },
         {
           "year": 2025,
-          "amount": 2355.24,
-          "count": 17
+          "amount": 2232.84,
+          "count": 16
         },
         {
           "year": 2026,
@@ -609,10 +609,10 @@
         "administrative_productivity",
         "research_strategy"
       ],
-      "total": 5938.37,
-      "amount_high": 5938.37,
+      "total": 5794.29,
+      "amount_high": 5794.29,
       "amount_medium": 0.0,
-      "records": 54,
+      "records": 53,
       "filers": 11,
       "dem_amount": 2152.58,
       "rep_amount": 0.0,
@@ -636,9 +636,9 @@
           "filers": 2
         },
         "ca": {
-          "amount_high": 3095.8,
+          "amount_high": 2951.72,
           "amount_medium": 0.0,
-          "records": 21,
+          "records": 20,
           "filers": 3
         }
       },
@@ -661,8 +661,8 @@
         },
         {
           "year": 2026,
-          "amount": 2264.84,
-          "count": 20
+          "amount": 2120.76,
+          "count": 19
         }
       ]
     },
@@ -680,8 +680,8 @@
       "total": 4939.85,
       "amount_high": 4915.55,
       "amount_medium": 24.3,
-      "records": 58,
-      "filers": 22,
+      "records": 57,
+      "filers": 23,
       "dem_amount": 2449.6,
       "rep_amount": 421.84,
       "by_state": {
@@ -698,15 +698,15 @@
           "filers": 5
         },
         "co": {
-          "amount_high": 599.84,
+          "amount_high": 799.84,
           "amount_medium": 24.3,
-          "records": 8,
-          "filers": 5
+          "records": 9,
+          "filers": 6
         },
         "ca": {
-          "amount_high": 996.72,
+          "amount_high": 796.72,
           "amount_medium": 0.0,
-          "records": 8,
+          "records": 6,
           "filers": 2
         }
       },
@@ -720,7 +720,7 @@
         {
           "year": 2026,
           "amount": 4723.05,
-          "count": 56
+          "count": 55
         }
       ]
     },
@@ -825,10 +825,10 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 44503.7,
-      "amount_high": 1590.94,
+      "total": 44543.68,
+      "amount_high": 1630.92,
       "amount_medium": 42912.76,
-      "records": 39,
+      "records": 41,
       "filers": 14,
       "dem_amount": 0.0,
       "rep_amount": 7.01,
@@ -840,9 +840,9 @@
           "filers": 1
         },
         "co": {
-          "amount_high": 1583.93,
+          "amount_high": 1623.91,
           "amount_medium": 2185.09,
-          "records": 18,
+          "records": 20,
           "filers": 5
         },
         "ca": {
@@ -871,8 +871,8 @@
         },
         {
           "year": 2026,
-          "amount": 34128.9,
-          "count": 29
+          "amount": 34168.88,
+          "count": 31
         }
       ]
     },
@@ -1149,10 +1149,10 @@
         "communications_copy",
         "research_strategy"
       ],
-      "total": 350.0,
+      "total": 380.0,
       "amount_high": 260.0,
-      "amount_medium": 90.0,
-      "records": 6,
+      "amount_medium": 120.0,
+      "records": 7,
       "filers": 4,
       "dem_amount": 0.0,
       "rep_amount": 200.0,
@@ -1165,8 +1165,8 @@
         },
         "co": {
           "amount_high": 60.0,
-          "amount_medium": 90.0,
-          "records": 4,
+          "amount_medium": 120.0,
+          "records": 5,
           "filers": 3
         }
       },
@@ -1179,8 +1179,8 @@
         },
         {
           "year": 2026,
-          "amount": 290.0,
-          "count": 5
+          "amount": 320.0,
+          "count": 6
         }
       ]
     },
@@ -1412,40 +1412,40 @@
     },
     {
       "year": 2024,
-      "total": 407300.02,
+      "total": 399129.33,
       "total_ex_legacy": 7578.95,
-      "records": 232,
+      "records": 229,
       "records_ex_legacy": 53
     },
     {
       "year": 2025,
-      "total": 203659.87,
-      "total_ex_legacy": 10395.44,
-      "records": 299,
-      "records_ex_legacy": 164
+      "total": 199514.47,
+      "total_ex_legacy": 9630.44,
+      "records": 291,
+      "records_ex_legacy": 161
     },
     {
       "year": 2026,
-      "total": 1494220.23,
-      "total_ex_legacy": 72874.72,
-      "records": 543,
-      "records_ex_legacy": 333
+      "total": 1450179.22,
+      "total_ex_legacy": 73038.1,
+      "records": 537,
+      "records_ex_legacy": 338
     }
   ],
   "party_split": {
-    "dem_amount": 38630.23,
+    "dem_amount": 38651.48,
     "rep_amount": 22379.11,
-    "dem_count": 326,
+    "dem_count": 327,
     "rep_count": 69,
-    "dem_rep_ratio": 1.726,
+    "dem_rep_ratio": 1.727,
     "filers_with_known_party": 67
   },
   "party_split_ex_legacy": {
-    "dem_amount": 12938.56,
+    "dem_amount": 12959.81,
     "rep_amount": 2458.09,
-    "dem_count": 220,
+    "dem_count": 221,
     "rep_count": 38,
-    "dem_rep_ratio": 5.264,
+    "dem_rep_ratio": 5.272,
     "filers_with_known_party": 48
   },
   "states_leaderboard": [
@@ -1453,13 +1453,13 @@
       "id": "ma",
       "label": "Massachusetts",
       "source_label": "OCPF",
-      "spend_all_eras": 25424.2,
-      "spend_generative": 12793.84,
+      "spend_all_eras": 25445.45,
+      "spend_generative": 12815.09,
       "filers_all_eras": 61,
       "filers_generative": 46,
       "distinct_vendors_all_eras": 17,
       "distinct_vendors_generative": 11,
-      "pct_ai_overall": 0.079
+      "pct_ai_overall": 0.078
     },
     {
       "id": "wa",
@@ -1477,25 +1477,25 @@
       "id": "co",
       "label": "Colorado",
       "source_label": "Colorado TRACER",
-      "spend_all_eras": 42645.83,
-      "spend_generative": 8874.57,
-      "filers_all_eras": 55,
-      "filers_generative": 35,
+      "spend_all_eras": 44277.96,
+      "spend_generative": 9256.7,
+      "filers_all_eras": 56,
+      "filers_generative": 36,
       "distinct_vendors_all_eras": 15,
       "distinct_vendors_generative": 8,
-      "pct_ai_overall": 0.771
+      "pct_ai_overall": 0.756
     },
     {
       "id": "ca",
       "label": "California",
       "source_label": "California CAL-ACCESS",
-      "spend_all_eras": 2025202.76,
-      "spend_generative": 69597.39,
+      "spend_all_eras": 1967192.28,
+      "spend_generative": 68592.39,
       "filers_all_eras": 81,
       "filers_generative": 21,
       "distinct_vendors_all_eras": 17,
       "distinct_vendors_generative": 9,
-      "pct_ai_overall": 0.231
+      "pct_ai_overall": 0.506
     }
   ]
 }

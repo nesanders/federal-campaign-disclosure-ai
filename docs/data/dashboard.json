@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-10-19T16:09:30.449229Z",
+    "generated_at": "2026-10-21T00:40:38.105248Z",
     "cycles": [
       2020,
       2022,
@@ -473,28 +473,6 @@
       "dem_rep_ratio": null
     },
     {
-      "id": "xai_grok",
-      "name": "xAI (Grok)",
-      "group": "general_purpose",
-      "era": "generative",
-      "homepage": "https://x.ai",
-      "description": "xAI's general-purpose chatbot, used for drafting content and quick research the way other AI chatbots are.",
-      "tags": [
-        "communications_copy",
-        "research_strategy"
-      ],
-      "amount_high": 5454.23,
-      "count_high": 40,
-      "distinct_committees_high": 8,
-      "amount_medium": 0.0,
-      "count_medium": 0,
-      "dem_amount": 20.41,
-      "rep_amount": 950.0,
-      "dem_count": 2,
-      "rep_count": 13,
-      "dem_rep_ratio": 0.021
-    },
-    {
       "id": "air_ai",
       "name": "Air AI",
       "group": "general_purpose",
@@ -507,6 +485,28 @@
       ],
       "amount_high": 4071.33,
       "count_high": 12,
+      "distinct_committees_high": 1,
+      "amount_medium": 0.0,
+      "count_medium": 0,
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "dem_count": 0,
+      "rep_count": 0,
+      "dem_rep_ratio": null
+    },
+    {
+      "id": "sonix_ai",
+      "name": "Sonix",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://sonix.ai",
+      "description": "Automated transcription tool used to transcribe and translate audio and video recordings.",
+      "tags": [
+        "administrative_productivity",
+        "research_strategy"
+      ],
+      "amount_high": 3784.82,
+      "count_high": 22,
       "distinct_committees_high": 1,
       "amount_medium": 0.0,
       "count_medium": 0,
@@ -646,6 +646,28 @@
       "dem_count": 0,
       "rep_count": 8,
       "dem_rep_ratio": null
+    },
+    {
+      "id": "xai_grok",
+      "name": "xAI (Grok)",
+      "group": "general_purpose",
+      "era": "generative",
+      "homepage": "https://x.ai",
+      "description": "xAI's general-purpose chatbot, used for drafting content and quick research the way other AI chatbots are.",
+      "tags": [
+        "communications_copy",
+        "research_strategy"
+      ],
+      "amount_high": 1669.41,
+      "count_high": 18,
+      "distinct_committees_high": 7,
+      "amount_medium": 0.0,
+      "count_medium": 0,
+      "dem_amount": 20.41,
+      "rep_amount": 950.0,
+      "dem_count": 2,
+      "rep_count": 13,
+      "dem_rep_ratio": 0.021
     },
     {
       "id": "elevenlabs",
@@ -879,12 +901,12 @@
       "chorus_ai",
       "quiller",
       "votersai",
-      "xai_grok",
       "air_ai",
       "jasper_ai",
       "perplexity",
       "heygen",
-      "midjourney"
+      "midjourney",
+      "runwayml"
     ],
     "vendor_names": [
       "Daisychain",
@@ -896,12 +918,12 @@
       "Chorus AI",
       "Quiller",
       "VotersAI",
-      "xAI (Grok)",
       "Air AI",
       "Jasper AI",
       "Perplexity AI",
       "HeyGen",
-      "Midjourney"
+      "Midjourney",
+      "Runway"
     ],
     "committee_counts": [
       15,
@@ -913,12 +935,12 @@
       3,
       7,
       1,
-      8,
       1,
       1,
       3,
       2,
-      6
+      6,
+      1
     ],
     "cells": [
       {
@@ -977,12 +999,6 @@
       },
       {
         "vendor_a": "daisychain",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "daisychain",
         "vendor_b": "air_ai",
         "jaccard": 0.0,
         "count_both": 0
@@ -1008,6 +1024,12 @@
       {
         "vendor_a": "daisychain",
         "vendor_b": "midjourney",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "daisychain",
+        "vendor_b": "runwayml",
         "jaccard": 0.0,
         "count_both": 0
       },
@@ -1067,12 +1089,6 @@
       },
       {
         "vendor_a": "sosha",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "sosha",
         "vendor_b": "air_ai",
         "jaccard": 0.0,
         "count_both": 0
@@ -1098,6 +1114,12 @@
       {
         "vendor_a": "sosha",
         "vendor_b": "midjourney",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "sosha",
+        "vendor_b": "runwayml",
         "jaccard": 0.0,
         "count_both": 0
       },
@@ -1157,12 +1179,6 @@
       },
       {
         "vendor_a": "anthropic",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.0405,
-        "count_both": 3
-      },
-      {
-        "vendor_a": "anthropic",
         "vendor_b": "air_ai",
         "jaccard": 0.0,
         "count_both": 0
@@ -1189,6 +1205,12 @@
         "vendor_a": "anthropic",
         "vendor_b": "midjourney",
         "jaccard": 0.0135,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "anthropic",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0145,
         "count_both": 1
       },
       {
@@ -1247,12 +1269,6 @@
       },
       {
         "vendor_a": "convos",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "convos",
         "vendor_b": "air_ai",
         "jaccard": 0.0,
         "count_both": 0
@@ -1278,6 +1294,12 @@
       {
         "vendor_a": "convos",
         "vendor_b": "midjourney",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "convos",
+        "vendor_b": "runwayml",
         "jaccard": 0.0,
         "count_both": 0
       },
@@ -1337,12 +1359,6 @@
       },
       {
         "vendor_a": "openai",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.023,
-        "count_both": 2
-      },
-      {
-        "vendor_a": "openai",
         "vendor_b": "air_ai",
         "jaccard": 0.0,
         "count_both": 0
@@ -1370,6 +1386,12 @@
         "vendor_b": "midjourney",
         "jaccard": 0.0235,
         "count_both": 2
+      },
+      {
+        "vendor_a": "openai",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
       },
       {
         "vendor_a": "donoratlas",
@@ -1427,12 +1449,6 @@
       },
       {
         "vendor_a": "donoratlas",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "donoratlas",
         "vendor_b": "air_ai",
         "jaccard": 0.0,
         "count_both": 0
@@ -1458,6 +1474,12 @@
       {
         "vendor_a": "donoratlas",
         "vendor_b": "midjourney",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "donoratlas",
+        "vendor_b": "runwayml",
         "jaccard": 0.0,
         "count_both": 0
       },
@@ -1517,12 +1539,6 @@
       },
       {
         "vendor_a": "chorus_ai",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "chorus_ai",
         "vendor_b": "air_ai",
         "jaccard": 0.0,
         "count_both": 0
@@ -1548,6 +1564,12 @@
       {
         "vendor_a": "chorus_ai",
         "vendor_b": "midjourney",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "chorus_ai",
+        "vendor_b": "runwayml",
         "jaccard": 0.0,
         "count_both": 0
       },
@@ -1607,12 +1629,6 @@
       },
       {
         "vendor_a": "quiller",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "quiller",
         "vendor_b": "air_ai",
         "jaccard": 0.0,
         "count_both": 0
@@ -1638,6 +1654,12 @@
       {
         "vendor_a": "quiller",
         "vendor_b": "midjourney",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "quiller",
+        "vendor_b": "runwayml",
         "jaccard": 0.0,
         "count_both": 0
       },
@@ -1697,12 +1719,6 @@
       },
       {
         "vendor_a": "votersai",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "votersai",
         "vendor_b": "air_ai",
         "jaccard": 0.0,
         "count_both": 0
@@ -1732,92 +1748,8 @@
         "count_both": 0
       },
       {
-        "vendor_a": "xai_grok",
-        "vendor_b": "daisychain",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "sosha",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "anthropic",
-        "jaccard": 0.0405,
-        "count_both": 3
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "convos",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "openai",
-        "jaccard": 0.023,
-        "count_both": 2
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "donoratlas",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "chorus_ai",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "quiller",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "votersai",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "xai_grok",
-        "jaccard": 1.0,
-        "count_both": 8
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "air_ai",
-        "jaccard": 0.125,
-        "count_both": 1
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "jasper_ai",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "perplexity",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "heygen",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "xai_grok",
-        "vendor_b": "midjourney",
+        "vendor_a": "votersai",
+        "vendor_b": "runwayml",
         "jaccard": 0.0,
         "count_both": 0
       },
@@ -1877,12 +1809,6 @@
       },
       {
         "vendor_a": "air_ai",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.125,
-        "count_both": 1
-      },
-      {
-        "vendor_a": "air_ai",
         "vendor_b": "air_ai",
         "jaccard": 1.0,
         "count_both": 1
@@ -1908,6 +1834,12 @@
       {
         "vendor_a": "air_ai",
         "vendor_b": "midjourney",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "air_ai",
+        "vendor_b": "runwayml",
         "jaccard": 0.0,
         "count_both": 0
       },
@@ -1967,12 +1899,6 @@
       },
       {
         "vendor_a": "jasper_ai",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "jasper_ai",
         "vendor_b": "air_ai",
         "jaccard": 0.0,
         "count_both": 0
@@ -1998,6 +1924,12 @@
       {
         "vendor_a": "jasper_ai",
         "vendor_b": "midjourney",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "jasper_ai",
+        "vendor_b": "runwayml",
         "jaccard": 0.0,
         "count_both": 0
       },
@@ -2057,12 +1989,6 @@
       },
       {
         "vendor_a": "perplexity",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "perplexity",
         "vendor_b": "air_ai",
         "jaccard": 0.0,
         "count_both": 0
@@ -2090,6 +2016,12 @@
         "vendor_b": "midjourney",
         "jaccard": 0.125,
         "count_both": 1
+      },
+      {
+        "vendor_a": "perplexity",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
       },
       {
         "vendor_a": "heygen",
@@ -2147,12 +2079,6 @@
       },
       {
         "vendor_a": "heygen",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "heygen",
         "vendor_b": "air_ai",
         "jaccard": 0.0,
         "count_both": 0
@@ -2180,6 +2106,12 @@
         "vendor_b": "midjourney",
         "jaccard": 0.1429,
         "count_both": 1
+      },
+      {
+        "vendor_a": "heygen",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
       },
       {
         "vendor_a": "midjourney",
@@ -2237,12 +2169,6 @@
       },
       {
         "vendor_a": "midjourney",
-        "vendor_b": "xai_grok",
-        "jaccard": 0.0,
-        "count_both": 0
-      },
-      {
-        "vendor_a": "midjourney",
         "vendor_b": "air_ai",
         "jaccard": 0.0,
         "count_both": 0
@@ -2270,6 +2196,102 @@
         "vendor_b": "midjourney",
         "jaccard": 1.0,
         "count_both": 6
+      },
+      {
+        "vendor_a": "midjourney",
+        "vendor_b": "runwayml",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "daisychain",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "sosha",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "anthropic",
+        "jaccard": 0.0145,
+        "count_both": 1
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "convos",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "openai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "donoratlas",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "chorus_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "quiller",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "votersai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "air_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "jasper_ai",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "perplexity",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "heygen",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "midjourney",
+        "jaccard": 0.0,
+        "count_both": 0
+      },
+      {
+        "vendor_a": "runwayml",
+        "vendor_b": "runwayml",
+        "jaccard": 1.0,
+        "count_both": 1
       }
     ]
   },
@@ -2277,14 +2299,14 @@
     {
       "vendor_group": "general_purpose",
       "era": "generative",
-      "amount": 144508.11,
-      "count": 1206
+      "amount": 140723.29,
+      "count": 1184
     },
     {
       "vendor_group": "general_purpose",
       "era": "legacy",
-      "amount": 199830.92,
-      "count": 1100
+      "amount": 203615.74,
+      "count": 1122
     },
     {
       "vendor_group": "political_specific",
@@ -2556,7 +2578,7 @@
       "count": 310,
       "distinct_candidates": 49,
       "era": "generative",
-      "total_expenditure": 592460787.32
+      "total_expenditure": 592463868.64
     },
     {
       "cand_party": "Democratic",
@@ -2565,7 +2587,7 @@
       "count": 169,
       "distinct_candidates": 38,
       "era": "legacy",
-      "total_expenditure": 592460787.32
+      "total_expenditure": 592463868.64
     },
     {
       "cand_party": "Democratic",
@@ -2574,7 +2596,7 @@
       "count": 78,
       "distinct_candidates": 16,
       "era": "generative",
-      "total_expenditure": 592460787.32
+      "total_expenditure": 592463868.64
     },
     {
       "cand_party": "Democratic",
@@ -2583,7 +2605,7 @@
       "count": 236,
       "distinct_candidates": 42,
       "era": "legacy",
-      "total_expenditure": 592460787.32
+      "total_expenditure": 592463868.64
     },
     {
       "cand_party": "Independent",
@@ -2675,7 +2697,7 @@
       "count": 218,
       "distinct_candidates": 42,
       "era": "generative",
-      "total_expenditure": 476726468.74
+      "total_expenditure": 476722450.51
     },
     {
       "ici": "Challenger",
@@ -2684,7 +2706,7 @@
       "count": 52,
       "distinct_candidates": 17,
       "era": "legacy",
-      "total_expenditure": 476726468.74
+      "total_expenditure": 476722450.51
     },
     {
       "ici": "Challenger",
@@ -2693,7 +2715,7 @@
       "count": 30,
       "distinct_candidates": 11,
       "era": "generative",
-      "total_expenditure": 476726468.74
+      "total_expenditure": 476722450.51
     },
     {
       "ici": "Challenger",
@@ -2702,7 +2724,7 @@
       "count": 132,
       "distinct_candidates": 29,
       "era": "legacy",
-      "total_expenditure": 476726468.74
+      "total_expenditure": 476722450.51
     },
     {
       "ici": "Incumbent",
@@ -2747,7 +2769,7 @@
       "count": 117,
       "distinct_candidates": 21,
       "era": "generative",
-      "total_expenditure": 411326872.5
+      "total_expenditure": 411330890.73
     },
     {
       "ici": "Open seat",
@@ -2756,7 +2778,7 @@
       "count": 38,
       "distinct_candidates": 8,
       "era": "legacy",
-      "total_expenditure": 411326872.5
+      "total_expenditure": 411330890.73
     },
     {
       "ici": "Open seat",
@@ -2765,7 +2787,7 @@
       "count": 54,
       "distinct_candidates": 11,
       "era": "generative",
-      "total_expenditure": 411326872.5
+      "total_expenditure": 411330890.73
     },
     {
       "ici": "Open seat",
@@ -2774,7 +2796,7 @@
       "count": 80,
       "distinct_candidates": 19,
       "era": "legacy",
-      "total_expenditure": 411326872.5
+      "total_expenditure": 411330890.73
     },
     {
       "ici": "Unknown",
@@ -2783,7 +2805,7 @@
       "count": 1,
       "distinct_candidates": 1,
       "era": "legacy",
-      "total_expenditure": 337851.51
+      "total_expenditure": 340932.83
     }
   ],
   "by_chamber": [
@@ -2794,7 +2816,7 @@
       "count": 418,
       "distinct_candidates": 70,
       "era": "generative",
-      "total_expenditure": 515379962.79
+      "total_expenditure": 515383044.11
     },
     {
       "office": "House",
@@ -2803,7 +2825,7 @@
       "count": 115,
       "distinct_candidates": 27,
       "era": "legacy",
-      "total_expenditure": 515379962.79
+      "total_expenditure": 515383044.11
     },
     {
       "office": "House",
@@ -2812,7 +2834,7 @@
       "count": 52,
       "distinct_candidates": 19,
       "era": "generative",
-      "total_expenditure": 515379962.79
+      "total_expenditure": 515383044.11
     },
     {
       "office": "House",
@@ -2821,7 +2843,7 @@
       "count": 248,
       "distinct_candidates": 48,
       "era": "legacy",
-      "total_expenditure": 515379962.79
+      "total_expenditure": 515383044.11
     },
     {
       "office": "Senate",
@@ -3113,7 +3135,7 @@
       "count": 552,
       "distinct_candidates": 87,
       "era": "generative",
-      "total_expenditure": 903006335.65
+      "total_expenditure": 903009416.97
     },
     {
       "cycle": 2026,
@@ -3122,7 +3144,7 @@
       "count": 232,
       "distinct_candidates": 52,
       "era": "legacy",
-      "total_expenditure": 903006335.65
+      "total_expenditure": 903009416.97
     },
     {
       "cycle": 2026,
@@ -3131,7 +3153,7 @@
       "count": 96,
       "distinct_candidates": 23,
       "era": "generative",
-      "total_expenditure": 903006335.65
+      "total_expenditure": 903009416.97
     },
     {
       "cycle": 2026,
@@ -3140,7 +3162,7 @@
       "count": 389,
       "distinct_candidates": 71,
       "era": "legacy",
-      "total_expenditure": 903006335.65
+      "total_expenditure": 903009416.97
     }
   ],
   "weekly_histogram": {
@@ -5948,7 +5970,7 @@
       "count": 388,
       "distinct_candidates": 65,
       "era": "generative",
-      "total_expenditure": 592460787.32
+      "total_expenditure": 592463868.64
     },
     {
       "cycle": 2026,
@@ -5957,7 +5979,7 @@
       "count": 405,
       "distinct_candidates": 72,
       "era": "legacy",
-      "total_expenditure": 592460787.32
+      "total_expenditure": 592463868.64
     },
     {
       "cycle": 2026,
@@ -6130,7 +6152,7 @@
       "count": 248,
       "distinct_candidates": 53,
       "era": "generative",
-      "total_expenditure": 476726468.74
+      "total_expenditure": 476722450.51
     },
     {
       "cycle": 2026,
@@ -6139,7 +6161,7 @@
       "count": 184,
       "distinct_candidates": 43,
       "era": "legacy",
-      "total_expenditure": 476726468.74
+      "total_expenditure": 476722450.51
     },
     {
       "cycle": 2026,
@@ -6166,7 +6188,7 @@
       "count": 171,
       "distinct_candidates": 32,
       "era": "generative",
-      "total_expenditure": 411326872.5
+      "total_expenditure": 411330890.73
     },
     {
       "cycle": 2026,
@@ -6175,7 +6197,7 @@
       "count": 118,
       "distinct_candidates": 25,
       "era": "legacy",
-      "total_expenditure": 411326872.5
+      "total_expenditure": 411330890.73
     },
     {
       "cycle": 2026,
@@ -6184,7 +6206,7 @@
       "count": 1,
       "distinct_candidates": 1,
       "era": "legacy",
-      "total_expenditure": 337851.51
+      "total_expenditure": 340932.83
     }
   ],
   "time_series_by_chamber": [
@@ -6276,7 +6298,7 @@
       "count": 470,
       "distinct_candidates": 89,
       "era": "generative",
-      "total_expenditure": 515379962.79
+      "total_expenditure": 515383044.11
     },
     {
       "cycle": 2026,
@@ -6285,7 +6307,7 @@
       "count": 363,
       "distinct_candidates": 73,
       "era": "legacy",
-      "total_expenditure": 515379962.79
+      "total_expenditure": 515383044.11
     },
     {
       "cycle": 2026,
@@ -6416,12 +6438,6 @@
       "count": 14
     },
     {
-      "cmte_id": "C00836916",
-      "cmte_name": "TEAM KENNEDY",
-      "amount": 7856.15,
-      "count": 34
-    },
-    {
       "cmte_id": "C00619759",
       "cmte_name": "CREATIVE MAJORITY POLITICAL ACTION COMMITTEE",
       "amount": 6750.0,
@@ -6456,6 +6472,12 @@
       "cmte_name": "JANE FONDA CLIMATE PAC",
       "amount": 5160.0,
       "count": 3
+    },
+    {
+      "cmte_id": "C00812479",
+      "cmte_name": "TOGETHER WE ELECT PAC",
+      "amount": 5015.360000000001,
+      "count": 6
     }
   ],
   "top_committees_all_eras": [
@@ -15128,11 +15150,11 @@
       "cand_district": "00",
       "ai_amount_high": 8796.15,
       "ai_count_high": 35,
-      "ai_amount_high_ex_legacy": 7856.15,
-      "ai_count_high_ex_legacy": 34,
+      "ai_amount_high_ex_legacy": 4071.33,
+      "ai_count_high_ex_legacy": 12,
       "total_expenditure": 64228283.14,
       "pct_ai": 0.014,
-      "pct_ai_ex_legacy": 0.012,
+      "pct_ai_ex_legacy": 0.006,
       "use_categories": [
         "administrative_productivity",
         "unspecified"
@@ -15140,15 +15162,13 @@
       "vendor_ids": [
         "air_ai",
         "prompt_io",
-        "xai_grok"
+        "sonix_ai"
       ],
       "use_categories_ex_legacy": [
-        "administrative_productivity",
-        "unspecified"
+        "administrative_productivity"
       ],
       "vendor_ids_ex_legacy": [
-        "air_ai",
-        "xai_grok"
+        "air_ai"
       ]
     },
     {
@@ -25331,7 +25351,7 @@
         {
           "cycle": 2026,
           "vendor_group": "political_specific",
-          "amount": 44935.479999999996,
+          "amount": 44935.48,
           "count": 25,
           "era": "legacy"
         }
@@ -25347,7 +25367,7 @@
         {
           "support_oppose": "Support",
           "vendor_group": "political_specific",
-          "amount": 44935.479999999996,
+          "amount": 44935.48,
           "count": 25,
           "era": "legacy"
         }
@@ -25954,29 +25974,6 @@
         },
         {
           "cycle": 2026,
-          "cand_id": "S6MI00418",
-          "cand_name": "EL-SAYED, ABDUL",
-          "office": "Senate",
-          "cand_state": "MI",
-          "cand_district": "00",
-          "cand_party": "Democratic",
-          "spender_id": "C00341396",
-          "spender_name": "MoveOn.Org Political Action",
-          "support_oppose": "Support",
-          "transaction_amt": 25.67,
-          "transaction_date": "22-JUL-26",
-          "purpose": "Text Messages - Estimate",
-          "payee": "Prompt.Io",
-          "file_num": "2002514",
-          "tran_id": "500077858",
-          "vendor_id": "prompt_io",
-          "vendor_name": "Prompt.io",
-          "vendor_group": "political_specific",
-          "vendor_era": "legacy",
-          "confidence": "high"
-        },
-        {
-          "cycle": 2026,
           "cand_id": "H6MI07298",
           "cand_name": "LAWRENCE, WILLIAM",
           "office": "House",
@@ -25992,6 +25989,29 @@
           "payee": "Prompt.Io",
           "file_num": "2002788",
           "tran_id": "500077861",
+          "vendor_id": "prompt_io",
+          "vendor_name": "Prompt.io",
+          "vendor_group": "political_specific",
+          "vendor_era": "legacy",
+          "confidence": "high"
+        },
+        {
+          "cycle": 2026,
+          "cand_id": "S6MI00418",
+          "cand_name": "EL-SAYED, ABDUL",
+          "office": "Senate",
+          "cand_state": "MI",
+          "cand_district": "00",
+          "cand_party": "Democratic",
+          "spender_id": "C00341396",
+          "spender_name": "MoveOn.Org Political Action",
+          "support_oppose": "Support",
+          "transaction_amt": 25.67,
+          "transaction_date": "22-JUL-26",
+          "purpose": "Text Messages - Estimate",
+          "payee": "Prompt.Io",
+          "file_num": "2002514",
+          "tran_id": "500077858",
           "vendor_id": "prompt_io",
           "vendor_name": "Prompt.io",
           "vendor_group": "political_specific",
@@ -74694,6 +74714,328 @@
       "other_amount": 0.0,
       "other_count": 0
     },
+    "sonix_ai": {
+      "id": "sonix_ai",
+      "name": "Sonix",
+      "group": "general_purpose",
+      "era": "legacy",
+      "homepage": "https://sonix.ai",
+      "description": "Automated transcription tool used to transcribe and translate audio and video recordings.",
+      "tags": [
+        "administrative_productivity",
+        "research_strategy"
+      ],
+      "amount_high": 3784.82,
+      "count_high": 22,
+      "amount_medium": 0.0,
+      "count_medium": 0,
+      "time_series": [
+        {
+          "cycle": 2024,
+          "amount": 3784.82,
+          "count": 22
+        }
+      ],
+      "time_series_by_party": [],
+      "by_candidate": [
+        {
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "office": "President",
+          "amount": 3784.82,
+          "count": 22
+        }
+      ],
+      "top_committees": [
+        {
+          "cmte_id": "C00836916",
+          "cmte_name": "TEAM KENNEDY",
+          "amount_high": 3784.82,
+          "count_high": 22,
+          "amount_medium": 0.0,
+          "count_medium": 0,
+          "amount": 3784.82,
+          "count": 22
+        }
+      ],
+      "by_party": [],
+      "by_incumbency": [],
+      "by_chamber": [],
+      "records": [
+        {
+          "date": "06/05/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 792.0,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "06/21/2023",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 512.0,
+          "purpose": "TRANSCRIPTION SERVICES",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "05/17/2023",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 396.0,
+          "purpose": "TRANSCRIPTION SERVICES",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "07/19/2023",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 218.53,
+          "purpose": "SUBSCRIPTION",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "04/22/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 210.06,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "07/01/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 206.65,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "09/03/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 200.92,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "06/05/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 181.23,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "08/02/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 175.55,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "04/02/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 145.22,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "08/21/2023",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 132.23,
+          "purpose": "SUBSCRIPTION",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "09/20/2023",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 111.05,
+          "purpose": "SUBSCRIPTION",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "03/03/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 100.52,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "01/08/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 87.9,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "12/05/2023",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 76.94,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "02/02/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 76.85,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "10/16/2023",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 75.7,
+          "purpose": "SUBSCRIPTION",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "10/08/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 39.96,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "09/03/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 22.24,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "04/22/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 21.19,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "07/01/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 1.48,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        },
+        {
+          "date": "11/04/2024",
+          "cycle": 2024,
+          "payee": "SONIX.AI",
+          "amount": 0.6,
+          "purpose": "SOFTWARE",
+          "confidence": "high",
+          "cand_id": "P40011793",
+          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
+          "cand_party": "Independent",
+          "cmte_name": "TEAM KENNEDY"
+        }
+      ],
+      "dem_amount": 0.0,
+      "rep_amount": 0.0,
+      "dem_count": 0,
+      "rep_count": 0,
+      "dem_rep_ratio": null,
+      "other_amount": 3784.82,
+      "other_count": 22
+    },
     "sosha": {
       "id": "sosha",
       "name": "SoSha (Speechifai)",
@@ -76289,16 +76631,11 @@
         "communications_copy",
         "research_strategy"
       ],
-      "amount_high": 5454.23,
-      "count_high": 40,
+      "amount_high": 1669.41,
+      "count_high": 18,
       "amount_medium": 0.0,
       "count_medium": 0,
       "time_series": [
-        {
-          "cycle": 2024,
-          "amount": 3784.82,
-          "count": 22
-        },
         {
           "cycle": 2026,
           "amount": 1669.41,
@@ -76320,14 +76657,6 @@
         }
       ],
       "by_candidate": [
-        {
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "office": "President",
-          "amount": 3784.82,
-          "count": 22
-        },
         {
           "cand_id": "H6TX09124",
           "cand_name": "CAIN, BRISCOE ROWELL III",
@@ -76370,16 +76699,6 @@
         }
       ],
       "top_committees": [
-        {
-          "cmte_id": "C00836916",
-          "cmte_name": "TEAM KENNEDY",
-          "amount_high": 3784.82,
-          "count_high": 22,
-          "amount_medium": 0.0,
-          "count_medium": 0,
-          "amount": 3784.82,
-          "count": 22
-        },
         {
           "cmte_id": "C00796045",
           "cmte_name": "TRUTH AND COURAGE PAC",
@@ -76501,42 +76820,6 @@
       ],
       "records": [
         {
-          "date": "06/05/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 792.0,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "06/21/2023",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 512.0,
-          "purpose": "TRANSCRIPTION SERVICES",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "05/17/2023",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 396.0,
-          "purpose": "TRANSCRIPTION SERVICES",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
           "date": "04/10/2026",
           "cycle": 2026,
           "payee": "GROK XAI",
@@ -76585,126 +76868,6 @@
           "cmte_name": "TRUTH AND COURAGE PAC"
         },
         {
-          "date": "07/19/2023",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 218.53,
-          "purpose": "SUBSCRIPTION",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "04/22/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 210.06,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "07/01/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 206.65,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "09/03/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 200.92,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "06/05/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 181.23,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "08/02/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 175.55,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "04/02/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 145.22,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "08/21/2023",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 132.23,
-          "purpose": "SUBSCRIPTION",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "09/20/2023",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 111.05,
-          "purpose": "SUBSCRIPTION",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "03/03/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 100.52,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
           "date": "08/10/2026",
           "cycle": 2026,
           "payee": "GROK XAI",
@@ -76715,54 +76878,6 @@
           "cand_name": "",
           "cand_party": "Republican",
           "cmte_name": "REPUBLICAN NATIONAL COMMITTEE"
-        },
-        {
-          "date": "01/08/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 87.9,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "12/05/2023",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 76.94,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "02/02/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 76.85,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "10/16/2023",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 75.7,
-          "purpose": "SUBSCRIPTION",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
         },
         {
           "date": "11/19/2025",
@@ -76787,18 +76902,6 @@
           "cand_name": "ARMITAGE, CASEY MRS.",
           "cand_party": "Republican",
           "cmte_name": "BLUE COLLAR CASEY"
-        },
-        {
-          "date": "10/08/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 39.96,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
         },
         {
           "date": "10/25/2025",
@@ -76909,30 +77012,6 @@
           "cmte_name": "FRIENDS OF DAVE MCCORMICK"
         },
         {
-          "date": "09/03/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 22.24,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "04/22/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 21.19,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
           "date": "05/29/2026",
           "cycle": 2026,
           "payee": "GROK XAI",
@@ -76955,30 +77034,6 @@
           "cand_name": "HURABIELL, MARIE",
           "cand_party": "Democratic",
           "cmte_name": "MARIE HURABIELL FOR CONGRESS"
-        },
-        {
-          "date": "07/01/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 1.48,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
-        },
-        {
-          "date": "11/04/2024",
-          "cycle": 2024,
-          "payee": "SONIX.AI",
-          "amount": 0.6,
-          "purpose": "SOFTWARE",
-          "confidence": "high",
-          "cand_id": "P40011793",
-          "cand_name": "KENNEDY, ROBERT, F. JR., SHANAHAN, NICOLE",
-          "cand_party": "Independent",
-          "cmte_name": "TEAM KENNEDY"
         }
       ],
       "dem_amount": 20.41,
@@ -76986,8 +77041,8 @@
       "dem_count": 2,
       "rep_count": 13,
       "dem_rep_ratio": 0.021,
-      "other_amount": 4483.82,
-      "other_count": 25
+      "other_amount": 699.0,
+      "other_count": 3
     }
   },
   "candidates_detail": {
@@ -114327,11 +114382,11 @@
           "era": "generative"
         },
         {
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "amount": 3784.82,
           "count": 22,
-          "era": "generative"
+          "era": "legacy"
         },
         {
           "vendor_id": "prompt_io",
@@ -114382,8 +114437,8 @@
           "amount": 792.0,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114426,8 +114481,8 @@
           "amount": 512.0,
           "purpose": "TRANSCRIPTION SERVICES",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114437,8 +114492,8 @@
           "amount": 396.0,
           "purpose": "TRANSCRIPTION SERVICES",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114525,8 +114580,8 @@
           "amount": 218.53,
           "purpose": "SUBSCRIPTION",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114536,8 +114591,8 @@
           "amount": 210.06,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114547,8 +114602,8 @@
           "amount": 206.65,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114558,8 +114613,8 @@
           "amount": 200.92,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114569,8 +114624,8 @@
           "amount": 181.23,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114580,8 +114635,8 @@
           "amount": 175.55,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114591,8 +114646,8 @@
           "amount": 145.22,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114602,8 +114657,8 @@
           "amount": 132.23,
           "purpose": "SUBSCRIPTION",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114613,8 +114668,8 @@
           "amount": 111.05,
           "purpose": "SUBSCRIPTION",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114624,8 +114679,8 @@
           "amount": 100.52,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114635,8 +114690,8 @@
           "amount": 87.9,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114646,8 +114701,8 @@
           "amount": 76.94,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114657,8 +114712,8 @@
           "amount": 76.85,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114668,8 +114723,8 @@
           "amount": 75.7,
           "purpose": "SUBSCRIPTION",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114679,8 +114734,8 @@
           "amount": 39.96,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114690,8 +114745,8 @@
           "amount": 22.24,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114701,8 +114756,8 @@
           "amount": 21.19,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114734,8 +114789,8 @@
           "amount": 1.48,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         },
         {
@@ -114745,8 +114800,8 @@
           "amount": 0.6,
           "purpose": "SOFTWARE",
           "confidence": "high",
-          "vendor_id": "xai_grok",
-          "vendor_name": "xAI (Grok)",
+          "vendor_id": "sonix_ai",
+          "vendor_name": "Sonix",
           "cmte_name": "TEAM KENNEDY"
         }
       ]
